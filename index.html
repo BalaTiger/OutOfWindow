@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self' https://ipwho.is https://api.open-meteo.com;" />
+    <title>Out of Window</title>
+  </head>
+  <body>
+    <div id="app">
+      <main class="window-widget">
+        <div class="wall-shadow"></div>
+        <div class="window-casing">
+          <div class="window-reveal">
+            <div class="glass-viewport">
+              <canvas id="world"></canvas>
+              <div class="atmosphere"></div>
+              <div class="window-reflection"></div>
+              <div class="glass-glint"></div>
+            </div>
+            <div class="mullion vertical"></div>
+            <div class="mullion horizontal"></div>
+          </div>
+          <div class="window-sill"><span></span></div>
+        </div>
+      </main>
+
+      <header class="titlebar">
+        <div class="brand">
+          <div class="brand-mark"><i></i><i></i><i></i></div>
+          <div>
+            <p>OUT OF WINDOW</p>
+            <span>一扇会呼吸的窗</span>
+          </div>
+        </div>
+        <div class="drag-region"></div>
+        <div class="window-actions">
+          <button id="clickThrough" aria-label="鼠标穿透" title="鼠标穿透">◇</button>
+          <button id="compactMode" aria-label="收起控制" title="收起控制">◐</button>
+          <button id="minimize" aria-label="最小化">—</button>
+          <button id="maximize" aria-label="最大化">□</button>
+          <button id="close" aria-label="关闭">×</button>
+        </div>
+      </header>
+
+      <section class="status-card glass">
+        <div class="status-icon" id="weatherIcon">☾</div>
+        <div class="status-main">
+          <div class="eyebrow"><span class="live-dot"></span><span id="syncState">正在同步本地天空</span></div>
+          <div class="location-line"><strong id="locationName">定位中</strong><span id="temperature">--°</span></div>
+          <div class="weather-line"><span id="weatherText">读取天气…</span><span class="divider"></span><span id="localClock">--:--</span></div>
+        </div>
+        <button class="icon-btn" id="refreshWeather" aria-label="刷新天气">↻</button>
+      </section>
+
+      <section class="scene-copy glass">
+        <div class="scene-index" id="sceneIndex">01 / 04</div>
+        <h1 id="sceneTitle">云上城市</h1>
+        <p id="sceneDescription">远处的楼群逐渐亮起，车流沿着街道缓慢穿行。</p>
+      </section>
+
+      <button class="ambient-toggle glass active" id="ambientToggle">
+        <span class="sound-bars"><i></i><i></i><i></i><i></i></span>
+        <span>环境声景</span>
+      </button>
+
+      <aside class="control-panel glass" id="controlPanel">
+        <div class="panel-header">
+          <div><span class="eyebrow">ATMOSPHERE</span><h2>此刻的窗外</h2></div>
+          <button class="icon-btn" id="collapsePanel">⌄</button>
+        </div>
+
+        <div class="time-row">
+          <div class="time-display"><span id="timeLabel">19:42</span><small id="periodLabel">暮色</small></div>
+          <button class="live-button active" id="liveTime"><span></span> 跟随当地</button>
+        </div>
+        <div class="slider-wrap">
+          <input id="timeSlider" type="range" min="0" max="1439" value="1182" />
+          <div class="time-marks"><span>00</span><span>06</span><span>12</span><span>18</span><span>24</span></div>
+        </div>
+
+        <div class="weather-controls">
+          <label>天气</label>
+          <div class="segmented" id="weatherModes">
+            <button data-weather="live" class="active">实时</button>
+            <button data-weather="clear">晴</button>
+            <button data-weather="rain">雨</button>
+            <button data-weather="snow">雪</button>
+            <button data-weather="fog">雾</button>
+          </div>
+        </div>
+
+        <div class="scene-tabs" id="sceneTabs">
+          <button class="scene-tab active" data-scene="city">
+            <img src="./assets/city.png" alt="城市" /><span><b>城市</b><small>流光与天际线</small></span>
+          </button>
+          <button class="scene-tab" data-scene="village">
+            <img src="./assets/village.png" alt="村庄" /><span><b>村庄</b><small>田野与炊烟</small></span>
+          </button>
+          <button class="scene-tab" data-scene="forest">
+            <img src="./assets/forest.png" alt="山林" /><span><b>山林</b><small>松涛与溪流</small></span>
+          </button>
+          <button class="scene-tab" data-scene="coast">
+            <img src="./assets/coast.png" alt="海滨" /><span><b>海滨</b><small>潮汐与暮光</small></span>
+          </button>
+        </div>
+      </aside>
+
+      <div class="privacy-note glass" id="privacyNote">
+        <span>◎</span><p><b>城市级近似定位</b><br />仅用 IP 获取天气坐标，不保存精确地址。</p><button id="dismissPrivacy">×</button>
+      </div>
+
+      <footer>
+        <span>拖动以轻微改变视角</span>
+        <span class="quality"><i></i> HDR · PBR · <b id="fpsLabel">60 FPS</b></span>
+      </footer>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
