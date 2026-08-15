@@ -3,9 +3,14 @@ const path = require('path');
 const fs = require('fs');
 
 const runtimePath = path.join(__dirname, '..', '.runtime');
+const cachePath = path.join(runtimePath, 'cache');
 fs.mkdirSync(runtimePath, { recursive: true });
+fs.mkdirSync(cachePath, { recursive: true });
 app.setPath('userData', runtimePath);
-app.commandLine.appendSwitch('disk-cache-dir', path.join(runtimePath, 'cache'));
+app.setPath('cache', cachePath);
+app.commandLine.appendSwitch('disk-cache-dir', cachePath);
+
+const hasSingleInstanceLock = app.requestSingleInstanceLock();
 
 let mainWindow;
 let tray;
@@ -17,6 +22,10 @@ function updateWindowMode() {
   mainWindow.setAlwaysOnTop(desktopMode, desktopMode ? 'floating' : 'normal');
   mainWindow.setSkipTaskbar(desktopMode);
   mainWindow.setIgnoreMouseEvents(clickThrough, { forward: true });
+}
+
+function sendWindowState() {
+  mainWindow?.webContents.send('window:state', { maximized: mainWindow.isMaximized() });
 }
 
 function createWindow() {
@@ -42,16 +51,55 @@ function createWindow() {
   const devUrl = process.env.VITE_DEV_SERVER_URL;
   if (devUrl) mainWindow.loadURL(devUrl);
   else mainWindow.loadFile(path.join(__dirname, '..', 'dist', 'index.html'));
-  mainWindow.once('ready-to-show', () => {
+  mainWindow.webContents.on('render-process-gone', (_event, details) => {
+    console.error('Renderer process exited:', details);
+  });
+  mainWindow.webContents.on('did-fail-load', (_event, code, description, url) => {
+    console.error('Renderer failed to load:', { code, description, url });
+  });
+  mainWindow.once('ready-to-show', async () => {
     const workArea = screen.getPrimaryDisplay().workArea;
     const bounds = mainWindow.getBounds();
     mainWindow.setPosition(workArea.x + workArea.width - bounds.width - 26, workArea.y + workArea.height - bounds.height - 26);
     updateWindowMode();
-    mainWindow.showInactive();
+    if (!process.env.CAPTURE_DEMO_PATH) mainWindow.showInactive();
+    if (process.env.CAPTURE_DEMO_PATH) {
+      const deadline = Date.now() + 30000;
+      while (Date.now() < deadline) {
+        const cityReady = await mainWindow.webContents.executeJavaScript("Boolean(document.documentElement.dataset.cityAsset || document.documentElement.dataset.modelLoadError)");
+        if (cityReady) break;
+        await new Promise((resolve) => setTimeout(resolve, 500));
+      }
+      await new Promise((resolve) => setTimeout(resolve, 1200));
+      if (process.env.CAPTURE_DIAGNOSTICS_PATH) {
+        const diagnostics = await mainWindow.webContents.executeJavaScript(`(() => {
+          const world = window.__livingWorld;
+          if (!world) return { dataset: { ...document.documentElement.dataset }, rays: [] };
+          const raycaster = new window.__THREE.Raycaster();
+          const rays = [[-0.75, 0], [-0.5, 0], [-0.25, 0], [0, 0], [0.25, 0], [0.5, 0], [0.75, 0], [-0.5, -0.35], [0, -0.35], [0.5, -0.35]].map(([x, y]) => {
+            raycaster.setFromCamera({ x, y }, world.camera);
+            const hit = raycaster.intersectObject(world.groups.city, true).find((entry) => entry.object.isMesh);
+            if (!hit) return { x, y };
+            const ancestry = [];
+            for (let node = hit.object; node && node !== world.groups.city; node = node.parent) ancestry.push(node.name || node.type);
+            const materials = (Array.isArray(hit.object.material) ? hit.object.material : [hit.object.material]).map((material) => material?.name || material?.type);
+            return { x, y, ancestry, materials, distance: hit.distance };
+          });
+          return { dataset: { ...document.documentElement.dataset }, rays };
+        })()`);
+        fs.writeFileSync(path.resolve(process.env.CAPTURE_DIAGNOSTICS_PATH), JSON.stringify(diagnostics, null, 2));
+      }
+      const image = await mainWindow.capturePage();
+      fs.writeFileSync(path.resolve(process.env.CAPTURE_DEMO_PATH), image.toPNG());
+      app.isQuitting = true;
+      app.quit();
+    }
   });
   mainWindow.on('close', (event) => {
     if (!app.isQuitting) { event.preventDefault(); mainWindow.hide(); }
   });
+  mainWindow.on('maximize', sendWindowState);
+  mainWindow.on('unmaximize', sendWindowState);
 }
 
 function createTray() {
@@ -68,13 +116,24 @@ function createTray() {
   tray.on('click', () => mainWindow?.isVisible() ? mainWindow.hide() : mainWindow.showInactive());
 }
 
-app.whenReady().then(() => {
-  createWindow();
-  createTray();
-  app.on('activate', () => {
-    if (BrowserWindow.getAllWindows().length === 0) createWindow();
+if (!hasSingleInstanceLock) {
+  app.quit();
+} else {
+  app.on('second-instance', () => {
+    if (!mainWindow) return;
+    if (mainWindow.isMinimized()) mainWindow.restore();
+    mainWindow.show();
+    mainWindow.focus();
   });
-});
+
+  app.whenReady().then(() => {
+    createWindow();
+    createTray();
+    app.on('activate', () => {
+      if (BrowserWindow.getAllWindows().length === 0) createWindow();
+    });
+  });
+}
 
 app.on('before-quit', () => { app.isQuitting = true; });
 
