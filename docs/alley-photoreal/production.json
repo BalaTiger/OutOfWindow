@@ -1,0 +1,47 @@
+{
+  "dataset": {
+    "environment": "linear-sky-pmrem",
+    "materialProfiles": "asphalt,roadSurface,concrete,wood,rock,fieldSurface,forestGround,coastSand,architecturalGlass,paintedMetal,foliage",
+    "scenePackStyle": "contemporary-natural-realism",
+    "clouds": "dynamic-2d-optical-depth",
+    "alleyAssets": "ready",
+    "forestAssets": "ready",
+    "villageAssets": "ready",
+    "cityAssets": "ready",
+    "coastAssets": "ready",
+    "activeScene": "alley",
+    "solarElevation": "60.25",
+    "environmentRevision": "8",
+    "heroModels": "16",
+    "cityPeriphery": "polyhaven-cc0-pbr-midground",
+    "cityIndustrialPeriphery": "polyhaven-cc0-modular-factory-pbr",
+    "cityFarPeriphery": "helsinki-textured-city-mesh-cc-by-4-lod2",
+    "cityRainGround": "3040",
+    "cityAsset": "PolyHaven_Urban_Blocks",
+    "alleyRainGround": "621",
+    "alleyAsset": "ORCA_Bistro_Exterior_LOD_CC-BY-4.0"
+  },
+  "sceneButtons": [
+    {
+      "scene": "city",
+      "label": "都市街区与天际线"
+    },
+    {
+      "scene": "alley",
+      "label": "后巷雨篷与石板路"
+    },
+    {
+      "scene": "village",
+      "label": "村庄田野与炊烟"
+    },
+    {
+      "scene": "forest",
+      "label": "山林松涛与溪流"
+    },
+    {
+      "scene": "coast",
+      "label": "海滨潮汐与暮光"
+    }
+  ],
+  "errors": []
+}

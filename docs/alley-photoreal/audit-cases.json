@@ -1,0 +1,89 @@
+[
+  {
+    "name": "alley-clear",
+    "scene": "alley",
+    "hour": 10.783333333333333,
+    "weather": "clear",
+    "location": {
+      "latitude": 1.29,
+      "longitude": 103.85,
+      "timezone": "Asia/Singapore"
+    },
+    "date": "2026-09-09T02:47:00Z",
+    "weatherData": {
+      "windSpeed": 11,
+      "windGustSpeed": 18,
+      "windDirection": 240
+    }
+  },
+  {
+    "name": "live-drizzle",
+    "scene": "alley",
+    "hour": 10.783333333333333,
+    "weather": "live",
+    "weatherData": {
+      "weatherCode": 51,
+      "precipitation": 0.2,
+      "windSpeed": 11,
+      "windGustSpeed": 18,
+      "windDirection": 240,
+      "cloudCover": 100
+    },
+    "wetSeconds": 60,
+    "clip": true
+  },
+  {
+    "name": "alley-rain",
+    "scene": "alley",
+    "hour": 10.783333333333333,
+    "weather": "rain",
+    "wetSeconds": 60,
+    "clip": true
+  },
+  {
+    "name": "ground-rain",
+    "scene": "alley",
+    "hour": 10.783333333333333,
+    "weather": "rain",
+    "camera": [
+      -44,
+      10,
+      -218
+    ],
+    "target": [
+      -50,
+      7,
+      -237
+    ],
+    "wetSeconds": 60,
+    "clip": true
+  },
+  {
+    "name": "motion",
+    "scene": "alley",
+    "hour": 10.783333333333333,
+    "weather": "rain",
+    "wetSeconds": 60,
+    "motionProbe": true
+  },
+  {
+    "name": "alley-night",
+    "scene": "alley",
+    "hour": 23,
+    "weather": "rain",
+    "wetSeconds": 60
+  },
+  {
+    "name": "alley-snow",
+    "scene": "alley",
+    "hour": 10.783333333333333,
+    "weather": "snow"
+  },
+  {
+    "name": "city-rain",
+    "scene": "city",
+    "hour": 10.783333333333333,
+    "weather": "rain",
+    "wetSeconds": 60
+  }
+]

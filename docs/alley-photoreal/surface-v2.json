@@ -1,0 +1,103 @@
+{
+  "date": "2026-09-09T04:41:34.516Z",
+  "viewport": [
+    1280,
+    820
+  ],
+  "startup": {
+    "preloadStage": "ready",
+    "preloadProgress": "100",
+    "environment": "linear-sky-pmrem",
+    "materialProfiles": "asphalt,roadSurface,concrete,wood,rock,fieldSurface,forestGround,coastSand,architecturalGlass,paintedMetal,foliage",
+    "scenePackStyle": "contemporary-natural-realism",
+    "clouds": "dynamic-2d-optical-depth",
+    "alleyAssets": "ready",
+    "forestAssets": "ready",
+    "villageAssets": "ready",
+    "cityAssets": "ready",
+    "coastAssets": "ready",
+    "activeScene": "city",
+    "solarElevation": "61.89",
+    "environmentRevision": "4",
+    "alleyRainGround": "621",
+    "alleyAsset": "ORCA_Bistro_Exterior_LOD_CC-BY-4.0",
+    "heroModels": "16",
+    "cityPeriphery": "polyhaven-cc0-pbr-midground",
+    "cityIndustrialPeriphery": "polyhaven-cc0-modular-factory-pbr",
+    "cityFarPeriphery": "helsinki-textured-city-mesh-cc-by-4-lod2",
+    "cityRainGround": "3040",
+    "cityAsset": "PolyHaven_Urban_Blocks",
+    "preloadAssets": "ready",
+    "preloadComplete": "true"
+  },
+  "cases": [
+    {
+      "name": "alley-rain",
+      "scene": "alley",
+      "hour": 10.783333,
+      "weather": "rain",
+      "wetSeconds": 60,
+      "dataset": {
+        "preloadStage": "ready",
+        "preloadProgress": "100",
+        "environment": "linear-sky-pmrem",
+        "materialProfiles": "asphalt,roadSurface,concrete,wood,rock,fieldSurface,forestGround,coastSand,architecturalGlass,paintedMetal,foliage",
+        "scenePackStyle": "contemporary-natural-realism",
+        "clouds": "dynamic-2d-optical-depth",
+        "alleyAssets": "ready",
+        "forestAssets": "ready",
+        "villageAssets": "ready",
+        "cityAssets": "ready",
+        "coastAssets": "ready",
+        "activeScene": "alley",
+        "solarElevation": "60.54",
+        "environmentRevision": "5",
+        "alleyRainGround": "621",
+        "alleyAsset": "ORCA_Bistro_Exterior_LOD_CC-BY-4.0",
+        "heroModels": "16",
+        "cityPeriphery": "polyhaven-cc0-pbr-midground",
+        "cityIndustrialPeriphery": "polyhaven-cc0-modular-factory-pbr",
+        "cityFarPeriphery": "helsinki-textured-city-mesh-cc-by-4-lod2",
+        "cityRainGround": "3040",
+        "cityAsset": "PolyHaven_Urban_Blocks",
+        "preloadAssets": "ready",
+        "preloadComplete": "true"
+      },
+      "camera": [
+        -20,
+        23,
+        -208
+      ],
+      "target": [
+        -46,
+        23,
+        -246
+      ],
+      "elevation": 60.53612240096806,
+      "frameMs": {
+        "median": 16.69999999999709,
+        "p95": 16.700000000000728
+      },
+      "render": {
+        "frame": 3616,
+        "calls": 196,
+        "triangles": 360708,
+        "points": 1200,
+        "lines": 1264
+      },
+      "memory": {
+        "geometries": 1783,
+        "textures": 344
+      },
+      "materials": {
+        "total": 130,
+        "normal": 100,
+        "roughness": 5,
+        "ao": 0
+      },
+      "shaderErrors": 0,
+      "image": "surface-v5-alley-rain.png"
+    }
+  ],
+  "errors": []
+}

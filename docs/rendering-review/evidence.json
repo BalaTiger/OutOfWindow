@@ -1,0 +1,460 @@
+{
+  "date": "2026-09-08",
+  "note": "Offscreen Electron at 1280x820, 60 Hz cap. Viewpoint changes are not an algorithm-only performance comparison.",
+  "runs": [
+    {
+      "name": "before",
+      "errorCount": 663,
+      "cases": [
+        {
+          "name": "city-noon",
+          "scene": "city",
+          "hour": 12,
+          "weather": "clear",
+          "frameMs": {
+            "median": 16.80000000000109,
+            "p95": 33.399999999999636
+          },
+          "render": {
+            "frame": 398,
+            "calls": 5096,
+            "triangles": 5231574,
+            "points": 0,
+            "lines": 0
+          },
+          "materials": {
+            "total": 260,
+            "normal": 38,
+            "roughness": 38,
+            "ao": 0
+          },
+          "shaderErrors": 0
+        }
+      ]
+    },
+    {
+      "name": "textures",
+      "errorCount": 0,
+      "cases": [
+        {
+          "name": "city-noon",
+          "scene": "city",
+          "hour": 12,
+          "weather": "clear",
+          "frameMs": {
+            "median": 33.29999999999927,
+            "p95": 33.400000000001455
+          },
+          "render": {
+            "frame": 411,
+            "calls": 5096,
+            "triangles": 5231574,
+            "points": 0,
+            "lines": 0
+          },
+          "materials": {
+            "total": 260,
+            "normal": 126,
+            "roughness": 38,
+            "ao": 0
+          },
+          "shaderErrors": 0
+        }
+      ]
+    },
+    {
+      "name": "after",
+      "errorCount": 0,
+      "cases": [
+        {
+          "name": "city-noon",
+          "scene": "city",
+          "hour": 12,
+          "weather": "clear",
+          "frameMs": {
+            "median": 16.69999999999891,
+            "p95": 16.799999999999272
+          },
+          "render": {
+            "frame": 3074,
+            "calls": 697,
+            "triangles": 1031986,
+            "points": 0,
+            "lines": 0
+          },
+          "materials": {
+            "total": 260,
+            "normal": 133,
+            "roughness": 38,
+            "ao": 0
+          },
+          "shaderErrors": 0
+        },
+        {
+          "name": "city-sunset",
+          "scene": "city",
+          "hour": 17.5,
+          "weather": "clear",
+          "frameMs": {
+            "median": 16.69999999999891,
+            "p95": 16.700000000000728
+          },
+          "render": {
+            "frame": 5899,
+            "calls": 697,
+            "triangles": 1031986,
+            "points": 0,
+            "lines": 0
+          },
+          "materials": {
+            "total": 260,
+            "normal": 133,
+            "roughness": 38,
+            "ao": 0
+          },
+          "shaderErrors": 0
+        },
+        {
+          "name": "city-night",
+          "scene": "city",
+          "hour": 23,
+          "weather": "clear",
+          "frameMs": {
+            "median": 16.69999999999709,
+            "p95": 16.799999999999272
+          },
+          "render": {
+            "frame": 8731,
+            "calls": 697,
+            "triangles": 1031986,
+            "points": 0,
+            "lines": 0
+          },
+          "materials": {
+            "total": 260,
+            "normal": 133,
+            "roughness": 38,
+            "ao": 0
+          },
+          "shaderErrors": 0
+        },
+        {
+          "name": "city-rain",
+          "scene": "city",
+          "hour": 12,
+          "weather": "rain",
+          "frameMs": {
+            "median": 16.700000000000728,
+            "p95": 16.700000000000728
+          },
+          "render": {
+            "frame": 11514,
+            "calls": 698,
+            "triangles": 1031986,
+            "points": 0,
+            "lines": 900
+          },
+          "materials": {
+            "total": 260,
+            "normal": 133,
+            "roughness": 38,
+            "ao": 0
+          },
+          "shaderErrors": 0
+        },
+        {
+          "name": "city-snow",
+          "scene": "city",
+          "hour": 12,
+          "weather": "snow",
+          "frameMs": {
+            "median": 16.69999999999709,
+            "p95": 16.700000000004366
+          },
+          "render": {
+            "frame": 14346,
+            "calls": 698,
+            "triangles": 1031986,
+            "points": 850,
+            "lines": 0
+          },
+          "materials": {
+            "total": 260,
+            "normal": 133,
+            "roughness": 38,
+            "ao": 0
+          },
+          "shaderErrors": 0
+        },
+        {
+          "name": "city-fog",
+          "scene": "city",
+          "hour": 12,
+          "weather": "fog",
+          "frameMs": {
+            "median": 16.69999999999709,
+            "p95": 16.700000000004366
+          },
+          "render": {
+            "frame": 17178,
+            "calls": 697,
+            "triangles": 1031986,
+            "points": 0,
+            "lines": 0
+          },
+          "materials": {
+            "total": 260,
+            "normal": 133,
+            "roughness": 38,
+            "ao": 0
+          },
+          "shaderErrors": 0
+        }
+      ]
+    },
+    {
+      "name": "regression",
+      "errorCount": 0,
+      "checks": [
+        "Bistro color textures loaded",
+        "Night sun below horizon and off",
+        "Live weather uses supplied weather code",
+        "Sky capture preserves pending scene shadows",
+        "PMREM textures stable across six recaptures",
+        "Capture restores visibility and solar disc",
+        "Quality mode eco",
+        "Quality mode balanced",
+        "Quality mode high",
+        "AO reuses beauty depth without geometry redraw"
+      ],
+      "cases": [
+        {
+          "name": "city-night",
+          "scene": "city",
+          "hour": 23,
+          "weather": "clear",
+          "frameMs": {
+            "median": 16.69999999999891,
+            "p95": 16.799999999999272
+          },
+          "render": {
+            "frame": 3085,
+            "calls": 697,
+            "triangles": 1031986,
+            "points": 0,
+            "lines": 0
+          },
+          "materials": {
+            "total": 260,
+            "normal": 133,
+            "roughness": 38,
+            "ao": 0
+          },
+          "shaderErrors": 0
+        },
+        {
+          "name": "forest",
+          "scene": "forest",
+          "hour": 12,
+          "weather": "clear",
+          "frameMs": {
+            "median": 16.69999999999709,
+            "p95": 16.700000000000728
+          },
+          "render": {
+            "frame": 6054,
+            "calls": 261,
+            "triangles": 13572790,
+            "points": 0,
+            "lines": 0
+          },
+          "materials": {
+            "total": 6,
+            "normal": 6,
+            "roughness": 5,
+            "ao": 0
+          },
+          "shaderErrors": 0
+        },
+        {
+          "name": "village",
+          "scene": "village",
+          "hour": 12,
+          "weather": "clear",
+          "frameMs": {
+            "median": 16.69999999999709,
+            "p95": 16.700000000000728
+          },
+          "render": {
+            "frame": 9047,
+            "calls": 326,
+            "triangles": 1326546,
+            "points": 0,
+            "lines": 0
+          },
+          "materials": {
+            "total": 10,
+            "normal": 10,
+            "roughness": 10,
+            "ao": 0
+          },
+          "shaderErrors": 0
+        },
+        {
+          "name": "coast",
+          "scene": "coast",
+          "hour": 12,
+          "weather": "clear",
+          "frameMs": {
+            "median": 16.69999999999709,
+            "p95": 16.799999999995634
+          },
+          "render": {
+            "frame": 12545,
+            "calls": 29,
+            "triangles": 7021096,
+            "points": 0,
+            "lines": 0
+          },
+          "materials": {
+            "total": 6,
+            "normal": 4,
+            "roughness": 4,
+            "ao": 0
+          },
+          "shaderErrors": 0
+        },
+        {
+          "name": "city-high",
+          "scene": "city",
+          "hour": 12,
+          "weather": "clear",
+          "quality": "high",
+          "frameMs": {
+            "median": 16.69999999999709,
+            "p95": 16.700000000004366
+          },
+          "render": {
+            "frame": 15379,
+            "calls": 697,
+            "triangles": 1031986,
+            "points": 0,
+            "lines": 0
+          },
+          "materials": {
+            "total": 260,
+            "normal": 133,
+            "roughness": 38,
+            "ao": 0
+          },
+          "shaderErrors": 0
+        },
+        {
+          "name": "city-eco",
+          "scene": "city",
+          "hour": 12,
+          "weather": "clear",
+          "quality": "eco",
+          "frameMs": {
+            "median": 16.69999999999709,
+            "p95": 16.700000000004366
+          },
+          "render": {
+            "frame": 16640,
+            "calls": 693,
+            "triangles": 1031982,
+            "points": 0,
+            "lines": 0
+          },
+          "materials": {
+            "total": 260,
+            "normal": 133,
+            "roughness": 38,
+            "ao": 0
+          },
+          "shaderErrors": 0
+        }
+      ]
+    }
+  ],
+  "production": {
+    "dataset": {
+      "environment": "linear-sky-pmrem",
+      "materialProfiles": "asphalt,roadSurface,concrete,wood,rock,fieldSurface,forestGround,coastSand,architecturalGlass,paintedMetal,foliage",
+      "scenePackStyle": "contemporary-natural-realism",
+      "clouds": "dynamic-2d-optical-depth",
+      "environmentRevision": "2",
+      "cityAsset": "ORCA_Bistro_Exterior_LOD_CC-BY-4.0",
+      "heroModels": "5",
+      "cityPeriphery": "polyhaven-cc0-pbr-midground",
+      "cityIndustrialPeriphery": "polyhaven-cc0-modular-factory-pbr",
+      "cityFarPeriphery": "helsinki-textured-city-mesh-cc-by-4-lod2"
+    },
+    "errors": []
+  },
+  "finalChecks": [
+    "Bistro color textures loaded",
+    "Night sun below horizon and off",
+    "Live weather uses supplied weather code",
+    "Sky capture preserves pending scene shadows",
+    "PMREM textures stable across six recaptures",
+    "Capture restores visibility and solar disc",
+    "Quality mode eco",
+    "Quality mode balanced",
+    "Quality mode high",
+    "AO reuses beauty depth without geometry redraw",
+    "Manual-time scene switch updates lighting origin"
+  ],
+  "finalCity": {
+    "name": "city-noon",
+    "scene": "city",
+    "hour": 12,
+    "weather": "clear",
+    "dataset": {
+      "environment": "linear-sky-pmrem",
+      "materialProfiles": "asphalt,roadSurface,concrete,wood,rock,fieldSurface,forestGround,coastSand,architecturalGlass,paintedMetal,foliage",
+      "scenePackStyle": "contemporary-natural-realism",
+      "clouds": "dynamic-2d-optical-depth",
+      "environmentRevision": "3",
+      "cityAsset": "ORCA_Bistro_Exterior_LOD_CC-BY-4.0",
+      "heroModels": "5",
+      "cityPeriphery": "polyhaven-cc0-pbr-midground",
+      "cityIndustrialPeriphery": "polyhaven-cc0-modular-factory-pbr",
+      "cityFarPeriphery": "helsinki-textured-city-mesh-cc-by-4-lod2"
+    },
+    "camera": [
+      -20,
+      23,
+      -208
+    ],
+    "target": [
+      -46,
+      23,
+      -246
+    ],
+    "elevation": 64.69921578294311,
+    "frameMs": {
+      "median": 16.69999999999891,
+      "p95": 16.700000000000728
+    },
+    "render": {
+      "frame": 2980,
+      "calls": 697,
+      "triangles": 1031986,
+      "points": 0,
+      "lines": 0
+    },
+    "memory": {
+      "geometries": 1480,
+      "textures": 180
+    },
+    "materials": {
+      "total": 260,
+      "normal": 133,
+      "roughness": 38,
+      "ao": 0
+    },
+    "shaderErrors": 0,
+    "image": "final-check-city-noon.png"
+  }
+}

@@ -104,14 +104,25 @@ export const MATERIAL_PROFILES = {
   },
 };
 
+export const SCENE_VIEWS = {
+  // Look out from the right-hand building frontage instead of placing the
+  // viewer over the road centreline. The target stays on the boulevard so
+  // traffic and lane markings remain readable in the lower view.
+  city: { position: [24, 26, 34], target: [-1, 15.5, -116], fog: .0022, fov: 56, lightTarget: [0, 16, -90], environment: [10, 26, -55] },
+  alley: { position: [-20, 23, -208], target: [-46, 23, -246], fog: .0016, fov: 55, lightTarget: [-25, 16, -225], environment: [-20, 23, -208] },
+  village: { position: [0, 8, 24], target: [0, 2, -30], fog: .0085, fov: 48, lightTarget: [0, 4, -32], environment: [0, 10, -24] },
+  forest: { position: [0, 7, 20], target: [0, 3, -24], fog: .012, fov: 48, lightTarget: [0, 6, -42], environment: [0, 10, -28] },
+  coast: { position: [0, 10, 25], target: [7, 2, -31], fog: .0065, fov: 48, lightTarget: [4, 3, -38], environment: [4, 12, -28] },
+};
+
 export const SCENE_PACK = {
-  version: 1,
+  version: 2,
   style: 'contemporary-natural-realism',
   common: {
     camera: 'fixed-window-composition',
-    lighting: 'runtime-cube-environment-and-spherical-harmonics',
+    lighting: 'analytic-sky-linear-pmrem-and-depth-gtao',
     lod: [
-      { range: [0, 130], representation: 'orca-bistro-lod1-and-full-pbr' },
+      { range: [0, 130], representation: 'scene-specific-pbr-architecture' },
       { range: [130, 280], representation: 'polyhaven-modular-lod2-and-1k-pbr' },
       { range: [280, 450], representation: 'helsinki-textured-city-mesh-lod2-and-atmospheric-fog' },
     ],
@@ -120,12 +131,17 @@ export const SCENE_PACK = {
     city: {
       materials: ['roadSurface', 'asphalt', 'concrete', 'architecturalGlass', 'paintedMetal'],
       licensedAssets: [
-        'orca/bistro-exterior',
         'polyhaven/modular_urban_apartments_facade',
         'polyhaven/modular_factory_facade',
+        'polyhaven/modular_street_seating',
         'helsinki/textured-city-mesh-lod2',
       ],
-      dynamic: ['traffic', 'windowLights', 'volumetricClouds'],
+      dynamic: ['traffic', 'windowLights', 'analyticSky', 'layeredClouds', 'wetGround', 'puddleReflection', 'rainImpacts'],
+    },
+    alley: {
+      materials: ['concrete', 'architecturalGlass', 'paintedMetal'],
+      licensedAssets: ['orca/bistro-exterior', 'polyhaven/modular_street_seating'],
+      dynamic: ['streetLights', 'wetPavement', 'analyticSky', 'layeredClouds', 'awningAndFoliageWind', 'rainImpacts', 'puddleReflection'],
     },
     village: { materials: ['fieldSurface', 'wood', 'concrete', 'rock', 'foliage'], licensedAssets: ['polyhaven/grass_bermuda_01', 'polyhaven/grass_medium_02', 'polyhaven/modular_fort_01', 'polyhaven/wine_barrel_01', 'polyhaven/wooden_crate_02'], dynamic: ['wind', 'mist'] },
     forest: { materials: ['forestGround', 'wood', 'rock', 'foliage'], licensedAssets: ['polyhaven/mountainside', 'polyhaven/rock_moss_set_01', 'polyhaven/pine_sapling_small'], dynamic: ['wind', 'physicalStream'] },

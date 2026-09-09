@@ -66,7 +66,7 @@ function createWindow() {
     if (process.env.CAPTURE_DEMO_PATH) {
       const deadline = Date.now() + 30000;
       while (Date.now() < deadline) {
-        const cityReady = await mainWindow.webContents.executeJavaScript("Boolean(document.documentElement.dataset.cityAsset || document.documentElement.dataset.modelLoadError)");
+        const cityReady = await mainWindow.webContents.executeJavaScript("document.documentElement.dataset[document.documentElement.dataset.activeScene + 'Assets'] === 'ready' || Boolean(document.documentElement.dataset.modelLoadError)");
         if (cityReady) break;
         await new Promise((resolve) => setTimeout(resolve, 500));
       }
@@ -78,10 +78,10 @@ function createWindow() {
           const raycaster = new window.__THREE.Raycaster();
           const rays = [[-0.75, 0], [-0.5, 0], [-0.25, 0], [0, 0], [0.25, 0], [0.5, 0], [0.75, 0], [-0.5, -0.35], [0, -0.35], [0.5, -0.35]].map(([x, y]) => {
             raycaster.setFromCamera({ x, y }, world.camera);
-            const hit = raycaster.intersectObject(world.groups.city, true).find((entry) => entry.object.isMesh);
+            const hit = raycaster.intersectObject(world.groups[world.activeScene], true).find((entry) => entry.object.isMesh);
             if (!hit) return { x, y };
             const ancestry = [];
-            for (let node = hit.object; node && node !== world.groups.city; node = node.parent) ancestry.push(node.name || node.type);
+            for (let node = hit.object; node && node !== world.groups[world.activeScene]; node = node.parent) ancestry.push(node.name || node.type);
             const materials = (Array.isArray(hit.object.material) ? hit.object.material : [hit.object.material]).map((material) => material?.name || material?.type);
             return { x, y, ancestry, materials, distance: hit.distance };
           });
@@ -177,7 +177,7 @@ ipcMain.handle('world:live-context', async () => {
     if (!geo.success || !Number.isFinite(geo.latitude)) throw new Error('IP geolocation unavailable');
     const params = new URLSearchParams({
       latitude: String(geo.latitude), longitude: String(geo.longitude),
-      current: 'temperature_2m,apparent_temperature,is_day,precipitation,weather_code,cloud_cover,wind_speed_10m',
+      current: 'temperature_2m,apparent_temperature,is_day,precipitation,weather_code,cloud_cover,wind_speed_10m,wind_direction_10m,wind_gusts_10m',
       timezone: 'auto', forecast_days: '1',
     });
     const forecast = await fetchJson(`https://api.open-meteo.com/v1/forecast?${params}`);
@@ -197,6 +197,8 @@ ipcMain.handle('world:live-context', async () => {
         precipitation: current.precipitation,
         cloudCover: current.cloud_cover,
         windSpeed: current.wind_speed_10m,
+        windDirection: current.wind_direction_10m,
+        windGustSpeed: current.wind_gusts_10m,
       },
       fallback: false,
     };

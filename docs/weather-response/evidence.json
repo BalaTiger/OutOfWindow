@@ -1,0 +1,522 @@
+{
+  "date": "2026-09-09",
+  "unitTests": {
+    "command": "npm run test:weather",
+    "passed": 6
+  },
+  "solarReference": {
+    "location": "Singapore",
+    "latitude": 1.29,
+    "longitude": 103.85,
+    "timezone": "Asia/Singapore",
+    "localTime": "2026-09-09 10:47",
+    "elevationDegrees": 55.992,
+    "status": "上午"
+  },
+  "report": {
+    "date": "2026-09-09T03:14:38.333Z",
+    "viewport": [
+      1280,
+      820
+    ],
+    "startup": {
+      "environment": "linear-sky-pmrem",
+      "materialProfiles": "asphalt,roadSurface,concrete,wood,rock,fieldSurface,forestGround,coastSand,architecturalGlass,paintedMetal,foliage",
+      "scenePackStyle": "contemporary-natural-realism",
+      "clouds": "dynamic-2d-optical-depth",
+      "alleyAssets": "pending",
+      "forestAssets": "pending",
+      "villageAssets": "pending",
+      "cityAssets": "ready",
+      "coastAssets": "pending",
+      "activeScene": "city",
+      "solarElevation": "62.92",
+      "environmentRevision": "1",
+      "heroModels": "4",
+      "cityPeriphery": "polyhaven-cc0-pbr-midground",
+      "cityIndustrialPeriphery": "polyhaven-cc0-modular-factory-pbr",
+      "cityFarPeriphery": "helsinki-textured-city-mesh-cc-by-4-lod2",
+      "cityRainGround": "1275",
+      "cityAsset": "PolyHaven_Urban_Blocks"
+    },
+    "cases": [
+      {
+        "name": "alley-dry",
+        "scene": "alley",
+        "hour": 10.78333,
+        "weather": "clear",
+        "location": {
+          "latitude": 1.29,
+          "longitude": 103.85,
+          "timezone": "Asia/Singapore"
+        },
+        "date": "2026-09-09T02:47:00Z",
+        "dataset": {
+          "environment": "linear-sky-pmrem",
+          "materialProfiles": "asphalt,roadSurface,concrete,wood,rock,fieldSurface,forestGround,coastSand,architecturalGlass,paintedMetal,foliage",
+          "scenePackStyle": "contemporary-natural-realism",
+          "clouds": "dynamic-2d-optical-depth",
+          "alleyAssets": "ready",
+          "forestAssets": "pending",
+          "villageAssets": "pending",
+          "cityAssets": "ready",
+          "coastAssets": "pending",
+          "activeScene": "alley",
+          "solarElevation": "55.99",
+          "environmentRevision": "2",
+          "heroModels": "5",
+          "cityPeriphery": "polyhaven-cc0-pbr-midground",
+          "cityIndustrialPeriphery": "polyhaven-cc0-modular-factory-pbr",
+          "cityFarPeriphery": "helsinki-textured-city-mesh-cc-by-4-lod2",
+          "cityRainGround": "1275",
+          "cityAsset": "PolyHaven_Urban_Blocks",
+          "alleyRainGround": "272",
+          "alleyAsset": "ORCA_Bistro_Exterior_LOD_CC-BY-4.0"
+        },
+        "camera": [
+          -20,
+          23,
+          -208
+        ],
+        "target": [
+          -46,
+          23,
+          -246
+        ],
+        "elevation": 55.99183666803636,
+        "frameMs": {
+          "median": 16.69999999999891,
+          "p95": 16.799999999999272
+        },
+        "render": {
+          "frame": 3158,
+          "calls": 200,
+          "triangles": 437089,
+          "points": 0,
+          "lines": 0
+        },
+        "memory": {
+          "geometries": 1446,
+          "textures": 170
+        },
+        "materials": {
+          "total": 130,
+          "normal": 100,
+          "roughness": 5,
+          "ao": 0
+        },
+        "shaderErrors": 0,
+        "image": "alley-dry.png"
+      },
+      {
+        "name": "alley-rain",
+        "scene": "alley",
+        "hour": 10.78333,
+        "weather": "live",
+        "weatherData": {
+          "weatherCode": 61,
+          "cloudCover": 100,
+          "windSpeed": 11,
+          "windDirection": 240,
+          "windGustSpeed": 18,
+          "precipitation": 2.5
+        },
+        "wetSeconds": 60,
+        "clip": "alley-rain.webm",
+        "dataset": {
+          "environment": "linear-sky-pmrem",
+          "materialProfiles": "asphalt,roadSurface,concrete,wood,rock,fieldSurface,forestGround,coastSand,architecturalGlass,paintedMetal,foliage",
+          "scenePackStyle": "contemporary-natural-realism",
+          "clouds": "dynamic-2d-optical-depth",
+          "alleyAssets": "ready",
+          "forestAssets": "pending",
+          "villageAssets": "pending",
+          "cityAssets": "ready",
+          "coastAssets": "pending",
+          "activeScene": "alley",
+          "solarElevation": "55.99",
+          "environmentRevision": "3",
+          "heroModels": "5",
+          "cityPeriphery": "polyhaven-cc0-pbr-midground",
+          "cityIndustrialPeriphery": "polyhaven-cc0-modular-factory-pbr",
+          "cityFarPeriphery": "helsinki-textured-city-mesh-cc-by-4-lod2",
+          "cityRainGround": "1275",
+          "cityAsset": "PolyHaven_Urban_Blocks",
+          "alleyRainGround": "272",
+          "alleyAsset": "ORCA_Bistro_Exterior_LOD_CC-BY-4.0"
+        },
+        "camera": [
+          -20,
+          23,
+          -208
+        ],
+        "target": [
+          -46,
+          23,
+          -246
+        ],
+        "elevation": 55.99183666803636,
+        "frameMs": {
+          "median": 16.700000000000728,
+          "p95": 16.700000000000728
+        },
+        "render": {
+          "frame": 6026,
+          "calls": 202,
+          "triangles": 437089,
+          "points": 1088,
+          "lines": 900
+        },
+        "memory": {
+          "geometries": 1448,
+          "textures": 171
+        },
+        "materials": {
+          "total": 130,
+          "normal": 100,
+          "roughness": 5,
+          "ao": 0
+        },
+        "shaderErrors": 0,
+        "image": "alley-rain.png"
+      },
+      {
+        "name": "ground-rain",
+        "scene": "alley",
+        "hour": 10.78333,
+        "weather": "rain",
+        "camera": [
+          -38,
+          12,
+          -221
+        ],
+        "target": [
+          -44,
+          7,
+          -243
+        ],
+        "fov": 50,
+        "wetSeconds": 60,
+        "clip": "ground-rain.webm",
+        "dataset": {
+          "environment": "linear-sky-pmrem",
+          "materialProfiles": "asphalt,roadSurface,concrete,wood,rock,fieldSurface,forestGround,coastSand,architecturalGlass,paintedMetal,foliage",
+          "scenePackStyle": "contemporary-natural-realism",
+          "clouds": "dynamic-2d-optical-depth",
+          "alleyAssets": "ready",
+          "forestAssets": "pending",
+          "villageAssets": "pending",
+          "cityAssets": "ready",
+          "coastAssets": "pending",
+          "activeScene": "alley",
+          "solarElevation": "55.99",
+          "environmentRevision": "4",
+          "heroModels": "5",
+          "cityPeriphery": "polyhaven-cc0-pbr-midground",
+          "cityIndustrialPeriphery": "polyhaven-cc0-modular-factory-pbr",
+          "cityFarPeriphery": "helsinki-textured-city-mesh-cc-by-4-lod2",
+          "cityRainGround": "1275",
+          "cityAsset": "PolyHaven_Urban_Blocks",
+          "alleyRainGround": "272",
+          "alleyAsset": "ORCA_Bistro_Exterior_LOD_CC-BY-4.0"
+        },
+        "elevation": 55.99183666803636,
+        "frameMs": {
+          "median": 16.69999999999709,
+          "p95": 16.700000000004366
+        },
+        "render": {
+          "frame": 11072,
+          "calls": 124,
+          "triangles": 335745,
+          "points": 1088,
+          "lines": 900
+        },
+        "memory": {
+          "geometries": 1449,
+          "textures": 171
+        },
+        "materials": {
+          "total": 130,
+          "normal": 100,
+          "roughness": 5,
+          "ao": 0
+        },
+        "shaderErrors": 0,
+        "image": "ground-rain.png"
+      },
+      {
+        "name": "city-rain",
+        "scene": "city",
+        "hour": 10.78333,
+        "weather": "rain",
+        "wetSeconds": 60,
+        "dataset": {
+          "environment": "linear-sky-pmrem",
+          "materialProfiles": "asphalt,roadSurface,concrete,wood,rock,fieldSurface,forestGround,coastSand,architecturalGlass,paintedMetal,foliage",
+          "scenePackStyle": "contemporary-natural-realism",
+          "clouds": "dynamic-2d-optical-depth",
+          "alleyAssets": "ready",
+          "forestAssets": "pending",
+          "villageAssets": "pending",
+          "cityAssets": "ready",
+          "coastAssets": "pending",
+          "activeScene": "city",
+          "solarElevation": "55.99",
+          "environmentRevision": "5",
+          "heroModels": "5",
+          "cityPeriphery": "polyhaven-cc0-pbr-midground",
+          "cityIndustrialPeriphery": "polyhaven-cc0-modular-factory-pbr",
+          "cityFarPeriphery": "helsinki-textured-city-mesh-cc-by-4-lod2",
+          "cityRainGround": "1275",
+          "cityAsset": "PolyHaven_Urban_Blocks",
+          "alleyRainGround": "272",
+          "alleyAsset": "ORCA_Bistro_Exterior_LOD_CC-BY-4.0"
+        },
+        "camera": [
+          10,
+          26,
+          34
+        ],
+        "target": [
+          -4,
+          19,
+          -110
+        ],
+        "elevation": 55.99183666803636,
+        "frameMs": {
+          "median": 16.69999999999709,
+          "p95": 16.80000000000291
+        },
+        "render": {
+          "frame": 16132,
+          "calls": 555,
+          "triangles": 11821917,
+          "points": 1200,
+          "lines": 900
+        },
+        "memory": {
+          "geometries": 1492,
+          "textures": 211
+        },
+        "materials": {
+          "total": 134,
+          "normal": 37,
+          "roughness": 37,
+          "ao": 0
+        },
+        "shaderErrors": 0,
+        "image": "city-rain.png"
+      },
+      {
+        "name": "alley-night",
+        "scene": "alley",
+        "hour": 23,
+        "weather": "rain",
+        "wetSeconds": 60,
+        "dataset": {
+          "environment": "linear-sky-pmrem",
+          "materialProfiles": "asphalt,roadSurface,concrete,wood,rock,fieldSurface,forestGround,coastSand,architecturalGlass,paintedMetal,foliage",
+          "scenePackStyle": "contemporary-natural-realism",
+          "clouds": "dynamic-2d-optical-depth",
+          "alleyAssets": "ready",
+          "forestAssets": "pending",
+          "villageAssets": "pending",
+          "cityAssets": "ready",
+          "coastAssets": "pending",
+          "activeScene": "alley",
+          "solarElevation": "-58.80",
+          "environmentRevision": "6",
+          "heroModels": "5",
+          "cityPeriphery": "polyhaven-cc0-pbr-midground",
+          "cityIndustrialPeriphery": "polyhaven-cc0-modular-factory-pbr",
+          "cityFarPeriphery": "helsinki-textured-city-mesh-cc-by-4-lod2",
+          "cityRainGround": "1275",
+          "cityAsset": "PolyHaven_Urban_Blocks",
+          "alleyRainGround": "272",
+          "alleyAsset": "ORCA_Bistro_Exterior_LOD_CC-BY-4.0"
+        },
+        "camera": [
+          -20,
+          23,
+          -208
+        ],
+        "target": [
+          -46,
+          23,
+          -246
+        ],
+        "elevation": -58.797672473837515,
+        "frameMs": {
+          "median": 16.69999999999709,
+          "p95": 16.700000000004366
+        },
+        "render": {
+          "frame": 19022,
+          "calls": 202,
+          "triangles": 437089,
+          "points": 1088,
+          "lines": 900
+        },
+        "memory": {
+          "geometries": 1494,
+          "textures": 211
+        },
+        "materials": {
+          "total": 130,
+          "normal": 100,
+          "roughness": 5,
+          "ao": 0
+        },
+        "shaderErrors": 0,
+        "image": "alley-night.png"
+      },
+      {
+        "name": "alley-snow",
+        "scene": "alley",
+        "hour": 12,
+        "weather": "snow",
+        "dataset": {
+          "environment": "linear-sky-pmrem",
+          "materialProfiles": "asphalt,roadSurface,concrete,wood,rock,fieldSurface,forestGround,coastSand,architecturalGlass,paintedMetal,foliage",
+          "scenePackStyle": "contemporary-natural-realism",
+          "clouds": "dynamic-2d-optical-depth",
+          "alleyAssets": "ready",
+          "forestAssets": "pending",
+          "villageAssets": "pending",
+          "cityAssets": "ready",
+          "coastAssets": "pending",
+          "activeScene": "alley",
+          "solarElevation": "73.89",
+          "environmentRevision": "7",
+          "heroModels": "5",
+          "cityPeriphery": "polyhaven-cc0-pbr-midground",
+          "cityIndustrialPeriphery": "polyhaven-cc0-modular-factory-pbr",
+          "cityFarPeriphery": "helsinki-textured-city-mesh-cc-by-4-lod2",
+          "cityRainGround": "1275",
+          "cityAsset": "PolyHaven_Urban_Blocks",
+          "alleyRainGround": "272",
+          "alleyAsset": "ORCA_Bistro_Exterior_LOD_CC-BY-4.0"
+        },
+        "camera": [
+          -20,
+          23,
+          -208
+        ],
+        "target": [
+          -46,
+          23,
+          -246
+        ],
+        "elevation": 73.89270308408184,
+        "frameMs": {
+          "median": 16.69999999999709,
+          "p95": 16.700000000004366
+        },
+        "render": {
+          "frame": 21905,
+          "calls": 201,
+          "triangles": 437089,
+          "points": 850,
+          "lines": 0
+        },
+        "memory": {
+          "geometries": 1500,
+          "textures": 211
+        },
+        "materials": {
+          "total": 130,
+          "normal": 100,
+          "roughness": 5,
+          "ao": 0
+        },
+        "shaderErrors": 0,
+        "image": "alley-snow.png"
+      }
+    ],
+    "errors": [],
+    "checks": [
+      "Bistro stays unloaded until alley is selected",
+      "Bistro belongs exclusively to alley",
+      "Apartment blocks belong exclusively to city",
+      "Repeated scene switches reuse loaded assets",
+      "Alley preserves the original camera and target",
+      "Only the selected scene is visible",
+      "Time, weather and quality survive scene switching",
+      "Bistro color textures loaded",
+      "Night sun below horizon and off",
+      "Live weather uses supplied weather code",
+      "Sky capture preserves pending scene shadows",
+      "PMREM textures stable across six recaptures",
+      "Capture restores visibility and solar disc",
+      "Quality mode eco",
+      "Quality mode balanced",
+      "Quality mode high",
+      "AO reuses beauty depth without geometry redraw",
+      "Manual-time scene switch updates lighting origin"
+    ],
+    "weatherChecks": [
+      "10:47 UI label agrees with daytime sun",
+      "Singapore 10:47 sun above 55 degrees",
+      "Visible wall smooth normal agrees with its plane",
+      "Awnings and foliage have deformable meshes",
+      "Pinned and movable awning vertices with matching shadow material",
+      "Pinned and movable foliage vertices with matching shadow material",
+      "Ground impacts and shelter mask: city",
+      "Ground impacts and shelter mask: alley",
+      "Puddle reflection preserves pending scene shadows",
+      "Puddle reflection reuses render target across captures",
+      "Eco quality skips scene reflection capture",
+      "Wet ground and pools persist immediately after rain",
+      "Ground eventually dries"
+    ]
+  },
+  "production": {
+    "dataset": {
+      "environment": "linear-sky-pmrem",
+      "materialProfiles": "asphalt,roadSurface,concrete,wood,rock,fieldSurface,forestGround,coastSand,architecturalGlass,paintedMetal,foliage",
+      "scenePackStyle": "contemporary-natural-realism",
+      "clouds": "dynamic-2d-optical-depth",
+      "alleyAssets": "ready",
+      "forestAssets": "ready",
+      "villageAssets": "ready",
+      "cityAssets": "ready",
+      "coastAssets": "ready",
+      "activeScene": "alley",
+      "solarElevation": "60.25",
+      "environmentRevision": "7",
+      "heroModels": "16",
+      "cityPeriphery": "polyhaven-cc0-pbr-midground",
+      "cityIndustrialPeriphery": "polyhaven-cc0-modular-factory-pbr",
+      "cityFarPeriphery": "helsinki-textured-city-mesh-cc-by-4-lod2",
+      "cityRainGround": "1273",
+      "cityAsset": "PolyHaven_Urban_Blocks",
+      "alleyRainGround": "272",
+      "alleyAsset": "ORCA_Bistro_Exterior_LOD_CC-BY-4.0"
+    },
+    "sceneButtons": [
+      {
+        "scene": "city",
+        "label": "都市街区与天际线"
+      },
+      {
+        "scene": "alley",
+        "label": "后巷雨篷与石板路"
+      },
+      {
+        "scene": "village",
+        "label": "村庄田野与炊烟"
+      },
+      {
+        "scene": "forest",
+        "label": "山林松涛与溪流"
+      },
+      {
+        "scene": "coast",
+        "label": "海滨潮汐与暮光"
+      }
+    ],
+    "errors": []
+  },
+  "limitations": "Frame intervals come from Electron offscreen at a 60 Hz cap, not GPU timestamps or desktop power. Puddles use a procedural wetness mask, coarse shelter field and a shared planar reflection. Motion is constrained vertex deformation. Diagnostic ground view does not change the product camera."
+}

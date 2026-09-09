@@ -1,0 +1,80 @@
+{
+  "date": "2026-09-09T04:13:57.200Z",
+  "viewport": [
+    1280,
+    820
+  ],
+  "case": {
+    "name": "live-drizzle",
+    "scene": "alley",
+    "hour": 10.783333333333333,
+    "weather": "live",
+    "weatherData": {
+      "weatherCode": 51,
+      "precipitation": 0.2,
+      "windSpeed": 11,
+      "windGustSpeed": 18,
+      "windDirection": 240,
+      "cloudCover": 100
+    },
+    "wetSeconds": 60,
+    "clip": "live-drizzle.webm",
+    "dataset": {
+      "environment": "linear-sky-pmrem",
+      "materialProfiles": "asphalt,roadSurface,concrete,wood,rock,fieldSurface,forestGround,coastSand,architecturalGlass,paintedMetal,foliage",
+      "scenePackStyle": "contemporary-natural-realism",
+      "clouds": "dynamic-2d-optical-depth",
+      "alleyAssets": "ready",
+      "forestAssets": "pending",
+      "villageAssets": "pending",
+      "cityAssets": "ready",
+      "coastAssets": "pending",
+      "activeScene": "alley",
+      "solarElevation": "55.99",
+      "environmentRevision": "3",
+      "heroModels": "5",
+      "cityPeriphery": "polyhaven-cc0-pbr-midground",
+      "cityIndustrialPeriphery": "polyhaven-cc0-modular-factory-pbr",
+      "cityFarPeriphery": "helsinki-textured-city-mesh-cc-by-4-lod2",
+      "cityRainGround": "3040",
+      "cityAsset": "PolyHaven_Urban_Blocks",
+      "alleyRainGround": "621",
+      "alleyAsset": "ORCA_Bistro_Exterior_LOD_CC-BY-4.0"
+    },
+    "camera": [
+      -20,
+      23,
+      -208
+    ],
+    "target": [
+      -46,
+      23,
+      -246
+    ],
+    "elevation": 55.99188616376873,
+    "frameMs": {
+      "median": 16.69999999999709,
+      "p95": 16.700000000000728
+    },
+    "render": {
+      "frame": 6005,
+      "calls": 196,
+      "triangles": 360708,
+      "points": 1200,
+      "lines": 1264
+    },
+    "memory": {
+      "geometries": 1449,
+      "textures": 173
+    },
+    "materials": {
+      "total": 130,
+      "normal": 100,
+      "roughness": 5,
+      "ao": 0
+    },
+    "shaderErrors": 0,
+    "image": "live-drizzle.png"
+  },
+  "errors": []
+}

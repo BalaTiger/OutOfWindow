@@ -9,7 +9,9 @@
     "build": "vite build",
     "start": "electron .",
     "demo": "electron .",
-    "rebuild-demo": "npm run build"
+    "rebuild-demo": "npm run build",
+    "audit:render": "electron scripts/render-audit.cjs",
+    "test:weather": "node --test scripts/solar-weather.test.mjs"
   },
   "dependencies": {
     "three": "^0.179.1"

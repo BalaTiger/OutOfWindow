@@ -3,10 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self' https://ipwho.is https://api.open-meteo.com;" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; connect-src 'self' blob: https://ipwho.is https://api.open-meteo.com;" />
     <title>Out of Window</title>
   </head>
   <body>
+    <div id="bootLoader" class="boot-loader" role="status" aria-live="polite">
+      <div class="boot-card">
+        <div class="boot-brand"><span class="brand-mark"><i></i><i></i><i></i></span><b>OUT OF WINDOW</b></div>
+        <p id="bootStage">准备窗景资源</p>
+        <div class="boot-progress"><span id="bootProgressBar"></span></div>
+        <small id="bootDetail">正在建立场景缓存…</small>
+      </div>
+    </div>
     <div id="app">
       <main class="window-widget">
         <div class="wall-shadow"></div>
@@ -54,9 +62,9 @@
       </section>
 
       <section class="scene-copy glass">
-        <div class="scene-index" id="sceneIndex">01 / 04</div>
-        <h1 id="sceneTitle">云上城市</h1>
-        <p id="sceneDescription">远处的楼群逐渐亮起，车流沿着街道缓慢穿行。</p>
+        <div class="scene-index" id="sceneIndex">01 / 05</div>
+        <h1 id="sceneTitle">都市</h1>
+        <p id="sceneDescription">沿着开阔的街道望去，楼群与远处天光慢慢铺开。</p>
       </section>
 
       <button class="ambient-toggle glass active" id="ambientToggle">
@@ -90,9 +98,19 @@
           </div>
         </div>
 
+        <label class="quality-control" for="renderQuality">画质
+          <select id="renderQuality">
+            <option value="eco">节能</option>
+            <option value="balanced" selected>均衡</option>
+            <option value="high">精细</option>
+          </select>
+        </label>
         <div class="scene-tabs" id="sceneTabs">
           <button class="scene-tab active" data-scene="city">
-            <img src="./assets/city.png" alt="城市" /><span><b>城市</b><small>流光与天际线</small></span>
+            <img src="./assets/previews/city.jpg" alt="" /><span><b>都市</b><small>街区与天际线</small></span>
+          </button>
+          <button class="scene-tab" data-scene="alley">
+            <img src="./assets/previews/alley.jpg" alt="" /><span><b>后巷</b><small>雨篷与石板路</small></span>
           </button>
           <button class="scene-tab" data-scene="village">
             <img src="./assets/village.png" alt="村庄" /><span><b>村庄</b><small>田野与炊烟</small></span>

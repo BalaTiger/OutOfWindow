@@ -31,8 +31,8 @@
 - Source detail: 118K triangles; 51.5 m-wide modular residential facade kit
 - License: CC0 1.0 Universal
 - Local path: `public/assets/polyhaven/models/modular_urban_apartments_facade/`
-- Usage: textured near- and middle-distance residential perimeter blocks
-- Modification: modules are assembled into physically plausible elevations; doors remain on the ground floor, while upper floors use window modules and cornices
+- Usage: near- and middle-distance residential blocks in the independent 都市 (city) scene
+- Modification: 3 m modules assembled into closed, four-sided 21 m blocks with roofs, ground-floor doors and upper windows; repeated modules instanced per building; selected glass materials emit warm light at night
 
 ## Poly Haven — Modular Factory Facade
 
@@ -43,7 +43,7 @@
 - License: CC0 1.0 Universal
 - Local path: `public/assets/polyhaven/models/modular_factory_facade/`
 - Usage: textured industrial and warehouse perimeter blocks that break up repeated residential silhouettes
-- Modification: modules are assembled into three-storey facades with ground-floor loading doors, upper windows, piers and cornices
+- Modification: modules assembled into four-storey facades with 3 m floor spacing, 6 m ground-floor loading doors, upper windows, piers and cornices; instanced repeated parts and recessed structural backing
 
 ## ambientCG — Road 001
 
@@ -63,7 +63,7 @@
 - Source tile: `Helsinki3D_2017_OBJ_668494x2.zip`
 - License: CC BY 4.0
 - Local runtime path: `public/assets/helsinki/helsinki-periphery-lod2.glb`
-- Usage: textured city-mesh LOD2 beyond the modular PBR perimeter, providing a continuous real-world skyline
+- Usage: distant city-mesh LOD2 in the independent 都市 scene, behind modular PBR blocks; no longer part of the Bistro view
 - Modification: selected sub-tiles, recentered coordinates, OBJ-to-glTF conversion, geometry simplification, texture downsampling and reduced baked-light contrast for live sky lighting
 - Required attribution: Helsinki 3D Mesh © City of Helsinki, licensed under CC BY 4.0; modified for real-time rendering
 
@@ -76,8 +76,9 @@
 - License: CC BY 4.0
 - Files used: LOD runtime conversion of the complete Bistro Exterior, retaining 132 materials and embedded BaseColor/normal data
 - Local runtime path: `public/assets/orca/bistro/`
-- Usage: complete dense city preset, including continuous Parisian façades, storefronts, balconies, roofs, street furniture, paving and vegetation
-- Modification: OBJ-to-glTF conversion, PBRT material-name reconciliation, alpha-material recovery, 512 px runtime textures, global LOD simplification, flat-metal treatment/no micro-shadow for railings and antennas, scene scaling and fixed-window camera composition
+- Usage: independent 后巷 (alley) preset, including continuous Parisian façades, storefronts, balconies, roofs, street furniture, paving and vegetation; the original street camera is preserved
+- 2026-09-09 runtime changes: masonry normals rebuilt with a 35-degree crease while preserving texture UVs; awning fabric and foliage receive constrained wind/rain vertex deformation; wetness, puddle reflections and ground impacts are generated at runtime. Original asset files remain unchanged.
+- Modification: OBJ-to-glTF conversion, PBRT material-name reconciliation, alpha-material recovery, 768 px runtime textures generated from the local safe Bistro package, global LOD simplification, no micro-shadow for railings and antennas, scene scaling and fixed-window camera composition. The 2026-09-08 runtime revision preserves ironwork alpha cutouts, calibrates glass/metal roughness, adds pavement rain response and emits light from existing lamp materials. Scalar material repairs are estimates, not recovered original ORM textures. The 768px package is used only by the alley preset and is kept below the full 219MB safe source package to bound startup preload cost.
 
 ## NVIDIA ORCA — Emerald Square (research candidate, not bundled)
 
@@ -129,6 +130,14 @@
 
 ## Runtime environment lighting
 
-The application does not use a bundled HDRI or depth backplate for its primary environment lighting or distant view. It captures the current procedural sky, solar direction, clouds, weather and visible 3D scene into a half-float cube map. PMREM provides roughness-dependent specular lighting, and spherical harmonics from the same capture provide diffuse environment lighting. Reflective water is hidden during the environment capture to avoid recursive reflection.
+The application does not use a bundled HDRI or depth backplate for its primary environment lighting or distant view. It captures an analytic Rayleigh/Mie sky with animated 2D cloud density into a half-float cube map. The analytic sky uses Three.js's MIT-licensed Sky addon. PMREM supplies both diffuse and roughness-dependent specular lighting; a second spherical-harmonic light is not added. Geometry, window glass and precipitation are excluded from this sky-only capture. The solar disc is excluded from the lighting capture because direct sunlight is provided separately. Capture preserves pending shadow updates and disposes the previous PMREM render target. Local lamp lighting and urban night skyglow are approximations; there is no full global illumination or volumetric cloud ray marching.
 
 These assets are bundled locally. The application does not call the Poly Haven API at runtime.
+
+## Generated visual reference (documentation only)
+
+- Local file: `docs/alley-photoreal/reference-generated.png`
+- Created with the built-in image generation tool as an edit of the project's rendered Bistro alley screenshot.
+- The pictured architecture derives from the ORCA Bistro asset credited above; the project frame/UI is retained in the reference.
+- Purpose: compare wet material appearance, water and lighting. This image is not loaded by the application as a backdrop or texture.
+- Generation mode and full prompt: `docs/alley-photoreal/reference-prompt.md`.
