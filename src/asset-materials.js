@@ -1,4 +1,6 @@
+import * as THREE from 'three';
 import { toCreasedNormals } from 'three/addons/utils/BufferGeometryUtils.js';
+import { BISTRO_REAL_PBR } from './bistro-pbr-config.js';
 
 // Repair only masonry: imported normals can point almost sideways on flat walls.
 // Keep texture UVs and a 35-degree crease so bevels stay smooth and corners stay hard.
@@ -16,7 +18,9 @@ export function repairBistroWallNormals(mesh) {
 // These scalar estimates are a fallback until original ORM textures are restored.
 export function calibrateBistroMaterial(material) {
   const name = material.name || '';
-  const isWall = /^(MASTER_Concrete|MASTER_Brick|Concrete|Plaster|Balcony_Concrete)/i.test(name);
+  const isBrick = /^(MASTER_Brick_|MASTER_Concrete_Grooved|MASTER_Concrete1$|Concrete3$)/i.test(name);
+  const isPlaster = /^(MASTER_Concrete_Smooth|MASTER_Concrete_Plaster|MASTER_Concrete_White|MASTER_Concrete_Yellow|Balcony_Concrete|Plaster)/i.test(name);
+  const isWall = isBrick || isPlaster || /^(MASTER_Concrete|MASTER_Brick|Concrete|Plaster|Balcony_Concrete)/i.test(name);
   const isPavement = /^Pavement_/i.test(name) && !/manhole/i.test(name);
   // The Bistro glTF carries base-color and normal maps, but no ORM/AO maps.
   // Keep the semantic flags on the material so RainResponse can supply the
@@ -24,6 +28,8 @@ export function calibrateBistroMaterial(material) {
   // surface as a generic wall.
   if (isWall) {
     material.userData.bistroWallSurface = true;
+    material.userData.bistroBrickSurface = isBrick;
+    material.userData.bistroPlasterSurface = isPlaster || !isBrick;
     material.roughness = Math.max(material.roughness ?? 0.82, 0.76);
   }
   if (isPavement) {
@@ -69,7 +75,66 @@ export function calibrateBistroMaterial(material) {
   material.needsUpdate = true;
 }
 
+// The licensed Bistro conversion contains color and normal maps only. Until
+// the optional CC0 pack is downloaded, generated grayscale channels are loaded
+// beside the GLB and used as genuine roughness/AO/bump inputs.
+export function loadBistroPbrChannels(material, loader, anisotropy = 4) {
+  const isWall = material.userData.bistroWallSurface === true;
+  const isGround = material.userData.bistroGroundSurface === true;
+  if ((!isWall && !isGround) || !material.name) return Promise.resolve(false);
+  const realBase = isGround ? BISTRO_REAL_PBR.ground : BISTRO_REAL_PBR.wall;
+  const base = BISTRO_REAL_PBR.enabled ? realBase : `./assets/orca/bistro/pbr/${encodeURIComponent(material.name)}`;
+  const prepareTexture = (texture, colorSpace = THREE.NoColorSpace) => {
+    texture.colorSpace = colorSpace;
+    texture.flipY = material.map?.flipY ?? false;
+    texture.wrapS = texture.wrapT = THREE.RepeatWrapping;
+    texture.anisotropy = anisotropy;
+    if (material.map) {
+      texture.repeat.copy(material.map.repeat);
+      texture.offset.copy(material.map.offset);
+      texture.center.copy(material.map.center);
+      texture.rotation = material.map.rotation;
+      texture.updateMatrix();
+    }
+    return texture;
+  };
+  const load = (suffix, assign) => new Promise(resolve => {
+    const filename = BISTRO_REAL_PBR.enabled
+      ? ({ Diffuse: 'diff.jpg', Normal: 'nor_gl.jpg', Roughness: 'arm.jpg', AO: 'arm.jpg', Height: 'disp.jpg' }[suffix])
+      : `${base}_${suffix}.png`;
+    loader.load(BISTRO_REAL_PBR.enabled ? `${base}/${filename}` : filename, texture => {
+      assign(prepareTexture(texture, suffix === 'Diffuse' ? THREE.SRGBColorSpace : THREE.NoColorSpace));
+      resolve(true);
+    }, undefined, () => resolve(false));
+  });
+  const channels = [
+    ...(BISTRO_REAL_PBR.enabled ? [
+      load('Diffuse', texture => { material.map = texture; }),
+      load('Normal', texture => { material.normalMap = texture; }),
+    ] : []),
+    load('Roughness', texture => { material.roughnessMap = texture; }),
+    load('AO', texture => {
+      material.aoMap = texture;
+      // The derived AO is a restrained contact-detail estimate from base color,
+      // not a baked lightmap. Keep it subtle so it cannot blacken the façade.
+      material.aoMapIntensity = isGround ? .28 : .18;
+    }),
+    load('Height', texture => {
+      material.bumpMap = texture;
+      material.bumpScale = isGround ? .028 : .012;
+    }),
+  ];
+  return Promise.all(channels).then(results => {
+    material.userData.bistroPbrChannels = results.filter(Boolean).length;
+    material.needsUpdate = true;
+    return results.some(Boolean);
+  });
+}
+
 export function updateBistroWeather(material, rain, night) {
   // Wetness is spatial and persistent, applied by RainResponse in the shader.
-  if (material.userData.nightEmission) material.emissiveIntensity = .015 + night * 2.4;
+  if (material.userData.nightEmission) {
+    const lampNight = THREE.MathUtils.smoothstep(.58, .86, night);
+    material.emissiveIntensity = .015 + lampNight * 1.55;
+  }
 }

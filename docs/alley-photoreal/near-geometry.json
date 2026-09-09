@@ -1,0 +1,136 @@
+{
+  "source": "bistro-exterior.gltf",
+  "texturePackage": "bistro-exterior-near-768.glb",
+  "meshes": [
+    {
+      "name": "paris_building_03_mirrored_3",
+      "before": 832,
+      "after": 1486
+    },
+    {
+      "name": "paris_building_03_mirrored_4",
+      "before": 264,
+      "after": 755
+    },
+    {
+      "name": "paris_building_03_mirrored_7",
+      "before": 3829,
+      "after": 10941
+    },
+    {
+      "name": "paris_building_03_mirrored_8",
+      "before": 98,
+      "after": 282
+    },
+    {
+      "name": "paris_building_03_mirrored_9",
+      "before": 3489,
+      "after": 9972
+    },
+    {
+      "name": "paris_building_03_mirrored_10",
+      "before": 261,
+      "after": 749
+    },
+    {
+      "name": "paris_building_07_1",
+      "before": 28704,
+      "after": 82015
+    },
+    {
+      "name": "paris_building_07_2",
+      "before": 22515,
+      "after": 64332
+    },
+    {
+      "name": "paris_building_07_4",
+      "before": 377,
+      "after": 1080
+    },
+    {
+      "name": "paris_building_07_6",
+      "before": 980,
+      "after": 2800
+    },
+    {
+      "name": "paris_building_07_8",
+      "before": 828,
+      "after": 1340
+    },
+    {
+      "name": "paris_building_07_11",
+      "before": 966,
+      "after": 2760
+    },
+    {
+      "name": "paris_building_07_12",
+      "before": 463,
+      "after": 1323
+    },
+    {
+      "name": "Paris_Building_08_paris_building_08_2",
+      "before": 6838,
+      "after": 19542
+    },
+    {
+      "name": "Paris_Building_08_paris_building_08_3",
+      "before": 1923,
+      "after": 5344
+    },
+    {
+      "name": "Paris_Building_08_paris_building_08_7",
+      "before": 1766,
+      "after": 4769
+    },
+    {
+      "name": "Paris_Building_08_paris_building_08_10",
+      "before": 821,
+      "after": 1488
+    },
+    {
+      "name": "paris_building_09_2",
+      "before": 7970,
+      "after": 22772
+    },
+    {
+      "name": "paris_building_09_7",
+      "before": 2000,
+      "after": 5718
+    },
+    {
+      "name": "paris_building_09_10",
+      "before": 164,
+      "after": 474
+    },
+    {
+      "name": "paris_building_09_13",
+      "before": 2574,
+      "after": 7355
+    },
+    {
+      "name": "paris_building_09_14",
+      "before": 207,
+      "after": 598
+    },
+    {
+      "name": "paris_building_09_15",
+      "before": 575,
+      "after": 1124
+    },
+    {
+      "name": "paris_building_09_19",
+      "before": 7526,
+      "after": 12474
+    },
+    {
+      "name": "paris_building_10_3",
+      "before": 2947,
+      "after": 8421
+    },
+    {
+      "name": "paris_building_10_11",
+      "before": 108,
+      "after": 309
+    }
+  ]
+}

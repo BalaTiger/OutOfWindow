@@ -4,9 +4,11 @@ import { Water } from 'three/addons/objects/Water.js';
 import { MATERIAL_PROFILES, SCENE_PACK, SCENE_VIEWS } from './scene-pack.js';
 import { createAtmosphere } from './atmosphere.js';
 import { RenderPipeline, RENDER_QUALITY } from './render-pipeline.js';
-import { calibrateBistroMaterial, updateBistroWeather, repairBistroWallNormals } from './asset-materials.js';
+import { calibrateBistroMaterial, loadBistroPbrChannels, updateBistroWeather, repairBistroWallNormals } from './asset-materials.js';
 import { solarPosition, localCalendar, periodName } from './solar-time.js';
 import { RainResponse } from './rain-response.js';
+import { ScreenSpaceLodManager } from './screen-space-lod.js';
+import { ALLEY_NEAR_NODE_NAMES } from './alley-lod-config.js';
 import './styles.css';
 
 const $ = (selector) => document.querySelector(selector);
@@ -85,6 +87,11 @@ class LivingWorld {
     this.animatedWaterMaterials = [];
     this.surfaceMaterials = [];
     this.bistroMaterials = new Set();
+    this.bistroPbrPromises = [];
+    this.bistroTextureLoader = new THREE.TextureLoader();
+    this.bistroWindowFrames = [];
+    this.alleyLod = new ScreenSpaceLodManager();
+    this.alleyHighModel = null;
     this.rainResponse = new RainResponse();
     this.urbanWindowMaterials = new Map();
     this.streetLights = [];
@@ -233,6 +240,10 @@ class LivingWorld {
 
   async warmupPrograms() {
     this.setBootProgress('shader', 80, '正在编译共享 PBR、雨景和环境着色器…');
+    if (this.bistroPbrPromises.length) {
+      this.setBootProgress('shader', 82, '正在加载后巷 roughness、AO 和高度通道…');
+      await Promise.all(this.bistroPbrPromises);
+    }
     const saved = {
       activeScene: this.activeScene,
       cameraPosition: this.camera.position.clone(),
@@ -390,10 +401,29 @@ class LivingWorld {
     };
     const loadCity = (url, ready) => loadDeferred(['city'], url, ready);
 
-    loadDeferred(['alley'], './assets/orca/bistro/bistro-exterior-lod-safe-768.glb', (source) => {
+    loadDeferred(['alley'], './assets/orca/bistro/bistro-exterior-near-768.glb', (source) => {
       const simplifiedMetal = /antenna|railing|forge_metal|metal_pipe|chimneys_metal|streetlight_metal|grain_metal/i;
       source.traverse((node) => {
         if (!node.isMesh) return;
+        // The fixed alley camera does not see a streetlight fixture, but the
+        // converted Bistro package still contains exposed bulb meshes. They
+        // read as isolated facade hotspots when their emissive material is
+        // captured by the wet surfaces, so remove only those hidden-fixture
+        // nodes from this preset.
+        let owner = node;
+        let hiddenFixture = false;
+        while (owner) {
+          if (/streetlight|light_bulb/i.test(owner.name || '')) {
+            hiddenFixture = true;
+            break;
+          }
+          owner = owner.parent;
+        }
+        const nodeMaterials = Array.isArray(node.material) ? node.material : [node.material];
+        if (hiddenFixture || nodeMaterials.some(material => /light_bulb|streetlight_glass/i.test(material?.name || ''))) {
+          node.visible = false;
+          return;
+        }
         repairBistroWallNormals(node);
         node.castShadow = true;
         node.receiveShadow = true;
@@ -403,7 +433,14 @@ class LivingWorld {
         materials.filter(Boolean).forEach((material) => {
           if (this.bistroMaterials.has(material)) return;
           calibrateBistroMaterial(material);
-          if (/pavement|concrete|brick|plaster|wood|fabric|foliage|roof/i.test(material.name)) this.rainResponse.attachSurface(material);
+          if (material.userData.bistroWallSurface || material.userData.bistroGroundSurface) {
+            const uv = node.geometry?.getAttribute('uv');
+            if (uv && !node.geometry.getAttribute('uv2')) node.geometry.setAttribute('uv2', uv);
+            this.bistroPbrPromises.push(loadBistroPbrChannels(material, this.bistroTextureLoader, Math.min(8, this.renderer.capabilities.getMaxAnisotropy())));
+          }
+          if (material.userData.bistroWallSurface || material.userData.bistroGroundSurface || /pavement|concrete|brick|plaster|wood|fabric|foliage|roof/i.test(material.name)) {
+            this.rainResponse.attachSurface(material);
+          }
           this.bistroMaterials.add(material);
         });
       });
@@ -411,6 +448,7 @@ class LivingWorld {
         position: [-10, -1, -205], targetSize: 190, rotationY: 0,
       });
       city.name = 'ORCA_Bistro_Exterior';
+      this.alleyHighModel = city;
       let textureCount = 0;
       let normalCount = 0;
       let roughnessCount = 0;
@@ -426,7 +464,14 @@ class LivingWorld {
       document.documentElement.dataset.alleyTextureRoughness = String(roughnessCount);
       document.documentElement.dataset.alleyTextureAo = String(aoCount);
       document.documentElement.dataset.alleyTexturePbr = roughnessCount && aoCount ? 'orm-complete' : 'basecolor-normal-shader-wetness';
+      document.documentElement.dataset.alleyDerivedPbr = 'loading';
+      Promise.all(this.bistroPbrPromises).then(results => {
+        const channels = results.filter(Boolean).length;
+        document.documentElement.dataset.alleyDerivedPbr = channels ? `roughness-ao-bump-${channels}` : 'failed';
+        document.documentElement.dataset.alleyTexturePbr = channels ? 'basecolor-normal-derived-roughness-ao-bump' : document.documentElement.dataset.alleyTexturePbr;
+      });
       city.updateWorldMatrix(true, true);
+      this.addBistroHeroWindowFrames(city);
       city.traverse(mesh => {
         if (!mesh.isMesh) return;
         const materials = Array.isArray(mesh.material) ? mesh.material : [mesh.material];
@@ -449,8 +494,51 @@ class LivingWorld {
         this.streetLights.push(lamp);
       });
       this.applyAtmosphere();
-      document.documentElement.dataset.alleyAsset = 'ORCA_Bistro_Exterior_LOD_CC-BY-4.0';
+      document.documentElement.dataset.alleyAsset = 'ORCA_Bistro_Exterior_Near_768_CC-BY-4.0';
+      document.documentElement.dataset.alleyHeroWindowFrames = String(this.bistroWindowFrames.length);
       this.renderer.shadowMap.needsUpdate = true;
+    });
+
+    // Keep a reduced counterpart only for architectural clusters that have a
+    // restored near mesh. Dynamic awnings, foliage and hero frames stay in the
+    // near model and never participate in LOD switching.
+    loadDeferred(['alley'], './assets/orca/bistro/bistro-exterior-lod-safe-768.glb', (source) => {
+      source.traverse((node) => {
+        if (!node.isMesh) return;
+        node.visible = false;
+        repairBistroWallNormals(node);
+        node.castShadow = true;
+        node.receiveShadow = true;
+        const materials = Array.isArray(node.material) ? node.material : [node.material];
+        materials.filter(Boolean).forEach(material => {
+          calibrateBistroMaterial(material);
+          if (material.userData.bistroWallSurface || material.userData.bistroGroundSurface || /pavement|concrete|brick|plaster|wood|roof/i.test(material.name)) {
+            this.rainResponse.attachSurface(material);
+          }
+          this.bistroMaterials.add(material);
+        });
+      });
+      const lowModel = this.placeLicensedModel(source, this.groups.alley, {
+        position: [-10, -1, -205], targetSize: 190, rotationY: 0,
+      });
+      lowModel.name = 'ORCA_Bistro_Exterior_LOD_Far';
+      const nearByName = new Map();
+      const farByName = new Map();
+      this.alleyHighModel?.traverse(node => { if (node.isMesh) nearByName.set(node.name, node); });
+      lowModel.traverse(node => { if (node.isMesh) farByName.set(node.name, node); });
+      const clusters = new Map();
+      const clusterKey = name => name.match(/building[_ ]?(\d+)/i)?.[1] ?? name;
+      ALLEY_NEAR_NODE_NAMES.forEach(name => {
+        const near = nearByName.get(name), far = farByName.get(name);
+        if (!near || !far) return;
+        const key = clusterKey(name);
+        if (!clusters.has(key)) clusters.set(key, { near: [], far: [] });
+        clusters.get(key).near.push(near);
+        clusters.get(key).far.push(far);
+      });
+      clusters.forEach((cluster, key) => this.alleyLod.registerCluster(`alley-building-${key}`, cluster.near, cluster.far));
+      document.documentElement.dataset.alleyLodClusters = String(clusters.size);
+      this.alleyLod.markDirty();
     });
 
     loadDeferred(['forest', 'village'], './assets/polyhaven/pine_sapling_small/pine_sapling_small_1k.gltf', (source) => {
@@ -648,6 +736,58 @@ class LivingWorld {
     model.position.set(position[0], position[1] - bounds.min.y * scale, position[2]);
     parent.add(model);
     return model;
+  }
+
+  addBistroHeroWindowFrames(model) {
+    const camera = new THREE.Vector3(...SCENE_VIEWS.alley.position);
+    const frameMaterial = new THREE.MeshStandardMaterial({
+      name: 'Bistro_Hero_Window_Frame', color: 0x202827, roughness: .34, metalness: .28,
+    });
+    const addBar = (group, size, position) => {
+      const bar = new THREE.Mesh(new THREE.BoxGeometry(...size), frameMaterial);
+      bar.position.copy(position); bar.castShadow = true; bar.receiveShadow = true;
+      group.add(bar);
+    };
+    model.traverse(mesh => {
+      if (!mesh.isMesh || mesh.userData.bistroHeroFrame) return;
+      const materials = Array.isArray(mesh.material) ? mesh.material : [mesh.material];
+      if (!materials.some(material => /MASTER_(Focus_)?Glass_(Exterior|Dirty|Clean)|MASTER_Frosted_Glass/i.test(material?.name || ''))) return;
+      const bounds = new THREE.Box3().setFromObject(mesh);
+      const size = bounds.getSize(new THREE.Vector3());
+      const center = bounds.getCenter(new THREE.Vector3());
+      if (center.distanceTo(camera) > 54 || size.y < .75 || size.y > 8 || Math.max(size.x, size.z) < .45 || Math.max(size.x, size.z) > 8) return;
+      const thinX = size.x < size.z;
+      const width = thinX ? size.z : size.x;
+      const height = size.y;
+      const thickness = THREE.MathUtils.clamp(height * .028, .035, .12);
+      const depth = THREE.MathUtils.clamp(Math.min(size.x, size.z) * 1.8, .045, .14);
+      const group = new THREE.Group();
+      group.name = 'Bistro_Hero_Window_Frame';
+      const minY = bounds.min.y - thickness * .35, maxY = bounds.max.y + thickness * .35;
+      if (thinX) {
+        const x = center.x;
+        addBar(group, [depth, thickness, width + thickness * 2], new THREE.Vector3(x, minY, center.z));
+        addBar(group, [depth, thickness, width + thickness * 2], new THREE.Vector3(x, maxY, center.z));
+        addBar(group, [depth, height, thickness], new THREE.Vector3(x, center.y, bounds.min.z - thickness * .5));
+        addBar(group, [depth, height, thickness], new THREE.Vector3(x, center.y, bounds.max.z + thickness * .5));
+        if (width > 1.35) addBar(group, [depth * 1.05, height - thickness * 1.3, thickness * .9], new THREE.Vector3(x, center.y, center.z));
+      } else {
+        const z = center.z;
+        addBar(group, [width + thickness * 2, thickness, depth], new THREE.Vector3(center.x, minY, z));
+        addBar(group, [width + thickness * 2, thickness, depth], new THREE.Vector3(center.x, maxY, z));
+        addBar(group, [thickness, height, depth], new THREE.Vector3(bounds.min.x - thickness * .5, center.y, z));
+        addBar(group, [thickness, height, depth], new THREE.Vector3(bounds.max.x + thickness * .5, center.y, z));
+        if (width > 1.35) addBar(group, [thickness * .9, height - thickness * 1.3, depth * 1.05], new THREE.Vector3(center.x, center.y, z));
+      }
+      // Move the trim a few centimetres toward the observer so it remains
+      // visible over the imported low-poly glass plane.
+      group.position.copy(camera).sub(center).normalize().multiplyScalar(.065);
+      group.renderOrder = 2;
+      this.groups.alley.add(group);
+      this.bistroWindowFrames.push(group);
+      mesh.userData.bistroHeroFrame = true;
+    });
+    frameMaterial.needsUpdate = true;
   }
 
   addApartmentFacade(source, position, rotationY, floors, parent) {
@@ -1227,6 +1367,7 @@ class LivingWorld {
     this.baseTarget = new THREE.Vector3(...setup.target);
     this.camera.fov = setup.fov;
     this.camera.updateProjectionMatrix();
+    this.alleyLod?.markDirty();
     this.scene.fog.density = setup.fog;
     this.targetFog = setup.fog;
     this.lightTarget = new THREE.Vector3(...setup.lightTarget);
@@ -1264,7 +1405,7 @@ class LivingWorld {
 
   applyAtmosphere() {
     if (!this.skyMaterial) return;
-    const { elevation, azimuth } = this.solarPosition();
+    const { elevation } = this.solarPosition();
     const sunHeight = Math.sin(elevation);
     const daylight = smoothstep(-.12, .18, sunHeight);
     const night = 1 - daylight;
@@ -1278,6 +1419,11 @@ class LivingWorld {
     const horizonDawn = new THREE.Color(0xe79468);
     const top = topNight.clone().lerp(topDay, daylight).lerp(new THREE.Color(0x48545d), storm);
     const horizon = horizonNight.clone().lerp(horizonDay, daylight).lerp(horizonDawn, horizonGlow * .72).lerp(new THREE.Color(0x697278), storm);
+    const alleyGrade = this.activeScene === 'alley' ? 1 : 0;
+    // Bistro's stone albedo is neutral-warm, but the default analytic sky and
+    // blue fill light pushed the whole alley toward cyan. Bring the overcast
+    // bounce back toward limestone without changing the city's cooler grade.
+    horizon.lerp(new THREE.Color(0xd2ad8b), alleyGrade * (this.activeWeather === 'rain' ? .68 : .42));
     this.skyMaterial.uniforms.sunColor.value.set(horizonGlow > .25 ? 0xffc178 : 0xffeed0);
     this.skyMaterial.uniforms.daylight.value = daylight;
     this.skyMaterial.uniforms.cloudCoverage.value = clamp(cloud, 0, 1);
@@ -1287,25 +1433,61 @@ class LivingWorld {
     this.skyMaterial.uniforms.mieDirectionalG.value = .8;
 
     const distance = 100;
-    const sunDir = new THREE.Vector3(Math.sin(azimuth) * Math.cos(elevation), Math.sin(elevation), -Math.cos(azimuth) * Math.cos(elevation)).normalize();
+    // These are art-direction azimuths for the fixed window compositions.
+    // Solar elevation still follows local time, but no preset is tied to a
+    // real-world building orientation or geographic north.
+    const sceneAzimuth = {
+      city: -.58,
+      village: -.32,
+      forest: .42,
+      coast: -.82,
+    }[this.activeScene] ?? 0;
+    let sunDir;
+    if (this.activeScene === 'alley') {
+      // The alley is a fixed composition rather than a geographic survey.
+      // Build a stable screen basis from the fixed composition. The alley
+      // camera is oblique, so world X would also move the sun toward/away
+      // from the window and make the light appear to travel front-to-back.
+      const alleyView = new THREE.Vector3(...SCENE_VIEWS.alley.target)
+        .sub(new THREE.Vector3(...SCENE_VIEWS.alley.position));
+      alleyView.y = 0;
+      alleyView.normalize();
+      const screenRight = new THREE.Vector3(-alleyView.z, 0, alleyView.x).normalize();
+      const dayPhase = clamp((this.hour - 6) / 12, 0, 1);
+      const horizontal = THREE.MathUtils.lerp(-.95, .95, dayPhase);
+      const vertical = Math.sin(elevation);
+      sunDir = screenRight.multiplyScalar(horizontal)
+        .add(new THREE.Vector3(0, vertical, 0))
+        .normalize();
+    } else {
+      sunDir = new THREE.Vector3(
+        Math.sin(sceneAzimuth) * Math.cos(elevation),
+        Math.sin(elevation),
+        -Math.cos(sceneAzimuth) * Math.cos(elevation),
+      ).normalize();
+    }
     this.skyMaterial.uniforms.sunDirection.value.copy(sunDir);
     this.skyMaterial.uniforms.sunPosition.value.copy(sunDir).multiplyScalar(450000);
     const lightTarget = this.lightTarget ?? new THREE.Vector3(0, 4, -25);
     this.sun.target.position.copy(lightTarget);
     this.sun.position.copy(lightTarget).addScaledVector(sunDir, distance);
     this.sun.color.set(0xfff4e5).lerp(new THREE.Color(0xffac65), horizonGlow * .8);
-    this.sun.intensity = 3.6 * smoothstep(-.015, .08, sunHeight) * (1 - cloud * .93);
+    this.sun.intensity = 3.6 * smoothstep(-.015, .08, sunHeight) * (1 - cloud * .93) * (1 + alleyGrade * (this.activeWeather === 'rain' ? .26 : .1));
     this.hemisphere.intensity = .012 + daylight * .025;
-    this.hemisphere.color.set(top);
+    this.hemisphere.color.copy(top).lerp(new THREE.Color(0xc0a083), alleyGrade * (this.activeWeather === 'rain' ? .46 : .30));
     // Low urban night fill plus local practical lamps; the sun remains below
     // the horizon. This is an art-directed skyglow, not a computed moon model.
+    this.fillLight.color.set(alleyGrade ? 0xa8917d : 0x7896c8);
     this.fillLight.intensity = night * .16;
     this.scene.environmentIntensity = .82 + cloud * daylight * .22;
     const clearUrbanDay = this.activeScene === 'city' && this.activeWeather === 'clear' && daylight > .35;
     this.renderer.toneMappingExposure = clearUrbanDay
       ? 1.12 + horizonGlow * .12
-      : 2.2 * night + (.9 + cloud * .38) * daylight + horizonGlow * .12;
-    this.streetLights.forEach(light => { light.intensity = night * 65; });
+      : 2.2 * night + (.9 + cloud * .38) * daylight + horizonGlow * .12 + alleyGrade * (this.activeWeather === 'rain' ? .28 : .12);
+    // Practical lamps should not create isolated white hotspots while the
+    // sun is still above the horizon; bring them in progressively near dusk.
+    const lampNight = smoothstep(.58, .86, night);
+    this.streetLights.forEach(light => { light.intensity = lampNight * 28; });
     const shadowHourDelta = this.lastShadowHour == null
       ? 24
       : Math.min(Math.abs(this.hour - this.lastShadowHour), 24 - Math.abs(this.hour - this.lastShadowHour));
@@ -1353,6 +1535,7 @@ class LivingWorld {
       this.camera.aspect = width / height;
       this.camera.updateProjectionMatrix();
       this.pipeline.resize(width, height, this.quality);
+      this.alleyLod?.markDirty();
     };
     addEventListener('resize', resize);
     this.resizeObserver = new ResizeObserver(resize);
@@ -1417,6 +1600,10 @@ class LivingWorld {
     this.camera.position.lerp(this.baseCamera, .035);
     this.cameraTarget.lerp(this.baseTarget, .035);
     this.camera.lookAt(this.cameraTarget);
+    if (this.activeScene === 'alley') {
+      const height = this.canvas.clientHeight || innerHeight;
+      this.alleyLod.update(this.camera, height, elapsed);
+    }
     if (this.physicalGlass) {
       const glassDirection = this.cameraTarget.clone().sub(this.camera.position).normalize();
       this.physicalGlass.position.copy(this.camera.position).addScaledVector(glassDirection, 3.8);

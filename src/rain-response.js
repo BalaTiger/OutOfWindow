@@ -118,7 +118,9 @@ export class RainResponse {
         #endif
         rwPosition=(modelMatrix*rainVertex).xyz;
         rwNormal=normalize(mat3(modelMatrix)*rainVertexNormal);`);
-      shader.fragmentShader='#define RAIN_'+kind+'\n'+(bistroWall?'#define RAIN_BISTRO_WALL\n':'')+(bistroGround?'#define RAIN_BISTRO_GROUND\n':'')+surfaceUniforms+noiseGLSL+shader.fragmentShader;
+      const brickSurface=material.userData.bistroBrickSurface===true;
+      const plasterSurface=material.userData.bistroPlasterSurface===true;
+      shader.fragmentShader='#define RAIN_'+kind+'\n'+(bistroWall?'#define RAIN_BISTRO_WALL\n':'')+(bistroGround?'#define RAIN_BISTRO_GROUND\n':'')+(brickSurface?'#define RAIN_BISTRO_BRICK\n':'')+(plasterSurface?'#define RAIN_BISTRO_PLASTER\n':'')+surfaceUniforms+noiseGLSL+shader.fragmentShader;
       shader.fragmentShader=shader.fragmentShader.replace('#include <color_fragment>',`#include <color_fragment>
         vec2 rainUV=(rwPosition.xz-rwBounds.xy)/rwBounds.zw;
         float inField=step(0.0,rainUV.x)*step(0.0,rainUV.y)*step(rainUV.x,1.0)*step(rainUV.y,1.0);
@@ -157,7 +159,40 @@ export class RainResponse {
           float verticalStain=rwNoise(vec2(wallAxis.x*1.15,floor(wallAxis.y*.22)));
           float streak=rwNoise(vec2(wallAxis.x*.72,wallAxis.y*.12));
           float ageMask=smoothstep(.24,.72,min(1.0,mineral*.72+pockle+verticalStain*.30));
-          vec3 agedStone=mix(vec3(.95,.91,.82),vec3(.48,.53,.53),ageMask*.82);
+          vec3 agedStone=mix(vec3(.97,.92,.83),vec3(.54,.49,.42),ageMask*.82);
+          #ifdef RAIN_BISTRO_BRICK
+            // Lower courses and exposed masonry use a warmer, darker stone
+            // response with stronger mortar separation.
+            agedStone=mix(vec3(.68,.50,.36),vec3(.27,.19,.14),smoothstep(.18,.76,ageMask));
+          #endif
+          #ifdef RAIN_BISTRO_PLASTER
+            // Upper render/plaster remains lighter and broader in value than
+            // the brick base, matching the building's actual construction.
+            agedStone=mix(vec3(.99,.94,.86),vec3(.68,.63,.57),smoothstep(.22,.78,ageMask));
+          #endif
+          // Separate broad facade regions before the fine grain pass. The
+          // imported Bistro walls share similar albedo and receive mostly
+          // ambient light, so a low-frequency mineral/stain mask is what keeps
+          // plaster, repairs and sheltered stone from collapsing into one
+          // blue-gray value.
+          float facadePatch=rwNoise(wallAxis.xy*.16+vec2(7.0,19.0))*.72
+            +rwNoise(wallAxis.xy*.44+vec2(23.0,5.0))*.20
+            +verticalStain*.14;
+          float facadeRegion=smoothstep(.30,.68,facadePatch);
+          float facadeContrast=mix(.66,1.28,facadeRegion);
+          #ifdef RAIN_BISTRO_BRICK
+            facadeContrast=mix(.58,1.34,facadeRegion);
+          #endif
+          #ifdef RAIN_BISTRO_PLASTER
+            facadeContrast=mix(.82,1.20,facadeRegion);
+            // Explicit albedo lift keeps rendered plaster above the darker
+            // lower brick courses even under the same overcast sky bounce.
+            diffuseColor.rgb*=vec3(1.18,1.13,1.06);
+          #endif
+          #ifdef RAIN_BISTRO_BRICK
+            diffuseColor.rgb*=vec3(.90,.87,.82);
+          #endif
+          float faceKey=.90+.16*max(dot(normalize(rwNormal),normalize(vec3(-.38,.72,.56))),0.0);
           float dripShade=smoothstep(.62,.94,rwNoise(vec2(floor(wallAxis.x*.72),wallAxis.y*.095)));
           float stoneGrain=rwNoise(wallAxis.xy*8.0);
           // Long, broken joints keep the large modular elevations from reading
@@ -167,6 +202,7 @@ export class RainResponse {
           float joint=smoothstep(.018,.002,min(panelX,panelY));
           float edgeDust=smoothstep(.25,.8,rwNoise(wallAxis.xy*.42+vec2(11.0,4.0)));
           diffuseColor.rgb*=mix(vec3(1.0),agedStone,.84);
+          diffuseColor.rgb*=facadeContrast*faceKey;
           diffuseColor.rgb*=.82+stoneGrain*.26;
           diffuseColor.rgb*=1.0-joint*(.12+.09*edgeDust);
           diffuseColor.rgb*=1.0-dripShade*(.035+rwWet*.095);
@@ -181,6 +217,9 @@ export class RainResponse {
             float dampEdge=smoothstep(.32,.86,verticalStain+fineMineral*.24);
             diffuseColor.rgb*=.86+fineMineral*.22;
             diffuseColor.rgb*=1.0-pittedMortar*.055*(1.0-dampEdge*.42);
+            // Keep the neutral-warm limestone albedo from being washed into
+            // the blue-gray sky color under the alley's overcast fill.
+            diffuseColor.rgb*=vec3(1.16,1.075,.89);
           #endif
         #endif`);
       shader.fragmentShader=shader.fragmentShader.replace('#include <roughnessmap_fragment>',`#include <roughnessmap_fragment>
@@ -188,6 +227,12 @@ export class RainResponse {
           // Do not clamp wet masonry back to a dry .68 roughness. The old
           // clamp was the reason rain never produced a readable wall sheen.
           roughnessFactor=mix(max(roughnessFactor,.68),.24,wetMask);
+          #ifdef RAIN_BISTRO_WALL
+            // Sheltered patches stay matte while worn/exposed patches catch a
+            // controlled highlight, making the material read as stone rather
+            // than a single uniformly lit card.
+            roughnessFactor=clamp(roughnessFactor+(.52-facadeRegion)*.14, .08, 1.0);
+          #endif
         #endif
         #ifndef RAIN_WALL
           roughnessFactor=mix(roughnessFactor,.22,wetMask);
@@ -200,6 +245,12 @@ export class RainResponse {
         #endif
         roughnessFactor=mix(roughnessFactor,.055,pool);`);
       shader.fragmentShader=shader.fragmentShader.replace('#include <normal_fragment_maps>',`#include <normal_fragment_maps>
+        #if defined(USE_BUMPMAP) && (defined(USE_NORMALMAP_TANGENTSPACE) || defined(USE_NORMALMAP_OBJECTSPACE))
+          // Keep the imported tangent normal and layer the masonry/paving
+          // height channel on top; Three.js otherwise skips bumpMap whenever
+          // a normalMap is present.
+          normal=perturbNormalArb(-vViewPosition,normal,dHdxy_fwd(),faceDirection);
+        #endif
         #ifdef RAIN_CLOTH
           // Fine fabric relief breaks up a single plastic-looking highlight.
           float grain=rwNoise(rwPosition.xz*90.0+rwPosition.y*vec2(37.0,53.0));
@@ -233,18 +284,28 @@ export class RainResponse {
         vec2 reflectedUV=projected.xy/max(projected.w,.001)+grad*.014;
         float validUV=step(0.0,reflectedUV.x)*step(0.0,reflectedUV.y)*step(reflectedUV.x,1.0)*step(reflectedUV.y,1.0);
         float samePlane=1.0-smoothstep(.12,.5,abs(rwPosition.y-rwReflectionHeight));
-        float fresnel=.04+.96*pow(1.0-clamp(dot(waterNormal,normalize(vViewPosition)),0.0,1.0),4.0);
+        // Schlick Fresnel: vViewPosition points from the camera toward the
+        // fragment, so the surface-to-camera vector must be negated. This
+        // makes grazing puddles reflect strongly without whitening top-down
+        // water with a constant blue tint.
+        float cosTheta=clamp(dot(normalize(waterNormal),normalize(-vViewPosition)),0.0,1.0);
+        float fresnel=.035+.965*pow(1.0-cosTheta,5.0);
         vec3 reflected=texture2D(rwReflection,clamp(reflectedUV,0.0,1.0)).rgb;
+        // Only a weak cool absorption tint remains; reflection carries the
+        // visible puddle color and architecture/sky detail.
+        vec3 puddleTint=vec3(.23,.29,.30);
+        reflected*=vec3(.94,.98,1.0);
         float waterReflect=pool*rwReflectionMix*validUV*samePlane;
         // Replace the sky-only specular lobe with the local reflection; retaining
         // both washes out the reflected doors/windows in a narrow, shaded street.
         float reflectionWeight=clamp(fresnel*3.2,.12,.94);
         float puddleGlint=smoothstep(.25,.75,wetPattern);
-        reflected=mix(reflected,reflected*1.38+vec3(.05,.065,.07),puddleGlint*.38);
+        reflected=mix(reflected,reflected*1.10+vec3(.01,.016,.018),puddleGlint*.10);
         float skyBreak=rwNoise(rwPosition.xz*.24+vec2(7.0,19.0));
-        reflected=mix(reflected,max(reflected,vec3(.30,.37,.39)),skyBreak*puddleGlint*.38);
-        vec3 waterLight=totalDiffuse*(1.0-reflectionWeight)*.30+reflected*reflectionWeight+reflectedLight.directSpecular*.2+totalEmissiveRadiance;
-        outgoingLight=mix(outgoingLight,waterLight,waterReflect);
+        reflected=mix(reflected,max(reflected,vec3(.20,.26,.28)),skyBreak*puddleGlint*.10);
+        vec3 waterLight=puddleTint*(1.0-reflectionWeight)*.12+reflected*reflectionWeight+reflectedLight.directSpecular*.08+totalEmissiveRadiance;
+        float waterBlend=max(waterReflect,pool*.08);
+        outgoingLight=mix(outgoingLight,waterLight,waterBlend);
         #include <opaque_fragment>`);
     };
     material.customProgramCacheKey=()=> 'rain-surface-v4-'+kind+'-'+(bistroWall?'bistro-wall':'')+(bistroGround?'bistro-ground':'');
