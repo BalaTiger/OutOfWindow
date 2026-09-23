@@ -105,6 +105,8 @@ export class RainResponse {
     const kind=/fabric/i.test(material.name)?'CLOTH':/foliage/i.test(material.name)&&!/trunk|branches/i.test(material.name)?'LEAF':/^Pavement_/i.test(material.name)||['roadSurface','asphalt','concrete'].includes(material.userData.profile)?'GROUND':'WALL';
     const bistroWall=material.userData.bistroWallSurface===true;
     const bistroGround=material.userData.bistroGroundSurface===true;
+    const brickSurface=material.userData.bistroBrickSurface===true;
+    const plasterSurface=material.userData.bistroPlasterSurface===true;
     material.onBeforeCompile=shader=>{
       previous.call(material,shader);
       Object.assign(shader.uniforms,this.uniforms);
@@ -118,8 +120,6 @@ export class RainResponse {
         #endif
         rwPosition=(modelMatrix*rainVertex).xyz;
         rwNormal=normalize(mat3(modelMatrix)*rainVertexNormal);`);
-      const brickSurface=material.userData.bistroBrickSurface===true;
-      const plasterSurface=material.userData.bistroPlasterSurface===true;
       shader.fragmentShader='#define RAIN_'+kind+'\n'+(bistroWall?'#define RAIN_BISTRO_WALL\n':'')+(bistroGround?'#define RAIN_BISTRO_GROUND\n':'')+(brickSurface?'#define RAIN_BISTRO_BRICK\n':'')+(plasterSurface?'#define RAIN_BISTRO_PLASTER\n':'')+surfaceUniforms+noiseGLSL+shader.fragmentShader;
       shader.fragmentShader=shader.fragmentShader.replace('#include <color_fragment>',`#include <color_fragment>
         vec2 rainUV=(rwPosition.xz-rwBounds.xy)/rwBounds.zw;
@@ -234,14 +234,15 @@ export class RainResponse {
             roughnessFactor=clamp(roughnessFactor+(.52-facadeRegion)*.14, .08, 1.0);
           #endif
         #endif
-        #ifndef RAIN_WALL
+        #if !defined(RAIN_WALL) && !defined(RAIN_LEAF)
           roughnessFactor=mix(roughnessFactor,.22,wetMask);
         #endif
         #ifdef RAIN_CLOTH
           roughnessFactor=mix(roughnessFactor,.32+.12*rwNoise(rwPosition.xz*18.0),wetMask);
         #endif
         #ifdef RAIN_LEAF
-          roughnessFactor=mix(roughnessFactor,.30,wetMask);
+          // Wet leaf clusters retain broad highlights instead of white sparkle.
+          roughnessFactor=mix(roughnessFactor,.55,wetMask);
         #endif
         roughnessFactor=mix(roughnessFactor,.055,pool);`);
       shader.fragmentShader=shader.fragmentShader.replace('#include <normal_fragment_maps>',`#include <normal_fragment_maps>
@@ -262,8 +263,12 @@ export class RainResponse {
         #if defined(RAIN_BISTRO_WALL) || defined(RAIN_BISTRO_GROUND)
           // Screen-space derivative bump keeps the added relief scale stable
           // regardless of the source mesh's UV density.
-          vec3 microAxis=abs(rwNormal.z)>.55?vec3(rwPosition.x,rwPosition.y,0.0):vec3(rwPosition.z,rwPosition.y,0.0);
-          float microHeight=rwNoise(microAxis.xy*21.0)*.72+rwNoise(microAxis.xy*55.0)*.28;
+          vec2 microAxis=abs(rwNormal.z)>.55?rwPosition.xy:rwPosition.zy;
+          #ifdef RAIN_BISTRO_GROUND
+            // Horizontal paving needs two ground coordinates, not constant height.
+            microAxis=rwPosition.xz;
+          #endif
+          float microHeight=rwNoise(microAxis*21.0)*.72+rwNoise(microAxis*55.0)*.28;
           vec3 microDx=dFdx(-vViewPosition),microDy=dFdy(-vViewPosition);
           vec3 microRx=cross(microDy,normal),microRy=cross(normal,microDx);
           float microDet=dot(microDx,microRx);
@@ -284,31 +289,24 @@ export class RainResponse {
         vec2 reflectedUV=projected.xy/max(projected.w,.001)+grad*.014;
         float validUV=step(0.0,reflectedUV.x)*step(0.0,reflectedUV.y)*step(reflectedUV.x,1.0)*step(reflectedUV.y,1.0);
         float samePlane=1.0-smoothstep(.12,.5,abs(rwPosition.y-rwReflectionHeight));
-        // Schlick Fresnel: vViewPosition points from the camera toward the
-        // fragment, so the surface-to-camera vector must be negated. This
-        // makes grazing puddles reflect strongly without whitening top-down
-        // water with a constant blue tint.
-        float cosTheta=clamp(dot(normalize(waterNormal),normalize(-vViewPosition)),0.0,1.0);
+        // Three.js already supplies the surface-to-camera direction, including
+        // orthographic cameras. Negating it made every puddle fully reflective.
+        float cosTheta=clamp(dot(normalize(waterNormal),geometryViewDir),0.0,1.0);
         float fresnel=.035+.965*pow(1.0-cosTheta,5.0);
         vec3 reflected=texture2D(rwReflection,clamp(reflectedUV,0.0,1.0)).rgb;
-        // Only a weak cool absorption tint remains; reflection carries the
-        // visible puddle color and architecture/sky detail.
-        vec3 puddleTint=vec3(.23,.29,.30);
         reflected*=vec3(.94,.98,1.0);
         float waterReflect=pool*rwReflectionMix*validUV*samePlane;
         // Replace the sky-only specular lobe with the local reflection; retaining
         // both washes out the reflected doors/windows in a narrow, shaded street.
         float reflectionWeight=clamp(fresnel*3.2,.12,.94);
-        float puddleGlint=smoothstep(.25,.75,wetPattern);
-        reflected=mix(reflected,reflected*1.10+vec3(.01,.016,.018),puddleGlint*.10);
-        float skyBreak=rwNoise(rwPosition.xz*.24+vec2(7.0,19.0));
-        reflected=mix(reflected,max(reflected,vec3(.20,.26,.28)),skyBreak*puddleGlint*.10);
-        vec3 waterLight=puddleTint*(1.0-reflectionWeight)*.12+reflected*reflectionWeight+reflectedLight.directSpecular*.08+totalEmissiveRadiance;
+        // The water transmits the lit paving as reflection falls away. A fixed
+        // tint erased its texture and stayed bright without incident light.
+        vec3 waterLight=totalDiffuse*(1.0-reflectionWeight)+reflected*reflectionWeight+reflectedLight.directSpecular*.08+totalEmissiveRadiance;
         float waterBlend=max(waterReflect,pool*.08);
         outgoingLight=mix(outgoingLight,waterLight,waterBlend);
         #include <opaque_fragment>`);
     };
-    material.customProgramCacheKey=()=> 'rain-surface-v4-'+kind+'-'+(bistroWall?'bistro-wall':'')+(bistroGround?'bistro-ground':'');
+    material.customProgramCacheKey=()=> ['rain-surface-v5',kind,bistroWall,bistroGround,brickSurface,plasterSurface].join('-');
     material.needsUpdate=true;
   }
 

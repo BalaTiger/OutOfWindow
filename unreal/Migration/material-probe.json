@@ -1,0 +1,52 @@
+{
+  "masters": {
+    "/InterchangeAssets/gltf/M_Default.M_Default": {
+      "usesMaterialAttributes": false,
+      "properties": {
+        "BASE_COLOR": {
+          "node": "MaterialExpressionMaterialFunctionCall",
+          "output": "BaseColor"
+        },
+        "ROUGHNESS": {
+          "node": "MaterialExpressionMaterialFunctionCall",
+          "output": "Roughness"
+        },
+        "EMISSIVE_COLOR": {
+          "node": "MaterialExpressionMaterialFunctionCall",
+          "output": "EmissiveColor"
+        },
+        "WORLD_POSITION_OFFSET": null,
+        "MATERIAL_ATTRIBUTES": null
+      },
+      "example": "/Game/Scenes/Alley/alley/Materials/Paris_Streetpivot.Paris_Streetpivot",
+      "chain": [
+        "/Game/Scenes/Alley/alley/Materials/Paris_Streetpivot.Paris_Streetpivot",
+        "/InterchangeAssets/gltf/MaterialInstances/MI_Default_Opaque.MI_Default_Opaque"
+      ]
+    }
+  },
+  "scenes": [
+    {
+      "scene": "alley",
+      "slots": 1735,
+      "waterActors": 0,
+      "windActors": 126,
+      "interiorSlots": 68,
+      "profiles": {
+        "generic//": 621,
+        "generic//lamp": 64,
+        "glass//": 14,
+        "glass//window": 82,
+        "metal//": 205,
+        "foliage//": 20,
+        "foliage/foliage/": 100,
+        "wood//": 216,
+        "fabric/awning/": 26,
+        "fabric//": 11,
+        "stone//": 329,
+        "ground//": 47
+      }
+    }
+  ],
+  "failures": []
+}

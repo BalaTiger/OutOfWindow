@@ -1,0 +1,8 @@
+{
+  "scene": "village",
+  "map": "/Game/Maps/Village",
+  "actors": 373,
+  "uniqueMeshes": 46,
+  "naniteMeshes": 41,
+  "traditionalLodMeshes": 5
+}

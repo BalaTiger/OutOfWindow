@@ -40,6 +40,12 @@ export function calibrateBistroMaterial(material) {
     material.metalness = 0;
     material.roughness = /frosted|dirty/i.test(name) ? .32 : .12;
     material.envMapIntensity = 1.05;
+    if (/^MASTER_(Focus_)?Glass(_|$)|^MASTER_Frosted_Glass/i.test(name)) {
+      // OBJ conversion left window glass emissive, and untextured dirty glass
+      // opaque white. Approximate a shaded interior under the dielectric reflection.
+      material.emissive.set(0);
+      if (/Dirty/i.test(name) && !material.map) material.color.set(0x344247);
+    }
     if (/MASTER_Frosted_Glass/.test(name)) material.color.set(0xa5b3ad);
   } else if (/metal|manhole/i.test(name)) {
     material.metalness = /paint/i.test(name) ? .05 : .75;

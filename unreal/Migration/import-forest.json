@@ -1,0 +1,8 @@
+{
+  "scene": "forest",
+  "map": "/Game/Maps/Forest",
+  "actors": 131,
+  "uniqueMeshes": 15,
+  "naniteMeshes": 14,
+  "traditionalLodMeshes": 1
+}

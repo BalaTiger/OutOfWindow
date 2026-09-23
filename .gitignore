@@ -3,3 +3,13 @@ dist/
 *.log
 .DS_Store
 .runtime/
+unreal/**/Binaries/
+unreal/**/Intermediate/
+unreal/**/Saved/
+unreal/**/DerivedDataCache/
+unreal/**/.vs/
+unreal/Migration/Exported/
+unreal/Migration/Generated/
+unreal/Migration/ue-api.txt
+unreal/Build/
+unreal/**/__pycache__/

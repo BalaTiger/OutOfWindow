@@ -1,0 +1,38 @@
+{
+  "cloud": {
+    "scalar": {
+      "Layout_CloudGlobalScale": 256.0,
+      "Cloud_GlobalCoverage": -0.20000000298023224,
+      "Cloud_GlobalDensity": 0.00800000037997961,
+      "StormClouds": 0.0,
+      "Storm_LightningTexScale": 6.0
+    },
+    "vector": [
+      "Cloud_AlbedoColor",
+      "Layout_WindControls",
+      "Noise2_Coordinates",
+      "Noise3_Coordinates",
+      "Noise1_Coordinates",
+      "Layout_CloudType",
+      "Storm_LightningColor",
+      "Storm_AlbedoColor",
+      "Layout_GlobalTexturePlacement",
+      "Layout_CloudPerTypeScale",
+      "Layout_CloudTypeMask",
+      "Multiscatter_Controls",
+      "Phase_Controls",
+      "Noise3_MultChannel",
+      "Noise_Bias",
+      "Noise_Strength",
+      "Storm_LightningAnim",
+      "Storm_LightningClouds",
+      "Storm_LightningMasks"
+    ],
+    "texture": [
+      "Layout_CloudGlobalPattern",
+      "Noise_Texture3D",
+      "Layout_CloudHeightProfile",
+      "Layout_GlobalCloudMask"
+    ]
+  }
+}

@@ -1,0 +1,194 @@
+{
+  "date": "2026-09-23T08:55:47.662Z",
+  "viewport": [
+    1280,
+    820
+  ],
+  "startup": {
+    "preloadStage": "ready",
+    "preloadProgress": "100",
+    "environment": "linear-sky-pmrem",
+    "materialProfiles": "asphalt,roadSurface,concrete,wood,rock,fieldSurface,forestGround,coastSand,architecturalGlass,paintedMetal,foliage",
+    "scenePackStyle": "contemporary-natural-realism",
+    "clouds": "dynamic-2d-optical-depth",
+    "alleyAssets": "ready",
+    "forestAssets": "ready",
+    "villageAssets": "ready",
+    "cityAssets": "ready",
+    "coastAssets": "ready",
+    "activeScene": "city",
+    "solarElevation": "11.05",
+    "environmentRevision": "4",
+    "alleyTextureBaseColor": "91",
+    "alleyTextureNormal": "93",
+    "alleyTextureRoughness": "0",
+    "alleyTextureAo": "0",
+    "alleyTexturePbr": "basecolor-normal-derived-roughness-ao-bump",
+    "alleyDerivedPbr": "roughness-ao-bump-28",
+    "alleyRainGround": "621",
+    "alleyAsset": "ORCA_Bistro_Exterior_Near_768_CC-BY-4.0",
+    "alleyHeroWindowFrames": "42",
+    "heroModels": "17",
+    "alleyLodClusters": "5",
+    "cityPeriphery": "polyhaven-cc0-pbr-midground",
+    "cityIndustrialPeriphery": "polyhaven-cc0-modular-factory-pbr",
+    "cityFarPeriphery": "helsinki-textured-city-mesh-cc-by-4-lod2",
+    "cityRainGround": "2977",
+    "cityAsset": "PolyHaven_Urban_Blocks",
+    "preloadAssets": "ready",
+    "preloadComplete": "true"
+  },
+  "cases": [
+    {
+      "name": "rain",
+      "scene": "alley",
+      "hour": 10.7833,
+      "weather": "rain",
+      "wetSeconds": 60,
+      "dataset": {
+        "preloadStage": "ready",
+        "preloadProgress": "100",
+        "environment": "linear-sky-pmrem",
+        "materialProfiles": "asphalt,roadSurface,concrete,wood,rock,fieldSurface,forestGround,coastSand,architecturalGlass,paintedMetal,foliage",
+        "scenePackStyle": "contemporary-natural-realism",
+        "clouds": "dynamic-2d-optical-depth",
+        "alleyAssets": "ready",
+        "forestAssets": "ready",
+        "villageAssets": "ready",
+        "cityAssets": "ready",
+        "coastAssets": "ready",
+        "activeScene": "alley",
+        "solarElevation": "60.54",
+        "environmentRevision": "5",
+        "alleyTextureBaseColor": "91",
+        "alleyTextureNormal": "93",
+        "alleyTextureRoughness": "0",
+        "alleyTextureAo": "0",
+        "alleyTexturePbr": "basecolor-normal-derived-roughness-ao-bump",
+        "alleyDerivedPbr": "roughness-ao-bump-28",
+        "alleyRainGround": "621",
+        "alleyAsset": "ORCA_Bistro_Exterior_Near_768_CC-BY-4.0",
+        "alleyHeroWindowFrames": "42",
+        "heroModels": "17",
+        "alleyLodClusters": "5",
+        "cityPeriphery": "polyhaven-cc0-pbr-midground",
+        "cityIndustrialPeriphery": "polyhaven-cc0-modular-factory-pbr",
+        "cityFarPeriphery": "helsinki-textured-city-mesh-cc-by-4-lod2",
+        "cityRainGround": "2977",
+        "cityAsset": "PolyHaven_Urban_Blocks",
+        "preloadAssets": "ready",
+        "preloadComplete": "true"
+      },
+      "camera": [
+        -20,
+        23,
+        -208
+      ],
+      "target": [
+        -46,
+        23,
+        -246
+      ],
+      "elevation": 60.535883008876965,
+      "frameMs": {
+        "median": 16.69999999999709,
+        "p95": 16.700000000004366
+      },
+      "render": {
+        "frame": 5002,
+        "calls": 171,
+        "triangles": 515473,
+        "points": 1200,
+        "lines": 1264
+      },
+      "memory": {
+        "geometries": 3667,
+        "textures": 427
+      },
+      "materials": {
+        "total": 256,
+        "normal": 195,
+        "roughness": 33,
+        "ao": 28
+      },
+      "shaderErrors": 0,
+      "image": "realism-foliage-rain.png"
+    },
+    {
+      "name": "ground",
+      "scene": "alley",
+      "hour": 10.7833,
+      "weather": "rain",
+      "wetSeconds": 60,
+      "camera": [
+        -44,
+        10,
+        -218
+      ],
+      "target": [
+        -50,
+        7,
+        -237
+      ],
+      "dataset": {
+        "preloadStage": "ready",
+        "preloadProgress": "100",
+        "environment": "linear-sky-pmrem",
+        "materialProfiles": "asphalt,roadSurface,concrete,wood,rock,fieldSurface,forestGround,coastSand,architecturalGlass,paintedMetal,foliage",
+        "scenePackStyle": "contemporary-natural-realism",
+        "clouds": "dynamic-2d-optical-depth",
+        "alleyAssets": "ready",
+        "forestAssets": "ready",
+        "villageAssets": "ready",
+        "cityAssets": "ready",
+        "coastAssets": "ready",
+        "activeScene": "alley",
+        "solarElevation": "60.54",
+        "environmentRevision": "6",
+        "alleyTextureBaseColor": "91",
+        "alleyTextureNormal": "93",
+        "alleyTextureRoughness": "0",
+        "alleyTextureAo": "0",
+        "alleyTexturePbr": "basecolor-normal-derived-roughness-ao-bump",
+        "alleyDerivedPbr": "roughness-ao-bump-28",
+        "alleyRainGround": "621",
+        "alleyAsset": "ORCA_Bistro_Exterior_Near_768_CC-BY-4.0",
+        "alleyHeroWindowFrames": "42",
+        "heroModels": "17",
+        "alleyLodClusters": "5",
+        "cityPeriphery": "polyhaven-cc0-pbr-midground",
+        "cityIndustrialPeriphery": "polyhaven-cc0-modular-factory-pbr",
+        "cityFarPeriphery": "helsinki-textured-city-mesh-cc-by-4-lod2",
+        "cityRainGround": "2977",
+        "cityAsset": "PolyHaven_Urban_Blocks",
+        "preloadAssets": "ready",
+        "preloadComplete": "true"
+      },
+      "elevation": 60.535883008876965,
+      "frameMs": {
+        "median": 16.69999999999709,
+        "p95": 16.700000000004366
+      },
+      "render": {
+        "frame": 7899,
+        "calls": 100,
+        "triangles": 413072,
+        "points": 1200,
+        "lines": 1264
+      },
+      "memory": {
+        "geometries": 3667,
+        "textures": 427
+      },
+      "materials": {
+        "total": 256,
+        "normal": 195,
+        "roughness": 33,
+        "ao": 28
+      },
+      "shaderErrors": 0,
+      "image": "realism-foliage-ground.png"
+    }
+  ],
+  "errors": []
+}

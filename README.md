@@ -1,3 +1,10 @@
+**2026-09-23：新增 UE5.7 原生工程。** 新版采用 Lumen 动态 GI/反射、Nanite、VSM 和 TSR，五个场景已导入独立关卡。启动、构建、D 盘缓存、可复用架构及当前限制见 [UE5 工程说明](unreal/README.md)，验证状态见 [迁移验收清单](unreal/Migration/acceptance.md)。原 Electron/Three.js 内容继续保留在下方，作为旧版运行说明与迁移对照。
+
+```powershell
+.\unreal\Run-Unreal.ps1 -Mode Build
+.\unreal\Run-Unreal.ps1 -Mode Game -Scene Alley
+```
+
 # Out of Window — 虚拟窗景 Demo
 
 一个由本地时间、太阳位置与实时天气驱动的 Electron 桌面窗景原型。Demo 使用 Three.js 实时 3D 渲染；“都市”由 Poly Haven PBR 街区与 Helsinki 远景组成，“后巷”使用 ORCA Bistro 街景，Poly Haven 扫描地形负责自然场景细节。
@@ -7,6 +14,8 @@
 新加坡上午时段、墙面法线及都市/后巷风雨响应的修正和录像见 [天气渲染记录](WEATHER_RENDERING_FIXES.md)。
 
 后续按生成的 2D 写实参考改进了积水、湿布、可见窗蓬动画、湿叶和水花分布，画面对照与录像见 [后巷写实参考与实际改进](docs/alley-photoreal/COMPARISON.md)。
+
+2026-09-23 修正后巷右侧百叶窗被错误刷成墙体、远处白色玻璃及积水反射问题，浏览器对照和验证见 [后巷窗户与材质修复](docs/alley-photoreal/REALISM_REPAIR.md)。
 
 启动时会显示预加载进度：五个场景的 GLTF、共享材质和雨景着色器在首屏阶段完成解码与预热，切换场景不再启动新的资源请求。
 

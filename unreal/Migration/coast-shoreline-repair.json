@@ -1,0 +1,30 @@
+{
+  "sourceActor": "OOW_00000_Mesh",
+  "vertices": 14641,
+  "triangles": 28800,
+  "unchangedInteriorVertices": 10914,
+  "changedHeights": 2253,
+  "maxBorderWorldHeightM": -1.4000000014901162,
+  "uvSha256": "05fabf1c49d2b4e7284738ec4992930f74870ee5a6c3c530a4e7e2245d13008c",
+  "generatedSha256": "2072d44e3412349a33f092cb010c46bcd50d1fb21c26746f1833fa5618b72a74",
+  "originalMesh": "/Game/Scenes/Coast/coast/StaticMeshes/coast_mesh_0.coast_mesh_0",
+  "repairedMesh": "/Game/Scenes/Coast/Repairs/OOW_CoastSand_Shoreline_v1/StaticMeshes/OOW_CoastSand_Shoreline_v1.OOW_CoastSand_Shoreline_v1",
+  "preservedMaterial": "/Game/Materials/OOW/Instances/MI_generic___v2_a9740442bf.MI_generic___v2_a9740442bf",
+  "actorTransform": {
+    "location": [
+      -5500.0,
+      -4500.0,
+      -130.0
+    ],
+    "rotation": [
+      0.0,
+      0.0,
+      -90.00000000000001
+    ],
+    "scale": [
+      1.0,
+      1.0,
+      1.0
+    ]
+  }
+}

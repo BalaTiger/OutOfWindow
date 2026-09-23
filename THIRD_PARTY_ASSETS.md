@@ -78,6 +78,7 @@
 - Local runtime path: `public/assets/orca/bistro/`
 - Usage: independent 后巷 (alley) preset, including continuous Parisian façades, storefronts, balconies, roofs, street furniture, paving and vegetation; the original street camera is preserved
 - 2026-09-09 runtime changes: masonry normals rebuilt with a 35-degree crease while preserving texture UVs; awning fabric and foliage receive constrained wind/rain vertex deformation; wetness, puddle reflections and ground impacts are generated at runtime. Original asset files remain unchanged.
+- 2026-09-23: regenerated the near GLB with the deduplicated `MASTER_Details_Dark` correctly mapped to the identical `MASTER_Building_Details` atlas, restoring shutters and trim. Runtime calibration removes unintended architectural-glass emission and replaces the untextured opaque-white dirty-glass fallback with a shaded interior approximation; source textures and original geometry are preserved.
 - Modification: OBJ-to-glTF conversion, PBRT material-name reconciliation, alpha-material recovery, 768 px runtime textures, fixed-view near-geometry restoration for 26 architectural meshes inside the 70 m view cone, procedural hero window frames generated around visible glass, derived roughness/AO/height channels for masonry and pavement, optional Poly Haven CC0 plaster/cobblestone PBR replacement prepared by `scripts/download-real-bistro-pbr.mjs`, reduced geometry for the remaining distant meshes, no micro-shadow for railings and antennas, scene scaling and fixed-window camera composition. The 2026-09-08 runtime revision preserves ironwork alpha cutouts, calibrates glass/metal roughness, adds pavement rain response and emits light from existing lamp materials. The derived grayscale channels are conservative estimates from the licensed base-color maps; the optional real pack supplies diffuse, OpenGL normal, ARM and displacement channels when installed.
 
 ## NVIDIA ORCA — Emerald Square (research candidate, not bundled)
@@ -141,3 +142,12 @@ These assets are bundled locally. The application does not call the Poly Haven A
 - The pictured architecture derives from the ORCA Bistro asset credited above; the project frame/UI is retained in the reference.
 - Purpose: compare wet material appearance, water and lighting. This image is not loaded by the application as a backdrop or texture.
 - Generation mode and full prompt: `docs/alley-photoreal/reference-prompt.md`.
+
+## Project-generated room images for UE night windows
+
+- Created on 2026-09-23 with the built-in `image_gen` tool from text prompts; no third-party interior photograph or image pack was added for this change.
+- Files: `unreal/Art/WindowInteriors/room-01.png` through `room-06.png`, each originally 1024×1536 PNG.
+- Purpose: six living-room, kitchen, study, bedroom and dining-room variants for the fixed-view nighttime window material.
+- Provenance and full prompts: [asset notes](unreal/Art/WindowInteriors/README.md) and [prompts.json](unreal/Art/WindowInteriors/prompts.json), including original generated output paths.
+- These are AI-generated 2D images, not photographs, photogrammetry scans or measured PBR materials. They add no real interior geometry or view-dependent parallax. Their use does not change the attribution of the existing Bistro geometry.
+- This entry records source and intended use; current integration and render validation are recorded separately in [night-window-repair.md](unreal/Migration/night-window-repair.md).

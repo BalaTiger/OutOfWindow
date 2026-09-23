@@ -1,0 +1,18 @@
+{
+  "foamActor": "OOW_00002_Mesh",
+  "foamMaterial": "/Game/Materials/OOW/M_ShoreFoam_v1",
+  "oceanActor": "OOW_00001_Water",
+  "oceanScaleFactor": 1.0,
+  "oceanWidthCm": 200000.0,
+  "oceanDepthCm": 211764.705882353,
+  "centerXCm": 3200.0,
+  "pinnedNearCm": 4200.000000000015,
+  "needleMeshes": [
+    "/Game/Scenes/Forest/forest/StaticMeshes/forest_mesh_7.forest_mesh_7",
+    "/Game/Scenes/Forest/forest/StaticMeshes/forest_mesh_3.forest_mesh_3",
+    "/Game/Scenes/Forest/forest/StaticMeshes/forest_mesh_5.forest_mesh_5",
+    "/Game/Scenes/Village/village/StaticMeshes/village_mesh_7.village_mesh_7",
+    "/Game/Scenes/Village/village/StaticMeshes/village_mesh_5.village_mesh_5",
+    "/Game/Scenes/Village/village/StaticMeshes/village_mesh_3.village_mesh_3"
+  ]
+}

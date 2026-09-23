@@ -1,0 +1,1262 @@
+{
+  "map": "/Game/Maps/Alley",
+  "readOnly": true,
+  "actors": [
+    {
+      "actor": "OOW_00092_Paris_Building_01_paris_building_01_bottom_42",
+      "mesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWInterior_OOW_00092_Paris_Building_01_paris_building_01_bottom_42.OOWInterior_OOW_00092_Paris_Building_01_paris_building_01_bottom_42",
+      "uvChannels": 3,
+      "fullPrecisionUV": true,
+      "generateLightmapUV": false,
+      "originalMesh": "/Game/Scenes/Alley/alley/StaticMeshes/alley_mesh_86.alley_mesh_86",
+      "geometryHash": "8588fda99cfb39fc4eb8c24f9e7b010f4746d6b4bcc98334f66a94dc33fb8d76",
+      "materials": [
+        "/Game/Materials/OOW/Instances/MI_glass__window_v5_bc00ed9809.MI_glass__window_v5_bc00ed9809"
+      ]
+    },
+    {
+      "actor": "OOW_00093_Paris_Building_01_paris_building_01_bottom_43",
+      "mesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWInterior_OOW_00093_Paris_Building_01_paris_building_01_bottom_43.OOWInterior_OOW_00093_Paris_Building_01_paris_building_01_bottom_43",
+      "uvChannels": 3,
+      "fullPrecisionUV": true,
+      "generateLightmapUV": false,
+      "originalMesh": "/Game/Scenes/Alley/alley/StaticMeshes/alley_mesh_87.alley_mesh_87",
+      "geometryHash": "8588fda99cfb39fc4eb8c24f9e7b010f4746d6b4bcc98334f66a94dc33fb8d76",
+      "materials": [
+        "/Game/Materials/OOW/Instances/MI_glass__window_v5_bc00ed9809.MI_glass__window_v5_bc00ed9809"
+      ]
+    },
+    {
+      "actor": "OOW_00107_Paris_Building_01_paris_building_01_bottom_63",
+      "mesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWInterior_OOW_00107_Paris_Building_01_paris_building_01_bottom_63.OOWInterior_OOW_00107_Paris_Building_01_paris_building_01_bottom_63",
+      "uvChannels": 3,
+      "fullPrecisionUV": true,
+      "generateLightmapUV": false,
+      "originalMesh": "/Game/Scenes/Alley/alley/StaticMeshes/alley_mesh_101.alley_mesh_101",
+      "geometryHash": "8588fda99cfb39fc4eb8c24f9e7b010f4746d6b4bcc98334f66a94dc33fb8d76",
+      "materials": [
+        "/Game/Materials/OOW/Instances/MI_glass__window_v5_bc00ed9809.MI_glass__window_v5_bc00ed9809"
+      ]
+    },
+    {
+      "actor": "OOW_00108_Paris_Building_01_paris_building_01_bottom_64",
+      "mesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWInterior_OOW_00108_Paris_Building_01_paris_building_01_bottom_64.OOWInterior_OOW_00108_Paris_Building_01_paris_building_01_bottom_64",
+      "uvChannels": 3,
+      "fullPrecisionUV": true,
+      "generateLightmapUV": false,
+      "originalMesh": "/Game/Scenes/Alley/alley/StaticMeshes/alley_mesh_102.alley_mesh_102",
+      "geometryHash": "8588fda99cfb39fc4eb8c24f9e7b010f4746d6b4bcc98334f66a94dc33fb8d76",
+      "materials": [
+        "/Game/Materials/OOW/Instances/MI_glass__window_v5_bc00ed9809.MI_glass__window_v5_bc00ed9809"
+      ]
+    },
+    {
+      "actor": "OOW_00109_Paris_Building_01_paris_building_01_bottom_65",
+      "mesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWInterior_OOW_00109_Paris_Building_01_paris_building_01_bottom_65.OOWInterior_OOW_00109_Paris_Building_01_paris_building_01_bottom_65",
+      "uvChannels": 3,
+      "fullPrecisionUV": true,
+      "generateLightmapUV": false,
+      "originalMesh": "/Game/Scenes/Alley/alley/StaticMeshes/alley_mesh_102.alley_mesh_102",
+      "geometryHash": "8588fda99cfb39fc4eb8c24f9e7b010f4746d6b4bcc98334f66a94dc33fb8d76",
+      "materials": [
+        "/Game/Materials/OOW/Instances/MI_glass__window_v5_bc00ed9809.MI_glass__window_v5_bc00ed9809"
+      ]
+    },
+    {
+      "actor": "OOW_00110_Paris_Building_01_paris_building_01_bottom_66",
+      "mesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWInterior_OOW_00110_Paris_Building_01_paris_building_01_bottom_66.OOWInterior_OOW_00110_Paris_Building_01_paris_building_01_bottom_66",
+      "uvChannels": 3,
+      "fullPrecisionUV": true,
+      "generateLightmapUV": false,
+      "originalMesh": "/Game/Scenes/Alley/alley/StaticMeshes/alley_mesh_103.alley_mesh_103",
+      "geometryHash": "8588fda99cfb39fc4eb8c24f9e7b010f4746d6b4bcc98334f66a94dc33fb8d76",
+      "materials": [
+        "/Game/Materials/OOW/Instances/MI_glass__window_v5_bc00ed9809.MI_glass__window_v5_bc00ed9809"
+      ]
+    },
+    {
+      "actor": "OOW_00165_Paris_Building_01_paris_building_01_bottom_123",
+      "mesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWInterior_OOW_00165_Paris_Building_01_paris_building_01_bottom_123.OOWInterior_OOW_00165_Paris_Building_01_paris_building_01_bottom_123",
+      "uvChannels": 3,
+      "fullPrecisionUV": true,
+      "generateLightmapUV": false,
+      "originalMesh": "/Game/Scenes/Alley/alley/StaticMeshes/alley_mesh_156.alley_mesh_156",
+      "geometryHash": "8588fda99cfb39fc4eb8c24f9e7b010f4746d6b4bcc98334f66a94dc33fb8d76",
+      "materials": [
+        "/Game/Materials/OOW/Instances/MI_glass__window_v5_bc00ed9809.MI_glass__window_v5_bc00ed9809"
+      ]
+    },
+    {
+      "actor": "OOW_00191_Paris_Building_01_paris_building_01_bottom_147",
+      "mesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWInterior_OOW_00191_Paris_Building_01_paris_building_01_bottom_147.OOWInterior_OOW_00191_Paris_Building_01_paris_building_01_bottom_147",
+      "uvChannels": 3,
+      "fullPrecisionUV": true,
+      "generateLightmapUV": false,
+      "originalMesh": "/Game/Scenes/Alley/alley/StaticMeshes/alley_mesh_182.alley_mesh_182",
+      "geometryHash": "8588fda99cfb39fc4eb8c24f9e7b010f4746d6b4bcc98334f66a94dc33fb8d76",
+      "materials": [
+        "/Game/Materials/OOW/Instances/MI_glass__window_v5_bc00ed9809.MI_glass__window_v5_bc00ed9809"
+      ]
+    },
+    {
+      "actor": "OOW_00192_Paris_Building_01_paris_building_01_bottom_148",
+      "mesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWInterior_OOW_00192_Paris_Building_01_paris_building_01_bottom_148.OOWInterior_OOW_00192_Paris_Building_01_paris_building_01_bottom_148",
+      "uvChannels": 3,
+      "fullPrecisionUV": true,
+      "generateLightmapUV": false,
+      "originalMesh": "/Game/Scenes/Alley/alley/StaticMeshes/alley_mesh_86.alley_mesh_86",
+      "geometryHash": "8588fda99cfb39fc4eb8c24f9e7b010f4746d6b4bcc98334f66a94dc33fb8d76",
+      "materials": [
+        "/Game/Materials/OOW/Instances/MI_glass__window_v5_bc00ed9809.MI_glass__window_v5_bc00ed9809"
+      ]
+    },
+    {
+      "actor": "OOW_00193_Paris_Building_01_paris_building_01_bottom_149",
+      "mesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWInterior_OOW_00193_Paris_Building_01_paris_building_01_bottom_149.OOWInterior_OOW_00193_Paris_Building_01_paris_building_01_bottom_149",
+      "uvChannels": 3,
+      "fullPrecisionUV": true,
+      "generateLightmapUV": false,
+      "originalMesh": "/Game/Scenes/Alley/alley/StaticMeshes/alley_mesh_86.alley_mesh_86",
+      "geometryHash": "8588fda99cfb39fc4eb8c24f9e7b010f4746d6b4bcc98334f66a94dc33fb8d76",
+      "materials": [
+        "/Game/Materials/OOW/Instances/MI_glass__window_v5_bc00ed9809.MI_glass__window_v5_bc00ed9809"
+      ]
+    },
+    {
+      "actor": "OOW_00194_Paris_Building_01_paris_building_01_bottom_150",
+      "mesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWInterior_OOW_00194_Paris_Building_01_paris_building_01_bottom_150.OOWInterior_OOW_00194_Paris_Building_01_paris_building_01_bottom_150",
+      "uvChannels": 3,
+      "fullPrecisionUV": true,
+      "generateLightmapUV": false,
+      "originalMesh": "/Game/Scenes/Alley/alley/StaticMeshes/alley_mesh_103.alley_mesh_103",
+      "geometryHash": "8588fda99cfb39fc4eb8c24f9e7b010f4746d6b4bcc98334f66a94dc33fb8d76",
+      "materials": [
+        "/Game/Materials/OOW/Instances/MI_glass__window_v5_bc00ed9809.MI_glass__window_v5_bc00ed9809"
+      ]
+    },
+    {
+      "actor": "OOW_00209_Paris_MainBalcony_01_1_4",
+      "mesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWInterior_OOW_00209_Paris_MainBalcony_01_1_4.OOWInterior_OOW_00209_Paris_MainBalcony_01_1_4",
+      "uvChannels": 3,
+      "fullPrecisionUV": true,
+      "generateLightmapUV": false,
+      "originalMesh": "/Game/Scenes/Alley/alley/StaticMeshes/alley_mesh_196.alley_mesh_196",
+      "geometryHash": "8588fda99cfb39fc4eb8c24f9e7b010f4746d6b4bcc98334f66a94dc33fb8d76",
+      "materials": [
+        "/Game/Materials/OOW/Instances/MI_glass__window_v5_cc27e73129.MI_glass__window_v5_cc27e73129"
+      ]
+    },
+    {
+      "actor": "OOW_00215_Paris_Building_01_paris_building_01_6",
+      "mesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWInterior_OOW_00215_Paris_Building_01_paris_building_01_6.OOWInterior_OOW_00215_Paris_Building_01_paris_building_01_6",
+      "uvChannels": 3,
+      "fullPrecisionUV": true,
+      "generateLightmapUV": false,
+      "originalMesh": "/Game/Scenes/Alley/alley/StaticMeshes/alley_mesh_202.alley_mesh_202",
+      "geometryHash": "8588fda99cfb39fc4eb8c24f9e7b010f4746d6b4bcc98334f66a94dc33fb8d76",
+      "materials": [
+        "/Game/Materials/OOW/Instances/MI_glass__window_v5_cc27e73129.MI_glass__window_v5_cc27e73129"
+      ]
+    },
+    {
+      "actor": "OOW_00225_Paris_Building_01_paris_building_01_15_1_1",
+      "mesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWInterior_OOW_00225_Paris_Building_01_paris_building_01_15_1_1.OOWInterior_OOW_00225_Paris_Building_01_paris_building_01_15_1_1",
+      "uvChannels": 3,
+      "fullPrecisionUV": true,
+      "generateLightmapUV": false,
+      "originalMesh": "/Game/Scenes/Alley/alley/StaticMeshes/alley_mesh_212.alley_mesh_212",
+      "geometryHash": "8588fda99cfb39fc4eb8c24f9e7b010f4746d6b4bcc98334f66a94dc33fb8d76",
+      "materials": [
+        "/Game/Materials/OOW/Instances/MI_glass__window_v5_cc27e73129.MI_glass__window_v5_cc27e73129"
+      ]
+    },
+    {
+      "actor": "OOW_00228_Paris_Building_01_paris_building_01_17_1_1",
+      "mesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWInterior_OOW_00228_Paris_Building_01_paris_building_01_17_1_1.OOWInterior_OOW_00228_Paris_Building_01_paris_building_01_17_1_1",
+      "uvChannels": 3,
+      "fullPrecisionUV": true,
+      "generateLightmapUV": false,
+      "originalMesh": "/Game/Scenes/Alley/alley/StaticMeshes/alley_mesh_215.alley_mesh_215",
+      "geometryHash": "8588fda99cfb39fc4eb8c24f9e7b010f4746d6b4bcc98334f66a94dc33fb8d76",
+      "materials": [
+        "/Game/Materials/OOW/Instances/MI_glass__window_v5_cc27e73129.MI_glass__window_v5_cc27e73129"
+      ]
+    },
+    {
+      "actor": "OOW_00230_Paris_Building_01_paris_building_01_18_1_1",
+      "mesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWInterior_OOW_00230_Paris_Building_01_paris_building_01_18_1_1.OOWInterior_OOW_00230_Paris_Building_01_paris_building_01_18_1_1",
+      "uvChannels": 3,
+      "fullPrecisionUV": true,
+      "generateLightmapUV": false,
+      "originalMesh": "/Game/Scenes/Alley/alley/StaticMeshes/alley_mesh_217.alley_mesh_217",
+      "geometryHash": "8588fda99cfb39fc4eb8c24f9e7b010f4746d6b4bcc98334f66a94dc33fb8d76",
+      "materials": [
+        "/Game/Materials/OOW/Instances/MI_glass__window_v5_cc27e73129.MI_glass__window_v5_cc27e73129"
+      ]
+    },
+    {
+      "actor": "OOW_00235_Paris_Building_01_paris_building_01_22_1_1",
+      "mesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWInterior_OOW_00235_Paris_Building_01_paris_building_01_22_1_1.OOWInterior_OOW_00235_Paris_Building_01_paris_building_01_22_1_1",
+      "uvChannels": 3,
+      "fullPrecisionUV": true,
+      "generateLightmapUV": false,
+      "originalMesh": "/Game/Scenes/Alley/alley/StaticMeshes/alley_mesh_222.alley_mesh_222",
+      "geometryHash": "8588fda99cfb39fc4eb8c24f9e7b010f4746d6b4bcc98334f66a94dc33fb8d76",
+      "materials": [
+        "/Game/Materials/OOW/Instances/MI_glass__window_v5_cc27e73129.MI_glass__window_v5_cc27e73129"
+      ]
+    },
+    {
+      "actor": "OOW_00238_Paris_Building_01_paris_building_01_24_1_1",
+      "mesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWInterior_OOW_00238_Paris_Building_01_paris_building_01_24_1_1.OOWInterior_OOW_00238_Paris_Building_01_paris_building_01_24_1_1",
+      "uvChannels": 3,
+      "fullPrecisionUV": true,
+      "generateLightmapUV": false,
+      "originalMesh": "/Game/Scenes/Alley/alley/StaticMeshes/alley_mesh_225.alley_mesh_225",
+      "geometryHash": "8588fda99cfb39fc4eb8c24f9e7b010f4746d6b4bcc98334f66a94dc33fb8d76",
+      "materials": [
+        "/Game/Materials/OOW/Instances/MI_glass__window_v5_cc27e73129.MI_glass__window_v5_cc27e73129"
+      ]
+    },
+    {
+      "actor": "OOW_00240_Paris_Building_01_paris_building_01_25_1_1",
+      "mesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWInterior_OOW_00240_Paris_Building_01_paris_building_01_25_1_1.OOWInterior_OOW_00240_Paris_Building_01_paris_building_01_25_1_1",
+      "uvChannels": 3,
+      "fullPrecisionUV": true,
+      "generateLightmapUV": false,
+      "originalMesh": "/Game/Scenes/Alley/alley/StaticMeshes/alley_mesh_227.alley_mesh_227",
+      "geometryHash": "8588fda99cfb39fc4eb8c24f9e7b010f4746d6b4bcc98334f66a94dc33fb8d76",
+      "materials": [
+        "/Game/Materials/OOW/Instances/MI_glass__window_v5_cc27e73129.MI_glass__window_v5_cc27e73129"
+      ]
+    },
+    {
+      "actor": "OOW_00247_Paris_Building_01_paris_building_01_31_1_1",
+      "mesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWInterior_OOW_00247_Paris_Building_01_paris_building_01_31_1_1.OOWInterior_OOW_00247_Paris_Building_01_paris_building_01_31_1_1",
+      "uvChannels": 3,
+      "fullPrecisionUV": true,
+      "generateLightmapUV": false,
+      "originalMesh": "/Game/Scenes/Alley/alley/StaticMeshes/alley_mesh_234.alley_mesh_234",
+      "geometryHash": "8588fda99cfb39fc4eb8c24f9e7b010f4746d6b4bcc98334f66a94dc33fb8d76",
+      "materials": [
+        "/Game/Materials/OOW/Instances/MI_glass__window_v5_cc27e73129.MI_glass__window_v5_cc27e73129"
+      ]
+    },
+    {
+      "actor": "OOW_00250_Paris_Building_01_paris_building_01_33_1_1",
+      "mesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWInterior_OOW_00250_Paris_Building_01_paris_building_01_33_1_1.OOWInterior_OOW_00250_Paris_Building_01_paris_building_01_33_1_1",
+      "uvChannels": 3,
+      "fullPrecisionUV": true,
+      "generateLightmapUV": false,
+      "originalMesh": "/Game/Scenes/Alley/alley/StaticMeshes/alley_mesh_237.alley_mesh_237",
+      "geometryHash": "8588fda99cfb39fc4eb8c24f9e7b010f4746d6b4bcc98334f66a94dc33fb8d76",
+      "materials": [
+        "/Game/Materials/OOW/Instances/MI_glass__window_v5_cc27e73129.MI_glass__window_v5_cc27e73129"
+      ]
+    },
+    {
+      "actor": "OOW_00252_Paris_Building_01_paris_building_01_34_1_1",
+      "mesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWInterior_OOW_00252_Paris_Building_01_paris_building_01_34_1_1.OOWInterior_OOW_00252_Paris_Building_01_paris_building_01_34_1_1",
+      "uvChannels": 3,
+      "fullPrecisionUV": true,
+      "generateLightmapUV": false,
+      "originalMesh": "/Game/Scenes/Alley/alley/StaticMeshes/alley_mesh_239.alley_mesh_239",
+      "geometryHash": "8588fda99cfb39fc4eb8c24f9e7b010f4746d6b4bcc98334f66a94dc33fb8d76",
+      "materials": [
+        "/Game/Materials/OOW/Instances/MI_glass__window_v5_cc27e73129.MI_glass__window_v5_cc27e73129"
+      ]
+    },
+    {
+      "actor": "OOW_00254_Paris_Building_01_paris_building_01_35_1_1",
+      "mesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWInterior_OOW_00254_Paris_Building_01_paris_building_01_35_1_1.OOWInterior_OOW_00254_Paris_Building_01_paris_building_01_35_1_1",
+      "uvChannels": 3,
+      "fullPrecisionUV": true,
+      "generateLightmapUV": false,
+      "originalMesh": "/Game/Scenes/Alley/alley/StaticMeshes/alley_mesh_234.alley_mesh_234",
+      "geometryHash": "8588fda99cfb39fc4eb8c24f9e7b010f4746d6b4bcc98334f66a94dc33fb8d76",
+      "materials": [
+        "/Game/Materials/OOW/Instances/MI_glass__window_v5_cc27e73129.MI_glass__window_v5_cc27e73129"
+      ]
+    },
+    {
+      "actor": "OOW_00256_Paris_Building_01_paris_building_01_36_1_1",
+      "mesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWInterior_OOW_00256_Paris_Building_01_paris_building_01_36_1_1.OOWInterior_OOW_00256_Paris_Building_01_paris_building_01_36_1_1",
+      "uvChannels": 3,
+      "fullPrecisionUV": true,
+      "generateLightmapUV": false,
+      "originalMesh": "/Game/Scenes/Alley/alley/StaticMeshes/alley_mesh_239.alley_mesh_239",
+      "geometryHash": "8588fda99cfb39fc4eb8c24f9e7b010f4746d6b4bcc98334f66a94dc33fb8d76",
+      "materials": [
+        "/Game/Materials/OOW/Instances/MI_glass__window_v5_cc27e73129.MI_glass__window_v5_cc27e73129"
+      ]
+    },
+    {
+      "actor": "OOW_00259_Paris_Building_01_paris_building_01_38_1_1",
+      "mesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWInterior_OOW_00259_Paris_Building_01_paris_building_01_38_1_1.OOWInterior_OOW_00259_Paris_Building_01_paris_building_01_38_1_1",
+      "uvChannels": 3,
+      "fullPrecisionUV": true,
+      "generateLightmapUV": false,
+      "originalMesh": "/Game/Scenes/Alley/alley/StaticMeshes/alley_mesh_244.alley_mesh_244",
+      "geometryHash": "8588fda99cfb39fc4eb8c24f9e7b010f4746d6b4bcc98334f66a94dc33fb8d76",
+      "materials": [
+        "/Game/Materials/OOW/Instances/MI_glass__window_v5_cc27e73129.MI_glass__window_v5_cc27e73129"
+      ]
+    },
+    {
+      "actor": "OOW_00262_Paris_Building_01_paris_building_01_40_1_1",
+      "mesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWInterior_OOW_00262_Paris_Building_01_paris_building_01_40_1_1.OOWInterior_OOW_00262_Paris_Building_01_paris_building_01_40_1_1",
+      "uvChannels": 3,
+      "fullPrecisionUV": true,
+      "generateLightmapUV": false,
+      "originalMesh": "/Game/Scenes/Alley/alley/StaticMeshes/alley_mesh_247.alley_mesh_247",
+      "geometryHash": "8588fda99cfb39fc4eb8c24f9e7b010f4746d6b4bcc98334f66a94dc33fb8d76",
+      "materials": [
+        "/Game/Materials/OOW/Instances/MI_glass__window_v5_cc27e73129.MI_glass__window_v5_cc27e73129"
+      ]
+    },
+    {
+      "actor": "OOW_00264_Paris_Building_01_paris_building_01_41_1_1",
+      "mesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWInterior_OOW_00264_Paris_Building_01_paris_building_01_41_1_1.OOWInterior_OOW_00264_Paris_Building_01_paris_building_01_41_1_1",
+      "uvChannels": 3,
+      "fullPrecisionUV": true,
+      "generateLightmapUV": false,
+      "originalMesh": "/Game/Scenes/Alley/alley/StaticMeshes/alley_mesh_249.alley_mesh_249",
+      "geometryHash": "8588fda99cfb39fc4eb8c24f9e7b010f4746d6b4bcc98334f66a94dc33fb8d76",
+      "materials": [
+        "/Game/Materials/OOW/Instances/MI_glass__window_v5_cc27e73129.MI_glass__window_v5_cc27e73129"
+      ]
+    },
+    {
+      "actor": "OOW_00268_Paris_Building_01_paris_building_01_44_1_1",
+      "mesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWInterior_OOW_00268_Paris_Building_01_paris_building_01_44_1_1.OOWInterior_OOW_00268_Paris_Building_01_paris_building_01_44_1_1",
+      "uvChannels": 3,
+      "fullPrecisionUV": true,
+      "generateLightmapUV": false,
+      "originalMesh": "/Game/Scenes/Alley/alley/StaticMeshes/alley_mesh_253.alley_mesh_253",
+      "geometryHash": "8588fda99cfb39fc4eb8c24f9e7b010f4746d6b4bcc98334f66a94dc33fb8d76",
+      "materials": [
+        "/Game/Materials/OOW/Instances/MI_glass__window_v5_cc27e73129.MI_glass__window_v5_cc27e73129"
+      ]
+    },
+    {
+      "actor": "OOW_00273_Paris_Building_01_paris_building_01_48_1_1",
+      "mesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWInterior_OOW_00273_Paris_Building_01_paris_building_01_48_1_1.OOWInterior_OOW_00273_Paris_Building_01_paris_building_01_48_1_1",
+      "uvChannels": 3,
+      "fullPrecisionUV": true,
+      "generateLightmapUV": false,
+      "originalMesh": "/Game/Scenes/Alley/alley/StaticMeshes/alley_mesh_247.alley_mesh_247",
+      "geometryHash": "8588fda99cfb39fc4eb8c24f9e7b010f4746d6b4bcc98334f66a94dc33fb8d76",
+      "materials": [
+        "/Game/Materials/OOW/Instances/MI_glass__window_v5_cc27e73129.MI_glass__window_v5_cc27e73129"
+      ]
+    },
+    {
+      "actor": "OOW_00275_Paris_Building_01_paris_building_01_50_1",
+      "mesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWInterior_OOW_00275_Paris_Building_01_paris_building_01_50_1.OOWInterior_OOW_00275_Paris_Building_01_paris_building_01_50_1",
+      "uvChannels": 3,
+      "fullPrecisionUV": true,
+      "generateLightmapUV": false,
+      "originalMesh": "/Game/Scenes/Alley/alley/StaticMeshes/alley_mesh_259.alley_mesh_259",
+      "geometryHash": "8588fda99cfb39fc4eb8c24f9e7b010f4746d6b4bcc98334f66a94dc33fb8d76",
+      "materials": [
+        "/Game/Materials/OOW/Instances/MI_glass__window_v5_cc27e73129.MI_glass__window_v5_cc27e73129"
+      ]
+    },
+    {
+      "actor": "OOW_00341_Paris_Building_01_paris_building_01_202",
+      "mesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWInterior_OOW_00341_Paris_Building_01_paris_building_01_202.OOWInterior_OOW_00341_Paris_Building_01_paris_building_01_202",
+      "uvChannels": 3,
+      "fullPrecisionUV": true,
+      "generateLightmapUV": false,
+      "originalMesh": "/Game/Scenes/Alley/alley/StaticMeshes/alley_mesh_318.alley_mesh_318",
+      "geometryHash": "8588fda99cfb39fc4eb8c24f9e7b010f4746d6b4bcc98334f66a94dc33fb8d76",
+      "materials": [
+        "/Game/Materials/OOW/Instances/MI_glass__window_v5_cc27e73129.MI_glass__window_v5_cc27e73129"
+      ]
+    },
+    {
+      "actor": "OOW_00346_Paris_Building_01_paris_building_01_207",
+      "mesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWInterior_OOW_00346_Paris_Building_01_paris_building_01_207.OOWInterior_OOW_00346_Paris_Building_01_paris_building_01_207",
+      "uvChannels": 3,
+      "fullPrecisionUV": true,
+      "generateLightmapUV": false,
+      "originalMesh": "/Game/Scenes/Alley/alley/StaticMeshes/alley_mesh_323.alley_mesh_323",
+      "geometryHash": "8588fda99cfb39fc4eb8c24f9e7b010f4746d6b4bcc98334f66a94dc33fb8d76",
+      "materials": [
+        "/Game/Materials/OOW/Instances/MI_glass__window_v5_cc27e73129.MI_glass__window_v5_cc27e73129"
+      ]
+    },
+    {
+      "actor": "OOW_00352_Paris_Building_01_paris_building_01_213",
+      "mesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWInterior_OOW_00352_Paris_Building_01_paris_building_01_213.OOWInterior_OOW_00352_Paris_Building_01_paris_building_01_213",
+      "uvChannels": 3,
+      "fullPrecisionUV": true,
+      "generateLightmapUV": false,
+      "originalMesh": "/Game/Scenes/Alley/alley/StaticMeshes/alley_mesh_329.alley_mesh_329",
+      "geometryHash": "8588fda99cfb39fc4eb8c24f9e7b010f4746d6b4bcc98334f66a94dc33fb8d76",
+      "materials": [
+        "/Game/Materials/OOW/Instances/MI_glass__window_v5_cc27e73129.MI_glass__window_v5_cc27e73129"
+      ]
+    },
+    {
+      "actor": "OOW_00371_Paris_Building_01_paris_building_01_229_1_2",
+      "mesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWInterior_OOW_00371_Paris_Building_01_paris_building_01_229_1_2.OOWInterior_OOW_00371_Paris_Building_01_paris_building_01_229_1_2",
+      "uvChannels": 3,
+      "fullPrecisionUV": true,
+      "generateLightmapUV": false,
+      "originalMesh": "/Game/Scenes/Alley/alley/StaticMeshes/alley_mesh_348.alley_mesh_348",
+      "geometryHash": "8588fda99cfb39fc4eb8c24f9e7b010f4746d6b4bcc98334f66a94dc33fb8d76",
+      "materials": [
+        "/Game/Materials/OOW/Instances/MI_glass__window_v5_cc27e73129.MI_glass__window_v5_cc27e73129"
+      ]
+    },
+    {
+      "actor": "OOW_00398_Paris_Building_01_paris_building_01_255_1_1",
+      "mesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWInterior_OOW_00398_Paris_Building_01_paris_building_01_255_1_1.OOWInterior_OOW_00398_Paris_Building_01_paris_building_01_255_1_1",
+      "uvChannels": 3,
+      "fullPrecisionUV": true,
+      "generateLightmapUV": false,
+      "originalMesh": "/Game/Scenes/Alley/alley/StaticMeshes/alley_mesh_375.alley_mesh_375",
+      "geometryHash": "8588fda99cfb39fc4eb8c24f9e7b010f4746d6b4bcc98334f66a94dc33fb8d76",
+      "materials": [
+        "/Game/Materials/OOW/Instances/MI_glass__window_v5_cc27e73129.MI_glass__window_v5_cc27e73129"
+      ]
+    },
+    {
+      "actor": "OOW_00467_paris_building_02_7",
+      "mesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWInterior_OOW_00467_paris_building_02_7.OOWInterior_OOW_00467_paris_building_02_7",
+      "uvChannels": 3,
+      "fullPrecisionUV": true,
+      "generateLightmapUV": false,
+      "originalMesh": "/Game/Scenes/Alley/alley/StaticMeshes/alley_mesh_424.alley_mesh_424",
+      "geometryHash": "8588fda99cfb39fc4eb8c24f9e7b010f4746d6b4bcc98334f66a94dc33fb8d76",
+      "materials": [
+        "/Game/Materials/OOW/Instances/MI_glass__window_v5_e8c3a2e099.MI_glass__window_v5_e8c3a2e099"
+      ]
+    },
+    {
+      "actor": "OOW_00474_paris_building_03_3",
+      "mesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWInterior_OOW_00474_paris_building_03_3.OOWInterior_OOW_00474_paris_building_03_3",
+      "uvChannels": 3,
+      "fullPrecisionUV": true,
+      "generateLightmapUV": false,
+      "originalMesh": "/Game/Scenes/Alley/alley/StaticMeshes/alley_mesh_431.alley_mesh_431",
+      "geometryHash": "8588fda99cfb39fc4eb8c24f9e7b010f4746d6b4bcc98334f66a94dc33fb8d76",
+      "materials": [
+        "/Game/Materials/OOW/Instances/MI_glass__window_v5_bc00ed9809.MI_glass__window_v5_bc00ed9809"
+      ]
+    },
+    {
+      "actor": "OOW_00486_paris_building_03_mirrored_5",
+      "mesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWInterior_OOW_00486_paris_building_03_mirrored_5.OOWInterior_OOW_00486_paris_building_03_mirrored_5",
+      "uvChannels": 3,
+      "fullPrecisionUV": true,
+      "generateLightmapUV": false,
+      "originalMesh": "/Game/Scenes/Alley/alley/StaticMeshes/alley_mesh_443.alley_mesh_443",
+      "geometryHash": "8588fda99cfb39fc4eb8c24f9e7b010f4746d6b4bcc98334f66a94dc33fb8d76",
+      "materials": [
+        "/Game/Materials/OOW/Instances/MI_glass__window_v5_bc00ed9809.MI_glass__window_v5_bc00ed9809"
+      ]
+    },
+    {
+      "actor": "OOW_00496_paris_building_03_mirrored_5__2_",
+      "mesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWInterior_OOW_00496_paris_building_03_mirrored_5__2_.OOWInterior_OOW_00496_paris_building_03_mirrored_5__2_",
+      "uvChannels": 3,
+      "fullPrecisionUV": true,
+      "generateLightmapUV": false,
+      "originalMesh": "/Game/Scenes/Alley/alley/StaticMeshes/alley_mesh_453.alley_mesh_453",
+      "geometryHash": "8588fda99cfb39fc4eb8c24f9e7b010f4746d6b4bcc98334f66a94dc33fb8d76",
+      "materials": [
+        "/Game/Materials/OOW/Instances/MI_glass__window_v5_bc00ed9809.MI_glass__window_v5_bc00ed9809"
+      ]
+    },
+    {
+      "actor": "OOW_00508_paris_building_04_7",
+      "mesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWInterior_OOW_00508_paris_building_04_7.OOWInterior_OOW_00508_paris_building_04_7",
+      "uvChannels": 3,
+      "fullPrecisionUV": true,
+      "generateLightmapUV": false,
+      "originalMesh": "/Game/Scenes/Alley/alley/StaticMeshes/alley_mesh_465.alley_mesh_465",
+      "geometryHash": "8588fda99cfb39fc4eb8c24f9e7b010f4746d6b4bcc98334f66a94dc33fb8d76",
+      "materials": [
+        "/Game/Materials/OOW/Instances/MI_glass__window_v5_bc00ed9809.MI_glass__window_v5_bc00ed9809"
+      ]
+    },
+    {
+      "actor": "OOW_00513_paris_building_04_12",
+      "mesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWInterior_OOW_00513_paris_building_04_12.OOWInterior_OOW_00513_paris_building_04_12",
+      "uvChannels": 3,
+      "fullPrecisionUV": true,
+      "generateLightmapUV": false,
+      "originalMesh": "/Game/Scenes/Alley/alley/StaticMeshes/alley_mesh_470.alley_mesh_470",
+      "geometryHash": "8588fda99cfb39fc4eb8c24f9e7b010f4746d6b4bcc98334f66a94dc33fb8d76",
+      "materials": [
+        "/Game/Materials/OOW/Instances/MI_glass__window_v5_67b8de1ae5.MI_glass__window_v5_67b8de1ae5"
+      ]
+    },
+    {
+      "actor": "OOW_00524_paris_building_05_1_1",
+      "mesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWInterior_OOW_00524_paris_building_05_1_1.OOWInterior_OOW_00524_paris_building_05_1_1",
+      "uvChannels": 3,
+      "fullPrecisionUV": true,
+      "generateLightmapUV": false,
+      "originalMesh": "/Game/Scenes/Alley/alley/StaticMeshes/alley_mesh_481.alley_mesh_481",
+      "geometryHash": "8588fda99cfb39fc4eb8c24f9e7b010f4746d6b4bcc98334f66a94dc33fb8d76",
+      "materials": [
+        "/Game/Materials/OOW/Instances/MI_glass__window_v5_cc27e73129.MI_glass__window_v5_cc27e73129"
+      ]
+    },
+    {
+      "actor": "OOW_00567_paris_building_05_41_1",
+      "mesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWInterior_OOW_00567_paris_building_05_41_1.OOWInterior_OOW_00567_paris_building_05_41_1",
+      "uvChannels": 3,
+      "fullPrecisionUV": true,
+      "generateLightmapUV": false,
+      "originalMesh": "/Game/Scenes/Alley/alley/StaticMeshes/alley_mesh_508.alley_mesh_508",
+      "geometryHash": "8588fda99cfb39fc4eb8c24f9e7b010f4746d6b4bcc98334f66a94dc33fb8d76",
+      "materials": [
+        "/Game/Materials/OOW/Instances/MI_glass__window_v5_cc27e73129.MI_glass__window_v5_cc27e73129"
+      ]
+    },
+    {
+      "actor": "OOW_00591_paris_building_05_56",
+      "mesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWInterior_OOW_00591_paris_building_05_56.OOWInterior_OOW_00591_paris_building_05_56",
+      "uvChannels": 3,
+      "fullPrecisionUV": true,
+      "generateLightmapUV": false,
+      "originalMesh": "/Game/Scenes/Alley/alley/StaticMeshes/alley_mesh_532.alley_mesh_532",
+      "geometryHash": "8588fda99cfb39fc4eb8c24f9e7b010f4746d6b4bcc98334f66a94dc33fb8d76",
+      "materials": [
+        "/Game/Materials/OOW/Instances/MI_glass__window_v5_cc27e73129.MI_glass__window_v5_cc27e73129"
+      ]
+    },
+    {
+      "actor": "OOW_00601_paris_building_05_66",
+      "mesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWInterior_OOW_00601_paris_building_05_66.OOWInterior_OOW_00601_paris_building_05_66",
+      "uvChannels": 3,
+      "fullPrecisionUV": true,
+      "generateLightmapUV": false,
+      "originalMesh": "/Game/Scenes/Alley/alley/StaticMeshes/alley_mesh_542.alley_mesh_542",
+      "geometryHash": "8588fda99cfb39fc4eb8c24f9e7b010f4746d6b4bcc98334f66a94dc33fb8d76",
+      "materials": [
+        "/Game/Materials/OOW/Instances/MI_glass__window_v5_67b8de1ae5.MI_glass__window_v5_67b8de1ae5"
+      ]
+    },
+    {
+      "actor": "OOW_00608_paris_building_05_1__2__1",
+      "mesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWInterior_OOW_00608_paris_building_05_1__2__1.OOWInterior_OOW_00608_paris_building_05_1__2__1",
+      "uvChannels": 3,
+      "fullPrecisionUV": true,
+      "generateLightmapUV": false,
+      "originalMesh": "/Game/Scenes/Alley/alley/StaticMeshes/alley_mesh_549.alley_mesh_549",
+      "geometryHash": "8588fda99cfb39fc4eb8c24f9e7b010f4746d6b4bcc98334f66a94dc33fb8d76",
+      "materials": [
+        "/Game/Materials/OOW/Instances/MI_glass__window_v5_cc27e73129.MI_glass__window_v5_cc27e73129"
+      ]
+    },
+    {
+      "actor": "OOW_00651_paris_building_05_41__2__1",
+      "mesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWInterior_OOW_00651_paris_building_05_41__2__1.OOWInterior_OOW_00651_paris_building_05_41__2__1",
+      "uvChannels": 3,
+      "fullPrecisionUV": true,
+      "generateLightmapUV": false,
+      "originalMesh": "/Game/Scenes/Alley/alley/StaticMeshes/alley_mesh_576.alley_mesh_576",
+      "geometryHash": "8588fda99cfb39fc4eb8c24f9e7b010f4746d6b4bcc98334f66a94dc33fb8d76",
+      "materials": [
+        "/Game/Materials/OOW/Instances/MI_glass__window_v5_cc27e73129.MI_glass__window_v5_cc27e73129"
+      ]
+    },
+    {
+      "actor": "OOW_00675_paris_building_05_56__2_",
+      "mesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWInterior_OOW_00675_paris_building_05_56__2_.OOWInterior_OOW_00675_paris_building_05_56__2_",
+      "uvChannels": 3,
+      "fullPrecisionUV": true,
+      "generateLightmapUV": false,
+      "originalMesh": "/Game/Scenes/Alley/alley/StaticMeshes/alley_mesh_599.alley_mesh_599",
+      "geometryHash": "8588fda99cfb39fc4eb8c24f9e7b010f4746d6b4bcc98334f66a94dc33fb8d76",
+      "materials": [
+        "/Game/Materials/OOW/Instances/MI_glass__window_v5_cc27e73129.MI_glass__window_v5_cc27e73129"
+      ]
+    },
+    {
+      "actor": "OOW_00685_paris_building_05_66__2_",
+      "mesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWInterior_OOW_00685_paris_building_05_66__2_.OOWInterior_OOW_00685_paris_building_05_66__2_",
+      "uvChannels": 3,
+      "fullPrecisionUV": true,
+      "generateLightmapUV": false,
+      "originalMesh": "/Game/Scenes/Alley/alley/StaticMeshes/alley_mesh_609.alley_mesh_609",
+      "geometryHash": "8588fda99cfb39fc4eb8c24f9e7b010f4746d6b4bcc98334f66a94dc33fb8d76",
+      "materials": [
+        "/Game/Materials/OOW/Instances/MI_glass__window_v5_67b8de1ae5.MI_glass__window_v5_67b8de1ae5"
+      ]
+    },
+    {
+      "actor": "OOW_00703_paris_building_07_9",
+      "mesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWInterior_OOW_00703_paris_building_07_9.OOWInterior_OOW_00703_paris_building_07_9",
+      "uvChannels": 3,
+      "fullPrecisionUV": true,
+      "generateLightmapUV": false,
+      "originalMesh": "/Game/Scenes/Alley/alley/StaticMeshes/alley_mesh_627.alley_mesh_627",
+      "geometryHash": "8588fda99cfb39fc4eb8c24f9e7b010f4746d6b4bcc98334f66a94dc33fb8d76",
+      "materials": [
+        "/Game/Materials/OOW/Instances/MI_glass__window_v5_e8c3a2e099.MI_glass__window_v5_e8c3a2e099"
+      ]
+    },
+    {
+      "actor": "OOW_00715_paris_building_07_9__2_",
+      "mesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWInterior_OOW_00715_paris_building_07_9__2_.OOWInterior_OOW_00715_paris_building_07_9__2_",
+      "uvChannels": 3,
+      "fullPrecisionUV": true,
+      "generateLightmapUV": false,
+      "originalMesh": "/Game/Scenes/Alley/alley/StaticMeshes/alley_mesh_639.alley_mesh_639",
+      "geometryHash": "8588fda99cfb39fc4eb8c24f9e7b010f4746d6b4bcc98334f66a94dc33fb8d76",
+      "materials": [
+        "/Game/Materials/OOW/Instances/MI_glass__window_v5_e8c3a2e099.MI_glass__window_v5_e8c3a2e099"
+      ]
+    },
+    {
+      "actor": "OOW_00719_Paris_Building_08_paris_building_08_1",
+      "mesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWInterior_OOW_00719_Paris_Building_08_paris_building_08_1.OOWInterior_OOW_00719_Paris_Building_08_paris_building_08_1",
+      "uvChannels": 3,
+      "fullPrecisionUV": true,
+      "generateLightmapUV": false,
+      "originalMesh": "/Game/Scenes/Alley/alley/StaticMeshes/alley_mesh_643.alley_mesh_643",
+      "geometryHash": "8588fda99cfb39fc4eb8c24f9e7b010f4746d6b4bcc98334f66a94dc33fb8d76",
+      "materials": [
+        "/Game/Materials/OOW/Instances/MI_glass__window_v5_cc27e73129.MI_glass__window_v5_cc27e73129"
+      ]
+    },
+    {
+      "actor": "OOW_00731_Paris_Building_08_paris_building_08_1__2_",
+      "mesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWInterior_OOW_00731_Paris_Building_08_paris_building_08_1__2_.OOWInterior_OOW_00731_Paris_Building_08_paris_building_08_1__2_",
+      "uvChannels": 3,
+      "fullPrecisionUV": true,
+      "generateLightmapUV": false,
+      "originalMesh": "/Game/Scenes/Alley/alley/StaticMeshes/alley_mesh_655.alley_mesh_655",
+      "geometryHash": "8588fda99cfb39fc4eb8c24f9e7b010f4746d6b4bcc98334f66a94dc33fb8d76",
+      "materials": [
+        "/Game/Materials/OOW/Instances/MI_glass__window_v5_cc27e73129.MI_glass__window_v5_cc27e73129"
+      ]
+    },
+    {
+      "actor": "OOW_00742_Paris_Building_08_paris_building_08_1__3_",
+      "mesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWInterior_OOW_00742_Paris_Building_08_paris_building_08_1__3_.OOWInterior_OOW_00742_Paris_Building_08_paris_building_08_1__3_",
+      "uvChannels": 3,
+      "fullPrecisionUV": true,
+      "generateLightmapUV": false,
+      "originalMesh": "/Game/Scenes/Alley/alley/StaticMeshes/alley_mesh_666.alley_mesh_666",
+      "geometryHash": "8588fda99cfb39fc4eb8c24f9e7b010f4746d6b4bcc98334f66a94dc33fb8d76",
+      "materials": [
+        "/Game/Materials/OOW/Instances/MI_glass__window_v5_cc27e73129.MI_glass__window_v5_cc27e73129"
+      ]
+    },
+    {
+      "actor": "OOW_00756_paris_building_09_4",
+      "mesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWInterior_OOW_00756_paris_building_09_4.OOWInterior_OOW_00756_paris_building_09_4",
+      "uvChannels": 3,
+      "fullPrecisionUV": true,
+      "generateLightmapUV": false,
+      "originalMesh": "/Game/Scenes/Alley/alley/StaticMeshes/alley_mesh_680.alley_mesh_680",
+      "geometryHash": "8588fda99cfb39fc4eb8c24f9e7b010f4746d6b4bcc98334f66a94dc33fb8d76",
+      "materials": [
+        "/Game/Materials/OOW/Instances/MI_glass__window_v5_cc27e73129.MI_glass__window_v5_cc27e73129"
+      ]
+    },
+    {
+      "actor": "OOW_00760_paris_building_09_8",
+      "mesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWInterior_OOW_00760_paris_building_09_8.OOWInterior_OOW_00760_paris_building_09_8",
+      "uvChannels": 3,
+      "fullPrecisionUV": true,
+      "generateLightmapUV": false,
+      "originalMesh": "/Game/Scenes/Alley/alley/StaticMeshes/alley_mesh_684.alley_mesh_684",
+      "geometryHash": "8588fda99cfb39fc4eb8c24f9e7b010f4746d6b4bcc98334f66a94dc33fb8d76",
+      "materials": [
+        "/Game/Materials/OOW/Instances/MI_glass__window_v5_e8c3a2e099.MI_glass__window_v5_e8c3a2e099"
+      ]
+    },
+    {
+      "actor": "OOW_00780_paris_building_10_10",
+      "mesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWInterior_OOW_00780_paris_building_10_10.OOWInterior_OOW_00780_paris_building_10_10",
+      "uvChannels": 3,
+      "fullPrecisionUV": true,
+      "generateLightmapUV": false,
+      "originalMesh": "/Game/Scenes/Alley/alley/StaticMeshes/alley_mesh_704.alley_mesh_704",
+      "geometryHash": "8588fda99cfb39fc4eb8c24f9e7b010f4746d6b4bcc98334f66a94dc33fb8d76",
+      "materials": [
+        "/Game/Materials/OOW/Instances/MI_glass__window_v5_cc27e73129.MI_glass__window_v5_cc27e73129"
+      ]
+    },
+    {
+      "actor": "OOW_00789_paris_building_10_19",
+      "mesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWInterior_OOW_00789_paris_building_10_19.OOWInterior_OOW_00789_paris_building_10_19",
+      "uvChannels": 3,
+      "fullPrecisionUV": true,
+      "generateLightmapUV": false,
+      "originalMesh": "/Game/Scenes/Alley/alley/StaticMeshes/alley_mesh_713.alley_mesh_713",
+      "geometryHash": "8588fda99cfb39fc4eb8c24f9e7b010f4746d6b4bcc98334f66a94dc33fb8d76",
+      "materials": [
+        "/Game/Materials/OOW/Instances/MI_glass__window_v5_67b8de1ae5.MI_glass__window_v5_67b8de1ae5"
+      ]
+    },
+    {
+      "actor": "OOW_00801_paris_building_10_10__2_",
+      "mesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWInterior_OOW_00801_paris_building_10_10__2_.OOWInterior_OOW_00801_paris_building_10_10__2_",
+      "uvChannels": 3,
+      "fullPrecisionUV": true,
+      "generateLightmapUV": false,
+      "originalMesh": "/Game/Scenes/Alley/alley/StaticMeshes/alley_mesh_725.alley_mesh_725",
+      "geometryHash": "8588fda99cfb39fc4eb8c24f9e7b010f4746d6b4bcc98334f66a94dc33fb8d76",
+      "materials": [
+        "/Game/Materials/OOW/Instances/MI_glass__window_v5_cc27e73129.MI_glass__window_v5_cc27e73129"
+      ]
+    },
+    {
+      "actor": "OOW_00810_paris_building_10_19__2_",
+      "mesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWInterior_OOW_00810_paris_building_10_19__2_.OOWInterior_OOW_00810_paris_building_10_19__2_",
+      "uvChannels": 3,
+      "fullPrecisionUV": true,
+      "generateLightmapUV": false,
+      "originalMesh": "/Game/Scenes/Alley/alley/StaticMeshes/alley_mesh_734.alley_mesh_734",
+      "geometryHash": "8588fda99cfb39fc4eb8c24f9e7b010f4746d6b4bcc98334f66a94dc33fb8d76",
+      "materials": [
+        "/Game/Materials/OOW/Instances/MI_glass__window_v5_67b8de1ae5.MI_glass__window_v5_67b8de1ae5"
+      ]
+    },
+    {
+      "actor": "OOW_00841_paris_building_11_27",
+      "mesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWInterior_OOW_00841_paris_building_11_27.OOWInterior_OOW_00841_paris_building_11_27",
+      "uvChannels": 3,
+      "fullPrecisionUV": true,
+      "generateLightmapUV": false,
+      "originalMesh": "/Game/Scenes/Alley/alley/StaticMeshes/alley_mesh_765.alley_mesh_765",
+      "geometryHash": "8588fda99cfb39fc4eb8c24f9e7b010f4746d6b4bcc98334f66a94dc33fb8d76",
+      "materials": [
+        "/Game/Materials/OOW/Instances/MI_glass__window_v5_cc27e73129.MI_glass__window_v5_cc27e73129"
+      ]
+    },
+    {
+      "actor": "OOW_00851_paris_building_11_37",
+      "mesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWInterior_OOW_00851_paris_building_11_37.OOWInterior_OOW_00851_paris_building_11_37",
+      "uvChannels": 3,
+      "fullPrecisionUV": true,
+      "generateLightmapUV": false,
+      "originalMesh": "/Game/Scenes/Alley/alley/StaticMeshes/alley_mesh_765.alley_mesh_765",
+      "geometryHash": "8588fda99cfb39fc4eb8c24f9e7b010f4746d6b4bcc98334f66a94dc33fb8d76",
+      "materials": [
+        "/Game/Materials/OOW/Instances/MI_glass__window_v5_cc27e73129.MI_glass__window_v5_cc27e73129"
+      ]
+    },
+    {
+      "actor": "OOW_00861_paris_building_11_47",
+      "mesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWInterior_OOW_00861_paris_building_11_47.OOWInterior_OOW_00861_paris_building_11_47",
+      "uvChannels": 3,
+      "fullPrecisionUV": true,
+      "generateLightmapUV": false,
+      "originalMesh": "/Game/Scenes/Alley/alley/StaticMeshes/alley_mesh_765.alley_mesh_765",
+      "geometryHash": "8588fda99cfb39fc4eb8c24f9e7b010f4746d6b4bcc98334f66a94dc33fb8d76",
+      "materials": [
+        "/Game/Materials/OOW/Instances/MI_glass__window_v5_cc27e73129.MI_glass__window_v5_cc27e73129"
+      ]
+    },
+    {
+      "actor": "OOW_00909_paris_building_11_95",
+      "mesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWInterior_OOW_00909_paris_building_11_95.OOWInterior_OOW_00909_paris_building_11_95",
+      "uvChannels": 3,
+      "fullPrecisionUV": true,
+      "generateLightmapUV": false,
+      "originalMesh": "/Game/Scenes/Alley/alley/StaticMeshes/alley_mesh_765.alley_mesh_765",
+      "geometryHash": "8588fda99cfb39fc4eb8c24f9e7b010f4746d6b4bcc98334f66a94dc33fb8d76",
+      "materials": [
+        "/Game/Materials/OOW/Instances/MI_glass__window_v5_cc27e73129.MI_glass__window_v5_cc27e73129"
+      ]
+    },
+    {
+      "actor": "OOW_00910_paris_building_11_96",
+      "mesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWInterior_OOW_00910_paris_building_11_96.OOWInterior_OOW_00910_paris_building_11_96",
+      "uvChannels": 3,
+      "fullPrecisionUV": true,
+      "generateLightmapUV": false,
+      "originalMesh": "/Game/Scenes/Alley/alley/StaticMeshes/alley_mesh_765.alley_mesh_765",
+      "geometryHash": "8588fda99cfb39fc4eb8c24f9e7b010f4746d6b4bcc98334f66a94dc33fb8d76",
+      "materials": [
+        "/Game/Materials/OOW/Instances/MI_glass__window_v5_cc27e73129.MI_glass__window_v5_cc27e73129"
+      ]
+    },
+    {
+      "actor": "OOW_00926_paris_building_11_112",
+      "mesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWInterior_OOW_00926_paris_building_11_112.OOWInterior_OOW_00926_paris_building_11_112",
+      "uvChannels": 3,
+      "fullPrecisionUV": true,
+      "generateLightmapUV": false,
+      "originalMesh": "/Game/Scenes/Alley/alley/StaticMeshes/alley_mesh_765.alley_mesh_765",
+      "geometryHash": "8588fda99cfb39fc4eb8c24f9e7b010f4746d6b4bcc98334f66a94dc33fb8d76",
+      "materials": [
+        "/Game/Materials/OOW/Instances/MI_glass__window_v5_cc27e73129.MI_glass__window_v5_cc27e73129"
+      ]
+    },
+    {
+      "actor": "OOW_00936_paris_building_11_122",
+      "mesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWInterior_OOW_00936_paris_building_11_122.OOWInterior_OOW_00936_paris_building_11_122",
+      "uvChannels": 3,
+      "fullPrecisionUV": true,
+      "generateLightmapUV": false,
+      "originalMesh": "/Game/Scenes/Alley/alley/StaticMeshes/alley_mesh_765.alley_mesh_765",
+      "geometryHash": "8588fda99cfb39fc4eb8c24f9e7b010f4746d6b4bcc98334f66a94dc33fb8d76",
+      "materials": [
+        "/Game/Materials/OOW/Instances/MI_glass__window_v5_cc27e73129.MI_glass__window_v5_cc27e73129"
+      ]
+    },
+    {
+      "actor": "OOW_00948_paris_building_11_134",
+      "mesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWInterior_OOW_00948_paris_building_11_134.OOWInterior_OOW_00948_paris_building_11_134",
+      "uvChannels": 3,
+      "fullPrecisionUV": true,
+      "generateLightmapUV": false,
+      "originalMesh": "/Game/Scenes/Alley/alley/StaticMeshes/alley_mesh_765.alley_mesh_765",
+      "geometryHash": "8588fda99cfb39fc4eb8c24f9e7b010f4746d6b4bcc98334f66a94dc33fb8d76",
+      "materials": [
+        "/Game/Materials/OOW/Instances/MI_glass__window_v5_cc27e73129.MI_glass__window_v5_cc27e73129"
+      ]
+    }
+  ],
+  "materials": {
+    "/Game/Materials/OOW/Instances/MI_glass__window_v5_bc00ed9809.MI_glass__window_v5_bc00ed9809": {
+      "chain": [
+        {
+          "path": "/Game/Materials/OOW/Instances/MI_glass__window_v5_bc00ed9809.MI_glass__window_v5_bc00ed9809",
+          "recipe": "v5",
+          "source": "/Game/Scenes/Alley/alley/Materials/MASTER_Glass_Exterior.MASTER_Glass_Exterior"
+        },
+        {
+          "path": "/Game/Materials/OOW/Instances/MI_glass__window_v5_ad08b14ed3.MI_glass__window_v5_ad08b14ed3",
+          "recipe": "v5",
+          "source": "/InterchangeAssets/gltf/MaterialInstances/MI_Default_Opaque.MI_Default_Opaque"
+        },
+        {
+          "path": "/Game/Materials/OOW/Masters/M_glass__window_v5_885fa76387.M_glass__window_v5_885fa76387",
+          "recipe": "v5",
+          "source": "/InterchangeAssets/gltf/M_Default.M_Default"
+        }
+      ],
+      "textures": {
+        "OOWRoom01": "/Game/Materials/OOW/WindowInteriors/T_Room_01.T_Room_01",
+        "OOWRoom02": "/Game/Materials/OOW/WindowInteriors/T_Room_02.T_Room_02",
+        "OOWRoom03": "/Game/Materials/OOW/WindowInteriors/room-03.room-03",
+        "OOWRoom04": "/Game/Materials/OOW/WindowInteriors/room-04.room-04",
+        "OOWRoom05": "/Game/Materials/OOW/WindowInteriors/room-05.room-05",
+        "OOWRoom06": "/Game/Materials/OOW/WindowInteriors/room-06.room-06"
+      },
+      "enabled": 1.0,
+      "mipBias": 2.0,
+      "gain": 1.7999999523162842,
+      "master": "/Game/Materials/OOW/Masters/M_glass__window_v5_885fa76387.M_glass__window_v5_885fa76387"
+    },
+    "/Game/Materials/OOW/Instances/MI_glass__window_v5_cc27e73129.MI_glass__window_v5_cc27e73129": {
+      "chain": [
+        {
+          "path": "/Game/Materials/OOW/Instances/MI_glass__window_v5_cc27e73129.MI_glass__window_v5_cc27e73129",
+          "recipe": "v5",
+          "source": "/Game/Scenes/Alley/alley/Materials/MASTER_Glass_Dirty.MASTER_Glass_Dirty"
+        },
+        {
+          "path": "/Game/Materials/OOW/Instances/MI_glass__window_v5_ad08b14ed3.MI_glass__window_v5_ad08b14ed3",
+          "recipe": "v5",
+          "source": "/InterchangeAssets/gltf/MaterialInstances/MI_Default_Opaque.MI_Default_Opaque"
+        },
+        {
+          "path": "/Game/Materials/OOW/Masters/M_glass__window_v5_885fa76387.M_glass__window_v5_885fa76387",
+          "recipe": "v5",
+          "source": "/InterchangeAssets/gltf/M_Default.M_Default"
+        }
+      ],
+      "textures": {
+        "OOWRoom01": "/Game/Materials/OOW/WindowInteriors/T_Room_01.T_Room_01",
+        "OOWRoom02": "/Game/Materials/OOW/WindowInteriors/T_Room_02.T_Room_02",
+        "OOWRoom03": "/Game/Materials/OOW/WindowInteriors/room-03.room-03",
+        "OOWRoom04": "/Game/Materials/OOW/WindowInteriors/room-04.room-04",
+        "OOWRoom05": "/Game/Materials/OOW/WindowInteriors/room-05.room-05",
+        "OOWRoom06": "/Game/Materials/OOW/WindowInteriors/room-06.room-06"
+      },
+      "enabled": 1.0,
+      "mipBias": 2.0,
+      "gain": 1.7999999523162842,
+      "master": "/Game/Materials/OOW/Masters/M_glass__window_v5_885fa76387.M_glass__window_v5_885fa76387"
+    },
+    "/Game/Materials/OOW/Instances/MI_glass__window_v5_e8c3a2e099.MI_glass__window_v5_e8c3a2e099": {
+      "chain": [
+        {
+          "path": "/Game/Materials/OOW/Instances/MI_glass__window_v5_e8c3a2e099.MI_glass__window_v5_e8c3a2e099",
+          "recipe": "v5",
+          "source": "/Game/Scenes/Alley/alley/Materials/MASTER_Glass_Clean.MASTER_Glass_Clean"
+        },
+        {
+          "path": "/Game/Materials/OOW/Instances/MI_glass__window_v5_ad08b14ed3.MI_glass__window_v5_ad08b14ed3",
+          "recipe": "v5",
+          "source": "/InterchangeAssets/gltf/MaterialInstances/MI_Default_Opaque.MI_Default_Opaque"
+        },
+        {
+          "path": "/Game/Materials/OOW/Masters/M_glass__window_v5_885fa76387.M_glass__window_v5_885fa76387",
+          "recipe": "v5",
+          "source": "/InterchangeAssets/gltf/M_Default.M_Default"
+        }
+      ],
+      "textures": {
+        "OOWRoom01": "/Game/Materials/OOW/WindowInteriors/T_Room_01.T_Room_01",
+        "OOWRoom02": "/Game/Materials/OOW/WindowInteriors/T_Room_02.T_Room_02",
+        "OOWRoom03": "/Game/Materials/OOW/WindowInteriors/room-03.room-03",
+        "OOWRoom04": "/Game/Materials/OOW/WindowInteriors/room-04.room-04",
+        "OOWRoom05": "/Game/Materials/OOW/WindowInteriors/room-05.room-05",
+        "OOWRoom06": "/Game/Materials/OOW/WindowInteriors/room-06.room-06"
+      },
+      "enabled": 1.0,
+      "mipBias": 2.0,
+      "gain": 1.7999999523162842,
+      "master": "/Game/Materials/OOW/Masters/M_glass__window_v5_885fa76387.M_glass__window_v5_885fa76387"
+    },
+    "/Game/Materials/OOW/Instances/MI_glass__window_v5_67b8de1ae5.MI_glass__window_v5_67b8de1ae5": {
+      "chain": [
+        {
+          "path": "/Game/Materials/OOW/Instances/MI_glass__window_v5_67b8de1ae5.MI_glass__window_v5_67b8de1ae5",
+          "recipe": "v5",
+          "source": "/Game/Scenes/Alley/alley/Materials/MASTER_Frosted_Glass.MASTER_Frosted_Glass"
+        },
+        {
+          "path": "/Game/Materials/OOW/Instances/MI_glass__window_v5_ad08b14ed3.MI_glass__window_v5_ad08b14ed3",
+          "recipe": "v5",
+          "source": "/InterchangeAssets/gltf/MaterialInstances/MI_Default_Opaque.MI_Default_Opaque"
+        },
+        {
+          "path": "/Game/Materials/OOW/Masters/M_glass__window_v5_885fa76387.M_glass__window_v5_885fa76387",
+          "recipe": "v5",
+          "source": "/InterchangeAssets/gltf/M_Default.M_Default"
+        }
+      ],
+      "textures": {
+        "OOWRoom01": "/Game/Materials/OOW/WindowInteriors/T_Room_01.T_Room_01",
+        "OOWRoom02": "/Game/Materials/OOW/WindowInteriors/T_Room_02.T_Room_02",
+        "OOWRoom03": "/Game/Materials/OOW/WindowInteriors/room-03.room-03",
+        "OOWRoom04": "/Game/Materials/OOW/WindowInteriors/room-04.room-04",
+        "OOWRoom05": "/Game/Materials/OOW/WindowInteriors/room-05.room-05",
+        "OOWRoom06": "/Game/Materials/OOW/WindowInteriors/room-06.room-06"
+      },
+      "enabled": 1.0,
+      "mipBias": 2.0,
+      "gain": 1.7999999523162842,
+      "master": "/Game/Materials/OOW/Masters/M_glass__window_v5_885fa76387.M_glass__window_v5_885fa76387"
+    }
+  },
+  "masters": {
+    "/Game/Materials/OOW/Masters/M_glass__window_v5_885fa76387.M_glass__window_v5_885fa76387": {
+      "nodes": [
+        {
+          "node": "/Game/Materials/OOW/Masters/M_glass__window_v5_885fa76387.M_glass__window_v5_885fa76387:MaterialExpressionCustom_3",
+          "class": "MaterialExpressionCustom",
+          "code": "float seed=saturate(S.x); float id=floor(frac(seed*17.171+.37)*6.); float3 room=id<1?R0:id<2?R1:id<3?R2:id<4?R3:id<5?R4:R5; float occupied=step(.62,frac(seed*73.137+.11)); float gain=lerp(.8,1.2,frac(seed*31.718+.07)); float3 tint=lerp(float3(1.,.88,.75),float3(.9,.94,1.),frac(seed*41.137+.43)); float3 inside=room*tint*(max(0.,Intensity)*gain*occupied*smoothstep(.58,.86,saturate(N))); return lerp(F,inside,saturate(Enabled)*step(.5,S.y));"
+        },
+        {
+          "node": "/Game/Materials/OOW/Masters/M_glass__window_v5_885fa76387.M_glass__window_v5_885fa76387:MaterialExpressionTextureSampleParameter2D_5",
+          "class": "MaterialExpressionTextureSampleParameter2D",
+          "parameter": "OOWRoom06",
+          "mipValueMode": "<TextureMipValueMode.TMVM_MIP_BIAS: 2>",
+          "mipBiasInput": "/Game/Materials/OOW/Masters/M_glass__window_v5_885fa76387.M_glass__window_v5_885fa76387:MaterialExpressionScalarParameter_17",
+          "defaultTexture": "/Game/Materials/OOW/WindowInteriors/room-06.room-06"
+        },
+        {
+          "node": "/Game/Materials/OOW/Masters/M_glass__window_v5_885fa76387.M_glass__window_v5_885fa76387:MaterialExpressionScalarParameter_17",
+          "class": "MaterialExpressionScalarParameter"
+        },
+        {
+          "node": "/Game/Materials/OOW/Masters/M_glass__window_v5_885fa76387.M_glass__window_v5_885fa76387:MaterialExpressionAdd_0",
+          "class": "MaterialExpressionAdd"
+        },
+        {
+          "node": "/Game/Materials/OOW/Masters/M_glass__window_v5_885fa76387.M_glass__window_v5_885fa76387:MaterialExpressionConstant2Vector_0",
+          "class": "MaterialExpressionConstant2Vector"
+        },
+        {
+          "node": "/Game/Materials/OOW/Masters/M_glass__window_v5_885fa76387.M_glass__window_v5_885fa76387:MaterialExpressionTextureCoordinate_0",
+          "class": "MaterialExpressionTextureCoordinate",
+          "channel": 1,
+          "vTiling": -1.0
+        },
+        {
+          "node": "/Game/Materials/OOW/Masters/M_glass__window_v5_885fa76387.M_glass__window_v5_885fa76387:MaterialExpressionTextureSampleParameter2D_4",
+          "class": "MaterialExpressionTextureSampleParameter2D",
+          "parameter": "OOWRoom05",
+          "mipValueMode": "<TextureMipValueMode.TMVM_MIP_BIAS: 2>",
+          "mipBiasInput": "/Game/Materials/OOW/Masters/M_glass__window_v5_885fa76387.M_glass__window_v5_885fa76387:MaterialExpressionScalarParameter_17",
+          "defaultTexture": "/Game/Materials/OOW/WindowInteriors/room-05.room-05"
+        },
+        {
+          "node": "/Game/Materials/OOW/Masters/M_glass__window_v5_885fa76387.M_glass__window_v5_885fa76387:MaterialExpressionTextureSampleParameter2D_3",
+          "class": "MaterialExpressionTextureSampleParameter2D",
+          "parameter": "OOWRoom04",
+          "mipValueMode": "<TextureMipValueMode.TMVM_MIP_BIAS: 2>",
+          "mipBiasInput": "/Game/Materials/OOW/Masters/M_glass__window_v5_885fa76387.M_glass__window_v5_885fa76387:MaterialExpressionScalarParameter_17",
+          "defaultTexture": "/Game/Materials/OOW/WindowInteriors/room-04.room-04"
+        },
+        {
+          "node": "/Game/Materials/OOW/Masters/M_glass__window_v5_885fa76387.M_glass__window_v5_885fa76387:MaterialExpressionTextureSampleParameter2D_2",
+          "class": "MaterialExpressionTextureSampleParameter2D",
+          "parameter": "OOWRoom03",
+          "mipValueMode": "<TextureMipValueMode.TMVM_MIP_BIAS: 2>",
+          "mipBiasInput": "/Game/Materials/OOW/Masters/M_glass__window_v5_885fa76387.M_glass__window_v5_885fa76387:MaterialExpressionScalarParameter_17",
+          "defaultTexture": "/Game/Materials/OOW/WindowInteriors/room-03.room-03"
+        },
+        {
+          "node": "/Game/Materials/OOW/Masters/M_glass__window_v5_885fa76387.M_glass__window_v5_885fa76387:MaterialExpressionTextureSampleParameter2D_1",
+          "class": "MaterialExpressionTextureSampleParameter2D",
+          "parameter": "OOWRoom02",
+          "mipValueMode": "<TextureMipValueMode.TMVM_MIP_BIAS: 2>",
+          "mipBiasInput": "/Game/Materials/OOW/Masters/M_glass__window_v5_885fa76387.M_glass__window_v5_885fa76387:MaterialExpressionScalarParameter_17",
+          "defaultTexture": "/Game/Materials/OOW/WindowInteriors/T_Room_02.T_Room_02"
+        },
+        {
+          "node": "/Game/Materials/OOW/Masters/M_glass__window_v5_885fa76387.M_glass__window_v5_885fa76387:MaterialExpressionTextureSampleParameter2D_0",
+          "class": "MaterialExpressionTextureSampleParameter2D",
+          "parameter": "OOWRoom01",
+          "mipValueMode": "<TextureMipValueMode.TMVM_MIP_BIAS: 2>",
+          "mipBiasInput": "/Game/Materials/OOW/Masters/M_glass__window_v5_885fa76387.M_glass__window_v5_885fa76387:MaterialExpressionScalarParameter_17",
+          "defaultTexture": "/Game/Materials/OOW/WindowInteriors/T_Room_01.T_Room_01"
+        },
+        {
+          "node": "/Game/Materials/OOW/Masters/M_glass__window_v5_885fa76387.M_glass__window_v5_885fa76387:MaterialExpressionScalarParameter_14",
+          "class": "MaterialExpressionScalarParameter"
+        },
+        {
+          "node": "/Game/Materials/OOW/Masters/M_glass__window_v5_885fa76387.M_glass__window_v5_885fa76387:MaterialExpressionScalarParameter_13",
+          "class": "MaterialExpressionScalarParameter"
+        },
+        {
+          "node": "/Game/Materials/OOW/Masters/M_glass__window_v5_885fa76387.M_glass__window_v5_885fa76387:MaterialExpressionTextureCoordinate_1",
+          "class": "MaterialExpressionTextureCoordinate",
+          "channel": 2,
+          "vTiling": 1.0
+        },
+        {
+          "node": "/Game/Materials/OOW/Masters/M_glass__window_v5_885fa76387.M_glass__window_v5_885fa76387:MaterialExpressionScalarParameter_12",
+          "class": "MaterialExpressionScalarParameter"
+        },
+        {
+          "node": "/Game/Materials/OOW/Masters/M_glass__window_v5_885fa76387.M_glass__window_v5_885fa76387:MaterialExpressionCustom_2",
+          "class": "MaterialExpressionCustom",
+          "code": "float3 cell=floor(P/280.); float h=frac(sin(dot(cell,float3(12.9898,78.233,37.719)))*43758.5453); return float3(.62,.36,.16)*step(.62,h)*smoothstep(.58,.86,saturate(N));"
+        },
+        {
+          "node": "/Game/Materials/OOW/Masters/M_glass__window_v5_885fa76387.M_glass__window_v5_885fa76387:MaterialExpressionObjectPositionWS_0",
+          "class": "MaterialExpressionObjectPositionWS"
+        }
+      ],
+      "edges": [
+        {
+          "from": "/Game/Materials/OOW/Masters/M_glass__window_v5_885fa76387.M_glass__window_v5_885fa76387:MaterialExpressionCustom_3",
+          "input": "/Game/Materials/OOW/Masters/M_glass__window_v5_885fa76387.M_glass__window_v5_885fa76387:MaterialExpressionCustom_2"
+        },
+        {
+          "from": "/Game/Materials/OOW/Masters/M_glass__window_v5_885fa76387.M_glass__window_v5_885fa76387:MaterialExpressionCustom_3",
+          "input": "/Game/Materials/OOW/Masters/M_glass__window_v5_885fa76387.M_glass__window_v5_885fa76387:MaterialExpressionScalarParameter_12"
+        },
+        {
+          "from": "/Game/Materials/OOW/Masters/M_glass__window_v5_885fa76387.M_glass__window_v5_885fa76387:MaterialExpressionCustom_3",
+          "input": "/Game/Materials/OOW/Masters/M_glass__window_v5_885fa76387.M_glass__window_v5_885fa76387:MaterialExpressionTextureCoordinate_1"
+        },
+        {
+          "from": "/Game/Materials/OOW/Masters/M_glass__window_v5_885fa76387.M_glass__window_v5_885fa76387:MaterialExpressionCustom_3",
+          "input": "/Game/Materials/OOW/Masters/M_glass__window_v5_885fa76387.M_glass__window_v5_885fa76387:MaterialExpressionScalarParameter_13"
+        },
+        {
+          "from": "/Game/Materials/OOW/Masters/M_glass__window_v5_885fa76387.M_glass__window_v5_885fa76387:MaterialExpressionCustom_3",
+          "input": "/Game/Materials/OOW/Masters/M_glass__window_v5_885fa76387.M_glass__window_v5_885fa76387:MaterialExpressionScalarParameter_14"
+        },
+        {
+          "from": "/Game/Materials/OOW/Masters/M_glass__window_v5_885fa76387.M_glass__window_v5_885fa76387:MaterialExpressionCustom_3",
+          "input": "/Game/Materials/OOW/Masters/M_glass__window_v5_885fa76387.M_glass__window_v5_885fa76387:MaterialExpressionTextureSampleParameter2D_0"
+        },
+        {
+          "from": "/Game/Materials/OOW/Masters/M_glass__window_v5_885fa76387.M_glass__window_v5_885fa76387:MaterialExpressionCustom_3",
+          "input": "/Game/Materials/OOW/Masters/M_glass__window_v5_885fa76387.M_glass__window_v5_885fa76387:MaterialExpressionTextureSampleParameter2D_1"
+        },
+        {
+          "from": "/Game/Materials/OOW/Masters/M_glass__window_v5_885fa76387.M_glass__window_v5_885fa76387:MaterialExpressionCustom_3",
+          "input": "/Game/Materials/OOW/Masters/M_glass__window_v5_885fa76387.M_glass__window_v5_885fa76387:MaterialExpressionTextureSampleParameter2D_2"
+        },
+        {
+          "from": "/Game/Materials/OOW/Masters/M_glass__window_v5_885fa76387.M_glass__window_v5_885fa76387:MaterialExpressionCustom_3",
+          "input": "/Game/Materials/OOW/Masters/M_glass__window_v5_885fa76387.M_glass__window_v5_885fa76387:MaterialExpressionTextureSampleParameter2D_3"
+        },
+        {
+          "from": "/Game/Materials/OOW/Masters/M_glass__window_v5_885fa76387.M_glass__window_v5_885fa76387:MaterialExpressionCustom_3",
+          "input": "/Game/Materials/OOW/Masters/M_glass__window_v5_885fa76387.M_glass__window_v5_885fa76387:MaterialExpressionTextureSampleParameter2D_4"
+        },
+        {
+          "from": "/Game/Materials/OOW/Masters/M_glass__window_v5_885fa76387.M_glass__window_v5_885fa76387:MaterialExpressionCustom_3",
+          "input": "/Game/Materials/OOW/Masters/M_glass__window_v5_885fa76387.M_glass__window_v5_885fa76387:MaterialExpressionTextureSampleParameter2D_5"
+        },
+        {
+          "from": "/Game/Materials/OOW/Masters/M_glass__window_v5_885fa76387.M_glass__window_v5_885fa76387:MaterialExpressionTextureSampleParameter2D_5",
+          "input": "/Game/Materials/OOW/Masters/M_glass__window_v5_885fa76387.M_glass__window_v5_885fa76387:MaterialExpressionAdd_0"
+        },
+        {
+          "from": "/Game/Materials/OOW/Masters/M_glass__window_v5_885fa76387.M_glass__window_v5_885fa76387:MaterialExpressionTextureSampleParameter2D_5",
+          "input": "/Game/Materials/OOW/Masters/M_glass__window_v5_885fa76387.M_glass__window_v5_885fa76387:MaterialExpressionScalarParameter_17"
+        },
+        {
+          "from": "/Game/Materials/OOW/Masters/M_glass__window_v5_885fa76387.M_glass__window_v5_885fa76387:MaterialExpressionAdd_0",
+          "input": "/Game/Materials/OOW/Masters/M_glass__window_v5_885fa76387.M_glass__window_v5_885fa76387:MaterialExpressionTextureCoordinate_0"
+        },
+        {
+          "from": "/Game/Materials/OOW/Masters/M_glass__window_v5_885fa76387.M_glass__window_v5_885fa76387:MaterialExpressionAdd_0",
+          "input": "/Game/Materials/OOW/Masters/M_glass__window_v5_885fa76387.M_glass__window_v5_885fa76387:MaterialExpressionConstant2Vector_0"
+        },
+        {
+          "from": "/Game/Materials/OOW/Masters/M_glass__window_v5_885fa76387.M_glass__window_v5_885fa76387:MaterialExpressionTextureSampleParameter2D_4",
+          "input": "/Game/Materials/OOW/Masters/M_glass__window_v5_885fa76387.M_glass__window_v5_885fa76387:MaterialExpressionAdd_0"
+        },
+        {
+          "from": "/Game/Materials/OOW/Masters/M_glass__window_v5_885fa76387.M_glass__window_v5_885fa76387:MaterialExpressionTextureSampleParameter2D_4",
+          "input": "/Game/Materials/OOW/Masters/M_glass__window_v5_885fa76387.M_glass__window_v5_885fa76387:MaterialExpressionScalarParameter_17"
+        },
+        {
+          "from": "/Game/Materials/OOW/Masters/M_glass__window_v5_885fa76387.M_glass__window_v5_885fa76387:MaterialExpressionTextureSampleParameter2D_3",
+          "input": "/Game/Materials/OOW/Masters/M_glass__window_v5_885fa76387.M_glass__window_v5_885fa76387:MaterialExpressionAdd_0"
+        },
+        {
+          "from": "/Game/Materials/OOW/Masters/M_glass__window_v5_885fa76387.M_glass__window_v5_885fa76387:MaterialExpressionTextureSampleParameter2D_3",
+          "input": "/Game/Materials/OOW/Masters/M_glass__window_v5_885fa76387.M_glass__window_v5_885fa76387:MaterialExpressionScalarParameter_17"
+        },
+        {
+          "from": "/Game/Materials/OOW/Masters/M_glass__window_v5_885fa76387.M_glass__window_v5_885fa76387:MaterialExpressionTextureSampleParameter2D_2",
+          "input": "/Game/Materials/OOW/Masters/M_glass__window_v5_885fa76387.M_glass__window_v5_885fa76387:MaterialExpressionAdd_0"
+        },
+        {
+          "from": "/Game/Materials/OOW/Masters/M_glass__window_v5_885fa76387.M_glass__window_v5_885fa76387:MaterialExpressionTextureSampleParameter2D_2",
+          "input": "/Game/Materials/OOW/Masters/M_glass__window_v5_885fa76387.M_glass__window_v5_885fa76387:MaterialExpressionScalarParameter_17"
+        },
+        {
+          "from": "/Game/Materials/OOW/Masters/M_glass__window_v5_885fa76387.M_glass__window_v5_885fa76387:MaterialExpressionTextureSampleParameter2D_1",
+          "input": "/Game/Materials/OOW/Masters/M_glass__window_v5_885fa76387.M_glass__window_v5_885fa76387:MaterialExpressionAdd_0"
+        },
+        {
+          "from": "/Game/Materials/OOW/Masters/M_glass__window_v5_885fa76387.M_glass__window_v5_885fa76387:MaterialExpressionTextureSampleParameter2D_1",
+          "input": "/Game/Materials/OOW/Masters/M_glass__window_v5_885fa76387.M_glass__window_v5_885fa76387:MaterialExpressionScalarParameter_17"
+        },
+        {
+          "from": "/Game/Materials/OOW/Masters/M_glass__window_v5_885fa76387.M_glass__window_v5_885fa76387:MaterialExpressionTextureSampleParameter2D_0",
+          "input": "/Game/Materials/OOW/Masters/M_glass__window_v5_885fa76387.M_glass__window_v5_885fa76387:MaterialExpressionAdd_0"
+        },
+        {
+          "from": "/Game/Materials/OOW/Masters/M_glass__window_v5_885fa76387.M_glass__window_v5_885fa76387:MaterialExpressionTextureSampleParameter2D_0",
+          "input": "/Game/Materials/OOW/Masters/M_glass__window_v5_885fa76387.M_glass__window_v5_885fa76387:MaterialExpressionScalarParameter_17"
+        },
+        {
+          "from": "/Game/Materials/OOW/Masters/M_glass__window_v5_885fa76387.M_glass__window_v5_885fa76387:MaterialExpressionCustom_2",
+          "input": "/Game/Materials/OOW/Masters/M_glass__window_v5_885fa76387.M_glass__window_v5_885fa76387:MaterialExpressionObjectPositionWS_0"
+        },
+        {
+          "from": "/Game/Materials/OOW/Masters/M_glass__window_v5_885fa76387.M_glass__window_v5_885fa76387:MaterialExpressionCustom_2",
+          "input": "/Game/Materials/OOW/Masters/M_glass__window_v5_885fa76387.M_glass__window_v5_885fa76387:MaterialExpressionScalarParameter_12"
+        }
+      ],
+      "uvChannels": [
+        1,
+        2
+      ],
+      "roomParameters": [
+        "OOWRoom06",
+        "OOWRoom05",
+        "OOWRoom04",
+        "OOWRoom03",
+        "OOWRoom02",
+        "OOWRoom01"
+      ],
+      "classCounts": {
+        "MaterialExpressionCustom": 2,
+        "MaterialExpressionTextureSampleParameter2D": 6,
+        "MaterialExpressionScalarParameter": 4,
+        "MaterialExpressionAdd": 1,
+        "MaterialExpressionConstant2Vector": 1,
+        "MaterialExpressionTextureCoordinate": 2,
+        "MaterialExpressionObjectPositionWS": 1
+      },
+      "objectPositionFallbackNodes": [
+        "/Game/Materials/OOW/Masters/M_glass__window_v5_885fa76387.M_glass__window_v5_885fa76387:MaterialExpressionObjectPositionWS_0"
+      ],
+      "mipBiasParameterNodes": [
+        "/Game/Materials/OOW/Masters/M_glass__window_v5_885fa76387.M_glass__window_v5_885fa76387:MaterialExpressionScalarParameter_17"
+      ]
+    }
+  },
+  "textures": {
+    "/Game/Materials/OOW/WindowInteriors/room-06.room-06": {
+      "srgb": true,
+      "address_x": "<TextureAddress.TA_CLAMP: 1>",
+      "address_y": "<TextureAddress.TA_CLAMP: 1>",
+      "mip_gen_settings": "<TextureMipGenSettings.TMGS_BLUR2: 16>",
+      "power_of_two_mode": "<TexturePowerOfTwoSetting.STRETCH_TO_POWER_OF_TWO: 3>",
+      "virtual_texture_streaming": false,
+      "compression_settings": "<TextureCompressionSettings.TC_DEFAULT: 0>",
+      "mipEvidence": "Native mip generation enabled; resident mip count is not exposed by this audit"
+    },
+    "/Game/Materials/OOW/WindowInteriors/room-05.room-05": {
+      "srgb": true,
+      "address_x": "<TextureAddress.TA_CLAMP: 1>",
+      "address_y": "<TextureAddress.TA_CLAMP: 1>",
+      "mip_gen_settings": "<TextureMipGenSettings.TMGS_BLUR2: 16>",
+      "power_of_two_mode": "<TexturePowerOfTwoSetting.STRETCH_TO_POWER_OF_TWO: 3>",
+      "virtual_texture_streaming": false,
+      "compression_settings": "<TextureCompressionSettings.TC_DEFAULT: 0>",
+      "mipEvidence": "Native mip generation enabled; resident mip count is not exposed by this audit"
+    },
+    "/Game/Materials/OOW/WindowInteriors/room-04.room-04": {
+      "srgb": true,
+      "address_x": "<TextureAddress.TA_CLAMP: 1>",
+      "address_y": "<TextureAddress.TA_CLAMP: 1>",
+      "mip_gen_settings": "<TextureMipGenSettings.TMGS_BLUR2: 16>",
+      "power_of_two_mode": "<TexturePowerOfTwoSetting.STRETCH_TO_POWER_OF_TWO: 3>",
+      "virtual_texture_streaming": false,
+      "compression_settings": "<TextureCompressionSettings.TC_DEFAULT: 0>",
+      "mipEvidence": "Native mip generation enabled; resident mip count is not exposed by this audit"
+    },
+    "/Game/Materials/OOW/WindowInteriors/room-03.room-03": {
+      "srgb": true,
+      "address_x": "<TextureAddress.TA_CLAMP: 1>",
+      "address_y": "<TextureAddress.TA_CLAMP: 1>",
+      "mip_gen_settings": "<TextureMipGenSettings.TMGS_BLUR2: 16>",
+      "power_of_two_mode": "<TexturePowerOfTwoSetting.STRETCH_TO_POWER_OF_TWO: 3>",
+      "virtual_texture_streaming": false,
+      "compression_settings": "<TextureCompressionSettings.TC_DEFAULT: 0>",
+      "mipEvidence": "Native mip generation enabled; resident mip count is not exposed by this audit"
+    },
+    "/Game/Materials/OOW/WindowInteriors/T_Room_02.T_Room_02": {
+      "srgb": true,
+      "address_x": "<TextureAddress.TA_CLAMP: 1>",
+      "address_y": "<TextureAddress.TA_CLAMP: 1>",
+      "mip_gen_settings": "<TextureMipGenSettings.TMGS_BLUR2: 16>",
+      "power_of_two_mode": "<TexturePowerOfTwoSetting.STRETCH_TO_POWER_OF_TWO: 3>",
+      "virtual_texture_streaming": false,
+      "compression_settings": "<TextureCompressionSettings.TC_DEFAULT: 0>",
+      "mipEvidence": "Native mip generation enabled; resident mip count is not exposed by this audit"
+    },
+    "/Game/Materials/OOW/WindowInteriors/T_Room_01.T_Room_01": {
+      "srgb": true,
+      "address_x": "<TextureAddress.TA_CLAMP: 1>",
+      "address_y": "<TextureAddress.TA_CLAMP: 1>",
+      "mip_gen_settings": "<TextureMipGenSettings.TMGS_BLUR2: 16>",
+      "power_of_two_mode": "<TexturePowerOfTwoSetting.STRETCH_TO_POWER_OF_TWO: 3>",
+      "virtual_texture_streaming": false,
+      "compression_settings": "<TextureCompressionSettings.TC_DEFAULT: 0>",
+      "mipEvidence": "Native mip generation enabled; resident mip count is not exposed by this audit"
+    }
+  },
+  "failures": [],
+  "expectedTaggedActors": 68,
+  "actualTaggedActors": 68,
+  "passed": true,
+  "counts": {
+    "actors": 68,
+    "leafMaterials": 4,
+    "masters": 1,
+    "textures": 6,
+    "failures": 0
+  }
+}

@@ -6,3 +6,7 @@
 *.usdc filter=lfs diff=lfs merge=lfs -text
 *.hdr filter=lfs diff=lfs merge=lfs -text
 *.exr filter=lfs diff=lfs merge=lfs -text
+# Native Unreal assets are binary source assets, not build output.
+unreal/**/*.uasset filter=lfs diff=lfs merge=lfs -text
+unreal/**/*.umap filter=lfs diff=lfs merge=lfs -text
+unreal/Art/WindowInteriors/*.png filter=lfs diff=lfs merge=lfs -text

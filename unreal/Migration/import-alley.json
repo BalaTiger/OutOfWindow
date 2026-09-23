@@ -1,0 +1,8 @@
+{
+  "scene": "alley",
+  "map": "/Game/Maps/Alley",
+  "actors": 1735,
+  "uniqueMeshes": 1595,
+  "naniteMeshes": 1550,
+  "traditionalLodMeshes": 45
+}

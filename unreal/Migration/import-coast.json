@@ -1,0 +1,8 @@
+{
+  "scene": "coast",
+  "map": "/Game/Maps/Coast",
+  "actors": 9,
+  "uniqueMeshes": 6,
+  "naniteMeshes": 6,
+  "traditionalLodMeshes": 0
+}

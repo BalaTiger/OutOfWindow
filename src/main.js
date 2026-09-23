@@ -1275,7 +1275,20 @@ class LivingWorld {
   buildCoast() {
     const group = this.baseGroup('coast');
     const random = seededRandom(118);
-    this.addTerrain(group, 'coastSand', { width: 118, depth: 210, y: -1.3, z: -45, relief: 3.4, seed: 118 }).position.x = -55;
+    const sand = this.addTerrain(group, 'coastSand', { width: 118, depth: 210, y: -1.3, z: -45, relief: 3.4, seed: 118 });
+    sand.position.x = -55;
+    // Sink the exposed east/far borders 35 cm below the sea, preserving the
+    // interior and UVs. Local Y points toward the far coast after rotation.
+    const sandPositions = sand.geometry.attributes.position;
+    for (let i = 0; i < sandPositions.count; i++) {
+      const keep = (1 - smoothstep(41, 59, sandPositions.getX(i)))
+        * (1 - smoothstep(81, 105, sandPositions.getY(i)));
+      if (keep < 1) {
+        const height = sandPositions.getZ(i);
+        sandPositions.setZ(i, Math.min(height, -.1 + (height + .1) * keep));
+      }
+    }
+    sand.geometry.computeVertexNormals();
     const oceanNormals = new THREE.TextureLoader().load('./assets/water/waternormals.jpg', (texture) => {
       texture.wrapS = texture.wrapT = THREE.RepeatWrapping;
     });

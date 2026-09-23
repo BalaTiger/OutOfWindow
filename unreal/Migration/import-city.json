@@ -1,0 +1,8 @@
+{
+  "scene": "city",
+  "map": "/Game/Maps/City",
+  "actors": 10797,
+  "uniqueMeshes": 2070,
+  "naniteMeshes": 2055,
+  "traditionalLodMeshes": 15
+}

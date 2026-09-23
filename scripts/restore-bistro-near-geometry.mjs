@@ -50,6 +50,9 @@ const viewMap = new Map(), accessorMap = new Map();
 const materialMap = new Map(target.materials.map((m, i) => [m.name, i]));
 function resolveMaterial(name) {
   if (materialMap.has(name)) return materialMap.get(name);
+  // The safe pack deduplicates these identical base-color/normal textures.
+  // Mapping the omitted dark window panels to masonry seals the windows visually.
+  if (name === 'MASTER_Details_Dark') return materialMap.get('MASTER_Building_Details');
   const normalize = value => value.replace(/\.DoubleSided|_BLENDSHADER|\d+/gi, '').replace(/_+$/g, '');
   const stem = normalize(name);
   const match = [...materialMap.keys()].find(candidate => normalize(candidate) === stem);
@@ -57,7 +60,7 @@ function resolveMaterial(name) {
   // The safe conversion intentionally removes a few tiny dark-detail
   // materials. Reuse a neutral masonry material rather than dropping the
   // original high-resolution primitive and creating a hole in the frame.
-  if (/details_dark|building_details|focus_ornament/i.test(name)) return materialMap.get('MASTER_Concrete') ?? 0;
+  if (/building_details|focus_ornament/i.test(name)) return materialMap.get('MASTER_Concrete');
   return undefined;
 }
 function copyAccessor(index) {
