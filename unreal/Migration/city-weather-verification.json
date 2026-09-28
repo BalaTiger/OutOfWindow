@@ -1,0 +1,363 @@
+{
+  "date": "2026-09-24",
+  "exe": "D:\\OutOfWindowBuild\\Windows\\OutOfWindow\\Binaries\\Win64\\OutOfWindow.exe",
+  "exeSha256": "8d3a3e7bb8205cef198f8ba65ccfb7f736f9fb567c284d8ec9ee1705f37ff753",
+  "mapSha256": "97a0c4479445134885f62cc02199e67ff05c9a415bcbc6c00de7d7067148ce66",
+  "baselineExeSha256": "4a6f56f18fee60a79d941305604c4bba6a7a923fb7cd99fe9eb1b8b783ae9ea5",
+  "benchmark": {
+    "gpu": "RTX 5060",
+    "cpu": "i5-14600K",
+    "resolution": [
+      1280,
+      820
+    ],
+    "screenPercentage": 85,
+    "quality": 1,
+    "lumen": true,
+    "seconds": 30,
+    "discardFirstSeconds": 2,
+    "vsync": false,
+    "fpsCap": 0,
+    "windowFrame": false,
+    "offscreen": true,
+    "singleProjectGpuProcess": true,
+    "metric": "application frame interval, not GPU timer; whole weather/geometry change, not isolated cloud cost"
+  },
+  "states": {
+    "before-clear": {
+      "source": ".runtime\\ue-city\\sky-before-clear.json",
+      "sha256": "1c6ed317900848dcc0e6932571f7c695d87a2058766934d6e9f9affca2327401",
+      "values": {
+        "scene": "City",
+        "actualWeather": "clear",
+        "hour": 12,
+        "movingCars": 16,
+        "actors": 148,
+        "frameTimeMeanMs": 5.54393103862696,
+        "frameTimeP95Ms": 6.567999839782715,
+        "frameTimeSamples": 5052,
+        "capturedFrames": 1,
+        "cloudParameters": {
+          "Cloud_GlobalCoverage": -0.4000000059604645,
+          "Cloud_GlobalDensity": 0.006000000052154064,
+          "StormClouds": 0,
+          "Layout_WindControls": [
+            1,
+            1,
+            0.5,
+            0.33333298563957214
+          ]
+        },
+        "desktopFrameStyle": "none",
+        "desktopFrameReady": false
+      }
+    },
+    "before-rain": {
+      "source": ".runtime\\ue-city\\sky-before-rain.json",
+      "sha256": "9c2d3fafe24ae84150e0832332e19afba37b7fe3f1f36e00471aad99ff347cdd",
+      "values": {
+        "scene": "City",
+        "actualWeather": "rain",
+        "hour": 12,
+        "movingCars": 16,
+        "actors": 148,
+        "frameTimeMeanMs": 6.161720746631014,
+        "frameTimeP95Ms": 7.794402599334717,
+        "frameTimeSamples": 4545,
+        "capturedFrames": 1,
+        "cloudParameters": {
+          "Cloud_GlobalCoverage": 0.2499999701976776,
+          "Cloud_GlobalDensity": 0.01599999889731407,
+          "StormClouds": 0,
+          "Layout_WindControls": [
+            1,
+            1,
+            0.5,
+            0.33333298563957214
+          ]
+        },
+        "desktopFrameStyle": "none",
+        "desktopFrameReady": false
+      }
+    },
+    "final-clear": {
+      "source": ".runtime\\ue-city\\sky-final-clear.json",
+      "sha256": "23d34c69f9c98d69ead04b0cdb102a4a2b8e3820a0209039cc9691a7baa78ecb",
+      "values": {
+        "scene": "City",
+        "actualWeather": "clear",
+        "hour": 12,
+        "movingCars": 16,
+        "actors": 153,
+        "frameTimeMeanMs": 5.64156620471259,
+        "frameTimeP95Ms": 6.844799995422363,
+        "frameTimeSamples": 4965,
+        "capturedFrames": 1,
+        "cloudiness": 0.25,
+        "cloudLayerBottomKm": 2.200000047683716,
+        "cloudLayerHeightKm": 2.5,
+        "cloudViewSampleScale": 0.5,
+        "cloudShadowsEnabled": true,
+        "cloudAnimationSeconds": 30.0048370026052,
+        "cloudDriftUV": [
+          0.0016837756801195874,
+          -0.0009721278884216302
+        ],
+        "cloudParameters": {
+          "Cloud_GlobalCoverage": -0.11999999731779099,
+          "Cloud_GlobalDensity": 0.012000000104308128,
+          "StormClouds": 0,
+          "Layout_CloudGlobalScale": 32,
+          "Layout_WindControls": [
+            0.30000001192092896,
+            0.20000000298023224,
+            0.019999999552965164,
+            0.18000000715255737
+          ]
+        },
+        "atmosphereMieScale": 0.003996000159531832,
+        "atmosphereBaseMieScale": 0.003996000159531832,
+        "r.VolumetricCloud": 1,
+        "r.VolumetricRenderTarget": 1,
+        "r.VolumetricRenderTarget.Mode": 0,
+        "desktopFrameStyle": "none",
+        "desktopFrameReady": false
+      }
+    },
+    "final-rain": {
+      "source": ".runtime\\ue-city\\sky-final-rain.json",
+      "sha256": "507ffe84a3c0c26ff7e65ddbec827f4ec9dbe9b2db11e76476dd3cbb1135b993",
+      "values": {
+        "scene": "City",
+        "actualWeather": "rain",
+        "hour": 12,
+        "movingCars": 16,
+        "actors": 153,
+        "frameTimeMeanMs": 5.727058739780136,
+        "frameTimeP95Ms": 6.937399387359619,
+        "frameTimeSamples": 4891,
+        "capturedFrames": 1,
+        "cloudiness": 0.9599999785423279,
+        "cloudLayerBottomKm": 1.2000000476837158,
+        "cloudLayerHeightKm": 3.5,
+        "cloudViewSampleScale": 0.5,
+        "cloudShadowsEnabled": true,
+        "cloudAnimationSeconds": 30.00482639670372,
+        "cloudDriftUV": [
+          0.001683693705911337,
+          -0.0009720805606125169
+        ],
+        "cloudParameters": {
+          "Cloud_GlobalCoverage": 0.7000000476837158,
+          "Cloud_GlobalDensity": 0.029999999329447746,
+          "StormClouds": 0.8999998569488525,
+          "Layout_CloudGlobalScale": 32,
+          "Layout_WindControls": [
+            0.30000001192092896,
+            0.20000000298023224,
+            0.019999999552965164,
+            0.18000000715255737
+          ]
+        },
+        "atmosphereMieScale": 0.011988000944256783,
+        "atmosphereBaseMieScale": 0.003996000159531832,
+        "r.VolumetricCloud": 1,
+        "r.VolumetricRenderTarget": 1,
+        "r.VolumetricRenderTarget.Mode": 0,
+        "desktopFrameStyle": "none",
+        "desktopFrameReady": false
+      }
+    },
+    "final-cloud-off": {
+      "source": ".runtime\\ue-city\\sky-final-cloud-off.json",
+      "sha256": "d83fa9de37180098fa68f84c2ba2e3936137b356fe8c03ea7d4fece3ed60b41c",
+      "values": {
+        "scene": "City",
+        "actualWeather": "clear",
+        "hour": 12,
+        "movingCars": 16,
+        "actors": 153,
+        "frameTimeMeanMs": 16.666900223653478,
+        "frameTimeP95Ms": 16.666702270507812,
+        "frameTimeSamples": 1081,
+        "capturedFrames": 1,
+        "cloudiness": 0.25,
+        "cloudLayerBottomKm": 2.200000047683716,
+        "cloudLayerHeightKm": 2.5,
+        "cloudViewSampleScale": 0.5,
+        "cloudShadowsEnabled": true,
+        "cloudAnimationSeconds": 20.006368897855282,
+        "cloudDriftUV": [
+          0.0010831440522884688,
+          -0.000625353218270062
+        ],
+        "cloudParameters": {
+          "Cloud_GlobalCoverage": -0.11999999731779099,
+          "Cloud_GlobalDensity": 0.012000000104308128,
+          "StormClouds": 0,
+          "Layout_CloudGlobalScale": 32,
+          "Layout_WindControls": [
+            0.30000001192092896,
+            0.20000000298023224,
+            0.019999999552965164,
+            0.18000000715255737
+          ]
+        },
+        "atmosphereMieScale": 0.003996000159531832,
+        "atmosphereBaseMieScale": 0.003996000159531832,
+        "r.VolumetricCloud": 0,
+        "r.VolumetricRenderTarget": 1,
+        "r.VolumetricRenderTarget.Mode": 0,
+        "desktopFrameStyle": "none",
+        "desktopFrameReady": false
+      }
+    },
+    "city-cloudmotion": {
+      "source": ".runtime\\ue-validation\\packaged-city-cloudmotion.json",
+      "sha256": "b2d58cb3fdad32cafd1492168878a681dd0059649306f43e1d981c1a1ce3f0bf",
+      "values": {
+        "scene": "City",
+        "actualWeather": "clear",
+        "hour": 12,
+        "movingCars": 16,
+        "actors": 154,
+        "frameTimeMeanMs": 17.350700696423882,
+        "frameTimeP95Ms": 16.693998336791992,
+        "frameTimeSamples": 2777,
+        "capturedFrames": 16,
+        "cloudiness": 0.25,
+        "cloudLayerBottomKm": 2.200000047683716,
+        "cloudLayerHeightKm": 2.5,
+        "cloudViewSampleScale": 0.5,
+        "cloudShadowsEnabled": true,
+        "cloudAnimationSeconds": 50.1691801995039,
+        "cloudDriftUV": [
+          0.002896604357460732,
+          -0.0016723545249275234
+        ],
+        "cloudParameters": {
+          "Cloud_GlobalCoverage": -0.11999999731779099,
+          "Cloud_GlobalDensity": 0.012000000104308128,
+          "StormClouds": 0,
+          "Layout_CloudGlobalScale": 32,
+          "Layout_WindControls": [
+            0.30000001192092896,
+            0.20000000298023224,
+            0.019999999552965164,
+            0.18000000715255737
+          ]
+        },
+        "atmosphereMieScale": 0.003996000159531832,
+        "atmosphereBaseMieScale": 0.003996000159531832,
+        "r.VolumetricCloud": 1,
+        "r.VolumetricRenderTarget": 1,
+        "r.VolumetricRenderTarget.Mode": 0,
+        "desktopFrameStyle": "graphite",
+        "desktopFrameReady": true
+      }
+    },
+    "city-rainnight": {
+      "source": ".runtime\\ue-validation\\packaged-city-rainnight.json",
+      "sha256": "d106f3a84a32633c4ed8832e0d589944d895ed3ec1951efccd9e64a960cdc147",
+      "values": {
+        "scene": "City",
+        "actualWeather": "rain",
+        "hour": 23,
+        "movingCars": 16,
+        "actors": 154,
+        "frameTimeMeanMs": 16.66772115638585,
+        "frameTimeP95Ms": 16.666799545288086,
+        "frameTimeSamples": 1081,
+        "capturedFrames": 1,
+        "cloudiness": 0.9597666263580322,
+        "cloudLayerBottomKm": 1.200000286102295,
+        "cloudLayerHeightKm": 3.499999761581421,
+        "cloudViewSampleScale": 0.5,
+        "cloudShadowsEnabled": true,
+        "cloudAnimationSeconds": 20.01126790046692,
+        "cloudDriftUV": [
+          0.0010833235542399289,
+          -0.0006254568537216841
+        ],
+        "cloudParameters": {
+          "Cloud_GlobalCoverage": 0.6999997496604919,
+          "Cloud_GlobalDensity": 0.0299999937415123,
+          "StormClouds": 0.8999996185302734,
+          "Layout_CloudGlobalScale": 32,
+          "Layout_WindControls": [
+            0.30000001192092896,
+            0.20000000298023224,
+            0.019999999552965164,
+            0.18000000715255737
+          ]
+        },
+        "atmosphereMieScale": 0.011987998150289059,
+        "atmosphereBaseMieScale": 0.003996000159531832,
+        "r.VolumetricCloud": 1,
+        "r.VolumetricRenderTarget": 1,
+        "r.VolumetricRenderTarget.Mode": 0,
+        "desktopFrameStyle": "graphite",
+        "desktopFrameReady": true
+      }
+    },
+    "alley-rain": {
+      "source": ".runtime\\ue-validation\\packaged-alley-rain.json",
+      "sha256": "6fb39b54e212978a5b9dfc605bbe0014b9f27851d7d43ad7e338b59e0be14a6f",
+      "values": {
+        "scene": "Alley",
+        "actualWeather": "rain",
+        "hour": 12,
+        "movingCars": 0,
+        "actors": 1844,
+        "frameTimeMeanMs": 16.67299590640598,
+        "frameTimeP95Ms": 16.71269989013672,
+        "frameTimeSamples": 1080,
+        "capturedFrames": 1,
+        "cloudiness": 0.9597629904747009,
+        "cloudLayerBottomKm": 1.200000286102295,
+        "cloudLayerHeightKm": 3.499999761581421,
+        "cloudViewSampleScale": 0.5,
+        "cloudShadowsEnabled": true,
+        "cloudAnimationSeconds": 20.001871597021818,
+        "cloudDriftUV": [
+          0.001081244067589358,
+          -0.0006242562621045874
+        ],
+        "cloudParameters": {
+          "Cloud_GlobalCoverage": 0.6999998092651367,
+          "Cloud_GlobalDensity": 0.029999995604157448,
+          "StormClouds": 0.8999995589256287,
+          "Layout_CloudGlobalScale": 32,
+          "Layout_WindControls": [
+            0.30000001192092896,
+            0.20000000298023224,
+            0.019999999552965164,
+            0.18000000715255737
+          ]
+        },
+        "atmosphereMieScale": 0.011987998150289059,
+        "atmosphereBaseMieScale": 0.003996000159531832,
+        "r.VolumetricCloud": 1,
+        "r.VolumetricRenderTarget": 1,
+        "r.VolumetricRenderTarget.Mode": 0,
+        "desktopFrameStyle": "graphite",
+        "desktopFrameReady": true
+      }
+    }
+  },
+  "renderEvidence": {
+    "cloudOnOffSkyMeanAbsoluteDifference255": 15.466780045351474,
+    "motionSkyMeanAbsoluteDifference255": 0.9306802721088435,
+    "skyRegionPixels": [
+      70,
+      70,
+      140,
+      280
+    ],
+    "noiseSuppressionGaussianRadius": 1,
+    "motionFrames": 16,
+    "motionSpanSeconds": 30.158775091171265,
+    "cloudMovementAlsoVisuallyInspected": true,
+    "savedMapAuditPassed": true
+  }
+}

@@ -156,7 +156,7 @@ void AWindowPrecipitation::CreateParticles(UInstancedStaticMeshComponent* Compon
             Random.FRand() * VolumeSize.Y, Random.FRand() * VolumeSize.Z);
         const float Size = Random.FRandRange(0.025f, 0.065f);
         const FVector Scale = bSnow ? FVector(Size, Size, Size)
-            : FVector(Random.FRandRange(0.012f, 0.022f), Random.FRandRange(0.7f, 1.3f), 1.0);
+            : FVector(Random.FRandRange(0.006f, 0.012f), Random.FRandRange(0.2f, 0.45f), 1.0);
         const int32 Instance = Component->AddInstance(FTransform(Rotation, Centre, Scale), true);
         float Data[] = {static_cast<float>(Centre.X), static_cast<float>(Centre.Y),
                               static_cast<float>(Centre.Z), Random.FRand()};

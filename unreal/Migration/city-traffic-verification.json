@@ -1,0 +1,150 @@
+{
+  "date": "2026-09-24",
+  "implementation": "UE native city car-following and reserved smooth lane changes",
+  "executable": "D:\\OutOfWindowBuild\\Windows\\OutOfWindow\\Binaries\\Win64\\OutOfWindow.exe",
+  "executableSha256": "E542C05FAFFEA0BA3D6CF54CB7B413642A0535A7B45EFAD6E87CA32EBF2754A5",
+  "deployment": "Full BuildCookRun package, including current rain-glass material required by the workspace window-frame code; previous executable backed up under .runtime/city-traffic-previous",
+  "parameters": {
+    "dryCruiseTargetKmh": [
+      34,
+      50
+    ],
+    "nominalLaneChangeSeconds": 3.2,
+    "minimumEnvelopeGapMeters": 2.5,
+    "carEnvelopeLengthMeters": 4.9,
+    "simulationHz": 60
+  },
+  "automation": {
+    "succeeded": 2,
+    "failed": 0,
+    "reportCreatedOn": "2026.09.24-08.03.27",
+    "tests": [
+      {
+        "fullTestPath": "OutOfWindow.City.TrafficBehaviour",
+        "state": "Success",
+        "errors": 0
+      },
+      {
+        "fullTestPath": "OutOfWindow.City.TrafficStability",
+        "state": "Success",
+        "errors": 0
+      }
+    ],
+    "coverage": [
+      "blocked and permitted overtaking",
+      "return after passing",
+      "fast rear approach",
+      "same-step reservation",
+      "distant slow vehicle",
+      "loop seam during following and lane changes",
+      "four weather types, 600 simulated seconds each",
+      "30/120 fps determinism",
+      "144 fps with 5-second hitches and weather changes",
+      "invalid delta time"
+    ],
+    "events": [
+      "City overtake lane change 1 completes at 63.87 seconds",
+      "City overtake lane change 2 completes at 77.83 seconds",
+      "City overtake lane change 3 completes at 86.63 seconds",
+      "clear 600s: changes=64 overtakes=32 wraps=257 minimumGap=15.738m",
+      "rain 600s: changes=52 overtakes=25 wraps=212 minimumGap=17.190m",
+      "snow 600s: changes=58 overtakes=28 wraps=167 minimumGap=16.540m",
+      "fog 600s: changes=58 overtakes=28 wraps=167 minimumGap=16.540m"
+    ],
+    "rawReport": ".runtime/city-traffic-tests/index.json"
+  },
+  "runtime": [
+    {
+      "case": "city-traffic",
+      "weather": "clear",
+      "capturedFrames": 16,
+      "desktopFrameReady": true,
+      "desktopFrameTriangles": 1452,
+      "cars": 16,
+      "minimumEnvelopeGapMeters": 20.5202579498291,
+      "completedLaneChanges": 3,
+      "completedOvertakeLaneChanges": 1,
+      "loopCrossings": 27,
+      "measuredSpeedRangeKmh": [
+        33.770111083984375,
+        46.628761291503906
+      ],
+      "rawEvidence": ".runtime/ue-validation/city-traffic.json"
+    },
+    {
+      "case": "city-rain",
+      "weather": "rain",
+      "capturedFrames": 1,
+      "desktopFrameReady": true,
+      "desktopFrameTriangles": 1452,
+      "cars": 16,
+      "minimumEnvelopeGapMeters": 25.6032657623291,
+      "completedLaneChanges": 0,
+      "completedOvertakeLaneChanges": 0,
+      "loopCrossings": 11,
+      "measuredSpeedRangeKmh": [
+        27.728546142578125,
+        38.815582275390625
+      ],
+      "rawEvidence": ".runtime/ue-validation/city-rain.json"
+    },
+    {
+      "case": "city-snow",
+      "weather": "snow",
+      "capturedFrames": 1,
+      "desktopFrameReady": true,
+      "desktopFrameTriangles": 1452,
+      "cars": 16,
+      "minimumEnvelopeGapMeters": 22.8012638092041,
+      "completedLaneChanges": 2,
+      "completedOvertakeLaneChanges": 1,
+      "loopCrossings": 9,
+      "measuredSpeedRangeKmh": [
+        21.348066329956055,
+        30.832805633544922
+      ],
+      "rawEvidence": ".runtime/ue-validation/city-snow.json"
+    },
+    {
+      "case": "city-fog",
+      "weather": "fog",
+      "capturedFrames": 1,
+      "desktopFrameReady": true,
+      "desktopFrameTriangles": 1452,
+      "cars": 16,
+      "minimumEnvelopeGapMeters": 22.8012638092041,
+      "completedLaneChanges": 2,
+      "completedOvertakeLaneChanges": 1,
+      "loopCrossings": 9,
+      "measuredSpeedRangeKmh": [
+        21.34787368774414,
+        30.83285140991211
+      ],
+      "rawEvidence": ".runtime/ue-validation/city-fog.json"
+    },
+    {
+      "case": "packaged-city-traffic",
+      "weather": "clear",
+      "capturedFrames": 16,
+      "desktopFrameReady": true,
+      "desktopFrameTriangles": 1452,
+      "cars": 16,
+      "minimumEnvelopeGapMeters": 20.5202579498291,
+      "completedLaneChanges": 3,
+      "completedOvertakeLaneChanges": 1,
+      "loopCrossings": 27,
+      "measuredSpeedRangeKmh": [
+        33.767608642578125,
+        46.45180130004883
+      ],
+      "rawEvidence": ".runtime/ue-validation/packaged-city-traffic.json"
+    }
+  ],
+  "preview": "Art/City/city-traffic-motion.mp4 (4 frames per second capture sequence, not a performance measurement)",
+  "limits": [
+    "Motion parameters are an animation calibration, not a validated traffic prediction model.",
+    "Far-end recycling remains visible at a few pixels; no junction turns or traffic signals were added.",
+    "No performance claim: other editor work may have been running during captures.",
+    "Old Electron version is unchanged."
+  ]
+}

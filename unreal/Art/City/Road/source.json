@@ -1,0 +1,24 @@
+{
+  "name": "Asphalt 02",
+  "author": "Rob Tuytel",
+  "license": "CC0",
+  "source": "https://polyhaven.com/a/asphalt_02",
+  "sourcePhysicalWidthMeters": 3,
+  "importedWorldWidthMeters": 3,
+  "localSource": "public/assets/polyhaven/materials/asphalt_02",
+  "normalConvention": "OpenGL +Y; Unreal flip_green_channel once",
+  "files": [
+    {
+      "name": "Asphalt02_diffuse.jpg",
+      "sha256": "1aa5ce99f58a625c71d48cfc3e68b65ca85ccb00f39e045c0a928608a0ea25ed"
+    },
+    {
+      "name": "Asphalt02_normal.jpg",
+      "sha256": "42a1c381b53204e83a982db2864479a30bc127bbdeebb1006f8ee51bff099df3"
+    },
+    {
+      "name": "Asphalt02_roughness.jpg",
+      "sha256": "70ba3edc65525eb4dc366cf010ca7ae0bd34e0251ff0225c2dad627a873d0712"
+    }
+  ]
+}

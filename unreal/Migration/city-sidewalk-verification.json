@@ -1,0 +1,102 @@
+{
+  "recordedAt": "2026-09-24T17:35:53.165851+08:00",
+  "scope": "Independent modeled sidewalk, planted tree beds, street and balcony access details",
+  "sidewalk": {
+    "triangles": 131336,
+    "meshes": 6,
+    "counts": {
+      "pavingBlocks": 5113,
+      "curbStones": 722,
+      "baseSections": 61,
+      "planterRimStones": 112,
+      "plantingClumps": 224,
+      "tactileDomes": 552
+    },
+    "sha256": "8b0733f685f532640f967bd97158871c3e7ceacb5ffb7c2f4b8578579baacf53",
+    "geometryChecks": true
+  },
+  "entrances": {
+    "triangles": 8360,
+    "meshes": 7,
+    "streetEntrances": 6,
+    "balconyDoors": 4,
+    "sha256": "8b20bcf8c1253a62489d4a197ecd91ae059c0ff4923f92a55ec875646af9f38b",
+    "geometryChecks": true
+  },
+  "savedMapAudit": {
+    "passed": true,
+    "actors": 151,
+    "preservedRoadActors": 48
+  },
+  "executableSha256": "e542c05faffea0ba3d6cf54cb7b413642a0535a7b45efad6e87ca32ebf2754a5",
+  "contentIndexSha256": "55abffe677685423d3cfe44f98fdae7a7a007658272fb0f507b45e0cf18f5da4",
+  "benchmark": {
+    "resolution": [
+      1280,
+      820
+    ],
+    "screenPercentage": 85,
+    "quality": 1,
+    "hardwareLumen": true,
+    "frameHidden": true,
+    "uncapped": true,
+    "seconds": 30,
+    "runs": [
+      {
+        "weather": "clear",
+        "beforeMeanMs": 5.624680903284012,
+        "beforeP95Ms": 6.682999610900879,
+        "afterMeanMs": 5.737316963077812,
+        "afterP95Ms": 6.976701259613037,
+        "afterApproxFps": 174.29749941225924,
+        "samples": 4882,
+        "materials": 36,
+        "actors": 167,
+        "staticMeshComponents": 133
+      },
+      {
+        "weather": "rain",
+        "beforeMeanMs": 5.667453657203154,
+        "beforeP95Ms": 6.775300979614258,
+        "afterMeanMs": 5.592798181796279,
+        "afterP95Ms": 6.524302005767822,
+        "afterApproxFps": 178.8013741055149,
+        "samples": 5007,
+        "materials": 36,
+        "actors": 167,
+        "staticMeshComponents": 133
+      }
+    ],
+    "note": "Single same-machine paired runs, one game process, first 2 seconds excluded. Application frame time, not GPU-only timing or a sustained performance guarantee."
+  },
+  "regressions": [
+    {
+      "case": "city-traffic",
+      "passed": true,
+      "frames": 16,
+      "frameStyle": "graphite",
+      "windowRainIntensity": 0,
+      "frameP95Ms": 16.693099975585938,
+      "minimumCarGapMeters": 20.5202579498291,
+      "laneChanges": 3,
+      "overtakes": 1,
+      "interfaceHidden": false
+    },
+    {
+      "case": "city-rainglass",
+      "passed": true,
+      "frames": 8,
+      "frameStyle": "graphite",
+      "windowRainIntensity": 0.6669074892997742,
+      "frameP95Ms": 16.714397430419922,
+      "minimumCarGapMeters": 25.942041397094727,
+      "laneChanges": 0,
+      "overtakes": 0,
+      "interfaceHidden": true
+    }
+  ],
+  "limitations": [
+    "Building entrances and balcony doors are static exterior geometry; no door interaction or navigable interior was added.",
+    "Tower masses remain the previous design; this pass refines street level and actual terrace access."
+  ]
+}

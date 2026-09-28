@@ -1,0 +1,495 @@
+{
+  "recipe": "modern-city-v3-facade",
+  "removedLegacyActors": 90,
+  "architectureActors": 52,
+  "facade": {
+    "version": "city-facade-v1",
+    "heroBuildings": [
+      "CityModern_B01_terrace",
+      "CityModern_B07_terrace"
+    ],
+    "heroWindowCount": 630,
+    "interiorAtlasUsed": false
+  },
+  "nightLighting": {
+    "version": "city-office-light-v1",
+    "gain": 0.065,
+    "materials": [
+      "CityModern_Glass_Day_Blue",
+      "CityModern_Glass_Day_Silver",
+      "CityModern_Hero_Glass",
+      "Glass_Lit_CityModern_Warm"
+    ],
+    "source": {
+      "sourceGeometry": {
+        "file": "modern-city.glb",
+        "sha256": "8063f1d17e102bb15b5b16d025bbddcc312a5cadd13f0d362b790d6186b336cc"
+      },
+      "allNearPaneCount": 13724,
+      "heroPaneCount": 630,
+      "checks": {
+        "passed": true,
+        "allPanesHaveColor": true,
+        "paneColorsConstant": true,
+        "nonGlassBlack": true,
+        "continuousOfficeGroups": true,
+        "maxAdjacentChannelDifference": 0.32036545872688293,
+        "actualColorRange": [
+          0.025080343708395958,
+          0.714410662651062
+        ],
+        "floorGroupSpanRange": [
+          2,
+          4
+        ],
+        "rowCount": 1312
+      },
+      "exportedChecks": {
+        "passed": true,
+        "allPrimitivesHaveColor0": true,
+        "actualNearPaneCount": 13724,
+        "actualHeroPaneCount": 630,
+        "geometryUnchanged": true,
+        "materialsUnchanged": true,
+        "beforeGeometrySha256": "9dc2a96b822fd1e532dcdf46032d428931510630c6fbc788fcb3d7ef685bf100",
+        "afterGeometrySha256": "9dc2a96b822fd1e532dcdf46032d428931510630c6fbc788fcb3d7ef685bf100",
+        "beforeMaterialSha256": "0c0ecc6cebaa8c816f0628399c666f96c57088e0175b5564fae6d56b0b8c2c6b",
+        "afterMaterialSha256": "0c0ecc6cebaa8c816f0628399c666f96c57088e0175b5564fae6d56b0b8c2c6b",
+        "comparedSemantics": [
+          "POSITION",
+          "NORMAL",
+          "TEXCOORD_0",
+          "TEXCOORD_1",
+          "indices",
+          "material slots",
+          "node transforms"
+        ],
+        "previousGlbSha256": "970d26fc832a6f133da973c30b65e425258acc439f53ff2df224092b27aebdb2",
+        "glbSha256": "8063f1d17e102bb15b5b16d025bbddcc312a5cadd13f0d362b790d6186b336cc"
+      }
+    }
+  },
+  "nearBuildings": 16,
+  "skylineBuildings": 18,
+  "context": {
+    "buildings": 20,
+    "actors": 6,
+    "groups": [
+      {
+        "meshName": "CityModern_Context_West",
+        "buildings": 5,
+        "triangles": 2544,
+        "primitives": 3,
+        "bounds": {
+          "min": [
+            -192.11000061035156,
+            6.862500190734863,
+            -560.1099853515625
+          ],
+          "max": [
+            -21.889999389648438,
+            65.0999984741211,
+            -309.8900146484375
+          ]
+        }
+      },
+      {
+        "meshName": "CityModern_Context_East",
+        "buildings": 5,
+        "triangles": 2556,
+        "primitives": 3,
+        "bounds": {
+          "min": [
+            23.889999389648438,
+            6.862500190734863,
+            -562.6099853515625
+          ],
+          "max": [
+            200.11000061035156,
+            67.0999984741211,
+            -312.3900146484375
+          ]
+        }
+      },
+      {
+        "meshName": "CityModern_Context_Terminus",
+        "buildings": 3,
+        "triangles": 1572,
+        "primitives": 3,
+        "bounds": {
+          "min": [
+            -55.11000061035156,
+            6.862500190734863,
+            -535.1099853515625
+          ],
+          "max": [
+            72.11000061035156,
+            76.0999984741211,
+            -453.8900146484375
+          ]
+        }
+      },
+      {
+        "meshName": "CityModern_Context_Background",
+        "buildings": 5,
+        "triangles": 2448,
+        "primitives": 3,
+        "bounds": {
+          "min": [
+            -285.1099853515625,
+            6.862500190734863,
+            -735.6099853515625
+          ],
+          "max": [
+            220.11000061035156,
+            53.099998474121094,
+            -619.8900146484375
+          ]
+        }
+      },
+      {
+        "meshName": "CityModern_Context_Reflection",
+        "buildings": 2,
+        "triangles": 1056,
+        "primitives": 2,
+        "bounds": {
+          "min": [
+            -162.11000061035156,
+            6.862500190734863,
+            66.88999938964844
+          ],
+          "max": [
+            75.11000061035156,
+            60.099998474121094,
+            102.11000061035156
+          ]
+        }
+      },
+      {
+        "meshName": "CityModern_Context_Intersection",
+        "buildings": 0,
+        "triangles": 252,
+        "primitives": 2,
+        "bounds": {
+          "min": [
+            -155,
+            6.88700008392334,
+            -457
+          ],
+          "max": [
+            155,
+            6.925000190734863,
+            -395.1000061035156
+          ]
+        }
+      }
+    ],
+    "solidGroundProbes": 30
+  },
+  "sourceGeometry": {
+    "sha256": "8063f1d17e102bb15b5b16d025bbddcc312a5cadd13f0d362b790d6186b336cc",
+    "triangles": 98168,
+    "primitives": 192
+  },
+  "movingCars": 16,
+  "streetTrees": 28,
+  "nightLights": 18,
+  "batch": {
+    "actorsBefore": 139,
+    "actorsAfter": 112,
+    "sourceActorsBatched": 28,
+    "instanceComponentsCreated": 1,
+    "instancesCreated": 28,
+    "actorsRemovedNet": 27,
+    "allWorldTransformsVerified": true,
+    "skipped": {
+      "semantic_or_parent": 31
+    }
+  },
+  "sidewalk": {
+    "version": "city-sidewalk-v1",
+    "sha256": "170348cbcdef1d241c88a667a30e1b02f13657d2d0b0f64f6a245bff3912d673",
+    "triangles": 131336,
+    "meshCount": 6,
+    "actors": [
+      {
+        "label": "CitySidewalk_Paving",
+        "mesh": "/Game/Scenes/City/Modern/city-sidewalk/StaticMeshes/city-sidewalk_mesh_0.city-sidewalk_mesh_0",
+        "fallbackTriangles": 5928
+      },
+      {
+        "label": "CitySidewalk_Curbs",
+        "mesh": "/Game/Scenes/City/Modern/city-sidewalk/StaticMeshes/city-sidewalk_mesh_1.city-sidewalk_mesh_1",
+        "fallbackTriangles": 9788
+      },
+      {
+        "label": "CitySidewalk_Base",
+        "mesh": "/Game/Scenes/City/Modern/city-sidewalk/StaticMeshes/city-sidewalk_mesh_2.city-sidewalk_mesh_2",
+        "fallbackTriangles": 418
+      },
+      {
+        "label": "CitySidewalk_Soil",
+        "mesh": "/Game/Scenes/City/Modern/city-sidewalk/StaticMeshes/city-sidewalk_mesh_3.city-sidewalk_mesh_3",
+        "fallbackTriangles": 334
+      },
+      {
+        "label": "CitySidewalk_Tactile",
+        "mesh": "/Game/Scenes/City/Modern/city-sidewalk/StaticMeshes/city-sidewalk_mesh_4.city-sidewalk_mesh_4",
+        "fallbackTriangles": 252
+      },
+      {
+        "label": "CitySidewalk_Planting",
+        "mesh": "/Game/Scenes/City/Modern/city-sidewalk/StaticMeshes/city-sidewalk_mesh_5.city-sidewalk_mesh_5",
+        "fallbackTriangles": 4478
+      }
+    ],
+    "replacedRoads": [
+      "OOW_00037_Mesh",
+      "OOW_00038_Mesh",
+      "OOW_00042_Mesh",
+      "OOW_00043_Mesh"
+    ]
+  },
+  "entrances": {
+    "version": "city-sidewalk-v1",
+    "sha256": "e273abcc2622e6c015b44bbc56c711d7f814929f7596851de9c51a1f6e676e00",
+    "triangles": 8360,
+    "meshCount": 7,
+    "actors": [
+      {
+        "label": "CityEntrance_B03_glass",
+        "mesh": "/Game/Scenes/City/Modern/city-entrances/StaticMeshes/city-entrances_mesh_1.city-entrances_mesh_1",
+        "fallbackTriangles": 746
+      },
+      {
+        "label": "CityEntrance_B07_terrace",
+        "mesh": "/Game/Scenes/City/Modern/city-entrances/StaticMeshes/city-entrances_mesh_3.city-entrances_mesh_3",
+        "fallbackTriangles": 616
+      },
+      {
+        "label": "CityEntrance_B11_terrace",
+        "mesh": "/Game/Scenes/City/Modern/city-entrances/StaticMeshes/city-entrances_mesh_5.city-entrances_mesh_5",
+        "fallbackTriangles": 616
+      },
+      {
+        "label": "CityEntrance_B04_terrace",
+        "mesh": "/Game/Scenes/City/Modern/city-entrances/StaticMeshes/city-entrances_mesh_6.city-entrances_mesh_6",
+        "fallbackTriangles": 290
+      },
+      {
+        "label": "CityEntrance_B01_terrace",
+        "mesh": "/Game/Scenes/City/Modern/city-entrances/StaticMeshes/city-entrances_mesh_0.city-entrances_mesh_0",
+        "fallbackTriangles": 616
+      },
+      {
+        "label": "CityEntrance_B05_fins",
+        "mesh": "/Game/Scenes/City/Modern/city-entrances/StaticMeshes/city-entrances_mesh_2.city-entrances_mesh_2",
+        "fallbackTriangles": 786
+      },
+      {
+        "label": "CityEntrance_B09_fins",
+        "mesh": "/Game/Scenes/City/Modern/city-entrances/StaticMeshes/city-entrances_mesh_4.city-entrances_mesh_4",
+        "fallbackTriangles": 786
+      }
+    ]
+  },
+  "roads": {
+    "version": "city-road-v1",
+    "sha256": "14c1370576e321ea86b1b388fe331d497dc087c021abcab574606f9ad8db8e85",
+    "triangles": 1352,
+    "meshCount": 2,
+    "actors": [
+      {
+        "label": "CityRoadMarkings_White",
+        "mesh": "/Game/Scenes/City/Modern/city-road-markings/StaticMeshes/city-road-markings_mesh_0.city-road-markings_mesh_0",
+        "fallbackTriangles": 517
+      },
+      {
+        "label": "CityRoadMarkings_Yellow",
+        "mesh": "/Game/Scenes/City/Modern/city-road-markings/StaticMeshes/city-road-markings_mesh_1.city-road-markings_mesh_1",
+        "fallbackTriangles": 12
+      }
+    ],
+    "roadBindings": {
+      "OOW_00032_city_grounding_underlay": "/Game/Scenes/City/Modern/Materials/M_CityRoad_Concrete.M_CityRoad_Concrete",
+      "OOW_00033_Mesh": "/Game/Scenes/City/Modern/Materials/M_CityRoad_Asphalt.M_CityRoad_Asphalt",
+      "OOW_00034_Mesh": "/Game/Scenes/City/Modern/Materials/M_CityRoad_Parking.M_CityRoad_Parking",
+      "OOW_00035_Mesh": "/Game/Scenes/City/Modern/Materials/M_CityRoad_Parking.M_CityRoad_Parking",
+      "OOW_00036_Mesh": "/Game/Scenes/City/Modern/Materials/M_CityRoad_Cycle.M_CityRoad_Cycle"
+    },
+    "removedLegacyActors": [
+      "OOW_00039_Mesh",
+      "OOW_00040_Mesh",
+      "OOW_00041_Mesh",
+      "OOW_00044_Mesh",
+      "OOW_00045_Mesh",
+      "OOW_00046_Mesh",
+      "OOW_00047_Mesh",
+      "OOW_00048_Mesh",
+      "OOW_00049_Mesh",
+      "OOW_00050_Mesh",
+      "OOW_00051_Mesh",
+      "OOW_00052_Mesh",
+      "OOW_00053_Mesh",
+      "OOW_00054_Mesh",
+      "OOW_00055_Mesh",
+      "OOW_00056_Mesh",
+      "OOW_00057_Mesh",
+      "OOW_00058_Mesh",
+      "OOW_00059_Mesh",
+      "OOW_00060_Mesh",
+      "OOW_00061_Mesh",
+      "OOW_00062_Mesh",
+      "OOW_00063_Mesh",
+      "OOW_00064_Mesh",
+      "OOW_00065_Mesh",
+      "OOW_00066_Mesh",
+      "OOW_00067_Mesh",
+      "OOW_00068_Mesh",
+      "OOW_00069_Mesh",
+      "OOW_00070_Mesh",
+      "OOW_00071_Mesh",
+      "OOW_00072_Mesh",
+      "OOW_00073_Mesh",
+      "OOW_00074_Mesh",
+      "OOW_00075_Mesh",
+      "OOW_00076_Mesh",
+      "OOW_00077_Mesh",
+      "OOW_00078_Mesh",
+      "OOW_00079_Mesh",
+      "OOW_00080_Mesh",
+      "OOW_00081_Mesh",
+      "OOW_00082_Mesh",
+      "OOW_00083_Mesh"
+    ],
+    "worldTextureMeters": 3,
+    "wetBaseRoughness": [
+      0.54,
+      0.62
+    ],
+    "puddleRoughness": 0.22
+  },
+  "camera": [
+    2600,
+    4200,
+    3700
+  ],
+  "target": [
+    -2200,
+    -11500,
+    1900
+  ],
+  "verticalFov": 54,
+  "frameOwnership": "AWindowFrame runtime cosmetic; no frame or sill baked into City map",
+  "materialCount": 24,
+  "actorsSaved": 130,
+  "streetLighting": {
+    "count": 18,
+    "lumens": 650.0,
+    "radiusCm": 4000.0,
+    "innerConeDegrees": 55.0,
+    "outerConeDegrees": 75.0,
+    "pitchDegrees": -82.0,
+    "temperatureK": 3800.0,
+    "extensions": [
+      {
+        "name": "CityModern_LED_W7",
+        "template": "CityModern_LED_W6",
+        "position": [
+          -14.8,
+          14.5,
+          -217.0
+        ],
+        "offsetCm": [
+          0.0,
+          -4000.0,
+          0.0
+        ],
+        "lumens": 550.0
+      },
+      {
+        "name": "CityModern_LED_W8",
+        "template": "CityModern_LED_W6",
+        "position": [
+          -14.8,
+          14.5,
+          -257.0
+        ],
+        "offsetCm": [
+          0.0,
+          -8000.0,
+          0.0
+        ],
+        "lumens": 450.0
+      },
+      {
+        "name": "CityModern_LED_W9",
+        "template": "CityModern_LED_W6",
+        "position": [
+          -14.8,
+          14.5,
+          -297.0
+        ],
+        "offsetCm": [
+          0.0,
+          -12000.0,
+          0.0
+        ],
+        "lumens": 350.0
+      },
+      {
+        "name": "CityModern_LED_E7",
+        "template": "CityModern_LED_E6",
+        "position": [
+          14.8,
+          14.5,
+          -217.0
+        ],
+        "offsetCm": [
+          0.0,
+          -4000.0,
+          0.0
+        ],
+        "lumens": 550.0
+      },
+      {
+        "name": "CityModern_LED_E8",
+        "template": "CityModern_LED_E6",
+        "position": [
+          14.8,
+          14.5,
+          -257.0
+        ],
+        "offsetCm": [
+          0.0,
+          -8000.0,
+          0.0
+        ],
+        "lumens": 450.0
+      },
+      {
+        "name": "CityModern_LED_E9",
+        "template": "CityModern_LED_E6",
+        "position": [
+          14.8,
+          14.5,
+          -297.0
+        ],
+        "offsetCm": [
+          0.0,
+          -12000.0,
+          0.0
+        ],
+        "lumens": 350.0
+      }
+    ]
+  },
+  "distantLighting": {
+    "version": "city-distant-office-v1",
+    "gain": 0.025,
+    "materials": [
+      "CityModern_Skyline_Glass_Blue",
+      "CityModern_Skyline_Glass_Grey"
+    ]
+  }
+}

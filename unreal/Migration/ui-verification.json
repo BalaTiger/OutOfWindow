@@ -1,0 +1,48 @@
+{
+  "verifiedOn": "2026-09-24",
+  "executable": "D:/OutOfWindowBuild/Windows/OutOfWindow/Binaries/Win64/OutOfWindow.exe",
+  "sha256": "6CA669B49B0688705D8EAAC234D362131CE69CE3F4685C4C29B907D7ABC84906",
+  "editorAndGameBuild": "passed",
+  "package": "passed",
+  "automation": {
+    "test": "OutOfWindow.UI.SceneOnlyRecovery",
+    "succeeded": 1,
+    "failed": 0,
+    "warnings": 0
+  },
+  "desktopChecks": [
+    {
+      "name": "trayRegistered",
+      "passed": true
+    },
+    {
+      "name": "desktopTopmostAndTaskbarStyles",
+      "passed": true
+    },
+    {
+      "name": "desktopModeRestored",
+      "passed": true
+    },
+    {
+      "name": "hidden",
+      "passed": true
+    },
+    {
+      "name": "hiddenRestored",
+      "passed": true
+    },
+    {
+      "name": "minimized",
+      "passed": true
+    },
+    {
+      "name": "minimizeRestored",
+      "passed": true
+    },
+    {
+      "name": "finalVisible",
+      "passed": true
+    }
+  ],
+  "validationScope": "Real Slate automation covers click/hide/hover/leave/Escape with changed focus, zero hidden eye draw elements and engine screen-message restoration. Packaged UI screenshot inspected; native desktop checks ran before the final screen-message-only change. No manual mouse-click acceptance claimed."
+}

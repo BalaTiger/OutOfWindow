@@ -14,6 +14,7 @@
 #include "Misc/Paths.h"
 #include "Serialization/JsonSerializer.h"
 #include "Widgets/SWindow.h"
+#include "Layout/WidgetPath.h"
 
 #if PLATFORM_WINDOWS
 #include "Windows/WindowsHWrapper.h"
@@ -30,11 +31,7 @@ namespace
 {
 struct FDesktopSession
 {
-	RECT FullBounds = {};
-	bool bHasBounds = false;
-	bool bClickThrough = false;
 	bool bDesktopMode = true;
-	bool bCompact = false;
 };
 FDesktopSession DesktopSession;
 HANDLE ProcessMutex = nullptr;
@@ -51,21 +48,23 @@ struct FWindowDesktop::FImpl
 	static constexpr UINT TrayMessage = WM_APP + 0x317;
 	static constexpr UINT TrayId = 1;
 	static constexpr UINT_PTR SubclassId = 0x4F4F57;
-	enum EMenu : UINT { Show = 1, Hide, ClickThrough, DesktopMode, Compact, Exit };
+	enum EMenu : UINT { Show = 1, Hide, DesktopMode, Exit };
 	HWND Window = nullptr;
+	HWND DesktopHost = nullptr, IconView = nullptr;
+	LONG_PTR OriginalStyle = 0;
+	RECT WindowedBounds = {};
+	HHOOK MouseHook = nullptr, EscapeHook = nullptr;
+	inline static FImpl* InputOwner = nullptr;
+	bool bForwardLeft = false;
+	static constexpr UINT RestoreUIMessage = WM_APP + 0x318;
 	LONG_PTR OriginalExStyle = 0;
-	RECT FullBounds = DesktopSession.FullBounds;
-	COLORREF OriginalColorKey = 0;
-	BYTE OriginalAlpha = 255;
-	DWORD OriginalAlphaFlags = 0;
 	UINT ShowInstanceMessage = 0;
 	UINT TaskbarCreatedMessage = 0;
 	bool bTrayReady = false;
-	bool bClickThrough = DesktopSession.bClickThrough;
-	bool bDesktopMode = DesktopSession.bDesktopMode;
-	bool bCompact = DesktopSession.bCompact;
+	bool bDesktopMode = false;
 	bool bSubclassAttached = false;
 	bool bOriginalTopmost = false;
+	const uint64 AttachAfterFrame = GFrameCounter + 2;
 	bool bTestPending = FParse::Param(FCommandLine::Get(), TEXT("OOWTestDesktop"));
 	double TestReadyAt = FPlatformTime::Seconds() + 15;
 
@@ -80,7 +79,7 @@ struct FWindowDesktop::FImpl
 		Data.hIcon = reinterpret_cast<HICON>(SendMessageW(Window, WM_GETICON, ICON_SMALL, 0));
 		if (!Data.hIcon) Data.hIcon = reinterpret_cast<HICON>(GetClassLongPtrW(Window, GCLP_HICONSM));
 		if (!Data.hIcon) Data.hIcon = LoadIconW(nullptr, IDI_APPLICATION);
-		FCString::Strncpy(Data.szTip, TEXT("Out of Window — 单击恢复窗景与鼠标交互"), UE_ARRAY_COUNT(Data.szTip));
+		FCString::Strncpy(Data.szTip, TEXT("Out of Window — 单击显示窗景"), UE_ARRAY_COUNT(Data.szTip));
 		return Data;
 	}
 
@@ -95,39 +94,154 @@ struct FWindowDesktop::FImpl
 		}
 		else
 		{
-			// Never leave an invisible or click-through window without a recovery route.
+			// Keep a taskbar recovery route when the tray is unavailable.
 			bDesktopMode = false;
-			bClickThrough = false;
 			UE_LOG(LogWindowDesktop, Warning, TEXT("Tray registration failed; keeping the game accessible in the taskbar."));
 		}
 	}
 
-	void ApplyMode()
+	TSharedPtr<SWindow> SlateWindow() const
 	{
+		UGameViewportClient* Viewport = Director.IsValid() ? Director->GetWorld()->GetGameViewport() : nullptr;
+		return Viewport ? Viewport->GetWindow() : nullptr;
+	}
+
+	bool IsShellWindow(HWND Handle) const
+	{
+		if (!Handle) return false;
+		WCHAR Class[64] = {};
+		GetClassNameW(Handle, Class, UE_ARRAY_COUNT(Class));
+		return Handle == DesktopHost || Handle == IconView || Handle == FindWindowExW(IconView, nullptr, L"SysListView32", nullptr)
+			|| !wcscmp(Class, L"Progman") || !wcscmp(Class, L"WorkerW");
+	}
+
+	bool IsControlAt(POINT Position) const
+	{
+		const auto Slate = SlateWindow();
+		if (!Slate || !IsWindowVisible(Window)) return false;
+		const FWidgetPath Path = FSlateApplication::Get().LocateWindowUnderMouse(FVector2D(Position.x, Position.y), { Slate.ToSharedRef() }, false, 0);
+		for (int32 Index = 0; Index < Path.Widgets.Num(); ++Index)
+		{
+			const FArrangedWidget& Item = Path.Widgets[Index];
+			const FName Type = Item.Widget->GetType();
+			if (Type == TEXT("SButton") || Type == TEXT("SWindowVisibilityButton") || Type == TEXT("SSlider") || Type == TEXT("SComboButton")) return Item.Widget->IsEnabled();
+		}
+		return false;
+	}
+
+	static LRESULT CALLBACK MouseInput(int Code, WPARAM Message, LPARAM Data)
+	{
+		FImpl* Self = InputOwner;
+		if (Code == HC_ACTION && Self && Self->bDesktopMode && IsWindowVisible(Self->Window))
+		{
+			const POINT Screen = reinterpret_cast<MSLLHOOKSTRUCT*>(Data)->pt;
+			const bool bOnDesktop = Self->IsShellWindow(WindowFromPoint(Screen));
+			const bool bControl = bOnDesktop && Self->IsControlAt(Screen);
+			bool bConsume = false;
+			if (Message == WM_LBUTTONDOWN && bControl) Self->bForwardLeft = bConsume = true;
+			if (Message == WM_LBUTTONUP && Self->bForwardLeft) { Self->bForwardLeft = false; bConsume = true; }
+			if ((Message == WM_MOUSEMOVE && (bOnDesktop || Self->bForwardLeft)) || bConsume)
+			{
+				POINT Client = Screen; ScreenToClient(Self->Window, &Client);
+				PostMessageW(Self->Window, static_cast<UINT>(Message), Self->bForwardLeft ? MK_LBUTTON : 0, MAKELPARAM(Client.x, Client.y));
+			}
+			if (bConsume) return 1;
+		}
+		return CallNextHookEx(nullptr, Code, Message, Data);
+	}
+
+	static LRESULT CALLBACK EscapeInput(int Code, WPARAM Message, LPARAM Data)
+	{
+		FImpl* Self = InputOwner;
+		if (Code == HC_ACTION && Message == WM_KEYDOWN && Self && Self->bDesktopMode
+			&& reinterpret_cast<KBDLLHOOKSTRUCT*>(Data)->vkCode == VK_ESCAPE && Self->IsShellWindow(GetForegroundWindow()))
+			PostMessageW(Self->Window, RestoreUIMessage, 0, 0);
+		return CallNextHookEx(nullptr, Code, Message, Data);
+	}
+
+	void StopInput()
+	{
+		if (MouseHook) UnhookWindowsHookEx(MouseHook);
+		if (EscapeHook) UnhookWindowsHookEx(EscapeHook);
+		MouseHook = EscapeHook = nullptr;
+		bForwardLeft = false;
+		if (InputOwner == this) InputOwner = nullptr;
+	}
+
+	void RestoreWindow(bool bActivate)
+	{
+		StopInput();
 		if (!IsWindow(Window)) return;
-		LONG_PTR Style = GetWindowLongPtrW(Window, GWL_EXSTYLE);
-		Style &= ~(WS_EX_TOOLWINDOW | WS_EX_APPWINDOW | WS_EX_TRANSPARENT | WS_EX_LAYERED);
-		Style |= OriginalExStyle & (WS_EX_TOOLWINDOW | WS_EX_APPWINDOW | WS_EX_TRANSPARENT | WS_EX_LAYERED);
-		if (bDesktopMode && bTrayReady) Style = (Style | WS_EX_TOOLWINDOW) & ~WS_EX_APPWINDOW;
-		if (bClickThrough && bTrayReady) Style |= WS_EX_LAYERED | WS_EX_TRANSPARENT;
-		SetWindowLongPtrW(Window, GWL_EXSTYLE, Style);
-		if (bClickThrough && bTrayReady)
+		if (bDesktopMode)
 		{
-			// Both flags are needed for hit testing to pass through to other processes.
-			SetLayeredWindowAttributes(Window, 0, 255, LWA_ALPHA);
+			SetParent(Window, nullptr);
+			SetWindowLongPtrW(Window, GWL_STYLE, OriginalStyle);
+			SetWindowLongPtrW(Window, GWL_EXSTYLE, (OriginalExStyle | WS_EX_APPWINDOW) & ~(WS_EX_TOPMOST | WS_EX_TOOLWINDOW));
+			SetWindowPos(Window, HWND_NOTOPMOST, WindowedBounds.left, WindowedBounds.top,
+				WindowedBounds.right - WindowedBounds.left, WindowedBounds.bottom - WindowedBounds.top, SWP_FRAMECHANGED | SWP_NOACTIVATE);
+			bDesktopMode = false;
 		}
-		else if ((OriginalExStyle & WS_EX_LAYERED) && OriginalAlphaFlags)
+		DesktopHost = IconView = nullptr;
+		if (bActivate) { ShowWindow(Window, SW_RESTORE); SetForegroundWindow(Window); }
+	}
+
+	bool EnterDesktop()
+	{
+		if (bDesktopMode) return true;
+		HWND Progman = FindWindowW(L"Progman", nullptr);
+		if (!Progman || !bTrayReady) return false;
+		DWORD_PTR Result = 0;
+		SendMessageTimeoutW(Progman, 0x052C, 0xD, 1, SMTO_ABORTIFHUNG, 1000, &Result);
+		IconView = FindWindowExW(Progman, nullptr, L"SHELLDLL_DefView", nullptr);
+		const bool bRaisedDesktop = (GetWindowLongPtrW(Progman, GWL_EXSTYLE) & WS_EX_NOREDIRECTIONBITMAP) != 0;
+		if (bRaisedDesktop && IconView) DesktopHost = Progman;
+		else
 		{
-			SetLayeredWindowAttributes(Window, OriginalColorKey, OriginalAlpha, OriginalAlphaFlags);
+			EnumWindows([](HWND Candidate, LPARAM Context) -> BOOL
+			{
+				FImpl* Self = reinterpret_cast<FImpl*>(Context);
+				if (HWND Icons = FindWindowExW(Candidate, nullptr, L"SHELLDLL_DefView", nullptr))
+				{
+					Self->IconView = Icons;
+					Self->DesktopHost = FindWindowExW(nullptr, Candidate, L"WorkerW", nullptr);
+					if (Self->DesktopHost) return 0;
+				}
+				return 1;
+			}, reinterpret_cast<LPARAM>(this));
 		}
-		SetWindowPos(Window, bDesktopMode ? HWND_TOPMOST : HWND_NOTOPMOST, 0, 0, 0, 0,
-			SWP_NOMOVE | SWP_NOSIZE | SWP_NOACTIVATE | SWP_FRAMECHANGED);
+		if (!DesktopHost || !IconView) { DesktopHost = IconView = nullptr; return false; }
+		MONITORINFO Monitor = {}; Monitor.cbSize = sizeof(Monitor);
+		if (!GetMonitorInfoW(MonitorFromWindow(Window, MONITOR_DEFAULTTONEAREST), &Monitor)) return false;
+		if (IsZoomed(Window) || IsIconic(Window)) ShowWindow(Window, SW_RESTORE);
+		GetWindowRect(Window, &WindowedBounds);
+		if (const auto Slate = SlateWindow()) Slate->ReshapeWindow(FVector2D(Monitor.rcMonitor.left, Monitor.rcMonitor.top), FVector2D(Monitor.rcMonitor.right - Monitor.rcMonitor.left, Monitor.rcMonitor.bottom - Monitor.rcMonitor.top));
+		SetWindowPos(Window, HWND_NOTOPMOST, 0, 0, 0, 0, SWP_NOMOVE | SWP_NOSIZE | SWP_NOACTIVATE);
+		SetWindowLongPtrW(Window, GWL_STYLE, (OriginalStyle | WS_CHILD) & ~(WS_POPUP | WS_CAPTION | WS_THICKFRAME));
+		SetWindowLongPtrW(Window, GWL_EXSTYLE, (OriginalExStyle | WS_EX_TOOLWINDOW | (bRaisedDesktop ? WS_EX_LAYERED : 0)) & ~(WS_EX_APPWINDOW | WS_EX_TOPMOST));
+		if (bRaisedDesktop) SetLayeredWindowAttributes(Window, 0, 255, LWA_ALPHA);
+		SetLastError(0);
+		SetParent(Window, DesktopHost);
+		const DWORD Error = GetLastError();
+		bDesktopMode = true; // Also permits rollback if SetParent failed.
+		if (GetParent(Window) != DesktopHost)
+		{
+			UE_LOG(LogWindowDesktop, Error, TEXT("Desktop attachment failed: %lu"), Error);
+			RestoreWindow(true); return false;
+		}
+		POINT Origin = { Monitor.rcMonitor.left, Monitor.rcMonitor.top }; ScreenToClient(DesktopHost, &Origin);
+		SetWindowPos(Window, bRaisedDesktop ? IconView : HWND_BOTTOM, Origin.x, Origin.y,
+			Monitor.rcMonitor.right - Monitor.rcMonitor.left, Monitor.rcMonitor.bottom - Monitor.rcMonitor.top, SWP_FRAMECHANGED | SWP_NOACTIVATE | SWP_SHOWWINDOW);
+		InputOwner = this;
+		MouseHook = SetWindowsHookExW(WH_MOUSE_LL, MouseInput, GetModuleHandleW(nullptr), 0);
+		EscapeHook = SetWindowsHookExW(WH_KEYBOARD_LL, EscapeInput, GetModuleHandleW(nullptr), 0);
+		if (!MouseHook || !EscapeHook) { RestoreWindow(true); return false; }
+		UE_LOG(LogWindowDesktop, Display, TEXT("OOW_DESKTOP_ATTACHED raised=%d width=%ld height=%ld"), bRaisedDesktop, Monitor.rcMonitor.right - Monitor.rcMonitor.left, Monitor.rcMonitor.bottom - Monitor.rcMonitor.top);
+		return true;
 	}
 
 	void RestoreInteractive()
 	{
-		bClickThrough = false;
-		ApplyMode();
+		if (bDesktopMode) { ShowWindow(Window, SW_SHOWNA); return; }
 		ShowWindow(Window, IsIconic(Window) ? SW_RESTORE : SW_SHOW);
 		SetForegroundWindow(Window);
 	}
@@ -137,47 +251,21 @@ struct FWindowDesktop::FImpl
 		if (bTrayReady) ShowWindow(Window, SW_HIDE);
 		else
 		{
-			bDesktopMode = false;
-			bClickThrough = false;
-			ApplyMode();
+			RestoreWindow(false);
 			ShowWindow(Window, SW_MINIMIZE);
 		}
-	}
-
-	void ToggleCompact()
-	{
-		if (IsZoomed(Window) || IsIconic(Window)) ShowWindow(Window, SW_RESTORE);
-		if (!bCompact) GetWindowRect(Window, &FullBounds);
-		bCompact = !bCompact;
-		if (Director.IsValid()) Director->SetCompactMode(bCompact);
-		RECT Current = {};
-		GetWindowRect(Window, &Current);
-		const float Dpi = static_cast<float>(GetDpiForWindow(Window)) / 96.f;
-		const int Width = bCompact ? FMath::RoundToInt(760.f * Dpi) : FullBounds.right - FullBounds.left;
-		const int Height = bCompact ? FMath::RoundToInt(510.f * Dpi) : FullBounds.bottom - FullBounds.top;
-		MONITORINFO Monitor = {};
-		Monitor.cbSize = sizeof(Monitor);
-		GetMonitorInfoW(MonitorFromWindow(Window, MONITOR_DEFAULTTONEAREST), &Monitor);
-		const int FitWidth = FMath::Min(Width, static_cast<int>(Monitor.rcWork.right - Monitor.rcWork.left));
-		const int FitHeight = FMath::Min(Height, static_cast<int>(Monitor.rcWork.bottom - Monitor.rcWork.top));
-		const int X = FMath::Clamp(static_cast<int>(Current.left), static_cast<int>(Monitor.rcWork.left), static_cast<int>(Monitor.rcWork.right) - FitWidth);
-		const int Y = FMath::Clamp(static_cast<int>(Current.top), static_cast<int>(Monitor.rcWork.top), static_cast<int>(Monitor.rcWork.bottom) - FitHeight);
-		SetWindowPos(Window, nullptr, X, Y, FitWidth, FitHeight, SWP_NOZORDER | SWP_NOACTIVATE);
 	}
 
 	void Action(FName Name)
 	{
 		if (!IsWindow(Window)) return;
 		if (Name == TEXT("Close")) HideSafely();
-		else if (Name == TEXT("Minimize")) ShowWindow(Window, SW_MINIMIZE);
-		else if (Name == TEXT("Maximize")) ShowWindow(Window, IsZoomed(Window) ? SW_RESTORE : SW_MAXIMIZE);
-		else if (Name == TEXT("ClickThrough"))
+		else if (Name == TEXT("Minimize")) { if (bDesktopMode) HideSafely(); else ShowWindow(Window, SW_MINIMIZE); }
+		else if (Name == TEXT("Maximize") || Name == TEXT("DesktopMode"))
 		{
-			if (bTrayReady) bClickThrough = !bClickThrough;
-			ApplyMode();
+			if (bDesktopMode) RestoreWindow(true);
+			else if (!EnterDesktop()) UE_LOG(LogWindowDesktop, Warning, TEXT("Desktop unavailable; retaining the interactive window."));
 		}
-		else if (Name == TEXT("DesktopMode")) { bDesktopMode = !bDesktopMode; ApplyMode(); }
-		else if (Name == TEXT("Compact")) ToggleCompact();
 		else if (Name == TEXT("ToggleVisible"))
 		{
 			if (IsWindowVisible(Window) && !IsIconic(Window)) HideSafely(); else RestoreInteractive();
@@ -188,11 +276,9 @@ struct FWindowDesktop::FImpl
 	{
 		HMENU Menu = CreatePopupMenu();
 		if (!Menu) return;
-		AppendMenuW(Menu, MF_STRING, Show, L"显示并恢复鼠标交互");
+		AppendMenuW(Menu, MF_STRING, Show, L"显示窗景");
 		AppendMenuW(Menu, MF_STRING, Hide, L"隐藏窗景");
-		AppendMenuW(Menu, MF_STRING | (bClickThrough ? MF_CHECKED : 0), ClickThrough, L"鼠标穿透");
-		AppendMenuW(Menu, MF_STRING | (bDesktopMode ? MF_CHECKED : 0), DesktopMode, L"桌面挂件模式（置顶）");
-		AppendMenuW(Menu, MF_STRING | (bCompact ? MF_CHECKED : 0), Compact, L"精简尺寸");
+		AppendMenuW(Menu, MF_STRING, DesktopMode, bDesktopMode ? L"还原为窗口" : L"最大化为动态桌面");
 		AppendMenuW(Menu, MF_SEPARATOR, 0, nullptr);
 		AppendMenuW(Menu, MF_STRING, Exit, L"退出");
 		POINT Cursor;
@@ -206,9 +292,7 @@ struct FWindowDesktop::FImpl
 		{
 		case Show: RestoreInteractive(); break;
 		case Hide: HideSafely(); break;
-		case ClickThrough: Action(TEXT("ClickThrough")); break;
 		case DesktopMode: Action(TEXT("DesktopMode")); break;
-		case Compact: Action(TEXT("Compact")); break;
 		case Exit: FPlatformMisc::RequestExit(false); break;
 		default: break;
 		}
@@ -241,64 +325,63 @@ struct FWindowDesktop::FImpl
 			TSharedRef<FJsonObject> Check = MakeShared<FJsonObject>();
 			Check->SetStringField(TEXT("name"), Name);
 			Check->SetBoolField(TEXT("passed"), bOK);
+			Check->SetBoolField(TEXT("desktopMode"), bDesktopMode);
 			Check->SetBoolField(TEXT("visible"), IsWindowVisible(Window) != 0);
 			Check->SetBoolField(TEXT("minimized"), IsIconic(Window) != 0);
 			Check->SetBoolField(TEXT("topmost"), (Style & WS_EX_TOPMOST) != 0);
 			Check->SetBoolField(TEXT("toolWindow"), (Style & WS_EX_TOOLWINDOW) != 0);
 			Check->SetBoolField(TEXT("appWindow"), (Style & WS_EX_APPWINDOW) != 0);
-			Check->SetBoolField(TEXT("transparent"), (Style & WS_EX_TRANSPARENT) != 0);
-			Check->SetBoolField(TEXT("layered"), (Style & WS_EX_LAYERED) != 0);
 			Check->SetNumberField(TEXT("width"), Bounds.right - Bounds.left);
 			Check->SetNumberField(TEXT("height"), Bounds.bottom - Bounds.top);
+			Check->SetNumberField(TEXT("left"), Bounds.left);
+			Check->SetNumberField(TEXT("top"), Bounds.top);
 			Checks.Add(MakeShared<FJsonValueObject>(Check));
 			bPassed &= bOK;
 		};
-		const bool bSavedCompact = bCompact, bSavedDesktop = bDesktopMode, bSavedMaximized = IsZoomed(Window) != 0;
-		const RECT SavedFullBounds = FullBounds;
-		RECT SavedBounds = {}; GetWindowRect(Window, &SavedBounds);
-		RestoreInteractive();
-		if (IsZoomed(Window)) ShowWindow(Window, SW_RESTORE);
-		if (bCompact) Action(TEXT("Compact"));
-		RECT NormalBounds = {}; GetWindowRect(Window, &NormalBounds);
+		const bool bSavedDesktop = bDesktopMode;
+		auto Attached = [&]
+		{
+			const HWND IconLayer = GetParent(IconView) == DesktopHost ? IconView : GetAncestor(IconView, GA_ROOT);
+			const HWND SceneLayer = GetParent(IconView) == DesktopHost ? Window : DesktopHost;
+			bool bBehindIcons = false;
+			for (HWND Layer = GetWindow(IconLayer, GW_HWNDNEXT); Layer; Layer = GetWindow(Layer, GW_HWNDNEXT))
+				if (Layer == SceneLayer) { bBehindIcons = true; break; }
+			return bDesktopMode && IsWindow(DesktopHost) && GetParent(Window) == DesktopHost
+				&& bBehindIcons && (GetWindowLongPtrW(Window, GWL_STYLE) & WS_CHILD) && !(GetWindowLongPtrW(Window, GWL_EXSTYLE) & WS_EX_TOPMOST);
+		};
+		auto CoversMonitor = [&]
+		{
+			MONITORINFO Monitor = {}; Monitor.cbSize = sizeof(Monitor);
+			RECT Bounds = {}, Client = {}; POINT Origin = {};
+			GetWindowRect(Window, &Bounds); GetClientRect(Window, &Client); ClientToScreen(Window, &Origin); OffsetRect(&Client, Origin.x, Origin.y);
+			return GetMonitorInfoW(MonitorFromWindow(Window, MONITOR_DEFAULTTONEAREST), &Monitor)
+				&& EqualRect(&Bounds, &Monitor.rcMonitor) && EqualRect(&Client, &Monitor.rcMonitor);
+		};
 		NOTIFYICONDATAW Data = TrayData();
 		Record(TEXT("trayRegistered"), bTrayReady && Shell_NotifyIconW(NIM_MODIFY, &Data) != 0);
-		Action(TEXT("Compact"));
-		RECT CompactBounds = {}; GetWindowRect(Window, &CompactBounds);
-		MONITORINFO Monitor = {}; Monitor.cbSize = sizeof(Monitor);
-		const bool bMonitorRead = GetMonitorInfoW(MonitorFromWindow(Window, MONITOR_DEFAULTTONEAREST), &Monitor) != 0;
-		const float Dpi = static_cast<float>(GetDpiForWindow(Window)) / 96.f;
-		Record(TEXT("compactSize"), bMonitorRead && CompactBounds.right - CompactBounds.left == FMath::Min(FMath::RoundToInt(760 * Dpi), static_cast<int>(Monitor.rcWork.right - Monitor.rcWork.left)) && CompactBounds.bottom - CompactBounds.top == FMath::Min(FMath::RoundToInt(510 * Dpi), static_cast<int>(Monitor.rcWork.bottom - Monitor.rcWork.top)));
-		Action(TEXT("Compact"));
-		RECT RestoredBounds = {}; GetWindowRect(Window, &RestoredBounds);
-		Record(TEXT("compactRestored"), RestoredBounds.right - RestoredBounds.left == NormalBounds.right - NormalBounds.left && RestoredBounds.bottom - RestoredBounds.top == NormalBounds.bottom - NormalBounds.top);
-		if (!bDesktopMode) Action(TEXT("DesktopMode"));
-		LONG_PTR Style = GetWindowLongPtrW(Window, GWL_EXSTYLE);
-		Record(TEXT("desktopTopmostAndTaskbarStyles"), (Style & WS_EX_TOPMOST) && (Style & WS_EX_TOOLWINDOW) && !(Style & WS_EX_APPWINDOW));
-		Action(TEXT("DesktopMode"));
-		Style = GetWindowLongPtrW(Window, GWL_EXSTYLE);
-		Record(TEXT("desktopModeRestored"), !(Style & WS_EX_TOPMOST) && (Style & (WS_EX_TOOLWINDOW | WS_EX_APPWINDOW)) == (OriginalExStyle & (WS_EX_TOOLWINDOW | WS_EX_APPWINDOW)));
-		Action(TEXT("ClickThrough"));
-		Style = GetWindowLongPtrW(Window, GWL_EXSTYLE);
-		COLORREF ColorKey = 0; BYTE Alpha = 0; DWORD AlphaFlags = 0;
-		const bool bLayeredRead = GetLayeredWindowAttributes(Window, &ColorKey, &Alpha, &AlphaFlags) != 0;
-		Record(TEXT("clickThroughEnabled"), (Style & WS_EX_TRANSPARENT) && (Style & WS_EX_LAYERED) && bLayeredRead && Alpha == 255 && (AlphaFlags & LWA_ALPHA));
-		RestoreInteractive();
-		Record(TEXT("clickThroughRestored"), !(GetWindowLongPtrW(Window, GWL_EXSTYLE) & WS_EX_TRANSPARENT));
-		Action(TEXT("Close"));
-		Record(TEXT("hidden"), !IsWindowVisible(Window));
-		RestoreInteractive();
-		Record(TEXT("hiddenRestored"), IsWindowVisible(Window) && !IsIconic(Window));
+		Record(TEXT("defaultDesktopParentAndZOrder"), Attached());
+		Record(TEXT("desktopCoversMonitorAndClient"), CoversMonitor());
+		Record(TEXT("desktopInputHooksReady"), MouseHook && EscapeHook);
+		const RECT SavedBounds = WindowedBounds;
+		Action(TEXT("Maximize"));
+		RECT Restored = {}; GetWindowRect(Window, &Restored);
+		Record(TEXT("restoreDetachesAndRestoresPlacement"), !bDesktopMode && !GetParent(Window) && EqualRect(&Restored, &SavedBounds) && !(GetWindowLongPtrW(Window, GWL_STYLE) & WS_CHILD));
+		Record(TEXT("windowedInputHooksRemoved"), !MouseHook && !EscapeHook);
 		Action(TEXT("Minimize"));
-		Record(TEXT("minimized"), IsIconic(Window) != 0);
+		Record(TEXT("windowedMinimized"), IsIconic(Window) != 0);
 		RestoreInteractive();
-		Record(TEXT("minimizeRestored"), IsWindowVisible(Window) && !IsIconic(Window));
-		if (bCompact != bSavedCompact) Action(TEXT("Compact"));
-		if (bDesktopMode != bSavedDesktop) Action(TEXT("DesktopMode"));
-		FullBounds = SavedFullBounds;
-		SetWindowPos(Window, nullptr, SavedBounds.left, SavedBounds.top, SavedBounds.right - SavedBounds.left, SavedBounds.bottom - SavedBounds.top, SWP_NOZORDER | SWP_NOACTIVATE);
-		if (bSavedMaximized) ShowWindow(Window, SW_MAXIMIZE);
+		Record(TEXT("windowedMinimizeRestored"), IsWindowVisible(Window) && !IsIconic(Window));
+		Action(TEXT("Maximize"));
+		Record(TEXT("maximizeReturnsToDesktop"), Attached() && CoversMonitor());
+		Action(TEXT("Close"));
+		Record(TEXT("desktopHidden"), !IsWindowVisible(Window));
 		RestoreInteractive();
-		Record(TEXT("finalInteractive"), IsWindowVisible(Window) && !IsIconic(Window) && !(GetWindowLongPtrW(Window, GWL_EXSTYLE) & WS_EX_TRANSPARENT));
+		Record(TEXT("desktopShownWithoutWindowing"), IsWindowVisible(Window) && Attached() && CoversMonitor());
+		Action(TEXT("Maximize"));
+		GetWindowRect(Window, &Restored);
+		Record(TEXT("repeatedRestorePreservesPlacement"), !bDesktopMode && EqualRect(&Restored, &SavedBounds));
+		if (bSavedDesktop) Action(TEXT("Maximize"));
+		Record(TEXT("finalModePreserved"), bDesktopMode == bSavedDesktop);
 		TSharedRef<FJsonObject> Report = MakeShared<FJsonObject>();
 		Report->SetBoolField(TEXT("passed"), bPassed);
 		Report->SetNumberField(TEXT("processId"), OwnerProcess);
@@ -316,13 +399,22 @@ struct FWindowDesktop::FImpl
 	static LRESULT CALLBACK WindowProc(HWND Hwnd, UINT Message, WPARAM WParam, LPARAM LParam, UINT_PTR Id, DWORD_PTR User)
 	{
 		FImpl* Self = reinterpret_cast<FImpl*>(User);
+		if (Message == RestoreUIMessage)
+		{
+			if (Self->Director.IsValid() && Self->Director->RestoreInterface) Self->Director->RestoreInterface();
+			return 0;
+		}
 		if (Message == WM_CLOSE || (Message == WM_SYSCOMMAND && (WParam & 0xFFF0) == SC_CLOSE))
 		{
 			Self->HideSafely();
 			return 0;
 		}
 		if (Message == Self->ShowInstanceMessage) { Self->RestoreInteractive(); return 0; }
-		if (Message == Self->TaskbarCreatedMessage) { Self->AddTray(); Self->ApplyMode(); return 0; }
+		if (Message == Self->TaskbarCreatedMessage) { Self->AddTray(); return 0; }
+		if (Message == WM_SYSCOMMAND && ((WParam & 0xFFF0) == SC_MAXIMIZE || (WParam & 0xFFF0) == SC_RESTORE) && !IsIconic(Hwnd))
+		{
+			Self->Action(TEXT("Maximize")); return 0;
+		}
 		if (Message == TrayMessage)
 		{
 			const UINT Event = LOWORD(LParam);
@@ -330,9 +422,9 @@ struct FWindowDesktop::FImpl
 			else if (Event == WM_CONTEXTMENU || Event == WM_RBUTTONUP) Self->ShowTrayMenu();
 			return 0;
 		}
-		if (Message == WM_NCHITTEST && Self->bClickThrough) return HTTRANSPARENT;
 		if (Message == WM_NCDESTROY)
 		{
+			Self->StopInput();
 			NOTIFYICONDATAW Data = Self->TrayData();
 			Shell_NotifyIconW(NIM_DELETE, &Data);
 			RemoveWindowSubclass(Hwnd, WindowProc, Id);
@@ -347,6 +439,8 @@ struct FWindowDesktop::FImpl
 	void TryAttach()
 	{
 		if (bDisabled || Window || !Director.IsValid()) return;
+		// Startup applies the viewport's initial placement after BeginPlay.
+		if (GFrameCounter < AttachAfterFrame) return;
 		UWorld* World = Director->GetWorld();
 		// In particular, never resolve the editor's top-level HWND through PIE.
 		if (!World || World->WorldType != EWorldType::Game) { bDisabled = true; return; }
@@ -362,9 +456,8 @@ struct FWindowDesktop::FImpl
 		ShowInstanceMessage = RegisterWindowMessageW(L"OutOfWindow.Native.ShowInstance.v1");
 		TaskbarCreatedMessage = RegisterWindowMessageW(L"TaskbarCreated");
 		OriginalExStyle = GetWindowLongPtrW(Window, GWL_EXSTYLE);
+		OriginalStyle = GetWindowLongPtrW(Window, GWL_STYLE);
 		bOriginalTopmost = (OriginalExStyle & WS_EX_TOPMOST) != 0;
-		if (!DesktopSession.bHasBounds) GetWindowRect(Window, &FullBounds);
-		if (OriginalExStyle & WS_EX_LAYERED) GetLayeredWindowAttributes(Window, &OriginalColorKey, &OriginalAlpha, &OriginalAlphaFlags);
 		bSubclassAttached = SetWindowSubclass(Window, WindowProc, SubclassId, reinterpret_cast<DWORD_PTR>(this)) != 0;
 		if (!bSubclassAttached)
 		{
@@ -374,26 +467,21 @@ struct FWindowDesktop::FImpl
 			return;
 		}
 		AddTray();
-		ApplyMode();
-		Director->SetCompactMode(bCompact);
+		if (DesktopSession.bDesktopMode && !EnterDesktop()) UE_LOG(LogWindowDesktop, Warning, TEXT("Desktop unavailable at startup; using a window."));
 		TestReadyAt = FPlatformTime::Seconds() + 2;
 	}
 
 	void Shutdown()
 	{
+		StopInput();
 		if (IsWindow(Window))
 		{
-			DesktopSession.FullBounds = FullBounds;
-			DesktopSession.bHasBounds = true;
-			DesktopSession.bClickThrough = bClickThrough;
 			DesktopSession.bDesktopMode = bDesktopMode;
-			DesktopSession.bCompact = bCompact;
+			RestoreWindow(false);
 			NOTIFYICONDATAW Data = TrayData();
 			Shell_NotifyIconW(NIM_DELETE, &Data);
 			if (bSubclassAttached) RemoveWindowSubclass(Window, WindowProc, SubclassId);
 			SetWindowLongPtrW(Window, GWL_EXSTYLE, OriginalExStyle);
-			if ((OriginalExStyle & WS_EX_LAYERED) && OriginalAlphaFlags)
-				SetLayeredWindowAttributes(Window, OriginalColorKey, OriginalAlpha, OriginalAlphaFlags);
 			SetWindowPos(Window, bOriginalTopmost ? HWND_TOPMOST : HWND_NOTOPMOST, 0, 0, 0, 0,
 				SWP_NOMOVE | SWP_NOSIZE | SWP_NOACTIVATE | SWP_FRAMECHANGED);
 		}
@@ -445,6 +533,15 @@ void FWindowDesktop::ShutdownProcess()
 
 FWindowDesktop::FWindowDesktop() : Impl(MakeUnique<FImpl>()) {}
 FWindowDesktop::~FWindowDesktop() { Shutdown(); }
+
+bool FWindowDesktop::IsDesktopMode() const
+{
+#if PLATFORM_WINDOWS
+	return Impl->bDesktopMode;
+#else
+	return false;
+#endif
+}
 
 void FWindowDesktop::Initialize(AWindowDirector* Director)
 {

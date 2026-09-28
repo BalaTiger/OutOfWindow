@@ -32,6 +32,8 @@
       "waterActors": 0,
       "windActors": 126,
       "interiorSlots": 68,
+      "glassFrontActors": 66,
+      "glassBackingSlots": 66,
       "profiles": {
         "generic//": 621,
         "generic//lamp": 64,
@@ -45,6 +47,11 @@
         "fabric//": 11,
         "stone//": 329,
         "ground//": 47
+      },
+      "interiorLighting": {
+        "lights": 12,
+        "awningLights": 5,
+        "report": "Migration/awning-transmission.json"
       }
     }
   ],

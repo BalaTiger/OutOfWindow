@@ -6,8 +6,10 @@ drive Wetness/Water/RainIntensity/Night [0,1], WindStrength [m/s] and
 WindDirection [world unit XY]. Water expands ground puddles; RainIntensity
 drives their ripples independently of retained water after rain stops.
 Native Time drives water/wind. Plain Python --self-test checks semantic routing.
-OOWWindowInterior actors use UV1 for room images and constant UV2=(seed,1).
-Only these windows use v5; other windows retain v3 and other surfaces retain v2.
+OOWWindowInterior actors use UV1 for room images and constant UV2=(seed,flag):
+1=room, 0=legacy fallback, -1=non-emissive frame. Tagged interiors use v6;
+wind surfaces use v8, other windows retain v3 and other surfaces retain v2. OOWWindowGlassFront
+actors receive a separate native thin-translucent glass surface.
 """
 import hashlib
 import json
@@ -19,7 +21,9 @@ import sys
 
 VERSION = 'v2'
 DEST = '/Game/Materials/OOW'
-INTERIOR_OVERRIDES = {'OOWInteriorEnabled': 1.0, 'OOWInteriorMipBias': 2.0, 'OOWInteriorGain': 1.8}
+INTERIOR_OVERRIDES = {'OOWInteriorEnabled': 1.0, 'OOWInteriorMipBias': 1.5,
+                      'OOWInteriorGain': .8, 'OOWInteriorHighlightGain': 8.0,
+                      'OOWInteriorHighlightThreshold': .32}
 PROFILES = {  # wet albedo multiplier, roughness multiplier, roughness floor
     'stone': (.80, .52, .27), 'ground': (.76, .34, .16),
     'wood': (.82, .55, .24), 'metal': (.94, .58, .13),
@@ -80,7 +84,28 @@ def asset_name(prefix, identity):
 
 
 def recipe_for(profile, interior=False):
-    return ('v5' if interior else 'v3') if profile[2] == 'window' else VERSION
+    if profile[1] in ('foliage', 'awning'):
+        return 'v8'
+    return ('v6' if interior else 'v3') if profile[2] == 'window' else VERSION
+
+
+def wind_anchor_data(lower, upper):
+    """Current tagged meshes are upright; tilted assets need authored axis weights."""
+    height = upper[2] - lower[2]
+    if height <= 0 or max(abs(upper[i] - lower[i]) for i in (0, 1)) > .01:
+        raise RuntimeError('Wind mesh must be upright with positive height')
+    return lower[2], height
+
+
+def configure_wind_bounds(comp):
+    lo, hi = comp.get_local_bounds()
+    transform = comp.get_world_transform()
+    endpoints = [u.MathLibrary.transform_location(transform, u.Vector(0, 0, z)) for z in (lo.z, hi.z)]
+    data = wind_anchor_data(*[tuple(getattr(p, axis) for axis in ('x', 'y', 'z')) for p in endpoints])
+    # Saved primitive data keeps shared MIDs and exact mesh anchors independent
+    # of render-path local transforms and the bounds expanded by WPO/Nanite.
+    for index, value in enumerate(data):
+        comp.set_default_custom_primitive_data_float(index, value)
 
 
 def source_chain(material):
@@ -222,6 +247,12 @@ def finish(asset, source=None, recipe=VERSION):
 
 def ensure_mesh_usage(material):
     """Persist shader usage before saving, including when reusing an existing asset."""
+    # ConnectMaterialProperty does not clear the imported constant-zero WPO flag.
+    # Match the editor graph's UE-219232 handling, or a connected graph compiles
+    # with UsesWorldPositionOffset=false. Repair existing generated masters too.
+    if u.WindowMaterialLibrary.enable_connected_world_position_offset(material):
+        mel.recompile_material(material)
+        u.log('OOW_WPO_ENABLED ' + material.get_path_name())
     usages = [u.MaterialUsage.MATUSAGE_INSTANCED_STATIC_MESHES]
     if material.get_blend_mode() in (u.BlendMode.BLEND_OPAQUE, u.BlendMode.BLEND_MASKED):
         usages.append(u.MaterialUsage.MATUSAGE_NANITE)
@@ -266,7 +297,9 @@ def window_interior_textures():
         texture.set_editor_property('address_x', u.TextureAddress.TA_CLAMP)
         texture.set_editor_property('address_y', u.TextureAddress.TA_CLAMP)
         texture.set_editor_property('power_of_two_mode', u.TexturePowerOfTwoSetting.STRETCH_TO_POWER_OF_TWO)
-        texture.set_editor_property('mip_gen_settings', u.TextureMipGenSettings.TMGS_BLUR2)
+        # Sharpen0 uses the native high-quality downsample without extra sharpening;
+        # retain bright lamp cores instead of pre-blurring every furniture edge.
+        texture.set_editor_property('mip_gen_settings', u.TextureMipGenSettings.TMGS_SHARPEN0)
         texture.set_editor_property('virtual_texture_streaming', False)
         u.EditorAssetLibrary.save_loaded_asset(texture)
         textures.append(texture)
@@ -283,8 +316,13 @@ def add_window_interior(g, fallback, night, textures):
     g.connect(g.node(u.MaterialExpressionConstant2Vector, r=0, g=1), image_uv, 'B')
     metadata = g.node(u.MaterialExpressionTextureCoordinate, coordinate_index=2)
     inputs = {'F': fallback, 'N': night, 'S': metadata,
-              'Enabled': g.scalar('OOWInteriorEnabled'), 'Intensity': g.scalar('OOWInteriorGain', .62)}
-    mip_bias = g.scalar('OOWInteriorMipBias', 1.25)
+              'Enabled': g.scalar('OOWInteriorEnabled'), 'Intensity': g.scalar('OOWInteriorGain', .6),
+              'Highlights': g.scalar('OOWInteriorHighlightGain', 4),
+              'Threshold': g.scalar('OOWInteriorHighlightThreshold', .32),
+              'GlassLayer': g.scalar('OOWInteriorGlassLayer'),
+              'Normal': g.node(u.MaterialExpressionPixelNormalWS),
+              'View': g.node(u.MaterialExpressionCameraVectorWS)}
+    mip_bias = g.scalar('OOWInteriorMipBias', 1)
     for index, texture in enumerate(textures):
         sample = g.node(u.MaterialExpressionTextureSampleParameter2D,
                         parameter_name='OOWRoom%02d' % (index + 1), texture=texture,
@@ -294,14 +332,63 @@ def add_window_interior(g, fallback, night, textures):
         g.connect(image_uv, sample, '')  # First input is UVs; geometry V=0 at bottom, images V=0 at top.
         g.connect(mip_bias, sample, 'Bias')  # MaterialEditingLibrary uses the shortened MipBias pin name.
         inputs['R%d' % index] = (sample[0], 'RGB')
-    code = ('float seed=saturate(S.x); float id=floor(frac(seed*17.171+.37)*6.); '
+    code = ('if(S.y<-.5 || (GlassLayer>.5 && S.y<.5)) return float3(0,0,0); '
+            'float seed=saturate(S.x); float id=floor(frac(seed*17.171+.37)*6.); '
             'float3 room=id<1?R0:id<2?R1:id<3?R2:id<4?R3:id<5?R4:R5; '
             'float occupied=step(.62,frac(seed*73.137+.11)); '
             'float gain=lerp(.8,1.2,frac(seed*31.718+.07)); '
             'float3 tint=lerp(float3(1.,.88,.75),float3(.9,.94,1.),frac(seed*41.137+.43)); '
-            'float3 inside=room*tint*(max(0.,Intensity)*gain*occupied*smoothstep(.58,.86,saturate(N))); '
-            'return lerp(F,inside,saturate(Enabled)*step(.5,S.y));')
-    return g.custom(code, inputs, True, 'OOW whole-window 2D interior; no parallax geometry')
+            'float lum=dot(room,float3(.2126,.7152,.0722)); '
+            'float highlight=smoothstep(saturate(Threshold),min(.99,saturate(Threshold)+.4),lum); '
+            'float3 lampColor=room/max(.001,max(room.r,max(room.g,room.b))); '
+            'float3 inside=(room*max(0.,Intensity)+lampColor*max(0.,Highlights)*highlight*highlight) '
+            '*tint*(gain*occupied*smoothstep(.58,.86,saturate(N))); '
+            'float NoV=saturate(abs(dot(normalize(Normal),normalize(View)))); '
+            'float fresnel=.04+.96*pow(1.-NoV,5.); '
+            'float transmission=lerp((1.-fresnel)*(1.-fresnel),1.,saturate(GlassLayer)); '
+            'return lerp(F,inside,saturate(Enabled)*step(.5,S.y))*transmission;')
+    # The separate ThinTranslucent front sheet handles Fresnel when present.
+    # Without that sheet this is a view-dependent approximation, not real glass.
+    return g.custom(code, inputs, True, 'OOW room base plus HDR lamp highlights; constant per-window occupancy')
+
+
+def window_glass_material():
+    """A real transparent front sheet; opaque room cards remain behind this mesh."""
+    path = DEST + '/M_WindowGlassFront_v6'
+    material = u.load_asset(path)
+    if material:
+        ensure_mesh_usage(material)
+        finish(material, recipe='v6')
+        return material
+    material = u.AssetToolsHelpers.get_asset_tools().create_asset(
+        path.rsplit('/', 1)[1], DEST, u.Material, u.MaterialFactoryNew())
+    if not material:
+        raise RuntimeError('Cannot create native front glass material')
+    material.set_editor_property('blend_mode', u.BlendMode.BLEND_TRANSLUCENT)
+    material.set_editor_property('shading_model', u.MaterialShadingModel.MSM_THIN_TRANSLUCENT)
+    material.set_editor_property('translucency_lighting_mode', u.TranslucencyLightingMode.TLM_SURFACE_PER_PIXEL_LIGHTING)
+    material.set_editor_property('two_sided', True)
+    g, p = Graph(material), u.MaterialProperty
+    wet = g.scalar('Wetness')
+    g.output(g.vector((0, 0, 0)), p.MP_BASE_COLOR)
+    g.output(g.vector((0, 0, 0)), p.MP_EMISSIVE_COLOR)
+    g.output(g.constant(0), p.MP_METALLIC)
+    g.output(g.constant(.5), p.MP_SPECULAR)  # Dielectric F0=.04, IOR approximately 1.5.
+    # ThinTranslucent's opacity is coverage of a coating, not glass visibility.
+    # Zero leaves the native transmission/reflections and full surface coverage.
+    g.output(g.constant(0), p.MP_OPACITY)
+    g.output(g.custom('return clamp(R+.02*saturate(W),.025,.3);',
+                      {'R': g.scalar('OOWGlassRoughness', .07), 'W': wet}), p.MP_ROUGHNESS)
+    g.output(g.custom('float a=max(0.,A)*lerp(1.,2.5,saturate(W)); '
+                      'return normalize(float3(a*sin(P.x*.051+P.z*.023),a*sin(P.y*.043-P.z*.037),1.));',
+                      {'P': g.position(), 'A': g.scalar('OOWGlassDistortion', .0015), 'W': wet}, True,
+                      'OOW small glass waviness; no room-mask distortion'), p.MP_NORMAL)
+    transmission = g.node(u.MaterialExpressionThinTranslucentMaterialOutput)
+    g.connect(g.vector((.95, .97, .98)), transmission, '')
+    ensure_mesh_usage(material)
+    mel.recompile_material(material)
+    finish(material, recipe='v6')
+    return material
 
 
 def add_puddles(g, roughness):
@@ -390,22 +477,47 @@ def weather_master(base, profile, interior=False):
                                        {'P': g.node(u.MaterialExpressionObjectPositionWS), 'N': night}, True)
             if interior:
                 window_emission = add_window_interior(g, window_emission, night, textures)
+                # The front sheet owns specular reflection on real room panes.
+                # Frame/unsupported faces keep their original surface response.
+                specular = g.read(p.MP_SPECULAR, .5)
+                g.output(g.custom('return lerp(O,0.,saturate(G)*step(.5,S.y));',
+                                  {'O': specular, 'G': g.scalar('OOWInteriorGlassLayer'),
+                                   'S': g.node(u.MaterialExpressionTextureCoordinate, coordinate_index=2)}), p.MP_SPECULAR)
             g.output(window_emission, p.MP_EMISSIVE_COLOR)
+        if kind == 'fabric' and wind == 'awning':
+            add_awning_transmission(g, albedo, emission, night)
         if wind:
             old = g.read(p.MP_WORLD_POSITION_OFFSET, (0, 0, 0))
             direction = g.node(u.MaterialExpressionVectorParameter, parameter_name='WindDirection',
-                               default_value=u.LinearColor(1, 0, 0, 0))
-            amplitude = 2.2 if wind == 'foliage' else .65  # centimetres at normal wind
+                               default_value=u.LinearColor(.8660254, -.5, 0, 0))
+            position = g.position()
+            minimum = g.node(u.MaterialExpressionScalarParameter, parameter_name='WindMinZ',
+                             default_value=0., use_custom_primitive_data=True, primitive_data_index=0)
+            height = g.node(u.MaterialExpressionScalarParameter, parameter_name='WindHeight',
+                            default_value=100., use_custom_primitive_data=True, primitive_data_index=1)
+            cloth = wind == 'awning'
             offset = g.custom(
-                'float height=saturate((P.z-C.z+max(B.z,1.))/(2.*max(B.z,1.))); '
-                'float anchor=%s; float phase=dot(P.xy,float2(.023,.031))+T*1.8; '
-                'float s=(sin(phase)+.35*sin(phase*2.31+T))*%.5f*min(max(W,0.)/4.,2.5)*anchor; '
-                'return O + float3(D.xy*s, s*.12);' % ('height*height' if wind == 'foliage' else '1.-height', amplitude),
-                {'P': g.position(), 'C': g.node(u.MaterialExpressionObjectPositionWS),
-                 'B': g.node(u.MaterialExpressionObjectBounds), 'T': g.node(u.MaterialExpressionTime),
-                 'W': g.scalar('WindStrength'), 'D': direction, 'O': old}, True, 'OOW bounded foliage/awning wind')
+                'float height=max(Height,.01); float fraction=saturate((P.z-MinZ)/height); '
+                'float anchor=%s; float amplitude=%s; '
+                'float wind=sqrt(clamp(W/4.,0.,2.5)); float phase=dot(P.xy,float2(.0131,.0087)); '
+                'float gust=.65+.35*sin(T*.73+phase*.2); '
+                'float sway=sin(T*(1.5+wind*.3)+phase)*gust; '
+                'float flutter=sin(T*8.1+phase*2.4)*.3; '
+                'float age=frac(T*2.7+phase*.17); float impact=exp(-age*12.)*sin(age*35.)*saturate(Rain); '
+                'float2 direction=D.xy/max(length(D.xy),.001); '
+                'float2 horizontal=direction*(sway+flutter*.45)*wind*amplitude; '
+                'float vertical=flutter*wind*%.3f+impact*%.3f; '
+                'return O+float3(horizontal,vertical)*anchor;'
+                % ('pow(1.-fraction,1.5)' if cloth else 'pow(fraction,1.25)',
+                   '11.5' if cloth else 'clamp(height*.055,4.5,32.)',
+                   4.5 if cloth else 2., 5.5 if cloth else 2.5),
+                {'P': position, 'MinZ': minimum, 'Height': height, 'T': g.node(u.MaterialExpressionTime),
+                 'W': g.scalar('WindStrength', 8. / 3.6), 'Rain': g.scalar('RainIntensity'),
+                 'D': direction, 'O': old}, True, 'OOW v8 anchored gusts, leaf flutter and cloth rain impacts')
             g.output(offset, p.MP_WORLD_POSITION_OFFSET)
-            material.set_editor_property('max_world_position_offset_displacement', 12.0)
+            # Source motion is in metres; UE WPO is in centimetres. These cover
+            # the worst-case gust plus rain impulse and pad Nanite cluster bounds.
+            material.set_editor_property('max_world_position_offset_displacement', 24.0 if cloth else 60.0)
         ensure_mesh_usage(material)
         mel.recompile_material(material)
     else:
@@ -415,8 +527,8 @@ def weather_master(base, profile, interior=False):
     return material
 
 
-def adapt(original, profile, source, interior=False):
-    key = (original.get_path_name(), profile, interior)
+def adapt(original, profile, source, interior=False, glass_backing=False):
+    key = (original.get_path_name(), profile, interior, glass_backing)
     if key in instances:
         return instances[key]
     base, chain = probe(original)
@@ -426,6 +538,8 @@ def adapt(original, profile, source, interior=False):
     # not only on the imported leaf instance. Reparenting only the leaf loses them.
     for item in reversed(chain):
         identity = item.get_path_name() + '/' + '_'.join(profile) + '_' + recipe
+        if glass_backing:
+            identity += '_glassback'
         copied, created = duplicate(item, DEST + '/Instances', asset_name('MI', identity), recipe)
         if created:
             mel.set_material_instance_parent(copied, parent)
@@ -435,10 +549,16 @@ def adapt(original, profile, source, interior=False):
                 peak = max(factors) * strength
                 mel.set_material_instance_scalar_parameter_value(copied, 'OOWLampGain', min(100., 2. / max(.02, peak)))
         interior_leaf = item == original and interior
+        awning_leaf = item == original and profile[:2] == ('fabric', 'awning')
+        if awning_leaf:
+            from window_lookdev import TRANSMISSION_GAIN, OPTICAL_DEPTH
+            mel.set_material_instance_scalar_parameter_value(copied, 'OOWAwningTransmission', TRANSMISSION_GAIN)
+            mel.set_material_instance_scalar_parameter_value(copied, 'OOWAwningOpticalDepth', OPTICAL_DEPTH)
         if interior_leaf:
             for parameter, value in INTERIOR_OVERRIDES.items():
                 mel.set_material_instance_scalar_parameter_value(copied, parameter, value)
-        if created or interior_leaf:
+            mel.set_material_instance_scalar_parameter_value(copied, 'OOWInteriorGlassLayer', float(glass_backing))
+        if created or interior_leaf or awning_leaf:
             mel.update_material_instance(copied)
             finish(copied, item, recipe)
         parent = copied
@@ -483,11 +603,14 @@ def water_material(scene_id):
 
 def main():
     global u, mel, masters, instances, probes, interior_textures
+    global add_awning_transmission, configure_window_lighting
     import unreal as u
     mel = u.MaterialEditingLibrary
     masters, instances, probes = {}, {}, {}
     interior_textures = None
     root = Path(u.Paths.project_dir()).parent
+    sys.path.insert(0, str(root / 'Scripts'))
+    from window_lookdev import add_awning_transmission, configure_window_lighting
     actors = u.get_editor_subsystem(u.EditorActorSubsystem)
     levels = u.get_editor_subsystem(u.LevelEditorSubsystem)
     ids = os.environ.get('OOW_MATERIAL_SCENES', 'alley,city,village,forest,coast').split(',')
@@ -500,16 +623,24 @@ def main():
         metadata = json.loads((root / 'Migration' / 'Exported' / (scene_id + '.json')).read_text(encoding='utf-8'))
         nodes = {n['name']: n for n in metadata['nodes']}
         sources = glb_materials(root / 'Migration' / 'Exported' / (scene_id + '.glb'))
-        counts = {'scene': scene_id, 'slots': 0, 'waterActors': 0, 'windActors': 0, 'interiorSlots': 0, 'profiles': {}}
+        counts = {'scene': scene_id, 'slots': 0, 'waterActors': 0, 'windActors': 0,
+                  'interiorSlots': 0, 'glassFrontActors': 0, 'glassBackingSlots': 0, 'profiles': {}}
         for actor in actors.get_all_level_actors():
             if not isinstance(actor, u.StaticMeshActor):
                 continue
             label = actor.get_actor_label()
+            comp = actor.static_mesh_component
+            tags = {str(tag) for tag in actor.tags}
+            if 'OOWWindowGlassFront' in tags:
+                if not probe_only:
+                    glass = window_glass_material()
+                    for index in range(comp.get_num_materials()):
+                        comp.set_material(index, glass)
+                counts['glassFrontActors'] += 1
+                continue
             semantic = nodes.get(label) or next((v for k, v in nodes.items() if label.startswith(k)), None)
             if not semantic:
                 continue
-            comp = actor.static_mesh_component
-            tags = {str(tag) for tag in actor.tags}
             if semantic.get('water') or 'OOWWater' in tags:
                 if not probe_only:
                     water = water_material(scene_id)
@@ -534,11 +665,17 @@ def main():
                     probe(original)
                     if not probe_only:
                         interior = profile[2] == 'window' and 'OOWWindowInterior' in tags
-                        replacement = adapt(original, profile, source, interior)
+                        glass_backing = interior and 'OOWWindowGlassBacking' in tags
+                        replacement = adapt(original, profile, source, interior, glass_backing)
                         comp.set_material(index, replacement)
                         counts['interiorSlots'] += int(interior)
+                        counts['glassBackingSlots'] += int(glass_backing)
                         if profile[1]:
-                            comp.set_editor_property('bounds_scale', 1.08)
+                            configure_wind_bounds(comp)
+                            comp.set_editor_property('bounds_scale', 1.0)
+                            comp.set_editor_property('evaluate_world_position_offset', True)
+                            comp.set_editor_property('world_position_offset_writes_velocity', True)
+                            comp.set_editor_property('evaluate_world_position_offset_in_ray_tracing', True)
                     counts['slots'] += 1
                     category = '/'.join(profile)
                     counts['profiles'][category] = counts['profiles'].get(category, 0) + 1
@@ -547,6 +684,9 @@ def main():
                     failures.append(item)
                     u.log_error('OOW_MATERIAL_FAILURE ' + json.dumps(item))
         if not probe_only:
+            if scene_id == 'alley':
+                world = u.get_editor_subsystem(u.UnrealEditorSubsystem).get_editor_world()
+                counts['interiorLighting'] = configure_window_lighting(root, world)
             levels.save_current_level()
         report.append(counts)
         (root / 'Migration' / 'material-probe.json').write_text(json.dumps({'masters': probes, 'scenes': report, 'failures': failures}, indent=2), encoding='utf-8')
@@ -565,7 +705,17 @@ def self_test():
     assert classify('modular_urban_apartments_facade_glass')[2] == 'window'
     assert recipe_for(classify('MASTER_Focus_Glass')) == 'v3'
     assert recipe_for(classify('modular_urban_apartments_facade_glass')) == 'v3'
-    assert recipe_for(classify('MASTER_Focus_Glass'), interior=True) == 'v5'
+    assert recipe_for(classify('MASTER_Focus_Glass'), interior=True) == 'v6'
+    assert recipe_for(classify('MASTER_Awning_Fabric_Cyan', 'awning')) == 'v8'
+    assert recipe_for(classify('Foliage_Leaves', 'foliage')) == 'v8'
+    assert recipe_for(classify('Foliage_Leaves')) == 'v2'
+    assert wind_anchor_data((-3000, -22000, 1860), (-3000, -22000, 2040)) == (1860, 180)
+    for lower, upper in (((0, 0, 2), (0, 0, 1)), ((0, 0, 1), (1, 0, 2))):
+        try:
+            wind_anchor_data(lower, upper)
+            raise AssertionError('Unsupported wind mesh orientation was accepted')
+        except RuntimeError:
+            pass
     assert all(recipe_for(classify(name)) == 'v2'
                for name in ('MASTER_Concrete', 'Streetlight_Glass', 'Vespa_Odometer_Glass', 'MASTER_Awning_Fabric_Cyan'))
     assert recipe_for(classify('Streetlight_Glass'), interior=True) == 'v2'
@@ -577,8 +727,11 @@ def self_test():
     assert classify('Material_33', semantic={**road, 'car': 2})[0] == 'generic'
     assert classify('MASTER_Concrete', semantic={'source': 'Paris_Building_09'})[0] == 'stone'
     original = '/Game/Scenes/City/city/Materials/Material_33.Material_33'
-    v1, v2, v3, v4, v5 = (DEST + '/Instances/' + version for version in ('v1', 'v2', 'v3', 'v4', 'v5'))
-    links = {v5: v4, v4: v3, v3: v2, v2: v1, v1: original}
+    v1, v2, v3, v4, v5, v6, v7, v8 = (DEST + '/Instances/' + version for version in ('v1', 'v2', 'v3', 'v4', 'v5', 'v6', 'v7', 'v8'))
+    links = {v8: v7, v7: v6, v6: v5, v5: v4, v4: v3, v3: v2, v2: v1, v1: original}
+    assert resolve_source_path(v8, links.get) == original
+    assert resolve_source_path(v7, links.get) == original
+    assert resolve_source_path(v6, links.get) == original
     assert resolve_source_path(v5, links.get) == original
     assert resolve_source_path(v4, links.get) == original
     assert resolve_source_path(v3, links.get) == original
@@ -602,7 +755,7 @@ def self_test():
         assert 0 < darken <= 1 and 0 < scale <= 1 and 0 < floor < 1
         for dry in (0., .07, .3, .9):
             assert min(dry, max(floor, dry * scale)) <= dry
-    print('OOW v2 surfaces/v3 windows/v5 interiors routing, provenance/idempotency guards and wetness bounds passed')
+    print('OOW v2 surfaces/v3 windows/v6 interiors/v8 wind routing, provenance/idempotency guards and wetness bounds passed')
 
 
 if __name__ == '__main__':

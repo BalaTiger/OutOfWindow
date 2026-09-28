@@ -1,0 +1,120 @@
+{
+  "date": "2026-09-24",
+  "rootCause": "Pre-migration simplification corrupted roof hard-edge vertex normals",
+  "affectedActors": 9,
+  "trianglesBefore": 537,
+  "trianglesAfter": 794,
+  "sourceNormalsAndUVPreserved": true,
+  "allNanitePreserved": true,
+  "idempotentReuse": true,
+  "otherMeshActorsUnchanged": 1792,
+  "packageSucceeded": true,
+  "cases": [
+    {
+      "case": "alley-afternoon",
+      "passed": true,
+      "hour": 16.5,
+      "weather": "clear",
+      "city": "上海",
+      "date": "2026-09-23T16:30:00Z",
+      "camera": [
+        -2000,
+        -20800,
+        2300
+      ],
+      "sunLux": 79955.890625,
+      "solarElevation": 16.345178604125977,
+      "naniteComponents": 1650,
+      "glassFronts": 66,
+      "glassBackings": 66,
+      "interiorLightLumens": 0,
+      "lumenGI": 1,
+      "lumenReflections": 1,
+      "hardwareRayTracing": 1,
+      "finalViewPostProcess": {
+        "bloomIntensity": 0.675000011920929,
+        "bloomSizeScale": 4,
+        "bloomThreshold": -1,
+        "exposureBias": -0.5,
+        "minBrightness": -4,
+        "maxBrightness": 16,
+        "lastEyeAdaptationExposure": 0.0006046427297405899,
+        "lastAverageSceneLuminance": 210.50497436523438
+      },
+      "captureSha256": "679272C72F614DB373CC968EC0C2F4C3002DECC22AF753529CFE64EBEBA5688E"
+    },
+    {
+      "case": "alley-clear",
+      "passed": true,
+      "hour": 12,
+      "weather": "clear",
+      "city": "上海",
+      "date": "2026-09-23T12:00:00Z",
+      "camera": [
+        -2000,
+        -20800,
+        2300
+      ],
+      "sunLux": 79955.90625,
+      "solarElevation": 58.85356140136719,
+      "naniteComponents": 1650,
+      "glassFronts": 66,
+      "glassBackings": 66,
+      "interiorLightLumens": 0,
+      "lumenGI": 1,
+      "lumenReflections": 1,
+      "hardwareRayTracing": 1,
+      "finalViewPostProcess": {
+        "bloomIntensity": 0.675000011920929,
+        "bloomSizeScale": 4,
+        "bloomThreshold": -1,
+        "exposureBias": -0.5,
+        "minBrightness": -4,
+        "maxBrightness": 16,
+        "lastEyeAdaptationExposure": 0.0005340133793652058,
+        "lastAverageSceneLuminance": 238.3339385986328
+      },
+      "captureSha256": "6D5C6BAE5C81342171270F9C2619AF379E1CA1ADC358D7F4A82CBB06822CA48D"
+    },
+    {
+      "case": "alley-night",
+      "passed": true,
+      "hour": 23,
+      "weather": "clear",
+      "city": "上海",
+      "date": "2026-09-23T23:00:00Z",
+      "camera": [
+        -2000,
+        -20800,
+        2300
+      ],
+      "sunLux": 0,
+      "solarElevation": -56.830711364746094,
+      "naniteComponents": 1650,
+      "glassFronts": 66,
+      "glassBackings": 66,
+      "interiorLightLumens": 24.203731536865234,
+      "lumenGI": 1,
+      "lumenReflections": 1,
+      "hardwareRayTracing": 1,
+      "finalViewPostProcess": {
+        "bloomIntensity": 1.2999999523162842,
+        "bloomSizeScale": 5.5,
+        "bloomThreshold": -1,
+        "exposureBias": -1.1500000953674316,
+        "minBrightness": -4,
+        "maxBrightness": 16,
+        "lastEyeAdaptationExposure": 6.758925437927246,
+        "lastAverageSceneLuminance": 0.010678443126380444
+      },
+      "captureSha256": "901C7DD9D9ACA812AC70C994D72B078DDBAD6EF18E6F06E91A971F63AC7BF57A"
+    }
+  ],
+  "visualCheck": "Actual packaged GPU captures reviewed: afternoon plane no longer has the spurious whole-slope gradient; roof silhouette and tile direction preserved; noon/night regression passed",
+  "beforeCapture": "Art/Lookdev/alley-afternoon-roof-before.png",
+  "afterCapture": "Art/Lookdev/alley-afternoon-roof-fixed.png",
+  "fixtureNote": "Before/after both fixed Shanghai 2026-09-23 16:30 clear, same camera and exposure settings; user screenshot geolocation not asserted",
+  "lightingParametersChanged": false,
+  "roofProtectionAddedToSourcePipeline": true,
+  "repairIntegratedIntoImport": true
+}

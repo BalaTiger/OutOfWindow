@@ -1,0 +1,168 @@
+{
+  "date": "2026-09-24",
+  "engine": "Unreal Engine 5.7",
+  "hardware": {
+    "os": "Windows 11 25H2",
+    "cpu": "Intel Core i5-14600K",
+    "gpu": "NVIDIA GeForce RTX 5060"
+  },
+  "method": {
+    "resolution": [
+      1280,
+      820
+    ],
+    "quality": 1,
+    "screenPercentage": 85,
+    "offscreen": true,
+    "soleProjectGpuProcess": true,
+    "secondsPerUncappedRun": 35,
+    "excludedStartupSeconds": 2,
+    "uncapped": true,
+    "vsync": false,
+    "sameTestHour": 16.5,
+    "sameWeather": "clear",
+    "decorativeFrameInTiming": false,
+    "metric": "application frame interval, not a GPU timer",
+    "scope": "whole old/new City versions with redesigned camera and content; not an isolated Nanite benchmark"
+  },
+  "baselineExeSha256": "30cba293284fc2022e6e584393660d24d072256610584a01b2ee7f46f429a67a",
+  "finalExe": "D:\\OutOfWindowBuild\\Windows\\OutOfWindow\\Binaries\\Win64\\OutOfWindow.exe",
+  "finalExeSha256": "4a6f56f18fee60a79d941305604c4bba6a7a923fb7cd99fe9eb1b8b783ae9ea5",
+  "cityMapSha256": "06109dfe2ad229fa04f69110e9e05ed62906e181f2c4fe2c102fcefb37152611",
+  "baseline": {
+    "sourceReport": ".runtime\\ue-city\\baseline-solo.json",
+    "sourceSha256": "50b84dd2a84045487ced5aecadb2b8d911202cd6c662ad9e0675f100b8614678",
+    "state": {
+      "scene": "City",
+      "hour": 16.5,
+      "actualWeather": "clear",
+      "quality": 1,
+      "wetness": 0,
+      "movingCars": 16,
+      "actors": 10822,
+      "staticMeshComponents": 10800,
+      "capturedFrames": 1,
+      "nightLights": 0,
+      "camera": [
+        2400,
+        3400,
+        2600
+      ],
+      "fov": 79.38436126708984,
+      "frameTimeSamples": 4188,
+      "frameTimeMeanMs": 7.882035696176312,
+      "frameTimeP95Ms": 9.776901245117188,
+      "r.ScreenPercentage": 85,
+      "r.Lumen.HardwareRayTracing": 1,
+      "r.Lumen.DiffuseIndirect.Allow": 1,
+      "r.Lumen.Reflections.Allow": 1
+    }
+  },
+  "modern": {
+    "sourceReport": ".runtime\\ue-city\\packaged-city-uncapped.json",
+    "sourceSha256": "42b9bf369719caa64b1bb5fdab3409c172223c232f25e97e9d16bcede5fd914a",
+    "state": {
+      "scene": "City",
+      "hour": 16.5,
+      "actualWeather": "clear",
+      "quality": 1,
+      "wetness": 0,
+      "movingCars": 16,
+      "actors": 148,
+      "staticMeshComponents": 118,
+      "capturedFrames": 1,
+      "desktopFrameReady": false,
+      "desktopFrameStyle": "none",
+      "nightLights": 6,
+      "camera": [
+        2600,
+        4200,
+        3700
+      ],
+      "fov": 76.99444580078125,
+      "frameTimeSamples": 5704,
+      "frameTimeMeanMs": 5.786666692473611,
+      "frameTimeP95Ms": 7.096100807189941,
+      "r.ScreenPercentage": 85,
+      "r.Lumen.HardwareRayTracing": 1,
+      "r.Lumen.DiffuseIndirect.Allow": 1,
+      "r.Lumen.Reflections.Allow": 1
+    }
+  },
+  "comparison": {
+    "baselineApproxFps": 126.87077787342605,
+    "modernApproxFps": 172.8110591371442,
+    "fpsIncreasePercent": 36.21029368130064,
+    "meanFrameTimeReductionPercent": 26.584109543162747
+  },
+  "day": {
+    "sourceReport": ".runtime\\ue-city\\packaged-city-day.json",
+    "sourceSha256": "5acb4c41b03a1d398c701177f06b2bc6709ed11984be1275da3519b6ce06c121",
+    "state": {
+      "scene": "City",
+      "hour": 12,
+      "actualWeather": "clear",
+      "quality": 1,
+      "wetness": 0,
+      "movingCars": 16,
+      "actors": 149,
+      "staticMeshComponents": 119,
+      "capturedFrames": 3,
+      "desktopFrameReady": true,
+      "desktopFrameStyle": "graphite",
+      "nightLights": 6,
+      "camera": [
+        2600,
+        4200,
+        3700
+      ],
+      "fov": 76.99444580078125,
+      "frameTimeSamples": 1190,
+      "frameTimeMeanMs": 16.837471925110375,
+      "frameTimeP95Ms": 16.705297470092773,
+      "r.ScreenPercentage": 85,
+      "r.Lumen.HardwareRayTracing": 1,
+      "r.Lumen.DiffuseIndirect.Allow": 1,
+      "r.Lumen.Reflections.Allow": 1
+    }
+  },
+  "rainNight": {
+    "sourceReport": ".runtime\\ue-validation\\packaged-city-rainnight.json",
+    "sourceSha256": "c8e005cd0356000584ab95f7a4951763bb6c3e4f8a87a7a96d789ac6210a5632",
+    "state": {
+      "scene": "City",
+      "hour": 23,
+      "actualWeather": "rain",
+      "quality": 1,
+      "wetness": 0.995911180973053,
+      "movingCars": 16,
+      "actors": 149,
+      "staticMeshComponents": 119,
+      "capturedFrames": 1,
+      "desktopFrameReady": true,
+      "desktopFrameStyle": "graphite",
+      "nightLights": 6,
+      "camera": [
+        2600,
+        4200,
+        3700
+      ],
+      "fov": 76.99444580078125,
+      "frameTimeSamples": 1381,
+      "frameTimeMeanMs": 16.671051091685147,
+      "frameTimeP95Ms": 16.69890022277832,
+      "r.ScreenPercentage": 85,
+      "r.Lumen.HardwareRayTracing": 1,
+      "r.Lumen.DiffuseIndirect.Allow": 1,
+      "r.Lumen.Reflections.Allow": 1
+    }
+  },
+  "validation": {
+    "savedMapAuditPassed": true,
+    "savedActors": 132,
+    "trafficMotionVisuallyVerifiedAcrossThreeFrames": true,
+    "finalRuntimeLogsWithoutEnsureOrMaterialFallback": true,
+    "windowFrameIndependentOfMap": true,
+    "previousFrameUvStreamingEnsureFixedBeforeFinalTests": true
+  }
+}

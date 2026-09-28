@@ -1,21 +1,26 @@
-#pragma once
+﻿#pragma once
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
 #include "WindowDesktop.h"
+#include "WindowTraffic.h"
 #include "WindowDirector.generated.h"
 
 class ACameraActor;
 class APostProcessVolume;
 class UDirectionalLightComponent;
-class UPointLightComponent;
+class ULightComponent;
 class USkyLightComponent;
+class USkyAtmosphereComponent;
 class UExponentialHeightFogComponent;
 class UVolumetricCloudComponent;
 class UMaterialInstanceDynamic;
 class AWindowPrecipitation;
 class UAudioComponent;
 class USoundWaveProcedural;
+class AWindowBirds;
+class AWindowFrame;
+class SWindowVisibilityButton;
 class SWidget;
 class IHttpRequest;
 class IConsoleObject;
@@ -36,13 +41,15 @@ public:
     UFUNCTION(Exec) void OOWWeather(const FString& Mode);
     UFUNCTION(Exec) void OOWScene(const FString& Scene);
     UFUNCTION(Exec) void OOWQuality(int32 Quality);
+    UFUNCTION(Exec) void OOWFrame(const FString& Style);
     UFUNCTION(Exec) void OOWAudit();
 
     void RefreshWeather();
-    void SetCompactMode(bool bEnabled);
     TFunction<void(FName)> DesktopAction;
+    TFunction<void()> RestoreInterface;
 
 private:
+    friend class FWindowLocationTest;
     void FindSceneActors();
     void BindCamera();
     void MakeInterface();
@@ -52,6 +59,7 @@ private:
     void ToggleAudio();
     void FetchForecast(double Latitude, double Longitude, const FString& City, const FString& Timezone);
     void UseOfflineWeather();
+    void ApplyLocation(bool bFollowIP, double Latitude, double Longitude, const FString& City, double UtcOffset);
     void RegisterCommands();
     void DesktopButton(FName Action);
     FString ActualWeather() const;
@@ -60,18 +68,22 @@ private:
 
     UPROPERTY() TObjectPtr<ACameraActor> Camera;
     UPROPERTY() TObjectPtr<UDirectionalLightComponent> Sun;
-    UPROPERTY() TArray<TObjectPtr<UPointLightComponent>> NightLights;
+    UPROPERTY() TArray<TObjectPtr<ULightComponent>> NightLights;
     UPROPERTY() TObjectPtr<USkyLightComponent> Sky;
+    UPROPERTY() TObjectPtr<USkyAtmosphereComponent> Atmosphere;
     UPROPERTY() TObjectPtr<UExponentialHeightFogComponent> Fog;
     UPROPERTY() TObjectPtr<UVolumetricCloudComponent> Cloud;
     UPROPERTY() TObjectPtr<APostProcessVolume> PostProcess;
     UPROPERTY() TArray<TObjectPtr<UMaterialInstanceDynamic>> Materials;
     UPROPERTY() TObjectPtr<UMaterialInstanceDynamic> CloudMaterial;
     UPROPERTY() TObjectPtr<AWindowPrecipitation> Precipitation;
+    UPROPERTY() TObjectPtr<AWindowBirds> Birds;
+    UPROPERTY() TObjectPtr<AWindowFrame> WindowFrame;
     UPROPERTY() TObjectPtr<UAudioComponent> AmbientAudio;
     UPROPERTY() TObjectPtr<USoundWaveProcedural> NoiseWave;
 
     TSharedPtr<SWidget> Interface;
+    TSharedPtr<SWindowVisibilityButton> VisibilityControl;
     TSharedPtr<IHttpRequest, ESPMode::ThreadSafe> GeoRequest;
     TSharedPtr<IHttpRequest, ESPMode::ThreadSafe> ForecastRequest;
     TUniquePtr<FWindowDesktop> Desktop;
@@ -79,9 +91,10 @@ private:
     TArray<float> FrameTimes;
     TArray<float> NightLightIntensities;
     TArray<FString> MissingTags;
-    struct FCarPart { TWeakObjectPtr<AActor> Actor; FVector Origin; int32 Car; };
+    struct FCarPart { TWeakObjectPtr<AActor> Actor; FVector Origin; FRotator Rotation; int32 Car; };
     TArray<FCarPart> CarParts;
-    TMap<int32, float> CarStartY;
+    TMap<int32, FVector> CarOrigins;
+    FWindowTraffic Traffic;
     FRandomStream Random;
     float SolarElevation = 0;
     float Daylight = 1;
@@ -95,18 +108,24 @@ private:
     float TestStartedAt = 0;
     float VerticalFov = 0;
     float BaseFogDensity = .008f;
+    float BaseRayleighScattering = 0, BaseMieScattering = 0, BaseMieAbsorption = 0;
+    float Cloudiness = .25f;
+    FVector2D CloudDriftUV = FVector2D::ZeroVector;
+    FVector2D CloudWindMetersPerSecond = FVector2D::ZeroVector;
     float SunAzimuth = 0;
     FVector2D LastViewportSize = FVector2D::ZeroVector;
     FString CapturePath;
     FDelegateHandle ScreenshotHandle;
     int32 ExitFrames = -1;
+    int32 CaptureFrames = 1;
+    int32 CapturedFrames = 0;
+    float CaptureInterval = .125f;
     bool bTestMode = false;
     bool bSunSweep = false;
     bool bCaptureRequested = false;
     bool bCameraBound = false;
     bool bFetching = false;
     bool bChangingLevel = false;
-    bool bCompact = false;
     bool bCollapsed = false;
     bool bPrivacyDismissed = false;
 };

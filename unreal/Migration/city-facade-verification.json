@@ -1,0 +1,111 @@
+{
+  "recordedAt": "2026-09-24T17:08:10.181828+08:00",
+  "priority": "exterior building modeling and PBR textures",
+  "scope": "B01/B07 geometry, shared stone materials, two offscreen reflection neighbors",
+  "interiorAtlasUsed": false,
+  "architectureTriangles": 98168,
+  "architectureMeshes": 52,
+  "materialSections": 192,
+  "heroWindowCount": 630,
+  "sourceGeometrySha256": "970d26fc832a6f133da973c30b65e425258acc439f53ff2df224092b27aebdb2",
+  "savedMapAudit": {
+    "passed": true,
+    "actors": 138,
+    "failures": []
+  },
+  "build": {
+    "passed": true,
+    "log": ".runtime/ue-city-facade/package.log"
+  },
+  "executableSha256": "e542c05faffea0ba3d6cf54cb7b413642a0535a7b45efad6e87ca32ebf2754a5",
+  "contentIndexSha256": "495faad2e4ede5959595c8ca0ad2e29cba4d5ba355fc308c118429215dad8d38",
+  "baselineExecutableSha256": "E542C05FAFFEA0BA3D6CF54CB7B413642A0535A7B45EFAD6E87CA32EBF2754A5",
+  "baselineContentIndexSha256": "5B7E9D223D25AA353A67DD99324E2BEF373F3931370C8193A39DD8D62FD328F8",
+  "benchmark": {
+    "resolution": [
+      1280,
+      820
+    ],
+    "screenPercentage": 85,
+    "quality": 1,
+    "hardwareLumen": true,
+    "frameHidden": true,
+    "uncapped": true,
+    "seconds": 30,
+    "note": "Same machine, one game process, first two seconds excluded. Application frame time, not GPU-only timing. Single short paired runs; no causal or sustained speedup claim.",
+    "runs": [
+      {
+        "weather": "clear",
+        "hour": 16.5,
+        "beforeMeanMs": 5.845242880521115,
+        "beforeP95Ms": 7.101800441741943,
+        "afterMeanMs": 5.638139477482548,
+        "afterP95Ms": 6.712801933288574,
+        "afterApproxFps": 177.36347318007535,
+        "samples": 4968,
+        "actors": 154,
+        "materials": 31,
+        "staticMeshComponents": 124
+      },
+      {
+        "weather": "rain",
+        "hour": 12,
+        "beforeMeanMs": 5.867467589731015,
+        "beforeP95Ms": 7.148001194000244,
+        "afterMeanMs": 5.657609090419731,
+        "afterP95Ms": 6.874602317810059,
+        "afterApproxFps": 176.7531096648834,
+        "samples": 4950,
+        "actors": 154,
+        "materials": 31,
+        "staticMeshComponents": 124
+      }
+    ]
+  },
+  "regressions": [
+    {
+      "case": "city-traffic",
+      "passed": true,
+      "frames": 16,
+      "frameStyle": "graphite",
+      "windowRainIntensity": 0,
+      "frameP95Ms": 16.7007999420166,
+      "minimumCarGapMeters": 20.5202579498291,
+      "laneChanges": 3,
+      "overtakes": 1,
+      "interfaceHidden": false,
+      "evidence": ".runtime\\ue-validation\\packaged-city-traffic"
+    },
+    {
+      "case": "city-rainglass",
+      "passed": true,
+      "frames": 8,
+      "frameStyle": "graphite",
+      "windowRainIntensity": 0.6669074892997742,
+      "frameP95Ms": 16.702699661254883,
+      "minimumCarGapMeters": 25.9545841217041,
+      "laneChanges": 0,
+      "overtakes": 0,
+      "interfaceHidden": true,
+      "evidence": ".runtime\\ue-validation\\packaged-city-rainglass"
+    },
+    {
+      "case": "city-rainnight",
+      "passed": true,
+      "frames": 1,
+      "frameStyle": "graphite",
+      "windowRainIntensity": 0.6669074892997742,
+      "frameP95Ms": 16.701601028442383,
+      "minimumCarGapMeters": 26.761255264282227,
+      "laneChanges": 0,
+      "overtakes": 0,
+      "interfaceHidden": false,
+      "evidence": ".runtime\\ue-validation\\packaged-city-rainnight"
+    }
+  ],
+  "limitations": [
+    "Opaque exterior glass approximation; no refraction or modeled interiors.",
+    "Two hero buildings refined; other building geometry remains simpler.",
+    "Office atlas generated before priority correction is retained unused."
+  ]
+}

@@ -1,0 +1,131 @@
+{
+  "recordedAt": "2026-09-24T19:01:37.2331539+08:00",
+  "engine": "Unreal Engine 5.7.4",
+  "scope": "Always-lit indoor frame at night; correct outward triangle winding for frame and rain glass",
+  "defaultRoomLight": {
+    "effectiveLumens": 30,
+    "temperatureKelvin": 4000,
+    "cameraLocalPositionCm": [
+      -250,
+      -90,
+      140
+    ],
+    "targetCm": [
+      94,
+      0,
+      0
+    ],
+    "sourceSizeCm": [
+      120,
+      70
+    ],
+    "attenuationCm": 600,
+    "additionalDayFillLumens": 45000,
+    "dayFillTemperatureKelvin": 6500,
+    "lightingChannel": 1,
+    "affectsTranslucency": false,
+    "indirectIntensity": 0,
+    "volumetricScatteringIntensity": 0,
+    "cvar": "oow.FrameRoomLumens",
+    "approximation": "Effective room-bounced fill at the window, not total household lamp output; one native RectLight without a modelled interior"
+  },
+  "independentOfUI": true,
+  "build": {
+    "editor": "Succeeded",
+    "game": "Succeeded",
+    "log": ".runtime/ue-frame-night/build-final.log"
+  },
+  "automation": {
+    "succeeded": 2,
+    "succeededWithWarnings": 0,
+    "failed": 0,
+    "report": ".runtime/ue-frame-night/tests-final/index.json",
+    "coverage": "RenderData winding and vertex-normal consistency for frame/glass across aspect changes; persistent night light; illumination isolation; UI hiding preserves frame, rain and light"
+  },
+  "package": {
+    "result": "BUILD SUCCESSFUL",
+    "log": ".runtime/ue-frame-night/package.log",
+    "path": "D:/OutOfWindowBuild/Windows/OutOfWindow.exe",
+    "gameExeSha256": "A1238A50EF2BC1B14442B0DF2D892131DD5DF34F165353DDAFFD68DED085C4A7",
+    "includes": "Current shared workspace including final City night-light assets",
+    "knownCookWarnings": "Existing AsyncIoDelete SharedTempRoot cleanup warnings; packaging succeeded, no render/material fallback errors in final captures"
+  },
+  "packagedCases": [
+    {
+      "case": "final-alley-night",
+      "scene": "Alley",
+      "hour": 23,
+      "weather": "clear",
+      "frameStyle": "graphite",
+      "frameReady": true,
+      "frameTriangles": 1452,
+      "rainIntensity": 0,
+      "interfaceHidden": true,
+      "capturedFrames": 1,
+      "frameTimeP95Ms": 16.666799545288086,
+      "capture": "docs/desktop-frame/night-room-lit-alley.png",
+      "audit": ".runtime/ue-frame-night/final-alley-night.json",
+      "log": ".runtime/ue-frame-night/final-alley-night.log"
+    },
+    {
+      "case": "final-city-rainnight",
+      "scene": "City",
+      "hour": 23,
+      "weather": "rain",
+      "frameStyle": "graphite",
+      "frameReady": true,
+      "frameTriangles": 1452,
+      "rainIntensity": 0.6669074892997742,
+      "interfaceHidden": true,
+      "capturedFrames": 1,
+      "frameTimeP95Ms": 16.666799545288086,
+      "capture": "docs/desktop-frame/night-room-lit-city.png",
+      "audit": ".runtime/ue-frame-night/final-city-rainnight.json",
+      "log": ".runtime/ue-frame-night/final-city-rainnight.log"
+    },
+    {
+      "case": "final-alley-day",
+      "scene": "Alley",
+      "hour": 12,
+      "weather": "clear",
+      "frameStyle": "graphite",
+      "frameReady": true,
+      "frameTriangles": 1452,
+      "rainIntensity": 0,
+      "interfaceHidden": true,
+      "capturedFrames": 1,
+      "frameTimeP95Ms": 16.666900634765625,
+      "capture": "docs/desktop-frame/day-corrected-frame.png",
+      "audit": ".runtime/ue-frame-night/final-alley-day.json",
+      "log": ".runtime/ue-frame-night/final-alley-day.log"
+    },
+    {
+      "case": "final-coast-night",
+      "scene": "Coast",
+      "hour": 23,
+      "weather": "clear",
+      "frameStyle": "graphite",
+      "frameReady": true,
+      "frameTriangles": 1452,
+      "rainIntensity": 0,
+      "interfaceHidden": true,
+      "capturedFrames": 1,
+      "frameTimeP95Ms": 16.67550277709961,
+      "capture": "docs/desktop-frame/night-room-lit-coast.png",
+      "audit": ".runtime/ue-frame-night/final-coast-night.json",
+      "log": ".runtime/ue-frame-night/final-coast-night.log"
+    }
+  ],
+  "runtimeChecks": "Four fresh 1280x820 packaged captures at default lamp settings; all passed frame/rain/UI audit and ensure/fatal/material-fallback checks",
+  "visualReview": "No broad frame bloom or clipped sill in final night captures; rebates, seals and handle readable; daytime dark graphite retained",
+  "baseline": {
+    "capture": "docs/desktop-frame/night-before-alley.png",
+    "audit": ".runtime/ue-frame-night/before-alley-night.json",
+    "conditions": "Previous package, Alley 23h clear, UI hidden, 1280x820"
+  },
+  "limitations": [
+    "Single area light approximates indoor room bounce; no modelled room or room reflections.",
+    "Exposure settings of exterior maps were not changed by this frame work.",
+    "Short captures are functional evidence, not an uncapped performance benchmark."
+  ]
+}

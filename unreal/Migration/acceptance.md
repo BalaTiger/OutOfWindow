@@ -1,5 +1,9 @@
 # Out of Window → UE5 迁移验收清单
 
+2026-09-24 交互变更：UE 版已移除下文旧基线中的鼠标穿透、整体精简 UI／精简尺寸及对应托盘项，改为眼睛按钮隐藏整套 UI，按 Esc 或悬停原按钮位置后点击恢复。设置面板自身的折叠功能继续保留。历史桌面测试数量与结果属于当时版本，不代表当前功能清单。
+
+本次 Editor／Game 编译、Windows 打包及 `OutOfWindow.UI.SceneOnlyRecovery` Slate 自动化测试通过（0 警告／错误），并检查了打包 UI 截图。测试包含隐藏时零绘制、悬停／移出、点击恢复、焦点移走后的 Esc 恢复及引擎屏幕提示状态还原。桌面层 8 项自动检查通过；人工鼠标逐项验收不在本次证据范围。成品哈希与验证范围见 [ui-verification.json](ui-verification.json)。
+
 审查日期：2026-09-23。原行为基线来自 `index.html`、`src/main.js`、`src/solar-time.js`、`src/rain-response.js`、`src/scene-pack.js`、`src/render-pipeline.js`、`src/styles.css`、`electron/main.cjs`、`electron/preload.cjs` 及测试源码；本轮工程证据来自 `unreal` 内源码、资产、迁移报告及实际构建日志。只有已经核实的条目才勾选；生成项目、导入模型、编辑器里出现一张后巷画面，都不等于产品迁移完成。
 
 ## 本轮已经核实的工程证据

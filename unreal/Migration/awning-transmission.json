@@ -1,0 +1,2889 @@
+{
+  "recipe": "awning-native-v6",
+  "appliedToUnreal": true,
+  "sourceRoomCount": 393,
+  "maxLights": 12,
+  "shaderOccupancy": "step(.62,frac(seed*73.137+.11))",
+  "nightEnvelope": "smoothstep(.58,.86,Night), driven by WindowDirector",
+  "transmission": {
+    "shadingModel": "TwoSidedFoliage",
+    "gain": 0.2,
+    "opticalDepth": 0.65,
+    "emissiveAdded": false
+  },
+  "associations": [
+    {
+      "awning": "OOW_00517_paris_building_04_16",
+      "partCenterMeters": [
+        -4.137150961260277,
+        13.147159948004441,
+        -227.15751425933507
+      ],
+      "room": "02f05fbec9b749e6",
+      "distanceMeters": 1.5693049544848516,
+      "occupied": true
+    },
+    {
+      "awning": "OOW_00517_paris_building_04_16",
+      "partCenterMeters": [
+        -4.925935374482901,
+        13.144464236595894,
+        -226.16886210025012
+      ],
+      "room": "c53ed08c11a4dd86",
+      "distanceMeters": 1.6861431741015842,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_00517_paris_building_04_16",
+      "partCenterMeters": [
+        -5.715489990965108,
+        13.139457915408592,
+        -225.20524154710165
+      ],
+      "room": "c53ed08c11a4dd86",
+      "distanceMeters": 1.660405380923677,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_00517_paris_building_04_16",
+      "partCenterMeters": [
+        -4.603123933309282,
+        13.545355033209955,
+        -225.92316726044243
+      ],
+      "room": "c53ed08c11a4dd86",
+      "distanceMeters": 1.8400721642053073,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_00517_paris_building_04_16",
+      "partCenterMeters": [
+        1.8332721562287657,
+        13.147159948004441,
+        -234.5625372232089
+      ],
+      "room": "54b5ec15cb3a17b3",
+      "distanceMeters": 1.976225162878462,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_00517_paris_building_04_16",
+      "partCenterMeters": [
+        1.0448728446359354,
+        13.144079134966102,
+        -233.5746552673835
+      ],
+      "room": "54b5ec15cb3a17b3",
+      "distanceMeters": 1.5659604792381745,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_00517_paris_building_04_16",
+      "partCenterMeters": [
+        0.2553182281537274,
+        13.139457915408592,
+        -232.60949430771586
+      ],
+      "room": "54b5ec15cb3a17b3",
+      "distanceMeters": 2.0432938735209105,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_00517_paris_building_04_16",
+      "partCenterMeters": [
+        1.3680693874393461,
+        13.545355033209955,
+        -233.32770884727898
+      ],
+      "room": "54b5ec15cb3a17b3",
+      "distanceMeters": 1.7221850744583418,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_00517_paris_building_04_16",
+      "partCenterMeters": [
+        -2.237637172308447,
+        10.617523617304524,
+        -223.99236396406997
+      ],
+      "room": "6386968feea0e477",
+      "distanceMeters": 0.8925131520550754,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_00517_paris_building_04_16",
+      "partCenterMeters": [
+        3.733556148440181,
+        10.617523617304524,
+        -231.39854223283317
+      ],
+      "room": "c320bfab5bf9f06e",
+      "distanceMeters": 0.8920665774283357,
+      "occupied": true
+    },
+    {
+      "awning": "OOW_00598_paris_building_05_63",
+      "partCenterMeters": [
+        9.399282981515451,
+        12.341133181274298,
+        -244.51475332336764
+      ],
+      "room": "672972fd552b5c34",
+      "distanceMeters": 2.678165921987432,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_00598_paris_building_05_63",
+      "partCenterMeters": [
+        9.47663037990135,
+        11.900789830150673,
+        -245.45761533738357
+      ],
+      "room": "672972fd552b5c34",
+      "distanceMeters": 2.5674057591865256,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_00598_paris_building_05_63",
+      "partCenterMeters": [
+        8.66139535364243,
+        11.895547647399201,
+        -244.10278832694672
+      ],
+      "room": "672972fd552b5c34",
+      "distanceMeters": 2.5089311091371513,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_00598_paris_building_05_63",
+      "partCenterMeters": [
+        9.242924799832132,
+        12.178827138392192,
+        -244.6959110619137
+      ],
+      "room": "672972fd552b5c34",
+      "distanceMeters": 2.593076849491682,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_00682_paris_building_05_63__2_",
+      "partCenterMeters": [
+        42.589047475729394,
+        12.3410968895985,
+        -181.78253637716904
+      ],
+      "room": "5bbf0cf5279fe42e",
+      "distanceMeters": 2.678962352830684,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_00682_paris_building_05_63__2_",
+      "partCenterMeters": [
+        41.647313595101444,
+        11.900770026718941,
+        -181.71252282016016
+      ],
+      "room": "5bbf0cf5279fe42e",
+      "distanceMeters": 2.573083043148485,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_00682_paris_building_05_63__2_",
+      "partCenterMeters": [
+        43.11022427099482,
+        11.895589710685064,
+        -181.11683933663198
+      ],
+      "room": "5bbf0cf5279fe42e",
+      "distanceMeters": 2.5049923071887825,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_00682_paris_building_05_63__2_",
+      "partCenterMeters": [
+        42.43247506662384,
+        12.178815560782144,
+        -181.59831799576023
+      ],
+      "room": "5bbf0cf5279fe42e",
+      "distanceMeters": 2.595211923344615,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_00728_Paris_Building_08_paris_building_08_9",
+      "partCenterMeters": [
+        -56.22917649134544,
+        20.567344092601815,
+        -237.74484972470276
+      ],
+      "room": "14286f445050f0e5",
+      "distanceMeters": 3.150269316101229,
+      "occupied": true
+    },
+    {
+      "awning": "OOW_00728_Paris_Building_08_paris_building_08_9",
+      "partCenterMeters": [
+        -55.72112983208183,
+        19.714606427762874,
+        -229.16680301775318
+      ],
+      "room": "5b9e6146f2d8b662",
+      "distanceMeters": 2.391390047786036,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_00728_Paris_Building_08_paris_building_08_9",
+      "partCenterMeters": [
+        -56.65568954594298,
+        18.26805798177101,
+        -230.1864538166727
+      ],
+      "room": "5b9e6146f2d8b662",
+      "distanceMeters": 0.5291049392151118,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_00728_Paris_Building_08_paris_building_08_9",
+      "partCenterMeters": [
+        -57.5410214230246,
+        18.53688812168415,
+        -234.5935951339827
+      ],
+      "room": "67294f945510fc8a",
+      "distanceMeters": 0.8763393208199233,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_00728_Paris_Building_08_paris_building_08_9",
+      "partCenterMeters": [
+        -55.147606303976715,
+        20.07237357748276,
+        -240.31921560316286
+      ],
+      "room": "14286f445050f0e5",
+      "distanceMeters": 2.720050718424686,
+      "occupied": true
+    },
+    {
+      "awning": "OOW_00728_Paris_Building_08_paris_building_08_9",
+      "partCenterMeters": [
+        -56.404166067397625,
+        12.068234991113155,
+        -229.0245038020624
+      ],
+      "room": "59dfb7a24a76e269",
+      "distanceMeters": 1.0798921746930392,
+      "occupied": true
+    },
+    {
+      "awning": "OOW_00728_Paris_Building_08_paris_building_08_9",
+      "partCenterMeters": [
+        -57.84071510904366,
+        12.284375961973222,
+        -230.5733538463617
+      ],
+      "room": "59dfb7a24a76e269",
+      "distanceMeters": 1.2803726694029658,
+      "occupied": true
+    },
+    {
+      "awning": "OOW_00728_Paris_Building_08_paris_building_08_9",
+      "partCenterMeters": [
+        -55.66536392323003,
+        20.637339923022687,
+        -239.08688516565684
+      ],
+      "room": "14286f445050f0e5",
+      "distanceMeters": 2.896999810830744,
+      "occupied": true
+    },
+    {
+      "awning": "OOW_00728_Paris_Building_08_paris_building_08_9",
+      "partCenterMeters": [
+        -57.015283509918355,
+        19.450006805072967,
+        -235.8816914803405
+      ],
+      "room": "67294f945510fc8a",
+      "distanceMeters": 1.9949446292049218,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_00728_Paris_Building_08_paris_building_08_9",
+      "partCenterMeters": [
+        -57.6563991654766,
+        18.53688812168415,
+        -231.2296609046761
+      ],
+      "room": "5b9e6146f2d8b662",
+      "distanceMeters": 1.6794087715909665,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_00739_Paris_Building_08_paris_building_08_9__2_",
+      "partCenterMeters": [
+        18.70835668422683,
+        20.567144873490555,
+        -276.49225295212693
+      ],
+      "room": "3806211fb8b9bd75",
+      "distanceMeters": 3.150601587792387,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_00739_Paris_Building_08_paris_building_08_9__2_",
+      "partCenterMeters": [
+        11.021038268181076,
+        19.71457912750078,
+        -280.34599333318783
+      ],
+      "room": "cc597d1ab07d8f06",
+      "distanceMeters": 2.3924514806352812,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_00739_Paris_Building_08_paris_building_08_9__2_",
+      "partCenterMeters": [
+        12.371538588991939,
+        18.268072121402753,
+        -280.6444714283691
+      ],
+      "room": "cc597d1ab07d8f06",
+      "distanceMeters": 0.529284002885413,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_00739_Paris_Building_08_paris_building_08_9__2_",
+      "partCenterMeters": [
+        16.636816949772495,
+        18.53715464660408,
+        -279.2058786141888
+      ],
+      "room": "f1058b97255753ff",
+      "distanceMeters": 0.8774558626812299,
+      "occupied": true
+    },
+    {
+      "awning": "OOW_00739_Paris_Building_08_paris_building_08_9__2_",
+      "partCenterMeters": [
+        20.395398594680245,
+        20.072696311776077,
+        -274.2674228575527
+      ],
+      "room": "3806211fb8b9bd75",
+      "distanceMeters": 2.7199094506228714,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_00739_Paris_Building_08_paris_building_08_9__2_",
+      "partCenterMeters": [
+        11.242635641876287,
+        12.068056486459287,
+        -281.005226676617
+      ],
+      "room": "4fe3a44350f9a69d",
+      "distanceMeters": 1.0796752354343866,
+      "occupied": true
+    },
+    {
+      "awning": "OOW_00739_Paris_Building_08_paris_building_08_9__2_",
+      "partCenterMeters": [
+        13.299477591340631,
+        12.284754598491169,
+        -281.4696201523583
+      ],
+      "room": "4fe3a44350f9a69d",
+      "distanceMeters": 1.277337452851119,
+      "occupied": true
+    },
+    {
+      "awning": "OOW_00739_Paris_Building_08_paris_building_08_9__2_",
+      "partCenterMeters": [
+        19.58730306994223,
+        20.637242001904347,
+        -275.33065685506557
+      ],
+      "room": "3806211fb8b9bd75",
+      "distanceMeters": 2.896996781748626,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_00739_Paris_Building_08_paris_building_08_9__2_",
+      "partCenterMeters": [
+        17.48712149807151,
+        19.450018997680985,
+        -278.1008124593966
+      ],
+      "room": "f1058b97255753ff",
+      "distanceMeters": 1.996154794955003,
+      "occupied": true
+    },
+    {
+      "awning": "OOW_00739_Paris_Building_08_paris_building_08_9__2_",
+      "partCenterMeters": [
+        13.777438253226602,
+        18.53715464660408,
+        -280.98798504422484
+      ],
+      "room": "cc597d1ab07d8f06",
+      "distanceMeters": 1.6794918873216533,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_00751_Paris_Building_08_paris_building_08_9__3_",
+      "partCenterMeters": [
+        21.267143673205005,
+        20.56720185984954,
+        -263.76616613570445
+      ],
+      "room": "673d26cc62137bdd",
+      "distanceMeters": 3.1507325077910893,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_00751_Paris_Building_08_paris_building_08_9__3_",
+      "partCenterMeters": [
+        21.427046110209453,
+        19.714676456803634,
+        -272.3902567444319
+      ],
+      "room": "90ff373ce9872b75",
+      "distanceMeters": 2.39261922945554,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_00751_Paris_Building_08_paris_building_08_9__3_",
+      "partCenterMeters": [
+        22.28407715746352,
+        18.268172936443833,
+        -271.3068889742956
+      ],
+      "room": "90ff373ce9872b75",
+      "distanceMeters": 0.5362619656409929,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_00751_Paris_Building_08_paris_building_08_9__3_",
+      "partCenterMeters": [
+        22.8036642129576,
+        18.536977752607186,
+        -266.81265267381264
+      ],
+      "room": "33b6e1a1175d35ea",
+      "distanceMeters": 0.8764208345672011,
+      "occupied": true
+    },
+    {
+      "awning": "OOW_00751_Paris_Building_08_paris_building_08_9__3_",
+      "partCenterMeters": [
+        19.996168547422627,
+        20.07253964465592,
+        -261.27799602032644
+      ],
+      "room": "673d26cc62137bdd",
+      "distanceMeters": 2.7204572225771337,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_00751_Paris_Building_08_paris_building_08_9__3_",
+      "partCenterMeters": [
+        22.153701069738073,
+        12.068214776476312,
+        -272.50989597787407
+      ],
+      "room": "384885a9c71648eb",
+      "distanceMeters": 1.0836154724356368,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_00751_Paris_Building_08_paris_building_08_9__3_",
+      "partCenterMeters": [
+        23.4721292568617,
+        12.284869157549487,
+        -270.8599674147544
+      ],
+      "room": "384885a9c71648eb",
+      "distanceMeters": 1.2833250999154397,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_00751_Paris_Building_08_paris_building_08_9__3_",
+      "partCenterMeters": [
+        20.60328013827945,
+        20.63737487177236,
+        -262.4694992514585
+      ],
+      "room": "673d26cc62137bdd",
+      "distanceMeters": 2.897042971497334,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_00751_Paris_Building_08_paris_building_08_9__3_",
+      "partCenterMeters": [
+        22.184377796261707,
+        19.450089690537276,
+        -265.5666982531011
+      ],
+      "room": "33b6e1a1175d35ea",
+      "distanceMeters": 1.995180608064475,
+      "occupied": true
+    },
+    {
+      "awning": "OOW_00751_Paris_Building_08_paris_building_08_9__3_",
+      "partCenterMeters": [
+        23.205625195187615,
+        18.536977752607186,
+        -270.19083131745765
+      ],
+      "room": "90ff373ce9872b75",
+      "distanceMeters": 1.6832059281661025,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_00788_paris_building_10_18",
+      "partCenterMeters": [
+        -2.941408701278524,
+        12.847984818998336,
+        -249.812260435624
+      ],
+      "room": "eaf95051c4fe8475",
+      "distanceMeters": 3.3063330864059663,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_00788_paris_building_10_18",
+      "partCenterMeters": [
+        -1.145933982074225,
+        12.475553852441983,
+        -251.5251679122427
+      ],
+      "room": "d3db58ab4398dd6d",
+      "distanceMeters": 2.9794943757215484,
+      "occupied": true
+    },
+    {
+      "awning": "OOW_00788_paris_building_10_18",
+      "partCenterMeters": [
+        -1.7970771301244506,
+        12.479831156405716,
+        -250.80772655275464
+      ],
+      "room": "d3db58ab4398dd6d",
+      "distanceMeters": 3.047922332527999,
+      "occupied": true
+    },
+    {
+      "awning": "OOW_00788_paris_building_10_18",
+      "partCenterMeters": [
+        -2.473578580245371,
+        12.479831156405716,
+        -250.07164836885318
+      ],
+      "room": "eaf95051c4fe8475",
+      "distanceMeters": 3.014423825993992,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_00788_paris_building_10_18",
+      "partCenterMeters": [
+        -3.1497745086545965,
+        12.479831156405716,
+        -249.3361812283751
+      ],
+      "room": "eaf95051c4fe8475",
+      "distanceMeters": 3.010794079601953,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_00788_paris_building_10_18",
+      "partCenterMeters": [
+        -3.826352339203441,
+        12.479831156405716,
+        -248.59918647933853
+      ],
+      "room": "669613a4dcb7097b",
+      "distanceMeters": 3.0521783650853234,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_00788_paris_building_10_18",
+      "partCenterMeters": [
+        -4.486584758176596,
+        12.481969808387582,
+        -247.88266168498558
+      ],
+      "room": "669613a4dcb7097b",
+      "distanceMeters": 2.9852993054208787,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_00788_paris_building_10_18",
+      "partCenterMeters": [
+        -1.829156909852438,
+        12.69308531116891,
+        -250.81567011725872
+      ],
+      "room": "d3db58ab4398dd6d",
+      "distanceMeters": 3.2503420238433205,
+      "occupied": true
+    },
+    {
+      "awning": "OOW_00788_paris_building_10_18",
+      "partCenterMeters": [
+        -3.8308587844509443,
+        12.69064113747535,
+        -248.6337104327601
+      ],
+      "room": "669613a4dcb7097b",
+      "distanceMeters": 3.2539297415154773,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_00788_paris_building_10_18",
+      "partCenterMeters": [
+        1.9336484913846665,
+        12.847984818998336,
+        -255.11718667664223
+      ],
+      "room": "e1ea75ccf385eb6e",
+      "distanceMeters": 2.055203714460125,
+      "occupied": true
+    },
+    {
+      "awning": "OOW_00788_paris_building_10_18",
+      "partCenterMeters": [
+        3.15252736019235,
+        12.479831156405716,
+        -256.1939979495117
+      ],
+      "room": "c703b10c57b8c4f7",
+      "distanceMeters": 2.829269034522991,
+      "occupied": true
+    },
+    {
+      "awning": "OOW_00788_paris_building_10_18",
+      "partCenterMeters": [
+        1.7004590449333659,
+        12.479831156405716,
+        -254.61422155876414
+      ],
+      "room": "ae2a5673d57b7eca",
+      "distanceMeters": 2.8567040843117475,
+      "occupied": true
+    },
+    {
+      "awning": "OOW_00788_paris_building_10_18",
+      "partCenterMeters": [
+        0.9738520340944453,
+        12.479831156405716,
+        -253.82406603189264
+      ],
+      "room": "e1ea75ccf385eb6e",
+      "distanceMeters": 1.7153432354542595,
+      "occupied": true
+    },
+    {
+      "awning": "OOW_00788_paris_building_10_18",
+      "partCenterMeters": [
+        0.26557632595723213,
+        12.481969808387582,
+        -253.0543804597047
+      ],
+      "room": "3c3de9243b6f2184",
+      "distanceMeters": 2.8937900729168375,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_00788_paris_building_10_18",
+      "partCenterMeters": [
+        3.1200656783247434,
+        12.69308531116891,
+        -256.2015596118762
+      ],
+      "room": "c703b10c57b8c4f7",
+      "distanceMeters": 2.99546212456828,
+      "occupied": true
+    },
+    {
+      "awning": "OOW_00788_paris_building_10_18",
+      "partCenterMeters": [
+        0.9707968169774941,
+        12.69064113747535,
+        -253.85897188745383
+      ],
+      "room": "e1ea75ccf385eb6e",
+      "distanceMeters": 1.7076758481897176,
+      "occupied": true
+    },
+    {
+      "awning": "OOW_00809_paris_building_10_18__2_",
+      "partCenterMeters": [
+        33.89170502102681,
+        12.848027232938495,
+        -164.41281292457128
+      ],
+      "room": "f83e9ffb86991118",
+      "distanceMeters": 3.3063124919137916,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_00809_paris_building_10_18__2_",
+      "partCenterMeters": [
+        31.679870441176362,
+        12.475706465421204,
+        -165.5377993815955
+      ],
+      "room": "6ddd26ec2e27614e",
+      "distanceMeters": 2.979787640764265,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_00809_paris_building_10_18__2_",
+      "partCenterMeters": [
+        32.572628427588896,
+        12.479482538114077,
+        -165.16245775592392
+      ],
+      "room": "6ddd26ec2e27614e",
+      "distanceMeters": 3.047643034493431,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_00809_paris_building_10_18__2_",
+      "partCenterMeters": [
+        33.49181892285154,
+        12.479482538114077,
+        -164.76899098132654
+      ],
+      "room": "f83e9ffb86991118",
+      "distanceMeters": 3.0143202107713325,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_00809_paris_building_10_18__2_",
+      "partCenterMeters": [
+        34.411387025383476,
+        12.479482538114077,
+        -164.37618501945042
+      ],
+      "room": "f83e9ffb86991118",
+      "distanceMeters": 3.010819578987897,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_00809_paris_building_10_18__2_",
+      "partCenterMeters": [
+        35.33019991337684,
+        12.479482538114077,
+        -163.98337905757427
+      ],
+      "room": "a275977c638268bf",
+      "distanceMeters": 3.05197766592007,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_00809_paris_building_10_18__2_",
+      "partCenterMeters": [
+        36.22597875794367,
+        12.481748181729799,
+        -163.5989748574398
+      ],
+      "room": "a275977c638268bf",
+      "distanceMeters": 2.985263793983906,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_00809_paris_building_10_18__2_",
+      "partCenterMeters": [
+        32.57640450028177,
+        12.693208252530697,
+        -165.1277178871495
+      ],
+      "room": "6ddd26ec2e27614e",
+      "distanceMeters": 3.250520729496405,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_00809_paris_building_10_18__2_",
+      "partCenterMeters": [
+        35.30225697544958,
+        12.690565001645686,
+        -163.96836916862011
+      ],
+      "room": "a275977c638268bf",
+      "distanceMeters": 3.253735085889149,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_00809_paris_building_10_18__2_",
+      "partCenterMeters": [
+        27.266774285015515,
+        12.848027232938495,
+        -167.24581146239936
+      ],
+      "room": "ad09a39fb5e8937e",
+      "distanceMeters": 2.0552997611191324,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_00809_paris_building_10_18__2_",
+      "partCenterMeters": [
+        25.846026934321994,
+        12.479482538114077,
+        -168.03812591518147
+      ],
+      "room": "c4f87354ac3b96dc",
+      "distanceMeters": 2.8292790370682783,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_00809_paris_building_10_18__2_",
+      "partCenterMeters": [
+        29.768328042226656,
+        12.481748181729799,
+        -166.36022801410328
+      ],
+      "room": "56534a3641001718",
+      "distanceMeters": 2.8947157346066983,
+      "occupied": true
+    },
+    {
+      "awning": "OOW_00809_paris_building_10_18__2_",
+      "partCenterMeters": [
+        25.850935828822728,
+        12.693208252530697,
+        -168.0032916445897
+      ],
+      "room": "c4f87354ac3b96dc",
+      "distanceMeters": 2.9954774972375415,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_00809_paris_building_10_18__2_",
+      "partCenterMeters": [
+        28.777297763982098,
+        12.690565001645686,
+        -166.7582260759321
+      ],
+      "room": "ad09a39fb5e8937e",
+      "distanceMeters": 1.7108725054420604,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_01309_paris_bistroawning_7_1",
+      "partCenterMeters": [
+        -9.996782306584915,
+        12.09213519016798,
+        -217.13002053516414
+      ],
+      "room": "0feb8781286ec87d",
+      "distanceMeters": 2.111661783175905,
+      "occupied": true
+    },
+    {
+      "awning": "OOW_01312_paris_bistroawning_6_1_1",
+      "partCenterMeters": [
+        -12.432251277617961,
+        11.740926994444354,
+        -212.98685016264466
+      ],
+      "room": "519d41a1db12dbb7",
+      "distanceMeters": 1.9615029091819214,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_01312_paris_bistroawning_6_1_1",
+      "partCenterMeters": [
+        -12.015057575495726,
+        12.134032331464585,
+        -212.78543786750294
+      ],
+      "room": "519d41a1db12dbb7",
+      "distanceMeters": 1.9812399284536097,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_01314_paris_bistroawning_1_1_1",
+      "partCenterMeters": [
+        -13.194832229385653,
+        11.82925634835318,
+        -205.60005854198806
+      ],
+      "room": "65750a9ce64bb75d",
+      "distanceMeters": 2.535536867270292,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_01316_paris_bistroawning_2_1_1",
+      "partCenterMeters": [
+        -7.999306532426882,
+        11.589660495524805,
+        -199.39962921349098
+      ],
+      "room": "8662d2c825fbe3a2",
+      "distanceMeters": 3.6838556182156728,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_01318_paris_bistroawning_3_1_1",
+      "partCenterMeters": [
+        -3.0882997433679016,
+        11.85420534212157,
+        -198.4541019621434
+      ],
+      "room": "dd5e1e8884a754ea",
+      "distanceMeters": 3.1619217447477235,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_01320_paris_bistroawning_4_1_1",
+      "partCenterMeters": [
+        1.1567688458514862,
+        11.589743277473941,
+        -195.85332258254527
+      ],
+      "room": "5721f34f1e08e80c",
+      "distanceMeters": 3.6478142329411245,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_01321_Paris_bistroAwning_02A",
+      "partCenterMeters": [
+        -22.743438954756726,
+        19.691107589766162,
+        -225.7263902175128
+      ],
+      "room": "e8143a4235edd362",
+      "distanceMeters": 2.1964373158386814,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_01321_Paris_bistroAwning_02A",
+      "partCenterMeters": [
+        -22.509253629436316,
+        19.687541881402836,
+        -226.42354191673587
+      ],
+      "room": "e8143a4235edd362",
+      "distanceMeters": 2.2331562206001605,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_01321_Paris_bistroAwning_02A",
+      "partCenterMeters": [
+        -23.42372782484491,
+        19.68828473731186,
+        -225.42014786901686
+      ],
+      "room": "e8143a4235edd362",
+      "distanceMeters": 2.2218232199144885,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_01321_Paris_bistroAwning_02A",
+      "partCenterMeters": [
+        -23.2031553340574,
+        19.689770449129917,
+        -225.27341525558654
+      ],
+      "room": "e8143a4235edd362",
+      "distanceMeters": 2.2706605023519018,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_01321_Paris_bistroAwning_02A",
+      "partCenterMeters": [
+        -22.94408433578462,
+        19.689176164402696,
+        -225.22498105031804
+      ],
+      "room": "e8143a4235edd362",
+      "distanceMeters": 2.3100206896238786,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_01321_Paris_bistroAwning_02A",
+      "partCenterMeters": [
+        -22.691049041772672,
+        19.687541881402836,
+        -225.28678666194898
+      ],
+      "room": "e8143a4235edd362",
+      "distanceMeters": 2.3323186711495336,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_01321_Paris_bistroAwning_02A",
+      "partCenterMeters": [
+        -22.4715908348487,
+        19.689176164402696,
+        -225.44904496387795
+      ],
+      "room": "e8143a4235edd362",
+      "distanceMeters": 2.3422176132423593,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_01321_Paris_bistroAwning_02A",
+      "partCenterMeters": [
+        -22.331469639008695,
+        19.689770449129917,
+        -225.67929315288052
+      ],
+      "room": "e8143a4235edd362",
+      "distanceMeters": 2.3353750592928715,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_01321_Paris_bistroAwning_02A",
+      "partCenterMeters": [
+        -22.2886068530579,
+        19.689176164402696,
+        -225.93795558040335
+      ],
+      "room": "e8143a4235edd362",
+      "distanceMeters": 2.313273704483571,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_01321_Paris_bistroAwning_02A",
+      "partCenterMeters": [
+        -22.352418175643223,
+        19.687541881402836,
+        -226.19524372449447
+      ],
+      "room": "e8143a4235edd362",
+      "distanceMeters": 2.275373958150404,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_01321_Paris_bistroAwning_02A",
+      "partCenterMeters": [
+        -21.86217041848159,
+        18.990241610997963,
+        -225.96976838470738
+      ],
+      "room": "e8143a4235edd362",
+      "distanceMeters": 1.978124546252623,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_01321_Paris_bistroAwning_02A",
+      "partCenterMeters": [
+        -22.94514290545498,
+        18.99068732454338,
+        -224.78197892897043
+      ],
+      "room": "e8143a4235edd362",
+      "distanceMeters": 1.9820318300685946,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_01321_Paris_bistroAwning_02A",
+      "partCenterMeters": [
+        -22.75331893834677,
+        18.798120501526142,
+        -225.7270587878309
+      ],
+      "room": "e8143a4235edd362",
+      "distanceMeters": 1.3696474593178085,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_01322_Paris_BistroAwning_02B",
+      "partCenterMeters": [
+        -26.085979118590963,
+        18.788024832972603,
+        -222.09174247664671
+      ],
+      "room": "13a26cb6982569b0",
+      "distanceMeters": 1.4225661371326908,
+      "occupied": true
+    },
+    {
+      "awning": "OOW_01322_Paris_BistroAwning_02B",
+      "partCenterMeters": [
+        -26.07893752048873,
+        19.694686180199618,
+        -222.09604155759334
+      ],
+      "room": "13a26cb6982569b0",
+      "distanceMeters": 2.2370694244563083,
+      "occupied": true
+    },
+    {
+      "awning": "OOW_01322_Paris_BistroAwning_02B",
+      "partCenterMeters": [
+        -25.847713675436843,
+        19.69060946550885,
+        -222.78780444905289
+      ],
+      "room": "13a26cb6982569b0",
+      "distanceMeters": 2.2555433513219056,
+      "occupied": true
+    },
+    {
+      "awning": "OOW_01322_Paris_BistroAwning_02B",
+      "partCenterMeters": [
+        -26.762102250054994,
+        19.691350686361716,
+        -221.78446937209065
+      ],
+      "room": "13a26cb6982569b0",
+      "distanceMeters": 2.249362473952911,
+      "occupied": true
+    },
+    {
+      "awning": "OOW_01322_Paris_BistroAwning_02B",
+      "partCenterMeters": [
+        -26.541644637891004,
+        19.692907250152736,
+        -221.63768911270165
+      ],
+      "room": "13a26cb6982569b0",
+      "distanceMeters": 2.3106285571824765,
+      "occupied": true
+    },
+    {
+      "awning": "OOW_01322_Paris_BistroAwning_02B",
+      "partCenterMeters": [
+        -26.28255088877132,
+        19.692314273470444,
+        -221.58936151309473
+      ],
+      "room": "13a26cb6982569b0",
+      "distanceMeters": 2.359730843018534,
+      "occupied": true
+    },
+    {
+      "awning": "OOW_01322_Paris_BistroAwning_02B",
+      "partCenterMeters": [
+        -26.02947955908117,
+        19.690683587594137,
+        -221.65110521013855
+      ],
+      "room": "13a26cb6982569b0",
+      "distanceMeters": 2.387856054670993,
+      "occupied": true
+    },
+    {
+      "awning": "OOW_01322_Paris_BistroAwning_02B",
+      "partCenterMeters": [
+        -25.810059656111193,
+        19.692314273470444,
+        -221.81337698535248
+      ],
+      "room": "13a26cb6982569b0",
+      "distanceMeters": 2.3991151103036037,
+      "occupied": true
+    },
+    {
+      "awning": "OOW_01322_Paris_BistroAwning_02B",
+      "partCenterMeters": [
+        -25.669876262312705,
+        19.692907250152736,
+        -222.04363724329565
+      ],
+      "room": "13a26cb6982569b0",
+      "distanceMeters": 2.389056897907597,
+      "occupied": true
+    },
+    {
+      "awning": "OOW_01322_Paris_BistroAwning_02B",
+      "partCenterMeters": [
+        -25.627107819102278,
+        19.692314273470444,
+        -222.30232332094624
+      ],
+      "room": "13a26cb6982569b0",
+      "distanceMeters": 2.3597025617763068,
+      "occupied": true
+    },
+    {
+      "awning": "OOW_01322_Paris_BistroAwning_02B",
+      "partCenterMeters": [
+        -25.690852812448846,
+        19.69060946550885,
+        -222.55963814001905
+      ],
+      "room": "13a26cb6982569b0",
+      "distanceMeters": 2.311053929033408,
+      "occupied": true
+    },
+    {
+      "awning": "OOW_01323_Paris_BistroAwning_02B1",
+      "partCenterMeters": [
+        -22.738642330596473,
+        12.371448485872797,
+        -225.7402386218022
+      ],
+      "room": "eb6bf0a6fac773f4",
+      "distanceMeters": 1.6353734427378992,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_01323_Paris_BistroAwning_02B1",
+      "partCenterMeters": [
+        -22.731600729577238,
+        13.277591353874852,
+        -225.74453770452976
+      ],
+      "room": "eb6bf0a6fac773f4",
+      "distanceMeters": 2.4725703659777976,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_01323_Paris_BistroAwning_02B1",
+      "partCenterMeters": [
+        -22.500376788740226,
+        13.273959370191246,
+        -226.43630088255398
+      ],
+      "room": "eb6bf0a6fac773f4",
+      "distanceMeters": 2.4906852542873668,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_01323_Paris_BistroAwning_02B1",
+      "partCenterMeters": [
+        -23.414839864262383,
+        13.274700591351165,
+        -225.43296538995742
+      ],
+      "room": "eb6bf0a6fac773f4",
+      "distanceMeters": 2.4851280779163476,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_01323_Paris_BistroAwning_02B1",
+      "partCenterMeters": [
+        -23.19430803865722,
+        13.276331277902989,
+        -225.2861850697643
+      ],
+      "room": "eb6bf0a6fac773f4",
+      "distanceMeters": 2.539750682088121,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_01323_Paris_BistroAwning_02B1",
+      "partCenterMeters": [
+        -22.935214182207226,
+        13.275738300975053,
+        -225.2378574501375
+      ],
+      "room": "eb6bf0a6fac773f4",
+      "distanceMeters": 2.5834504536383927,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_01323_Paris_BistroAwning_02B1",
+      "partCenterMeters": [
+        -22.68214274768158,
+        13.27410761442323,
+        -225.29960117275886
+      ],
+      "room": "eb6bf0a6fac773f4",
+      "distanceMeters": 2.60837015867086,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_01323_Paris_BistroAwning_02B1",
+      "partCenterMeters": [
+        -22.462722753816298,
+        13.275738300975053,
+        -225.4618730151943
+      ],
+      "room": "eb6bf0a6fac773f4",
+      "distanceMeters": 2.618614449282759,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_01323_Paris_BistroAwning_02B1",
+      "partCenterMeters": [
+        -22.32253930194645,
+        13.276331277902989,
+        -225.6921333685234
+      ],
+      "room": "eb6bf0a6fac773f4",
+      "distanceMeters": 2.609694882183838,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_01323_Paris_BistroAwning_02B1",
+      "partCenterMeters": [
+        -22.279770841019072,
+        13.275738300975053,
+        -225.95081955333546
+      ],
+      "room": "eb6bf0a6fac773f4",
+      "distanceMeters": 2.583433241732515,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_01323_Paris_BistroAwning_02B1",
+      "partCenterMeters": [
+        -22.343515860772182,
+        13.27410761442323,
+        -226.20813447900164
+      ],
+      "room": "eb6bf0a6fac773f4",
+      "distanceMeters": 2.5399768093006005,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_01324_Paris_BistroAwning_02B2",
+      "partCenterMeters": [
+        -15.720399329302078,
+        12.371712643880056,
+        -233.35963869257216
+      ],
+      "room": "444405955a697e74",
+      "distanceMeters": 1.641538733604677,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_01324_Paris_BistroAwning_02B2",
+      "partCenterMeters": [
+        -15.713357728282839,
+        13.278077878230086,
+        -233.36386365318373
+      ],
+      "room": "444405955a697e74",
+      "distanceMeters": 2.4768983839705827,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_01324_Paris_BistroAwning_02B2",
+      "partCenterMeters": [
+        -15.482133787445832,
+        13.274001161850528,
+        -234.05570095332394
+      ],
+      "room": "444405955a697e74",
+      "distanceMeters": 2.485582932135004,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_01324_Paris_BistroAwning_02B2",
+      "partCenterMeters": [
+        -16.39659686296799,
+        13.274742383010448,
+        -233.05229133861138
+      ],
+      "room": "444405955a697e74",
+      "distanceMeters": 2.495268329199252,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_01324_Paris_BistroAwning_02B2",
+      "partCenterMeters": [
+        -16.176065037362825,
+        13.276298947446278,
+        -232.90551101841825
+      ],
+      "room": "444405955a697e74",
+      "distanceMeters": 2.550461460381956,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_01324_Paris_BistroAwning_02B2",
+      "partCenterMeters": [
+        -15.916971180912832,
+        13.275705970518342,
+        -232.85718339879148
+      ],
+      "room": "444405955a697e74",
+      "distanceMeters": 2.5935739933850654,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_01324_Paris_BistroAwning_02B2",
+      "partCenterMeters": [
+        -15.663899746387186,
+        13.27407528396652,
+        -232.91892712141282
+      ],
+      "room": "444405955a697e74",
+      "distanceMeters": 2.616789846736971,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_01324_Paris_BistroAwning_02B2",
+      "partCenterMeters": [
+        -15.444479752521902,
+        13.275705970518342,
+        -233.08119896384827
+      ],
+      "room": "444405955a697e74",
+      "distanceMeters": 2.6244041102304636,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_01324_Paris_BistroAwning_02B2",
+      "partCenterMeters": [
+        -15.304296300652055,
+        13.276298947446278,
+        -233.31145931717737
+      ],
+      "room": "444405955a697e74",
+      "distanceMeters": 2.6124252740525207,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_01324_Paris_BistroAwning_02B2",
+      "partCenterMeters": [
+        -15.261527839724678,
+        13.275705970518342,
+        -233.57014550198943
+      ],
+      "room": "444405955a697e74",
+      "distanceMeters": 2.583115226041253,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_01324_Paris_BistroAwning_02B2",
+      "partCenterMeters": [
+        -15.325272859477789,
+        13.274001161850528,
+        -233.8274604276556
+      ],
+      "room": "444405955a697e74",
+      "distanceMeters": 2.5368674408561853,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_01325_Paris_BistroAwning_02B3",
+      "partCenterMeters": [
+        -18.804309026102295,
+        18.78461228306012,
+        -230.02054436717327
+      ],
+      "room": "fe8ba70448e8d0b4",
+      "distanceMeters": 1.3965485841770198,
+      "occupied": true
+    },
+    {
+      "awning": "OOW_01325_Paris_BistroAwning_02B3",
+      "partCenterMeters": [
+        -19.002011239981925,
+        18.99009731911891,
+        -229.07509824716647
+      ],
+      "room": "fe8ba70448e8d0b4",
+      "distanceMeters": 2.0155198517150903,
+      "occupied": true
+    },
+    {
+      "awning": "OOW_01325_Paris_BistroAwning_02B3",
+      "partCenterMeters": [
+        -18.797267425083056,
+        19.69097751741015,
+        -230.0248434499008
+      ],
+      "room": "fe8ba70448e8d0b4",
+      "distanceMeters": 2.219798299666974,
+      "occupied": true
+    },
+    {
+      "awning": "OOW_01325_Paris_BistroAwning_02B3",
+      "partCenterMeters": [
+        -18.56604348424605,
+        19.68690080103059,
+        -230.71668075004104
+      ],
+      "room": "fe8ba70448e8d0b4",
+      "distanceMeters": 2.2529727749137103,
+      "occupied": true
+    },
+    {
+      "awning": "OOW_01325_Paris_BistroAwning_02B3",
+      "partCenterMeters": [
+        -19.48050655976821,
+        19.68764202219051,
+        -229.7132711353285
+      ],
+      "room": "fe8ba70448e8d0b4",
+      "distanceMeters": 2.229736297202534,
+      "occupied": true
+    },
+    {
+      "awning": "OOW_01325_Paris_BistroAwning_02B3",
+      "partCenterMeters": [
+        -19.259974734163045,
+        19.689198586626343,
+        -229.56649081513535
+      ],
+      "room": "fe8ba70448e8d0b4",
+      "distanceMeters": 2.2866167666252384,
+      "occupied": true
+    },
+    {
+      "awning": "OOW_01325_Paris_BistroAwning_02B3",
+      "partCenterMeters": [
+        -19.000880877713048,
+        19.688605609698406,
+        -229.51816319550858
+      ],
+      "room": "fe8ba70448e8d0b4",
+      "distanceMeters": 2.3333666728881353,
+      "occupied": true
+    },
+    {
+      "awning": "OOW_01325_Paris_BistroAwning_02B3",
+      "partCenterMeters": [
+        -18.7478094431874,
+        19.686974923146586,
+        -229.5799069181299
+      ],
+      "room": "fe8ba70448e8d0b4",
+      "distanceMeters": 2.361472149544333,
+      "occupied": true
+    },
+    {
+      "awning": "OOW_01325_Paris_BistroAwning_02B3",
+      "partCenterMeters": [
+        -18.52838944932212,
+        19.688605609698406,
+        -229.74217876056537
+      ],
+      "room": "fe8ba70448e8d0b4",
+      "distanceMeters": 2.374973646007893,
+      "occupied": true
+    },
+    {
+      "awning": "OOW_01325_Paris_BistroAwning_02B3",
+      "partCenterMeters": [
+        -18.388280119568265,
+        19.689198586626343,
+        -229.9724391138945
+      ],
+      "room": "fe8ba70448e8d0b4",
+      "distanceMeters": 2.3689496364781495,
+      "occupied": true
+    },
+    {
+      "awning": "OOW_01325_Paris_BistroAwning_02B3",
+      "partCenterMeters": [
+        -18.345437536524894,
+        19.688605609698406,
+        -230.2311252987065
+      ],
+      "room": "fe8ba70448e8d0b4",
+      "distanceMeters": 2.3448882198900995,
+      "occupied": true
+    },
+    {
+      "awning": "OOW_01325_Paris_BistroAwning_02B3",
+      "partCenterMeters": [
+        -18.409182556278004,
+        19.686900801030593,
+        -230.4884402243727
+      ],
+      "room": "fe8ba70448e8d0b4",
+      "distanceMeters": 2.3022511615940906,
+      "occupied": true
+    },
+    {
+      "awning": "OOW_01326_Paris_BistroAwning_02B4",
+      "partCenterMeters": [
+        -11.551041538982766,
+        18.78461228306012,
+        -237.89507028775455
+      ],
+      "room": "f6ae549d45b2e226",
+      "distanceMeters": 1.424914327395559,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_01326_Paris_BistroAwning_02B4",
+      "partCenterMeters": [
+        -11.543999937963527,
+        19.69097751741015,
+        -237.89929524836606
+      ],
+      "room": "f6ae549d45b2e226",
+      "distanceMeters": 2.2369332995099107,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_01326_Paris_BistroAwning_02B4",
+      "partCenterMeters": [
+        -11.31277599712652,
+        19.68690080103059,
+        -238.5911325485063
+      ],
+      "room": "f6ae549d45b2e226",
+      "distanceMeters": 2.2543798747750268,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_01326_Paris_BistroAwning_02B4",
+      "partCenterMeters": [
+        -12.227164950532684,
+        19.68764202219051,
+        -237.58772293379377
+      ],
+      "room": "f6ae549d45b2e226",
+      "distanceMeters": 2.247793659690606,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_01326_Paris_BistroAwning_02B4",
+      "partCenterMeters": [
+        -12.006707247043513,
+        19.689198586626343,
+        -237.4409426136006
+      ],
+      "room": "f6ae549d45b2e226",
+      "distanceMeters": 2.3101796761305793,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_01326_Paris_BistroAwning_02B4",
+      "partCenterMeters": [
+        -11.747613390593518,
+        19.688605609698406,
+        -237.39261499397384
+      ],
+      "room": "f6ae549d45b2e226",
+      "distanceMeters": 2.36022651303382,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_01326_Paris_BistroAwning_02B4",
+      "partCenterMeters": [
+        -11.494541956067874,
+        19.686974923146586,
+        -237.45435871659515
+      ],
+      "room": "f6ae549d45b2e226",
+      "distanceMeters": 2.38898213805833,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_01326_Paris_BistroAwning_02B4",
+      "partCenterMeters": [
+        -11.27512196220259,
+        19.688605609698406,
+        -237.61663055903063
+      ],
+      "room": "f6ae549d45b2e226",
+      "distanceMeters": 2.4005141869133197,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_01326_Paris_BistroAwning_02B4",
+      "partCenterMeters": [
+        -11.134938510332741,
+        19.689198586626343,
+        -237.84689091235975
+      ],
+      "room": "f6ae549d45b2e226",
+      "distanceMeters": 2.390330155732553,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_01326_Paris_BistroAwning_02B4",
+      "partCenterMeters": [
+        -11.092170049405365,
+        19.688605609698406,
+        -238.10557709717176
+      ],
+      "room": "f6ae549d45b2e226",
+      "distanceMeters": 2.360483520571087,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_01326_Paris_BistroAwning_02B4",
+      "partCenterMeters": [
+        -11.155915069158475,
+        19.686900801030593,
+        -238.36289202283797
+      ],
+      "room": "f6ae549d45b2e226",
+      "distanceMeters": 2.31099597117782,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_01327_Paris_BistroAwning_02B5",
+      "partCenterMeters": [
+        -33.7995456363877,
+        18.784631702967552,
+        -225.2265633233483
+      ],
+      "room": "032f36bbb14d1ff7",
+      "distanceMeters": 1.2853188749743996,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_01327_Paris_BistroAwning_02B5",
+      "partCenterMeters": [
+        -33.55722853397451,
+        18.989592280301217,
+        -224.34118032492322
+      ],
+      "room": "032f36bbb14d1ff7",
+      "distanceMeters": 1.8597166443736275,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_01327_Paris_BistroAwning_02B5",
+      "partCenterMeters": [
+        -34.74429882645703,
+        18.990111120927324,
+        -225.42426013191653
+      ],
+      "room": "032f36bbb14d1ff7",
+      "distanceMeters": 1.9446501669685343,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_01327_Paris_BistroAwning_02B5",
+      "partCenterMeters": [
+        -33.79532079128942,
+        19.69097215668279,
+        -225.21952191485116
+      ],
+      "room": "032f36bbb14d1ff7",
+      "distanceMeters": 2.1342930872412733,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_01327_Paris_BistroAwning_02B5",
+      "partCenterMeters": [
+        -33.10342828635662,
+        19.686895551763396,
+        -224.98830429583217
+      ],
+      "room": "032f36bbb14d1ff7",
+      "distanceMeters": 2.154907179587774,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_01327_Paris_BistroAwning_02B5",
+      "partCenterMeters": [
+        -34.10681046717577,
+        19.68763675265783,
+        -225.9025941291402
+      ],
+      "room": "032f36bbb14d1ff7",
+      "distanceMeters": 2.2032541146357176,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_01327_Paris_BistroAwning_02B5",
+      "partCenterMeters": [
+        -34.25351265420684,
+        19.689193274536144,
+        -225.68221657320228
+      ],
+      "room": "032f36bbb14d1ff7",
+      "distanceMeters": 2.240050247936106,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_01327_Paris_BistroAwning_02B5",
+      "partCenterMeters": [
+        -34.301913072613445,
+        19.688600313820594,
+        -225.4231298005525
+      ],
+      "room": "032f36bbb14d1ff7",
+      "distanceMeters": 2.264943222440403,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_01327_Paris_BistroAwning_02B5",
+      "partCenterMeters": [
+        -34.24017103810701,
+        19.686969671852836,
+        -225.16999116508055
+      ],
+      "room": "032f36bbb14d1ff7",
+      "distanceMeters": 2.2727398519109254,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_01327_Paris_BistroAwning_02B5",
+      "partCenterMeters": [
+        -34.077977752382246,
+        19.688600313820594,
+        -224.9505771703054
+      ],
+      "room": "032f36bbb14d1ff7",
+      "distanceMeters": 2.269413171551847,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_01327_Paris_BistroAwning_02B5",
+      "partCenterMeters": [
+        -33.84764957443654,
+        19.689193274536144,
+        -224.81047167123478
+      ],
+      "room": "032f36bbb14d1ff7",
+      "distanceMeters": 2.2531442615027304,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_01327_Paris_BistroAwning_02B5",
+      "partCenterMeters": [
+        -33.58897046227869,
+        19.688600313820594,
+        -224.767556139447
+      ],
+      "room": "032f36bbb14d1ff7",
+      "distanceMeters": 2.2266687863190797,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_01327_Paris_BistroAwning_02B5",
+      "partCenterMeters": [
+        -33.331662571775546,
+        19.686969671852836,
+        -224.83137353645787
+      ],
+      "room": "032f36bbb14d1ff7",
+      "distanceMeters": 2.190138689039071,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_01328_Paris_bistroAwning_02A1",
+      "partCenterMeters": [
+        -15.467843582891444,
+        19.691567789003336,
+        -233.6440730032497
+      ],
+      "room": "ef128d1d32668b56",
+      "distanceMeters": 2.2344888593999332,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_01328_Paris_bistroAwning_02A1",
+      "partCenterMeters": [
+        -15.233659806345353,
+        19.687482108524343,
+        -234.34122009189076
+      ],
+      "room": "ef128d1d32668b56",
+      "distanceMeters": 2.2591559268498274,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_01328_Paris_bistroAwning_02A1",
+      "partCenterMeters": [
+        -16.148127953919182,
+        19.68822495952052,
+        -233.33783268007403
+      ],
+      "room": "ef128d1d32668b56",
+      "distanceMeters": 2.239883814157515,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_01328_Paris_bistroAwning_02A1",
+      "partCenterMeters": [
+        -15.92755692187811,
+        19.68985923171212,
+        -233.1911010370534
+      ],
+      "room": "ef128d1d32668b56",
+      "distanceMeters": 2.3017066132307344,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_01328_Paris_bistroAwning_02A1",
+      "partCenterMeters": [
+        -15.668487636959956,
+        19.689264950915174,
+        -233.14266715210238
+      ],
+      "room": "ef128d1d32668b56",
+      "distanceMeters": 2.352217301023047,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_01328_Paris_bistroAwning_02A1",
+      "partCenterMeters": [
+        -15.415454016385771,
+        19.68763067872358,
+        -233.20447235498463
+      ],
+      "room": "ef128d1d32668b56",
+      "distanceMeters": 2.382297585866451,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_01328_Paris_bistroAwning_02A1",
+      "partCenterMeters": [
+        -15.195997260838972,
+        19.689264950915174,
+        -233.36672958382547
+      ],
+      "room": "ef128d1d32668b56",
+      "distanceMeters": 2.395999920745305,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_01328_Paris_bistroAwning_02A1",
+      "partCenterMeters": [
+        -15.055876991684313,
+        19.68985923171212,
+        -233.5969762500918
+      ],
+      "room": "ef128d1d32668b56",
+      "distanceMeters": 2.3883304367591145,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_01328_Paris_bistroAwning_02A1",
+      "partCenterMeters": [
+        -15.013014489204664,
+        19.689264950915174,
+        -233.8556369669621
+      ],
+      "room": "ef128d1d32668b56",
+      "distanceMeters": 2.361093202494641,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_01328_Paris_bistroAwning_02A1",
+      "partCenterMeters": [
+        -15.07682538977662,
+        19.68763067872358,
+        -234.112997694589
+      ],
+      "room": "ef128d1d32668b56",
+      "distanceMeters": 2.313984845281863,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_01328_Paris_bistroAwning_02A1",
+      "partCenterMeters": [
+        -15.477723501140652,
+        18.79814089589634,
+        -233.64474156914628
+      ],
+      "room": "ef128d1d32668b56",
+      "distanceMeters": 1.4285413040460826,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_01329_Paris_bistroAwning_02A2",
+      "partCenterMeters": [
+        -8.174510677743188,
+        19.691610473196015,
+        -241.5810581420224
+      ],
+      "room": "d50da7fadd7bb805",
+      "distanceMeters": 2.234394602838234,
+      "occupied": true
+    },
+    {
+      "awning": "OOW_01329_Paris_bistroAwning_02A2",
+      "partCenterMeters": [
+        -7.940325158825987,
+        19.687599047971105,
+        -242.27821041756823
+      ],
+      "room": "d50da7fadd7bb805",
+      "distanceMeters": 2.262241095809852,
+      "occupied": true
+    },
+    {
+      "awning": "OOW_01329_Paris_bistroAwning_02A2",
+      "partCenterMeters": [
+        -8.854800110213926,
+        19.688341904494237,
+        -241.27481554036146
+      ],
+      "room": "d50da7fadd7bb805",
+      "distanceMeters": 2.236918392242353,
+      "occupied": true
+    },
+    {
+      "awning": "OOW_01329_Paris_bistroAwning_02A2",
+      "partCenterMeters": [
+        -8.63422743708311,
+        19.689901903192812,
+        -241.1280828056299
+      ],
+      "room": "d50da7fadd7bb805",
+      "distanceMeters": 2.298821243386827,
+      "occupied": true
+    },
+    {
+      "awning": "OOW_01329_Paris_bistroAwning_02A2",
+      "partCenterMeters": [
+        -8.375156224641003,
+        19.689307617974308,
+        -241.07964856032174
+      ],
+      "room": "d50da7fadd7bb805",
+      "distanceMeters": 2.349896063452321,
+      "occupied": true
+    },
+    {
+      "awning": "OOW_01329_Paris_bistroAwning_02A2",
+      "partCenterMeters": [
+        -8.12212072144934,
+        19.687673333623422,
+        -241.1414542230463
+      ],
+      "room": "d50da7fadd7bb805",
+      "distanceMeters": 2.380858448994194,
+      "occupied": true
+    },
+    {
+      "awning": "OOW_01329_Paris_bistroAwning_02A2",
+      "partCenterMeters": [
+        -7.90266233310322,
+        19.689307617974308,
+        -241.30371265911128
+      ],
+      "room": "d50da7fadd7bb805",
+      "distanceMeters": 2.3956691320330177,
+      "occupied": true
+    },
+    {
+      "awning": "OOW_01329_Paris_bistroAwning_02A2",
+      "partCenterMeters": [
+        -7.762541021427543,
+        19.689901903192812,
+        -241.53396103845589
+      ],
+      "room": "d50da7fadd7bb805",
+      "distanceMeters": 2.3891295094083795,
+      "occupied": true
+    },
+    {
+      "awning": "OOW_01329_Paris_bistroAwning_02A2",
+      "partCenterMeters": [
+        -7.719678200042856,
+        19.689307617974308,
+        -241.79262367981028
+      ],
+      "room": "d50da7fadd7bb805",
+      "distanceMeters": 2.3628922988228274,
+      "occupied": true
+    },
+    {
+      "awning": "OOW_01329_Paris_bistroAwning_02A2",
+      "partCenterMeters": [
+        -7.783489575379851,
+        19.687673333623422,
+        -242.04991203659688
+      ],
+      "room": "d50da7fadd7bb805",
+      "distanceMeters": 2.316548291059893,
+      "occupied": true
+    },
+    {
+      "awning": "OOW_01329_Paris_bistroAwning_02A2",
+      "partCenterMeters": [
+        -8.184390669500837,
+        18.79825121847809,
+        -241.58172671289324
+      ],
+      "room": "d50da7fadd7bb805",
+      "distanceMeters": 1.428385762548339,
+      "occupied": true
+    },
+    {
+      "awning": "OOW_01330_Paris_BistroAwning_02B6",
+      "partCenterMeters": [
+        -26.085979079288208,
+        12.41025757215261,
+        -222.09180086943033
+      ],
+      "room": "2a5507a34aa8e0a1",
+      "distanceMeters": 1.6738420147883235,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_01330_Paris_BistroAwning_02B6",
+      "partCenterMeters": [
+        -26.078937527857995,
+        13.316616423611862,
+        -222.09609992188246
+      ],
+      "room": "2a5507a34aa8e0a1",
+      "distanceMeters": 2.5124074192252723,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_01330_Paris_BistroAwning_02B6",
+      "partCenterMeters": [
+        -25.847715215368044,
+        13.312539735941739,
+        -222.78793234990076
+      ],
+      "room": "2a5507a34aa8e0a1",
+      "distanceMeters": 2.5267103553217454,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_01330_Paris_BistroAwning_02B6",
+      "partCenterMeters": [
+        -26.762171850972038,
+        13.313280951881762,
+        -221.7845298014941
+      ],
+      "room": "2a5507a34aa8e0a1",
+      "distanceMeters": 2.525319587059623,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_01330_Paris_BistroAwning_02B6",
+      "partCenterMeters": [
+        -26.541641578416908,
+        13.314837505355808,
+        -221.63775051497117
+      ],
+      "room": "2a5507a34aa8e0a1",
+      "distanceMeters": 2.579846404629932,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_01330_Paris_BistroAwning_02B6",
+      "partCenterMeters": [
+        -26.282549546582118,
+        13.31424453260379,
+        -221.58942323568175
+      ],
+      "room": "2a5507a34aa8e0a1",
+      "distanceMeters": 2.623239914596052,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_01330_Paris_BistroAwning_02B6",
+      "partCenterMeters": [
+        -26.029479894260007,
+        13.312613857535741,
+        -221.65116652348559
+      ],
+      "room": "2a5507a34aa8e0a1",
+      "distanceMeters": 2.647638773320804,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_01330_Paris_BistroAwning_02B6",
+      "partCenterMeters": [
+        -25.810061445614913,
+        13.31424453260379,
+        -221.81343722315495
+      ],
+      "room": "2a5507a34aa8e0a1",
+      "distanceMeters": 2.657170897011183,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_01330_Paris_BistroAwning_02B6",
+      "partCenterMeters": [
+        -25.669878980958195,
+        13.314837505355808,
+        -222.0436959549229
+      ],
+      "room": "2a5507a34aa8e0a1",
+      "distanceMeters": 2.6474560815665864,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_01330_Paris_BistroAwning_02B6",
+      "partCenterMeters": [
+        -25.62711082121891,
+        13.31424453260379,
+        -222.30238031799067
+      ],
+      "room": "2a5507a34aa8e0a1",
+      "distanceMeters": 2.6204355776629566,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_01330_Paris_BistroAwning_02B6",
+      "partCenterMeters": [
+        -25.690855392060826,
+        13.312539735941739,
+        -222.5596934315694
+      ],
+      "room": "2a5507a34aa8e0a1",
+      "distanceMeters": 2.576303773426405,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_01331_Paris_BistroAwning_02B7",
+      "partCenterMeters": [
+        -30.148865743434243,
+        18.796644091304607,
+        -221.87303692251982
+      ],
+      "room": "471c1c70b1207c20",
+      "distanceMeters": 1.364324644855593,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_01331_Paris_BistroAwning_02B7",
+      "partCenterMeters": [
+        -29.906472914308534,
+        19.00160602716268,
+        -220.9876480555788
+      ],
+      "room": "471c1c70b1207c20",
+      "distanceMeters": 1.991049464155785,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_01331_Paris_BistroAwning_02B7",
+      "partCenterMeters": [
+        -31.09266162798891,
+        19.002124871227778,
+        -222.07073504146655
+      ],
+      "room": "471c1c70b1207c20",
+      "distanceMeters": 1.9928303716844054,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_01331_Paris_BistroAwning_02B7",
+      "partCenterMeters": [
+        -30.144640870332747,
+        19.70299055244646,
+        -221.86599546735067
+      ],
+      "room": "471c1c70b1207c20",
+      "distanceMeters": 2.188683083537854,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_01331_Paris_BistroAwning_02B7",
+      "partCenterMeters": [
+        -29.452743779382146,
+        19.69891392050642,
+        -221.6347763157697
+      ],
+      "room": "471c1c70b1207c20",
+      "distanceMeters": 2.2191246230217163,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_01331_Paris_BistroAwning_02B7",
+      "partCenterMeters": [
+        -30.456132610842122,
+        19.6996551263137,
+        -222.5490722091946
+      ],
+      "room": "471c1c70b1207c20",
+      "distanceMeters": 2.206984011101504,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_01331_Paris_BistroAwning_02B7",
+      "partCenterMeters": [
+        -30.602835770247992,
+        19.70121165850899,
+        -222.32869319254513
+      ],
+      "room": "471c1c70b1207c20",
+      "distanceMeters": 2.2620117965172786,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_01331_Paris_BistroAwning_02B7",
+      "partCenterMeters": [
+        -30.651236509463374,
+        19.700618693863166,
+        -222.06960470261043
+      ],
+      "room": "471c1c70b1207c20",
+      "distanceMeters": 2.306453053727868,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_01331_Paris_BistroAwning_02B7",
+      "partCenterMeters": [
+        -30.589494065716956,
+        19.698988041087148,
+        -221.8164643892792
+      ],
+      "room": "471c1c70b1207c20",
+      "distanceMeters": 2.3320904764911026,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_01331_Paris_BistroAwning_02B7",
+      "partCenterMeters": [
+        -30.42729970493893,
+        19.700618693863166,
+        -221.59704894017915
+      ],
+      "room": "471c1c70b1207c20",
+      "distanceMeters": 2.3432485589990835,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_01331_Paris_BistroAwning_02B7",
+      "partCenterMeters": [
+        -30.196970000326708,
+        19.70121165850899,
+        -221.45694251245806
+      ],
+      "room": "471c1c70b1207c20",
+      "distanceMeters": 2.3354025064997126,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_01331_Paris_BistroAwning_02B7",
+      "partCenterMeters": [
+        -29.938289173586025,
+        19.700618693863166,
+        -221.4141008167973
+      ],
+      "room": "471c1c70b1207c20",
+      "distanceMeters": 2.3103245918272286,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_01331_Paris_BistroAwning_02B7",
+      "partCenterMeters": [
+        -29.680979577588808,
+        19.69891392050642,
+        -221.47784451622334
+      ],
+      "room": "471c1c70b1207c20",
+      "distanceMeters": 2.2675743308947065,
+      "occupied": false
+    },
+    {
+      "awning": "OOW_01332_Paris_BistroAwning_02B8",
+      "partCenterMeters": [
+        -37.443021786450345,
+        18.796660692283105,
+        -228.57577153613275
+      ],
+      "room": "725339a8d820d2d9",
+      "distanceMeters": 1.3835404527079749,
+      "occupied": true
+    },
+    {
+      "awning": "OOW_01332_Paris_BistroAwning_02B8",
+      "partCenterMeters": [
+        -37.20070307790537,
+        19.001622628141178,
+        -227.690308548611
+      ],
+      "room": "725339a8d820d2d9",
+      "distanceMeters": 1.9998586094804573,
+      "occupied": true
+    },
+    {
+      "awning": "OOW_01332_Paris_BistroAwning_02B8",
+      "partCenterMeters": [
+        -37.43879691334885,
+        19.70300715342496,
+        -228.56873008096358
+      ],
+      "room": "725339a8d820d2d9",
+      "distanceMeters": 2.2018542270114354,
+      "occupied": true
+    },
+    {
+      "awning": "OOW_01332_Paris_BistroAwning_02B8",
+      "partCenterMeters": [
+        -36.746899822398255,
+        19.698930521484918,
+        -228.33751092938263
+      ],
+      "room": "725339a8d820d2d9",
+      "distanceMeters": 2.218194491186323,
+      "occupied": true
+    },
+    {
+      "awning": "OOW_01332_Paris_BistroAwning_02B8",
+      "partCenterMeters": [
+        -37.75028865385823,
+        19.6996717272922,
+        -229.25180682280757
+      ],
+      "room": "725339a8d820d2d9",
+      "distanceMeters": 2.2258956012615063,
+      "occupied": true
+    },
+    {
+      "awning": "OOW_01332_Paris_BistroAwning_02B8",
+      "partCenterMeters": [
+        -37.896991813264094,
+        19.701228259487486,
+        -229.03135368557733
+      ],
+      "room": "725339a8d820d2d9",
+      "distanceMeters": 2.2835386333137837,
+      "occupied": true
+    },
+    {
+      "awning": "OOW_01332_Paris_BistroAwning_02B8",
+      "partCenterMeters": [
+        -37.945392552479476,
+        19.700635294841664,
+        -228.77226519564266
+      ],
+      "room": "725339a8d820d2d9",
+      "distanceMeters": 2.328696466123347,
+      "occupied": true
+    },
+    {
+      "awning": "OOW_01332_Paris_BistroAwning_02B8",
+      "partCenterMeters": [
+        -37.883650108733065,
+        19.699004642065645,
+        -228.5191248823114
+      ],
+      "room": "725339a8d820d2d9",
+      "distanceMeters": 2.3530819519305006,
+      "occupied": true
+    },
+    {
+      "awning": "OOW_01332_Paris_BistroAwning_02B8",
+      "partCenterMeters": [
+        -37.72145574795504,
+        19.700635294841664,
+        -228.29978355379208
+      ],
+      "room": "725339a8d820d2d9",
+      "distanceMeters": 2.3611638136761517,
+      "occupied": true
+    },
+    {
+      "awning": "OOW_01332_Paris_BistroAwning_02B8",
+      "partCenterMeters": [
+        -37.49112604334281,
+        19.701228259487486,
+        -228.15967712607102
+      ],
+      "room": "725339a8d820d2d9",
+      "distanceMeters": 2.3490370224879835,
+      "occupied": true
+    },
+    {
+      "awning": "OOW_01332_Paris_BistroAwning_02B8",
+      "partCenterMeters": [
+        -37.23244521660213,
+        19.700635294841664,
+        -228.11676130982949
+      ],
+      "room": "725339a8d820d2d9",
+      "distanceMeters": 2.3191207920888894,
+      "occupied": true
+    },
+    {
+      "awning": "OOW_01332_Paris_BistroAwning_02B8",
+      "partCenterMeters": [
+        -36.97513562060492,
+        19.698930521484918,
+        -228.1805791298363
+      ],
+      "room": "725339a8d820d2d9",
+      "distanceMeters": 2.271330764833943,
+      "occupied": true
+    }
+  ],
+  "lights": [
+    {
+      "name": "OOWInteriorLight_13a26cb6982569b0",
+      "room": "13a26cb6982569b0",
+      "seed": 0.07669711112976074,
+      "occupied": true,
+      "associatedAwning": true,
+      "positionCm": [
+        -2664.8334975090424,
+        -22258.34879264822,
+        1759.9691654163728
+      ],
+      "outwardUE": [
+        0.7361130748947704,
+        0.6768585826957991,
+        0.0
+      ],
+      "colorLinear": [
+        0.9414910939455032,
+        0.7229332214698315,
+        0.5108751911276579
+      ],
+      "lumens": 2.002143176651001,
+      "radiusCm": 400,
+      "widthCm": 122.62531837993464,
+      "heightCm": 178.6436542777664,
+      "actual": {
+        "intensity": 2.002143144607544,
+        "castShadows": true,
+        "transmission": true,
+        "volumetricScattering": 0.0
+      }
+    },
+    {
+      "name": "OOWInteriorLight_fe8ba70448e8d0b4",
+      "room": "fe8ba70448e8d0b4",
+      "seed": 0.994318425655365,
+      "occupied": true,
+      "associatedAwning": true,
+      "positionCm": [
+        -1935.0698985046267,
+        -23045.9754373545,
+        1759.7721853832627
+      ],
+      "outwardUE": [
+        0.7366334579171695,
+        0.6762922065771524,
+        0.0
+      ],
+      "colorLinear": [
+        0.966672292381525,
+        0.7109973334111571,
+        0.4749919833563268
+      ],
+      "lumens": 2.0862334599494945,
+      "radiusCm": 400,
+      "widthCm": 122.53869166875859,
+      "heightCm": 178.64365427776616,
+      "actual": {
+        "intensity": 2.086233377456665,
+        "castShadows": true,
+        "transmission": true,
+        "volumetricScattering": 0.0
+      }
+    },
+    {
+      "name": "OOWInteriorLight_725339a8d820d2d9",
+      "room": "725339a8d820d2d9",
+      "seed": 0.4465823769569397,
+      "occupied": true,
+      "associatedAwning": true,
+      "positionCm": [
+        -3695.6725294682265,
+        -22909.810148952485,
+        1763.3178259792405
+      ],
+      "outwardUE": [
+        -0.6760003590412782,
+        0.7369012922882296,
+        0.0
+      ],
+      "colorLinear": [
+        0.9198940759122373,
+        0.7331702080175996,
+        0.5416509418250619
+      ],
+      "lumens": 1.787759865856171,
+      "radiusCm": 400,
+      "widthCm": 126.25110708436935,
+      "heightCm": 181.4604687512377,
+      "actual": {
+        "intensity": 1.7877599000930786,
+        "castShadows": true,
+        "transmission": true,
+        "volumetricScattering": 0.0
+      }
+    },
+    {
+      "name": "OOWInteriorLight_59dfb7a24a76e269",
+      "room": "59dfb7a24a76e269",
+      "seed": 0.3510698676109314,
+      "occupied": true,
+      "associatedAwning": true,
+      "positionCm": [
+        -5706.139844608391,
+        -22977.502805528777,
+        1165.481911922907
+      ],
+      "outwardUE": [
+        0.7407728428074156,
+        -0.6717556068683161,
+        0.0
+      ],
+      "colorLinear": [
+        0.9128038856089117,
+        0.7365309582213759,
+        0.5517544630073009
+      ],
+      "lumens": 1.7641872487068184,
+      "radiusCm": 400,
+      "widthCm": 160,
+      "heightCm": 190,
+      "actual": {
+        "intensity": 1.764187216758728,
+        "castShadows": true,
+        "transmission": true,
+        "volumetricScattering": 0.0
+      }
+    },
+    {
+      "name": "OOWInteriorLight_14286f445050f0e5",
+      "room": "14286f445050f0e5",
+      "seed": 0.07874196767807007,
+      "occupied": true,
+      "associatedAwning": true,
+      "positionCm": [
+        -5558.78920743721,
+        -23898.469821985305,
+        1774.2049219568237
+      ],
+      "outwardUE": [
+        0.9220191939827945,
+        0.38714416685172737,
+        0.0
+      ],
+      "colorLinear": [
+        0.9330791675627231,
+        0.7269204745752692,
+        0.5228621862231194
+      ],
+      "lumens": 2.054030184650421,
+      "radiusCm": 400,
+      "widthCm": 160,
+      "heightCm": 190,
+      "actual": {
+        "intensity": 2.054030179977417,
+        "castShadows": true,
+        "transmission": true,
+        "volumetricScattering": 0.0
+      }
+    },
+    {
+      "name": "OOWInteriorLight_2c5bb7bff6cbf8a5",
+      "room": "2c5bb7bff6cbf8a5",
+      "seed": 0.1732744574546814,
+      "occupied": true,
+      "associatedAwning": false,
+      "positionCm": [
+        -2655.0710176326506,
+        -22248.647153028476,
+        2862.7618807820504
+      ],
+      "outwardUE": [
+        0.7360150707186605,
+        0.6769651510048396,
+        0.0
+      ],
+      "colorLinear": [
+        0.9442008643686772,
+        0.721648790289247,
+        0.507013768274635
+      ],
+      "lumens": 2.052735393238068,
+      "radiusCm": 400,
+      "widthCm": 122.62531709472213,
+      "heightCm": 180.94832066515215,
+      "actual": {
+        "intensity": 2.0527353286743164,
+        "castShadows": true,
+        "transmission": true,
+        "volumetricScattering": 0.0
+      }
+    },
+    {
+      "name": "OOWInteriorLight_fdf301dfa678ff37",
+      "room": "fdf301dfa678ff37",
+      "seed": 0.9919891953468323,
+      "occupied": true,
+      "associatedAwning": false,
+      "positionCm": [
+        -2349.4433867592647,
+        -22638.96395680996,
+        2892.111905715423
+      ],
+      "outwardUE": [
+        0.7362431425282437,
+        0.6767171012174411,
+        0.0
+      ],
+      "colorLinear": [
+        0.976254047101736,
+        0.7064555816737772,
+        0.4613379828800262
+      ],
+      "lumens": 2.0271306384086616,
+      "radiusCm": 400,
+      "widthCm": 122.60365490486578,
+      "heightCm": 178.6436542777664,
+      "actual": {
+        "intensity": 2.027130603790283,
+        "castShadows": true,
+        "transmission": true,
+        "volumetricScattering": 0.0
+      }
+    },
+    {
+      "name": "OOWInteriorLight_920d3146ed2277a7",
+      "room": "920d3146ed2277a7",
+      "seed": 0.5705137848854065,
+      "occupied": true,
+      "associatedAwning": false,
+      "positionCm": [
+        -3314.469428989942,
+        -22596.503398563305,
+        2399.3909753951903
+      ],
+      "outwardUE": [
+        -0.6767171012174407,
+        0.7362431425282441,
+        0.0
+      ],
+      "colorLinear": [
+        0.9100774431169033,
+        0.7378232919625879,
+        0.5556396435584129
+      ],
+      "lumens": 1.7324449831962596,
+      "radiusCm": 400,
+      "widthCm": 122.60365490486208,
+      "heightCm": 178.61164502238606,
+      "actual": {
+        "intensity": 1.7324450016021729,
+        "castShadows": true,
+        "transmission": true,
+        "volumetricScattering": 0.0
+      }
+    },
+    {
+      "name": "OOWInteriorLight_67567e878c583066",
+      "room": "67567e878c583066",
+      "seed": 0.4036635160446167,
+      "occupied": true,
+      "associatedAwning": false,
+      "positionCm": [
+        -3317.9147593001303,
+        -22592.759106020985,
+        2893.8847260134116
+      ],
+      "outwardUE": [
+        -0.6761970242932444,
+        0.7367208320232038,
+        0.0
+      ],
+      "colorLinear": [
+        0.9964493940472604,
+        0.6968829872215986,
+        0.4325596134826539
+      ],
+      "lumens": 2.298719521522523,
+      "radiusCm": 400,
+      "widthCm": 122.69795187667185,
+      "heightCm": 178.6436542777664,
+      "actual": {
+        "intensity": 2.2987194061279297,
+        "castShadows": true,
+        "transmission": true,
+        "volumetricScattering": 0.0
+      }
+    },
+    {
+      "name": "OOWInteriorLight_86f2f551136a7674",
+      "room": "86f2f551136a7674",
+      "seed": 0.527144730091095,
+      "occupied": true,
+      "associatedAwning": false,
+      "positionCm": [
+        -3720.9811113077917,
+        -22896.116965302877,
+        3328.2256990207034
+      ],
+      "outwardUE": [
+        -0.6750425261687243,
+        0.7377788204223181,
+        0.0
+      ],
+      "colorLinear": [
+        0.9884847238242628,
+        0.7006582409072994,
+        0.44390926855042545
+      ],
+      "lumens": 2.2319812392234812,
+      "radiusCm": 400,
+      "widthCm": 106.40686942762017,
+      "heightCm": 118.08214309813316,
+      "actual": {
+        "intensity": 2.2319812774658203,
+        "castShadows": true,
+        "transmission": true,
+        "volumetricScattering": 0.0
+      }
+    },
+    {
+      "name": "OOWInteriorLight_f44e7363bff0d19f",
+      "room": "f44e7363bff0d19f",
+      "seed": 0.9543220400810242,
+      "occupied": true,
+      "associatedAwning": false,
+      "positionCm": [
+        -4716.922963169406,
+        -21814.517899866736,
+        1158.6005466599745
+      ],
+      "outwardUE": [
+        0.7592070399739422,
+        -0.6508491917902371,
+        0.0
+      ],
+      "colorLinear": [
+        0.9312054237186906,
+        0.7278086291573407,
+        0.5255322712008658
+      ],
+      "lumens": 1.8713491738319392,
+      "radiusCm": 400,
+      "widthCm": 154.52359540756618,
+      "heightCm": 190,
+      "actual": {
+        "intensity": 1.8713492155075073,
+        "castShadows": true,
+        "transmission": true,
+        "volumetricScattering": 0.0
+      }
+    },
+    {
+      "name": "OOWInteriorLight_f0827a3a12bf8d8b",
+      "room": "f0827a3a12bf8d8b",
+      "seed": 0.9394909143447876,
+      "occupied": true,
+      "associatedAwning": false,
+      "positionCm": [
+        -5016.2780287168625,
+        -22163.27865298694,
+        1752.1228602205485
+      ],
+      "outwardUE": [
+        0.7585873228445598,
+        -0.6515713879687504,
+        0.0
+      ],
+      "colorLinear": [
+        0.9922162256598476,
+        0.6988895090372323,
+        0.43859187843471714
+      ],
+      "lumens": 2.29501825695038,
+      "radiusCm": 400,
+      "widthCm": 160,
+      "heightCm": 190,
+      "actual": {
+        "intensity": 2.295018196105957,
+        "castShadows": true,
+        "transmission": true,
+        "volumetricScattering": 0.0
+      }
+    }
+  ],
+  "thinShutters": {
+    "actor": "OOW_00770_paris_building_09_19",
+    "castShadowAsTwoSided": true,
+    "materials": [
+      {
+        "slot": 0,
+        "path": "/Game/Materials/OOW/Instances/MI_AlleyThinShutters_v6.MI_AlleyThinShutters_v6",
+        "parent": "/Game/Materials/OOW/Instances/MI_generic___v2_fbd029e363.MI_generic___v2_fbd029e363",
+        "source": "/Game/Scenes/Alley/alley/Materials/MASTER_Building_Details.MASTER_Building_Details"
+      }
+    ]
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "name": "Amazon Lumberyard Bistro Concrete3",
+  "author": "Amazon Lumberyard (2017), Open Research Content Archive (ORCA)",
+  "license": "CC BY 4.0",
+  "source": "https://developer.nvidia.com/orca/amazon-lumberyard-bistro",
+  "localSource": "public/assets/orca/bistro",
+  "normalConvention": "OpenGL +Y, imported with Unreal flip_green_channel",
+  "textureCoverageMeters": 1.2,
+  "coverageNote": "Authored visual scale; source does not specify physical coverage",
+  "roughness": "No measured roughness map used; constant dry/wet concrete range",
+  "files": [
+    {
+      "name": "Concrete3_BaseColor.png",
+      "sha256": "69fdc5fba1ab45181fe8f073914a5cafacbc3f59fff4860a6aa56c8d55046cd1"
+    },
+    {
+      "name": "Concrete3_Normal.png",
+      "sha256": "71f63a43c0f665317f903b049c7a144fcbf44c30cb86fe6ff4b6fc27603ea206"
+    }
+  ]
+}

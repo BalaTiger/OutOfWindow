@@ -33,7 +33,7 @@ const selected = source.nodes.filter(node => {
   if (node.mesh === undefined || !/building|balcony/i.test(node.name)) return false;
   const box = bounds(source, node).applyMatrix4(placement);
   const extent = box.getSize(new THREE.Vector3());
-  const architectural = source.meshes[node.mesh].primitives.some(p => /wood|doors|details|trim|concrete|brick|plaster|ornament/i.test(source.materials[p.material]?.name));
+  const architectural = source.meshes[node.mesh].primitives.some(p => /wood|doors|details|trim|concrete|brick|plaster|ornament|roof/i.test(source.materials[p.material]?.name));
   const previous = targetByName.get(node.name);
   return previous && architectural && box.distanceToPoint(camera.position) < 70 && frustum.intersectsBox(box)
     && triangleCount(source, node) > triangleCount(target, previous);

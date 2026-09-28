@@ -1,0 +1,124 @@
+{
+  "recordedAt": "2026-09-24T16:21:54.1460971+08:00",
+  "engine": "Unreal Engine 5.7.4",
+  "design": "Contemporary residential powder-coated graphite aluminium; large fixed light and 22% right casement; no central crossbar",
+  "defaultStyle": "graphite",
+  "frameTriangles": 1452,
+  "glassTriangles": 2,
+  "glassDepthCm": 96,
+  "independentOfUI": true,
+  "build": {
+    "editor": "Succeeded",
+    "game": "Succeeded",
+    "log": ".runtime/ue-modern-frame/build-final.log"
+  },
+  "material": {
+    "generator": "unreal/Scripts/build_desktop_frame.py",
+    "log": ".runtime/ue-modern-frame/material-final.log",
+    "rainParameter": "RainIntensity",
+    "rainMotion": "Shader Time moves drop centres along negative V; UV0=(-Y,+Z), in centimetres",
+    "textureAssets": 0
+  },
+  "automation": {
+    "succeeded": 3,
+    "succeededWithWarnings": 0,
+    "failed": 0,
+    "report": ".runtime/ue-modern-frame/tests-final/index.json"
+  },
+  "package": {
+    "result": "BUILD SUCCESSFUL",
+    "log": ".runtime/ue-modern-frame/package.log",
+    "path": "D:/OutOfWindowBuild/Windows/OutOfWindow.exe",
+    "gameExeSha256": "E542C05FAFFEA0BA3D6CF54CB7B413642A0535A7B45EFAD6E87CA32EBF2754A5",
+    "includes": "Current workspace, including the separate city sky and traffic tasks",
+    "knownCookWarnings": "Existing AsyncIoDelete SharedTempRoot directories; no material fallback or cook errors"
+  },
+  "packagedCases": [
+    {
+      "case": "city-rainglass",
+      "scene": "City",
+      "weather": "rain",
+      "hour": 12,
+      "frameReady": true,
+      "frameTriangles": 1452,
+      "frameStyle": "graphite",
+      "windowRainIntensity": 0.6669074892997742,
+      "interfaceHidden": true,
+      "capturedFrames": 8,
+      "frameTimeP95Ms": 16.666702270507812,
+      "capture": ".runtime/ue-validation/packaged-city-rainglass.png",
+      "log": ".runtime/ue-validation/packaged-city-rainglass.log"
+    },
+    {
+      "case": "alley-hiddenui",
+      "scene": "Alley",
+      "weather": "clear",
+      "hour": 12,
+      "frameReady": true,
+      "frameTriangles": 1452,
+      "frameStyle": "graphite",
+      "windowRainIntensity": 0,
+      "interfaceHidden": true,
+      "capturedFrames": 1,
+      "frameTimeP95Ms": 16.666799545288086,
+      "capture": ".runtime/ue-validation/packaged-alley-hiddenui.png",
+      "log": ".runtime/ue-validation/packaged-alley-hiddenui.log"
+    },
+    {
+      "case": "alley-narrow",
+      "scene": "Alley",
+      "weather": "clear",
+      "hour": 12,
+      "frameReady": true,
+      "frameTriangles": 1452,
+      "frameStyle": "graphite",
+      "windowRainIntensity": 0,
+      "interfaceHidden": true,
+      "capturedFrames": 1,
+      "frameTimeP95Ms": 16.666799545288086,
+      "capture": ".runtime/ue-validation/packaged-alley-narrow.png",
+      "log": ".runtime/ue-validation/packaged-alley-narrow.log"
+    },
+    {
+      "case": "city-rainnight",
+      "scene": "City",
+      "weather": "rain",
+      "hour": 23,
+      "frameReady": true,
+      "frameTriangles": 1452,
+      "frameStyle": "graphite",
+      "windowRainIntensity": 0.6669074892997742,
+      "interfaceHidden": false,
+      "capturedFrames": 1,
+      "frameTimeP95Ms": 16.666799545288086,
+      "capture": ".runtime/ue-validation/packaged-city-rainnight.png",
+      "log": ".runtime/ue-validation/packaged-city-rainnight.log"
+    }
+  ],
+  "runtimeChecks": "All four cases passed strict ensure/fatal/material-fallback, capture freshness and frame/rain audit checks",
+  "concept": {
+    "mode": "built-in image_gen",
+    "image": "docs/desktop-frame/contemporary-reference.png",
+    "prompt": "docs/desktop-frame/contemporary-reference-prompt.txt",
+    "referenceOnly": true
+  },
+  "evidence": {
+    "image": "docs/desktop-frame/contemporary-rain.png",
+    "motion": "docs/desktop-frame/contemporary-rain-motion.mp4",
+    "motionDescription": "8 unaltered packaged screenshot frames, spaced 0.5 seconds; repeated for 30 fps encoding, no generated/interpolated droplets"
+  },
+  "limitations": [
+    "Eco quality keeps droplet shading/highlights but engine refraction is disabled.",
+    "Procedural falling drops do not simulate merging or residual wet glass after rain stops.",
+    "60 FPS capped short captures are functional evidence, not an uncapped performance benchmark."
+  ],
+  "previousDesignVerification": "unreal/Migration/desktop-frame-v1-verification.json",
+  "restoredDesktop": {
+    "startedAt": "2026-09-24T16:24:19.8762001+08:00",
+    "bootstrapProcessId": 26784,
+    "scene": "City",
+    "weather": "rain",
+    "frameStyle": "default (graphite)",
+    "log": ".runtime/ue-modern-frame/live-rain.log"
+  }
+}

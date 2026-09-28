@@ -1,0 +1,944 @@
+{
+  "recipe": "roof-source-geometry-v2-slate-relief",
+  "actors": [
+    {
+      "recipe": "roof-source-geometry-v1",
+      "actor": "OOW_00329_Paris_Building_01_paris_building_01_128_1_1",
+      "assetName": "OOW_Roof_Original_v1_303_1",
+      "sourceMeshIndex": 303,
+      "sourcePrimitiveIndex": 1,
+      "sourceMeshName": "Paris_Building_01_paris_building_01_128_1",
+      "sourceMaterial": "MASTER_Roofing_Shingle_Grey",
+      "vertices": 168,
+      "triangles": 88,
+      "beforeVertices": 54,
+      "beforeTriangles": 30,
+      "sourceGeometryHash": "c9a2daa71299294fce7627272ab30c888352d67fb0fd136ecbb50ca5c9a92055",
+      "generatedSha256": "dccb108f23fc57f8ea5fc44cf890d8d2a41dee2be1ede63faa22b47d83f48e72",
+      "uvSha256": "854fee606230ee74e9ab61584b3dc133d3d8e7118875cb7e949234d9ccfc386c",
+      "normalSha256": "cc73c17d8a78222d13f44afee1498145efec05fce2cfc1b632cb8a1182630fe6",
+      "sourceNormalsAndUVPreserved": true,
+      "sourcePositionMaxErrorMeters": 5.251352459495458e-07,
+      "sourceBaselineVertices": 168,
+      "sourceBaselineTriangles": 88,
+      "exportBoundsMaxDeltaMeters": 0.013923817702909957,
+      "exportBoundsToleranceMeters": 0.02,
+      "exportVertexNearestSourceMaxMeters": 0.0008886805795505516,
+      "worldBoundsMeters": [
+        [
+          -8.944627618086791,
+          0.07787161060051417
+        ],
+        [
+          32.54348991534217,
+          32.8268052258233
+        ],
+        [
+          -218.51499040992286,
+          -199.42650470529833
+        ]
+      ],
+      "exportLocalBounds": [
+        [
+          -0.4731384515762329,
+          0.4725803732872009
+        ],
+        [
+          -0.006141631864011288,
+          0.023554865270853043
+        ],
+        [
+          -1.0,
+          1.0008137226104736
+        ]
+      ],
+      "restoredNormalAlignment": {
+        "areaWeightedMeanAngleDegrees": 19.883856609074677,
+        "maximumCornerAngleDegrees": 34.15503027586743,
+        "areaWithCornerAbove20DegreesFraction": 0.9069234588269243,
+        "surfaceAreaSquareMeters": 8.411746557288478
+      },
+      "simplifiedNormalAlignment": {
+        "areaWeightedMeanAngleDegrees": 35.29765123087264,
+        "maximumCornerAngleDegrees": 71.58675653023039,
+        "areaWithCornerAbove20DegreesFraction": 0.9085864675477614,
+        "surfaceAreaSquareMeters": 8.274561913027366
+      },
+      "materialPolicy": "Reuse the actor current UE weather material; no texture import",
+      "appliedToUnreal": true,
+      "originalMesh": "/Game/Scenes/Alley/alley/StaticMeshes/alley_mesh_306.alley_mesh_306",
+      "repairedMesh": "/Game/Scenes/Alley/Repairs/OOW_Roof_Original_v1_303_1/StaticMeshes/OOW_Roof_Original_v1_303_1.OOW_Roof_Original_v1_303_1",
+      "material": "/Game/Materials/OOW/Instances/MI_stone___v2_f43d159fa8.MI_stone___v2_f43d159fa8",
+      "actorTransform": [
+        -443.0715869501989,
+        -20897.46291614406,
+        3260.208330198003,
+        0.0,
+        0.0,
+        0.0,
+        9.540361248482283,
+        9.540361248482283,
+        9.540361248482283
+      ],
+      "reused": true,
+      "naniteEnabled": true
+    },
+    {
+      "recipe": "roof-source-geometry-v1",
+      "actor": "OOW_00338_Paris_Building_01_paris_building_01_199",
+      "assetName": "OOW_Roof_Original_v1_312_0",
+      "sourceMeshIndex": 312,
+      "sourcePrimitiveIndex": 0,
+      "sourceMeshName": "Paris_Building_01_paris_building_01_199_1",
+      "sourceMaterial": "MASTER_Roofing_Shingle_Green",
+      "vertices": 108,
+      "triangles": 126,
+      "beforeVertices": 76,
+      "beforeTriangles": 79,
+      "sourceGeometryHash": "99a0c65ba231f57ce8d5e9db4ad34789d691f10aa1f4b1f8a8ad5478fb2213cc",
+      "generatedSha256": "dec9142c1bfecdf8ddbbff4c2282dd3671bf35815fd03597c80c6b3e0f5f28de",
+      "uvSha256": "669824d02df444910eb853698cbb9c5e4efba2ed9c5595ffada6cd4a864f4e39",
+      "normalSha256": "e538d384c9d3c01ba20fea69834d66e79b6afe3fabbededfc46fa1d87b739c98",
+      "sourceNormalsAndUVPreserved": true,
+      "sourcePositionMaxErrorMeters": 2.352245146106652e-07,
+      "sourceBaselineVertices": 108,
+      "sourceBaselineTriangles": 126,
+      "exportBoundsMaxDeltaMeters": 0.0002738864583289313,
+      "exportBoundsToleranceMeters": 0.02,
+      "exportVertexNearestSourceMaxMeters": 0.000649595210830806,
+      "worldBoundsMeters": [
+        [
+          -12.975064336719347,
+          -4.791004366114654
+        ],
+        [
+          19.592261743836566,
+          23.678267484741973
+        ],
+        [
+          -215.05073846156353,
+          -201.04629762960718
+        ]
+      ],
+      "exportLocalBounds": [
+        [
+          -0.5843903422355652,
+          0.5843903422355652
+        ],
+        [
+          -0.2917650043964386,
+          0.2917650043964386
+        ],
+        [
+          -1.0,
+          1.0
+        ]
+      ],
+      "restoredNormalAlignment": {
+        "areaWeightedMeanAngleDegrees": 3.5832439719405857,
+        "maximumCornerAngleDegrees": 10.326812760055317,
+        "areaWithCornerAbove20DegreesFraction": 0.0,
+        "surfaceAreaSquareMeters": 70.5392273539917
+      },
+      "simplifiedNormalAlignment": {
+        "areaWeightedMeanAngleDegrees": 4.390182265148358,
+        "maximumCornerAngleDegrees": 49.071541474826056,
+        "areaWithCornerAbove20DegreesFraction": 0.0002756927317060749,
+        "surfaceAreaSquareMeters": 70.47708671664658
+      },
+      "materialPolicy": "Reuse the actor current UE weather material; no texture import",
+      "appliedToUnreal": true,
+      "originalMesh": "/Game/Scenes/Alley/alley/StaticMeshes/alley_mesh_315.alley_mesh_315",
+      "repairedMesh": "/Game/Scenes/Alley/Repairs/OOW_Roof_Original_v1_312_0/StaticMeshes/OOW_Roof_Original_v1_312_0.OOW_Roof_Original_v1_312_0",
+      "material": "/Game/Materials/OOW/Instances/MI_stone___v2_a3a2a12249.MI_stone___v2_a3a2a12249",
+      "actorTransform": [
+        -888.3034351417001,
+        -20804.851804558537,
+        2163.526461428927,
+        0.0,
+        0.0,
+        0.0,
+        7.002220415978173,
+        7.002220415978173,
+        7.002220415978173
+      ],
+      "reused": true,
+      "naniteEnabled": true
+    },
+    {
+      "recipe": "roof-source-geometry-v1",
+      "actor": "OOW_00343_Paris_Building_01_paris_building_01_204",
+      "assetName": "OOW_Roof_Original_v1_317_0",
+      "sourceMeshIndex": 317,
+      "sourcePrimitiveIndex": 0,
+      "sourceMeshName": "Paris_Building_01_paris_building_01_204_1",
+      "sourceMaterial": "MASTER_Roofing_Shingle_Green",
+      "vertices": 48,
+      "triangles": 44,
+      "beforeVertices": 35,
+      "beforeTriangles": 24,
+      "sourceGeometryHash": "5c431829b828bb065356859865fd2e14f9a820940962d971d19356e52eabe569",
+      "generatedSha256": "a328c2292eb11874ea46cc3501dc8d9401235ebf90cd12bd2e068e804852229f",
+      "uvSha256": "3a9e8a34c2d7c8c2c184ff9cc5bba5b91f4fd6bb939839a3da68f440cd7d75d3",
+      "normalSha256": "c65f012bb6b3cc4db4a4e53dbdef1360fd659b33a5ac9c9554b2b7b3e0de11be",
+      "sourceNormalsAndUVPreserved": true,
+      "sourcePositionMaxErrorMeters": 7.02897935760409e-08,
+      "sourceBaselineVertices": 48,
+      "sourceBaselineTriangles": 44,
+      "exportBoundsMaxDeltaMeters": 0.007663699673651436,
+      "exportBoundsToleranceMeters": 0.02,
+      "exportVertexNearestSourceMaxMeters": 0.00011113873635627757,
+      "worldBoundsMeters": [
+        [
+          -12.30415463916675,
+          -9.451601353567531
+        ],
+        [
+          22.04353902445175,
+          22.53793528933002
+        ],
+        [
+          -207.96945978419888,
+          -205.11657673952053
+        ]
+      ],
+      "exportLocalBounds": [
+        [
+          -1.0042829513549805,
+          0.9988424181938171
+        ],
+        [
+          -0.17358793318271637,
+          0.17358794808387756
+        ],
+        [
+          -1.0,
+          1.00335693359375
+        ]
+      ],
+      "restoredNormalAlignment": {
+        "areaWeightedMeanAngleDegrees": 11.858301939998327,
+        "maximumCornerAngleDegrees": 54.77749965123356,
+        "areaWithCornerAbove20DegreesFraction": 0.9132869124426019,
+        "surfaceAreaSquareMeters": 5.747748354435352
+      },
+      "simplifiedNormalAlignment": {
+        "areaWeightedMeanAngleDegrees": 13.04084193592182,
+        "maximumCornerAngleDegrees": 89.77390113652093,
+        "areaWithCornerAbove20DegreesFraction": 0.917817834004428,
+        "surfaceAreaSquareMeters": 5.715929362297974
+      },
+      "materialPolicy": "Reuse the actor current UE weather material; no texture import",
+      "appliedToUnreal": true,
+      "originalMesh": "/Game/Scenes/Alley/alley/StaticMeshes/alley_mesh_320.alley_mesh_320",
+      "repairedMesh": "/Game/Scenes/Alley/Repairs/OOW_Roof_Original_v1_317_0/StaticMeshes/OOW_Roof_Original_v1_317_0.OOW_Roof_Original_v1_317_0",
+      "material": "/Game/Materials/OOW/Instances/MI_stone___v2_a3a2a12249.MI_stone___v2_a3a2a12249",
+      "actorTransform": [
+        -1087.4004197208035,
+        -20654.5408484683,
+        2229.0737146280876,
+        0.0,
+        0.0,
+        0.0,
+        1.4240512995158934,
+        1.4240512995158934,
+        1.4240512995158934
+      ],
+      "reused": true,
+      "naniteEnabled": true
+    },
+    {
+      "recipe": "roof-source-geometry-v1",
+      "actor": "OOW_00344_Paris_Building_01_paris_building_01_205",
+      "assetName": "OOW_Roof_Original_v1_318_0",
+      "sourceMeshIndex": 318,
+      "sourcePrimitiveIndex": 0,
+      "sourceMeshName": "Paris_Building_01_paris_building_01_205_1",
+      "sourceMaterial": "MASTER_Roofing_Shingle_Green",
+      "vertices": 48,
+      "triangles": 44,
+      "beforeVertices": 37,
+      "beforeTriangles": 26,
+      "sourceGeometryHash": "43d70fd2752909e69b9ed78bab50c50b610c91e14b71bc9ccf34a5c53fd3aa8b",
+      "generatedSha256": "71aa54a6794db6765044a3fe42fe068cc1fde7b221fdcdddb20a51ce762e00da",
+      "uvSha256": "3a9e8a34c2d7c8c2c184ff9cc5bba5b91f4fd6bb939839a3da68f440cd7d75d3",
+      "normalSha256": "d49cad3204bd8dc21caa8247e7f016ed7309e5609767c11835fa01832fe5b831",
+      "sourceNormalsAndUVPreserved": true,
+      "sourcePositionMaxErrorMeters": 6.681297077711318e-08,
+      "sourceBaselineVertices": 48,
+      "sourceBaselineTriangles": 44,
+      "exportBoundsMaxDeltaMeters": 0.00783595613447119,
+      "exportBoundsToleranceMeters": 0.02,
+      "exportVertexNearestSourceMaxMeters": 0.00012765203957050195,
+      "worldBoundsMeters": [
+        [
+          -8.73306858711053,
+          -5.943880911117796
+        ],
+        [
+          22.043539021340173,
+          22.537935291966903
+        ],
+        [
+          -204.2501965287863,
+          -201.46001988155206
+        ]
+      ],
+      "exportLocalBounds": [
+        [
+          -1.0034456253051758,
+          1.0
+        ],
+        [
+          -0.17755994200706482,
+          0.177559956908226
+        ],
+        [
+          -0.9992599487304688,
+          1.0048960447311401
+        ]
+      ],
+      "restoredNormalAlignment": {
+        "areaWeightedMeanAngleDegrees": 11.852915866864384,
+        "maximumCornerAngleDegrees": 54.73479231158695,
+        "areaWithCornerAbove20DegreesFraction": 0.9132876570959172,
+        "surfaceAreaSquareMeters": 5.747694969402398
+      },
+      "simplifiedNormalAlignment": {
+        "areaWeightedMeanAngleDegrees": 12.81720231510496,
+        "maximumCornerAngleDegrees": 110.70786773664699,
+        "areaWithCornerAbove20DegreesFraction": 0.9179225713316298,
+        "surfaceAreaSquareMeters": 5.72244663874762
+      },
+      "materialPolicy": "Reuse the actor current UE weather material; no texture import",
+      "appliedToUnreal": true,
+      "originalMesh": "/Game/Scenes/Alley/alley/StaticMeshes/alley_mesh_321.alley_mesh_321",
+      "repairedMesh": "/Game/Scenes/Alley/Repairs/OOW_Roof_Original_v1_318_0/StaticMeshes/OOW_Roof_Original_v1_318_0.OOW_Roof_Original_v1_318_0",
+      "material": "/Game/Materials/OOW/Instances/MI_stone___v2_a3a2a12249.MI_stone___v2_a3a2a12249",
+      "actorTransform": [
+        -733.6076257356789,
+        -20285.903147848072,
+        2229.0737146280876,
+        0.0,
+        0.0,
+        0.0,
+        1.3921953462389924,
+        1.3921953462389924,
+        1.3921953462389924
+      ],
+      "reused": true,
+      "naniteEnabled": true
+    },
+    {
+      "recipe": "roof-source-geometry-v1",
+      "actor": "OOW_00350_Paris_Building_01_paris_building_01_211",
+      "assetName": "OOW_Roof_Original_v1_324_0",
+      "sourceMeshIndex": 324,
+      "sourcePrimitiveIndex": 0,
+      "sourceMeshName": "Paris_Building_01_paris_building_01_211_1",
+      "sourceMaterial": "MASTER_Roofing_Shingle_Green",
+      "vertices": 48,
+      "triangles": 44,
+      "beforeVertices": 35,
+      "beforeTriangles": 24,
+      "sourceGeometryHash": "c7c4f60b4bb84d753c8ee713764f3f8ffa194dfd1b2f30f3a041a6a21b27e515",
+      "generatedSha256": "1f8dacc74e9535820c5bb63f68fbed9551e952782ef579fb55e0b4f0a4d82d31",
+      "uvSha256": "3a9e8a34c2d7c8c2c184ff9cc5bba5b91f4fd6bb939839a3da68f440cd7d75d3",
+      "normalSha256": "3b62125ab6f7148570796bbb74f8d67cd91a74cc29d7b9ae7d64a7c5b9d60582",
+      "sourceNormalsAndUVPreserved": true,
+      "sourcePositionMaxErrorMeters": 8.649058848293961e-08,
+      "sourceBaselineVertices": 48,
+      "sourceBaselineTriangles": 44,
+      "exportBoundsMaxDeltaMeters": 0.006755983863712345,
+      "exportBoundsToleranceMeters": 0.02,
+      "exportVertexNearestSourceMaxMeters": 0.00013675264661678658,
+      "worldBoundsMeters": [
+        [
+          -12.380559276109604,
+          -9.462332565554773
+        ],
+        [
+          22.043539037786186,
+          22.537935276476045
+        ],
+        [
+          -213.3954875963115,
+          -210.47843106253555
+        ]
+      ],
+      "exportLocalBounds": [
+        [
+          -1.0042729377746582,
+          0.9995980858802795
+        ],
+        [
+          -0.1697445660829544,
+          0.1697445809841156
+        ],
+        [
+          -1.0030674934387207,
+          1.0
+        ]
+      ],
+      "restoredNormalAlignment": {
+        "areaWeightedMeanAngleDegrees": 11.856017841635047,
+        "maximumCornerAngleDegrees": 54.74569708166141,
+        "areaWithCornerAbove20DegreesFraction": 0.9132917008006743,
+        "surfaceAreaSquareMeters": 5.747709222028919
+      },
+      "simplifiedNormalAlignment": {
+        "areaWeightedMeanAngleDegrees": 13.010482172654763,
+        "maximumCornerAngleDegrees": 89.77685997462801,
+        "areaWithCornerAbove20DegreesFraction": 0.9177653155996852,
+        "surfaceAreaSquareMeters": 5.715767825256303
+      },
+      "materialPolicy": "Reuse the actor current UE weather material; no texture import",
+      "appliedToUnreal": true,
+      "originalMesh": "/Game/Scenes/Alley/alley/StaticMeshes/alley_mesh_327.alley_mesh_327",
+      "repairedMesh": "/Game/Scenes/Alley/Repairs/OOW_Roof_Original_v1_324_0/StaticMeshes/OOW_Roof_Original_v1_324_0.OOW_Roof_Original_v1_324_0",
+      "material": "/Game/Materials/OOW/Instances/MI_stone___v2_a3a2a12249.MI_stone___v2_a3a2a12249",
+      "actorTransform": [
+        -1091.8041939861102,
+        -21193.47257422361,
+        2229.0737146280876,
+        0.0,
+        0.0,
+        0.0,
+        1.4562946797005754,
+        1.4562946797005754,
+        1.4562946797005754
+      ],
+      "reused": true,
+      "naniteEnabled": true
+    },
+    {
+      "recipe": "roof-source-geometry-v2-slate-relief",
+      "actor": "OOW_00487_paris_building_03_mirrored_6",
+      "assetName": "OOW_Roof_Slate_v2_448_0",
+      "sourceMeshIndex": 448,
+      "sourcePrimitiveIndex": 0,
+      "sourceMeshName": "paris_building_03_mirrored_6_1",
+      "sourceMaterial": "MASTER_Roofing_Shingle_Grey",
+      "vertices": 2371,
+      "triangles": 3972,
+      "beforeVertices": 42,
+      "beforeTriangles": 41,
+      "sourceGeometryHash": "cd7514898ce4a968890e810a3b7a42f4ba5e16a836088daf2371650b7f33a877",
+      "generatedSha256": "ac0dd4d073a621b73b7e7db19af31615531c530c9ae3ae364c6e68ad1bf81db8",
+      "uvSha256": "33770f4e7ee637ffc902006c7af6340c5fd364f1e892a9b6162ddbc742d159c3",
+      "normalSha256": "297b0aaa17401cf92f76c40e180d428f0dbf9a1d06769292f15fb92107b39433",
+      "sourceNormalsAndUVPreserved": false,
+      "sourcePositionMaxErrorMeters": 4.400778052704785e-07,
+      "sourceBaselineVertices": 58,
+      "sourceBaselineTriangles": 60,
+      "exportBoundsMaxDeltaMeters": 0.0010225167572528449,
+      "exportBoundsToleranceMeters": 0.003,
+      "exportVertexNearestSourceMaxMeters": 0.0016210715542638544,
+      "worldBoundsMeters": [
+        [
+          -73.63029897321333,
+          -43.037277303380804
+        ],
+        [
+          24.99041493700626,
+          31.69982615223032
+        ],
+        [
+          -270.5970223074354,
+          -240.31307789970606
+        ]
+      ],
+      "exportLocalBounds": [
+        [
+          -1.0,
+          1.0
+        ],
+        [
+          -0.21931181848049164,
+          0.21931181848049164
+        ],
+        [
+          -0.9898971319198608,
+          0.9898971319198608
+        ]
+      ],
+      "restoredNormalAlignment": {
+        "areaWeightedMeanAngleDegrees": 0.8799054131456389,
+        "maximumCornerAngleDegrees": 62.40175189338496,
+        "areaWithCornerAbove20DegreesFraction": 0.020717501135767223,
+        "surfaceAreaSquareMeters": 776.1144991530857
+      },
+      "simplifiedNormalAlignment": {
+        "areaWeightedMeanAngleDegrees": 13.998247893755705,
+        "maximumCornerAngleDegrees": 89.97908583828908,
+        "areaWithCornerAbove20DegreesFraction": 0.47557871293852794,
+        "surfaceAreaSquareMeters": 775.0780960411034
+      },
+      "materialPolicy": "Reuse the actor current UE weather material; no texture import",
+      "relief": {
+        "recipe": "roof-source-geometry-v2-slate-relief",
+        "courseSeamRowsPixels": [
+          21,
+          107,
+          192,
+          277,
+          363,
+          448,
+          533,
+          619,
+          703,
+          791,
+          875,
+          959
+        ],
+        "sourceTriangles": 60,
+        "generatedTriangles": 3972,
+        "generatedVertices": 2371,
+        "displacedVertices": 723,
+        "displacedSourceTriangles": [
+          3,
+          30,
+          31,
+          50,
+          51,
+          59
+        ],
+        "maxDisplacementMeters": 0.028024205958912165,
+        "maxCourseInsetOutsetMeters": 0.027,
+        "slateLipMeters": 0.009,
+        "bandWidthMeters": 0.46,
+        "sourceBoundaryEdges": 24,
+        "generatedBoundaryEdges": 302,
+        "sourceNonManifoldEdges": 0,
+        "generatedNonManifoldEdges": 0,
+        "unexpectedBoundaryEdges": 0,
+        "reversedTriangles": 0,
+        "sharedWorldEdgePositions": true,
+        "normalPolicy": "Area-weighted final geometry normals on displaced vertices, grouped by original split normals; original normals elsewhere",
+        "uvPolicy": "Barycentric interpolation within each original UV chart; no re-unwrap",
+        "float32Audit": {
+          "input": "Encoded GLB float32 positions after UE float32 centimeter conversion",
+          "triangles": 3972,
+          "minimumEdgeUnrealLocalCm": 0.0015527996875714073,
+          "minimumTriangleAreaUnrealLocalCm2": 1.5190949095115571e-06,
+          "unrealPointEqualityThresholdCm": 2e-05,
+          "degenerateTriangles": 0,
+          "unexpectedBoundaryEdges": 0,
+          "nonManifoldEdges": 0
+        }
+      },
+      "sourceBaselineNormalAlignment": {
+        "areaWeightedMeanAngleDegrees": 0.8799054131456389,
+        "maximumCornerAngleDegrees": 62.40175189338496,
+        "areaWithCornerAbove20DegreesFraction": 0.020717501135767223,
+        "surfaceAreaSquareMeters": 776.1144991530857
+      },
+      "generatedNormalAlignment": {
+        "areaWeightedMeanAngleDegrees": 0.834983767980436,
+        "maximumCornerAngleDegrees": 66.24146698461416,
+        "areaWithCornerAbove20DegreesFraction": 0.019875142204468423,
+        "surfaceAreaSquareMeters": 776.2423481245046
+      },
+      "sourceNormalUVPolicy": "Source hashes and baseline diagnostic retained; generated UVs interpolate original charts, displaced normals recomputed within original hard-edge groups",
+      "originalMainFaceNormalDots": [
+        [
+          0.9999926888116284,
+          0.9999926888116284,
+          0.9999926888116284
+        ],
+        [
+          0.9999973354081275,
+          0.9999973354081275,
+          0.9999973354081275
+        ]
+      ],
+      "importedMeshState": {
+        "asset": "/Game/Scenes/Alley/Repairs/OOW_Roof_Slate_v2_448_0/StaticMeshes/OOW_Roof_Slate_v2_448_0.OOW_Roof_Slate_v2_448_0",
+        "triangles": 251,
+        "naniteEnabled": true,
+        "fallbackTarget": "<NaniteFallbackTarget.AUTO: 0>",
+        "fallbackPercent": 1.0,
+        "fallbackError": 1.0,
+        "removeDegenerates": false
+      },
+      "appliedToUnreal": true,
+      "originalMesh": "/Game/Scenes/Alley/alley/StaticMeshes/alley_mesh_444.alley_mesh_444",
+      "repairedMesh": "/Game/Scenes/Alley/Repairs/OOW_Roof_Slate_v2_448_0/StaticMeshes/OOW_Roof_Slate_v2_448_0.OOW_Roof_Slate_v2_448_0",
+      "material": "/Game/Materials/OOW/Instances/MI_stone___v2_f43d159fa8.MI_stone___v2_f43d159fa8",
+      "actorTransform": [
+        -5833.378813829707,
+        -25545.505010357072,
+        2834.512054461829,
+        0.0,
+        0.0,
+        0.0,
+        15.296510834916258,
+        15.296510834916258,
+        15.296510834916258
+      ],
+      "reused": false,
+      "naniteEnabled": true,
+      "naniteReliefPolicy": {
+        "fallback_target": "<NaniteFallbackTarget.PERCENT_TRIANGLES: 1>",
+        "fallback_percent_triangles": 1.0,
+        "fallback_relative_error": 0.0,
+        "keep_percent_triangles": 1.0,
+        "trim_relative_error": 0.0,
+        "generate_fallback": "<NaniteGenerateFallback.ENABLED: 1>"
+      },
+      "fallbackTrianglesReadback": 3972,
+      "rayTracingProxyEnabled": false
+    },
+    {
+      "recipe": "roof-source-geometry-v2-slate-relief",
+      "actor": "OOW_00497_paris_building_03_mirrored_6__2_",
+      "assetName": "OOW_Roof_Slate_v2_458_0",
+      "sourceMeshIndex": 458,
+      "sourcePrimitiveIndex": 0,
+      "sourceMeshName": "paris_building_03_mirrored_6__2__1",
+      "sourceMaterial": "MASTER_Roofing_Shingle_Grey",
+      "vertices": 2368,
+      "triangles": 3972,
+      "beforeVertices": 44,
+      "beforeTriangles": 43,
+      "sourceGeometryHash": "59ff37db5b5e66a18c4f18d13f59a84cad64b95f6d561416455d8a58773a16a7",
+      "generatedSha256": "1f9ea861623b86f1b0668242bc3f565f761d6876c358c0b3e033ff2bbb052c42",
+      "uvSha256": "33770f4e7ee637ffc902006c7af6340c5fd364f1e892a9b6162ddbc742d159c3",
+      "normalSha256": "ea70e1b0c68095f190b124b1bab91fcc5dc3adeb1bbf938ba6ecb55ab0795647",
+      "sourceNormalsAndUVPreserved": false,
+      "sourcePositionMaxErrorMeters": 4.612276683933476e-07,
+      "sourceBaselineVertices": 58,
+      "sourceBaselineTriangles": 60,
+      "exportBoundsMaxDeltaMeters": 0.0004481915254572755,
+      "exportBoundsToleranceMeters": 0.003,
+      "exportVertexNearestSourceMaxMeters": 0.0014739548871723109,
+      "worldBoundsMeters": [
+        [
+          59.59016717309168,
+          78.63676518645221
+        ],
+        [
+          24.990414845253245,
+          31.699826243983335
+        ],
+        [
+          -135.82365417882502,
+          -106.06349655744422
+        ]
+      ],
+      "exportLocalBounds": [
+        [
+          -0.6400032639503479,
+          0.6400032639503479
+        ],
+        [
+          -0.22544945776462555,
+          0.22544945776462555
+        ],
+        [
+          -1.0,
+          1.0
+        ]
+      ],
+      "restoredNormalAlignment": {
+        "areaWeightedMeanAngleDegrees": 0.8752224198703492,
+        "maximumCornerAngleDegrees": 62.40946551399921,
+        "areaWithCornerAbove20DegreesFraction": 0.020717969117746343,
+        "surfaceAreaSquareMeters": 776.1148579997121
+      },
+      "simplifiedNormalAlignment": {
+        "areaWeightedMeanAngleDegrees": 10.36277478585129,
+        "maximumCornerAngleDegrees": 90.01734329504109,
+        "areaWithCornerAbove20DegreesFraction": 0.36628385899888816,
+        "surfaceAreaSquareMeters": 775.4586601080443
+      },
+      "materialPolicy": "Reuse the actor current UE weather material; no texture import",
+      "relief": {
+        "recipe": "roof-source-geometry-v2-slate-relief",
+        "courseSeamRowsPixels": [
+          21,
+          107,
+          192,
+          277,
+          363,
+          448,
+          533,
+          619,
+          703,
+          791,
+          875,
+          959
+        ],
+        "sourceTriangles": 60,
+        "generatedTriangles": 3972,
+        "generatedVertices": 2368,
+        "displacedVertices": 722,
+        "displacedSourceTriangles": [
+          3,
+          30,
+          31,
+          50,
+          51,
+          59
+        ],
+        "maxDisplacementMeters": 0.028024211087584586,
+        "maxCourseInsetOutsetMeters": 0.027,
+        "slateLipMeters": 0.009,
+        "bandWidthMeters": 0.46,
+        "sourceBoundaryEdges": 24,
+        "generatedBoundaryEdges": 302,
+        "sourceNonManifoldEdges": 0,
+        "generatedNonManifoldEdges": 0,
+        "unexpectedBoundaryEdges": 0,
+        "reversedTriangles": 0,
+        "sharedWorldEdgePositions": true,
+        "normalPolicy": "Area-weighted final geometry normals on displaced vertices, grouped by original split normals; original normals elsewhere",
+        "uvPolicy": "Barycentric interpolation within each original UV chart; no re-unwrap",
+        "float32Audit": {
+          "input": "Encoded GLB float32 positions after UE float32 centimeter conversion",
+          "triangles": 3972,
+          "minimumEdgeUnrealLocalCm": 0.0015944996085138347,
+          "minimumTriangleAreaUnrealLocalCm2": 1.6050801243318313e-06,
+          "unrealPointEqualityThresholdCm": 2e-05,
+          "degenerateTriangles": 0,
+          "unexpectedBoundaryEdges": 0,
+          "nonManifoldEdges": 0
+        }
+      },
+      "sourceBaselineNormalAlignment": {
+        "areaWeightedMeanAngleDegrees": 0.8752224198703492,
+        "maximumCornerAngleDegrees": 62.40946551399921,
+        "areaWithCornerAbove20DegreesFraction": 0.020717969117746343,
+        "surfaceAreaSquareMeters": 776.1148579997121
+      },
+      "generatedNormalAlignment": {
+        "areaWeightedMeanAngleDegrees": 0.830085931877741,
+        "maximumCornerAngleDegrees": 66.23908070926244,
+        "areaWithCornerAbove20DegreesFraction": 0.01987563948762974,
+        "surfaceAreaSquareMeters": 776.2427054040826
+      },
+      "sourceNormalUVPolicy": "Source hashes and baseline diagnostic retained; generated UVs interpolate original charts, displaced normals recomputed within original hard-edge groups",
+      "originalMainFaceNormalDots": [
+        [
+          0.9999929957676067,
+          0.9999929957676067,
+          0.9999929957676067
+        ],
+        [
+          0.9999971233261706,
+          0.9999971233261706,
+          0.9999971233261706
+        ]
+      ],
+      "importedMeshState": {
+        "asset": "/Game/Scenes/Alley/Repairs/OOW_Roof_Slate_v2_458_0/StaticMeshes/OOW_Roof_Slate_v2_458_0.OOW_Roof_Slate_v2_458_0",
+        "triangles": 251,
+        "naniteEnabled": true,
+        "fallbackTarget": "<NaniteFallbackTarget.AUTO: 0>",
+        "fallbackPercent": 1.0,
+        "fallbackError": 1.0,
+        "removeDegenerates": false
+      },
+      "appliedToUnreal": true,
+      "originalMesh": "/Game/Scenes/Alley/alley/StaticMeshes/alley_mesh_454.alley_mesh_454",
+      "repairedMesh": "/Game/Scenes/Alley/Repairs/OOW_Roof_Slate_v2_458_0/StaticMeshes/OOW_Roof_Slate_v2_458_0.OOW_Roof_Slate_v2_458_0",
+      "material": "/Game/Materials/OOW/Instances/MI_stone___v2_f43d159fa8.MI_stone___v2_f43d159fa8",
+      "actorTransform": [
+        6911.346617977195,
+        -12094.357536813463,
+        2834.512054461829,
+        0.0,
+        0.0,
+        0.0,
+        14.880078810690401,
+        14.880078810690401,
+        14.880078810690401
+      ],
+      "reused": false,
+      "naniteEnabled": true,
+      "naniteReliefPolicy": {
+        "fallback_target": "<NaniteFallbackTarget.PERCENT_TRIANGLES: 1>",
+        "fallback_percent_triangles": 1.0,
+        "fallback_relative_error": 0.0,
+        "keep_percent_triangles": 1.0,
+        "trim_relative_error": 0.0,
+        "generate_fallback": "<NaniteGenerateFallback.ENABLED: 1>"
+      },
+      "fallbackTrianglesReadback": 3972,
+      "rayTracingProxyEnabled": false
+    },
+    {
+      "recipe": "roof-source-geometry-v1",
+      "actor": "OOW_00607_paris_building_05_71",
+      "assetName": "OOW_Roof_Original_v1_554_0",
+      "sourceMeshIndex": 554,
+      "sourcePrimitiveIndex": 0,
+      "sourceMeshName": "paris_building_05_71_1",
+      "sourceMaterial": "MASTER_Roofing_Shingle_Grey",
+      "vertices": 243,
+      "triangles": 164,
+      "beforeVertices": 202,
+      "beforeTriangles": 135,
+      "sourceGeometryHash": "b7cc6e534d3d3e4b25fbaa078903c04c0d4b7ad68b5a83c85ff845233c1de16e",
+      "generatedSha256": "a97bba09ee26e48fb8645891e2903eaac94b811d971d3fb0fe4e82bfb24bc7f7",
+      "uvSha256": "8b1282e5dc8802a21ec02e7a08f8db998a65240ba107c20a629d179c69cbf711",
+      "normalSha256": "05a0cd342b40725eca8dd9731b7d553484b48abd9f2885a880f995af594a69bf",
+      "sourceNormalsAndUVPreserved": true,
+      "sourcePositionMaxErrorMeters": 6.469678413009777e-07,
+      "sourceBaselineVertices": 243,
+      "sourceBaselineTriangles": 164,
+      "exportBoundsMaxDeltaMeters": 0.0010102734021586457,
+      "exportBoundsToleranceMeters": 0.02,
+      "exportVertexNearestSourceMaxMeters": 0.0016252453978497037,
+      "worldBoundsMeters": [
+        [
+          5.865383261548066,
+          23.832922807528107
+        ],
+        [
+          7.349610123635504,
+          38.09026517561388
+        ],
+        [
+          -260.2595064995984,
+          -236.3806904013601
+        ]
+      ],
+      "exportLocalBounds": [
+        [
+          -0.5844878554344177,
+          0.5844878554344177
+        ],
+        [
+          -1.0,
+          1.0
+        ],
+        [
+          -0.7767829298973083,
+          0.7767829298973083
+        ]
+      ],
+      "restoredNormalAlignment": {
+        "areaWeightedMeanAngleDegrees": 6.582663594515924,
+        "maximumCornerAngleDegrees": 35.69052576119467,
+        "areaWithCornerAbove20DegreesFraction": 0.17077073247204558,
+        "surfaceAreaSquareMeters": 326.14420339549315
+      },
+      "simplifiedNormalAlignment": {
+        "areaWeightedMeanAngleDegrees": 6.822200278816806,
+        "maximumCornerAngleDegrees": 72.35575426700288,
+        "areaWithCornerAbove20DegreesFraction": 0.1719309590312197,
+        "surfaceAreaSquareMeters": 326.10763391873587
+      },
+      "materialPolicy": "Reuse the actor current UE weather material; no texture import",
+      "appliedToUnreal": true,
+      "originalMesh": "/Game/Scenes/Alley/alley/StaticMeshes/alley_mesh_548.alley_mesh_548",
+      "repairedMesh": "/Game/Scenes/Alley/Repairs/OOW_Roof_Original_v1_554_0/StaticMeshes/OOW_Roof_Original_v1_554_0.OOW_Roof_Original_v1_554_0",
+      "material": "/Game/Materials/OOW/Instances/MI_stone___v2_f43d159fa8.MI_stone___v2_f43d159fa8",
+      "actorTransform": [
+        1484.9153034538087,
+        -24832.009845047924,
+        2271.9937649624694,
+        0.0,
+        0.0,
+        0.0,
+        15.37032752598919,
+        15.37032752598919,
+        15.37032752598919
+      ],
+      "reused": true,
+      "naniteEnabled": true
+    },
+    {
+      "recipe": "roof-source-geometry-v1",
+      "actor": "OOW_00690_paris_building_05_71__2_",
+      "assetName": "OOW_Roof_Original_v1_624_0",
+      "sourceMeshIndex": 624,
+      "sourcePrimitiveIndex": 0,
+      "sourceMeshName": "paris_building_05_71__2__1",
+      "sourceMaterial": "MASTER_Roofing_Shingle_Grey",
+      "vertices": 243,
+      "triangles": 164,
+      "beforeVertices": 202,
+      "beforeTriangles": 135,
+      "sourceGeometryHash": "35c6d623e26fcf512abf096b0a7e2726b7bd77ab47e60a9bf873b9e5f5594318",
+      "generatedSha256": "d9f2f7e65fbc5c43d1544afcc86b84f5fb2b7572f96b38ecd67621f9d51bfe9d",
+      "uvSha256": "8b1282e5dc8802a21ec02e7a08f8db998a65240ba107c20a629d179c69cbf711",
+      "normalSha256": "93b6f15c644386b839ab18166dc5cd5842cda47a93aaaafad2626027b4d667f8",
+      "sourceNormalsAndUVPreserved": true,
+      "sourcePositionMaxErrorMeters": 5.883384358034876e-07,
+      "sourceBaselineVertices": 243,
+      "sourceBaselineTriangles": 164,
+      "exportBoundsMaxDeltaMeters": 0.0009814153617426769,
+      "exportBoundsToleranceMeters": 0.02,
+      "exportVertexNearestSourceMaxMeters": 0.0019115668957330615,
+      "worldBoundsMeters": [
+        [
+          25.48458149700876,
+          50.354151186290125
+        ],
+        [
+          7.349610123635504,
+          38.09026517561388
+        ],
+        [
+          -194.0081250990035,
+          -179.09381870131068
+        ]
+      ],
+      "exportLocalBounds": [
+        [
+          -0.8090123534202576,
+          0.8090123534202576
+        ],
+        [
+          -1.0,
+          1.0
+        ],
+        [
+          -0.485165536403656,
+          0.485165536403656
+        ]
+      ],
+      "restoredNormalAlignment": {
+        "areaWeightedMeanAngleDegrees": 6.58177989137125,
+        "maximumCornerAngleDegrees": 35.69031965851372,
+        "areaWithCornerAbove20DegreesFraction": 0.1707707368579115,
+        "surfaceAreaSquareMeters": 326.14404437520733
+      },
+      "simplifiedNormalAlignment": {
+        "areaWeightedMeanAngleDegrees": 6.8176026325158565,
+        "maximumCornerAngleDegrees": 74.12513701813248,
+        "areaWithCornerAbove20DegreesFraction": 0.17192654004717306,
+        "surfaceAreaSquareMeters": 326.0829614522057
+      },
+      "materialPolicy": "Reuse the actor current UE weather material; no texture import",
+      "appliedToUnreal": true,
+      "originalMesh": "/Game/Scenes/Alley/alley/StaticMeshes/alley_mesh_614.alley_mesh_614",
+      "repairedMesh": "/Game/Scenes/Alley/Repairs/OOW_Roof_Original_v1_624_0/StaticMeshes/OOW_Roof_Original_v1_624_0.OOW_Roof_Original_v1_624_0",
+      "material": "/Game/Materials/OOW/Instances/MI_stone___v2_f43d159fa8.MI_stone___v2_f43d159fa8",
+      "actorTransform": [
+        3791.9366341649443,
+        -18655.09719001571,
+        2271.9937649624694,
+        0.0,
+        0.0,
+        0.0,
+        15.37032752598919,
+        15.37032752598919,
+        15.37032752598919
+      ],
+      "reused": true,
+      "naniteEnabled": true
+    }
+  ],
+  "actorCount": 9,
+  "trianglesBefore": 537,
+  "trianglesAfter": 8618,
+  "verticesAfter": 5645,
+  "sourceBaselineTriangles": 794,
+  "reliefActorCount": 2,
+  "appliedToUnreal": true,
+  "actorTransformsUnchanged": 1801,
+  "otherActorsUnchanged": 1792
+}

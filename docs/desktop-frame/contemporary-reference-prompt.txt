@@ -1,0 +1,10 @@
+Generated with built-in image_gen; architectural design reference, not a UE capture.
+
+Use case: product-mockup
+Asset type: architectural design reference for an Unreal Engine desktop window-view application, not UI
+Primary request: a photorealistic first-person view from inside a contemporary apartment through a slim modern residential aluminum window on a rainy afternoon.
+Subject: a precise slim satin charcoal-grey thermally broken aluminum window frame, approximately 3-4 percent of image width at its edges, one very large fixed glass pane and a narrow operable casement on the right about 22 percent of the opening. Exactly one offset vertical mullion; absolutely no central crossbar or horizontal transom. Stepped extruded aluminum sections with small chamfered highlights, crisp black EPDM rubber glazing seals, clean corner joints, a restrained vertical graphite lever handle beside the narrow casement, subtle pale stone interior sill.
+Composition/framing: wide landscape 16:10 view, straight-on at eye level, the outer window frame meets the picture edges; exterior view occupies almost all image area. Show the entire window opening. Outside, believable contemporary residential urban streetscape at medium distance under overcast daylight, plants and buildings only outside, no interior decor.
+Materials/textures: realistic powder-coated aluminum with very fine microtexture, clear glass. Sparse sharp refractive raindrops on the OUTSIDE of the glass, a few droplets caught sliding down leaving slender irregular vertical trails, tiny beads accumulated near edges, most glass remaining clear and view unobstructed.
+Lighting/mood: soft rainy daylight, subtle indoor ambient bounce to reveal the extrusion depth, physically plausible understated highlights, architectural product photography.
+Constraints: single coherent full-bleed image, no collage, no diagrams, no labels, no text, no UI, no people. Modern residential window, not industrial steel grid, not wooden classic sash, no antique brass, no brown wood, no horizontal crossbar, no fogged glass, no broad watery blur or giant droplets. This is a design reference; no app interface.

@@ -15,6 +15,7 @@ public:
 	void Initialize(AWindowDirector* Director);
 	void Tick();
 	void Shutdown();
+	bool IsDesktopMode() const;
 
 private:
 	struct FImpl;

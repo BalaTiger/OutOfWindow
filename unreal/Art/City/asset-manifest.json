@@ -1,0 +1,44 @@
+{
+  "recipe": "bistro-city-props-v1",
+  "license": "CC BY 4.0",
+  "source": "https://developer.nvidia.com/orca/amazon-lumberyard-bistro",
+  "credit": "Amazon Lumberyard Bistro (2017), Open Research Content Archive (ORCA). Modified by OutOfWindow.",
+  "coordinateSystem": "glTF Y-up metres; UE importer converts to Z-up centimetres once",
+  "assets": [
+    {
+      "file": "OOW_City_Linden.glb",
+      "sourceMeshIndices": [
+        972
+      ],
+      "triangles": 47990,
+      "sections": 2,
+      "heightMeters": 11.0,
+      "boundsMeters": [
+        [
+          -4.847678541878366,
+          0.0,
+          -6.0568125185988055
+        ],
+        [
+          5.011520131411742,
+          11.0,
+          6.8762486936716245
+        ]
+      ],
+      "pivot": "trunk/foot center at ground; Y up; metres",
+      "sourcePivot": [
+        4458.804443359375,
+        38.55099868774414,
+        2475.739990234375
+      ],
+      "sourceUniformScale": 0.008093674932807965,
+      "bytes": 4835860,
+      "sha256": "cbcdfc0c696a4208e1dbaeeadee0057a099ad7178eb22235e5359b403ae6bde4",
+      "textures": [
+        "textures/Foliage_Linde_Tree_Large_Trunk_BaseColor.png",
+        "textures/Foliage_Linde_Tree_Large_Trunk_Normal.png",
+        "textures/Foliage_Linde_Tree_Large_Green_Leaves_BaseColor.png"
+      ]
+    }
+  ]
+}

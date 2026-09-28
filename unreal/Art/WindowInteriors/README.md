@@ -13,8 +13,14 @@
 
 完整提示词、生成日期与工具原始输出路径保存在 [prompts.json](prompts.json)。图像来自文字生成，本轮没有下载或添加第三方室内照片；提示词要求摄影风格，**实际来源仍是 AI 生成，不是摄影或扫描素材**，也没有对应的实测 PBR 通道。
 
-使用接口为整窗 UV1 和同一窗组内恒定的 UV2=`(seed,1)`。当前仅带 `OOWWindowInterior` 标签的窗使用 **v5** 六张图采样，房间选择、亮灯状态和色调由每窗种子决定；其他窗保留 v3 回退。六张纹理当前采用原生 `TMGS_BLUR2` 生成 mip，窗材质实例的有效参数为 **`OOWInteriorMipBias=2.0`、`OOWInteriorGain=1.8`**，进一步柔化细节并增强室内暖光。主材质仍保留 1.25 / 0.62 默认值，由实例覆盖；不要把主材质默认值当作当前运行值。采样仍为六个，源 PNG、窗几何和场景灯具保持不变。
+当前 **v6** 使用整窗 UV1 与组内恒定的 UV2=`(seed,flag)`：`1` 是房间，`-1` 明确禁用室内和旧窗发光；`0` 仅供旧窗回退。房间选择、亮灭、亮度和色温由同一个整窗种子决定。`window-uv-v2` 保留原顶点位置和 UV0，排除 26 组包边的 259 个三角面及另外 52 个非窗面，留下 393 个房间组。UV1 底部为 0、顶部为 1，采图使用 `1-V`。
 
-上表 UE 资产均位于 `/Game/Materials/OOW/WindowInteriors/`，以实际导入名称为准；原图仍保持 1024×1536。导入器设置 sRGB、边界 Clamp 及 power-of-two 构建。v4 四例和 v5 首轮轻度柔化的三例验证保留为历史记录；当前 Blur2 / 2.0 / 1.8 已通过真实 UE 构建、审计和最终包夜间/雨夜两例回归。新截图确认室内更柔和、暖光与窗边光晕更明显，房间明暗结构保留，外框清晰且没有硬切块。各阶段证据见 [夜窗修复记录](../../Migration/night-window-repair.md)。
+纹理仍为六次采样，原生 `TMGS_SHARPEN0` mip 配合材质实例覆盖：`OOWInteriorMipBias=1.5`、`OOWInteriorGain=0.8`、`OOWInteriorHighlightGain=8`、`OOWInteriorHighlightThreshold=0.32`。底图与从同一采样提取的灯具高亮分别控制，避免把家具和灯芯一起均匀提亮；`Night=0` 时室内图发光为零。主材质默认值不代表实例的实际运行值。
 
-这是 **2D 室内贴图近似**：家具、墙壁和灯具没有真实室内几何，不提供随视点移动的正确视差或遮挡；六张图也不能完全消除重复。图片中的透视和光照已经烘在图像中，适合本项目的固定机位，不应当作可进入的室内场景。
+66 个独立玻璃前层使用原生 **ThinTranslucent / SurfaceForwardShading**，关闭 Nanite，使用三档原生 LOD；室内图仍留在后方不透明网格上。`OOWWindowGlassFront` / `OOWWindowGlassBacking` 标签将两层分开，避免后层重复施加玻璃衰减。其他未标记窗保留 v3，非窗表面保持 v2；雨篷另有独立 v6 配方。
+
+上表 UE 资产均位于 `/Game/Materials/OOW/WindowInteriors/`，以实际导入名称为准。导入器设置 sRGB、Clamp、`STRETCH_TO_POWER_OF_TWO` 与 mip 生成；不使用产生黑边的 padding，不修改六张源 PNG。v6 已完成打包、资产审计和后巷夜间/雨夜/白天、都市夜间四例回归，资产审计为 0 失败。实现、重建顺序与完整验证见 [v6 修复记录](../../Migration/window-lookdev-repair.md)和 [验证数据](../../Migration/window-lookdev-verification.json)。实机截图：[后巷夜间](../Lookdev/alley-night-implemented-v6.png)、[雨夜](../Lookdev/alley-rainnight-implemented-v6.png)、[白天](../Lookdev/alley-day-implemented-v6.png)。
+
+**历史版本：** v4 原图室内、v5 首轮 1.25 / 0.62 轻度柔化，以及 v5 后续 Blur2 / 2.0 / 1.8 增强阶段的构建、审计和独立程序验证保留在 [夜窗修复记录](../../Migration/night-window-repair.md)。这些成绩属于各自旧包，不能作为当前 v6 的验收结果。
+
+这是 **原生玻璃前层加 2D 室内贴图近似**：家具、墙壁和灯具没有真实室内几何，不提供随视点移动的正确视差或遮挡；六张图也不能完全消除重复。图片中的透视和光照已经烘在图像中，适合本项目的固定机位，不应当作可进入的室内场景。

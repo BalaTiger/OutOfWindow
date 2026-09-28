@@ -86,18 +86,23 @@ return p - Centre;
 '''.replace('FALL_SPEED', str(fall_speed)).replace('MOTION_DETAIL',
         'p.xy += float2(sin(Time * ' + str(6.28318530718 * 5 / period) + ' + Centre.x), '
         'cos(Time * ' + str(6.28318530718 * 4 / period) + ' + Centre.y)) * 18.0;'
-        if snow else 'p.xy -= WindVelocity.xy / 4600.0 * (UV.y - 0.5) * 100.0;')
-    wpo = custom(material, motion, u.CustomMaterialOutputType.CMOT_FLOAT3,
-                 {'Centre': centre, 'Time': time, 'Minimum': minimum, 'Size': size,
-                  'WindOffset': wind, 'WindVelocity': velocity, 'UV': uv})
+        if snow else 'p.xy -= WindVelocity.xy / 4600.0 * (Position.z - Centre.z);')
+    motion_inputs = {'Centre': centre, 'Time': time, 'Minimum': minimum, 'Size': size,
+                     'WindOffset': wind, 'WindVelocity': velocity, 'UV': uv}
+    if not snow:
+        # Shear each endpoint by its actual height, including the instance scale.
+        motion_inputs['Position'] = expression(material, u.MaterialExpressionWorldPosition,
+            world_position_shader_offset=u.WorldPositionIncludedOffsets.WPT_EXCLUDE_ALL_SHADER_OFFSETS)
+    wpo = custom(material, motion, u.CustomMaterialOutputType.CMOT_FLOAT3, motion_inputs)
     LIB.connect_material_property(wpo, '', u.MaterialProperty.MP_WORLD_POSITION_OFFSET)
 
     shape = ('1.0 - smoothstep(0.6, 1.0, length(UV * 2.0 - 1.0))' if snow else
              'pow(saturate(1.0 - abs(UV.x * 2.0 - 1.0)), 1.5) * saturate(1.0 - abs(UV.y * 2.0 - 1.0))')
+    near_fade = '100.0, 350.0' if snow else '800.0, 1800.0'
     opacity = custom(material,
         'float population = saturate((Amount - Rank) * 20.0);\n'
-        'float distanceFade = smoothstep(100.0, 350.0, Depth) * (1.0 - smoothstep(9000.0, 12000.0, Depth));\n'
-        'return (' + shape + ') * population * distanceFade * ' + ('0.9;' if snow else '0.55;'),
+        'float distanceFade = smoothstep(' + near_fade + ', Depth) * (1.0 - smoothstep(9000.0, 12000.0, Depth));\n'
+        'return (' + shape + ') * population * distanceFade * ' + ('0.9;' if snow else '0.33;'),
         u.CustomMaterialOutputType.CMOT_FLOAT1,
         {'UV': uv, 'Rank': rank, 'Amount': amount, 'Depth': depth})
     fade = expression(material, u.MaterialExpressionDepthFade, fade_distance_default=20.0)

@@ -1,0 +1,3655 @@
+{
+  "savedMap": "/Game/Maps/City",
+  "passed": true,
+  "failures": [],
+  "actors": 130,
+  "camera": {
+    "position": [
+      2600.0,
+      4200.0,
+      3700.0
+    ],
+    "forward": [
+      -0.2906316687375794,
+      -0.9506077498291644,
+      -0.10898687577659183
+    ],
+    "horizontalFov": 76.99444580078125
+  },
+  "cars": [
+    {
+      "label": "OOWCitySedan_00",
+      "tag": "OOWCar_0",
+      "dimensionsCm": [
+        180.3000030517578,
+        430.0000305175781,
+        145.00000131130219
+      ],
+      "position": [
+        220.0,
+        1100.0,
+        695.0
+      ]
+    },
+    {
+      "label": "OOWCitySedan_01",
+      "tag": "OOWCar_1",
+      "dimensionsCm": [
+        180.3000030517578,
+        430.0000305175781,
+        145.00000131130219
+      ],
+      "position": [
+        -220.0,
+        -237.0,
+        695.0
+      ]
+    },
+    {
+      "label": "OOWCitySedan_02",
+      "tag": "OOWCar_2",
+      "dimensionsCm": [
+        180.3000030517578,
+        430.0000305175781,
+        145.00000131130219
+      ],
+      "position": [
+        520.0,
+        -1574.0,
+        695.0
+      ]
+    },
+    {
+      "label": "OOWCitySedan_03",
+      "tag": "OOWCar_3",
+      "dimensionsCm": [
+        180.3000030517578,
+        430.0000305175781,
+        145.00000131130219
+      ],
+      "position": [
+        -520.0,
+        -2911.0,
+        695.0
+      ]
+    },
+    {
+      "label": "OOWCitySedan_04",
+      "tag": "OOWCar_4",
+      "dimensionsCm": [
+        180.3000030517578,
+        430.0000305175781,
+        145.00000131130219
+      ],
+      "position": [
+        220.0,
+        -4248.0,
+        695.0
+      ]
+    },
+    {
+      "label": "OOWCitySedan_05",
+      "tag": "OOWCar_5",
+      "dimensionsCm": [
+        180.3000030517578,
+        430.0000305175781,
+        145.00000131130219
+      ],
+      "position": [
+        -220.0,
+        -5585.0,
+        695.0
+      ]
+    },
+    {
+      "label": "OOWCitySedan_06",
+      "tag": "OOWCar_6",
+      "dimensionsCm": [
+        180.3000030517578,
+        430.0000305175781,
+        145.00000131130219
+      ],
+      "position": [
+        520.0,
+        -6922.0,
+        695.0
+      ]
+    },
+    {
+      "label": "OOWCitySedan_07",
+      "tag": "OOWCar_7",
+      "dimensionsCm": [
+        180.3000030517578,
+        430.0000305175781,
+        145.00000131130219
+      ],
+      "position": [
+        -520.0,
+        -8259.0,
+        695.0
+      ]
+    },
+    {
+      "label": "OOWCitySedan_08",
+      "tag": "OOWCar_8",
+      "dimensionsCm": [
+        180.3000030517578,
+        430.0000305175781,
+        145.00000131130219
+      ],
+      "position": [
+        220.0,
+        -9596.0,
+        695.0
+      ]
+    },
+    {
+      "label": "OOWCitySedan_09",
+      "tag": "OOWCar_9",
+      "dimensionsCm": [
+        180.3000030517578,
+        430.0000305175781,
+        145.00000131130219
+      ],
+      "position": [
+        -220.0,
+        -10933.0,
+        695.0
+      ]
+    },
+    {
+      "label": "OOWCitySedan_10",
+      "tag": "OOWCar_10",
+      "dimensionsCm": [
+        180.3000030517578,
+        430.0000305175781,
+        145.00000131130219
+      ],
+      "position": [
+        520.0,
+        -12270.0,
+        695.0
+      ]
+    },
+    {
+      "label": "OOWCitySedan_11",
+      "tag": "OOWCar_11",
+      "dimensionsCm": [
+        180.3000030517578,
+        430.0000305175781,
+        145.00000131130219
+      ],
+      "position": [
+        -520.0,
+        -13607.0,
+        695.0
+      ]
+    },
+    {
+      "label": "OOWCitySedan_12",
+      "tag": "OOWCar_12",
+      "dimensionsCm": [
+        180.3000030517578,
+        430.0000305175781,
+        145.00000131130219
+      ],
+      "position": [
+        220.0,
+        -14944.0,
+        695.0
+      ]
+    },
+    {
+      "label": "OOWCitySedan_13",
+      "tag": "OOWCar_13",
+      "dimensionsCm": [
+        180.3000030517578,
+        430.0000305175781,
+        145.00000131130219
+      ],
+      "position": [
+        -220.0,
+        -16281.0,
+        695.0
+      ]
+    },
+    {
+      "label": "OOWCitySedan_14",
+      "tag": "OOWCar_14",
+      "dimensionsCm": [
+        180.3000030517578,
+        430.0000305175781,
+        145.00000131130219
+      ],
+      "position": [
+        520.0,
+        -17618.0,
+        695.0
+      ]
+    },
+    {
+      "label": "OOWCitySedan_15",
+      "tag": "OOWCar_15",
+      "dimensionsCm": [
+        180.3000030517578,
+        430.0000305175781,
+        145.00000131130219
+      ],
+      "position": [
+        -520.0,
+        -18955.0,
+        695.0
+      ]
+    }
+  ],
+  "buildings": [
+    "CityModern_B07_terrace",
+    "CityModern_B01_terrace",
+    "CityModern_B10_glass",
+    "CityModern_B13_glass",
+    "CityModern_B15_glass",
+    "CityModern_B02_fins",
+    "CityModern_B03_glass",
+    "CityModern_B06_glass",
+    "CityModern_B08_glass",
+    "CityModern_B11_terrace",
+    "CityModern_B12_fins",
+    "CityModern_B14_fins",
+    "CityModern_B05_fins",
+    "CityModern_B09_fins",
+    "CityModern_B16_terrace",
+    "CityModern_B04_terrace"
+  ],
+  "skyline": [
+    "CityModern_Skyline01_setback",
+    "CityModern_Skyline02_twin",
+    "CityModern_Skyline03_setback",
+    "CityModern_Skyline04_setback",
+    "CityModern_Skyline05_twin",
+    "CityModern_Skyline06_setback",
+    "CityModern_Skyline07_setback",
+    "CityModern_Skyline08_setback",
+    "CityModern_Skyline09_twin",
+    "CityModern_Skyline10_setback",
+    "CityModern_Skyline11_setback",
+    "CityModern_Skyline12_twin",
+    "CityModern_Skyline13_twin",
+    "CityModern_Skyline14_setback",
+    "CityModern_Skyline15_setback",
+    "CityModern_Skyline16_twin",
+    "CityModern_Skyline17_setback",
+    "CityModern_Skyline18_setback"
+  ],
+  "context": [
+    "CityModern_Context_Reflection",
+    "CityModern_Context_Intersection",
+    "CityModern_Context_West",
+    "CityModern_Context_East",
+    "CityModern_Context_Terminus",
+    "CityModern_Context_Background"
+  ],
+  "contextBuildings": 20,
+  "ledPoles": [
+    "CityModern_LED_E6",
+    "CityModern_LED_W7",
+    "CityModern_LED_W8",
+    "CityModern_LED_W9",
+    "CityModern_LED_E7",
+    "CityModern_LED_E8",
+    "CityModern_LED_E9",
+    "CityModern_LED_W1",
+    "CityModern_LED_W2",
+    "CityModern_LED_W3",
+    "CityModern_LED_W4",
+    "CityModern_LED_W5",
+    "CityModern_LED_W6",
+    "CityModern_LED_E1",
+    "CityModern_LED_E2",
+    "CityModern_LED_E3",
+    "CityModern_LED_E4",
+    "CityModern_LED_E5"
+  ],
+  "treeInstances": [
+    {
+      "position": [
+        -1820.0,
+        1400.0,
+        695.0
+      ],
+      "scale": [
+        0.7199999999999999,
+        0.7199999999999999,
+        0.72
+      ]
+    },
+    {
+      "position": [
+        -1820.0,
+        -900.0,
+        695.0
+      ],
+      "scale": [
+        0.81,
+        0.81,
+        0.8099999999999999
+      ]
+    },
+    {
+      "position": [
+        -1820.0,
+        -3200.0,
+        695.0
+      ],
+      "scale": [
+        0.8999999999999997,
+        0.8999999999999997,
+        0.8999999999999999
+      ]
+    },
+    {
+      "position": [
+        -1820.0,
+        -5500.0,
+        695.0
+      ],
+      "scale": [
+        0.765,
+        0.765,
+        0.765
+      ]
+    },
+    {
+      "position": [
+        -1820.0,
+        -7800.0,
+        695.0
+      ],
+      "scale": [
+        0.8550000000000004,
+        0.8550000000000004,
+        0.855
+      ]
+    },
+    {
+      "position": [
+        -1820.0,
+        -10100.0,
+        695.0
+      ],
+      "scale": [
+        0.7200000000000001,
+        0.7200000000000001,
+        0.72
+      ]
+    },
+    {
+      "position": [
+        -1820.0,
+        -12400.0,
+        695.0
+      ],
+      "scale": [
+        0.8099999999999998,
+        0.8099999999999998,
+        0.8099999999999999
+      ]
+    },
+    {
+      "position": [
+        -1820.0,
+        -14700.0,
+        695.0
+      ],
+      "scale": [
+        0.8999999999999995,
+        0.8999999999999995,
+        0.8999999999999999
+      ]
+    },
+    {
+      "position": [
+        -1820.0,
+        -17000.0,
+        695.0
+      ],
+      "scale": [
+        0.765,
+        0.765,
+        0.765
+      ]
+    },
+    {
+      "position": [
+        -1820.0,
+        -19300.0,
+        695.0
+      ],
+      "scale": [
+        0.8550000000000001,
+        0.8550000000000001,
+        0.855
+      ]
+    },
+    {
+      "position": [
+        -1820.0,
+        -21600.0,
+        695.0
+      ],
+      "scale": [
+        0.72,
+        0.72,
+        0.72
+      ]
+    },
+    {
+      "position": [
+        -1820.0,
+        -23900.0,
+        695.0
+      ],
+      "scale": [
+        0.8099999999999999,
+        0.8099999999999999,
+        0.8099999999999999
+      ]
+    },
+    {
+      "position": [
+        -1820.0,
+        -26200.0,
+        695.0
+      ],
+      "scale": [
+        0.8999999999999991,
+        0.8999999999999991,
+        0.8999999999999999
+      ]
+    },
+    {
+      "position": [
+        -1820.0,
+        -28500.0,
+        695.0
+      ],
+      "scale": [
+        0.7649999999999999,
+        0.7649999999999999,
+        0.765
+      ]
+    },
+    {
+      "position": [
+        1820.0,
+        1400.0,
+        695.0
+      ],
+      "scale": [
+        0.72,
+        0.72,
+        0.72
+      ]
+    },
+    {
+      "position": [
+        1820.0,
+        -900.0,
+        695.0
+      ],
+      "scale": [
+        0.8100000000000005,
+        0.8100000000000005,
+        0.8099999999999999
+      ]
+    },
+    {
+      "position": [
+        1820.0,
+        -3200.0,
+        695.0
+      ],
+      "scale": [
+        0.8999999999999998,
+        0.8999999999999998,
+        0.8999999999999999
+      ]
+    },
+    {
+      "position": [
+        1820.0,
+        -5500.0,
+        695.0
+      ],
+      "scale": [
+        0.7650000000000001,
+        0.7650000000000001,
+        0.765
+      ]
+    },
+    {
+      "position": [
+        1820.0,
+        -7800.0,
+        695.0
+      ],
+      "scale": [
+        0.8549999999999995,
+        0.8549999999999995,
+        0.855
+      ]
+    },
+    {
+      "position": [
+        1820.0,
+        -10100.0,
+        695.0
+      ],
+      "scale": [
+        0.72,
+        0.72,
+        0.72
+      ]
+    },
+    {
+      "position": [
+        1820.0,
+        -12400.0,
+        695.0
+      ],
+      "scale": [
+        0.8099999999999999,
+        0.8099999999999999,
+        0.8099999999999999
+      ]
+    },
+    {
+      "position": [
+        1820.0,
+        -14700.0,
+        695.0
+      ],
+      "scale": [
+        0.9000000000000001,
+        0.9000000000000001,
+        0.8999999999999999
+      ]
+    },
+    {
+      "position": [
+        1820.0,
+        -17000.0,
+        695.0
+      ],
+      "scale": [
+        0.7649999999999999,
+        0.7649999999999999,
+        0.765
+      ]
+    },
+    {
+      "position": [
+        1820.0,
+        -19300.0,
+        695.0
+      ],
+      "scale": [
+        0.8549999999999994,
+        0.8549999999999994,
+        0.855
+      ]
+    },
+    {
+      "position": [
+        1820.0,
+        -21600.0,
+        695.0
+      ],
+      "scale": [
+        0.7200000000000001,
+        0.7200000000000001,
+        0.72
+      ]
+    },
+    {
+      "position": [
+        1820.0,
+        -23900.0,
+        695.0
+      ],
+      "scale": [
+        0.81,
+        0.81,
+        0.8099999999999999
+      ]
+    },
+    {
+      "position": [
+        1820.0,
+        -26200.0,
+        695.0
+      ],
+      "scale": [
+        0.9,
+        0.9,
+        0.8999999999999999
+      ]
+    },
+    {
+      "position": [
+        1820.0,
+        -28500.0,
+        695.0
+      ],
+      "scale": [
+        0.7650000000000001,
+        0.7650000000000001,
+        0.765
+      ]
+    }
+  ],
+  "savedBatches": [
+    {
+      "label": "OOWCityStaticBatch_0",
+      "mesh": "/Game/Scenes/City/Modern/OOW_City_Linden/StaticMeshes/OOW_City_Linden.OOW_City_Linden",
+      "instances": 28
+    }
+  ],
+  "preservedRoadActors": 5,
+  "nightLights": 18,
+  "modernMeshes": {
+    "/Game/Scenes/City/Modern/traffic-sedan/StaticMeshes/traffic-sedan.traffic-sedan": true,
+    "/Game/Scenes/City/Modern/OOW_City_Linden/StaticMeshes/OOW_City_Linden.OOW_City_Linden": true,
+    "/Game/Scenes/City/Modern/modern-city/StaticMeshes/modern-city_mesh_51.modern-city_mesh_51": true,
+    "/Game/Scenes/City/Modern/modern-city/StaticMeshes/modern-city_mesh_45.modern-city_mesh_45": true,
+    "/Game/Scenes/City/Modern/city-road-markings/StaticMeshes/city-road-markings_mesh_0.city-road-markings_mesh_0": true,
+    "/Game/Scenes/City/Modern/city-road-markings/StaticMeshes/city-road-markings_mesh_1.city-road-markings_mesh_1": true,
+    "/Game/Scenes/City/Modern/city-sidewalk/StaticMeshes/city-sidewalk_mesh_0.city-sidewalk_mesh_0": true,
+    "/Game/Scenes/City/Modern/city-sidewalk/StaticMeshes/city-sidewalk_mesh_1.city-sidewalk_mesh_1": true,
+    "/Game/Scenes/City/Modern/city-sidewalk/StaticMeshes/city-sidewalk_mesh_2.city-sidewalk_mesh_2": true,
+    "/Game/Scenes/City/Modern/city-sidewalk/StaticMeshes/city-sidewalk_mesh_3.city-sidewalk_mesh_3": true,
+    "/Game/Scenes/City/Modern/city-sidewalk/StaticMeshes/city-sidewalk_mesh_4.city-sidewalk_mesh_4": true,
+    "/Game/Scenes/City/Modern/city-sidewalk/StaticMeshes/city-sidewalk_mesh_5.city-sidewalk_mesh_5": true,
+    "/Game/Scenes/City/Modern/city-entrances/StaticMeshes/city-entrances_mesh_1.city-entrances_mesh_1": true,
+    "/Game/Scenes/City/Modern/city-entrances/StaticMeshes/city-entrances_mesh_3.city-entrances_mesh_3": true,
+    "/Game/Scenes/City/Modern/city-entrances/StaticMeshes/city-entrances_mesh_5.city-entrances_mesh_5": true,
+    "/Game/Scenes/City/Modern/city-entrances/StaticMeshes/city-entrances_mesh_6.city-entrances_mesh_6": true,
+    "/Game/Scenes/City/Modern/city-entrances/StaticMeshes/city-entrances_mesh_0.city-entrances_mesh_0": true,
+    "/Game/Scenes/City/Modern/city-entrances/StaticMeshes/city-entrances_mesh_2.city-entrances_mesh_2": true,
+    "/Game/Scenes/City/Modern/city-entrances/StaticMeshes/city-entrances_mesh_4.city-entrances_mesh_4": true,
+    "/Game/Scenes/City/Modern/modern-city/StaticMeshes/modern-city_mesh_16.modern-city_mesh_16": true,
+    "/Game/Scenes/City/Modern/modern-city/StaticMeshes/modern-city_mesh_17.modern-city_mesh_17": true,
+    "/Game/Scenes/City/Modern/modern-city/StaticMeshes/modern-city_mesh_18.modern-city_mesh_18": true,
+    "/Game/Scenes/City/Modern/modern-city/StaticMeshes/modern-city_mesh_19.modern-city_mesh_19": true,
+    "/Game/Scenes/City/Modern/modern-city/StaticMeshes/modern-city_mesh_20.modern-city_mesh_20": true,
+    "/Game/Scenes/City/Modern/modern-city/StaticMeshes/modern-city_mesh_21.modern-city_mesh_21": true,
+    "/Game/Scenes/City/Modern/modern-city/StaticMeshes/modern-city_mesh_22.modern-city_mesh_22": true,
+    "/Game/Scenes/City/Modern/modern-city/StaticMeshes/modern-city_mesh_23.modern-city_mesh_23": true,
+    "/Game/Scenes/City/Modern/modern-city/StaticMeshes/modern-city_mesh_24.modern-city_mesh_24": true,
+    "/Game/Scenes/City/Modern/modern-city/StaticMeshes/modern-city_mesh_25.modern-city_mesh_25": true,
+    "/Game/Scenes/City/Modern/modern-city/StaticMeshes/modern-city_mesh_26.modern-city_mesh_26": true,
+    "/Game/Scenes/City/Modern/modern-city/StaticMeshes/modern-city_mesh_27.modern-city_mesh_27": true,
+    "/Game/Scenes/City/Modern/modern-city/StaticMeshes/modern-city_mesh_28.modern-city_mesh_28": true,
+    "/Game/Scenes/City/Modern/modern-city/StaticMeshes/modern-city_mesh_29.modern-city_mesh_29": true,
+    "/Game/Scenes/City/Modern/modern-city/StaticMeshes/modern-city_mesh_30.modern-city_mesh_30": true,
+    "/Game/Scenes/City/Modern/modern-city/StaticMeshes/modern-city_mesh_31.modern-city_mesh_31": true,
+    "/Game/Scenes/City/Modern/modern-city/StaticMeshes/modern-city_mesh_32.modern-city_mesh_32": true,
+    "/Game/Scenes/City/Modern/modern-city/StaticMeshes/modern-city_mesh_33.modern-city_mesh_33": true,
+    "/Game/Scenes/City/Modern/modern-city/StaticMeshes/modern-city_mesh_38.modern-city_mesh_38": true,
+    "/Game/Scenes/City/Modern/modern-city/StaticMeshes/modern-city_mesh_39.modern-city_mesh_39": true,
+    "/Game/Scenes/City/Modern/modern-city/StaticMeshes/modern-city_mesh_34.modern-city_mesh_34": true,
+    "/Game/Scenes/City/Modern/modern-city/StaticMeshes/modern-city_mesh_35.modern-city_mesh_35": true,
+    "/Game/Scenes/City/Modern/modern-city/StaticMeshes/modern-city_mesh_36.modern-city_mesh_36": true,
+    "/Game/Scenes/City/Modern/modern-city/StaticMeshes/modern-city_mesh_37.modern-city_mesh_37": true,
+    "/Game/Scenes/City/Modern/modern-city/StaticMeshes/modern-city_mesh_40.modern-city_mesh_40": true,
+    "/Game/Scenes/City/Modern/modern-city/StaticMeshes/modern-city_mesh_41.modern-city_mesh_41": true,
+    "/Game/Scenes/City/Modern/modern-city/StaticMeshes/modern-city_mesh_42.modern-city_mesh_42": true,
+    "/Game/Scenes/City/Modern/modern-city/StaticMeshes/modern-city_mesh_43.modern-city_mesh_43": true,
+    "/Game/Scenes/City/Modern/modern-city/StaticMeshes/modern-city_mesh_44.modern-city_mesh_44": true,
+    "/Game/Scenes/City/Modern/modern-city/StaticMeshes/modern-city_mesh_46.modern-city_mesh_46": true,
+    "/Game/Scenes/City/Modern/modern-city/StaticMeshes/modern-city_mesh_47.modern-city_mesh_47": true,
+    "/Game/Scenes/City/Modern/modern-city/StaticMeshes/modern-city_mesh_48.modern-city_mesh_48": true,
+    "/Game/Scenes/City/Modern/modern-city/StaticMeshes/modern-city_mesh_49.modern-city_mesh_49": true,
+    "/Game/Scenes/City/Modern/modern-city/StaticMeshes/modern-city_mesh_50.modern-city_mesh_50": true,
+    "/Game/Scenes/City/Modern/modern-city/StaticMeshes/modern-city_mesh_6.modern-city_mesh_6": true,
+    "/Game/Scenes/City/Modern/modern-city/StaticMeshes/modern-city_mesh_0.modern-city_mesh_0": true,
+    "/Game/Scenes/City/Modern/modern-city/StaticMeshes/modern-city_mesh_9.modern-city_mesh_9": true,
+    "/Game/Scenes/City/Modern/modern-city/StaticMeshes/modern-city_mesh_12.modern-city_mesh_12": true,
+    "/Game/Scenes/City/Modern/modern-city/StaticMeshes/modern-city_mesh_14.modern-city_mesh_14": true,
+    "/Game/Scenes/City/Modern/modern-city/StaticMeshes/modern-city_mesh_1.modern-city_mesh_1": true,
+    "/Game/Scenes/City/Modern/modern-city/StaticMeshes/modern-city_mesh_2.modern-city_mesh_2": true,
+    "/Game/Scenes/City/Modern/modern-city/StaticMeshes/modern-city_mesh_5.modern-city_mesh_5": true,
+    "/Game/Scenes/City/Modern/modern-city/StaticMeshes/modern-city_mesh_7.modern-city_mesh_7": true,
+    "/Game/Scenes/City/Modern/modern-city/StaticMeshes/modern-city_mesh_10.modern-city_mesh_10": true,
+    "/Game/Scenes/City/Modern/modern-city/StaticMeshes/modern-city_mesh_11.modern-city_mesh_11": true,
+    "/Game/Scenes/City/Modern/modern-city/StaticMeshes/modern-city_mesh_13.modern-city_mesh_13": true,
+    "/Game/Scenes/City/Modern/modern-city/StaticMeshes/modern-city_mesh_4.modern-city_mesh_4": true,
+    "/Game/Scenes/City/Modern/modern-city/StaticMeshes/modern-city_mesh_8.modern-city_mesh_8": true,
+    "/Game/Scenes/City/Modern/modern-city/StaticMeshes/modern-city_mesh_15.modern-city_mesh_15": true,
+    "/Game/Scenes/City/Modern/modern-city/StaticMeshes/modern-city_mesh_3.modern-city_mesh_3": true
+  },
+  "modernMaterials": {
+    "/Game/Scenes/City/Modern/Materials/M_Sedan_Paint_Silver.M_Sedan_Paint_Silver": {
+      "blend": "<BlendMode.BLEND_OPAQUE: 0>",
+      "naniteUsage": true,
+      "ismUsage": true
+    },
+    "/Game/Scenes/City/Modern/Materials/M_Sedan_Glass.M_Sedan_Glass": {
+      "blend": "<BlendMode.BLEND_OPAQUE: 0>",
+      "naniteUsage": true,
+      "ismUsage": true
+    },
+    "/Game/Scenes/City/Modern/Materials/M_Sedan_TireTrim.M_Sedan_TireTrim": {
+      "blend": "<BlendMode.BLEND_OPAQUE: 0>",
+      "naniteUsage": true,
+      "ismUsage": true
+    },
+    "/Game/Scenes/City/Modern/Materials/M_Sedan_Alloy.M_Sedan_Alloy": {
+      "blend": "<BlendMode.BLEND_OPAQUE: 0>",
+      "naniteUsage": true,
+      "ismUsage": true
+    },
+    "/Game/Scenes/City/Modern/Materials/M_Sedan_Headlamps.M_Sedan_Headlamps": {
+      "blend": "<BlendMode.BLEND_OPAQUE: 0>",
+      "naniteUsage": true,
+      "ismUsage": true
+    },
+    "/Game/Scenes/City/Modern/Materials/M_Sedan_Taillamps.M_Sedan_Taillamps": {
+      "blend": "<BlendMode.BLEND_OPAQUE: 0>",
+      "naniteUsage": true,
+      "ismUsage": true
+    },
+    "/Game/Scenes/City/Modern/Materials/M_Sedan_Paint_Blue.M_Sedan_Paint_Blue": {
+      "blend": "<BlendMode.BLEND_OPAQUE: 0>",
+      "naniteUsage": true,
+      "ismUsage": true
+    },
+    "/Game/Scenes/City/Modern/Materials/M_Sedan_Paint_Red.M_Sedan_Paint_Red": {
+      "blend": "<BlendMode.BLEND_OPAQUE: 0>",
+      "naniteUsage": true,
+      "ismUsage": true
+    },
+    "/Game/Scenes/City/Modern/Materials/M_Sedan_Paint_Charcoal.M_Sedan_Paint_Charcoal": {
+      "blend": "<BlendMode.BLEND_OPAQUE: 0>",
+      "naniteUsage": true,
+      "ismUsage": true
+    },
+    "/Game/Scenes/City/Modern/Materials/M_CityBark_v2.M_CityBark_v2": {
+      "blend": "<BlendMode.BLEND_OPAQUE: 0>",
+      "naniteUsage": true,
+      "ismUsage": true
+    },
+    "/Game/Scenes/City/Modern/Materials/M_CityLeaves_v2.M_CityLeaves_v2": {
+      "blend": "<BlendMode.BLEND_MASKED: 1>",
+      "naniteUsage": true,
+      "ismUsage": true
+    },
+    "/Game/Scenes/City/Modern/Materials/M_CityModern_Metal.M_CityModern_Metal": {
+      "blend": "<BlendMode.BLEND_OPAQUE: 0>",
+      "naniteUsage": true,
+      "ismUsage": true
+    },
+    "/Game/Scenes/City/Modern/Materials/M_CityModern_Roof.M_CityModern_Roof": {
+      "blend": "<BlendMode.BLEND_OPAQUE: 0>",
+      "naniteUsage": true,
+      "ismUsage": true
+    },
+    "/Game/Scenes/City/Modern/Materials/M_CityModern_LED.M_CityModern_LED": {
+      "blend": "<BlendMode.BLEND_OPAQUE: 0>",
+      "naniteUsage": true,
+      "ismUsage": true
+    },
+    "/Game/Scenes/City/Modern/Materials/M_CityRoad_White.M_CityRoad_White": {
+      "blend": "<BlendMode.BLEND_OPAQUE: 0>",
+      "naniteUsage": true,
+      "ismUsage": true
+    },
+    "/Game/Scenes/City/Modern/Materials/M_CityRoad_Yellow.M_CityRoad_Yellow": {
+      "blend": "<BlendMode.BLEND_OPAQUE: 0>",
+      "naniteUsage": true,
+      "ismUsage": true
+    },
+    "/Game/Scenes/City/Modern/Materials/M_CitySidewalk_Paving.M_CitySidewalk_Paving": {
+      "blend": "<BlendMode.BLEND_OPAQUE: 0>",
+      "naniteUsage": true,
+      "ismUsage": true
+    },
+    "/Game/Scenes/City/Modern/Materials/M_CitySidewalk_Curbs.M_CitySidewalk_Curbs": {
+      "blend": "<BlendMode.BLEND_OPAQUE: 0>",
+      "naniteUsage": true,
+      "ismUsage": true
+    },
+    "/Game/Scenes/City/Modern/Materials/M_CitySidewalk_Base.M_CitySidewalk_Base": {
+      "blend": "<BlendMode.BLEND_OPAQUE: 0>",
+      "naniteUsage": true,
+      "ismUsage": true
+    },
+    "/Game/Scenes/City/Modern/Materials/M_CitySidewalk_Soil.M_CitySidewalk_Soil": {
+      "blend": "<BlendMode.BLEND_OPAQUE: 0>",
+      "naniteUsage": true,
+      "ismUsage": true
+    },
+    "/Game/Scenes/City/Modern/Materials/M_CitySidewalk_Tactile.M_CitySidewalk_Tactile": {
+      "blend": "<BlendMode.BLEND_OPAQUE: 0>",
+      "naniteUsage": true,
+      "ismUsage": true
+    },
+    "/Game/Scenes/City/Modern/Materials/M_CitySidewalk_Planting.M_CitySidewalk_Planting": {
+      "blend": "<BlendMode.BLEND_OPAQUE: 0>",
+      "naniteUsage": true,
+      "ismUsage": true
+    },
+    "/Game/Scenes/City/Modern/Materials/M_CityModern_PaleStone.M_CityModern_PaleStone": {
+      "blend": "<BlendMode.BLEND_OPAQUE: 0>",
+      "naniteUsage": true,
+      "ismUsage": true
+    },
+    "/Game/Scenes/City/Modern/Materials/M_CityModern_Glass_Day_Silver.M_CityModern_Glass_Day_Silver": {
+      "blend": "<BlendMode.BLEND_OPAQUE: 0>",
+      "naniteUsage": true,
+      "ismUsage": true
+    },
+    "/Game/Scenes/City/Modern/Materials/M_CityModern_Limestone.M_CityModern_Limestone": {
+      "blend": "<BlendMode.BLEND_OPAQUE: 0>",
+      "naniteUsage": true,
+      "ismUsage": true
+    },
+    "/Game/Scenes/City/Modern/Materials/M_CityModern_Skyline_Glass_Grey.M_CityModern_Skyline_Glass_Grey": {
+      "blend": "<BlendMode.BLEND_OPAQUE: 0>",
+      "naniteUsage": true,
+      "ismUsage": true
+    },
+    "/Game/Scenes/City/Modern/Materials/M_CityModern_Skyline_Spandrel.M_CityModern_Skyline_Spandrel": {
+      "blend": "<BlendMode.BLEND_OPAQUE: 0>",
+      "naniteUsage": true,
+      "ismUsage": true
+    },
+    "/Game/Scenes/City/Modern/Materials/M_CityModern_Skyline_Glass_Blue.M_CityModern_Skyline_Glass_Blue": {
+      "blend": "<BlendMode.BLEND_OPAQUE: 0>",
+      "naniteUsage": true,
+      "ismUsage": true
+    },
+    "/Game/Scenes/City/Modern/Materials/M_CityRoad_Asphalt.M_CityRoad_Asphalt": {
+      "blend": "<BlendMode.BLEND_OPAQUE: 0>",
+      "naniteUsage": true,
+      "ismUsage": true
+    },
+    "/Game/Scenes/City/Modern/Materials/M_CityModern_Hero_Glass.M_CityModern_Hero_Glass": {
+      "blend": "<BlendMode.BLEND_OPAQUE: 0>",
+      "naniteUsage": true,
+      "ismUsage": true
+    },
+    "/Game/Scenes/City/Modern/Materials/M_Glass_Lit_CityModern_Warm.M_Glass_Lit_CityModern_Warm": {
+      "blend": "<BlendMode.BLEND_OPAQUE: 0>",
+      "naniteUsage": true,
+      "ismUsage": true
+    },
+    "/Game/Scenes/City/Modern/Materials/M_CityModern_RoofPlanting.M_CityModern_RoofPlanting": {
+      "blend": "<BlendMode.BLEND_OPAQUE: 0>",
+      "naniteUsage": true,
+      "ismUsage": true
+    },
+    "/Game/Scenes/City/Modern/Materials/M_CityModern_Glass_Day_Blue.M_CityModern_Glass_Day_Blue": {
+      "blend": "<BlendMode.BLEND_OPAQUE: 0>",
+      "naniteUsage": true,
+      "ismUsage": true
+    }
+  },
+  "heroBuildings": {
+    "CityModern_B07_terrace": {
+      "mesh": "/Game/Scenes/City/Modern/modern-city/StaticMeshes/modern-city_mesh_6.modern-city_mesh_6",
+      "uvChannels": 2,
+      "generateLightmapUVs": false,
+      "heroGlassSlots": 1
+    },
+    "CityModern_B01_terrace": {
+      "mesh": "/Game/Scenes/City/Modern/modern-city/StaticMeshes/modern-city_mesh_0.modern-city_mesh_0",
+      "uvChannels": 2,
+      "generateLightmapUVs": false,
+      "heroGlassSlots": 1
+    }
+  },
+  "authoredHeroWindowCount": 630,
+  "facadeMaterials": {
+    "M_CityModern_PaleStone": {
+      "path": "/Game/Scenes/City/Modern/Materials/M_CityModern_PaleStone.M_CityModern_PaleStone",
+      "version": "city-facade-v1",
+      "bindings": {
+        "CityStoneColor": "/Game/Scenes/City/Modern/FacadeTextures/Travertine001_2K-JPG_Color.Travertine001_2K-JPG_Color",
+        "CityStoneRoughness": "/Game/Scenes/City/Modern/FacadeTextures/Travertine001_2K-JPG_Roughness.Travertine001_2K-JPG_Roughness",
+        "CityStoneNormal": "/Game/Scenes/City/Modern/FacadeTextures/Travertine001_2K-JPG_NormalDX.Travertine001_2K-JPG_NormalDX"
+      },
+      "texturesByOutput": {
+        "CityStoneColor": [
+          "/Game/Scenes/City/Modern/FacadeTextures/Travertine001_2K-JPG_Color.Travertine001_2K-JPG_Color"
+        ],
+        "CityStoneRoughness": [
+          "/Game/Scenes/City/Modern/FacadeTextures/Travertine001_2K-JPG_Roughness.Travertine001_2K-JPG_Roughness"
+        ],
+        "CityStoneNormal": [
+          "/Game/Scenes/City/Modern/FacadeTextures/Travertine001_2K-JPG_NormalDX.Travertine001_2K-JPG_NormalDX"
+        ]
+      }
+    },
+    "M_CityModern_Limestone": {
+      "path": "/Game/Scenes/City/Modern/Materials/M_CityModern_Limestone.M_CityModern_Limestone",
+      "version": "city-facade-v1",
+      "bindings": {
+        "CityStoneColor": "/Game/Scenes/City/Modern/FacadeTextures/Travertine001_2K-JPG_Color.Travertine001_2K-JPG_Color",
+        "CityStoneRoughness": "/Game/Scenes/City/Modern/FacadeTextures/Travertine001_2K-JPG_Roughness.Travertine001_2K-JPG_Roughness",
+        "CityStoneNormal": "/Game/Scenes/City/Modern/FacadeTextures/Travertine001_2K-JPG_NormalDX.Travertine001_2K-JPG_NormalDX"
+      },
+      "texturesByOutput": {
+        "CityStoneColor": [
+          "/Game/Scenes/City/Modern/FacadeTextures/Travertine001_2K-JPG_Color.Travertine001_2K-JPG_Color"
+        ],
+        "CityStoneRoughness": [
+          "/Game/Scenes/City/Modern/FacadeTextures/Travertine001_2K-JPG_Roughness.Travertine001_2K-JPG_Roughness"
+        ],
+        "CityStoneNormal": [
+          "/Game/Scenes/City/Modern/FacadeTextures/Travertine001_2K-JPG_NormalDX.Travertine001_2K-JPG_NormalDX"
+        ]
+      }
+    },
+    "M_CityModern_Hero_Glass": {
+      "path": "/Game/Scenes/City/Modern/Materials/M_CityModern_Hero_Glass.M_CityModern_Hero_Glass",
+      "version": "city-facade-v1",
+      "bindings": {},
+      "texturesByOutput": {},
+      "roughness": 0.11999999731779099
+    }
+  },
+  "sidewalk": {
+    "sha256": "170348cbcdef1d241c88a667a30e1b02f13657d2d0b0f64f6a245bff3912d673",
+    "meshes": {
+      "CitySidewalk_Paving": {
+        "mesh": "/Game/Scenes/City/Modern/city-sidewalk/StaticMeshes/city-sidewalk_mesh_0.city-sidewalk_mesh_0",
+        "worldBoundsCm": {
+          "min": [
+            -2134.60009765625,
+            -39949.6015625,
+            684.0
+          ],
+          "max": [
+            2134.60009765625,
+            3599.599853515625,
+            704.0
+          ]
+        },
+        "fallbackTriangles": 5928,
+        "materials": [
+          "M_CitySidewalk_Paving"
+        ],
+        "hasVertexColors": true
+      },
+      "CitySidewalk_Curbs": {
+        "mesh": "/Game/Scenes/City/Modern/city-sidewalk/StaticMeshes/city-sidewalk_mesh_1.city-sidewalk_mesh_1",
+        "worldBoundsCm": {
+          "min": [
+            -1954.9998779296875,
+            -39949.69921875,
+            684.0
+          ],
+          "max": [
+            1954.9998779296875,
+            3600.0,
+            720.0
+          ]
+        },
+        "fallbackTriangles": 9788,
+        "materials": [
+          "M_CitySidewalk_Curbs"
+        ]
+      },
+      "CitySidewalk_Base": {
+        "mesh": "/Game/Scenes/City/Modern/city-sidewalk/StaticMeshes/city-sidewalk_mesh_2.city-sidewalk_mesh_2",
+        "worldBoundsCm": {
+          "min": [
+            -2135.0,
+            -39950.0,
+            684.0
+          ],
+          "max": [
+            2135.0,
+            3600.0,
+            699.0
+          ]
+        },
+        "fallbackTriangles": 418,
+        "materials": [
+          "M_CitySidewalk_Base"
+        ]
+      },
+      "CitySidewalk_Soil": {
+        "mesh": "/Game/Scenes/City/Modern/city-sidewalk/StaticMeshes/city-sidewalk_mesh_3.city-sidewalk_mesh_3",
+        "worldBoundsCm": {
+          "min": [
+            -1940.0,
+            -28620.001953125,
+            689.0
+          ],
+          "max": [
+            1940.0,
+            1520.0,
+            695.0
+          ]
+        },
+        "fallbackTriangles": 334,
+        "materials": [
+          "M_CitySidewalk_Soil"
+        ]
+      },
+      "CitySidewalk_Tactile": {
+        "mesh": "/Game/Scenes/City/Modern/city-sidewalk/StaticMeshes/city-sidewalk_mesh_4.city-sidewalk_mesh_4",
+        "worldBoundsCm": {
+          "min": [
+            -1565.0,
+            -13231.5,
+            691.0750122070312
+          ],
+          "max": [
+            1275.0,
+            -3184.5,
+            698.40625
+          ]
+        },
+        "fallbackTriangles": 252,
+        "materials": [
+          "M_CitySidewalk_Tactile"
+        ]
+      },
+      "CitySidewalk_Planting": {
+        "mesh": "/Game/Scenes/City/Modern/city-sidewalk/StaticMeshes/city-sidewalk_mesh_5.city-sidewalk_mesh_5",
+        "worldBoundsCm": {
+          "min": [
+            -1926.14111328125,
+            -28608.099609375,
+            688.3073120117188
+          ],
+          "max": [
+            1929.956787109375,
+            1506.8701171875,
+            744.746826171875
+          ]
+        },
+        "fallbackTriangles": 4478,
+        "materials": [
+          "M_CitySidewalk_Planting"
+        ]
+      }
+    },
+    "sidewalkTop": 7.04,
+    "ramps": 4,
+    "treePits": 28,
+    "geometryChecks": {
+      "passed": true,
+      "method": "Downward raycasts against the actual final merged geometry; no source-parameter-only checks.",
+      "tests": [
+        {
+          "kind": "curb",
+          "id": "west",
+          "point": [
+            -14.959999999999999,
+            24.24
+          ],
+          "expected": 7.04,
+          "actual": 7.039999961853027,
+          "meshName": "CitySidewalk_Curbs",
+          "passed": true
+        },
+        {
+          "kind": "top",
+          "id": "west",
+          "point": [
+            -20.8,
+            25.4
+          ],
+          "expected": 7.04,
+          "actual": 7.039999961853026,
+          "meshName": "CitySidewalk_Paving",
+          "passed": true
+        },
+        {
+          "kind": "curb",
+          "id": "east",
+          "point": [
+            12.059999999999999,
+            24.24
+          ],
+          "expected": 7.04,
+          "actual": 7.039999961853027,
+          "meshName": "CitySidewalk_Curbs",
+          "passed": true
+        },
+        {
+          "kind": "top",
+          "id": "east",
+          "point": [
+            12.6,
+            25.4
+          ],
+          "expected": 7.04,
+          "actual": 7.039999961853026,
+          "meshName": "CitySidewalk_Paving",
+          "passed": true
+        },
+        {
+          "kind": "ramp",
+          "id": "west_0",
+          "passed": true,
+          "samples": [
+            {
+              "point": [
+                -14.875,
+                -32.88
+              ],
+              "expected": 6.9021875,
+              "actual": 6.902187559381169,
+              "meshName": "CitySidewalk_Paving",
+              "passed": true
+            },
+            {
+              "point": [
+                -15.75,
+                -32.88
+              ],
+              "expected": 6.97875,
+              "actual": 6.978749968111577,
+              "meshName": "CitySidewalk_Paving",
+              "passed": true
+            },
+            {
+              "point": [
+                -16.425,
+                -32.88
+              ],
+              "expected": 7.0378125,
+              "actual": 7.037812397703608,
+              "meshName": "CitySidewalk_Paving",
+              "passed": true
+            }
+          ]
+        },
+        {
+          "kind": "ramp",
+          "id": "west_1",
+          "passed": true,
+          "samples": [
+            {
+              "point": [
+                -14.875,
+                -131.28
+              ],
+              "expected": 6.9021875,
+              "actual": 6.902187559381169,
+              "meshName": "CitySidewalk_Paving",
+              "passed": true
+            },
+            {
+              "point": [
+                -15.75,
+                -131.28
+              ],
+              "expected": 6.97875,
+              "actual": 6.978749968111577,
+              "meshName": "CitySidewalk_Paving",
+              "passed": true
+            },
+            {
+              "point": [
+                -16.425,
+                -131.28
+              ],
+              "expected": 7.0378125,
+              "actual": 7.037812397703608,
+              "meshName": "CitySidewalk_Paving",
+              "passed": true
+            }
+          ]
+        },
+        {
+          "kind": "ramp",
+          "id": "east_0",
+          "passed": true,
+          "samples": [
+            {
+              "point": [
+                11.975,
+                -32.88
+              ],
+              "expected": 6.892343749999999,
+              "actual": 6.892343635298319,
+              "meshName": "CitySidewalk_Paving",
+              "passed": true
+            },
+            {
+              "point": [
+                12.85,
+                -32.88
+              ],
+              "expected": 6.974375,
+              "actual": 6.974374917894602,
+              "meshName": "CitySidewalk_Paving",
+              "passed": true
+            },
+            {
+              "point": [
+                13.524999999999999,
+                -32.88
+              ],
+              "expected": 7.03765625,
+              "actual": 7.037656193040306,
+              "meshName": "CitySidewalk_Paving",
+              "passed": true
+            }
+          ]
+        },
+        {
+          "kind": "ramp",
+          "id": "east_1",
+          "passed": true,
+          "samples": [
+            {
+              "point": [
+                11.975,
+                -131.28
+              ],
+              "expected": 6.892343749999999,
+              "actual": 6.892343635298319,
+              "meshName": "CitySidewalk_Paving",
+              "passed": true
+            },
+            {
+              "point": [
+                12.85,
+                -131.28
+              ],
+              "expected": 6.974375,
+              "actual": 6.974374917894602,
+              "meshName": "CitySidewalk_Paving",
+              "passed": true
+            },
+            {
+              "point": [
+                13.524999999999999,
+                -131.28
+              ],
+              "expected": 7.03765625,
+              "actual": 7.037656193040304,
+              "meshName": "CitySidewalk_Paving",
+              "passed": true
+            }
+          ]
+        },
+        {
+          "kind": "treePit",
+          "id": "west_0",
+          "passed": true,
+          "samples": [
+            {
+              "point": [
+                -18.2,
+                14
+              ],
+              "expected": 6.95,
+              "actual": 6.949999809265135,
+              "meshName": "CitySidewalk_Soil",
+              "passed": true
+            },
+            {
+              "point": [
+                -18.2,
+                14
+              ],
+              "expected": null,
+              "actual": null,
+              "meshName": null,
+              "passed": true
+            }
+          ]
+        },
+        {
+          "kind": "treePit",
+          "id": "west_1",
+          "passed": true,
+          "samples": [
+            {
+              "point": [
+                -18.2,
+                -9
+              ],
+              "expected": 6.95,
+              "actual": 6.949999809265135,
+              "meshName": "CitySidewalk_Soil",
+              "passed": true
+            },
+            {
+              "point": [
+                -18.2,
+                -9
+              ],
+              "expected": null,
+              "actual": null,
+              "meshName": null,
+              "passed": true
+            }
+          ]
+        },
+        {
+          "kind": "treePit",
+          "id": "west_2",
+          "passed": true,
+          "samples": [
+            {
+              "point": [
+                -18.2,
+                -32
+              ],
+              "expected": 6.95,
+              "actual": 6.949999809265137,
+              "meshName": "CitySidewalk_Soil",
+              "passed": true
+            },
+            {
+              "point": [
+                -18.2,
+                -32
+              ],
+              "expected": null,
+              "actual": null,
+              "meshName": null,
+              "passed": true
+            }
+          ]
+        },
+        {
+          "kind": "treePit",
+          "id": "west_3",
+          "passed": true,
+          "samples": [
+            {
+              "point": [
+                -18.2,
+                -55
+              ],
+              "expected": 6.95,
+              "actual": 6.949999809265137,
+              "meshName": "CitySidewalk_Soil",
+              "passed": true
+            },
+            {
+              "point": [
+                -18.2,
+                -55
+              ],
+              "expected": null,
+              "actual": null,
+              "meshName": null,
+              "passed": true
+            }
+          ]
+        },
+        {
+          "kind": "treePit",
+          "id": "west_4",
+          "passed": true,
+          "samples": [
+            {
+              "point": [
+                -18.2,
+                -78
+              ],
+              "expected": 6.95,
+              "actual": 6.949999809265137,
+              "meshName": "CitySidewalk_Soil",
+              "passed": true
+            },
+            {
+              "point": [
+                -18.2,
+                -78
+              ],
+              "expected": null,
+              "actual": null,
+              "meshName": null,
+              "passed": true
+            }
+          ]
+        },
+        {
+          "kind": "treePit",
+          "id": "west_5",
+          "passed": true,
+          "samples": [
+            {
+              "point": [
+                -18.2,
+                -101
+              ],
+              "expected": 6.95,
+              "actual": 6.949999809265137,
+              "meshName": "CitySidewalk_Soil",
+              "passed": true
+            },
+            {
+              "point": [
+                -18.2,
+                -101
+              ],
+              "expected": null,
+              "actual": null,
+              "meshName": null,
+              "passed": true
+            }
+          ]
+        },
+        {
+          "kind": "treePit",
+          "id": "west_6",
+          "passed": true,
+          "samples": [
+            {
+              "point": [
+                -18.2,
+                -124
+              ],
+              "expected": 6.95,
+              "actual": 6.949999809265137,
+              "meshName": "CitySidewalk_Soil",
+              "passed": true
+            },
+            {
+              "point": [
+                -18.2,
+                -124
+              ],
+              "expected": null,
+              "actual": null,
+              "meshName": null,
+              "passed": true
+            }
+          ]
+        },
+        {
+          "kind": "treePit",
+          "id": "west_7",
+          "passed": true,
+          "samples": [
+            {
+              "point": [
+                -18.2,
+                -147
+              ],
+              "expected": 6.95,
+              "actual": 6.949999809265137,
+              "meshName": "CitySidewalk_Soil",
+              "passed": true
+            },
+            {
+              "point": [
+                -18.2,
+                -147
+              ],
+              "expected": null,
+              "actual": null,
+              "meshName": null,
+              "passed": true
+            }
+          ]
+        },
+        {
+          "kind": "treePit",
+          "id": "west_8",
+          "passed": true,
+          "samples": [
+            {
+              "point": [
+                -18.2,
+                -170
+              ],
+              "expected": 6.95,
+              "actual": 6.949999809265137,
+              "meshName": "CitySidewalk_Soil",
+              "passed": true
+            },
+            {
+              "point": [
+                -18.2,
+                -170
+              ],
+              "expected": null,
+              "actual": null,
+              "meshName": null,
+              "passed": true
+            }
+          ]
+        },
+        {
+          "kind": "treePit",
+          "id": "west_9",
+          "passed": true,
+          "samples": [
+            {
+              "point": [
+                -18.2,
+                -193
+              ],
+              "expected": 6.95,
+              "actual": 6.949999809265137,
+              "meshName": "CitySidewalk_Soil",
+              "passed": true
+            },
+            {
+              "point": [
+                -18.2,
+                -193
+              ],
+              "expected": null,
+              "actual": null,
+              "meshName": null,
+              "passed": true
+            }
+          ]
+        },
+        {
+          "kind": "treePit",
+          "id": "west_10",
+          "passed": true,
+          "samples": [
+            {
+              "point": [
+                -18.2,
+                -216
+              ],
+              "expected": 6.95,
+              "actual": 6.949999809265137,
+              "meshName": "CitySidewalk_Soil",
+              "passed": true
+            },
+            {
+              "point": [
+                -18.2,
+                -216
+              ],
+              "expected": null,
+              "actual": null,
+              "meshName": null,
+              "passed": true
+            }
+          ]
+        },
+        {
+          "kind": "treePit",
+          "id": "west_11",
+          "passed": true,
+          "samples": [
+            {
+              "point": [
+                -18.2,
+                -239
+              ],
+              "expected": 6.95,
+              "actual": 6.949999809265137,
+              "meshName": "CitySidewalk_Soil",
+              "passed": true
+            },
+            {
+              "point": [
+                -18.2,
+                -239
+              ],
+              "expected": null,
+              "actual": null,
+              "meshName": null,
+              "passed": true
+            }
+          ]
+        },
+        {
+          "kind": "treePit",
+          "id": "west_12",
+          "passed": true,
+          "samples": [
+            {
+              "point": [
+                -18.2,
+                -262
+              ],
+              "expected": 6.95,
+              "actual": 6.949999809265137,
+              "meshName": "CitySidewalk_Soil",
+              "passed": true
+            },
+            {
+              "point": [
+                -18.2,
+                -262
+              ],
+              "expected": null,
+              "actual": null,
+              "meshName": null,
+              "passed": true
+            }
+          ]
+        },
+        {
+          "kind": "treePit",
+          "id": "west_13",
+          "passed": true,
+          "samples": [
+            {
+              "point": [
+                -18.2,
+                -285
+              ],
+              "expected": 6.95,
+              "actual": 6.949999809265137,
+              "meshName": "CitySidewalk_Soil",
+              "passed": true
+            },
+            {
+              "point": [
+                -18.2,
+                -285
+              ],
+              "expected": null,
+              "actual": null,
+              "meshName": null,
+              "passed": true
+            }
+          ]
+        },
+        {
+          "kind": "treePit",
+          "id": "east_0",
+          "passed": true,
+          "samples": [
+            {
+              "point": [
+                18.2,
+                14
+              ],
+              "expected": 6.95,
+              "actual": 6.949999809265135,
+              "meshName": "CitySidewalk_Soil",
+              "passed": true
+            },
+            {
+              "point": [
+                18.2,
+                14
+              ],
+              "expected": null,
+              "actual": null,
+              "meshName": null,
+              "passed": true
+            }
+          ]
+        },
+        {
+          "kind": "treePit",
+          "id": "east_1",
+          "passed": true,
+          "samples": [
+            {
+              "point": [
+                18.2,
+                -9
+              ],
+              "expected": 6.95,
+              "actual": 6.949999809265135,
+              "meshName": "CitySidewalk_Soil",
+              "passed": true
+            },
+            {
+              "point": [
+                18.2,
+                -9
+              ],
+              "expected": null,
+              "actual": null,
+              "meshName": null,
+              "passed": true
+            }
+          ]
+        },
+        {
+          "kind": "treePit",
+          "id": "east_2",
+          "passed": true,
+          "samples": [
+            {
+              "point": [
+                18.2,
+                -32
+              ],
+              "expected": 6.95,
+              "actual": 6.949999809265137,
+              "meshName": "CitySidewalk_Soil",
+              "passed": true
+            },
+            {
+              "point": [
+                18.2,
+                -32
+              ],
+              "expected": null,
+              "actual": null,
+              "meshName": null,
+              "passed": true
+            }
+          ]
+        },
+        {
+          "kind": "treePit",
+          "id": "east_3",
+          "passed": true,
+          "samples": [
+            {
+              "point": [
+                18.2,
+                -55
+              ],
+              "expected": 6.95,
+              "actual": 6.949999809265137,
+              "meshName": "CitySidewalk_Soil",
+              "passed": true
+            },
+            {
+              "point": [
+                18.2,
+                -55
+              ],
+              "expected": null,
+              "actual": null,
+              "meshName": null,
+              "passed": true
+            }
+          ]
+        },
+        {
+          "kind": "treePit",
+          "id": "east_4",
+          "passed": true,
+          "samples": [
+            {
+              "point": [
+                18.2,
+                -78
+              ],
+              "expected": 6.95,
+              "actual": 6.949999809265137,
+              "meshName": "CitySidewalk_Soil",
+              "passed": true
+            },
+            {
+              "point": [
+                18.2,
+                -78
+              ],
+              "expected": null,
+              "actual": null,
+              "meshName": null,
+              "passed": true
+            }
+          ]
+        },
+        {
+          "kind": "treePit",
+          "id": "east_5",
+          "passed": true,
+          "samples": [
+            {
+              "point": [
+                18.2,
+                -101
+              ],
+              "expected": 6.95,
+              "actual": 6.949999809265137,
+              "meshName": "CitySidewalk_Soil",
+              "passed": true
+            },
+            {
+              "point": [
+                18.2,
+                -101
+              ],
+              "expected": null,
+              "actual": null,
+              "meshName": null,
+              "passed": true
+            }
+          ]
+        },
+        {
+          "kind": "treePit",
+          "id": "east_6",
+          "passed": true,
+          "samples": [
+            {
+              "point": [
+                18.2,
+                -124
+              ],
+              "expected": 6.95,
+              "actual": 6.949999809265137,
+              "meshName": "CitySidewalk_Soil",
+              "passed": true
+            },
+            {
+              "point": [
+                18.2,
+                -124
+              ],
+              "expected": null,
+              "actual": null,
+              "meshName": null,
+              "passed": true
+            }
+          ]
+        },
+        {
+          "kind": "treePit",
+          "id": "east_7",
+          "passed": true,
+          "samples": [
+            {
+              "point": [
+                18.2,
+                -147
+              ],
+              "expected": 6.95,
+              "actual": 6.949999809265137,
+              "meshName": "CitySidewalk_Soil",
+              "passed": true
+            },
+            {
+              "point": [
+                18.2,
+                -147
+              ],
+              "expected": null,
+              "actual": null,
+              "meshName": null,
+              "passed": true
+            }
+          ]
+        },
+        {
+          "kind": "treePit",
+          "id": "east_8",
+          "passed": true,
+          "samples": [
+            {
+              "point": [
+                18.2,
+                -170
+              ],
+              "expected": 6.95,
+              "actual": 6.949999809265137,
+              "meshName": "CitySidewalk_Soil",
+              "passed": true
+            },
+            {
+              "point": [
+                18.2,
+                -170
+              ],
+              "expected": null,
+              "actual": null,
+              "meshName": null,
+              "passed": true
+            }
+          ]
+        },
+        {
+          "kind": "treePit",
+          "id": "east_9",
+          "passed": true,
+          "samples": [
+            {
+              "point": [
+                18.2,
+                -193
+              ],
+              "expected": 6.95,
+              "actual": 6.949999809265137,
+              "meshName": "CitySidewalk_Soil",
+              "passed": true
+            },
+            {
+              "point": [
+                18.2,
+                -193
+              ],
+              "expected": null,
+              "actual": null,
+              "meshName": null,
+              "passed": true
+            }
+          ]
+        },
+        {
+          "kind": "treePit",
+          "id": "east_10",
+          "passed": true,
+          "samples": [
+            {
+              "point": [
+                18.2,
+                -216
+              ],
+              "expected": 6.95,
+              "actual": 6.949999809265137,
+              "meshName": "CitySidewalk_Soil",
+              "passed": true
+            },
+            {
+              "point": [
+                18.2,
+                -216
+              ],
+              "expected": null,
+              "actual": null,
+              "meshName": null,
+              "passed": true
+            }
+          ]
+        },
+        {
+          "kind": "treePit",
+          "id": "east_11",
+          "passed": true,
+          "samples": [
+            {
+              "point": [
+                18.2,
+                -239
+              ],
+              "expected": 6.95,
+              "actual": 6.949999809265137,
+              "meshName": "CitySidewalk_Soil",
+              "passed": true
+            },
+            {
+              "point": [
+                18.2,
+                -239
+              ],
+              "expected": null,
+              "actual": null,
+              "meshName": null,
+              "passed": true
+            }
+          ]
+        },
+        {
+          "kind": "treePit",
+          "id": "east_12",
+          "passed": true,
+          "samples": [
+            {
+              "point": [
+                18.2,
+                -262
+              ],
+              "expected": 6.95,
+              "actual": 6.949999809265137,
+              "meshName": "CitySidewalk_Soil",
+              "passed": true
+            },
+            {
+              "point": [
+                18.2,
+                -262
+              ],
+              "expected": null,
+              "actual": null,
+              "meshName": null,
+              "passed": true
+            }
+          ]
+        },
+        {
+          "kind": "treePit",
+          "id": "east_13",
+          "passed": true,
+          "samples": [
+            {
+              "point": [
+                18.2,
+                -285
+              ],
+              "expected": 6.95,
+              "actual": 6.949999809265137,
+              "meshName": "CitySidewalk_Soil",
+              "passed": true
+            },
+            {
+              "point": [
+                18.2,
+                -285
+              ],
+              "expected": null,
+              "actual": null,
+              "meshName": null,
+              "passed": true
+            }
+          ]
+        },
+        {
+          "kind": "roadClearance",
+          "id": "-14.75_25",
+          "point": [
+            -14.75,
+            25
+          ],
+          "expected": null,
+          "actual": null,
+          "meshName": null,
+          "passed": true
+        },
+        {
+          "kind": "roadClearance",
+          "id": "-8_25",
+          "point": [
+            -8,
+            25
+          ],
+          "expected": null,
+          "actual": null,
+          "meshName": null,
+          "passed": true
+        },
+        {
+          "kind": "roadClearance",
+          "id": "0_25",
+          "point": [
+            0,
+            25
+          ],
+          "expected": null,
+          "actual": null,
+          "meshName": null,
+          "passed": true
+        },
+        {
+          "kind": "roadClearance",
+          "id": "8_25",
+          "point": [
+            8,
+            25
+          ],
+          "expected": null,
+          "actual": null,
+          "meshName": null,
+          "passed": true
+        },
+        {
+          "kind": "roadClearance",
+          "id": "11.85_25",
+          "point": [
+            11.85,
+            25
+          ],
+          "expected": null,
+          "actual": null,
+          "meshName": null,
+          "passed": true
+        },
+        {
+          "kind": "roadClearance",
+          "id": "-14.75_-32.88",
+          "point": [
+            -14.75,
+            -32.88
+          ],
+          "expected": null,
+          "actual": null,
+          "meshName": null,
+          "passed": true
+        },
+        {
+          "kind": "roadClearance",
+          "id": "-8_-32.88",
+          "point": [
+            -8,
+            -32.88
+          ],
+          "expected": null,
+          "actual": null,
+          "meshName": null,
+          "passed": true
+        },
+        {
+          "kind": "roadClearance",
+          "id": "0_-32.88",
+          "point": [
+            0,
+            -32.88
+          ],
+          "expected": null,
+          "actual": null,
+          "meshName": null,
+          "passed": true
+        },
+        {
+          "kind": "roadClearance",
+          "id": "8_-32.88",
+          "point": [
+            8,
+            -32.88
+          ],
+          "expected": null,
+          "actual": null,
+          "meshName": null,
+          "passed": true
+        },
+        {
+          "kind": "roadClearance",
+          "id": "11.85_-32.88",
+          "point": [
+            11.85,
+            -32.88
+          ],
+          "expected": null,
+          "actual": null,
+          "meshName": null,
+          "passed": true
+        },
+        {
+          "kind": "roadClearance",
+          "id": "-14.75_-80",
+          "point": [
+            -14.75,
+            -80
+          ],
+          "expected": null,
+          "actual": null,
+          "meshName": null,
+          "passed": true
+        },
+        {
+          "kind": "roadClearance",
+          "id": "-8_-80",
+          "point": [
+            -8,
+            -80
+          ],
+          "expected": null,
+          "actual": null,
+          "meshName": null,
+          "passed": true
+        },
+        {
+          "kind": "roadClearance",
+          "id": "0_-80",
+          "point": [
+            0,
+            -80
+          ],
+          "expected": null,
+          "actual": null,
+          "meshName": null,
+          "passed": true
+        },
+        {
+          "kind": "roadClearance",
+          "id": "8_-80",
+          "point": [
+            8,
+            -80
+          ],
+          "expected": null,
+          "actual": null,
+          "meshName": null,
+          "passed": true
+        },
+        {
+          "kind": "roadClearance",
+          "id": "11.85_-80",
+          "point": [
+            11.85,
+            -80
+          ],
+          "expected": null,
+          "actual": null,
+          "meshName": null,
+          "passed": true
+        },
+        {
+          "kind": "roadClearance",
+          "id": "-14.75_-131.28",
+          "point": [
+            -14.75,
+            -131.28
+          ],
+          "expected": null,
+          "actual": null,
+          "meshName": null,
+          "passed": true
+        },
+        {
+          "kind": "roadClearance",
+          "id": "-8_-131.28",
+          "point": [
+            -8,
+            -131.28
+          ],
+          "expected": null,
+          "actual": null,
+          "meshName": null,
+          "passed": true
+        },
+        {
+          "kind": "roadClearance",
+          "id": "0_-131.28",
+          "point": [
+            0,
+            -131.28
+          ],
+          "expected": null,
+          "actual": null,
+          "meshName": null,
+          "passed": true
+        },
+        {
+          "kind": "roadClearance",
+          "id": "8_-131.28",
+          "point": [
+            8,
+            -131.28
+          ],
+          "expected": null,
+          "actual": null,
+          "meshName": null,
+          "passed": true
+        },
+        {
+          "kind": "roadClearance",
+          "id": "11.85_-131.28",
+          "point": [
+            11.85,
+            -131.28
+          ],
+          "expected": null,
+          "actual": null,
+          "meshName": null,
+          "passed": true
+        },
+        {
+          "kind": "roadClearance",
+          "id": "-14.75_-193",
+          "point": [
+            -14.75,
+            -193
+          ],
+          "expected": null,
+          "actual": null,
+          "meshName": null,
+          "passed": true
+        },
+        {
+          "kind": "roadClearance",
+          "id": "-8_-193",
+          "point": [
+            -8,
+            -193
+          ],
+          "expected": null,
+          "actual": null,
+          "meshName": null,
+          "passed": true
+        },
+        {
+          "kind": "roadClearance",
+          "id": "0_-193",
+          "point": [
+            0,
+            -193
+          ],
+          "expected": null,
+          "actual": null,
+          "meshName": null,
+          "passed": true
+        },
+        {
+          "kind": "roadClearance",
+          "id": "8_-193",
+          "point": [
+            8,
+            -193
+          ],
+          "expected": null,
+          "actual": null,
+          "meshName": null,
+          "passed": true
+        },
+        {
+          "kind": "roadClearance",
+          "id": "11.85_-193",
+          "point": [
+            11.85,
+            -193
+          ],
+          "expected": null,
+          "actual": null,
+          "meshName": null,
+          "passed": true
+        },
+        {
+          "kind": "roadClearance",
+          "id": "-14.75_-310",
+          "point": [
+            -14.75,
+            -310
+          ],
+          "expected": null,
+          "actual": null,
+          "meshName": null,
+          "passed": true
+        },
+        {
+          "kind": "roadClearance",
+          "id": "-8_-310",
+          "point": [
+            -8,
+            -310
+          ],
+          "expected": null,
+          "actual": null,
+          "meshName": null,
+          "passed": true
+        },
+        {
+          "kind": "roadClearance",
+          "id": "0_-310",
+          "point": [
+            0,
+            -310
+          ],
+          "expected": null,
+          "actual": null,
+          "meshName": null,
+          "passed": true
+        },
+        {
+          "kind": "roadClearance",
+          "id": "8_-310",
+          "point": [
+            8,
+            -310
+          ],
+          "expected": null,
+          "actual": null,
+          "meshName": null,
+          "passed": true
+        },
+        {
+          "kind": "roadClearance",
+          "id": "11.85_-310",
+          "point": [
+            11.85,
+            -310
+          ],
+          "expected": null,
+          "actual": null,
+          "meshName": null,
+          "passed": true
+        },
+        {
+          "kind": "roadClearance",
+          "id": "-14.75_-400",
+          "point": [
+            -14.75,
+            -400
+          ],
+          "expected": null,
+          "actual": null,
+          "meshName": null,
+          "passed": true
+        },
+        {
+          "kind": "roadClearance",
+          "id": "-8_-400",
+          "point": [
+            -8,
+            -400
+          ],
+          "expected": null,
+          "actual": null,
+          "meshName": null,
+          "passed": true
+        },
+        {
+          "kind": "roadClearance",
+          "id": "0_-400",
+          "point": [
+            0,
+            -400
+          ],
+          "expected": null,
+          "actual": null,
+          "meshName": null,
+          "passed": true
+        },
+        {
+          "kind": "roadClearance",
+          "id": "8_-400",
+          "point": [
+            8,
+            -400
+          ],
+          "expected": null,
+          "actual": null,
+          "meshName": null,
+          "passed": true
+        },
+        {
+          "kind": "roadClearance",
+          "id": "11.85_-400",
+          "point": [
+            11.85,
+            -400
+          ],
+          "expected": null,
+          "actual": null,
+          "meshName": null,
+          "passed": true
+        },
+        {
+          "kind": "entryClearance",
+          "id": "B01_0",
+          "point": [
+            -20.35,
+            0.05
+          ],
+          "expected": null,
+          "actual": null,
+          "meshName": null,
+          "passed": true
+        },
+        {
+          "kind": "entryClearance",
+          "id": "B01_1",
+          "point": [
+            -20.35,
+            5.55
+          ],
+          "expected": null,
+          "actual": null,
+          "meshName": null,
+          "passed": true
+        },
+        {
+          "kind": "entryClearance",
+          "id": "B03_0",
+          "point": [
+            -20.35,
+            -88.75
+          ],
+          "expected": null,
+          "actual": null,
+          "meshName": null,
+          "passed": true
+        },
+        {
+          "kind": "entryClearance",
+          "id": "B03_1",
+          "point": [
+            -20.35,
+            -83.25
+          ],
+          "expected": null,
+          "actual": null,
+          "meshName": null,
+          "passed": true
+        },
+        {
+          "kind": "entryClearance",
+          "id": "B05_0",
+          "point": [
+            -20.35,
+            -193.55
+          ],
+          "expected": null,
+          "actual": null,
+          "meshName": null,
+          "passed": true
+        },
+        {
+          "kind": "entryClearance",
+          "id": "B05_1",
+          "point": [
+            -20.35,
+            -188.05
+          ],
+          "expected": null,
+          "actual": null,
+          "meshName": null,
+          "passed": true
+        },
+        {
+          "kind": "entryClearance",
+          "id": "B07_0",
+          "point": [
+            21.35,
+            -4.75
+          ],
+          "expected": null,
+          "actual": null,
+          "meshName": null,
+          "passed": true
+        },
+        {
+          "kind": "entryClearance",
+          "id": "B07_1",
+          "point": [
+            21.35,
+            0.75
+          ],
+          "expected": null,
+          "actual": null,
+          "meshName": null,
+          "passed": true
+        },
+        {
+          "kind": "entryClearance",
+          "id": "B09_0",
+          "point": [
+            19.85,
+            -95.35
+          ],
+          "expected": null,
+          "actual": null,
+          "meshName": null,
+          "passed": true
+        },
+        {
+          "kind": "entryClearance",
+          "id": "B09_1",
+          "point": [
+            19.85,
+            -89.85
+          ],
+          "expected": null,
+          "actual": null,
+          "meshName": null,
+          "passed": true
+        },
+        {
+          "kind": "entryClearance",
+          "id": "B11_0",
+          "point": [
+            20.85,
+            -203.95
+          ],
+          "expected": null,
+          "actual": null,
+          "meshName": null,
+          "passed": true
+        },
+        {
+          "kind": "entryClearance",
+          "id": "B11_1",
+          "point": [
+            20.85,
+            -198.45
+          ],
+          "expected": null,
+          "actual": null,
+          "meshName": null,
+          "passed": true
+        },
+        {
+          "kind": "junctionTransition",
+          "id": "west",
+          "passed": true,
+          "samples": [
+            {
+              "point": [
+                -20.8,
+                -395.11
+              ],
+              "expected": 7.039725000000001,
+              "actual": 7.039724634703489,
+              "meshName": "CitySidewalk_Paving",
+              "passed": true
+            },
+            {
+              "point": [
+                -20.8,
+                -397.31
+              ],
+              "expected": 6.9792250000000005,
+              "actual": 6.979224827188736,
+              "meshName": "CitySidewalk_Paving",
+              "passed": true
+            },
+            {
+              "point": [
+                -20.8,
+                -399.48
+              ],
+              "expected": 6.91955,
+              "actual": 6.91954981305242,
+              "meshName": "CitySidewalk_Paving",
+              "passed": true
+            }
+          ]
+        },
+        {
+          "kind": "junctionTransition",
+          "id": "east",
+          "passed": true,
+          "samples": [
+            {
+              "point": [
+                12.6,
+                -395.11
+              ],
+              "expected": 7.039725000000001,
+              "actual": 7.039724634703489,
+              "meshName": "CitySidewalk_Paving",
+              "passed": true
+            },
+            {
+              "point": [
+                12.6,
+                -397.31
+              ],
+              "expected": 6.9792250000000005,
+              "actual": 6.979224827188736,
+              "meshName": "CitySidewalk_Paving",
+              "passed": true
+            },
+            {
+              "point": [
+                12.6,
+                -399.48
+              ],
+              "expected": 6.91955,
+              "actual": 6.91954981305242,
+              "meshName": "CitySidewalk_Paving",
+              "passed": true
+            }
+          ]
+        }
+      ]
+    },
+    "concreteTextureBindings": {
+      "/Game/Scenes/City/Modern/Materials/M_CitySidewalk_Paving.M_CitySidewalk_Paving": {
+        "SidewalkConcreteColor": "/Game/Scenes/City/Modern/SidewalkTextures/Concrete3_BaseColor.Concrete3_BaseColor",
+        "SidewalkConcreteNormal": "/Game/Scenes/City/Modern/SidewalkTextures/Concrete3_Normal.Concrete3_Normal"
+      },
+      "/Game/Scenes/City/Modern/Materials/M_CitySidewalk_Curbs.M_CitySidewalk_Curbs": {
+        "SidewalkConcreteColor": "/Game/Scenes/City/Modern/SidewalkTextures/Concrete3_BaseColor.Concrete3_BaseColor",
+        "SidewalkConcreteNormal": "/Game/Scenes/City/Modern/SidewalkTextures/Concrete3_Normal.Concrete3_Normal"
+      },
+      "/Game/Scenes/City/Modern/Materials/M_CitySidewalk_Base.M_CitySidewalk_Base": {
+        "SidewalkConcreteColor": "/Game/Scenes/City/Modern/SidewalkTextures/Concrete3_BaseColor.Concrete3_BaseColor",
+        "SidewalkConcreteNormal": "/Game/Scenes/City/Modern/SidewalkTextures/Concrete3_Normal.Concrete3_Normal"
+      },
+      "/Game/Scenes/City/Modern/Materials/M_CitySidewalk_Tactile.M_CitySidewalk_Tactile": {
+        "SidewalkConcreteColor": "/Game/Scenes/City/Modern/SidewalkTextures/Concrete3_BaseColor.Concrete3_BaseColor",
+        "SidewalkConcreteNormal": "/Game/Scenes/City/Modern/SidewalkTextures/Concrete3_Normal.Concrete3_Normal"
+      }
+    },
+    "pavingColorDesign": {
+      "baseColorSRGB": "#858982",
+      "paletteSRGB": {
+        "main": "#777871",
+        "service": "#565c59",
+        "warmAccent": "#7a756c",
+        "coolAccent": "#727773"
+      },
+      "curbsSRGB": "#8b8f86",
+      "tactileSRGB": "#a18b53",
+      "tileColorCounts": {
+        "main": 2181,
+        "service": 2447,
+        "warmAccent": 204,
+        "coolAccent": 184
+      },
+      "bands": {
+        "treeServiceHalfWidth": 1.5,
+        "streetServiceWidth": 0.95,
+        "method": "Classify the original tile centre; never subdivide geometry for color."
+      },
+      "attribute": "COLOR_0 RGB / Unreal VertexColor RGB",
+      "shader": "Multiply Paving base-color RGB by VertexColor RGB in linear space. No additional sRGB/gamma conversion; other materials have white vertex color.",
+      "tintEncoding": "linear(paletteSRGB) / linear(#858982), with stable +/-2.5% linear brightness per original tile. Every cut fragment retains its parent tile tint.",
+      "exportedChecks": [
+        {
+          "material": "CitySidewalk_Paving",
+          "rgbCount": 307212,
+          "uniqueTints": 365,
+          "constantPerTriangle": true,
+          "nonPavingWhite": false
+        },
+        {
+          "material": "CitySidewalk_Curbs",
+          "rgbCount": 50040,
+          "uniqueTints": 1,
+          "constantPerTriangle": true,
+          "nonPavingWhite": true
+        },
+        {
+          "material": "CitySidewalk_Base",
+          "rgbCount": 2196,
+          "uniqueTints": 1,
+          "constantPerTriangle": true,
+          "nonPavingWhite": true
+        },
+        {
+          "material": "CitySidewalk_Soil",
+          "rgbCount": 1008,
+          "uniqueTints": 1,
+          "constantPerTriangle": true,
+          "nonPavingWhite": true
+        },
+        {
+          "material": "CitySidewalk_Tactile",
+          "rgbCount": 20112,
+          "uniqueTints": 1,
+          "constantPerTriangle": true,
+          "nonPavingWhite": true
+        },
+        {
+          "material": "CitySidewalk_Planting",
+          "rgbCount": 13440,
+          "uniqueTints": 1,
+          "constantPerTriangle": true,
+          "nonPavingWhite": true
+        }
+      ]
+    }
+  },
+  "entrances": {
+    "sha256": "e273abcc2622e6c015b44bbc56c711d7f814929f7596851de9c51a1f6e676e00",
+    "meshes": {
+      "CityEntrance_B03_glass": {
+        "mesh": "/Game/Scenes/City/Modern/city-entrances/StaticMeshes/city-entrances_mesh_1.city-entrances_mesh_1",
+        "worldBoundsCm": {
+          "min": [
+            -2212.0,
+            -8849.5,
+            688.0
+          ],
+          "max": [
+            -2058.0,
+            -8356.5,
+            1010.9999389648438
+          ]
+        },
+        "hasVertexColors": true
+      },
+      "CityEntrance_B07_terrace": {
+        "mesh": "/Game/Scenes/City/Modern/city-entrances/StaticMeshes/city-entrances_mesh_3.city-entrances_mesh_3",
+        "worldBoundsCm": {
+          "min": [
+            2135.0,
+            -449.5,
+            688.0
+          ],
+          "max": [
+            3482.3798828125,
+            262.1000061035156,
+            3128.400146484375
+          ]
+        },
+        "hasVertexColors": true
+      },
+      "CityEntrance_B11_terrace": {
+        "mesh": "/Game/Scenes/City/Modern/city-entrances/StaticMeshes/city-entrances_mesh_5.city-entrances_mesh_5",
+        "worldBoundsCm": {
+          "min": [
+            2108.0,
+            -20369.5,
+            688.0
+          ],
+          "max": [
+            3330.739990234375,
+            -19601.900390625,
+            6760.0
+          ]
+        },
+        "hasVertexColors": true
+      },
+      "CityEntrance_B04_terrace": {
+        "mesh": "/Game/Scenes/City/Modern/city-entrances/StaticMeshes/city-entrances_mesh_6.city-entrances_mesh_6",
+        "worldBoundsCm": {
+          "min": [
+            -3860.66015625,
+            -13480.0,
+            5185.0
+          ],
+          "max": [
+            -3682.659912109375,
+            -13437.8994140625,
+            5440.0
+          ]
+        },
+        "hasVertexColors": true
+      },
+      "CityEntrance_B01_terrace": {
+        "mesh": "/Game/Scenes/City/Modern/city-entrances/StaticMeshes/city-entrances_mesh_0.city-entrances_mesh_0",
+        "worldBoundsCm": {
+          "min": [
+            -3289.619873046875,
+            30.5,
+            688.0
+          ],
+          "max": [
+            -2058.0,
+            728.1000366210938,
+            3128.400146484375
+          ]
+        },
+        "hasVertexColors": true
+      },
+      "CityEntrance_B05_fins": {
+        "mesh": "/Game/Scenes/City/Modern/city-entrances/StaticMeshes/city-entrances_mesh_2.city-entrances_mesh_2",
+        "worldBoundsCm": {
+          "min": [
+            -2212.0,
+            -19329.5,
+            688.0
+          ],
+          "max": [
+            -2057.25,
+            -18836.5,
+            1010.9999389648438
+          ]
+        },
+        "hasVertexColors": true
+      },
+      "CityEntrance_B09_fins": {
+        "mesh": "/Game/Scenes/City/Modern/city-entrances/StaticMeshes/city-entrances_mesh_4.city-entrances_mesh_4",
+        "worldBoundsCm": {
+          "min": [
+            2007.25,
+            -9509.5,
+            688.0
+          ],
+          "max": [
+            2162.0,
+            -9016.5,
+            1010.9999389648438
+          ]
+        },
+        "hasVertexColors": true
+      }
+    },
+    "streetEntrances": 6,
+    "balconyDoors": 4
+  },
+  "roads": {
+    "sha256": "14c1370576e321ea86b1b388fe331d497dc087c021abcab574606f9ad8db8e85",
+    "meshes": {
+      "CityRoadMarkings_White": {
+        "mesh": "/Game/Scenes/City/Modern/city-road-markings/StaticMeshes/city-road-markings_mesh_0.city-road-markings_mesh_0",
+        "worldBoundsCm": {
+          "min": [
+            -1477.5,
+            -39400.0,
+            687.25
+          ],
+          "max": [
+            1175.0,
+            3600.0,
+            690.25
+          ]
+        },
+        "fallbackTriangles": 517,
+        "material": "/Game/Scenes/City/Modern/Materials/M_CityRoad_White.M_CityRoad_White",
+        "castShadow": false
+      },
+      "CityRoadMarkings_Yellow": {
+        "mesh": "/Game/Scenes/City/Modern/city-road-markings/StaticMeshes/city-road-markings_mesh_1.city-road-markings_mesh_1",
+        "worldBoundsCm": {
+          "min": [
+            -22.5,
+            -39400.0,
+            687.25
+          ],
+          "max": [
+            22.5,
+            3600.0,
+            687.25
+          ]
+        },
+        "fallbackTriangles": 12,
+        "material": "/Game/Scenes/City/Modern/Materials/M_CityRoad_Yellow.M_CityRoad_Yellow",
+        "castShadow": false
+      }
+    },
+    "roadBindings": {
+      "OOW_00032_city_grounding_underlay": "/Game/Scenes/City/Modern/Materials/M_CityRoad_Concrete.M_CityRoad_Concrete",
+      "OOW_00033_Mesh": "/Game/Scenes/City/Modern/Materials/M_CityRoad_Asphalt.M_CityRoad_Asphalt",
+      "OOW_00034_Mesh": "/Game/Scenes/City/Modern/Materials/M_CityRoad_Parking.M_CityRoad_Parking",
+      "OOW_00035_Mesh": "/Game/Scenes/City/Modern/Materials/M_CityRoad_Parking.M_CityRoad_Parking",
+      "OOW_00036_Mesh": "/Game/Scenes/City/Modern/Materials/M_CityRoad_Cycle.M_CityRoad_Cycle"
+    },
+    "asphaltTextureBindings": {
+      "diffuse": "/Game/Scenes/City/Modern/RoadTextures/Asphalt02_diffuse.Asphalt02_diffuse",
+      "roughness": "/Game/Scenes/City/Modern/RoadTextures/Asphalt02_roughness.Asphalt02_roughness",
+      "normal": "/Game/Scenes/City/Modern/RoadTextures/Asphalt02_normal.Asphalt02_normal"
+    },
+    "geometryChecks": {
+      "passed": true,
+      "tests": 21
+    }
+  },
+  "nightLighting": {
+    "version": "city-office-light-v1",
+    "buildings": {
+      "CityModern_B07_terrace": {
+        "mesh": "/Game/Scenes/City/Modern/modern-city/StaticMeshes/modern-city_mesh_6.modern-city_mesh_6",
+        "hasVertexColors": true
+      },
+      "CityModern_B01_terrace": {
+        "mesh": "/Game/Scenes/City/Modern/modern-city/StaticMeshes/modern-city_mesh_0.modern-city_mesh_0",
+        "hasVertexColors": true
+      },
+      "CityModern_B10_glass": {
+        "mesh": "/Game/Scenes/City/Modern/modern-city/StaticMeshes/modern-city_mesh_9.modern-city_mesh_9",
+        "hasVertexColors": true
+      },
+      "CityModern_B13_glass": {
+        "mesh": "/Game/Scenes/City/Modern/modern-city/StaticMeshes/modern-city_mesh_12.modern-city_mesh_12",
+        "hasVertexColors": true
+      },
+      "CityModern_B15_glass": {
+        "mesh": "/Game/Scenes/City/Modern/modern-city/StaticMeshes/modern-city_mesh_14.modern-city_mesh_14",
+        "hasVertexColors": true
+      },
+      "CityModern_B02_fins": {
+        "mesh": "/Game/Scenes/City/Modern/modern-city/StaticMeshes/modern-city_mesh_1.modern-city_mesh_1",
+        "hasVertexColors": true
+      },
+      "CityModern_B03_glass": {
+        "mesh": "/Game/Scenes/City/Modern/modern-city/StaticMeshes/modern-city_mesh_2.modern-city_mesh_2",
+        "hasVertexColors": true
+      },
+      "CityModern_B06_glass": {
+        "mesh": "/Game/Scenes/City/Modern/modern-city/StaticMeshes/modern-city_mesh_5.modern-city_mesh_5",
+        "hasVertexColors": true
+      },
+      "CityModern_B08_glass": {
+        "mesh": "/Game/Scenes/City/Modern/modern-city/StaticMeshes/modern-city_mesh_7.modern-city_mesh_7",
+        "hasVertexColors": true
+      },
+      "CityModern_B11_terrace": {
+        "mesh": "/Game/Scenes/City/Modern/modern-city/StaticMeshes/modern-city_mesh_10.modern-city_mesh_10",
+        "hasVertexColors": true
+      },
+      "CityModern_B12_fins": {
+        "mesh": "/Game/Scenes/City/Modern/modern-city/StaticMeshes/modern-city_mesh_11.modern-city_mesh_11",
+        "hasVertexColors": true
+      },
+      "CityModern_B14_fins": {
+        "mesh": "/Game/Scenes/City/Modern/modern-city/StaticMeshes/modern-city_mesh_13.modern-city_mesh_13",
+        "hasVertexColors": true
+      },
+      "CityModern_B05_fins": {
+        "mesh": "/Game/Scenes/City/Modern/modern-city/StaticMeshes/modern-city_mesh_4.modern-city_mesh_4",
+        "hasVertexColors": true
+      },
+      "CityModern_B09_fins": {
+        "mesh": "/Game/Scenes/City/Modern/modern-city/StaticMeshes/modern-city_mesh_8.modern-city_mesh_8",
+        "hasVertexColors": true
+      },
+      "CityModern_B16_terrace": {
+        "mesh": "/Game/Scenes/City/Modern/modern-city/StaticMeshes/modern-city_mesh_15.modern-city_mesh_15",
+        "hasVertexColors": true
+      },
+      "CityModern_B04_terrace": {
+        "mesh": "/Game/Scenes/City/Modern/modern-city/StaticMeshes/modern-city_mesh_3.modern-city_mesh_3",
+        "hasVertexColors": true
+      }
+    },
+    "materials": {
+      "M_CityModern_Hero_Glass": {
+        "version": "city-office-light-v1",
+        "gain": 0.06499999761581421,
+        "connectedParameters": [
+          "Night"
+        ]
+      },
+      "M_CityModern_Glass_Day_Silver": {
+        "version": "city-office-light-v1",
+        "gain": 0.06499999761581421,
+        "connectedParameters": [
+          "Night"
+        ]
+      },
+      "M_Glass_Lit_CityModern_Warm": {
+        "version": "city-office-light-v1",
+        "gain": 0.06499999761581421,
+        "connectedParameters": [
+          "Night"
+        ]
+      },
+      "M_CityModern_Glass_Day_Blue": {
+        "version": "city-office-light-v1",
+        "gain": 0.06499999761581421,
+        "connectedParameters": [
+          "Night"
+        ]
+      }
+    },
+    "sourceGeometrySha256": "8063f1d17e102bb15b5b16d025bbddcc312a5cadd13f0d362b790d6186b336cc",
+    "exportedChecks": {
+      "passed": true,
+      "allPrimitivesHaveColor0": true,
+      "actualNearPaneCount": 13724,
+      "actualHeroPaneCount": 630,
+      "geometryUnchanged": true,
+      "materialsUnchanged": true,
+      "beforeGeometrySha256": "9dc2a96b822fd1e532dcdf46032d428931510630c6fbc788fcb3d7ef685bf100",
+      "afterGeometrySha256": "9dc2a96b822fd1e532dcdf46032d428931510630c6fbc788fcb3d7ef685bf100",
+      "beforeMaterialSha256": "0c0ecc6cebaa8c816f0628399c666f96c57088e0175b5564fae6d56b0b8c2c6b",
+      "afterMaterialSha256": "0c0ecc6cebaa8c816f0628399c666f96c57088e0175b5564fae6d56b0b8c2c6b",
+      "comparedSemantics": [
+        "POSITION",
+        "NORMAL",
+        "TEXCOORD_0",
+        "TEXCOORD_1",
+        "indices",
+        "material slots",
+        "node transforms"
+      ],
+      "previousGlbSha256": "970d26fc832a6f133da973c30b65e425258acc439f53ff2df224092b27aebdb2",
+      "glbSha256": "8063f1d17e102bb15b5b16d025bbddcc312a5cadd13f0d362b790d6186b336cc"
+    }
+  },
+  "distantLighting": {
+    "version": "city-distant-office-v1",
+    "meshActors": [
+      "CityModern_Context_Background",
+      "CityModern_Context_East",
+      "CityModern_Context_Reflection",
+      "CityModern_Context_Terminus",
+      "CityModern_Context_West",
+      "CityModern_Skyline01_setback",
+      "CityModern_Skyline02_twin",
+      "CityModern_Skyline03_setback",
+      "CityModern_Skyline04_setback",
+      "CityModern_Skyline05_twin",
+      "CityModern_Skyline06_setback",
+      "CityModern_Skyline07_setback",
+      "CityModern_Skyline08_setback",
+      "CityModern_Skyline09_twin",
+      "CityModern_Skyline10_setback",
+      "CityModern_Skyline11_setback",
+      "CityModern_Skyline12_twin",
+      "CityModern_Skyline13_twin",
+      "CityModern_Skyline14_setback",
+      "CityModern_Skyline15_setback",
+      "CityModern_Skyline16_twin",
+      "CityModern_Skyline17_setback",
+      "CityModern_Skyline18_setback"
+    ],
+    "materials": {
+      "M_CityModern_Skyline_Glass_Grey": {
+        "version": "city-distant-office-v1",
+        "gain": 0.02500000037252903,
+        "connectedParameters": [
+          "Night"
+        ]
+      },
+      "M_CityModern_Skyline_Glass_Blue": {
+        "version": "city-distant-office-v1",
+        "gain": 0.02500000037252903,
+        "connectedParameters": [
+          "Night"
+        ]
+      }
+    }
+  },
+  "streetLighting": {
+    "settings": {
+      "count": 18,
+      "lumens": 650.0,
+      "radiusCm": 4000.0,
+      "innerConeDegrees": 55.0,
+      "outerConeDegrees": 75.0,
+      "pitchDegrees": -82.0,
+      "temperatureK": 3800.0,
+      "extensions": [
+        {
+          "name": "CityModern_LED_W7",
+          "template": "CityModern_LED_W6",
+          "position": [
+            -14.8,
+            14.5,
+            -217.0
+          ],
+          "offsetCm": [
+            0.0,
+            -4000.0,
+            0.0
+          ],
+          "lumens": 550.0
+        },
+        {
+          "name": "CityModern_LED_W8",
+          "template": "CityModern_LED_W6",
+          "position": [
+            -14.8,
+            14.5,
+            -257.0
+          ],
+          "offsetCm": [
+            0.0,
+            -8000.0,
+            0.0
+          ],
+          "lumens": 450.0
+        },
+        {
+          "name": "CityModern_LED_W9",
+          "template": "CityModern_LED_W6",
+          "position": [
+            -14.8,
+            14.5,
+            -297.0
+          ],
+          "offsetCm": [
+            0.0,
+            -12000.0,
+            0.0
+          ],
+          "lumens": 350.0
+        },
+        {
+          "name": "CityModern_LED_E7",
+          "template": "CityModern_LED_E6",
+          "position": [
+            14.8,
+            14.5,
+            -217.0
+          ],
+          "offsetCm": [
+            0.0,
+            -4000.0,
+            0.0
+          ],
+          "lumens": 550.0
+        },
+        {
+          "name": "CityModern_LED_E8",
+          "template": "CityModern_LED_E6",
+          "position": [
+            14.8,
+            14.5,
+            -257.0
+          ],
+          "offsetCm": [
+            0.0,
+            -8000.0,
+            0.0
+          ],
+          "lumens": 450.0
+        },
+        {
+          "name": "CityModern_LED_E9",
+          "template": "CityModern_LED_E6",
+          "position": [
+            14.8,
+            14.5,
+            -297.0
+          ],
+          "offsetCm": [
+            0.0,
+            -12000.0,
+            0.0
+          ],
+          "lumens": 350.0
+        }
+      ]
+    },
+    "lights": {
+      "OOWCityLight_CityModern_LED_W1": {
+        "positionCm": [
+          -1480.0,
+          2300.0,
+          1450.0
+        ],
+        "direction": [
+          0.13917310096006463,
+          0.0,
+          -0.9902680687415707
+        ],
+        "intensity": 650.0,
+        "attenuation_radius": 4000.0,
+        "inner_cone_angle": 55.0,
+        "outer_cone_angle": 75.0,
+        "temperature": 3800.0,
+        "cast_shadows": false,
+        "affect_translucent_lighting": true,
+        "indirect_lighting_intensity": 0.0,
+        "volumetric_scattering_intensity": 0.0
+      },
+      "OOWCityLight_CityModern_LED_W2": {
+        "positionCm": [
+          -1480.0,
+          -1700.0,
+          1450.0
+        ],
+        "direction": [
+          0.13917310096006463,
+          0.0,
+          -0.9902680687415707
+        ],
+        "intensity": 650.0,
+        "attenuation_radius": 4000.0,
+        "inner_cone_angle": 55.0,
+        "outer_cone_angle": 75.0,
+        "temperature": 3800.0,
+        "cast_shadows": false,
+        "affect_translucent_lighting": true,
+        "indirect_lighting_intensity": 0.0,
+        "volumetric_scattering_intensity": 0.0
+      },
+      "OOWCityLight_CityModern_LED_W3": {
+        "positionCm": [
+          -1480.0,
+          -5700.0,
+          1450.0
+        ],
+        "direction": [
+          0.13917310096006463,
+          0.0,
+          -0.9902680687415707
+        ],
+        "intensity": 650.0,
+        "attenuation_radius": 4000.0,
+        "inner_cone_angle": 55.0,
+        "outer_cone_angle": 75.0,
+        "temperature": 3800.0,
+        "cast_shadows": false,
+        "affect_translucent_lighting": true,
+        "indirect_lighting_intensity": 0.0,
+        "volumetric_scattering_intensity": 0.0
+      },
+      "OOWCityLight_CityModern_LED_W4": {
+        "positionCm": [
+          -1480.0,
+          -9700.0,
+          1450.0
+        ],
+        "direction": [
+          0.13917310096006463,
+          0.0,
+          -0.9902680687415707
+        ],
+        "intensity": 650.0,
+        "attenuation_radius": 4000.0,
+        "inner_cone_angle": 55.0,
+        "outer_cone_angle": 75.0,
+        "temperature": 3800.0,
+        "cast_shadows": false,
+        "affect_translucent_lighting": true,
+        "indirect_lighting_intensity": 0.0,
+        "volumetric_scattering_intensity": 0.0
+      },
+      "OOWCityLight_CityModern_LED_W5": {
+        "positionCm": [
+          -1480.0,
+          -13700.0,
+          1450.0
+        ],
+        "direction": [
+          0.13917310096006463,
+          0.0,
+          -0.9902680687415707
+        ],
+        "intensity": 650.0,
+        "attenuation_radius": 4000.0,
+        "inner_cone_angle": 55.0,
+        "outer_cone_angle": 75.0,
+        "temperature": 3800.0,
+        "cast_shadows": false,
+        "affect_translucent_lighting": true,
+        "indirect_lighting_intensity": 0.0,
+        "volumetric_scattering_intensity": 0.0
+      },
+      "OOWCityLight_CityModern_LED_W6": {
+        "positionCm": [
+          -1480.0,
+          -17700.0,
+          1450.0
+        ],
+        "direction": [
+          0.13917310096006463,
+          0.0,
+          -0.9902680687415707
+        ],
+        "intensity": 650.0,
+        "attenuation_radius": 4000.0,
+        "inner_cone_angle": 55.0,
+        "outer_cone_angle": 75.0,
+        "temperature": 3800.0,
+        "cast_shadows": false,
+        "affect_translucent_lighting": true,
+        "indirect_lighting_intensity": 0.0,
+        "volumetric_scattering_intensity": 0.0
+      },
+      "OOWCityLight_CityModern_LED_E1": {
+        "positionCm": [
+          1480.0,
+          2300.0,
+          1450.0
+        ],
+        "direction": [
+          -0.1391731009600634,
+          1.704378926181535e-17,
+          -0.9902680687415703
+        ],
+        "intensity": 650.0,
+        "attenuation_radius": 4000.0,
+        "inner_cone_angle": 55.0,
+        "outer_cone_angle": 75.0,
+        "temperature": 3800.0,
+        "cast_shadows": false,
+        "affect_translucent_lighting": true,
+        "indirect_lighting_intensity": 0.0,
+        "volumetric_scattering_intensity": 0.0
+      },
+      "OOWCityLight_CityModern_LED_E2": {
+        "positionCm": [
+          1480.0,
+          -1700.0,
+          1450.0
+        ],
+        "direction": [
+          -0.1391731009600634,
+          1.704378926181535e-17,
+          -0.9902680687415703
+        ],
+        "intensity": 650.0,
+        "attenuation_radius": 4000.0,
+        "inner_cone_angle": 55.0,
+        "outer_cone_angle": 75.0,
+        "temperature": 3800.0,
+        "cast_shadows": false,
+        "affect_translucent_lighting": true,
+        "indirect_lighting_intensity": 0.0,
+        "volumetric_scattering_intensity": 0.0
+      },
+      "OOWCityLight_CityModern_LED_E3": {
+        "positionCm": [
+          1480.0,
+          -5700.0,
+          1450.0
+        ],
+        "direction": [
+          -0.1391731009600634,
+          1.704378926181535e-17,
+          -0.9902680687415703
+        ],
+        "intensity": 650.0,
+        "attenuation_radius": 4000.0,
+        "inner_cone_angle": 55.0,
+        "outer_cone_angle": 75.0,
+        "temperature": 3800.0,
+        "cast_shadows": false,
+        "affect_translucent_lighting": true,
+        "indirect_lighting_intensity": 0.0,
+        "volumetric_scattering_intensity": 0.0
+      },
+      "OOWCityLight_CityModern_LED_E4": {
+        "positionCm": [
+          1480.0,
+          -9700.0,
+          1450.0
+        ],
+        "direction": [
+          -0.1391731009600634,
+          1.704378926181535e-17,
+          -0.9902680687415703
+        ],
+        "intensity": 650.0,
+        "attenuation_radius": 4000.0,
+        "inner_cone_angle": 55.0,
+        "outer_cone_angle": 75.0,
+        "temperature": 3800.0,
+        "cast_shadows": false,
+        "affect_translucent_lighting": true,
+        "indirect_lighting_intensity": 0.0,
+        "volumetric_scattering_intensity": 0.0
+      },
+      "OOWCityLight_CityModern_LED_E5": {
+        "positionCm": [
+          1480.0,
+          -13700.0,
+          1450.0
+        ],
+        "direction": [
+          -0.1391731009600634,
+          1.704378926181535e-17,
+          -0.9902680687415703
+        ],
+        "intensity": 650.0,
+        "attenuation_radius": 4000.0,
+        "inner_cone_angle": 55.0,
+        "outer_cone_angle": 75.0,
+        "temperature": 3800.0,
+        "cast_shadows": false,
+        "affect_translucent_lighting": true,
+        "indirect_lighting_intensity": 0.0,
+        "volumetric_scattering_intensity": 0.0
+      },
+      "OOWCityLight_CityModern_LED_E6": {
+        "positionCm": [
+          1480.0,
+          -17700.0,
+          1450.0
+        ],
+        "direction": [
+          -0.1391731009600634,
+          1.704378926181535e-17,
+          -0.9902680687415703
+        ],
+        "intensity": 650.0,
+        "attenuation_radius": 4000.0,
+        "inner_cone_angle": 55.0,
+        "outer_cone_angle": 75.0,
+        "temperature": 3800.0,
+        "cast_shadows": false,
+        "affect_translucent_lighting": true,
+        "indirect_lighting_intensity": 0.0,
+        "volumetric_scattering_intensity": 0.0
+      },
+      "OOWCityLight_CityModern_LED_W7": {
+        "positionCm": [
+          -1480.0,
+          -21700.0,
+          1450.0
+        ],
+        "direction": [
+          0.13917310096006463,
+          0.0,
+          -0.9902680687415707
+        ],
+        "intensity": 550.0,
+        "attenuation_radius": 4000.0,
+        "inner_cone_angle": 55.0,
+        "outer_cone_angle": 75.0,
+        "temperature": 3800.0,
+        "cast_shadows": false,
+        "affect_translucent_lighting": true,
+        "indirect_lighting_intensity": 0.0,
+        "volumetric_scattering_intensity": 0.0
+      },
+      "OOWCityLight_CityModern_LED_W8": {
+        "positionCm": [
+          -1480.0,
+          -25700.0,
+          1450.0
+        ],
+        "direction": [
+          0.13917310096006463,
+          0.0,
+          -0.9902680687415707
+        ],
+        "intensity": 450.0,
+        "attenuation_radius": 4000.0,
+        "inner_cone_angle": 55.0,
+        "outer_cone_angle": 75.0,
+        "temperature": 3800.0,
+        "cast_shadows": false,
+        "affect_translucent_lighting": true,
+        "indirect_lighting_intensity": 0.0,
+        "volumetric_scattering_intensity": 0.0
+      },
+      "OOWCityLight_CityModern_LED_W9": {
+        "positionCm": [
+          -1480.0,
+          -29700.0,
+          1450.0
+        ],
+        "direction": [
+          0.13917310096006463,
+          0.0,
+          -0.9902680687415707
+        ],
+        "intensity": 350.0,
+        "attenuation_radius": 4000.0,
+        "inner_cone_angle": 55.0,
+        "outer_cone_angle": 75.0,
+        "temperature": 3800.0,
+        "cast_shadows": false,
+        "affect_translucent_lighting": true,
+        "indirect_lighting_intensity": 0.0,
+        "volumetric_scattering_intensity": 0.0
+      },
+      "OOWCityLight_CityModern_LED_E7": {
+        "positionCm": [
+          1480.0,
+          -21700.0,
+          1450.0
+        ],
+        "direction": [
+          -0.1391731009600634,
+          1.704378926181535e-17,
+          -0.9902680687415703
+        ],
+        "intensity": 550.0,
+        "attenuation_radius": 4000.0,
+        "inner_cone_angle": 55.0,
+        "outer_cone_angle": 75.0,
+        "temperature": 3800.0,
+        "cast_shadows": false,
+        "affect_translucent_lighting": true,
+        "indirect_lighting_intensity": 0.0,
+        "volumetric_scattering_intensity": 0.0
+      },
+      "OOWCityLight_CityModern_LED_E8": {
+        "positionCm": [
+          1480.0,
+          -25700.0,
+          1450.0
+        ],
+        "direction": [
+          -0.1391731009600634,
+          1.704378926181535e-17,
+          -0.9902680687415703
+        ],
+        "intensity": 450.0,
+        "attenuation_radius": 4000.0,
+        "inner_cone_angle": 55.0,
+        "outer_cone_angle": 75.0,
+        "temperature": 3800.0,
+        "cast_shadows": false,
+        "affect_translucent_lighting": true,
+        "indirect_lighting_intensity": 0.0,
+        "volumetric_scattering_intensity": 0.0
+      },
+      "OOWCityLight_CityModern_LED_E9": {
+        "positionCm": [
+          1480.0,
+          -29700.0,
+          1450.0
+        ],
+        "direction": [
+          -0.1391731009600634,
+          1.704378926181535e-17,
+          -0.9902680687415703
+        ],
+        "intensity": 350.0,
+        "attenuation_radius": 4000.0,
+        "inner_cone_angle": 55.0,
+        "outer_cone_angle": 75.0,
+        "temperature": 3800.0,
+        "cast_shadows": false,
+        "affect_translucent_lighting": true,
+        "indirect_lighting_intensity": 0.0,
+        "volumetric_scattering_intensity": 0.0
+      }
+    },
+    "extendedPoles": {
+      "CityModern_LED_W7": {
+        "template": "CityModern_LED_W6",
+        "mesh": "/Game/Scenes/City/Modern/modern-city/StaticMeshes/modern-city_mesh_45.modern-city_mesh_45",
+        "offsetCm": [
+          0.0,
+          -4000.0,
+          0.0
+        ],
+        "lumens": 550.0
+      },
+      "CityModern_LED_W8": {
+        "template": "CityModern_LED_W6",
+        "mesh": "/Game/Scenes/City/Modern/modern-city/StaticMeshes/modern-city_mesh_45.modern-city_mesh_45",
+        "offsetCm": [
+          0.0,
+          -8000.0,
+          0.0
+        ],
+        "lumens": 450.0
+      },
+      "CityModern_LED_W9": {
+        "template": "CityModern_LED_W6",
+        "mesh": "/Game/Scenes/City/Modern/modern-city/StaticMeshes/modern-city_mesh_45.modern-city_mesh_45",
+        "offsetCm": [
+          0.0,
+          -12000.0,
+          0.0
+        ],
+        "lumens": 350.0
+      },
+      "CityModern_LED_E7": {
+        "template": "CityModern_LED_E6",
+        "mesh": "/Game/Scenes/City/Modern/modern-city/StaticMeshes/modern-city_mesh_51.modern-city_mesh_51",
+        "offsetCm": [
+          0.0,
+          -4000.0,
+          0.0
+        ],
+        "lumens": 550.0
+      },
+      "CityModern_LED_E8": {
+        "template": "CityModern_LED_E6",
+        "mesh": "/Game/Scenes/City/Modern/modern-city/StaticMeshes/modern-city_mesh_51.modern-city_mesh_51",
+        "offsetCm": [
+          0.0,
+          -8000.0,
+          0.0
+        ],
+        "lumens": 450.0
+      },
+      "CityModern_LED_E9": {
+        "template": "CityModern_LED_E6",
+        "mesh": "/Game/Scenes/City/Modern/modern-city/StaticMeshes/modern-city_mesh_51.modern-city_mesh_51",
+        "offsetCm": [
+          0.0,
+          -12000.0,
+          0.0
+        ],
+        "lumens": 350.0
+      }
+    }
+  }
+}

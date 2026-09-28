@@ -1,0 +1,112 @@
+{
+  "recipe": "masonry-joint-relief-v1",
+  "actor": "OOW_00762_paris_building_09_10",
+  "assetName": "OOW_MasonryRelief_09_10_v1",
+  "actorCount": 1,
+  "sourceMeshIndex": 686,
+  "material": "/Game/Materials/OOW/Instances/MI_stone___v2_8a386af60c.MI_stone___v2_8a386af60c",
+  "appliedToUnreal": true,
+  "beforeTriangles": 474,
+  "triangles": 31042,
+  "vertices": 16815,
+  "generatedSha256": "c4d64358bcb5302c7cc827489446eec32192e41a70b98eacf8ba6106316d32c7",
+  "reliefMeters": [
+    -0.008,
+    0.0019860805860805863
+  ],
+  "mortarDepthMeters": 0.008,
+  "hardCapMeters": 0.012,
+  "blockVariationMeters": 0.002,
+  "boundaryFadeMeters": 0.08,
+  "activeSourceTriangles": 220,
+  "untouchedBackAndHorizontalTriangles": 254,
+  "scope": "Only camera-facing continuous vertical patches on this one actor",
+  "jointRowsPixels1024": [
+    0.125,
+    104.938,
+    256.135,
+    360.972,
+    512.086,
+    617.004,
+    768.123,
+    872.98,
+    1024.125
+  ],
+  "jointShoulderPixels1024": 4.0,
+  "boundaryOrHardOrUVSeamEdges": 401,
+  "continuousInternalEdgesNotFaded": 401,
+  "boundarySamplesUnmoved": 5366,
+  "maxSharedEdgeGapMeters": 1.4361051321577447e-13,
+  "sourceAreaSquareMeters": 445.9423458408841,
+  "coverageRelativeError": 3.186702238022615e-15,
+  "maxUVInterpolationError": 3.554447978966673e-15,
+  "sourceNormals": "Preserved/interpolated, never recomputed",
+  "heightSource": "Authored joint coordinates from normal map; no BaseColor sampling",
+  "exportLocalBounds": [
+    [
+      -1817.1739501953127,
+      191.13000488281247
+    ],
+    [
+      517.9999999999998,
+      845.0059814453128
+    ],
+    [
+      -3006.300048828126,
+      -942.8679809570291
+    ]
+  ],
+  "originalLocalBounds": [
+    [
+      -1817.1739501953125,
+      191.1300048828125
+    ],
+    [
+      518.0,
+      845.0059814453125
+    ],
+    [
+      -3006.300048828125,
+      -942.8679809570312
+    ]
+  ],
+  "sourceActorMatrix": [
+    0.016484268589478174,
+    0,
+    0,
+    0,
+    0,
+    0.016484268589478174,
+    0,
+    0,
+    0,
+    0,
+    0.016484268589478174,
+    0,
+    -10,
+    6.7914363039210635,
+    -205,
+    1
+  ],
+  "materialPolicy": "Reuse current single-actor UE weather material and Nanite settings",
+  "importedBeforeFallbackPolicy": {
+    "naniteEnabled": true,
+    "trianglesLOD0": 251
+  },
+  "reused": false,
+  "originalMesh": "/Game/Scenes/Alley/alley/StaticMeshes/alley_mesh_686.alley_mesh_686",
+  "repairedMesh": "/Game/Scenes/Alley/Repairs/OOW_MasonryRelief_09_10_v1/StaticMeshes/OOW_MasonryRelief_09_10_v1.OOW_MasonryRelief_09_10_v1",
+  "naniteEnabled": true,
+  "fallbackTriangles": 31042,
+  "naniteFallbackPolicy": {
+    "fallback_target": "<NaniteFallbackTarget.PERCENT_TRIANGLES: 1>",
+    "fallback_percent_triangles": 1.0,
+    "fallback_relative_error": 0.0,
+    "keep_percent_triangles": 1.0,
+    "trim_relative_error": 0.0,
+    "generate_fallback": "<NaniteGenerateFallback.ENABLED: 1>"
+  },
+  "rayTracingProxyEnabled": false,
+  "actorTransformsUnchanged": 1801,
+  "otherActorsUnchanged": 1800
+}

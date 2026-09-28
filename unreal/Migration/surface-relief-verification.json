@@ -1,0 +1,84 @@
+{
+  "date": "2026-09-24",
+  "strategy": "Offline authored geometry; ordinary Nanite with full-precision local ray-tracing fallback",
+  "roofActors": 2,
+  "roofTrianglesEach": 3972,
+  "roofEdgeInsetOutsetMeters": 0.027,
+  "roofSlateLipMeters": 0.009,
+  "roofNewCracks": 0,
+  "roofFloat32DegenerateTriangles": 0,
+  "masonryActors": 1,
+  "masonryTriangles": 31042,
+  "mortarDepthMeters": 0.008,
+  "blockVariationMeters": 0.002,
+  "boundaryFadeMeters": 0.08,
+  "roofAssetsApplied": true,
+  "masonryAssetApplied": true,
+  "fullFallbackReadbackVerified": true,
+  "separateRayTracingProxyEnabled": false,
+  "roofNormals": "Recomputed on moved vertices within original hard-edge groups",
+  "masonryNormals": "Source vertex normals and matched normal texture preserved to avoid double-counting joint slopes",
+  "heightSource": "Authored geometry profiles aligned to existing normal-map tile/stone courses; no albedo-derived height",
+  "packageBuildLog": ".runtime/ue-wallpaper/package.log",
+  "packageIncludesConcurrentWork": "Stable v8 wind and desktop changes from coordinated sibling tasks",
+  "packagedValidationLog": ".runtime/ue-roof-relief/packaged-validation.log",
+  "cases": [
+    {
+      "case": "alley-afternoon",
+      "passed": true,
+      "hour": 16.5,
+      "weather": "clear",
+      "camera": [
+        -2000,
+        -20800,
+        2300
+      ],
+      "fov": 78.19409942626953,
+      "solarElevation": 16.345178604125977,
+      "lumenGI": 1,
+      "lumenReflections": 1,
+      "hardwareRayTracing": 1,
+      "naniteComponents": 1650,
+      "windowFronts": 66,
+      "windowBackings": 66,
+      "interiorLightLumens": 0,
+      "frameIntervalP95Ms": 33.9275016784668,
+      "captureSha256": "7D21CB8AF9D374131A7547110B07AA0E1D474580DEDFD5AA69D0D77B0690CEE7"
+    },
+    {
+      "case": "alley-night",
+      "passed": true,
+      "hour": 23,
+      "weather": "clear",
+      "camera": [
+        -2000,
+        -20800,
+        2300
+      ],
+      "fov": 78.19409942626953,
+      "solarElevation": -56.830711364746094,
+      "lumenGI": 1,
+      "lumenReflections": 1,
+      "hardwareRayTracing": 1,
+      "naniteComponents": 1650,
+      "windowFronts": 66,
+      "windowBackings": 66,
+      "interiorLightLumens": 24.203731536865234,
+      "frameIntervalP95Ms": 32.000701904296875,
+      "captureSha256": "0B3C7FEC23B4AE56812D7C0985FE6044A59FACAC49BE68C494EA183850675DF8"
+    }
+  ],
+  "visualReview": "Actual packaged afternoon and night GPU renders inspected. Roof edge has subtle course-aligned notches, no open seams; masonry joint relief aligns with the source texture and leaves openings/corners unchanged.",
+  "editorSupplement": {
+    "hour": 16,
+    "resolution": [
+      2560,
+      1640
+    ],
+    "capture": "Art/Lookdev/alley-surface-relief-editor-1600.png",
+    "note": "Initial unquoted PowerShell fractional hour was split; audit identified 16:00. Final packaged afternoon case independently verified exact 16.5."
+  },
+  "performanceNote": "Frame interval smoke checks only; concurrent development/GPU work means these are not a controlled geometry benchmark",
+  "importPipeline": "repair_roof_geometry.py then build_masonry_relief.py in Run-Unreal Import",
+  "unmodifiedSurfacePolicy": "Distant brick/stone, plaster and fine concrete retain existing normal maps"
+}

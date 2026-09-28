@@ -1,0 +1,421 @@
+{
+  "actor": "OOW_00760_paris_building_09_8",
+  "sourceMaterial": "MASTER_Glass_Clean",
+  "generatedPositionsMatchOriginalPerTriangle": true,
+  "uShapedEmissiveBorderCount": 12,
+  "uBorderTriangles": 144,
+  "shaderLitBorders": 6,
+  "borders": [
+    {
+      "triangles": [
+        36,
+        37,
+        38,
+        39,
+        40,
+        41
+      ],
+      "allComponentTriangles": [
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47
+      ],
+      "coverage": 0.17621500502389364,
+      "area": 1.282297425842577,
+      "roomId": "3af8362177c4111a",
+      "seed": 0.23034989833831787,
+      "shaderChoice": [
+        1,
+        true
+      ]
+    },
+    {
+      "triangles": [
+        48,
+        49,
+        50,
+        51,
+        52,
+        53
+      ],
+      "allComponentTriangles": [
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59
+      ],
+      "coverage": 0.17603385688606923,
+      "area": 1.2801947563070968,
+      "roomId": "e128d633783372ac",
+      "seed": 0.8795293569564819,
+      "shaderChoice": [
+        2,
+        false
+      ]
+    },
+    {
+      "triangles": [
+        60,
+        61,
+        62,
+        63,
+        64,
+        65
+      ],
+      "allComponentTriangles": [
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71
+      ],
+      "coverage": 0.17604255334957433,
+      "area": 1.2802206889316872,
+      "roomId": "95ca90c311f9a5c6",
+      "seed": 0.5851221084594727,
+      "shaderChoice": [
+        2,
+        true
+      ]
+    },
+    {
+      "triangles": [
+        72,
+        73,
+        74,
+        75,
+        76,
+        77
+      ],
+      "allComponentTriangles": [
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83
+      ],
+      "coverage": 0.17681139031762197,
+      "area": 1.2864311438723128,
+      "roomId": "9e2e249c21757ea5",
+      "seed": 0.6178915500640869,
+      "shaderChoice": [
+        5,
+        false
+      ]
+    },
+    {
+      "triangles": [
+        84,
+        85,
+        86,
+        87,
+        88,
+        89
+      ],
+      "allComponentTriangles": [
+        84,
+        85,
+        86,
+        87,
+        88,
+        89,
+        90,
+        91,
+        92,
+        93,
+        94,
+        95
+      ],
+      "coverage": 0.17636379617228184,
+      "area": 1.2833963190757105,
+      "roomId": "619b74d3a2033b3e",
+      "seed": 0.38127827644348145,
+      "shaderChoice": [
+        5,
+        true
+      ]
+    },
+    {
+      "triangles": [
+        96,
+        97,
+        98,
+        99,
+        100,
+        101
+      ],
+      "allComponentTriangles": [
+        96,
+        97,
+        98,
+        99,
+        100,
+        101,
+        102,
+        103,
+        104,
+        105,
+        106,
+        107
+      ],
+      "coverage": 0.17694146725880952,
+      "area": 1.2881286973893924,
+      "roomId": "df9694a50dbf49a3",
+      "seed": 0.8733913898468018,
+      "shaderChoice": [
+        2,
+        true
+      ]
+    },
+    {
+      "triangles": [
+        108,
+        109,
+        110,
+        111,
+        112,
+        113
+      ],
+      "allComponentTriangles": [
+        108,
+        109,
+        110,
+        111,
+        112,
+        113,
+        114,
+        115,
+        116,
+        117,
+        118,
+        119
+      ],
+      "coverage": 0.17617288112605323,
+      "area": 1.2811838044874548,
+      "roomId": "79adb7c9ba530617",
+      "seed": 0.4753069281578064,
+      "shaderChoice": [
+        3,
+        true
+      ]
+    },
+    {
+      "triangles": [
+        120,
+        121,
+        122,
+        123,
+        124,
+        125
+      ],
+      "allComponentTriangles": [
+        120,
+        121,
+        122,
+        123,
+        124,
+        125,
+        126,
+        127,
+        128,
+        129,
+        130,
+        131
+      ],
+      "coverage": 0.1765129197295422,
+      "area": 1.2835797190980571,
+      "roomId": "e4c445b3a784e412",
+      "seed": 0.8936198353767395,
+      "shaderChoice": [
+        4,
+        false
+      ]
+    },
+    {
+      "triangles": [
+        132,
+        133,
+        134,
+        135,
+        136,
+        137
+      ],
+      "allComponentTriangles": [
+        132,
+        133,
+        134,
+        135,
+        136,
+        137,
+        138,
+        139,
+        140,
+        141,
+        142,
+        143
+      ],
+      "coverage": 0.17699500052258618,
+      "area": 1.2878904181397002,
+      "roomId": "7f6a803b7bbea0ad",
+      "seed": 0.49771881103515625,
+      "shaderChoice": [
+        5,
+        false
+      ]
+    },
+    {
+      "triangles": [
+        144,
+        145,
+        146,
+        147,
+        148,
+        149
+      ],
+      "allComponentTriangles": [
+        144,
+        145,
+        146,
+        147,
+        148,
+        149,
+        150,
+        151,
+        152,
+        153,
+        154,
+        155
+      ],
+      "coverage": 0.1765290593450356,
+      "area": 1.2835160501268073,
+      "roomId": "93207f1782ea1b07",
+      "seed": 0.5747146010398865,
+      "shaderChoice": [
+        1,
+        false
+      ]
+    },
+    {
+      "triangles": [
+        156,
+        157,
+        158,
+        159,
+        160,
+        161
+      ],
+      "allComponentTriangles": [
+        156,
+        157,
+        158,
+        159,
+        160,
+        161,
+        162,
+        163,
+        164,
+        165,
+        166,
+        167
+      ],
+      "coverage": 0.1763259369229743,
+      "area": 1.2822932565515082,
+      "roomId": "3a97f7a69057dc12",
+      "seed": 0.22888129949569702,
+      "shaderChoice": [
+        1,
+        true
+      ]
+    },
+    {
+      "triangles": [
+        172,
+        173,
+        174,
+        175,
+        176,
+        177
+      ],
+      "allComponentTriangles": [
+        172,
+        173,
+        174,
+        175,
+        176,
+        177,
+        178,
+        179,
+        180,
+        181,
+        182,
+        183
+      ],
+      "coverage": 0.17624596639339205,
+      "area": 1.2823429229243604,
+      "roomId": "f330e4e8524cb1d3",
+      "seed": 0.9499647617340088,
+      "shaderChoice": [
+        4,
+        false
+      ]
+    }
+  ],
+  "example": {
+    "roomId": "79adb7c9ba530617",
+    "outerWidthMeters": 2.366215797588428,
+    "outerHeightMeters": 3.073380966596943,
+    "topStripHeightMeters": 0.191070632116584,
+    "leftStripWidthMeters": 0.1705,
+    "rightStripWidthMeters": 0.1366,
+    "realPaneTriangles": [
+      6,
+      7
+    ],
+    "realPaneRoom": "fdf301dfa678ff37",
+    "realPaneDepthFromBorderMeters": [
+      -0.639935,
+      -0.626468
+    ],
+    "shutterActor": "OOW_00770_paris_building_09_19",
+    "shutterDepthFromBorderMeters": [
+      -0.570914,
+      -0.043962
+    ],
+    "woodFrameActor": "OOW_00767_paris_building_09_15",
+    "woodFrameDepthFromBorderMeters": [
+      -0.705993,
+      -0.58416
+    ]
+  }
+}

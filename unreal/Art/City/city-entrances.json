@@ -1,0 +1,1084 @@
+{
+  "name": "Original Avenue Entrance Details",
+  "file": "city-entrances.glb",
+  "generator": "unreal/Scripts/prepare_city_entrances.mjs",
+  "source": "Original procedural entrance geometry authored for OutOfWindow; no downloaded assets or textures.",
+  "sourceGeometry": {
+    "file": "modern-city.glb",
+    "sha256": "8063f1d17e102bb15b5b16d025bbddcc312a5cadd13f0d362b790d6186b336cc"
+  },
+  "sha256": "e273abcc2622e6c015b44bbc56c711d7f814929f7596851de9c51a1f6e676e00",
+  "license": "CC0-1.0",
+  "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "units": "metres",
+  "axes": {
+    "up": "+Y",
+    "avenue": "Z",
+    "unrealImport": "glTF (x, y, z) maps to UE (x, z, y)."
+  },
+  "floorY": 7.04,
+  "meshCount": 7,
+  "triangles": 8360,
+  "primitives": 31,
+  "bytes": 1371932,
+  "entrances": [
+    {
+      "building": "CityModern_B01_terrace",
+      "facadeX": -22,
+      "centreZ": 2.8000000000000007,
+      "streetDirection": 1,
+      "sidewalkOuterX": -21.35,
+      "sidewalkStartU": 0.6499999999999986,
+      "meshName": "CityEntrance_B01_terrace",
+      "entrancePosition": [
+        -21.57,
+        7.04,
+        2.8
+      ],
+      "bounds": {
+        "min": [
+          -32.8962,
+          6.88,
+          0.305
+        ],
+        "max": [
+          -20.58,
+          31.284,
+          7.281
+        ]
+      },
+      "floorY": 7.04,
+      "doorHeight": 2.42,
+      "doorWidth": 2.42,
+      "doorFrontU": 0.4725,
+      "portalStreetU": 1.4275,
+      "portalWidth": 4.99,
+      "portalHeight": 3.07,
+      "canopyPostCentres": [
+        [
+          -20.35,
+          6.9,
+          0.05
+        ],
+        [
+          -20.35,
+          6.9,
+          5.55
+        ]
+      ],
+      "apron": {
+        "u": [
+          -0.12,
+          0.65
+        ],
+        "z": [
+          0.39,
+          5.21
+        ],
+        "topY": 7.04
+      },
+      "triangles": 1480,
+      "materialSlots": [
+        "CityModern_Limestone",
+        "CityModern_PaleStone",
+        "CityModern_Metal",
+        "CityModern_Glass_Day_Silver",
+        "CityModern_Roof"
+      ],
+      "features": [
+        "Level, step-free approach at Y=7.04; apron ends exactly at sidewalk outer edge",
+        "Beveled projecting stone portal, deep side returns, metal reveals and seven soffit slats",
+        "Double opaque glass door, kickplates, transom, fixed sidelights, separate round pull handles and 12mm sill",
+        "Six mail slots with lock geometry, plain stone address plaque and intercom"
+      ]
+    },
+    {
+      "building": "CityModern_B03_glass",
+      "facadeX": -22,
+      "centreZ": -86,
+      "streetDirection": 1,
+      "sidewalkOuterX": -21.35,
+      "sidewalkStartU": 0.6499999999999986,
+      "meshName": "CityEntrance_B03_glass",
+      "entrancePosition": [
+        -21.57,
+        7.04,
+        -86
+      ],
+      "bounds": {
+        "min": [
+          -22.12,
+          6.88,
+          -88.495
+        ],
+        "max": [
+          -20.58,
+          10.11,
+          -83.565
+        ]
+      },
+      "floorY": 7.04,
+      "doorHeight": 2.42,
+      "doorWidth": 2.42,
+      "doorFrontU": 0.4725,
+      "portalStreetU": 1.4275,
+      "portalWidth": 4.99,
+      "portalHeight": 3.07,
+      "canopyPostCentres": [
+        [
+          -20.35,
+          6.9,
+          -88.75
+        ],
+        [
+          -20.35,
+          6.9,
+          -83.25
+        ]
+      ],
+      "apron": {
+        "u": [
+          -0.12,
+          0.65
+        ],
+        "z": [
+          -88.41,
+          -83.59
+        ],
+        "topY": 7.04
+      },
+      "triangles": 1184,
+      "materialSlots": [
+        "CityModern_PaleStone",
+        "CityModern_Metal",
+        "CityModern_Glass_Day_Silver",
+        "CityModern_Roof"
+      ],
+      "features": [
+        "Level, step-free approach at Y=7.04; apron ends exactly at sidewalk outer edge",
+        "Beveled projecting stone portal, deep side returns, metal reveals and seven soffit slats",
+        "Double opaque glass door, kickplates, transom, fixed sidelights, separate round pull handles and 12mm sill",
+        "Six mail slots with lock geometry, plain stone address plaque and intercom"
+      ]
+    },
+    {
+      "building": "CityModern_B05_fins",
+      "facadeX": -22,
+      "centreZ": -190.8,
+      "streetDirection": 1,
+      "sidewalkOuterX": -21.35,
+      "sidewalkStartU": 0.6499999999999986,
+      "meshName": "CityEntrance_B05_fins",
+      "entrancePosition": [
+        -21.57,
+        7.04,
+        -190.8
+      ],
+      "bounds": {
+        "min": [
+          -22.12,
+          6.88,
+          -193.295
+        ],
+        "max": [
+          -20.5725,
+          10.11,
+          -188.36501
+        ]
+      },
+      "floorY": 7.04,
+      "doorHeight": 2.42,
+      "doorWidth": 2.42,
+      "doorFrontU": 0.4725,
+      "portalStreetU": 1.4275,
+      "portalWidth": 4.99,
+      "portalHeight": 3.07,
+      "canopyPostCentres": [
+        [
+          -20.35,
+          6.9,
+          -193.55
+        ],
+        [
+          -20.35,
+          6.9,
+          -188.05
+        ]
+      ],
+      "apron": {
+        "u": [
+          -0.12,
+          0.65
+        ],
+        "z": [
+          -193.21,
+          -188.39
+        ],
+        "topY": 7.04
+      },
+      "triangles": 1220,
+      "materialSlots": [
+        "CityModern_Limestone",
+        "CityModern_PaleStone",
+        "CityModern_Metal",
+        "CityModern_Glass_Day_Silver",
+        "CityModern_Roof"
+      ],
+      "features": [
+        "Level, step-free approach at Y=7.04; apron ends exactly at sidewalk outer edge",
+        "Beveled projecting stone portal, deep side returns, metal reveals and seven soffit slats",
+        "Double opaque glass door, kickplates, transom, fixed sidelights, separate round pull handles and 12mm sill",
+        "Six mail slots with lock geometry, plain stone address plaque and intercom"
+      ]
+    },
+    {
+      "building": "CityModern_B07_terrace",
+      "facadeX": 23,
+      "centreZ": -2,
+      "streetDirection": -1,
+      "sidewalkOuterX": 21.35,
+      "sidewalkStartU": 1.6499999999999986,
+      "meshName": "CityEntrance_B07_terrace",
+      "entrancePosition": [
+        22.57,
+        7.04,
+        -2
+      ],
+      "bounds": {
+        "min": [
+          21.35,
+          6.88,
+          -4.495
+        ],
+        "max": [
+          34.8238,
+          31.284,
+          2.621
+        ]
+      },
+      "floorY": 7.04,
+      "doorHeight": 2.42,
+      "doorWidth": 2.42,
+      "doorFrontU": 0.4725,
+      "portalStreetU": 1.4275,
+      "portalWidth": 4.99,
+      "portalHeight": 3.07,
+      "canopyPostCentres": [
+        [
+          21.35,
+          6.9,
+          -4.75
+        ],
+        [
+          21.35,
+          6.9,
+          0.75
+        ]
+      ],
+      "apron": {
+        "u": [
+          -0.12,
+          1.65
+        ],
+        "z": [
+          -4.41,
+          0.41
+        ],
+        "topY": 7.04
+      },
+      "triangles": 1480,
+      "materialSlots": [
+        "CityModern_PaleStone",
+        "CityModern_Metal",
+        "CityModern_Glass_Day_Silver",
+        "CityModern_Roof"
+      ],
+      "features": [
+        "Level, step-free approach at Y=7.04; apron ends exactly at sidewalk outer edge",
+        "Beveled projecting stone portal, deep side returns, metal reveals and seven soffit slats",
+        "Double opaque glass door, kickplates, transom, fixed sidelights, separate round pull handles and 12mm sill",
+        "Six mail slots with lock geometry, plain stone address plaque and intercom"
+      ]
+    },
+    {
+      "building": "CityModern_B09_fins",
+      "facadeX": 21.5,
+      "centreZ": -92.6,
+      "streetDirection": -1,
+      "sidewalkOuterX": 21.35,
+      "sidewalkStartU": 0.14999999999999858,
+      "meshName": "CityEntrance_B09_fins",
+      "entrancePosition": [
+        21.07,
+        7.04,
+        -92.6
+      ],
+      "bounds": {
+        "min": [
+          20.0725,
+          6.88,
+          -95.095
+        ],
+        "max": [
+          21.62,
+          10.11,
+          -90.165
+        ]
+      },
+      "floorY": 7.04,
+      "doorHeight": 2.42,
+      "doorWidth": 2.42,
+      "doorFrontU": 0.4725,
+      "portalStreetU": 1.4275,
+      "portalWidth": 4.99,
+      "portalHeight": 3.07,
+      "canopyPostCentres": [
+        [
+          19.85,
+          6.9,
+          -95.35
+        ],
+        [
+          19.85,
+          6.9,
+          -89.85
+        ]
+      ],
+      "apron": {
+        "u": [
+          -0.12,
+          0.15
+        ],
+        "z": [
+          -95.01,
+          -90.19
+        ],
+        "topY": 7.04
+      },
+      "triangles": 1220,
+      "materialSlots": [
+        "CityModern_Limestone",
+        "CityModern_PaleStone",
+        "CityModern_Metal",
+        "CityModern_Glass_Day_Silver",
+        "CityModern_Roof"
+      ],
+      "features": [
+        "Level, step-free approach at Y=7.04; apron ends exactly at sidewalk outer edge",
+        "Beveled projecting stone portal, deep side returns, metal reveals and seven soffit slats",
+        "Double opaque glass door, kickplates, transom, fixed sidelights, separate round pull handles and 12mm sill",
+        "Six mail slots with lock geometry, plain stone address plaque and intercom"
+      ]
+    },
+    {
+      "building": "CityModern_B11_terrace",
+      "facadeX": 22.5,
+      "centreZ": -201.2,
+      "streetDirection": -1,
+      "sidewalkOuterX": 21.35,
+      "sidewalkStartU": 1.1499999999999986,
+      "meshName": "CityEntrance_B11_terrace",
+      "entrancePosition": [
+        22.07,
+        7.04,
+        -201.2
+      ],
+      "bounds": {
+        "min": [
+          21.08,
+          6.88,
+          -203.69501
+        ],
+        "max": [
+          33.3074,
+          67.6,
+          -196.019
+        ]
+      },
+      "floorY": 7.04,
+      "doorHeight": 2.42,
+      "doorWidth": 2.42,
+      "doorFrontU": 0.4725,
+      "portalStreetU": 1.4275,
+      "portalWidth": 4.99,
+      "portalHeight": 3.07,
+      "canopyPostCentres": [
+        [
+          20.85,
+          6.9,
+          -203.95
+        ],
+        [
+          20.85,
+          6.9,
+          -198.45
+        ]
+      ],
+      "apron": {
+        "u": [
+          -0.12,
+          1.15
+        ],
+        "z": [
+          -203.61,
+          -198.79
+        ],
+        "topY": 7.04
+      },
+      "triangles": 1480,
+      "materialSlots": [
+        "CityModern_PaleStone",
+        "CityModern_Metal",
+        "CityModern_Glass_Day_Silver",
+        "CityModern_Roof"
+      ],
+      "features": [
+        "Level, step-free approach at Y=7.04; apron ends exactly at sidewalk outer edge",
+        "Beveled projecting stone portal, deep side returns, metal reveals and seven soffit slats",
+        "Double opaque glass door, kickplates, transom, fixed sidelights, separate round pull handles and 12mm sill",
+        "Six mail slots with lock geometry, plain stone address plaque and intercom"
+      ]
+    }
+  ],
+  "meshes": [
+    {
+      "building": "CityModern_B01_terrace",
+      "meshName": "CityEntrance_B01_terrace",
+      "bounds": {
+        "min": [
+          -32.8962,
+          6.88,
+          0.305
+        ],
+        "max": [
+          -20.58,
+          31.284,
+          7.281
+        ]
+      },
+      "triangles": 1480,
+      "materialSlots": [
+        "CityModern_Limestone",
+        "CityModern_PaleStone",
+        "CityModern_Metal",
+        "CityModern_Glass_Day_Silver",
+        "CityModern_Roof"
+      ]
+    },
+    {
+      "building": "CityModern_B03_glass",
+      "meshName": "CityEntrance_B03_glass",
+      "bounds": {
+        "min": [
+          -22.12,
+          6.88,
+          -88.495
+        ],
+        "max": [
+          -20.58,
+          10.11,
+          -83.565
+        ]
+      },
+      "triangles": 1184,
+      "materialSlots": [
+        "CityModern_PaleStone",
+        "CityModern_Metal",
+        "CityModern_Glass_Day_Silver",
+        "CityModern_Roof"
+      ]
+    },
+    {
+      "building": "CityModern_B05_fins",
+      "meshName": "CityEntrance_B05_fins",
+      "bounds": {
+        "min": [
+          -22.12,
+          6.88,
+          -193.295
+        ],
+        "max": [
+          -20.5725,
+          10.11,
+          -188.36501
+        ]
+      },
+      "triangles": 1220,
+      "materialSlots": [
+        "CityModern_Limestone",
+        "CityModern_PaleStone",
+        "CityModern_Metal",
+        "CityModern_Glass_Day_Silver",
+        "CityModern_Roof"
+      ]
+    },
+    {
+      "building": "CityModern_B07_terrace",
+      "meshName": "CityEntrance_B07_terrace",
+      "bounds": {
+        "min": [
+          21.35,
+          6.88,
+          -4.495
+        ],
+        "max": [
+          34.8238,
+          31.284,
+          2.621
+        ]
+      },
+      "triangles": 1480,
+      "materialSlots": [
+        "CityModern_PaleStone",
+        "CityModern_Metal",
+        "CityModern_Glass_Day_Silver",
+        "CityModern_Roof"
+      ]
+    },
+    {
+      "building": "CityModern_B09_fins",
+      "meshName": "CityEntrance_B09_fins",
+      "bounds": {
+        "min": [
+          20.0725,
+          6.88,
+          -95.095
+        ],
+        "max": [
+          21.62,
+          10.11,
+          -90.165
+        ]
+      },
+      "triangles": 1220,
+      "materialSlots": [
+        "CityModern_Limestone",
+        "CityModern_PaleStone",
+        "CityModern_Metal",
+        "CityModern_Glass_Day_Silver",
+        "CityModern_Roof"
+      ]
+    },
+    {
+      "building": "CityModern_B11_terrace",
+      "meshName": "CityEntrance_B11_terrace",
+      "bounds": {
+        "min": [
+          21.08,
+          6.88,
+          -203.69501
+        ],
+        "max": [
+          33.3074,
+          67.6,
+          -196.019
+        ]
+      },
+      "triangles": 1480,
+      "materialSlots": [
+        "CityModern_PaleStone",
+        "CityModern_Metal",
+        "CityModern_Glass_Day_Silver",
+        "CityModern_Roof"
+      ]
+    },
+    {
+      "building": "CityModern_B04_terrace",
+      "meshName": "CityEntrance_B04_terrace",
+      "bounds": {
+        "min": [
+          -38.6066,
+          51.85,
+          -134.8
+        ],
+        "max": [
+          -36.8266,
+          54.4,
+          -134.379
+        ]
+      },
+      "triangles": 296,
+      "materialSlots": [
+        "CityModern_Limestone",
+        "CityModern_Metal",
+        "CityModern_Glass_Day_Silver",
+        "CityModern_Roof"
+      ]
+    }
+  ],
+  "balconyAccess": [
+    {
+      "building": "CityModern_B01_terrace",
+      "meshName": "CityEntrance_B01_terrace",
+      "platform": "Single setback terrace",
+      "deckY": 28.734,
+      "doorPosition": [
+        -32.1312,
+        28.734,
+        7.11
+      ],
+      "wallZ": 6.86,
+      "facing": "+Z",
+      "doorHeight": 2.35,
+      "doorWidth": 1.06,
+      "thresholdHeight": 0.012,
+      "clearPassageWidth": 1.1,
+      "clearPassageBounds": {
+        "min": [
+          -32.6812,
+          28.734,
+          7.29
+        ],
+        "max": [
+          -31.5812,
+          30.834,
+          11.12
+        ]
+      },
+      "note": "Opaque door stands forward of the existing wall; no new transparent material or inaccessible interior.",
+      "validation": {
+        "doorVisibleBeforeOldFacade": true,
+        "walkingStripRaysPassed": 12,
+        "actualDeckY": 28.734,
+        "actualThresholdTopY": 28.746,
+        "actualThresholdHeight": 0.012,
+        "thresholdSeatedOnDeck": true
+      }
+    },
+    {
+      "building": "CityModern_B04_terrace",
+      "meshName": "CityEntrance_B04_terrace",
+      "platform": "Single setback terrace",
+      "deckY": 51.85,
+      "doorPosition": [
+        -37.8416,
+        51.85,
+        -134.55
+      ],
+      "wallZ": -134.8,
+      "facing": "+Z",
+      "doorHeight": 2.35,
+      "doorWidth": 1.06,
+      "thresholdHeight": 0.012,
+      "clearPassageWidth": 1.1,
+      "clearPassageBounds": {
+        "min": [
+          -38.3916,
+          51.85,
+          -134.37
+        ],
+        "max": [
+          -37.2916,
+          53.95,
+          -130.38
+        ]
+      },
+      "note": "Opaque door stands forward of the existing wall; no new transparent material or inaccessible interior.",
+      "validation": {
+        "doorVisibleBeforeOldFacade": true,
+        "walkingStripRaysPassed": 12,
+        "actualDeckY": 51.85,
+        "actualThresholdTopY": 51.862,
+        "actualThresholdHeight": 0.012,
+        "thresholdSeatedOnDeck": true
+      }
+    },
+    {
+      "building": "CityModern_B07_terrace",
+      "meshName": "CityEntrance_B07_terrace",
+      "platform": "Single setback terrace",
+      "deckY": 28.734,
+      "doorPosition": [
+        33.8088,
+        28.734,
+        2.45
+      ],
+      "wallZ": 2.2,
+      "facing": "+Z",
+      "doorHeight": 2.35,
+      "doorWidth": 1.06,
+      "thresholdHeight": 0.012,
+      "clearPassageWidth": 1.1,
+      "clearPassageBounds": {
+        "min": [
+          33.2588,
+          28.734,
+          2.63
+        ],
+        "max": [
+          34.3588,
+          30.834,
+          6.62
+        ]
+      },
+      "note": "Opaque door stands forward of the existing wall; no new transparent material or inaccessible interior.",
+      "validation": {
+        "doorVisibleBeforeOldFacade": true,
+        "walkingStripRaysPassed": 12,
+        "actualDeckY": 28.734,
+        "actualThresholdTopY": 28.746,
+        "actualThresholdHeight": 0.012,
+        "thresholdSeatedOnDeck": true
+      }
+    },
+    {
+      "building": "CityModern_B11_terrace",
+      "meshName": "CityEntrance_B11_terrace",
+      "platform": "Single setback terrace",
+      "deckY": 65.05,
+      "doorPosition": [
+        32.2924,
+        65.05,
+        -196.19
+      ],
+      "wallZ": -196.44,
+      "facing": "+Z",
+      "doorHeight": 2.35,
+      "doorWidth": 1.06,
+      "thresholdHeight": 0.012,
+      "clearPassageWidth": 1.1,
+      "clearPassageBounds": {
+        "min": [
+          31.7424,
+          65.05,
+          -196.01
+        ],
+        "max": [
+          32.8424,
+          67.15,
+          -191.38
+        ]
+      },
+      "note": "Opaque door stands forward of the existing wall; no new transparent material or inaccessible interior.",
+      "validation": {
+        "doorVisibleBeforeOldFacade": true,
+        "walkingStripRaysPassed": 12,
+        "actualDeckY": 65.05,
+        "actualThresholdTopY": 65.062,
+        "actualThresholdHeight": 0.01199,
+        "thresholdSeatedOnDeck": true
+      }
+    }
+  ],
+  "materials": [
+    {
+      "name": "CityModern_Limestone",
+      "color": 12893353,
+      "roughness": 0.77,
+      "metalness": 0,
+      "opaque": true
+    },
+    {
+      "name": "CityModern_PaleStone",
+      "color": 13357260,
+      "roughness": 0.68,
+      "metalness": 0,
+      "opaque": true
+    },
+    {
+      "name": "CityModern_Metal",
+      "color": 2634554,
+      "roughness": 0.36,
+      "metalness": 0.78,
+      "opaque": true
+    },
+    {
+      "name": "CityModern_Glass_Day_Silver",
+      "color": 4940397,
+      "roughness": 0.18,
+      "metalness": 0.65,
+      "opaque": true
+    },
+    {
+      "name": "CityModern_Roof",
+      "color": 5858150,
+      "roughness": 0.82,
+      "metalness": 0.12,
+      "opaque": true
+    }
+  ],
+  "validation": {
+    "actualGlbBoundsAndTriangles": true,
+    "canopyPostClearance": true,
+    "canopyUndersideClearance": true,
+    "treeBedClearance": true,
+    "apronEndsAtSidewalkEdge": true,
+    "doorVisibility": [
+      {
+        "meshName": "CityEntrance_B01_terrace",
+        "leaf": -1,
+        "doorDistance": 3.5475,
+        "oldFacadeDistance": 4.24,
+        "clear": true
+      },
+      {
+        "meshName": "CityEntrance_B01_terrace",
+        "leaf": 1,
+        "doorDistance": 3.5475,
+        "oldFacadeDistance": 4.24,
+        "clear": true
+      },
+      {
+        "meshName": "CityEntrance_B03_glass",
+        "leaf": -1,
+        "doorDistance": 3.5475,
+        "oldFacadeDistance": 4.105,
+        "clear": true
+      },
+      {
+        "meshName": "CityEntrance_B03_glass",
+        "leaf": 1,
+        "doorDistance": 3.5475,
+        "oldFacadeDistance": 4.105,
+        "clear": true
+      },
+      {
+        "meshName": "CityEntrance_B05_fins",
+        "leaf": -1,
+        "doorDistance": 3.5475,
+        "oldFacadeDistance": 4.105,
+        "clear": true
+      },
+      {
+        "meshName": "CityEntrance_B05_fins",
+        "leaf": 1,
+        "doorDistance": 3.5475,
+        "oldFacadeDistance": 4.105,
+        "clear": true
+      },
+      {
+        "meshName": "CityEntrance_B07_terrace",
+        "leaf": -1,
+        "doorDistance": 3.5475,
+        "oldFacadeDistance": 4.24,
+        "clear": true
+      },
+      {
+        "meshName": "CityEntrance_B07_terrace",
+        "leaf": 1,
+        "doorDistance": 3.5475,
+        "oldFacadeDistance": 4.24,
+        "clear": true
+      },
+      {
+        "meshName": "CityEntrance_B09_fins",
+        "leaf": -1,
+        "doorDistance": 3.5475,
+        "oldFacadeDistance": 4.105,
+        "clear": true
+      },
+      {
+        "meshName": "CityEntrance_B09_fins",
+        "leaf": 1,
+        "doorDistance": 3.5475,
+        "oldFacadeDistance": 4.105,
+        "clear": true
+      },
+      {
+        "meshName": "CityEntrance_B11_terrace",
+        "leaf": -1,
+        "doorDistance": 3.5475,
+        "oldFacadeDistance": 4.105,
+        "clear": true
+      },
+      {
+        "meshName": "CityEntrance_B11_terrace",
+        "leaf": 1,
+        "doorDistance": 3.5475,
+        "oldFacadeDistance": 4.105,
+        "clear": true
+      }
+    ],
+    "balconyVisibility": [
+      {
+        "building": "CityModern_B01_terrace",
+        "doorDistance": 2.9825,
+        "oldFacadeDistance": 3.49,
+        "doorVisibleBeforeOldFacade": true,
+        "walkingStripRaysPassed": 12,
+        "actualDeckY": 28.734,
+        "actualThresholdTopY": 28.746,
+        "actualThresholdHeight": 0.012,
+        "thresholdSeatedOnDeck": true,
+        "clear": true
+      },
+      {
+        "building": "CityModern_B04_terrace",
+        "doorDistance": 2.9825,
+        "oldFacadeDistance": 3.355,
+        "doorVisibleBeforeOldFacade": true,
+        "walkingStripRaysPassed": 12,
+        "actualDeckY": 51.85,
+        "actualThresholdTopY": 51.862,
+        "actualThresholdHeight": 0.012,
+        "thresholdSeatedOnDeck": true,
+        "clear": true
+      },
+      {
+        "building": "CityModern_B07_terrace",
+        "doorDistance": 2.9825,
+        "oldFacadeDistance": 3.49,
+        "doorVisibleBeforeOldFacade": true,
+        "walkingStripRaysPassed": 12,
+        "actualDeckY": 28.734,
+        "actualThresholdTopY": 28.746,
+        "actualThresholdHeight": 0.012,
+        "thresholdSeatedOnDeck": true,
+        "clear": true
+      },
+      {
+        "building": "CityModern_B11_terrace",
+        "doorDistance": 2.9825,
+        "oldFacadeDistance": 3.355,
+        "doorVisibleBeforeOldFacade": true,
+        "walkingStripRaysPassed": 12,
+        "actualDeckY": 65.05,
+        "actualThresholdTopY": 65.062,
+        "actualThresholdHeight": 0.01199,
+        "thresholdSeatedOnDeck": true,
+        "clear": true
+      }
+    ],
+    "note": "CPU geometry verification; final Unreal lighting and fixed-camera visibility require screenshot review."
+  },
+  "geometryChecks": {
+    "streetDoorRays": [
+      {
+        "meshName": "CityEntrance_B01_terrace",
+        "leaf": -1,
+        "doorDistance": 3.5475,
+        "oldFacadeDistance": 4.24,
+        "clear": true
+      },
+      {
+        "meshName": "CityEntrance_B01_terrace",
+        "leaf": 1,
+        "doorDistance": 3.5475,
+        "oldFacadeDistance": 4.24,
+        "clear": true
+      },
+      {
+        "meshName": "CityEntrance_B03_glass",
+        "leaf": -1,
+        "doorDistance": 3.5475,
+        "oldFacadeDistance": 4.105,
+        "clear": true
+      },
+      {
+        "meshName": "CityEntrance_B03_glass",
+        "leaf": 1,
+        "doorDistance": 3.5475,
+        "oldFacadeDistance": 4.105,
+        "clear": true
+      },
+      {
+        "meshName": "CityEntrance_B05_fins",
+        "leaf": -1,
+        "doorDistance": 3.5475,
+        "oldFacadeDistance": 4.105,
+        "clear": true
+      },
+      {
+        "meshName": "CityEntrance_B05_fins",
+        "leaf": 1,
+        "doorDistance": 3.5475,
+        "oldFacadeDistance": 4.105,
+        "clear": true
+      },
+      {
+        "meshName": "CityEntrance_B07_terrace",
+        "leaf": -1,
+        "doorDistance": 3.5475,
+        "oldFacadeDistance": 4.24,
+        "clear": true
+      },
+      {
+        "meshName": "CityEntrance_B07_terrace",
+        "leaf": 1,
+        "doorDistance": 3.5475,
+        "oldFacadeDistance": 4.24,
+        "clear": true
+      },
+      {
+        "meshName": "CityEntrance_B09_fins",
+        "leaf": -1,
+        "doorDistance": 3.5475,
+        "oldFacadeDistance": 4.105,
+        "clear": true
+      },
+      {
+        "meshName": "CityEntrance_B09_fins",
+        "leaf": 1,
+        "doorDistance": 3.5475,
+        "oldFacadeDistance": 4.105,
+        "clear": true
+      },
+      {
+        "meshName": "CityEntrance_B11_terrace",
+        "leaf": -1,
+        "doorDistance": 3.5475,
+        "oldFacadeDistance": 4.105,
+        "clear": true
+      },
+      {
+        "meshName": "CityEntrance_B11_terrace",
+        "leaf": 1,
+        "doorDistance": 3.5475,
+        "oldFacadeDistance": 4.105,
+        "clear": true
+      }
+    ],
+    "balconyDoorAndThresholdRays": [
+      {
+        "building": "CityModern_B01_terrace",
+        "doorDistance": 2.9825,
+        "oldFacadeDistance": 3.49,
+        "doorVisibleBeforeOldFacade": true,
+        "walkingStripRaysPassed": 12,
+        "actualDeckY": 28.734,
+        "actualThresholdTopY": 28.746,
+        "actualThresholdHeight": 0.012,
+        "thresholdSeatedOnDeck": true,
+        "clear": true
+      },
+      {
+        "building": "CityModern_B04_terrace",
+        "doorDistance": 2.9825,
+        "oldFacadeDistance": 3.355,
+        "doorVisibleBeforeOldFacade": true,
+        "walkingStripRaysPassed": 12,
+        "actualDeckY": 51.85,
+        "actualThresholdTopY": 51.862,
+        "actualThresholdHeight": 0.012,
+        "thresholdSeatedOnDeck": true,
+        "clear": true
+      },
+      {
+        "building": "CityModern_B07_terrace",
+        "doorDistance": 2.9825,
+        "oldFacadeDistance": 3.49,
+        "doorVisibleBeforeOldFacade": true,
+        "walkingStripRaysPassed": 12,
+        "actualDeckY": 28.734,
+        "actualThresholdTopY": 28.746,
+        "actualThresholdHeight": 0.012,
+        "thresholdSeatedOnDeck": true,
+        "clear": true
+      },
+      {
+        "building": "CityModern_B11_terrace",
+        "doorDistance": 2.9825,
+        "oldFacadeDistance": 3.355,
+        "doorVisibleBeforeOldFacade": true,
+        "walkingStripRaysPassed": 12,
+        "actualDeckY": 65.05,
+        "actualThresholdTopY": 65.062,
+        "actualThresholdHeight": 0.01199,
+        "thresholdSeatedOnDeck": true,
+        "clear": true
+      }
+    ],
+    "terraceWalkingRays": 48,
+    "allPassed": true
+  }
+}

@@ -1,0 +1,188 @@
+{
+  "recordedAt": "2026-09-24T18:03:15.413265+08:00",
+  "markings": {
+    "triangles": 1352,
+    "meshCount": 2,
+    "sha256": "14c1370576e321ea86b1b388fe331d497dc087c021abcab574606f9ad8db8e85",
+    "counts": {
+      "crossings": 2,
+      "crossingStripes": 54,
+      "stripeSurfacePatches": 54,
+      "laneDashes": 138,
+      "stopLines": 4,
+      "arrows": 12,
+      "parkingBays": 108,
+      "paintedParts": 658
+    },
+    "geometryChecks": true,
+    "references": [
+      "https://ggzyfw.beijing.gov.cn/cmsbj/u/cms/cn.gov.bjggzyfw.www/202405/9279394527188.pdf",
+      "https://hipac.huaian.gov.cn/upload/2024-09/e6584ffd-ae53-4c16-a86d-ac4532b59455.pdf"
+    ]
+  },
+  "pavingColorDesign": {
+    "baseColorSRGB": "#858982",
+    "paletteSRGB": {
+      "main": "#777871",
+      "service": "#565c59",
+      "warmAccent": "#7a756c",
+      "coolAccent": "#727773"
+    },
+    "curbsSRGB": "#8b8f86",
+    "tactileSRGB": "#a18b53",
+    "tileColorCounts": {
+      "main": 2181,
+      "service": 2447,
+      "warmAccent": 204,
+      "coolAccent": 184
+    },
+    "bands": {
+      "treeServiceHalfWidth": 1.5,
+      "streetServiceWidth": 0.95,
+      "method": "Classify the original tile centre; never subdivide geometry for color."
+    },
+    "attribute": "COLOR_0 RGB / Unreal VertexColor RGB",
+    "shader": "Multiply Paving base-color RGB by VertexColor RGB in linear space. No additional sRGB/gamma conversion; other materials have white vertex color.",
+    "tintEncoding": "linear(paletteSRGB) / linear(#858982), with stable +/-2.5% linear brightness per original tile. Every cut fragment retains its parent tile tint.",
+    "exportedChecks": [
+      {
+        "material": "CitySidewalk_Paving",
+        "rgbCount": 307212,
+        "uniqueTints": 365,
+        "constantPerTriangle": true,
+        "nonPavingWhite": false
+      },
+      {
+        "material": "CitySidewalk_Curbs",
+        "rgbCount": 50040,
+        "uniqueTints": 1,
+        "constantPerTriangle": true,
+        "nonPavingWhite": true
+      },
+      {
+        "material": "CitySidewalk_Base",
+        "rgbCount": 2196,
+        "uniqueTints": 1,
+        "constantPerTriangle": true,
+        "nonPavingWhite": true
+      },
+      {
+        "material": "CitySidewalk_Soil",
+        "rgbCount": 1008,
+        "uniqueTints": 1,
+        "constantPerTriangle": true,
+        "nonPavingWhite": true
+      },
+      {
+        "material": "CitySidewalk_Tactile",
+        "rgbCount": 20112,
+        "uniqueTints": 1,
+        "constantPerTriangle": true,
+        "nonPavingWhite": true
+      },
+      {
+        "material": "CitySidewalk_Planting",
+        "rgbCount": 13440,
+        "uniqueTints": 1,
+        "constantPerTriangle": true,
+        "nonPavingWhite": true
+      }
+    ]
+  },
+  "sidewalkSha256": "170348cbcdef1d241c88a667a30e1b02f13657d2d0b0f64f6a245bff3912d673",
+  "asphaltSource": {
+    "name": "Asphalt 02",
+    "author": "Rob Tuytel",
+    "license": "CC0",
+    "source": "https://polyhaven.com/a/asphalt_02",
+    "sourcePhysicalWidthMeters": 3,
+    "importedWorldWidthMeters": 3,
+    "localSource": "public/assets/polyhaven/materials/asphalt_02",
+    "normalConvention": "OpenGL +Y; Unreal flip_green_channel once",
+    "files": [
+      {
+        "name": "Asphalt02_diffuse.jpg",
+        "sha256": "1aa5ce99f58a625c71d48cfc3e68b65ca85ccb00f39e045c0a928608a0ea25ed"
+      },
+      {
+        "name": "Asphalt02_normal.jpg",
+        "sha256": "42a1c381b53204e83a982db2864479a30bc127bbdeebb1006f8ee51bff099df3"
+      },
+      {
+        "name": "Asphalt02_roughness.jpg",
+        "sha256": "70ba3edc65525eb4dc366cf010ca7ae0bd34e0251ff0225c2dad627a873d0712"
+      }
+    ]
+  },
+  "savedMapAudit": {
+    "passed": true,
+    "actors": 112,
+    "preservedRoadActors": 5
+  },
+  "regressions": [
+    {
+      "case": "city-traffic",
+      "passed": true,
+      "frames": 16,
+      "frameStyle": "graphite",
+      "rainIntensity": 0,
+      "minimumCarGapMeters": 20.5202579498291,
+      "laneChanges": 3,
+      "overtakes": 1,
+      "frameP95Ms": 16.724199295043945
+    },
+    {
+      "case": "city-rainglass",
+      "passed": true,
+      "frames": 8,
+      "frameStyle": "graphite",
+      "rainIntensity": 0.6669074892997742,
+      "minimumCarGapMeters": 25.951440811157227,
+      "laneChanges": 0,
+      "overtakes": 0,
+      "frameP95Ms": 16.68779945373535
+    }
+  ],
+  "benchmark": {
+    "resolution": [
+      1280,
+      820
+    ],
+    "screenPercentage": 85,
+    "quality": 1,
+    "hardwareLumen": true,
+    "uncapped": true,
+    "seconds": 30,
+    "frameHidden": true,
+    "runs": [
+      {
+        "weather": "clear",
+        "beforeMeanMs": 6.146384854500916,
+        "beforeP95Ms": 7.5572991371154785,
+        "afterMeanMs": 5.759204686533735,
+        "afterP95Ms": 7.090598106384277,
+        "afterApproxFps": 173.6350858197862,
+        "samples": 4863,
+        "actors": 128,
+        "staticMeshComponents": 92,
+        "materialInstances": 36
+      },
+      {
+        "weather": "rain",
+        "beforeMeanMs": 6.1958945553914635,
+        "beforeP95Ms": 7.774200439453125,
+        "afterMeanMs": 5.7428490773295655,
+        "afterP95Ms": 6.954699516296387,
+        "afterApproxFps": 174.12959778929132,
+        "samples": 4876,
+        "actors": 128,
+        "staticMeshComponents": 92,
+        "materialInstances": 36
+      }
+    ],
+    "note": "Single same-machine paired runs, excluding first 2 seconds. Final package also includes completed shared-workspace code updates. Differences do not establish a causal or sustained rendering speedup."
+  },
+  "executableSha256": "20ed50c8cee882c5ed705368f80ffa58fd13a7a186bbff553b26fc621d643b51",
+  "contentIndexSha256": "5dee1d4db03238ae0d0c678421759b07d4224cd620fb4ee4d64c5869ac42b467",
+  "previewCacheIncident": "An unrelated concurrent editor test changed the shared Zen data directory. Its initial corrupt editor capture was discarded. Final cooked captures have no missing Nanite resources."
+}

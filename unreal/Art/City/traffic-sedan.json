@@ -1,0 +1,51 @@
+{
+  "name": "Original City Traffic Sedan",
+  "file": "traffic-sedan.glb",
+  "generator": "unreal/Scripts/prepare_city_vehicle.mjs",
+  "source": "Original procedural geometry authored for OutOfWindow; no external models or textures.",
+  "license": "CC0-1.0",
+  "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "axes": {
+    "front": "+Z",
+    "up": "+Y",
+    "width": "X",
+    "units": "metres",
+    "groundY": 0,
+    "unrealImport": "glTF (x, y, z) maps to UE (x, z, y); vehicle front is UE +Y before actor rotation."
+  },
+  "dimensionsMetres": {
+    "width": 1.803,
+    "height": 1.45,
+    "length": 4.3
+  },
+  "triangles": 916,
+  "meshCount": 1,
+  "materialSlots": [
+    {
+      "index": 0,
+      "name": "Sedan_Paint"
+    },
+    {
+      "index": 1,
+      "name": "Sedan_Glass"
+    },
+    {
+      "index": 2,
+      "name": "Sedan_TireTrim"
+    },
+    {
+      "index": 3,
+      "name": "Sedan_Alloy"
+    },
+    {
+      "index": 4,
+      "name": "Sedan_Headlamps"
+    },
+    {
+      "index": 5,
+      "name": "Sedan_Taillamps"
+    }
+  ],
+  "bytes": 75024,
+  "intendedView": "Moving road traffic at elevated city camera distances; opaque glazing and static wheels."
+}

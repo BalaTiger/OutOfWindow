@@ -1,0 +1,5092 @@
+{
+  "name": "Original City Boulevard Road Markings",
+  "file": "city-road-markings.glb",
+  "generator": "unreal/Scripts/prepare_city_road_markings.mjs",
+  "source": "Original project geometry; proportions informed by public road engineering drawings. Scene artwork, not an engineering compliance certification.",
+  "license": "CC0-1.0",
+  "units": "metres",
+  "axes": "glTF Y up; UE (X,Y,Z)=(glTF x,z,y)*100, exactly once.",
+  "sourceURLs": [
+    "https://ggzyfw.beijing.gov.cn/cmsbj/u/cms/cn.gov.bjggzyfw.www/202405/9279394527188.pdf",
+    "https://hipac.huaian.gov.cn/upload/2024-09/e6584ffd-ae53-4c16-a86d-ac4532b59455.pdf"
+  ],
+  "coverageZ": [
+    -394,
+    36
+  ],
+  "paintOffsetM": 0.0025,
+  "surfaces": [
+    {
+      "id": "road",
+      "xRange": [
+        -8.75,
+        8.75
+      ],
+      "topY": 6.87
+    },
+    {
+      "id": "parking_west",
+      "xRange": [
+        -11.95,
+        -8.75
+      ],
+      "topY": 6.89
+    },
+    {
+      "id": "parking_east",
+      "xRange": [
+        8.75,
+        11.95
+      ],
+      "topY": 6.89
+    },
+    {
+      "id": "cycle_west",
+      "xRange": [
+        -14.85,
+        -12.05
+      ],
+      "topY": 6.9
+    }
+  ],
+  "lanes": [
+    {
+      "centerX": -5.2,
+      "directionZ": 1,
+      "side": "west",
+      "lane": 1
+    },
+    {
+      "centerX": -2.2,
+      "directionZ": 1,
+      "side": "west",
+      "lane": 0
+    },
+    {
+      "centerX": 2.2,
+      "directionZ": -1,
+      "side": "east",
+      "lane": 0
+    },
+    {
+      "centerX": 5.2,
+      "directionZ": -1,
+      "side": "east",
+      "lane": 1
+    }
+  ],
+  "crosswalks": [
+    {
+      "id": "crosswalk_1",
+      "centerZ": -32.88,
+      "zRange": [
+        -34.88,
+        -30.880000000000003
+      ],
+      "xRange": [
+        -14.85,
+        11.95
+      ],
+      "stripeWidth": 0.4,
+      "clearGap": 0.6,
+      "stripeLength": 4,
+      "longAxis": "Z",
+      "pedestrianAxis": "X",
+      "stripeCentersX": [
+        -14.45,
+        -13.45,
+        -12.45,
+        -11.45,
+        -10.45,
+        -9.45,
+        -8.45,
+        -7.449999999999999,
+        -6.449999999999999,
+        -5.449999999999999,
+        -4.449999999999999,
+        -3.4499999999999993,
+        -2.4499999999999993,
+        -1.4499999999999993,
+        -0.4499999999999993,
+        0.5500000000000007,
+        1.5500000000000007,
+        2.5500000000000007,
+        3.5500000000000007,
+        4.550000000000001,
+        5.550000000000001,
+        6.550000000000001,
+        7.550000000000001,
+        8.55,
+        9.55,
+        10.55,
+        11.55
+      ],
+      "patches": [
+        {
+          "id": "crosswalk_1_stripe_0_cycle_west",
+          "stripe": 0,
+          "xRange": [
+            -14.649999999999999,
+            -14.25
+          ],
+          "surface": "cycle_west",
+          "topY": 6.902500000000001
+        },
+        {
+          "id": "crosswalk_1_stripe_1_cycle_west",
+          "stripe": 1,
+          "xRange": [
+            -13.649999999999999,
+            -13.25
+          ],
+          "surface": "cycle_west",
+          "topY": 6.902500000000001
+        },
+        {
+          "id": "crosswalk_1_stripe_2_cycle_west",
+          "stripe": 2,
+          "xRange": [
+            -12.649999999999999,
+            -12.25
+          ],
+          "surface": "cycle_west",
+          "topY": 6.902500000000001
+        },
+        {
+          "id": "crosswalk_1_stripe_3_parking_west",
+          "stripe": 3,
+          "xRange": [
+            -11.649999999999999,
+            -11.25
+          ],
+          "surface": "parking_west",
+          "topY": 6.8925
+        },
+        {
+          "id": "crosswalk_1_stripe_4_parking_west",
+          "stripe": 4,
+          "xRange": [
+            -10.649999999999999,
+            -10.25
+          ],
+          "surface": "parking_west",
+          "topY": 6.8925
+        },
+        {
+          "id": "crosswalk_1_stripe_5_parking_west",
+          "stripe": 5,
+          "xRange": [
+            -9.649999999999999,
+            -9.25
+          ],
+          "surface": "parking_west",
+          "topY": 6.8925
+        },
+        {
+          "id": "crosswalk_1_stripe_6_road",
+          "stripe": 6,
+          "xRange": [
+            -8.649999999999999,
+            -8.25
+          ],
+          "surface": "road",
+          "topY": 6.8725000000000005
+        },
+        {
+          "id": "crosswalk_1_stripe_7_road",
+          "stripe": 7,
+          "xRange": [
+            -7.6499999999999995,
+            -7.249999999999999
+          ],
+          "surface": "road",
+          "topY": 6.8725000000000005
+        },
+        {
+          "id": "crosswalk_1_stripe_8_road",
+          "stripe": 8,
+          "xRange": [
+            -6.6499999999999995,
+            -6.249999999999999
+          ],
+          "surface": "road",
+          "topY": 6.8725000000000005
+        },
+        {
+          "id": "crosswalk_1_stripe_9_road",
+          "stripe": 9,
+          "xRange": [
+            -5.6499999999999995,
+            -5.249999999999999
+          ],
+          "surface": "road",
+          "topY": 6.8725000000000005
+        },
+        {
+          "id": "crosswalk_1_stripe_10_road",
+          "stripe": 10,
+          "xRange": [
+            -4.6499999999999995,
+            -4.249999999999999
+          ],
+          "surface": "road",
+          "topY": 6.8725000000000005
+        },
+        {
+          "id": "crosswalk_1_stripe_11_road",
+          "stripe": 11,
+          "xRange": [
+            -3.6499999999999995,
+            -3.249999999999999
+          ],
+          "surface": "road",
+          "topY": 6.8725000000000005
+        },
+        {
+          "id": "crosswalk_1_stripe_12_road",
+          "stripe": 12,
+          "xRange": [
+            -2.6499999999999995,
+            -2.249999999999999
+          ],
+          "surface": "road",
+          "topY": 6.8725000000000005
+        },
+        {
+          "id": "crosswalk_1_stripe_13_road",
+          "stripe": 13,
+          "xRange": [
+            -1.6499999999999992,
+            -1.2499999999999993
+          ],
+          "surface": "road",
+          "topY": 6.8725000000000005
+        },
+        {
+          "id": "crosswalk_1_stripe_14_road",
+          "stripe": 14,
+          "xRange": [
+            -0.6499999999999992,
+            -0.24999999999999928
+          ],
+          "surface": "road",
+          "topY": 6.8725000000000005
+        },
+        {
+          "id": "crosswalk_1_stripe_15_road",
+          "stripe": 15,
+          "xRange": [
+            0.3500000000000007,
+            0.7500000000000007
+          ],
+          "surface": "road",
+          "topY": 6.8725000000000005
+        },
+        {
+          "id": "crosswalk_1_stripe_16_road",
+          "stripe": 16,
+          "xRange": [
+            1.3500000000000008,
+            1.7500000000000007
+          ],
+          "surface": "road",
+          "topY": 6.8725000000000005
+        },
+        {
+          "id": "crosswalk_1_stripe_17_road",
+          "stripe": 17,
+          "xRange": [
+            2.3500000000000005,
+            2.750000000000001
+          ],
+          "surface": "road",
+          "topY": 6.8725000000000005
+        },
+        {
+          "id": "crosswalk_1_stripe_18_road",
+          "stripe": 18,
+          "xRange": [
+            3.3500000000000005,
+            3.750000000000001
+          ],
+          "surface": "road",
+          "topY": 6.8725000000000005
+        },
+        {
+          "id": "crosswalk_1_stripe_19_road",
+          "stripe": 19,
+          "xRange": [
+            4.3500000000000005,
+            4.750000000000001
+          ],
+          "surface": "road",
+          "topY": 6.8725000000000005
+        },
+        {
+          "id": "crosswalk_1_stripe_20_road",
+          "stripe": 20,
+          "xRange": [
+            5.3500000000000005,
+            5.750000000000001
+          ],
+          "surface": "road",
+          "topY": 6.8725000000000005
+        },
+        {
+          "id": "crosswalk_1_stripe_21_road",
+          "stripe": 21,
+          "xRange": [
+            6.3500000000000005,
+            6.750000000000001
+          ],
+          "surface": "road",
+          "topY": 6.8725000000000005
+        },
+        {
+          "id": "crosswalk_1_stripe_22_road",
+          "stripe": 22,
+          "xRange": [
+            7.3500000000000005,
+            7.750000000000001
+          ],
+          "surface": "road",
+          "topY": 6.8725000000000005
+        },
+        {
+          "id": "crosswalk_1_stripe_23_road",
+          "stripe": 23,
+          "xRange": [
+            8.350000000000001,
+            8.75
+          ],
+          "surface": "road",
+          "topY": 6.8725000000000005
+        },
+        {
+          "id": "crosswalk_1_stripe_24_parking_east",
+          "stripe": 24,
+          "xRange": [
+            9.350000000000001,
+            9.75
+          ],
+          "surface": "parking_east",
+          "topY": 6.8925
+        },
+        {
+          "id": "crosswalk_1_stripe_25_parking_east",
+          "stripe": 25,
+          "xRange": [
+            10.350000000000001,
+            10.75
+          ],
+          "surface": "parking_east",
+          "topY": 6.8925
+        },
+        {
+          "id": "crosswalk_1_stripe_26_parking_east",
+          "stripe": 26,
+          "xRange": [
+            11.350000000000001,
+            11.75
+          ],
+          "surface": "parking_east",
+          "topY": 6.8925
+        }
+      ]
+    },
+    {
+      "id": "crosswalk_2",
+      "centerZ": -131.28,
+      "zRange": [
+        -133.28,
+        -129.28
+      ],
+      "xRange": [
+        -14.85,
+        11.95
+      ],
+      "stripeWidth": 0.4,
+      "clearGap": 0.6,
+      "stripeLength": 4,
+      "longAxis": "Z",
+      "pedestrianAxis": "X",
+      "stripeCentersX": [
+        -14.45,
+        -13.45,
+        -12.45,
+        -11.45,
+        -10.45,
+        -9.45,
+        -8.45,
+        -7.449999999999999,
+        -6.449999999999999,
+        -5.449999999999999,
+        -4.449999999999999,
+        -3.4499999999999993,
+        -2.4499999999999993,
+        -1.4499999999999993,
+        -0.4499999999999993,
+        0.5500000000000007,
+        1.5500000000000007,
+        2.5500000000000007,
+        3.5500000000000007,
+        4.550000000000001,
+        5.550000000000001,
+        6.550000000000001,
+        7.550000000000001,
+        8.55,
+        9.55,
+        10.55,
+        11.55
+      ],
+      "patches": [
+        {
+          "id": "crosswalk_2_stripe_0_cycle_west",
+          "stripe": 0,
+          "xRange": [
+            -14.649999999999999,
+            -14.25
+          ],
+          "surface": "cycle_west",
+          "topY": 6.902500000000001
+        },
+        {
+          "id": "crosswalk_2_stripe_1_cycle_west",
+          "stripe": 1,
+          "xRange": [
+            -13.649999999999999,
+            -13.25
+          ],
+          "surface": "cycle_west",
+          "topY": 6.902500000000001
+        },
+        {
+          "id": "crosswalk_2_stripe_2_cycle_west",
+          "stripe": 2,
+          "xRange": [
+            -12.649999999999999,
+            -12.25
+          ],
+          "surface": "cycle_west",
+          "topY": 6.902500000000001
+        },
+        {
+          "id": "crosswalk_2_stripe_3_parking_west",
+          "stripe": 3,
+          "xRange": [
+            -11.649999999999999,
+            -11.25
+          ],
+          "surface": "parking_west",
+          "topY": 6.8925
+        },
+        {
+          "id": "crosswalk_2_stripe_4_parking_west",
+          "stripe": 4,
+          "xRange": [
+            -10.649999999999999,
+            -10.25
+          ],
+          "surface": "parking_west",
+          "topY": 6.8925
+        },
+        {
+          "id": "crosswalk_2_stripe_5_parking_west",
+          "stripe": 5,
+          "xRange": [
+            -9.649999999999999,
+            -9.25
+          ],
+          "surface": "parking_west",
+          "topY": 6.8925
+        },
+        {
+          "id": "crosswalk_2_stripe_6_road",
+          "stripe": 6,
+          "xRange": [
+            -8.649999999999999,
+            -8.25
+          ],
+          "surface": "road",
+          "topY": 6.8725000000000005
+        },
+        {
+          "id": "crosswalk_2_stripe_7_road",
+          "stripe": 7,
+          "xRange": [
+            -7.6499999999999995,
+            -7.249999999999999
+          ],
+          "surface": "road",
+          "topY": 6.8725000000000005
+        },
+        {
+          "id": "crosswalk_2_stripe_8_road",
+          "stripe": 8,
+          "xRange": [
+            -6.6499999999999995,
+            -6.249999999999999
+          ],
+          "surface": "road",
+          "topY": 6.8725000000000005
+        },
+        {
+          "id": "crosswalk_2_stripe_9_road",
+          "stripe": 9,
+          "xRange": [
+            -5.6499999999999995,
+            -5.249999999999999
+          ],
+          "surface": "road",
+          "topY": 6.8725000000000005
+        },
+        {
+          "id": "crosswalk_2_stripe_10_road",
+          "stripe": 10,
+          "xRange": [
+            -4.6499999999999995,
+            -4.249999999999999
+          ],
+          "surface": "road",
+          "topY": 6.8725000000000005
+        },
+        {
+          "id": "crosswalk_2_stripe_11_road",
+          "stripe": 11,
+          "xRange": [
+            -3.6499999999999995,
+            -3.249999999999999
+          ],
+          "surface": "road",
+          "topY": 6.8725000000000005
+        },
+        {
+          "id": "crosswalk_2_stripe_12_road",
+          "stripe": 12,
+          "xRange": [
+            -2.6499999999999995,
+            -2.249999999999999
+          ],
+          "surface": "road",
+          "topY": 6.8725000000000005
+        },
+        {
+          "id": "crosswalk_2_stripe_13_road",
+          "stripe": 13,
+          "xRange": [
+            -1.6499999999999992,
+            -1.2499999999999993
+          ],
+          "surface": "road",
+          "topY": 6.8725000000000005
+        },
+        {
+          "id": "crosswalk_2_stripe_14_road",
+          "stripe": 14,
+          "xRange": [
+            -0.6499999999999992,
+            -0.24999999999999928
+          ],
+          "surface": "road",
+          "topY": 6.8725000000000005
+        },
+        {
+          "id": "crosswalk_2_stripe_15_road",
+          "stripe": 15,
+          "xRange": [
+            0.3500000000000007,
+            0.7500000000000007
+          ],
+          "surface": "road",
+          "topY": 6.8725000000000005
+        },
+        {
+          "id": "crosswalk_2_stripe_16_road",
+          "stripe": 16,
+          "xRange": [
+            1.3500000000000008,
+            1.7500000000000007
+          ],
+          "surface": "road",
+          "topY": 6.8725000000000005
+        },
+        {
+          "id": "crosswalk_2_stripe_17_road",
+          "stripe": 17,
+          "xRange": [
+            2.3500000000000005,
+            2.750000000000001
+          ],
+          "surface": "road",
+          "topY": 6.8725000000000005
+        },
+        {
+          "id": "crosswalk_2_stripe_18_road",
+          "stripe": 18,
+          "xRange": [
+            3.3500000000000005,
+            3.750000000000001
+          ],
+          "surface": "road",
+          "topY": 6.8725000000000005
+        },
+        {
+          "id": "crosswalk_2_stripe_19_road",
+          "stripe": 19,
+          "xRange": [
+            4.3500000000000005,
+            4.750000000000001
+          ],
+          "surface": "road",
+          "topY": 6.8725000000000005
+        },
+        {
+          "id": "crosswalk_2_stripe_20_road",
+          "stripe": 20,
+          "xRange": [
+            5.3500000000000005,
+            5.750000000000001
+          ],
+          "surface": "road",
+          "topY": 6.8725000000000005
+        },
+        {
+          "id": "crosswalk_2_stripe_21_road",
+          "stripe": 21,
+          "xRange": [
+            6.3500000000000005,
+            6.750000000000001
+          ],
+          "surface": "road",
+          "topY": 6.8725000000000005
+        },
+        {
+          "id": "crosswalk_2_stripe_22_road",
+          "stripe": 22,
+          "xRange": [
+            7.3500000000000005,
+            7.750000000000001
+          ],
+          "surface": "road",
+          "topY": 6.8725000000000005
+        },
+        {
+          "id": "crosswalk_2_stripe_23_road",
+          "stripe": 23,
+          "xRange": [
+            8.350000000000001,
+            8.75
+          ],
+          "surface": "road",
+          "topY": 6.8725000000000005
+        },
+        {
+          "id": "crosswalk_2_stripe_24_parking_east",
+          "stripe": 24,
+          "xRange": [
+            9.350000000000001,
+            9.75
+          ],
+          "surface": "parking_east",
+          "topY": 6.8925
+        },
+        {
+          "id": "crosswalk_2_stripe_25_parking_east",
+          "stripe": 25,
+          "xRange": [
+            10.350000000000001,
+            10.75
+          ],
+          "surface": "parking_east",
+          "topY": 6.8925
+        },
+        {
+          "id": "crosswalk_2_stripe_26_parking_east",
+          "stripe": 26,
+          "xRange": [
+            11.350000000000001,
+            11.75
+          ],
+          "surface": "parking_east",
+          "topY": 6.8925
+        }
+      ]
+    }
+  ],
+  "stopLines": [
+    {
+      "id": "crosswalk_1_stop_east",
+      "crosswalk": "crosswalk_1",
+      "side": "east",
+      "directionZ": -1,
+      "centerZ": -29.730000000000004,
+      "xRange": [
+        0.5,
+        6.925
+      ],
+      "width": 0.3,
+      "crossingGap": 1
+    },
+    {
+      "id": "crosswalk_1_stop_west",
+      "crosswalk": "crosswalk_1",
+      "side": "west",
+      "directionZ": 1,
+      "centerZ": -36.03,
+      "xRange": [
+        -6.925,
+        -0.5
+      ],
+      "width": 0.3,
+      "crossingGap": 1
+    },
+    {
+      "id": "crosswalk_2_stop_east",
+      "crosswalk": "crosswalk_2",
+      "side": "east",
+      "directionZ": -1,
+      "centerZ": -128.13,
+      "xRange": [
+        0.5,
+        6.925
+      ],
+      "width": 0.3,
+      "crossingGap": 1
+    },
+    {
+      "id": "crosswalk_2_stop_west",
+      "crosswalk": "crosswalk_2",
+      "side": "west",
+      "directionZ": 1,
+      "centerZ": -134.43,
+      "xRange": [
+        -6.925,
+        -0.5
+      ],
+      "width": 0.3,
+      "crossingGap": 1
+    }
+  ],
+  "arrows": [
+    {
+      "id": "arrow_-5.2_-46.88",
+      "laneCenterX": -5.2,
+      "side": "west",
+      "centerZ": -46.88,
+      "directionZ": 1,
+      "length": 4.5,
+      "tip": [
+        -5.2,
+        -44.63
+      ],
+      "tail": [
+        -5.2,
+        -49.13
+      ],
+      "upstreamOfCrosswalk": "crosswalk_1"
+    },
+    {
+      "id": "arrow_-5.2_-145.28",
+      "laneCenterX": -5.2,
+      "side": "west",
+      "centerZ": -145.28,
+      "directionZ": 1,
+      "length": 4.5,
+      "tip": [
+        -5.2,
+        -143.03
+      ],
+      "tail": [
+        -5.2,
+        -147.53
+      ],
+      "upstreamOfCrosswalk": "crosswalk_2"
+    },
+    {
+      "id": "arrow_-5.2_-265",
+      "laneCenterX": -5.2,
+      "side": "west",
+      "centerZ": -265,
+      "directionZ": 1,
+      "length": 4.5,
+      "tip": [
+        -5.2,
+        -262.75
+      ],
+      "tail": [
+        -5.2,
+        -267.25
+      ],
+      "upstreamOfCrosswalk": null
+    },
+    {
+      "id": "arrow_-2.2_-46.88",
+      "laneCenterX": -2.2,
+      "side": "west",
+      "centerZ": -46.88,
+      "directionZ": 1,
+      "length": 4.5,
+      "tip": [
+        -2.2,
+        -44.63
+      ],
+      "tail": [
+        -2.2,
+        -49.13
+      ],
+      "upstreamOfCrosswalk": "crosswalk_1"
+    },
+    {
+      "id": "arrow_-2.2_-145.28",
+      "laneCenterX": -2.2,
+      "side": "west",
+      "centerZ": -145.28,
+      "directionZ": 1,
+      "length": 4.5,
+      "tip": [
+        -2.2,
+        -143.03
+      ],
+      "tail": [
+        -2.2,
+        -147.53
+      ],
+      "upstreamOfCrosswalk": "crosswalk_2"
+    },
+    {
+      "id": "arrow_-2.2_-265",
+      "laneCenterX": -2.2,
+      "side": "west",
+      "centerZ": -265,
+      "directionZ": 1,
+      "length": 4.5,
+      "tip": [
+        -2.2,
+        -262.75
+      ],
+      "tail": [
+        -2.2,
+        -267.25
+      ],
+      "upstreamOfCrosswalk": null
+    },
+    {
+      "id": "arrow_2.2_-18.880000000000003",
+      "laneCenterX": 2.2,
+      "side": "east",
+      "centerZ": -18.880000000000003,
+      "directionZ": -1,
+      "length": 4.5,
+      "tip": [
+        2.2,
+        -21.130000000000003
+      ],
+      "tail": [
+        2.2,
+        -16.630000000000003
+      ],
+      "upstreamOfCrosswalk": "crosswalk_1"
+    },
+    {
+      "id": "arrow_2.2_-117.28",
+      "laneCenterX": 2.2,
+      "side": "east",
+      "centerZ": -117.28,
+      "directionZ": -1,
+      "length": 4.5,
+      "tip": [
+        2.2,
+        -119.53
+      ],
+      "tail": [
+        2.2,
+        -115.03
+      ],
+      "upstreamOfCrosswalk": "crosswalk_2"
+    },
+    {
+      "id": "arrow_2.2_-265",
+      "laneCenterX": 2.2,
+      "side": "east",
+      "centerZ": -265,
+      "directionZ": -1,
+      "length": 4.5,
+      "tip": [
+        2.2,
+        -267.25
+      ],
+      "tail": [
+        2.2,
+        -262.75
+      ],
+      "upstreamOfCrosswalk": null
+    },
+    {
+      "id": "arrow_5.2_-18.880000000000003",
+      "laneCenterX": 5.2,
+      "side": "east",
+      "centerZ": -18.880000000000003,
+      "directionZ": -1,
+      "length": 4.5,
+      "tip": [
+        5.2,
+        -21.130000000000003
+      ],
+      "tail": [
+        5.2,
+        -16.630000000000003
+      ],
+      "upstreamOfCrosswalk": "crosswalk_1"
+    },
+    {
+      "id": "arrow_5.2_-117.28",
+      "laneCenterX": 5.2,
+      "side": "east",
+      "centerZ": -117.28,
+      "directionZ": -1,
+      "length": 4.5,
+      "tip": [
+        5.2,
+        -119.53
+      ],
+      "tail": [
+        5.2,
+        -115.03
+      ],
+      "upstreamOfCrosswalk": "crosswalk_2"
+    },
+    {
+      "id": "arrow_5.2_-265",
+      "laneCenterX": 5.2,
+      "side": "east",
+      "centerZ": -265,
+      "directionZ": -1,
+      "length": 4.5,
+      "tip": [
+        5.2,
+        -267.25
+      ],
+      "tail": [
+        5.2,
+        -262.75
+      ],
+      "upstreamOfCrosswalk": null
+    }
+  ],
+  "parkingBays": [
+    {
+      "id": "parking_west_-382",
+      "side": "west",
+      "xRange": [
+        -11.65,
+        -9.05
+      ],
+      "zRange": [
+        -382,
+        -376
+      ],
+      "width": 2.6,
+      "length": 6,
+      "lineWidth": 0.1
+    },
+    {
+      "id": "parking_west_-375.5",
+      "side": "west",
+      "xRange": [
+        -11.65,
+        -9.05
+      ],
+      "zRange": [
+        -375.5,
+        -369.5
+      ],
+      "width": 2.6,
+      "length": 6,
+      "lineWidth": 0.1
+    },
+    {
+      "id": "parking_west_-369",
+      "side": "west",
+      "xRange": [
+        -11.65,
+        -9.05
+      ],
+      "zRange": [
+        -369,
+        -363
+      ],
+      "width": 2.6,
+      "length": 6,
+      "lineWidth": 0.1
+    },
+    {
+      "id": "parking_west_-362.5",
+      "side": "west",
+      "xRange": [
+        -11.65,
+        -9.05
+      ],
+      "zRange": [
+        -362.5,
+        -356.5
+      ],
+      "width": 2.6,
+      "length": 6,
+      "lineWidth": 0.1
+    },
+    {
+      "id": "parking_west_-356",
+      "side": "west",
+      "xRange": [
+        -11.65,
+        -9.05
+      ],
+      "zRange": [
+        -356,
+        -350
+      ],
+      "width": 2.6,
+      "length": 6,
+      "lineWidth": 0.1
+    },
+    {
+      "id": "parking_west_-349.5",
+      "side": "west",
+      "xRange": [
+        -11.65,
+        -9.05
+      ],
+      "zRange": [
+        -349.5,
+        -343.5
+      ],
+      "width": 2.6,
+      "length": 6,
+      "lineWidth": 0.1
+    },
+    {
+      "id": "parking_west_-343",
+      "side": "west",
+      "xRange": [
+        -11.65,
+        -9.05
+      ],
+      "zRange": [
+        -343,
+        -337
+      ],
+      "width": 2.6,
+      "length": 6,
+      "lineWidth": 0.1
+    },
+    {
+      "id": "parking_west_-336.5",
+      "side": "west",
+      "xRange": [
+        -11.65,
+        -9.05
+      ],
+      "zRange": [
+        -336.5,
+        -330.5
+      ],
+      "width": 2.6,
+      "length": 6,
+      "lineWidth": 0.1
+    },
+    {
+      "id": "parking_west_-330",
+      "side": "west",
+      "xRange": [
+        -11.65,
+        -9.05
+      ],
+      "zRange": [
+        -330,
+        -324
+      ],
+      "width": 2.6,
+      "length": 6,
+      "lineWidth": 0.1
+    },
+    {
+      "id": "parking_west_-323.5",
+      "side": "west",
+      "xRange": [
+        -11.65,
+        -9.05
+      ],
+      "zRange": [
+        -323.5,
+        -317.5
+      ],
+      "width": 2.6,
+      "length": 6,
+      "lineWidth": 0.1
+    },
+    {
+      "id": "parking_west_-317",
+      "side": "west",
+      "xRange": [
+        -11.65,
+        -9.05
+      ],
+      "zRange": [
+        -317,
+        -311
+      ],
+      "width": 2.6,
+      "length": 6,
+      "lineWidth": 0.1
+    },
+    {
+      "id": "parking_west_-310.5",
+      "side": "west",
+      "xRange": [
+        -11.65,
+        -9.05
+      ],
+      "zRange": [
+        -310.5,
+        -304.5
+      ],
+      "width": 2.6,
+      "length": 6,
+      "lineWidth": 0.1
+    },
+    {
+      "id": "parking_west_-304",
+      "side": "west",
+      "xRange": [
+        -11.65,
+        -9.05
+      ],
+      "zRange": [
+        -304,
+        -298
+      ],
+      "width": 2.6,
+      "length": 6,
+      "lineWidth": 0.1
+    },
+    {
+      "id": "parking_west_-297.5",
+      "side": "west",
+      "xRange": [
+        -11.65,
+        -9.05
+      ],
+      "zRange": [
+        -297.5,
+        -291.5
+      ],
+      "width": 2.6,
+      "length": 6,
+      "lineWidth": 0.1
+    },
+    {
+      "id": "parking_west_-291",
+      "side": "west",
+      "xRange": [
+        -11.65,
+        -9.05
+      ],
+      "zRange": [
+        -291,
+        -285
+      ],
+      "width": 2.6,
+      "length": 6,
+      "lineWidth": 0.1
+    },
+    {
+      "id": "parking_west_-284.5",
+      "side": "west",
+      "xRange": [
+        -11.65,
+        -9.05
+      ],
+      "zRange": [
+        -284.5,
+        -278.5
+      ],
+      "width": 2.6,
+      "length": 6,
+      "lineWidth": 0.1
+    },
+    {
+      "id": "parking_west_-278",
+      "side": "west",
+      "xRange": [
+        -11.65,
+        -9.05
+      ],
+      "zRange": [
+        -278,
+        -272
+      ],
+      "width": 2.6,
+      "length": 6,
+      "lineWidth": 0.1
+    },
+    {
+      "id": "parking_west_-271.5",
+      "side": "west",
+      "xRange": [
+        -11.65,
+        -9.05
+      ],
+      "zRange": [
+        -271.5,
+        -265.5
+      ],
+      "width": 2.6,
+      "length": 6,
+      "lineWidth": 0.1
+    },
+    {
+      "id": "parking_west_-265",
+      "side": "west",
+      "xRange": [
+        -11.65,
+        -9.05
+      ],
+      "zRange": [
+        -265,
+        -259
+      ],
+      "width": 2.6,
+      "length": 6,
+      "lineWidth": 0.1
+    },
+    {
+      "id": "parking_west_-258.5",
+      "side": "west",
+      "xRange": [
+        -11.65,
+        -9.05
+      ],
+      "zRange": [
+        -258.5,
+        -252.5
+      ],
+      "width": 2.6,
+      "length": 6,
+      "lineWidth": 0.1
+    },
+    {
+      "id": "parking_west_-252",
+      "side": "west",
+      "xRange": [
+        -11.65,
+        -9.05
+      ],
+      "zRange": [
+        -252,
+        -246
+      ],
+      "width": 2.6,
+      "length": 6,
+      "lineWidth": 0.1
+    },
+    {
+      "id": "parking_west_-245.5",
+      "side": "west",
+      "xRange": [
+        -11.65,
+        -9.05
+      ],
+      "zRange": [
+        -245.5,
+        -239.5
+      ],
+      "width": 2.6,
+      "length": 6,
+      "lineWidth": 0.1
+    },
+    {
+      "id": "parking_west_-239",
+      "side": "west",
+      "xRange": [
+        -11.65,
+        -9.05
+      ],
+      "zRange": [
+        -239,
+        -233
+      ],
+      "width": 2.6,
+      "length": 6,
+      "lineWidth": 0.1
+    },
+    {
+      "id": "parking_west_-232.5",
+      "side": "west",
+      "xRange": [
+        -11.65,
+        -9.05
+      ],
+      "zRange": [
+        -232.5,
+        -226.5
+      ],
+      "width": 2.6,
+      "length": 6,
+      "lineWidth": 0.1
+    },
+    {
+      "id": "parking_west_-226",
+      "side": "west",
+      "xRange": [
+        -11.65,
+        -9.05
+      ],
+      "zRange": [
+        -226,
+        -220
+      ],
+      "width": 2.6,
+      "length": 6,
+      "lineWidth": 0.1
+    },
+    {
+      "id": "parking_west_-219.5",
+      "side": "west",
+      "xRange": [
+        -11.65,
+        -9.05
+      ],
+      "zRange": [
+        -219.5,
+        -213.5
+      ],
+      "width": 2.6,
+      "length": 6,
+      "lineWidth": 0.1
+    },
+    {
+      "id": "parking_west_-213",
+      "side": "west",
+      "xRange": [
+        -11.65,
+        -9.05
+      ],
+      "zRange": [
+        -213,
+        -207
+      ],
+      "width": 2.6,
+      "length": 6,
+      "lineWidth": 0.1
+    },
+    {
+      "id": "parking_west_-206.5",
+      "side": "west",
+      "xRange": [
+        -11.65,
+        -9.05
+      ],
+      "zRange": [
+        -206.5,
+        -200.5
+      ],
+      "width": 2.6,
+      "length": 6,
+      "lineWidth": 0.1
+    },
+    {
+      "id": "parking_west_-200",
+      "side": "west",
+      "xRange": [
+        -11.65,
+        -9.05
+      ],
+      "zRange": [
+        -200,
+        -194
+      ],
+      "width": 2.6,
+      "length": 6,
+      "lineWidth": 0.1
+    },
+    {
+      "id": "parking_west_-193.5",
+      "side": "west",
+      "xRange": [
+        -11.65,
+        -9.05
+      ],
+      "zRange": [
+        -193.5,
+        -187.5
+      ],
+      "width": 2.6,
+      "length": 6,
+      "lineWidth": 0.1
+    },
+    {
+      "id": "parking_west_-187",
+      "side": "west",
+      "xRange": [
+        -11.65,
+        -9.05
+      ],
+      "zRange": [
+        -187,
+        -181
+      ],
+      "width": 2.6,
+      "length": 6,
+      "lineWidth": 0.1
+    },
+    {
+      "id": "parking_west_-180.5",
+      "side": "west",
+      "xRange": [
+        -11.65,
+        -9.05
+      ],
+      "zRange": [
+        -180.5,
+        -174.5
+      ],
+      "width": 2.6,
+      "length": 6,
+      "lineWidth": 0.1
+    },
+    {
+      "id": "parking_west_-174",
+      "side": "west",
+      "xRange": [
+        -11.65,
+        -9.05
+      ],
+      "zRange": [
+        -174,
+        -168
+      ],
+      "width": 2.6,
+      "length": 6,
+      "lineWidth": 0.1
+    },
+    {
+      "id": "parking_west_-167.5",
+      "side": "west",
+      "xRange": [
+        -11.65,
+        -9.05
+      ],
+      "zRange": [
+        -167.5,
+        -161.5
+      ],
+      "width": 2.6,
+      "length": 6,
+      "lineWidth": 0.1
+    },
+    {
+      "id": "parking_west_-161",
+      "side": "west",
+      "xRange": [
+        -11.65,
+        -9.05
+      ],
+      "zRange": [
+        -161,
+        -155
+      ],
+      "width": 2.6,
+      "length": 6,
+      "lineWidth": 0.1
+    },
+    {
+      "id": "parking_west_-154.5",
+      "side": "west",
+      "xRange": [
+        -11.65,
+        -9.05
+      ],
+      "zRange": [
+        -154.5,
+        -148.5
+      ],
+      "width": 2.6,
+      "length": 6,
+      "lineWidth": 0.1
+    },
+    {
+      "id": "parking_west_-115.5",
+      "side": "west",
+      "xRange": [
+        -11.65,
+        -9.05
+      ],
+      "zRange": [
+        -115.5,
+        -109.5
+      ],
+      "width": 2.6,
+      "length": 6,
+      "lineWidth": 0.1
+    },
+    {
+      "id": "parking_west_-109",
+      "side": "west",
+      "xRange": [
+        -11.65,
+        -9.05
+      ],
+      "zRange": [
+        -109,
+        -103
+      ],
+      "width": 2.6,
+      "length": 6,
+      "lineWidth": 0.1
+    },
+    {
+      "id": "parking_west_-102.5",
+      "side": "west",
+      "xRange": [
+        -11.65,
+        -9.05
+      ],
+      "zRange": [
+        -102.5,
+        -96.5
+      ],
+      "width": 2.6,
+      "length": 6,
+      "lineWidth": 0.1
+    },
+    {
+      "id": "parking_west_-96",
+      "side": "west",
+      "xRange": [
+        -11.65,
+        -9.05
+      ],
+      "zRange": [
+        -96,
+        -90
+      ],
+      "width": 2.6,
+      "length": 6,
+      "lineWidth": 0.1
+    },
+    {
+      "id": "parking_west_-89.5",
+      "side": "west",
+      "xRange": [
+        -11.65,
+        -9.05
+      ],
+      "zRange": [
+        -89.5,
+        -83.5
+      ],
+      "width": 2.6,
+      "length": 6,
+      "lineWidth": 0.1
+    },
+    {
+      "id": "parking_west_-83",
+      "side": "west",
+      "xRange": [
+        -11.65,
+        -9.05
+      ],
+      "zRange": [
+        -83,
+        -77
+      ],
+      "width": 2.6,
+      "length": 6,
+      "lineWidth": 0.1
+    },
+    {
+      "id": "parking_west_-76.5",
+      "side": "west",
+      "xRange": [
+        -11.65,
+        -9.05
+      ],
+      "zRange": [
+        -76.5,
+        -70.5
+      ],
+      "width": 2.6,
+      "length": 6,
+      "lineWidth": 0.1
+    },
+    {
+      "id": "parking_west_-70",
+      "side": "west",
+      "xRange": [
+        -11.65,
+        -9.05
+      ],
+      "zRange": [
+        -70,
+        -64
+      ],
+      "width": 2.6,
+      "length": 6,
+      "lineWidth": 0.1
+    },
+    {
+      "id": "parking_west_-63.5",
+      "side": "west",
+      "xRange": [
+        -11.65,
+        -9.05
+      ],
+      "zRange": [
+        -63.5,
+        -57.5
+      ],
+      "width": 2.6,
+      "length": 6,
+      "lineWidth": 0.1
+    },
+    {
+      "id": "parking_west_-57",
+      "side": "west",
+      "xRange": [
+        -11.65,
+        -9.05
+      ],
+      "zRange": [
+        -57,
+        -51
+      ],
+      "width": 2.6,
+      "length": 6,
+      "lineWidth": 0.1
+    },
+    {
+      "id": "parking_west_-18",
+      "side": "west",
+      "xRange": [
+        -11.65,
+        -9.05
+      ],
+      "zRange": [
+        -18,
+        -12
+      ],
+      "width": 2.6,
+      "length": 6,
+      "lineWidth": 0.1
+    },
+    {
+      "id": "parking_west_-11.5",
+      "side": "west",
+      "xRange": [
+        -11.65,
+        -9.05
+      ],
+      "zRange": [
+        -11.5,
+        -5.5
+      ],
+      "width": 2.6,
+      "length": 6,
+      "lineWidth": 0.1
+    },
+    {
+      "id": "parking_west_-5",
+      "side": "west",
+      "xRange": [
+        -11.65,
+        -9.05
+      ],
+      "zRange": [
+        -5,
+        1
+      ],
+      "width": 2.6,
+      "length": 6,
+      "lineWidth": 0.1
+    },
+    {
+      "id": "parking_west_1.5",
+      "side": "west",
+      "xRange": [
+        -11.65,
+        -9.05
+      ],
+      "zRange": [
+        1.5,
+        7.5
+      ],
+      "width": 2.6,
+      "length": 6,
+      "lineWidth": 0.1
+    },
+    {
+      "id": "parking_west_8",
+      "side": "west",
+      "xRange": [
+        -11.65,
+        -9.05
+      ],
+      "zRange": [
+        8,
+        14
+      ],
+      "width": 2.6,
+      "length": 6,
+      "lineWidth": 0.1
+    },
+    {
+      "id": "parking_west_14.5",
+      "side": "west",
+      "xRange": [
+        -11.65,
+        -9.05
+      ],
+      "zRange": [
+        14.5,
+        20.5
+      ],
+      "width": 2.6,
+      "length": 6,
+      "lineWidth": 0.1
+    },
+    {
+      "id": "parking_west_21",
+      "side": "west",
+      "xRange": [
+        -11.65,
+        -9.05
+      ],
+      "zRange": [
+        21,
+        27
+      ],
+      "width": 2.6,
+      "length": 6,
+      "lineWidth": 0.1
+    },
+    {
+      "id": "parking_west_27.5",
+      "side": "west",
+      "xRange": [
+        -11.65,
+        -9.05
+      ],
+      "zRange": [
+        27.5,
+        33.5
+      ],
+      "width": 2.6,
+      "length": 6,
+      "lineWidth": 0.1
+    },
+    {
+      "id": "parking_east_-382",
+      "side": "east",
+      "xRange": [
+        9.05,
+        11.65
+      ],
+      "zRange": [
+        -382,
+        -376
+      ],
+      "width": 2.6,
+      "length": 6,
+      "lineWidth": 0.1
+    },
+    {
+      "id": "parking_east_-375.5",
+      "side": "east",
+      "xRange": [
+        9.05,
+        11.65
+      ],
+      "zRange": [
+        -375.5,
+        -369.5
+      ],
+      "width": 2.6,
+      "length": 6,
+      "lineWidth": 0.1
+    },
+    {
+      "id": "parking_east_-369",
+      "side": "east",
+      "xRange": [
+        9.05,
+        11.65
+      ],
+      "zRange": [
+        -369,
+        -363
+      ],
+      "width": 2.6,
+      "length": 6,
+      "lineWidth": 0.1
+    },
+    {
+      "id": "parking_east_-362.5",
+      "side": "east",
+      "xRange": [
+        9.05,
+        11.65
+      ],
+      "zRange": [
+        -362.5,
+        -356.5
+      ],
+      "width": 2.6,
+      "length": 6,
+      "lineWidth": 0.1
+    },
+    {
+      "id": "parking_east_-356",
+      "side": "east",
+      "xRange": [
+        9.05,
+        11.65
+      ],
+      "zRange": [
+        -356,
+        -350
+      ],
+      "width": 2.6,
+      "length": 6,
+      "lineWidth": 0.1
+    },
+    {
+      "id": "parking_east_-349.5",
+      "side": "east",
+      "xRange": [
+        9.05,
+        11.65
+      ],
+      "zRange": [
+        -349.5,
+        -343.5
+      ],
+      "width": 2.6,
+      "length": 6,
+      "lineWidth": 0.1
+    },
+    {
+      "id": "parking_east_-343",
+      "side": "east",
+      "xRange": [
+        9.05,
+        11.65
+      ],
+      "zRange": [
+        -343,
+        -337
+      ],
+      "width": 2.6,
+      "length": 6,
+      "lineWidth": 0.1
+    },
+    {
+      "id": "parking_east_-336.5",
+      "side": "east",
+      "xRange": [
+        9.05,
+        11.65
+      ],
+      "zRange": [
+        -336.5,
+        -330.5
+      ],
+      "width": 2.6,
+      "length": 6,
+      "lineWidth": 0.1
+    },
+    {
+      "id": "parking_east_-330",
+      "side": "east",
+      "xRange": [
+        9.05,
+        11.65
+      ],
+      "zRange": [
+        -330,
+        -324
+      ],
+      "width": 2.6,
+      "length": 6,
+      "lineWidth": 0.1
+    },
+    {
+      "id": "parking_east_-323.5",
+      "side": "east",
+      "xRange": [
+        9.05,
+        11.65
+      ],
+      "zRange": [
+        -323.5,
+        -317.5
+      ],
+      "width": 2.6,
+      "length": 6,
+      "lineWidth": 0.1
+    },
+    {
+      "id": "parking_east_-317",
+      "side": "east",
+      "xRange": [
+        9.05,
+        11.65
+      ],
+      "zRange": [
+        -317,
+        -311
+      ],
+      "width": 2.6,
+      "length": 6,
+      "lineWidth": 0.1
+    },
+    {
+      "id": "parking_east_-310.5",
+      "side": "east",
+      "xRange": [
+        9.05,
+        11.65
+      ],
+      "zRange": [
+        -310.5,
+        -304.5
+      ],
+      "width": 2.6,
+      "length": 6,
+      "lineWidth": 0.1
+    },
+    {
+      "id": "parking_east_-304",
+      "side": "east",
+      "xRange": [
+        9.05,
+        11.65
+      ],
+      "zRange": [
+        -304,
+        -298
+      ],
+      "width": 2.6,
+      "length": 6,
+      "lineWidth": 0.1
+    },
+    {
+      "id": "parking_east_-297.5",
+      "side": "east",
+      "xRange": [
+        9.05,
+        11.65
+      ],
+      "zRange": [
+        -297.5,
+        -291.5
+      ],
+      "width": 2.6,
+      "length": 6,
+      "lineWidth": 0.1
+    },
+    {
+      "id": "parking_east_-291",
+      "side": "east",
+      "xRange": [
+        9.05,
+        11.65
+      ],
+      "zRange": [
+        -291,
+        -285
+      ],
+      "width": 2.6,
+      "length": 6,
+      "lineWidth": 0.1
+    },
+    {
+      "id": "parking_east_-284.5",
+      "side": "east",
+      "xRange": [
+        9.05,
+        11.65
+      ],
+      "zRange": [
+        -284.5,
+        -278.5
+      ],
+      "width": 2.6,
+      "length": 6,
+      "lineWidth": 0.1
+    },
+    {
+      "id": "parking_east_-278",
+      "side": "east",
+      "xRange": [
+        9.05,
+        11.65
+      ],
+      "zRange": [
+        -278,
+        -272
+      ],
+      "width": 2.6,
+      "length": 6,
+      "lineWidth": 0.1
+    },
+    {
+      "id": "parking_east_-271.5",
+      "side": "east",
+      "xRange": [
+        9.05,
+        11.65
+      ],
+      "zRange": [
+        -271.5,
+        -265.5
+      ],
+      "width": 2.6,
+      "length": 6,
+      "lineWidth": 0.1
+    },
+    {
+      "id": "parking_east_-265",
+      "side": "east",
+      "xRange": [
+        9.05,
+        11.65
+      ],
+      "zRange": [
+        -265,
+        -259
+      ],
+      "width": 2.6,
+      "length": 6,
+      "lineWidth": 0.1
+    },
+    {
+      "id": "parking_east_-258.5",
+      "side": "east",
+      "xRange": [
+        9.05,
+        11.65
+      ],
+      "zRange": [
+        -258.5,
+        -252.5
+      ],
+      "width": 2.6,
+      "length": 6,
+      "lineWidth": 0.1
+    },
+    {
+      "id": "parking_east_-252",
+      "side": "east",
+      "xRange": [
+        9.05,
+        11.65
+      ],
+      "zRange": [
+        -252,
+        -246
+      ],
+      "width": 2.6,
+      "length": 6,
+      "lineWidth": 0.1
+    },
+    {
+      "id": "parking_east_-245.5",
+      "side": "east",
+      "xRange": [
+        9.05,
+        11.65
+      ],
+      "zRange": [
+        -245.5,
+        -239.5
+      ],
+      "width": 2.6,
+      "length": 6,
+      "lineWidth": 0.1
+    },
+    {
+      "id": "parking_east_-239",
+      "side": "east",
+      "xRange": [
+        9.05,
+        11.65
+      ],
+      "zRange": [
+        -239,
+        -233
+      ],
+      "width": 2.6,
+      "length": 6,
+      "lineWidth": 0.1
+    },
+    {
+      "id": "parking_east_-232.5",
+      "side": "east",
+      "xRange": [
+        9.05,
+        11.65
+      ],
+      "zRange": [
+        -232.5,
+        -226.5
+      ],
+      "width": 2.6,
+      "length": 6,
+      "lineWidth": 0.1
+    },
+    {
+      "id": "parking_east_-226",
+      "side": "east",
+      "xRange": [
+        9.05,
+        11.65
+      ],
+      "zRange": [
+        -226,
+        -220
+      ],
+      "width": 2.6,
+      "length": 6,
+      "lineWidth": 0.1
+    },
+    {
+      "id": "parking_east_-219.5",
+      "side": "east",
+      "xRange": [
+        9.05,
+        11.65
+      ],
+      "zRange": [
+        -219.5,
+        -213.5
+      ],
+      "width": 2.6,
+      "length": 6,
+      "lineWidth": 0.1
+    },
+    {
+      "id": "parking_east_-213",
+      "side": "east",
+      "xRange": [
+        9.05,
+        11.65
+      ],
+      "zRange": [
+        -213,
+        -207
+      ],
+      "width": 2.6,
+      "length": 6,
+      "lineWidth": 0.1
+    },
+    {
+      "id": "parking_east_-206.5",
+      "side": "east",
+      "xRange": [
+        9.05,
+        11.65
+      ],
+      "zRange": [
+        -206.5,
+        -200.5
+      ],
+      "width": 2.6,
+      "length": 6,
+      "lineWidth": 0.1
+    },
+    {
+      "id": "parking_east_-200",
+      "side": "east",
+      "xRange": [
+        9.05,
+        11.65
+      ],
+      "zRange": [
+        -200,
+        -194
+      ],
+      "width": 2.6,
+      "length": 6,
+      "lineWidth": 0.1
+    },
+    {
+      "id": "parking_east_-193.5",
+      "side": "east",
+      "xRange": [
+        9.05,
+        11.65
+      ],
+      "zRange": [
+        -193.5,
+        -187.5
+      ],
+      "width": 2.6,
+      "length": 6,
+      "lineWidth": 0.1
+    },
+    {
+      "id": "parking_east_-187",
+      "side": "east",
+      "xRange": [
+        9.05,
+        11.65
+      ],
+      "zRange": [
+        -187,
+        -181
+      ],
+      "width": 2.6,
+      "length": 6,
+      "lineWidth": 0.1
+    },
+    {
+      "id": "parking_east_-180.5",
+      "side": "east",
+      "xRange": [
+        9.05,
+        11.65
+      ],
+      "zRange": [
+        -180.5,
+        -174.5
+      ],
+      "width": 2.6,
+      "length": 6,
+      "lineWidth": 0.1
+    },
+    {
+      "id": "parking_east_-174",
+      "side": "east",
+      "xRange": [
+        9.05,
+        11.65
+      ],
+      "zRange": [
+        -174,
+        -168
+      ],
+      "width": 2.6,
+      "length": 6,
+      "lineWidth": 0.1
+    },
+    {
+      "id": "parking_east_-167.5",
+      "side": "east",
+      "xRange": [
+        9.05,
+        11.65
+      ],
+      "zRange": [
+        -167.5,
+        -161.5
+      ],
+      "width": 2.6,
+      "length": 6,
+      "lineWidth": 0.1
+    },
+    {
+      "id": "parking_east_-161",
+      "side": "east",
+      "xRange": [
+        9.05,
+        11.65
+      ],
+      "zRange": [
+        -161,
+        -155
+      ],
+      "width": 2.6,
+      "length": 6,
+      "lineWidth": 0.1
+    },
+    {
+      "id": "parking_east_-154.5",
+      "side": "east",
+      "xRange": [
+        9.05,
+        11.65
+      ],
+      "zRange": [
+        -154.5,
+        -148.5
+      ],
+      "width": 2.6,
+      "length": 6,
+      "lineWidth": 0.1
+    },
+    {
+      "id": "parking_east_-115.5",
+      "side": "east",
+      "xRange": [
+        9.05,
+        11.65
+      ],
+      "zRange": [
+        -115.5,
+        -109.5
+      ],
+      "width": 2.6,
+      "length": 6,
+      "lineWidth": 0.1
+    },
+    {
+      "id": "parking_east_-109",
+      "side": "east",
+      "xRange": [
+        9.05,
+        11.65
+      ],
+      "zRange": [
+        -109,
+        -103
+      ],
+      "width": 2.6,
+      "length": 6,
+      "lineWidth": 0.1
+    },
+    {
+      "id": "parking_east_-102.5",
+      "side": "east",
+      "xRange": [
+        9.05,
+        11.65
+      ],
+      "zRange": [
+        -102.5,
+        -96.5
+      ],
+      "width": 2.6,
+      "length": 6,
+      "lineWidth": 0.1
+    },
+    {
+      "id": "parking_east_-96",
+      "side": "east",
+      "xRange": [
+        9.05,
+        11.65
+      ],
+      "zRange": [
+        -96,
+        -90
+      ],
+      "width": 2.6,
+      "length": 6,
+      "lineWidth": 0.1
+    },
+    {
+      "id": "parking_east_-89.5",
+      "side": "east",
+      "xRange": [
+        9.05,
+        11.65
+      ],
+      "zRange": [
+        -89.5,
+        -83.5
+      ],
+      "width": 2.6,
+      "length": 6,
+      "lineWidth": 0.1
+    },
+    {
+      "id": "parking_east_-83",
+      "side": "east",
+      "xRange": [
+        9.05,
+        11.65
+      ],
+      "zRange": [
+        -83,
+        -77
+      ],
+      "width": 2.6,
+      "length": 6,
+      "lineWidth": 0.1
+    },
+    {
+      "id": "parking_east_-76.5",
+      "side": "east",
+      "xRange": [
+        9.05,
+        11.65
+      ],
+      "zRange": [
+        -76.5,
+        -70.5
+      ],
+      "width": 2.6,
+      "length": 6,
+      "lineWidth": 0.1
+    },
+    {
+      "id": "parking_east_-70",
+      "side": "east",
+      "xRange": [
+        9.05,
+        11.65
+      ],
+      "zRange": [
+        -70,
+        -64
+      ],
+      "width": 2.6,
+      "length": 6,
+      "lineWidth": 0.1
+    },
+    {
+      "id": "parking_east_-63.5",
+      "side": "east",
+      "xRange": [
+        9.05,
+        11.65
+      ],
+      "zRange": [
+        -63.5,
+        -57.5
+      ],
+      "width": 2.6,
+      "length": 6,
+      "lineWidth": 0.1
+    },
+    {
+      "id": "parking_east_-57",
+      "side": "east",
+      "xRange": [
+        9.05,
+        11.65
+      ],
+      "zRange": [
+        -57,
+        -51
+      ],
+      "width": 2.6,
+      "length": 6,
+      "lineWidth": 0.1
+    },
+    {
+      "id": "parking_east_-18",
+      "side": "east",
+      "xRange": [
+        9.05,
+        11.65
+      ],
+      "zRange": [
+        -18,
+        -12
+      ],
+      "width": 2.6,
+      "length": 6,
+      "lineWidth": 0.1
+    },
+    {
+      "id": "parking_east_-11.5",
+      "side": "east",
+      "xRange": [
+        9.05,
+        11.65
+      ],
+      "zRange": [
+        -11.5,
+        -5.5
+      ],
+      "width": 2.6,
+      "length": 6,
+      "lineWidth": 0.1
+    },
+    {
+      "id": "parking_east_-5",
+      "side": "east",
+      "xRange": [
+        9.05,
+        11.65
+      ],
+      "zRange": [
+        -5,
+        1
+      ],
+      "width": 2.6,
+      "length": 6,
+      "lineWidth": 0.1
+    },
+    {
+      "id": "parking_east_1.5",
+      "side": "east",
+      "xRange": [
+        9.05,
+        11.65
+      ],
+      "zRange": [
+        1.5,
+        7.5
+      ],
+      "width": 2.6,
+      "length": 6,
+      "lineWidth": 0.1
+    },
+    {
+      "id": "parking_east_8",
+      "side": "east",
+      "xRange": [
+        9.05,
+        11.65
+      ],
+      "zRange": [
+        8,
+        14
+      ],
+      "width": 2.6,
+      "length": 6,
+      "lineWidth": 0.1
+    },
+    {
+      "id": "parking_east_14.5",
+      "side": "east",
+      "xRange": [
+        9.05,
+        11.65
+      ],
+      "zRange": [
+        14.5,
+        20.5
+      ],
+      "width": 2.6,
+      "length": 6,
+      "lineWidth": 0.1
+    },
+    {
+      "id": "parking_east_21",
+      "side": "east",
+      "xRange": [
+        9.05,
+        11.65
+      ],
+      "zRange": [
+        21,
+        27
+      ],
+      "width": 2.6,
+      "length": 6,
+      "lineWidth": 0.1
+    },
+    {
+      "id": "parking_east_27.5",
+      "side": "east",
+      "xRange": [
+        9.05,
+        11.65
+      ],
+      "zRange": [
+        27.5,
+        33.5
+      ],
+      "width": 2.6,
+      "length": 6,
+      "lineWidth": 0.1
+    }
+  ],
+  "lineSpecs": {
+    "laneDividersX": [
+      -3.7,
+      3.7
+    ],
+    "lineWidth": 0.15,
+    "dashPaint": 2,
+    "dashGap": 4,
+    "edgeX": [
+      -7,
+      7
+    ],
+    "doubleYellowCentersX": [
+      -0.15,
+      0.15
+    ],
+    "doubleYellowClearGap": 0.15,
+    "cycleEdgesX": [
+      -14.7,
+      -12.2
+    ],
+    "stopWidth": 0.3,
+    "parkingLineWidth": 0.1,
+    "parkingCrosswalkExclusionFromCenter": 12,
+    "arrowLength": 4.5
+  },
+  "removedLegacyActors": [
+    "OOW_00039_Mesh",
+    "OOW_00040_Mesh",
+    "OOW_00041_Mesh",
+    "OOW_00044_Mesh",
+    "OOW_00045_Mesh",
+    "OOW_00046_Mesh",
+    "OOW_00047_Mesh",
+    "OOW_00048_Mesh",
+    "OOW_00049_Mesh",
+    "OOW_00050_Mesh",
+    "OOW_00051_Mesh",
+    "OOW_00052_Mesh",
+    "OOW_00053_Mesh",
+    "OOW_00054_Mesh",
+    "OOW_00055_Mesh",
+    "OOW_00056_Mesh",
+    "OOW_00057_Mesh",
+    "OOW_00058_Mesh",
+    "OOW_00059_Mesh",
+    "OOW_00060_Mesh",
+    "OOW_00061_Mesh",
+    "OOW_00062_Mesh",
+    "OOW_00063_Mesh",
+    "OOW_00064_Mesh",
+    "OOW_00065_Mesh",
+    "OOW_00066_Mesh",
+    "OOW_00067_Mesh",
+    "OOW_00068_Mesh",
+    "OOW_00069_Mesh",
+    "OOW_00070_Mesh",
+    "OOW_00071_Mesh",
+    "OOW_00072_Mesh",
+    "OOW_00073_Mesh",
+    "OOW_00074_Mesh",
+    "OOW_00075_Mesh",
+    "OOW_00076_Mesh",
+    "OOW_00077_Mesh",
+    "OOW_00078_Mesh",
+    "OOW_00079_Mesh",
+    "OOW_00080_Mesh",
+    "OOW_00081_Mesh",
+    "OOW_00082_Mesh",
+    "OOW_00083_Mesh"
+  ],
+  "trafficSource": {
+    "file": "unreal/OutOfWindow/Source/OutOfWindow/WindowTraffic.cpp",
+    "sha256": "35123806a1a3139ceb35b253cc579ed9800b072a5a7474893e6bad11fa998ee1",
+    "mapping": "X=-Direction*(2.2+3*Lane); glTF dZ/dt=Direction. East positive-X traffic moves toward -Z; west negative-X traffic moves toward +Z.",
+    "behavior": "Existing continuous animated traffic is unchanged; painted crossing controls do not add a signal or stopping simulation."
+  },
+  "meshes": [
+    {
+      "meshName": "CityRoadMarkings_White",
+      "materialSlots": [
+        "CityRoadMarkings_White"
+      ],
+      "triangles": 1340,
+      "vertices": 4020,
+      "bounds": {
+        "min": [
+          -14.774999618530273,
+          6.872499942779541,
+          -394
+        ],
+        "max": [
+          11.75,
+          6.902500152587891,
+          36
+        ]
+      }
+    },
+    {
+      "meshName": "CityRoadMarkings_Yellow",
+      "materialSlots": [
+        "CityRoadMarkings_Yellow"
+      ],
+      "triangles": 12,
+      "vertices": 36,
+      "bounds": {
+        "min": [
+          -0.22499999403953552,
+          6.872499942779541,
+          -394
+        ],
+        "max": [
+          0.22499999403953552,
+          6.872499942779541,
+          36
+        ]
+      }
+    }
+  ],
+  "meshCount": 2,
+  "materialCount": 2,
+  "primitives": 2,
+  "triangles": 1352,
+  "counts": {
+    "crossings": 2,
+    "crossingStripes": 54,
+    "stripeSurfacePatches": 54,
+    "laneDashes": 138,
+    "stopLines": 4,
+    "arrows": 12,
+    "parkingBays": 108,
+    "paintedParts": 658
+  },
+  "materials": [
+    {
+      "name": "CityRoadMarkings_White",
+      "color": 12960954,
+      "roughness": 0.83,
+      "metalness": 0,
+      "opaque": true
+    },
+    {
+      "name": "CityRoadMarkings_Yellow",
+      "color": 11839323,
+      "roughness": 0.84,
+      "metalness": 0,
+      "opaque": true
+    }
+  ],
+  "geometryChecks": {
+    "passed": true,
+    "method": "Downward raycasts against final merged geometry plus all actual vertex bounds/heights and traffic-source direction checks.",
+    "tests": [
+      {
+        "kind": "crosswalk",
+        "id": "crosswalk_1",
+        "passed": true,
+        "samples": [
+          {
+            "point": [
+              -14.45,
+              -32.88
+            ],
+            "expected": 6.902500000000001,
+            "actual": 6.902500152587891,
+            "passed": true
+          },
+          {
+            "point": [
+              -13.45,
+              -32.88
+            ],
+            "expected": 6.902500000000001,
+            "actual": 6.902500152587891,
+            "passed": true
+          },
+          {
+            "point": [
+              -12.45,
+              -32.88
+            ],
+            "expected": 6.902500000000001,
+            "actual": 6.902500152587891,
+            "passed": true
+          },
+          {
+            "point": [
+              -11.45,
+              -32.88
+            ],
+            "expected": 6.8925,
+            "actual": 6.892499923706055,
+            "passed": true
+          },
+          {
+            "point": [
+              -10.45,
+              -32.88
+            ],
+            "expected": 6.8925,
+            "actual": 6.892499923706055,
+            "passed": true
+          },
+          {
+            "point": [
+              -9.45,
+              -32.88
+            ],
+            "expected": 6.8925,
+            "actual": 6.892499923706055,
+            "passed": true
+          },
+          {
+            "point": [
+              -8.45,
+              -32.88
+            ],
+            "expected": 6.8725000000000005,
+            "actual": 6.872499942779541,
+            "passed": true
+          },
+          {
+            "point": [
+              -7.449999999999999,
+              -32.88
+            ],
+            "expected": 6.8725000000000005,
+            "actual": 6.872499942779541,
+            "passed": true
+          },
+          {
+            "point": [
+              -6.449999999999999,
+              -32.88
+            ],
+            "expected": 6.8725000000000005,
+            "actual": 6.872499942779541,
+            "passed": true
+          },
+          {
+            "point": [
+              -5.449999999999999,
+              -32.88
+            ],
+            "expected": 6.8725000000000005,
+            "actual": 6.872499942779541,
+            "passed": true
+          },
+          {
+            "point": [
+              -4.449999999999999,
+              -32.88
+            ],
+            "expected": 6.8725000000000005,
+            "actual": 6.872499942779541,
+            "passed": true
+          },
+          {
+            "point": [
+              -3.4499999999999993,
+              -32.88
+            ],
+            "expected": 6.8725000000000005,
+            "actual": 6.872499942779541,
+            "passed": true
+          },
+          {
+            "point": [
+              -2.4499999999999993,
+              -32.88
+            ],
+            "expected": 6.8725000000000005,
+            "actual": 6.872499942779541,
+            "passed": true
+          },
+          {
+            "point": [
+              -1.4499999999999993,
+              -32.88
+            ],
+            "expected": 6.8725000000000005,
+            "actual": 6.872499942779541,
+            "passed": true
+          },
+          {
+            "point": [
+              -0.4499999999999993,
+              -32.88
+            ],
+            "expected": 6.8725000000000005,
+            "actual": 6.872499942779541,
+            "passed": true
+          },
+          {
+            "point": [
+              0.5500000000000007,
+              -32.88
+            ],
+            "expected": 6.8725000000000005,
+            "actual": 6.872499942779541,
+            "passed": true
+          },
+          {
+            "point": [
+              1.5500000000000007,
+              -32.88
+            ],
+            "expected": 6.8725000000000005,
+            "actual": 6.872499942779541,
+            "passed": true
+          },
+          {
+            "point": [
+              2.5500000000000007,
+              -32.88
+            ],
+            "expected": 6.8725000000000005,
+            "actual": 6.872499942779541,
+            "passed": true
+          },
+          {
+            "point": [
+              3.5500000000000007,
+              -32.88
+            ],
+            "expected": 6.8725000000000005,
+            "actual": 6.872499942779541,
+            "passed": true
+          },
+          {
+            "point": [
+              4.550000000000001,
+              -32.88
+            ],
+            "expected": 6.8725000000000005,
+            "actual": 6.872499942779541,
+            "passed": true
+          },
+          {
+            "point": [
+              5.550000000000001,
+              -32.88
+            ],
+            "expected": 6.8725000000000005,
+            "actual": 6.872499942779541,
+            "passed": true
+          },
+          {
+            "point": [
+              6.550000000000001,
+              -32.88
+            ],
+            "expected": 6.8725000000000005,
+            "actual": 6.872499942779541,
+            "passed": true
+          },
+          {
+            "point": [
+              7.550000000000001,
+              -32.88
+            ],
+            "expected": 6.8725000000000005,
+            "actual": 6.872499942779541,
+            "passed": true
+          },
+          {
+            "point": [
+              8.55,
+              -32.88
+            ],
+            "expected": 6.8725000000000005,
+            "actual": 6.872499942779541,
+            "passed": true
+          },
+          {
+            "point": [
+              9.55,
+              -32.88
+            ],
+            "expected": 6.8925,
+            "actual": 6.892499923706055,
+            "passed": true
+          },
+          {
+            "point": [
+              10.55,
+              -32.88
+            ],
+            "expected": 6.8925,
+            "actual": 6.892499923706055,
+            "passed": true
+          },
+          {
+            "point": [
+              11.55,
+              -32.88
+            ],
+            "expected": 6.8925,
+            "actual": 6.892499923706055,
+            "passed": true
+          },
+          {
+            "point": [
+              -14.45,
+              -30.900000000000002
+            ],
+            "expected": 6.902500000000001,
+            "actual": 6.902500152587891,
+            "passed": true
+          },
+          {
+            "point": [
+              -14.229999999999999,
+              -32.88
+            ],
+            "expected": null,
+            "actual": null,
+            "passed": true
+          },
+          {
+            "point": [
+              -13.95,
+              -32.88
+            ],
+            "expected": null,
+            "actual": null,
+            "passed": true
+          },
+          {
+            "point": [
+              -13.45,
+              -30.900000000000002
+            ],
+            "expected": 6.902500000000001,
+            "actual": 6.902500152587891,
+            "passed": true
+          },
+          {
+            "point": [
+              -13.229999999999999,
+              -32.88
+            ],
+            "expected": null,
+            "actual": null,
+            "passed": true
+          },
+          {
+            "point": [
+              -12.95,
+              -32.88
+            ],
+            "expected": null,
+            "actual": null,
+            "passed": true
+          },
+          {
+            "point": [
+              -12.45,
+              -30.900000000000002
+            ],
+            "expected": 6.902500000000001,
+            "actual": 6.902500152587891,
+            "passed": true
+          },
+          {
+            "point": [
+              -12.229999999999999,
+              -32.88
+            ],
+            "expected": null,
+            "actual": null,
+            "passed": true
+          },
+          {
+            "point": [
+              -11.95,
+              -32.88
+            ],
+            "expected": null,
+            "actual": null,
+            "passed": true
+          },
+          {
+            "point": [
+              -11.45,
+              -30.900000000000002
+            ],
+            "expected": 6.8925,
+            "actual": 6.892499923706055,
+            "passed": true
+          },
+          {
+            "point": [
+              -11.229999999999999,
+              -32.88
+            ],
+            "expected": null,
+            "actual": null,
+            "passed": true
+          },
+          {
+            "point": [
+              -10.95,
+              -32.88
+            ],
+            "expected": null,
+            "actual": null,
+            "passed": true
+          },
+          {
+            "point": [
+              -10.45,
+              -30.900000000000002
+            ],
+            "expected": 6.8925,
+            "actual": 6.892499923706055,
+            "passed": true
+          },
+          {
+            "point": [
+              -10.229999999999999,
+              -32.88
+            ],
+            "expected": null,
+            "actual": null,
+            "passed": true
+          },
+          {
+            "point": [
+              -9.95,
+              -32.88
+            ],
+            "expected": null,
+            "actual": null,
+            "passed": true
+          },
+          {
+            "point": [
+              -9.45,
+              -30.900000000000002
+            ],
+            "expected": 6.8925,
+            "actual": 6.892499923706055,
+            "passed": true
+          },
+          {
+            "point": [
+              -9.229999999999999,
+              -32.88
+            ],
+            "expected": null,
+            "actual": null,
+            "passed": true
+          },
+          {
+            "point": [
+              -8.95,
+              -32.88
+            ],
+            "expected": null,
+            "actual": null,
+            "passed": true
+          },
+          {
+            "point": [
+              -8.45,
+              -30.900000000000002
+            ],
+            "expected": 6.8725000000000005,
+            "actual": 6.872499942779541,
+            "passed": true
+          },
+          {
+            "point": [
+              -8.229999999999999,
+              -32.88
+            ],
+            "expected": null,
+            "actual": null,
+            "passed": true
+          },
+          {
+            "point": [
+              -7.949999999999999,
+              -32.88
+            ],
+            "expected": null,
+            "actual": null,
+            "passed": true
+          },
+          {
+            "point": [
+              -7.449999999999999,
+              -30.900000000000002
+            ],
+            "expected": 6.8725000000000005,
+            "actual": 6.872499942779541,
+            "passed": true
+          },
+          {
+            "point": [
+              -7.2299999999999995,
+              -32.88
+            ],
+            "expected": null,
+            "actual": null,
+            "passed": true
+          },
+          {
+            "point": [
+              -6.949999999999999,
+              -32.88
+            ],
+            "expected": null,
+            "actual": null,
+            "passed": true
+          },
+          {
+            "point": [
+              -6.449999999999999,
+              -30.900000000000002
+            ],
+            "expected": 6.8725000000000005,
+            "actual": 6.872499942779541,
+            "passed": true
+          },
+          {
+            "point": [
+              -6.2299999999999995,
+              -32.88
+            ],
+            "expected": null,
+            "actual": null,
+            "passed": true
+          },
+          {
+            "point": [
+              -5.949999999999999,
+              -32.88
+            ],
+            "expected": null,
+            "actual": null,
+            "passed": true
+          },
+          {
+            "point": [
+              -5.449999999999999,
+              -30.900000000000002
+            ],
+            "expected": 6.8725000000000005,
+            "actual": 6.872499942779541,
+            "passed": true
+          },
+          {
+            "point": [
+              -5.2299999999999995,
+              -32.88
+            ],
+            "expected": null,
+            "actual": null,
+            "passed": true
+          },
+          {
+            "point": [
+              -4.949999999999999,
+              -32.88
+            ],
+            "expected": null,
+            "actual": null,
+            "passed": true
+          },
+          {
+            "point": [
+              -4.449999999999999,
+              -30.900000000000002
+            ],
+            "expected": 6.8725000000000005,
+            "actual": 6.872499942779541,
+            "passed": true
+          },
+          {
+            "point": [
+              -4.2299999999999995,
+              -32.88
+            ],
+            "expected": null,
+            "actual": null,
+            "passed": true
+          },
+          {
+            "point": [
+              -3.9499999999999993,
+              -32.88
+            ],
+            "expected": null,
+            "actual": null,
+            "passed": true
+          },
+          {
+            "point": [
+              -3.4499999999999993,
+              -30.900000000000002
+            ],
+            "expected": 6.8725000000000005,
+            "actual": 6.872499942779541,
+            "passed": true
+          },
+          {
+            "point": [
+              -3.229999999999999,
+              -32.88
+            ],
+            "expected": null,
+            "actual": null,
+            "passed": true
+          },
+          {
+            "point": [
+              -2.9499999999999993,
+              -32.88
+            ],
+            "expected": null,
+            "actual": null,
+            "passed": true
+          },
+          {
+            "point": [
+              -2.4499999999999993,
+              -30.900000000000002
+            ],
+            "expected": 6.8725000000000005,
+            "actual": 6.872499942779541,
+            "passed": true
+          },
+          {
+            "point": [
+              -2.229999999999999,
+              -32.88
+            ],
+            "expected": null,
+            "actual": null,
+            "passed": true
+          },
+          {
+            "point": [
+              -1.9499999999999993,
+              -32.88
+            ],
+            "expected": null,
+            "actual": null,
+            "passed": true
+          },
+          {
+            "point": [
+              -1.4499999999999993,
+              -30.900000000000002
+            ],
+            "expected": 6.8725000000000005,
+            "actual": 6.872499942779541,
+            "passed": true
+          },
+          {
+            "point": [
+              -1.2299999999999993,
+              -32.88
+            ],
+            "expected": null,
+            "actual": null,
+            "passed": true
+          },
+          {
+            "point": [
+              -0.9499999999999993,
+              -32.88
+            ],
+            "expected": null,
+            "actual": null,
+            "passed": true
+          },
+          {
+            "point": [
+              -0.4499999999999993,
+              -30.900000000000002
+            ],
+            "expected": 6.8725000000000005,
+            "actual": 6.872499942779541,
+            "passed": true
+          },
+          {
+            "point": [
+              -0.2299999999999993,
+              -32.88
+            ],
+            "expected": null,
+            "actual": null,
+            "passed": true
+          },
+          {
+            "point": [
+              0.05000000000000071,
+              -32.88
+            ],
+            "expected": null,
+            "actual": null,
+            "passed": true
+          },
+          {
+            "point": [
+              0.5500000000000007,
+              -30.900000000000002
+            ],
+            "expected": 6.8725000000000005,
+            "actual": 6.872499942779541,
+            "passed": true
+          },
+          {
+            "point": [
+              0.7700000000000007,
+              -32.88
+            ],
+            "expected": null,
+            "actual": null,
+            "passed": true
+          },
+          {
+            "point": [
+              1.0500000000000007,
+              -32.88
+            ],
+            "expected": null,
+            "actual": null,
+            "passed": true
+          },
+          {
+            "point": [
+              1.5500000000000007,
+              -30.900000000000002
+            ],
+            "expected": 6.8725000000000005,
+            "actual": 6.872499942779541,
+            "passed": true
+          },
+          {
+            "point": [
+              1.7700000000000007,
+              -32.88
+            ],
+            "expected": null,
+            "actual": null,
+            "passed": true
+          },
+          {
+            "point": [
+              2.0500000000000007,
+              -32.88
+            ],
+            "expected": null,
+            "actual": null,
+            "passed": true
+          },
+          {
+            "point": [
+              2.5500000000000007,
+              -30.900000000000002
+            ],
+            "expected": 6.8725000000000005,
+            "actual": 6.872499942779541,
+            "passed": true
+          },
+          {
+            "point": [
+              2.770000000000001,
+              -32.88
+            ],
+            "expected": null,
+            "actual": null,
+            "passed": true
+          },
+          {
+            "point": [
+              3.0500000000000007,
+              -32.88
+            ],
+            "expected": null,
+            "actual": null,
+            "passed": true
+          },
+          {
+            "point": [
+              3.5500000000000007,
+              -30.900000000000002
+            ],
+            "expected": 6.8725000000000005,
+            "actual": 6.872499942779541,
+            "passed": true
+          },
+          {
+            "point": [
+              3.770000000000001,
+              -32.88
+            ],
+            "expected": null,
+            "actual": null,
+            "passed": true
+          },
+          {
+            "point": [
+              4.050000000000001,
+              -32.88
+            ],
+            "expected": null,
+            "actual": null,
+            "passed": true
+          },
+          {
+            "point": [
+              4.550000000000001,
+              -30.900000000000002
+            ],
+            "expected": 6.8725000000000005,
+            "actual": 6.872499942779541,
+            "passed": true
+          },
+          {
+            "point": [
+              4.7700000000000005,
+              -32.88
+            ],
+            "expected": null,
+            "actual": null,
+            "passed": true
+          },
+          {
+            "point": [
+              5.050000000000001,
+              -32.88
+            ],
+            "expected": null,
+            "actual": null,
+            "passed": true
+          },
+          {
+            "point": [
+              5.550000000000001,
+              -30.900000000000002
+            ],
+            "expected": 6.8725000000000005,
+            "actual": 6.872499942779541,
+            "passed": true
+          },
+          {
+            "point": [
+              5.7700000000000005,
+              -32.88
+            ],
+            "expected": null,
+            "actual": null,
+            "passed": true
+          },
+          {
+            "point": [
+              6.050000000000001,
+              -32.88
+            ],
+            "expected": null,
+            "actual": null,
+            "passed": true
+          },
+          {
+            "point": [
+              6.550000000000001,
+              -30.900000000000002
+            ],
+            "expected": 6.8725000000000005,
+            "actual": 6.872499942779541,
+            "passed": true
+          },
+          {
+            "point": [
+              6.7700000000000005,
+              -32.88
+            ],
+            "expected": null,
+            "actual": null,
+            "passed": true
+          },
+          {
+            "point": [
+              7.050000000000001,
+              -32.88
+            ],
+            "expected": null,
+            "actual": null,
+            "passed": true
+          },
+          {
+            "point": [
+              7.550000000000001,
+              -30.900000000000002
+            ],
+            "expected": 6.8725000000000005,
+            "actual": 6.872499942779541,
+            "passed": true
+          },
+          {
+            "point": [
+              7.7700000000000005,
+              -32.88
+            ],
+            "expected": null,
+            "actual": null,
+            "passed": true
+          },
+          {
+            "point": [
+              8.05,
+              -32.88
+            ],
+            "expected": null,
+            "actual": null,
+            "passed": true
+          },
+          {
+            "point": [
+              8.55,
+              -30.900000000000002
+            ],
+            "expected": 6.8725000000000005,
+            "actual": 6.872499942779541,
+            "passed": true
+          },
+          {
+            "point": [
+              8.770000000000001,
+              -32.88
+            ],
+            "expected": null,
+            "actual": null,
+            "passed": true
+          },
+          {
+            "point": [
+              9.05,
+              -32.88
+            ],
+            "expected": null,
+            "actual": null,
+            "passed": true
+          },
+          {
+            "point": [
+              9.55,
+              -30.900000000000002
+            ],
+            "expected": 6.8925,
+            "actual": 6.892499923706055,
+            "passed": true
+          },
+          {
+            "point": [
+              9.770000000000001,
+              -32.88
+            ],
+            "expected": null,
+            "actual": null,
+            "passed": true
+          },
+          {
+            "point": [
+              10.05,
+              -32.88
+            ],
+            "expected": null,
+            "actual": null,
+            "passed": true
+          },
+          {
+            "point": [
+              10.55,
+              -30.900000000000002
+            ],
+            "expected": 6.8925,
+            "actual": 6.892499923706055,
+            "passed": true
+          },
+          {
+            "point": [
+              10.770000000000001,
+              -32.88
+            ],
+            "expected": null,
+            "actual": null,
+            "passed": true
+          },
+          {
+            "point": [
+              11.05,
+              -32.88
+            ],
+            "expected": null,
+            "actual": null,
+            "passed": true
+          },
+          {
+            "point": [
+              11.55,
+              -30.900000000000002
+            ],
+            "expected": 6.8925,
+            "actual": 6.892499923706055,
+            "passed": true
+          },
+          {
+            "point": [
+              11.770000000000001,
+              -32.88
+            ],
+            "expected": null,
+            "actual": null,
+            "passed": true
+          }
+        ]
+      },
+      {
+        "kind": "crosswalk",
+        "id": "crosswalk_2",
+        "passed": true,
+        "samples": [
+          {
+            "point": [
+              -14.45,
+              -131.28
+            ],
+            "expected": 6.902500000000001,
+            "actual": 6.902500152587891,
+            "passed": true
+          },
+          {
+            "point": [
+              -13.45,
+              -131.28
+            ],
+            "expected": 6.902500000000001,
+            "actual": 6.902500152587891,
+            "passed": true
+          },
+          {
+            "point": [
+              -12.45,
+              -131.28
+            ],
+            "expected": 6.902500000000001,
+            "actual": 6.902500152587891,
+            "passed": true
+          },
+          {
+            "point": [
+              -11.45,
+              -131.28
+            ],
+            "expected": 6.8925,
+            "actual": 6.892499923706055,
+            "passed": true
+          },
+          {
+            "point": [
+              -10.45,
+              -131.28
+            ],
+            "expected": 6.8925,
+            "actual": 6.892499923706055,
+            "passed": true
+          },
+          {
+            "point": [
+              -9.45,
+              -131.28
+            ],
+            "expected": 6.8925,
+            "actual": 6.892499923706055,
+            "passed": true
+          },
+          {
+            "point": [
+              -8.45,
+              -131.28
+            ],
+            "expected": 6.8725000000000005,
+            "actual": 6.872499942779541,
+            "passed": true
+          },
+          {
+            "point": [
+              -7.449999999999999,
+              -131.28
+            ],
+            "expected": 6.8725000000000005,
+            "actual": 6.872499942779541,
+            "passed": true
+          },
+          {
+            "point": [
+              -6.449999999999999,
+              -131.28
+            ],
+            "expected": 6.8725000000000005,
+            "actual": 6.872499942779541,
+            "passed": true
+          },
+          {
+            "point": [
+              -5.449999999999999,
+              -131.28
+            ],
+            "expected": 6.8725000000000005,
+            "actual": 6.872499942779541,
+            "passed": true
+          },
+          {
+            "point": [
+              -4.449999999999999,
+              -131.28
+            ],
+            "expected": 6.8725000000000005,
+            "actual": 6.872499942779541,
+            "passed": true
+          },
+          {
+            "point": [
+              -3.4499999999999993,
+              -131.28
+            ],
+            "expected": 6.8725000000000005,
+            "actual": 6.872499942779541,
+            "passed": true
+          },
+          {
+            "point": [
+              -2.4499999999999993,
+              -131.28
+            ],
+            "expected": 6.8725000000000005,
+            "actual": 6.872499942779541,
+            "passed": true
+          },
+          {
+            "point": [
+              -1.4499999999999993,
+              -131.28
+            ],
+            "expected": 6.8725000000000005,
+            "actual": 6.872499942779541,
+            "passed": true
+          },
+          {
+            "point": [
+              -0.4499999999999993,
+              -131.28
+            ],
+            "expected": 6.8725000000000005,
+            "actual": 6.872499942779541,
+            "passed": true
+          },
+          {
+            "point": [
+              0.5500000000000007,
+              -131.28
+            ],
+            "expected": 6.8725000000000005,
+            "actual": 6.872499942779541,
+            "passed": true
+          },
+          {
+            "point": [
+              1.5500000000000007,
+              -131.28
+            ],
+            "expected": 6.8725000000000005,
+            "actual": 6.872499942779541,
+            "passed": true
+          },
+          {
+            "point": [
+              2.5500000000000007,
+              -131.28
+            ],
+            "expected": 6.8725000000000005,
+            "actual": 6.872499942779541,
+            "passed": true
+          },
+          {
+            "point": [
+              3.5500000000000007,
+              -131.28
+            ],
+            "expected": 6.8725000000000005,
+            "actual": 6.872499942779541,
+            "passed": true
+          },
+          {
+            "point": [
+              4.550000000000001,
+              -131.28
+            ],
+            "expected": 6.8725000000000005,
+            "actual": 6.872499942779541,
+            "passed": true
+          },
+          {
+            "point": [
+              5.550000000000001,
+              -131.28
+            ],
+            "expected": 6.8725000000000005,
+            "actual": 6.872499942779541,
+            "passed": true
+          },
+          {
+            "point": [
+              6.550000000000001,
+              -131.28
+            ],
+            "expected": 6.8725000000000005,
+            "actual": 6.872499942779541,
+            "passed": true
+          },
+          {
+            "point": [
+              7.550000000000001,
+              -131.28
+            ],
+            "expected": 6.8725000000000005,
+            "actual": 6.872499942779541,
+            "passed": true
+          },
+          {
+            "point": [
+              8.55,
+              -131.28
+            ],
+            "expected": 6.8725000000000005,
+            "actual": 6.872499942779541,
+            "passed": true
+          },
+          {
+            "point": [
+              9.55,
+              -131.28
+            ],
+            "expected": 6.8925,
+            "actual": 6.892499923706055,
+            "passed": true
+          },
+          {
+            "point": [
+              10.55,
+              -131.28
+            ],
+            "expected": 6.8925,
+            "actual": 6.892499923706055,
+            "passed": true
+          },
+          {
+            "point": [
+              11.55,
+              -131.28
+            ],
+            "expected": 6.8925,
+            "actual": 6.892499923706055,
+            "passed": true
+          },
+          {
+            "point": [
+              -14.45,
+              -129.3
+            ],
+            "expected": 6.902500000000001,
+            "actual": 6.902500152587891,
+            "passed": true
+          },
+          {
+            "point": [
+              -14.229999999999999,
+              -131.28
+            ],
+            "expected": null,
+            "actual": null,
+            "passed": true
+          },
+          {
+            "point": [
+              -13.95,
+              -131.28
+            ],
+            "expected": null,
+            "actual": null,
+            "passed": true
+          },
+          {
+            "point": [
+              -13.45,
+              -129.3
+            ],
+            "expected": 6.902500000000001,
+            "actual": 6.902500152587891,
+            "passed": true
+          },
+          {
+            "point": [
+              -13.229999999999999,
+              -131.28
+            ],
+            "expected": null,
+            "actual": null,
+            "passed": true
+          },
+          {
+            "point": [
+              -12.95,
+              -131.28
+            ],
+            "expected": null,
+            "actual": null,
+            "passed": true
+          },
+          {
+            "point": [
+              -12.45,
+              -129.3
+            ],
+            "expected": 6.902500000000001,
+            "actual": 6.902500152587891,
+            "passed": true
+          },
+          {
+            "point": [
+              -12.229999999999999,
+              -131.28
+            ],
+            "expected": null,
+            "actual": null,
+            "passed": true
+          },
+          {
+            "point": [
+              -11.95,
+              -131.28
+            ],
+            "expected": null,
+            "actual": null,
+            "passed": true
+          },
+          {
+            "point": [
+              -11.45,
+              -129.3
+            ],
+            "expected": 6.8925,
+            "actual": 6.892499923706055,
+            "passed": true
+          },
+          {
+            "point": [
+              -11.229999999999999,
+              -131.28
+            ],
+            "expected": null,
+            "actual": null,
+            "passed": true
+          },
+          {
+            "point": [
+              -10.95,
+              -131.28
+            ],
+            "expected": null,
+            "actual": null,
+            "passed": true
+          },
+          {
+            "point": [
+              -10.45,
+              -129.3
+            ],
+            "expected": 6.8925,
+            "actual": 6.892499923706055,
+            "passed": true
+          },
+          {
+            "point": [
+              -10.229999999999999,
+              -131.28
+            ],
+            "expected": null,
+            "actual": null,
+            "passed": true
+          },
+          {
+            "point": [
+              -9.95,
+              -131.28
+            ],
+            "expected": null,
+            "actual": null,
+            "passed": true
+          },
+          {
+            "point": [
+              -9.45,
+              -129.3
+            ],
+            "expected": 6.8925,
+            "actual": 6.892499923706055,
+            "passed": true
+          },
+          {
+            "point": [
+              -9.229999999999999,
+              -131.28
+            ],
+            "expected": null,
+            "actual": null,
+            "passed": true
+          },
+          {
+            "point": [
+              -8.95,
+              -131.28
+            ],
+            "expected": null,
+            "actual": null,
+            "passed": true
+          },
+          {
+            "point": [
+              -8.45,
+              -129.3
+            ],
+            "expected": 6.8725000000000005,
+            "actual": 6.872499942779541,
+            "passed": true
+          },
+          {
+            "point": [
+              -8.229999999999999,
+              -131.28
+            ],
+            "expected": null,
+            "actual": null,
+            "passed": true
+          },
+          {
+            "point": [
+              -7.949999999999999,
+              -131.28
+            ],
+            "expected": null,
+            "actual": null,
+            "passed": true
+          },
+          {
+            "point": [
+              -7.449999999999999,
+              -129.3
+            ],
+            "expected": 6.8725000000000005,
+            "actual": 6.872499942779541,
+            "passed": true
+          },
+          {
+            "point": [
+              -7.2299999999999995,
+              -131.28
+            ],
+            "expected": null,
+            "actual": null,
+            "passed": true
+          },
+          {
+            "point": [
+              -6.949999999999999,
+              -131.28
+            ],
+            "expected": null,
+            "actual": null,
+            "passed": true
+          },
+          {
+            "point": [
+              -6.449999999999999,
+              -129.3
+            ],
+            "expected": 6.8725000000000005,
+            "actual": 6.872499942779541,
+            "passed": true
+          },
+          {
+            "point": [
+              -6.2299999999999995,
+              -131.28
+            ],
+            "expected": null,
+            "actual": null,
+            "passed": true
+          },
+          {
+            "point": [
+              -5.949999999999999,
+              -131.28
+            ],
+            "expected": null,
+            "actual": null,
+            "passed": true
+          },
+          {
+            "point": [
+              -5.449999999999999,
+              -129.3
+            ],
+            "expected": 6.8725000000000005,
+            "actual": 6.872499942779541,
+            "passed": true
+          },
+          {
+            "point": [
+              -5.2299999999999995,
+              -131.28
+            ],
+            "expected": null,
+            "actual": null,
+            "passed": true
+          },
+          {
+            "point": [
+              -4.949999999999999,
+              -131.28
+            ],
+            "expected": null,
+            "actual": null,
+            "passed": true
+          },
+          {
+            "point": [
+              -4.449999999999999,
+              -129.3
+            ],
+            "expected": 6.8725000000000005,
+            "actual": 6.872499942779541,
+            "passed": true
+          },
+          {
+            "point": [
+              -4.2299999999999995,
+              -131.28
+            ],
+            "expected": null,
+            "actual": null,
+            "passed": true
+          },
+          {
+            "point": [
+              -3.9499999999999993,
+              -131.28
+            ],
+            "expected": null,
+            "actual": null,
+            "passed": true
+          },
+          {
+            "point": [
+              -3.4499999999999993,
+              -129.3
+            ],
+            "expected": 6.8725000000000005,
+            "actual": 6.872499942779541,
+            "passed": true
+          },
+          {
+            "point": [
+              -3.229999999999999,
+              -131.28
+            ],
+            "expected": null,
+            "actual": null,
+            "passed": true
+          },
+          {
+            "point": [
+              -2.9499999999999993,
+              -131.28
+            ],
+            "expected": null,
+            "actual": null,
+            "passed": true
+          },
+          {
+            "point": [
+              -2.4499999999999993,
+              -129.3
+            ],
+            "expected": 6.8725000000000005,
+            "actual": 6.872499942779541,
+            "passed": true
+          },
+          {
+            "point": [
+              -2.229999999999999,
+              -131.28
+            ],
+            "expected": null,
+            "actual": null,
+            "passed": true
+          },
+          {
+            "point": [
+              -1.9499999999999993,
+              -131.28
+            ],
+            "expected": null,
+            "actual": null,
+            "passed": true
+          },
+          {
+            "point": [
+              -1.4499999999999993,
+              -129.3
+            ],
+            "expected": 6.8725000000000005,
+            "actual": 6.872499942779541,
+            "passed": true
+          },
+          {
+            "point": [
+              -1.2299999999999993,
+              -131.28
+            ],
+            "expected": null,
+            "actual": null,
+            "passed": true
+          },
+          {
+            "point": [
+              -0.9499999999999993,
+              -131.28
+            ],
+            "expected": null,
+            "actual": null,
+            "passed": true
+          },
+          {
+            "point": [
+              -0.4499999999999993,
+              -129.3
+            ],
+            "expected": 6.8725000000000005,
+            "actual": 6.872499942779541,
+            "passed": true
+          },
+          {
+            "point": [
+              -0.2299999999999993,
+              -131.28
+            ],
+            "expected": null,
+            "actual": null,
+            "passed": true
+          },
+          {
+            "point": [
+              0.05000000000000071,
+              -131.28
+            ],
+            "expected": null,
+            "actual": null,
+            "passed": true
+          },
+          {
+            "point": [
+              0.5500000000000007,
+              -129.3
+            ],
+            "expected": 6.8725000000000005,
+            "actual": 6.872499942779541,
+            "passed": true
+          },
+          {
+            "point": [
+              0.7700000000000007,
+              -131.28
+            ],
+            "expected": null,
+            "actual": null,
+            "passed": true
+          },
+          {
+            "point": [
+              1.0500000000000007,
+              -131.28
+            ],
+            "expected": null,
+            "actual": null,
+            "passed": true
+          },
+          {
+            "point": [
+              1.5500000000000007,
+              -129.3
+            ],
+            "expected": 6.8725000000000005,
+            "actual": 6.872499942779541,
+            "passed": true
+          },
+          {
+            "point": [
+              1.7700000000000007,
+              -131.28
+            ],
+            "expected": null,
+            "actual": null,
+            "passed": true
+          },
+          {
+            "point": [
+              2.0500000000000007,
+              -131.28
+            ],
+            "expected": null,
+            "actual": null,
+            "passed": true
+          },
+          {
+            "point": [
+              2.5500000000000007,
+              -129.3
+            ],
+            "expected": 6.8725000000000005,
+            "actual": 6.872499942779541,
+            "passed": true
+          },
+          {
+            "point": [
+              2.770000000000001,
+              -131.28
+            ],
+            "expected": null,
+            "actual": null,
+            "passed": true
+          },
+          {
+            "point": [
+              3.0500000000000007,
+              -131.28
+            ],
+            "expected": null,
+            "actual": null,
+            "passed": true
+          },
+          {
+            "point": [
+              3.5500000000000007,
+              -129.3
+            ],
+            "expected": 6.8725000000000005,
+            "actual": 6.872499942779541,
+            "passed": true
+          },
+          {
+            "point": [
+              3.770000000000001,
+              -131.28
+            ],
+            "expected": null,
+            "actual": null,
+            "passed": true
+          },
+          {
+            "point": [
+              4.050000000000001,
+              -131.28
+            ],
+            "expected": null,
+            "actual": null,
+            "passed": true
+          },
+          {
+            "point": [
+              4.550000000000001,
+              -129.3
+            ],
+            "expected": 6.8725000000000005,
+            "actual": 6.872499942779541,
+            "passed": true
+          },
+          {
+            "point": [
+              4.7700000000000005,
+              -131.28
+            ],
+            "expected": null,
+            "actual": null,
+            "passed": true
+          },
+          {
+            "point": [
+              5.050000000000001,
+              -131.28
+            ],
+            "expected": null,
+            "actual": null,
+            "passed": true
+          },
+          {
+            "point": [
+              5.550000000000001,
+              -129.3
+            ],
+            "expected": 6.8725000000000005,
+            "actual": 6.872499942779541,
+            "passed": true
+          },
+          {
+            "point": [
+              5.7700000000000005,
+              -131.28
+            ],
+            "expected": null,
+            "actual": null,
+            "passed": true
+          },
+          {
+            "point": [
+              6.050000000000001,
+              -131.28
+            ],
+            "expected": null,
+            "actual": null,
+            "passed": true
+          },
+          {
+            "point": [
+              6.550000000000001,
+              -129.3
+            ],
+            "expected": 6.8725000000000005,
+            "actual": 6.872499942779541,
+            "passed": true
+          },
+          {
+            "point": [
+              6.7700000000000005,
+              -131.28
+            ],
+            "expected": null,
+            "actual": null,
+            "passed": true
+          },
+          {
+            "point": [
+              7.050000000000001,
+              -131.28
+            ],
+            "expected": null,
+            "actual": null,
+            "passed": true
+          },
+          {
+            "point": [
+              7.550000000000001,
+              -129.3
+            ],
+            "expected": 6.8725000000000005,
+            "actual": 6.872499942779541,
+            "passed": true
+          },
+          {
+            "point": [
+              7.7700000000000005,
+              -131.28
+            ],
+            "expected": null,
+            "actual": null,
+            "passed": true
+          },
+          {
+            "point": [
+              8.05,
+              -131.28
+            ],
+            "expected": null,
+            "actual": null,
+            "passed": true
+          },
+          {
+            "point": [
+              8.55,
+              -129.3
+            ],
+            "expected": 6.8725000000000005,
+            "actual": 6.872499942779541,
+            "passed": true
+          },
+          {
+            "point": [
+              8.770000000000001,
+              -131.28
+            ],
+            "expected": null,
+            "actual": null,
+            "passed": true
+          },
+          {
+            "point": [
+              9.05,
+              -131.28
+            ],
+            "expected": null,
+            "actual": null,
+            "passed": true
+          },
+          {
+            "point": [
+              9.55,
+              -129.3
+            ],
+            "expected": 6.8925,
+            "actual": 6.892499923706055,
+            "passed": true
+          },
+          {
+            "point": [
+              9.770000000000001,
+              -131.28
+            ],
+            "expected": null,
+            "actual": null,
+            "passed": true
+          },
+          {
+            "point": [
+              10.05,
+              -131.28
+            ],
+            "expected": null,
+            "actual": null,
+            "passed": true
+          },
+          {
+            "point": [
+              10.55,
+              -129.3
+            ],
+            "expected": 6.8925,
+            "actual": 6.892499923706055,
+            "passed": true
+          },
+          {
+            "point": [
+              10.770000000000001,
+              -131.28
+            ],
+            "expected": null,
+            "actual": null,
+            "passed": true
+          },
+          {
+            "point": [
+              11.05,
+              -131.28
+            ],
+            "expected": null,
+            "actual": null,
+            "passed": true
+          },
+          {
+            "point": [
+              11.55,
+              -129.3
+            ],
+            "expected": 6.8925,
+            "actual": 6.892499923706055,
+            "passed": true
+          },
+          {
+            "point": [
+              11.770000000000001,
+              -131.28
+            ],
+            "expected": null,
+            "actual": null,
+            "passed": true
+          }
+        ]
+      },
+      {
+        "kind": "upstreamStopLine",
+        "id": "crosswalk_1_stop_east",
+        "directionZ": -1,
+        "signedDistanceToCrossing": 3.1499999999999986,
+        "passed": true,
+        "samples": [
+          {
+            "point": [
+              3.7125,
+              -29.730000000000004
+            ],
+            "expected": 6.8725000000000005,
+            "actual": 6.872499942779541,
+            "passed": true
+          }
+        ]
+      },
+      {
+        "kind": "upstreamStopLine",
+        "id": "crosswalk_1_stop_west",
+        "directionZ": 1,
+        "signedDistanceToCrossing": 3.1499999999999986,
+        "passed": true,
+        "samples": [
+          {
+            "point": [
+              -3.7125,
+              -36.03
+            ],
+            "expected": 6.8725000000000005,
+            "actual": 6.872499942779541,
+            "passed": true
+          }
+        ]
+      },
+      {
+        "kind": "upstreamStopLine",
+        "id": "crosswalk_2_stop_east",
+        "directionZ": -1,
+        "signedDistanceToCrossing": 3.1500000000000057,
+        "passed": true,
+        "samples": [
+          {
+            "point": [
+              3.7125,
+              -128.13
+            ],
+            "expected": 6.8725000000000005,
+            "actual": 6.872499942779541,
+            "passed": true
+          }
+        ]
+      },
+      {
+        "kind": "upstreamStopLine",
+        "id": "crosswalk_2_stop_west",
+        "directionZ": 1,
+        "signedDistanceToCrossing": 3.1500000000000057,
+        "passed": true,
+        "samples": [
+          {
+            "point": [
+              -3.7125,
+              -134.43
+            ],
+            "expected": 6.8725000000000005,
+            "actual": 6.872499942779541,
+            "passed": true
+          }
+        ]
+      },
+      {
+        "kind": "trafficDirection",
+        "id": "arrow_-5.2_-46.88",
+        "directionZ": 1,
+        "tip": [
+          -5.2,
+          -44.63
+        ],
+        "tail": [
+          -5.2,
+          -49.13
+        ],
+        "passed": true,
+        "samples": [
+          {
+            "point": [
+              -5.2,
+              -44.730000000000004
+            ],
+            "expected": 6.8725000000000005,
+            "actual": 6.872499942779541,
+            "passed": true
+          }
+        ]
+      },
+      {
+        "kind": "trafficDirection",
+        "id": "arrow_-5.2_-145.28",
+        "directionZ": 1,
+        "tip": [
+          -5.2,
+          -143.03
+        ],
+        "tail": [
+          -5.2,
+          -147.53
+        ],
+        "passed": true,
+        "samples": [
+          {
+            "point": [
+              -5.2,
+              -143.13
+            ],
+            "expected": 6.8725000000000005,
+            "actual": 6.872499942779541,
+            "passed": true
+          }
+        ]
+      },
+      {
+        "kind": "trafficDirection",
+        "id": "arrow_-5.2_-265",
+        "directionZ": 1,
+        "tip": [
+          -5.2,
+          -262.75
+        ],
+        "tail": [
+          -5.2,
+          -267.25
+        ],
+        "passed": true,
+        "samples": [
+          {
+            "point": [
+              -5.2,
+              -262.85
+            ],
+            "expected": 6.8725000000000005,
+            "actual": 6.872499942779541,
+            "passed": true
+          }
+        ]
+      },
+      {
+        "kind": "trafficDirection",
+        "id": "arrow_-2.2_-46.88",
+        "directionZ": 1,
+        "tip": [
+          -2.2,
+          -44.63
+        ],
+        "tail": [
+          -2.2,
+          -49.13
+        ],
+        "passed": true,
+        "samples": [
+          {
+            "point": [
+              -2.2,
+              -44.730000000000004
+            ],
+            "expected": 6.8725000000000005,
+            "actual": 6.872499942779541,
+            "passed": true
+          }
+        ]
+      },
+      {
+        "kind": "trafficDirection",
+        "id": "arrow_-2.2_-145.28",
+        "directionZ": 1,
+        "tip": [
+          -2.2,
+          -143.03
+        ],
+        "tail": [
+          -2.2,
+          -147.53
+        ],
+        "passed": true,
+        "samples": [
+          {
+            "point": [
+              -2.2,
+              -143.13
+            ],
+            "expected": 6.8725000000000005,
+            "actual": 6.872499942779541,
+            "passed": true
+          }
+        ]
+      },
+      {
+        "kind": "trafficDirection",
+        "id": "arrow_-2.2_-265",
+        "directionZ": 1,
+        "tip": [
+          -2.2,
+          -262.75
+        ],
+        "tail": [
+          -2.2,
+          -267.25
+        ],
+        "passed": true,
+        "samples": [
+          {
+            "point": [
+              -2.2,
+              -262.85
+            ],
+            "expected": 6.8725000000000005,
+            "actual": 6.872499942779541,
+            "passed": true
+          }
+        ]
+      },
+      {
+        "kind": "trafficDirection",
+        "id": "arrow_2.2_-18.880000000000003",
+        "directionZ": -1,
+        "tip": [
+          2.2,
+          -21.130000000000003
+        ],
+        "tail": [
+          2.2,
+          -16.630000000000003
+        ],
+        "passed": true,
+        "samples": [
+          {
+            "point": [
+              2.2,
+              -21.03
+            ],
+            "expected": 6.8725000000000005,
+            "actual": 6.872499942779541,
+            "passed": true
+          }
+        ]
+      },
+      {
+        "kind": "trafficDirection",
+        "id": "arrow_2.2_-117.28",
+        "directionZ": -1,
+        "tip": [
+          2.2,
+          -119.53
+        ],
+        "tail": [
+          2.2,
+          -115.03
+        ],
+        "passed": true,
+        "samples": [
+          {
+            "point": [
+              2.2,
+              -119.43
+            ],
+            "expected": 6.8725000000000005,
+            "actual": 6.872499942779541,
+            "passed": true
+          }
+        ]
+      },
+      {
+        "kind": "trafficDirection",
+        "id": "arrow_2.2_-265",
+        "directionZ": -1,
+        "tip": [
+          2.2,
+          -267.25
+        ],
+        "tail": [
+          2.2,
+          -262.75
+        ],
+        "passed": true,
+        "samples": [
+          {
+            "point": [
+              2.2,
+              -267.15
+            ],
+            "expected": 6.8725000000000005,
+            "actual": 6.872499942779541,
+            "passed": true
+          }
+        ]
+      },
+      {
+        "kind": "trafficDirection",
+        "id": "arrow_5.2_-18.880000000000003",
+        "directionZ": -1,
+        "tip": [
+          5.2,
+          -21.130000000000003
+        ],
+        "tail": [
+          5.2,
+          -16.630000000000003
+        ],
+        "passed": true,
+        "samples": [
+          {
+            "point": [
+              5.2,
+              -21.03
+            ],
+            "expected": 6.8725000000000005,
+            "actual": 6.872499942779541,
+            "passed": true
+          }
+        ]
+      },
+      {
+        "kind": "trafficDirection",
+        "id": "arrow_5.2_-117.28",
+        "directionZ": -1,
+        "tip": [
+          5.2,
+          -119.53
+        ],
+        "tail": [
+          5.2,
+          -115.03
+        ],
+        "passed": true,
+        "samples": [
+          {
+            "point": [
+              5.2,
+              -119.43
+            ],
+            "expected": 6.8725000000000005,
+            "actual": 6.872499942779541,
+            "passed": true
+          }
+        ]
+      },
+      {
+        "kind": "trafficDirection",
+        "id": "arrow_5.2_-265",
+        "directionZ": -1,
+        "tip": [
+          5.2,
+          -267.25
+        ],
+        "tail": [
+          5.2,
+          -262.75
+        ],
+        "passed": true,
+        "samples": [
+          {
+            "point": [
+              5.2,
+              -267.15
+            ],
+            "expected": 6.8725000000000005,
+            "actual": 6.872499942779541,
+            "passed": true
+          }
+        ]
+      },
+      {
+        "kind": "surfaceBoundsAndPaintHeight",
+        "id": "all_export_vertices",
+        "passed": true,
+        "checkedVertices": 4056,
+        "violations": []
+      },
+      {
+        "kind": "parkingCrosswalkClearance",
+        "id": "all_bays",
+        "passed": true,
+        "clearanceFromCenter": 12
+      },
+      {
+        "kind": "laneDashRhythm",
+        "id": "all_dashes",
+        "passed": true,
+        "paintedLength": 2,
+        "normalGap": 4,
+        "exceptions": "Whole dashes omitted around crosswalks and stop bars."
+      }
+    ]
+  },
+  "sourceGeometry": {
+    "file": "city-road-markings.glb",
+    "sha256": "14c1370576e321ea86b1b388fe331d497dc087c021abcab574606f9ad8db8e85"
+  },
+  "sha256": "14c1370576e321ea86b1b388fe331d497dc087c021abcab574606f9ad8db8e85",
+  "bytes": 131948
+}

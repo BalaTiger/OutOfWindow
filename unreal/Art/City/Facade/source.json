@@ -1,0 +1,37 @@
+{
+  "asset": "Travertine001",
+  "provider": "ambientCG",
+  "assetUrl": "https://ambientcg.com/view?id=Travertine001",
+  "originalDownloadUrl": "https://ambientcg.com/get?file=Travertine001_2K-JPG.zip",
+  "resolvedDownloadUrl": "https://acg-download.struffelproductions.com/file/ambientCG-Web/download/Travertine001_olPgXfq4/Travertine001_2K-JPG.zip",
+  "license": "CC0 1.0 Universal",
+  "licenseUrl": "https://docs.ambientcg.com/license/",
+  "downloadedOn": "2026-09-24",
+  "sourceTechnique": "Procedural (ambientCG listing)",
+  "physicalSizeMeters": [
+    1.2,
+    1.2
+  ],
+  "archiveSha256": "eb22b7ac1c146c01f26e53791509907044b25499fd87fb4a809989e65dcf2a73",
+  "usage": "Original 2K color, roughness and DirectX normal images for modern City facade stone; no source-image edits.",
+  "files": [
+    {
+      "file": "Travertine001_2K-JPG_Color.jpg",
+      "sha256": "a0724b7e885e9bf91f5424d44d693ba32e77968db54b2f873f07b9a2ef401eb7",
+      "bytes": 3944954,
+      "modified": false
+    },
+    {
+      "file": "Travertine001_2K-JPG_Roughness.jpg",
+      "sha256": "7cadf976abeae9be87304eb21fbb378c20d96b330a28bc7d6e8c64fbff7051d5",
+      "bytes": 1402400,
+      "modified": false
+    },
+    {
+      "file": "Travertine001_2K-JPG_NormalDX.jpg",
+      "sha256": "1568afb9dde3c66dd30c81e033f28dbf0a03b00941b88558278986f3e8bcbd10",
+      "bytes": 1302070,
+      "modified": false
+    }
+  ]
+}

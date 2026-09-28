@@ -1,0 +1,141 @@
+{
+  "verifiedAt": "2026-09-24T13:29:51.621999+08:00",
+  "executable": "D:\\OutOfWindowBuild\\Windows\\OutOfWindow\\Binaries\\Win64\\OutOfWindow.exe",
+  "executableSHA256": "30cba293284fc2022e6e584393660d24d072256610584a01b2ee7f46f429a67a",
+  "rootCause": "Imported WPO UseConstant overrode the connected expression. WindowMaterialLibrary clears this hidden flag using the editor UE-219232 behavior.",
+  "wind": {
+    "recipe": "v8",
+    "foliageComponents": 100,
+    "awningComponents": 26,
+    "anchor": "Saved per-component world-space height bounds; foliage root and awning top remain fixed."
+  },
+  "birds": {
+    "geometry": "Original procedural meshes; 180 rendered triangles for three birds, nine reused components.",
+    "wingspanCm": 93,
+    "flockSize": [
+      1,
+      3
+    ],
+    "quietIntervalSeconds": [
+      25,
+      50
+    ],
+    "conditions": "Clear daylight; hidden in night, rain, snow, fog and wind >=14 m/s."
+  },
+  "nativeTests": {
+    "succeeded": 2,
+    "succeededWithWarnings": 0,
+    "failed": 0
+  },
+  "packagedCases": {
+    "clear": {
+      "scene": "Alley",
+      "hour": 12,
+      "actualWeather": "clear",
+      "captureSaved": true,
+      "windMeshComponents": 126,
+      "evaluatedWindMeshComponents": 126,
+      "anchoredWindMeshComponents": 126,
+      "windMaterialSlots": 126,
+      "compiledWindMaterialSlots": 126,
+      "windStrengthMetersPerSecond": 2.222222328186035,
+      "birdGeometryReady": true,
+      "activeBirds": 3,
+      "completedBirdFlights": 0,
+      "frameTimeMeanMs": 17.199646137192197,
+      "frameTimeP95Ms": 16.692298889160156
+    },
+    "rain": {
+      "scene": "Alley",
+      "hour": 12,
+      "actualWeather": "rain",
+      "captureSaved": true,
+      "windMeshComponents": 126,
+      "evaluatedWindMeshComponents": 126,
+      "anchoredWindMeshComponents": 126,
+      "windMaterialSlots": 126,
+      "compiledWindMaterialSlots": 126,
+      "windStrengthMetersPerSecond": 2.222222328186035,
+      "birdGeometryReady": true,
+      "activeBirds": 0,
+      "completedBirdFlights": 0,
+      "frameTimeMeanMs": 23.537273644540285,
+      "frameTimeP95Ms": 51.53860092163086
+    },
+    "night": {
+      "scene": "Alley",
+      "hour": 23,
+      "actualWeather": "clear",
+      "captureSaved": true,
+      "windMeshComponents": 126,
+      "evaluatedWindMeshComponents": 126,
+      "anchoredWindMeshComponents": 126,
+      "windMaterialSlots": 126,
+      "compiledWindMaterialSlots": 126,
+      "windStrengthMetersPerSecond": 2.222222328186035,
+      "birdGeometryReady": true,
+      "activeBirds": 0,
+      "completedBirdFlights": 0,
+      "frameTimeMeanMs": 26.18925346236631,
+      "frameTimeP95Ms": 41.590702056884766
+    },
+    "afternoon": {
+      "scene": "Alley",
+      "hour": 16.5,
+      "actualWeather": "clear",
+      "captureSaved": true,
+      "windMeshComponents": 126,
+      "evaluatedWindMeshComponents": 126,
+      "anchoredWindMeshComponents": 126,
+      "windMaterialSlots": 126,
+      "compiledWindMaterialSlots": 126,
+      "windStrengthMetersPerSecond": 2.222222328186035,
+      "birdGeometryReady": true,
+      "activeBirds": 3,
+      "completedBirdFlights": 0,
+      "frameTimeMeanMs": 26.484315771397537,
+      "frameTimeP95Ms": 39.36470031738281
+    },
+    "desktop": {
+      "scene": "Alley",
+      "hour": 12,
+      "actualWeather": "clear",
+      "captureSaved": true,
+      "windMeshComponents": 126,
+      "evaluatedWindMeshComponents": 126,
+      "anchoredWindMeshComponents": 126,
+      "windMaterialSlots": 126,
+      "compiledWindMaterialSlots": 126,
+      "windStrengthMetersPerSecond": 2.222222328186035,
+      "birdGeometryReady": true,
+      "activeBirds": 3,
+      "completedBirdFlights": 0,
+      "frameTimeMeanMs": 56.25608600419143,
+      "frameTimeP95Ms": 70.86869812011719
+    }
+  },
+  "desktopChecksPassed": 13,
+  "continuousCapture": {
+    "frames": 64,
+    "resolution": [
+      1280,
+      820
+    ],
+    "clothSilhouettes": {
+      "awning_front_rim": {
+        "tracked_columns": 121,
+        "mean_edge_range_px": 1.132,
+        "median_column_range_px": 4
+      },
+      "awning_right_rim": {
+        "tracked_columns": 130,
+        "mean_edge_range_px": 1.138,
+        "median_column_range_px": 4.0
+      }
+    },
+    "editorBeforeFixMedianColumnRangePx": 0,
+    "note": "Silhouette tracking plus visual frame inspection confirms movement; luminance noise alone is not animation evidence. Sequence screenshot timings are not performance benchmarks.",
+    "audit": ".runtime/ue-alley-motion/packaged-motion.json",
+    "preview": ".runtime/ue-alley-motion/alley-motion-preview.mp4"
+  }
+}

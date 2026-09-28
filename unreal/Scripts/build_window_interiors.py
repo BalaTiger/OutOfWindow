@@ -2,7 +2,8 @@
 
 UV0 and original vertex attributes are preserved (zero UV0 if absent).
 UV1: whole-window projection, U left-to-right, V=0 bottom / V=1 top.
-UV2: (stable 24-bit room seed in [0,1), enabled=1); unsupported faces get (0,0).
+UV2: (stable 24-bit room seed, 1); non-room faces (0,-1).
+True panes also receive a separate front-glass sheet, 1 cm outward, with native LODs.
 Run after scene import, before surface materials. City is deliberately untouched.
 --self-test validates CPU grouping; --generate-only also writes the local GLB.
 Only an explicit UE execution imports meshes and changes the Alley map.
@@ -17,8 +18,9 @@ import struct
 import sys
 
 DEST = '/Game/Scenes/Alley/WindowInteriors'
-RECIPE = 'window-uv-v1'
+RECIPE = 'window-uv-v2'
 PREFIX = 'OOWInterior_'
+FRONT_PREFIX = 'OOWGlassFront_'
 GLASS = ('MASTER_Glass_', 'MASTER_Focus_Glass', 'MASTER_Frosted_Glass')
 
 
@@ -88,6 +90,26 @@ def bounds(points, u, v):
     return min(pu), max(pu), min(pv), max(pv)
 
 
+def is_window_rim(island, item):
+    """A thin border with an empty central aperture is not an interior pane."""
+    box = island['box']
+    width, height = box[1]-box[0], box[3]-box[2]
+    coverage = island['area'] / (width * height)
+    island['rectangleCoverage'] = coverage
+    if coverage >= .45:
+        return False
+    triangles = [[(dot(item['world'][v], island['u']), dot(item['world'][v], island['v']))
+                  for v in item['triangles'][t]] for t in island['triangles']]
+    def covers(point, triangle):
+        signs = [(triangle[(i+1)%3][0]-triangle[i][0])*(point[1]-triangle[i][1])
+                 - (triangle[(i+1)%3][1]-triangle[i][1])*(point[0]-triangle[i][0]) for i in range(3)]
+        return min(signs) >= -1e-7 or max(signs) <= 1e-7
+    # An arch/irregular filled pane can have a small bounding-box coverage, but
+    # still covers its central opening. Require the entire central grid empty.
+    return not any(covers((box[0]+x*width, box[2]+y*height), triangle)
+                   for x in (.35, .5, .65) for y in (.35, .5, .65) for triangle in triangles)
+
+
 def plane_islands(item):
     """Split connected bent glazing at corners before assigning planar UVs."""
     world, triangles = item['world'], item['triangles']
@@ -144,6 +166,13 @@ def plane_islands(item):
         main = principal.get(island['connected'])
         if main and dot(main['normal'], island['normal']) < math.cos(math.radians(1.)):
             island['eligible'] = False
+    rim_components = {key: main['rectangleCoverage'] for key, main in principal.items()
+                      if is_window_rim(main, item)}
+    for island in islands:
+        island['nonEmissiveRim'] = island['connected'] in rim_components
+        if island['nonEmissiveRim']:
+            island['eligible'] = False
+            island['rimRectangleCoverage'] = rim_components[island['connected']]
     return islands, len({connected.root(t) for t in range(len(triangles))})
 
 
@@ -241,7 +270,7 @@ def analyze(root):
         world = [tuple(sum(matrix[c*4+r]*point[c] for c in range(3)) + matrix[12+r] for r in range(3)) for point in positions]
         item = {'index': len(items), 'name': node['name'], 'primitive': primitive,
                 'material': doc['materials'][primitive['material']]['name'], 'positions': positions,
-                'world': world, 'triangles': list(zip(indices[::3], indices[1::3], indices[2::3]))}
+                'matrix': matrix, 'world': world, 'triangles': list(zip(indices[::3], indices[1::3], indices[2::3]))}
         parts, count = plane_islands(item)
         item['rawIslands'], item['planeIslands'] = count, len(parts)
         original_islands += count
@@ -250,9 +279,64 @@ def analyze(root):
     return doc, blob, items, islands, group_rooms(islands), original_islands
 
 
+def front_panes(doc, blob, items, islands):
+    """Keep true panes; orient from source normals and remove near-identical sheets."""
+    normals = {}
+    eligible = [i for i, island in enumerate(islands) if island['eligible']]
+    for index in eligible:
+        island = islands[index]
+        item = items[island['item']]
+        matrix = item['matrix']
+        # The runtime export bakes orientation into vertices, leaving only a
+        # positive uniform quantization scale and translation on each node.
+        assert all(abs(matrix[j]) < 1e-8 for j in (1, 2, 4, 6, 8, 9))
+        assert matrix[0] > 0 and abs(matrix[0]-matrix[5])+abs(matrix[5]-matrix[10]) < 1e-6
+        if item['index'] not in normals:
+            normals[item['index']] = read_accessor(doc, blob, item['primitive']['attributes']['NORMAL'])[1]
+        ids = {vertex for tri in island['triangles'] for vertex in item['triangles'][tri]}
+        authored = unit(tuple(sum(normals[item['index']][v][axis] for v in ids) for axis in range(3)))
+        alignment = dot(authored, island['normal'])
+        assert abs(alignment) > .99, 'Ambiguous authored outward normal: ' + item['name']
+        island['outwardNormal'] = tuple(value * (1 if alignment > 0 else -1) for value in island['normal'])
+    duplicates = Union(len(islands))
+    for offset, a_index in enumerate(eligible):
+        a = islands[a_index]
+        aa = a['box']
+        area_a = (aa[1]-aa[0])*(aa[3]-aa[2])
+        if a['area']/area_a < .95: continue
+        for b_index in eligible[offset+1:]:
+            b = islands[b_index]
+            relative = sub(b['center'], a['center'])
+            if length(relative) > .06 or dot(a['outwardNormal'], b['outwardNormal']) < math.cos(math.radians(1.)): continue
+            if max(abs(dot(a['normal'], relative)), abs(dot(b['normal'], relative))) > .02: continue
+            bb = bounds(b['points'], a['u'], a['v'])
+            area_b = (bb[1]-bb[0])*(bb[3]-bb[2])
+            overlap = max(0., min(aa[1], bb[1])-max(aa[0], bb[0])) * max(0., min(aa[3], bb[3])-max(aa[2], bb[2]))
+            if b['area']/area_b >= .95 and overlap/(area_a+area_b-overlap) > .97:
+                duplicates.join(a_index, b_index)
+    groups = collections.defaultdict(list)
+    for index in eligible:
+        groups[duplicates.root(index)].append(index)
+    keep, skipped = set(), []
+    for indices in groups.values():
+        normal = islands[indices[0]]['outwardNormal']
+        chosen = max(indices, key=lambda index: (dot(islands[index]['center'], normal), -index))
+        keep.add(chosen)
+        for index in indices:
+            if index != chosen:
+                skipped.append({'actor': items[islands[index]['item']]['name'], 'triangles': islands[index]['triangles'],
+                                'keptActor': items[islands[chosen]['item']]['name'], 'keptTriangles': islands[chosen]['triangles']})
+    return keep, skipped
+
+
 def generate(root, write=True):
     doc, blob, items, islands, rooms, original_islands = analyze(root)
+    front_islands, skipped_front_panes = front_panes(doc, blob, items, islands)
     assignment = {}
+    for island in islands:
+        if island['nonEmissiveRim']:
+            for tri in island['triangles']:
+                assignment[island['item'], tri] = -2
     for room_index, room in enumerate(rooms):
         for island_index in room['islands']:
             island = islands[island_index]
@@ -264,7 +348,7 @@ def generate(root, write=True):
            'accessors': [], 'bufferViews': [], 'buffers': [],
            'extensionsUsed': ['KHR_mesh_quantization'], 'extensionsRequired': ['KHR_mesh_quantization']}
     data = bytearray()
-    stats = []
+    stats, front_stats = [], []
 
     def put(raw, accessor, target=34962):
         data.extend(b'\0' * ((-len(data)) % 4))
@@ -278,8 +362,10 @@ def generate(root, write=True):
         return len(out['accessors']) - 1
 
     for item in items:
-        used_rooms = {assignment[item['index'], tri] for tri in range(len(item['triangles'])) if (item['index'], tri) in assignment}
-        if not used_rooms: continue
+        used_rooms = {assignment[item['index'], tri] for tri in range(len(item['triangles']))
+                      if assignment.get((item['index'], tri), -1) >= 0}
+        rejected = [tri for tri in range(len(item['triangles'])) if assignment.get((item['index'], tri)) == -2]
+        if not used_rooms and not rejected: continue
         # A shared vertex at a bent corner needs separate UVs, without moving
         # it or changing any source triangle/material/normal/UV0 value.
         remap, vertices, uv1, uv2, indices = {}, [], [], [], []
@@ -300,7 +386,9 @@ def generate(root, write=True):
                         uv2.append((room['seed'], 1.))
                     else:
                         uv1.append((0., 0.))
-                        uv2.append((0., 0.))
+                        # Every non-room face on an adapted mesh is dark.
+                        # Legacy v3 fallback belongs only to untagged meshes.
+                        uv2.append((0., -1.))
                 indices.append(remap[key])
         source_primitive = item['primitive']
         primitive = {'attributes': {}, 'material': 0}
@@ -330,24 +418,92 @@ def generate(root, write=True):
                       'sourceVertices': len(item['positions']), 'outputVertices': len(vertices),
                       'triangles': len(item['triangles']), 'connectedIslands': item['rawIslands'],
                       'planeIslands': item['planeIslands'], 'roomGroups': len(used_rooms),
-                      'enabledTriangles': sum((item['index'], tri) in assignment for tri in range(len(item['triangles']))),
+                      'enabledTriangles': sum(assignment.get((item['index'], tri), -1) >= 0 for tri in range(len(item['triangles']))),
+                      'nonEmissiveRimTriangles': len(rejected),
+                      'nonEmissiveRimComponents': len({i['connected'] for i in islands if i['item'] == item['index'] and i['nonEmissiveRim']}),
+                      'nonEmissiveOtherTriangles': sum(assignment.get((item['index'], tri), -1) == -1 for tri in range(len(item['triangles']))),
                       'addedZeroUV0': 'TEXCOORD_0' not in source_primitive['attributes']})
+        selected = sorted(index for index in front_islands if islands[index]['item'] == item['index'])
+        if not selected: continue
+        front_vertices, front_positions, front_indices, front_uv1, front_uv2, front_remap = [], [], [], [], [], {}
+        for island_index in selected:
+            island = islands[island_index]
+            assert island['eligible'] and not island['nonEmissiveRim']
+            offset = tuple(value * .01 / item['matrix'][0] for value in island['outwardNormal'])
+            for tri in island['triangles']:
+                room_index = assignment[item['index'], tri]
+                assert room_index >= 0
+                for original in item['triangles'][tri]:
+                    key = (island_index, original)
+                    if key not in front_remap:
+                        front_remap[key] = len(front_vertices)
+                        front_vertices.append(original)
+                        shifted = tuple(value+delta for value, delta in zip(item['positions'][original], offset))
+                        shifted = struct.unpack('<fff', struct.pack('<fff', *shifted))
+                        assert abs(length(sub(shifted, item['positions'][original])) * item['matrix'][0] - .01) < .00001
+                        front_positions.append(shifted)
+                        back_index = remap[original, room_index]
+                        front_uv1.append(uv1[back_index])
+                        front_uv2.append(uv2[back_index])
+                    front_indices.append(front_remap[key])
+        front_primitive = {'attributes': {}, 'material': 0}
+        for semantic, index in source_primitive['attributes'].items():
+            accessor = copy.deepcopy(doc['accessors'][index])
+            accessor['count'] = len(front_vertices)
+            if semantic == 'POSITION':
+                raw = b''.join(struct.pack('<fff', *value) for value in front_positions)
+                accessor.update(componentType=5126, min=[min(p[k] for p in front_positions) for k in range(3)],
+                                max=[max(p[k] for p in front_positions) for k in range(3)])
+                accessor.pop('normalized', None)
+            else:
+                original_raw, _ = read_accessor(doc, blob, index)
+                raw = b''.join(original_raw[v] for v in front_vertices)
+            front_primitive['attributes'][semantic] = put(raw, accessor)
+        for channel, values in [(0, [(0., 0.)]*len(front_vertices)), (1, front_uv1), (2, front_uv2)]:
+            semantic = 'TEXCOORD_' + str(channel)
+            if semantic not in front_primitive['attributes']:
+                front_primitive['attributes'][semantic] = put(b''.join(struct.pack('<ff', *value) for value in values),
+                    {'componentType': 5126, 'count': len(front_vertices), 'type': 'VEC2'})
+        front_primitive['indices'] = put(b''.join(struct.pack('<I', value) for value in front_indices),
+            {'componentType': 5125, 'count': len(front_indices), 'type': 'SCALAR'}, 34963)
+        front_name, mesh_index = FRONT_PREFIX + item['name'], len(out['meshes'])
+        out['meshes'].append({'name': front_name, 'primitives': [front_primitive]})
+        out['nodes'].append({'name': front_name, 'mesh': mesh_index})
+        out['scenes'][0]['nodes'].append(mesh_index)
+        front_stats.append({'actor': front_name, 'backingActor': item['name'], 'assetName': front_name,
+                            'triangles': len(front_indices)//3, 'paneIslands': len(selected), 'offsetMeters': .01,
+                            'nonEmissiveRimTriangles': 0, 'uvChannels': 3})
     data.extend(b'\0' * ((-len(data)) % 4))
     out['buffers'] = [{'byteLength': len(data)}]
     encoded = json.dumps(out, separators=(',', ':')).encode()
     encoded += b' ' * ((-len(encoded)) % 4)
     glb = struct.pack('<III', 0x46546C67, 2, 28+len(encoded)+len(data)) + struct.pack('<II', len(encoded), 0x4E4F534A) + encoded + struct.pack('<II', len(data), 0x004E4942) + data
     output = root / 'Migration' / 'Generated' / 'alley-window-interiors.glb'
-    report = {'recipe': RECIPE, 'uvChannels': {'0': 'source or zero', '1': 'whole window, V0=bottom', '2': 'room seed, enable'},
+    rejected_components = collections.defaultdict(list)
+    for island in islands:
+        if island['nonEmissiveRim']:
+            rejected_components[island['item'], island['connected']].append(island)
+    report = {'recipe': RECIPE, 'uvChannels': {'0': 'source or zero', '1': 'whole window, V0=bottom', '2': 'seed, flag: -1 non-emissive; 0 reserved legacy fallback; 1 room'},
               'sourceGlassActors': len(items), 'changedActors': len(stats), 'connectedIslands': original_islands,
               'planeIslands': len(islands), 'eligiblePlaneIslands': sum(i['eligible'] for i in islands),
               'roomGroups': len(rooms), 'joinedGroups': sum(len(r['islands']) > 1 for r in rooms),
               'crossActorGroups': sum(len({islands[i]['item'] for i in r['islands']}) > 1 for r in rooms),
+              'nonEmissiveRimComponents': len(rejected_components),
+              'nonEmissiveRimTriangles': sum(a['nonEmissiveRimTriangles'] for a in stats),
+              'nonEmissiveOtherTriangles': sum(a['nonEmissiveOtherTriangles'] for a in stats),
+              'frontGlassActors': len(front_stats), 'frontGlassTriangles': sum(a['triangles'] for a in front_stats),
+              'frontGlassPaneIslands': sum(a['paneIslands'] for a in front_stats),
+              'frontGlassOffsetMeters': .01, 'frontGlassSkippedDuplicates': skipped_front_panes, 'frontActors': front_stats,
+              'rejectedRims': [{'actor': items[item_index]['name'], 'component': component,
+                               'rectangleCoverage': parts[0]['rimRectangleCoverage'],
+                               'triangles': sorted(t for part in parts for t in part['triangles'])}
+                              for (item_index, component), parts in rejected_components.items()],
               **shader_distribution(rooms),
               'generatedSha256': hashlib.sha256(glb).hexdigest(), 'actors': stats,
               'rooms': [{'id': r['id'], 'seed': r['seed'], 'centerMeters': list(r['center']),
                          'sashes': len(r['islands']), 'widthMeters': r['box'][1]-r['box'][0],
                          'heightMeters': r['box'][3]-r['box'][2],
+                         'normalThreeXYZ': list(islands[r['islands'][0]]['outwardNormal']),
                          'actors': sorted({items[islands[i]['item']]['name'] for i in r['islands']})} for r in rooms]}
     if write:
         output.parent.mkdir(parents=True, exist_ok=True)
@@ -366,13 +522,23 @@ def main():
     if not levels.load_level('/Game/Maps/Alley'): raise RuntimeError('Cannot load Alley')
     actors = {a.get_actor_label(): a for a in actor_editor.get_all_level_actors() if isinstance(a, u.StaticMeshActor)}
     expected = report['generatedSha256']
-    targets = []
+    targets, original_settings = [], {}
     for entry in report['actors']:
         actor = actors[entry['actor']]
         comp = actor.static_mesh_component
         assert comp.get_num_materials() == 1, 'Unexpected material-slot count: ' + entry['actor']
         targets.append((entry, actor, comp.static_mesh, comp.get_material(0)))
+        mesh = comp.static_mesh
+        bound = mesh.get_bounds()
+        original_settings[entry['actor']] = {
+            'build': mesh_editor.get_lod_build_settings(mesh, 0), 'nanite': mesh.get_editor_property('nanite_settings'),
+            'original': str(u.EditorAssetLibrary.get_metadata_tag(mesh, 'OOWWindowOriginalMesh')) or mesh.get_path_name(),
+            'bounds': tuple(getattr(getattr(bound, field), axis) for field in ('origin', 'box_extent') for axis in ('x', 'y', 'z'))}
+    fronts = {entry['actor']: actors.get(entry['actor']) for entry in report['frontActors']}
+    front_materials = {label: actor.static_mesh_component.get_material(0) if actor else None for label, actor in fronts.items()}
     needs_import = any(str(u.EditorAssetLibrary.get_metadata_tag(mesh, 'OOWWindowGeometry')) != expected for _, _, mesh, _ in targets)
+    needs_import |= any(not actor or str(u.EditorAssetLibrary.get_metadata_tag(actor.static_mesh_component.static_mesh,
+                         'OOWWindowGeometry')) != expected for actor in fronts.values())
     imported_by_name = {}
     if needs_import:
         manager = u.InterchangeManager.get_interchange_manager_scripted()
@@ -380,38 +546,85 @@ def main():
         params.is_automated, params.replace_existing = True, True
         imported = manager.import_asset(DEST, manager.create_source_data(str(source)), params)
         imported_by_name = {asset.get_name(): asset for asset in (imported or []) if isinstance(asset, u.StaticMesh)}
-        assert len(imported_by_name) == len(targets), 'Interchange must keep the generated meshes separate'
+        assert len(imported_by_name) == len(targets) + len(fronts), 'Interchange must keep the generated meshes separate'
         # Validate every replacement before changing any actor.
         for entry, actor, old, _ in targets:
             new = imported_by_name[entry['assetName']]
-            a, b = old.get_bounds(), new.get_bounds()
-            for field in ('origin', 'box_extent'):
-                av, bv = getattr(a, field), getattr(b, field)
-                assert max(abs(av.x-bv.x), abs(av.y-bv.y), abs(av.z-bv.z)) < .05, 'Local geometry bounds changed: ' + entry['actor']
+            bound = new.get_bounds()
+            values = tuple(getattr(getattr(bound, field), axis) for field in ('origin', 'box_extent') for axis in ('x', 'y', 'z'))
+            assert max(abs(a-b) for a, b in zip(original_settings[entry['actor']]['bounds'], values)) < .05, 'Local geometry bounds changed: ' + entry['actor']
+    backing_labels = {entry['backingActor'] for entry in report['frontActors']}
     for entry, actor, old, material in targets:
         mesh = imported_by_name.get(entry['assetName'], old)
         if needs_import:
-            build = mesh_editor.get_lod_build_settings(old, 0)
+            build = original_settings[entry['actor']]['build']
             build.set_editor_property('generate_lightmap_u_vs', False)
             build.set_editor_property('use_full_precision_u_vs', True)
             mesh_editor.set_lod_build_settings(mesh, 0, build)
-            mesh_editor.set_nanite_settings(mesh, old.get_editor_property('nanite_settings'), True)
+            mesh_editor.set_nanite_settings(mesh, original_settings[entry['actor']]['nanite'], True)
             assert mesh_editor.get_num_uv_channels(mesh, 0) >= 3, 'Required UV channels missing'
             mesh.set_material(0, material)
-            original = str(u.EditorAssetLibrary.get_metadata_tag(old, 'OOWWindowOriginalMesh')) or old.get_path_name()
+            original = original_settings[entry['actor']]['original']
             u.EditorAssetLibrary.set_metadata_tag(mesh, 'OOWWindowGeometry', expected)
             u.EditorAssetLibrary.set_metadata_tag(mesh, 'OOWWindowOriginalMesh', original)
             u.EditorAssetLibrary.set_metadata_tag(mesh, 'OOWWindowSourceNode', entry['actor'])
             u.EditorAssetLibrary.save_loaded_asset(mesh)
             actor.static_mesh_component.set_static_mesh(mesh)
             actor.static_mesh_component.set_material(0, material)
-        actor.tags = sorted({str(tag) for tag in actor.tags} | {'OOWWindowInterior'})
+        tags = {str(tag) for tag in actor.tags} | {'OOWWindowInterior'}
+        tags.discard('OOWWindowGlassBacking')
+        if entry['actor'] in backing_labels:
+            tags.add('OOWWindowGlassBacking')
+        actor.tags = sorted(tags)
         entry['unrealMesh'] = mesh.get_path_name()
         entry['unrealMaterial'] = material.get_path_name()
+    for entry in report['frontActors']:
+        label = entry['actor']
+        backing = actors[entry['backingActor']]
+        front = fronts[label]
+        if not front:
+            front = actor_editor.spawn_actor_from_class(u.StaticMeshActor, backing.get_actor_location(), backing.get_actor_rotation())
+            assert front, 'Cannot create front glass actor: ' + label
+            front.set_actor_label(label)
+        front.set_actor_transform(backing.get_actor_transform(), False, True)
+        comp = front.static_mesh_component
+        mesh = imported_by_name[entry['assetName']] if needs_import else comp.static_mesh
+        if needs_import:
+            build = original_settings[entry['backingActor']]['build']
+            build.set_editor_property('generate_lightmap_u_vs', False)
+            build.set_editor_property('use_full_precision_u_vs', True)
+            mesh_editor.set_lod_build_settings(mesh, 0, build)
+            nanite = mesh.get_editor_property('nanite_settings')
+            nanite.enabled = False
+            mesh_editor.set_nanite_settings(mesh, nanite, True)
+            lods = u.StaticMeshReductionOptions()
+            lods.auto_compute_lod_screen_size = False
+            lods.reduction_settings = [u.StaticMeshReductionSettings(percent_triangles=1., screen_size=1.),
+                                      u.StaticMeshReductionSettings(percent_triangles=.7, screen_size=.25),
+                                      u.StaticMeshReductionSettings(percent_triangles=.4, screen_size=.08)]
+            mesh_editor.set_lods(mesh, lods)
+            assert mesh_editor.get_num_uv_channels(mesh, 0) >= 3, 'Front glass UV channels missing'
+            material = front_materials[label] or u.load_asset('/Engine/EngineMaterials/DefaultMaterial.DefaultMaterial')
+            mesh.set_material(0, material)
+            u.EditorAssetLibrary.set_metadata_tag(mesh, 'OOWWindowGeometry', expected)
+            u.EditorAssetLibrary.set_metadata_tag(mesh, 'OOWWindowSourceNode', entry['backingActor'])
+            u.EditorAssetLibrary.save_loaded_asset(mesh)
+            comp.set_static_mesh(mesh)
+            comp.set_material(0, material)
+        comp.set_editor_property('mobility', u.ComponentMobility.STATIC)
+        comp.set_editor_property('cast_shadow', False)
+        comp.set_editor_property('visible_in_ray_tracing', True)
+        front.tags = sorted({str(tag) for tag in front.tags} | {'OOWGeometry', 'OOWWindowGlassFront'})
+        assert not mesh.get_editor_property('nanite_settings').enabled
+        entry['unrealMesh'] = mesh.get_path_name()
+    # Re-runs remove only obsolete generated front actors, never source geometry.
+    for label, actor in actors.items():
+        if label.startswith(FRONT_PREFIX) and 'OOWWindowGlassFront' in {str(tag) for tag in actor.tags} and label not in fronts:
+            actor_editor.destroy_actor(actor)
     levels.save_current_level()
     report['appliedToUnreal'] = True
     (root / 'Migration' / 'window-interiors-geometry.json').write_text(json.dumps(report, indent=2), encoding='utf-8')
-    u.log('OOW_WINDOW_GEOMETRY_COMPLETE ' + json.dumps({k: v for k, v in report.items() if k not in ('actors', 'rooms')}))
+    u.log('OOW_WINDOW_GEOMETRY_COMPLETE ' + json.dumps({k: v for k, v in report.items() if k not in ('actors', 'rooms', 'rejectedRims', 'frontActors', 'frontGlassSkippedDuplicates')}))
 
 
 def self_test(write=False):
@@ -424,8 +637,14 @@ def self_test(write=False):
     right = next(a for a in report['actors'] if a['actor'] == 'OOW_00760_paris_building_09_8')
     left = next(a for a in report['actors'] if a['actor'] == 'OOW_00719_Paris_Building_08_paris_building_08_1')
     assert right['roomGroups'] < right['connectedIslands']
+    assert right['nonEmissiveRimComponents'] == 12 and right['nonEmissiveRimTriangles'] == 144
+    assert report['nonEmissiveRimComponents'] == 26 and report['nonEmissiveRimTriangles'] == 259
+    assert right['triangles'] == 274, 'Reject emission without removing any geometry'
+    assert report['frontGlassActors'] == 66 and report['frontGlassTriangles'] == 1199
+    assert all(entry['nonEmissiveRimTriangles'] == 0 for entry in report['frontActors'])
+    assert report['frontGlassPaneIslands'] == report['eligiblePlaneIslands'] - len(report['frontGlassSkippedDuplicates'])
     assert left['roomGroups'] <= 11, 'The three top-floor double sashes should merge'
-    print(json.dumps({k: v for k, v in report.items() if k not in ('actors', 'rooms')}, indent=2))
+    print(json.dumps({k: v for k, v in report.items() if k not in ('actors', 'rooms', 'rejectedRims', 'frontActors', 'frontGlassSkippedDuplicates')}, indent=2))
     print(json.dumps({'right': right, 'left': left}, indent=2))
 
 

@@ -1,0 +1,282 @@
+{
+  "version": "city-office-light-v1",
+  "gain": 0.065,
+  "sourceGeometrySha256": "8063f1d17e102bb15b5b16d025bbddcc312a5cadd13f0d362b790d6186b336cc",
+  "geometry": {
+    "triangles": 98168,
+    "meshCount": 52,
+    "primitives": 192
+  },
+  "lighting": {
+    "allNearPaneCount": 13724,
+    "heroPaneCount": 630,
+    "checks": {
+      "passed": true,
+      "allPanesHaveColor": true,
+      "paneColorsConstant": true,
+      "nonGlassBlack": true,
+      "continuousOfficeGroups": true,
+      "maxAdjacentChannelDifference": 0.32036545872688293,
+      "actualColorRange": [
+        0.025080343708395958,
+        0.714410662651062
+      ],
+      "floorGroupSpanRange": [
+        2,
+        4
+      ],
+      "rowCount": 1312
+    },
+    "exportedChecks": {
+      "passed": true,
+      "allPrimitivesHaveColor0": true,
+      "actualNearPaneCount": 13724,
+      "actualHeroPaneCount": 630,
+      "geometryUnchanged": true,
+      "materialsUnchanged": true,
+      "beforeGeometrySha256": "9dc2a96b822fd1e532dcdf46032d428931510630c6fbc788fcb3d7ef685bf100",
+      "afterGeometrySha256": "9dc2a96b822fd1e532dcdf46032d428931510630c6fbc788fcb3d7ef685bf100",
+      "beforeMaterialSha256": "0c0ecc6cebaa8c816f0628399c666f96c57088e0175b5564fae6d56b0b8c2c6b",
+      "afterMaterialSha256": "0c0ecc6cebaa8c816f0628399c666f96c57088e0175b5564fae6d56b0b8c2c6b",
+      "comparedSemantics": [
+        "POSITION",
+        "NORMAL",
+        "TEXCOORD_0",
+        "TEXCOORD_1",
+        "indices",
+        "material slots",
+        "node transforms"
+      ],
+      "previousGlbSha256": "970d26fc832a6f133da973c30b65e425258acc439f53ff2df224092b27aebdb2",
+      "glbSha256": "8063f1d17e102bb15b5b16d025bbddcc312a5cadd13f0d362b790d6186b336cc"
+    }
+  },
+  "savedAssetAudit": {
+    "passed": true,
+    "ledPoles": 12,
+    "entranceMeshes": 7,
+    "nearBuildings": 16,
+    "materials": {
+      "M_CityModern_Hero_Glass": {
+        "version": "city-office-light-v1",
+        "gain": 0.06499999761581421,
+        "connectedParameters": [
+          "Night"
+        ]
+      },
+      "M_CityModern_Glass_Day_Silver": {
+        "version": "city-office-light-v1",
+        "gain": 0.06499999761581421,
+        "connectedParameters": [
+          "Night"
+        ]
+      },
+      "M_Glass_Lit_CityModern_Warm": {
+        "version": "city-office-light-v1",
+        "gain": 0.06499999761581421,
+        "connectedParameters": [
+          "Night"
+        ]
+      },
+      "M_CityModern_Glass_Day_Blue": {
+        "version": "city-office-light-v1",
+        "gain": 0.06499999761581421,
+        "connectedParameters": [
+          "Night"
+        ]
+      }
+    }
+  },
+  "conditions": {
+    "resolution": [
+      1280,
+      820
+    ],
+    "screenPercentage": 85,
+    "quality": 1,
+    "hour": 23,
+    "durationSeconds": 30,
+    "frameHidden": true,
+    "uncapped": true,
+    "hardwareLumen": true,
+    "beforeRunsPerWeather": 1,
+    "afterRunsPerWeather": 2
+  },
+  "captures": {
+    "before-clear": {
+      "hour": 23,
+      "actualWeather": "clear",
+      "movingCars": 16,
+      "actors": 128,
+      "staticMeshComponents": 92,
+      "frameTimeMeanMs": 4.628023334405301,
+      "frameTimeP95Ms": 5.807999610900879,
+      "finalViewPostProcess": {
+        "bloomIntensity": 0.675000011920929,
+        "bloomSizeScale": 4,
+        "bloomThreshold": -1,
+        "exposureBias": -0.1499999761581421,
+        "minBrightness": -4,
+        "maxBrightness": 16,
+        "lastEyeAdaptationExposure": 14.418639183044434,
+        "lastAverageSceneLuminance": 0.004524990450590849
+      }
+    },
+    "after-first-clear": {
+      "hour": 23,
+      "actualWeather": "clear",
+      "movingCars": 16,
+      "actors": 128,
+      "staticMeshComponents": 92,
+      "frameTimeMeanMs": 5.9705992967836945,
+      "frameTimeP95Ms": 7.721397876739502,
+      "finalViewPostProcess": {
+        "bloomIntensity": 0.675000011920929,
+        "bloomSizeScale": 4,
+        "bloomThreshold": -1,
+        "exposureBias": -0.1499999761581421,
+        "minBrightness": -4,
+        "maxBrightness": 16,
+        "lastEyeAdaptationExposure": 14.418859481811523,
+        "lastAverageSceneLuminance": 0.004526770673692226
+      }
+    },
+    "after-warm-clear": {
+      "hour": 23,
+      "actualWeather": "clear",
+      "movingCars": 16,
+      "actors": 128,
+      "staticMeshComponents": 92,
+      "frameTimeMeanMs": 5.756649596791596,
+      "frameTimeP95Ms": 7.191799640655518,
+      "finalViewPostProcess": {
+        "bloomIntensity": 0.675000011920929,
+        "bloomSizeScale": 4,
+        "bloomThreshold": -1,
+        "exposureBias": -0.1499999761581421,
+        "minBrightness": -4,
+        "maxBrightness": 16,
+        "lastEyeAdaptationExposure": 14.418780326843262,
+        "lastAverageSceneLuminance": 0.0045270114205777645
+      }
+    },
+    "before-rain": {
+      "hour": 23,
+      "actualWeather": "rain",
+      "movingCars": 16,
+      "actors": 128,
+      "staticMeshComponents": 92,
+      "frameTimeMeanMs": 4.565936247131942,
+      "frameTimeP95Ms": 5.791898727416992,
+      "finalViewPostProcess": {
+        "bloomIntensity": 0.675000011920929,
+        "bloomSizeScale": 4,
+        "bloomThreshold": -1,
+        "exposureBias": -0.1499999761581421,
+        "minBrightness": -4,
+        "maxBrightness": 16,
+        "lastEyeAdaptationExposure": 14.4188232421875,
+        "lastAverageSceneLuminance": 0.004332448355853558
+      }
+    },
+    "after-first-rain": {
+      "hour": 23,
+      "actualWeather": "rain",
+      "movingCars": 16,
+      "actors": 128,
+      "staticMeshComponents": 92,
+      "frameTimeMeanMs": 5.601833081769943,
+      "frameTimeP95Ms": 7.108900547027588,
+      "finalViewPostProcess": {
+        "bloomIntensity": 0.675000011920929,
+        "bloomSizeScale": 4,
+        "bloomThreshold": -1,
+        "exposureBias": -0.1499999761581421,
+        "minBrightness": -4,
+        "maxBrightness": 16,
+        "lastEyeAdaptationExposure": 14.418810844421387,
+        "lastAverageSceneLuminance": 0.004343206994235516
+      }
+    },
+    "after-warm-rain": {
+      "hour": 23,
+      "actualWeather": "rain",
+      "movingCars": 16,
+      "actors": 128,
+      "staticMeshComponents": 92,
+      "frameTimeMeanMs": 4.845453877927523,
+      "frameTimeP95Ms": 6.138302326202393,
+      "finalViewPostProcess": {
+        "bloomIntensity": 0.675000011920929,
+        "bloomSizeScale": 4,
+        "bloomThreshold": -1,
+        "exposureBias": -0.1499999761581421,
+        "minBrightness": -4,
+        "maxBrightness": 16,
+        "lastEyeAdaptationExposure": 14.418766975402832,
+        "lastAverageSceneLuminance": 0.004341773223131895
+      }
+    }
+  },
+  "comparison": {
+    "clear": {
+      "beforeMeanMs": 4.628023334405301,
+      "afterMeanMs": 5.863624446787645,
+      "afterRunMeansMs": [
+        5.9705992967836945,
+        5.756649596791596
+      ],
+      "beforeP95Ms": 5.807999610900879,
+      "afterRunP95Ms": [
+        7.721397876739502,
+        7.191799640655518
+      ],
+      "afterFps": 170.54298225866847
+    },
+    "rain": {
+      "beforeMeanMs": 4.565936247131942,
+      "afterMeanMs": 5.223643479848732,
+      "afterRunMeansMs": [
+        5.601833081769943,
+        4.845453877927523
+      ],
+      "beforeP95Ms": 5.791898727416992,
+      "afterRunP95Ms": [
+        7.108900547027588,
+        6.138302326202393
+      ],
+      "afterFps": 191.43726095735735
+    }
+  },
+  "limits": [
+    "Short application frame-time measurements, not GPU timer or native desktop-resolution guarantee.",
+    "The shared final package also includes the independent window-frame task changes.",
+    "This is a lightweight emissive-mask approximation without modeled room interiors."
+  ],
+  "daylightEditorCapture": "Art/City/city-office-day.png",
+  "packagedExecutableBefore": {
+    "path": "D:\\OutOfWindowBuild\\Windows\\OutOfWindow\\Binaries\\Win64\\OutOfWindow.exe",
+    "modified": 1790243505.1451583,
+    "sha256": "20ed50c8cee882c5ed705368f80ffa58fd13a7a186bbff553b26fc621d643b51"
+  },
+  "windowFrameIntegrationEvidence": "Migration/frame-night-verification.json",
+  "packagedExecutable": {
+    "path": "D:\\OutOfWindowBuild\\Windows\\OutOfWindow\\Binaries\\Win64\\OutOfWindow.exe",
+    "sha256": "a1238a50ef2bc1b14442b0df2d892131dd5df34f165353ddaffd68ded085c4a7"
+  },
+  "restoredPreview": {
+    "scene": "City",
+    "hour": 23,
+    "weather": "rain",
+    "movingCars": 16,
+    "frameReady": true,
+    "frameStyle": "graphite",
+    "launcherPid": 62980,
+    "gamePid": 68816,
+    "desktopSize": [
+      2560,
+      1440
+    ],
+    "log": ".runtime/ue-city-night/preview.log"
+  }
+}

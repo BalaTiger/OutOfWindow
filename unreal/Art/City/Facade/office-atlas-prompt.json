@@ -1,0 +1,8 @@
+{
+  "tool": "image_gen (built-in)",
+  "date": "2026-09-24",
+  "source": "Original generated image; not photography or a measured PBR material",
+  "file": "office-atlas-v1.png",
+  "layout": "2 by 2, no gutter; sample inset and mip clamp required",
+  "prompt": "Use case: photorealistic-natural. Asset type: a square 2 by 2 texture atlas for modern office interior mapping in a real-time city facade. Produce exactly FOUR equally sized square room photographs tightly tiled in a precise 2 columns x 2 rows grid, each fills its full quadrant edge to edge, no gutters, no border, no text. In every tile the camera stands just outside a wide open missing front wall, looking straight into a realistic modern room at level eye height, single centered perspective, same camera scale. Show floor in bottom quarter, ceiling in top quarter, distant back wall in middle, side walls giving depth. Modern contemporary offices with believable small furniture, neutral warm grey and oak materials, detailed subtle textures, desks and monitor backs, office chairs, shelves, potted plants. Upper left: shared workspace with desk groups; upper right: meeting room with long conference table; lower left: quiet executive study with bookshelves; lower right: small contemporary office lounge. Architecture visualization photography quality, restrained neutral indirect daylight, ceiling light fixtures visible but NO bloom or blown highlights. Moderate brightness so furniture silhouettes read. Absolutely NO exterior window frame, NO glass, NO facade mullions, NO outside views, NO visible sky, NO people, NO UI, NO labels. Do not portray four whole buildings or four windows: only the four interiors ready to sit behind glazing. Every room fills one exact quadrant."
+}

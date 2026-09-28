@@ -1,0 +1,165 @@
+{
+  "recordedAt": "2026-09-24T14:16:47.7614837+08:00",
+  "geometry": "camera attached closed bevel mesh; independent of Slate",
+  "triangleCount": 1100,
+  "engine": "Unreal Engine 5.7.4",
+  "build": {
+    "editor": "Succeeded",
+    "game": "Succeeded",
+    "log": ".runtime/ue-desktop-frame/build-streaming-fix.log"
+  },
+  "automation": {
+    "succeeded": 3,
+    "failed": 0,
+    "report": ".runtime/ue-desktop-frame/tests/index.json"
+  },
+  "crossScene": {
+    "from": "Coast",
+    "to": "Village",
+    "startupStyle": "oak",
+    "selectedStyle": "ivory",
+    "ready": true,
+    "mode": "NullRHI; no screenshot expected"
+  },
+  "visualCases": [
+    {
+      "case": "alley-hiddenui",
+      "scene": "Alley",
+      "captureSaved": true,
+      "frameReady": true,
+      "triangles": 1100,
+      "style": "oak",
+      "interfaceHidden": true,
+      "capture": "C:\\Users\\zhuzi\\Documents\\OutOfWindow\\.runtime\\ue-validation\\alley-hiddenui.png"
+    },
+    {
+      "case": "alley-night",
+      "scene": "Alley",
+      "captureSaved": true,
+      "frameReady": true,
+      "triangles": 1100,
+      "style": "oak",
+      "interfaceHidden": false,
+      "capture": "C:\\Users\\zhuzi\\Documents\\OutOfWindow\\.runtime\\ue-validation\\alley-night.png"
+    },
+    {
+      "case": "alley-rain",
+      "scene": "Alley",
+      "captureSaved": true,
+      "frameReady": true,
+      "triangles": 1100,
+      "style": "oak",
+      "interfaceHidden": false,
+      "capture": "C:\\Users\\zhuzi\\Documents\\OutOfWindow\\.runtime\\ue-validation\\alley-rain.png"
+    },
+    {
+      "case": "alley-narrow",
+      "scene": "Alley",
+      "captureSaved": true,
+      "frameReady": true,
+      "triangles": 1100,
+      "style": "oak",
+      "interfaceHidden": true,
+      "capture": "C:\\Users\\zhuzi\\Documents\\OutOfWindow\\.runtime\\ue-validation\\alley-narrow.png"
+    },
+    {
+      "case": "coast-wide",
+      "scene": "Coast",
+      "captureSaved": true,
+      "frameReady": true,
+      "triangles": 1100,
+      "style": "oak",
+      "interfaceHidden": true,
+      "capture": "C:\\Users\\zhuzi\\Documents\\OutOfWindow\\.runtime\\ue-validation\\coast-wide.png"
+    },
+    {
+      "case": "forest-ivory",
+      "scene": "Forest",
+      "captureSaved": true,
+      "frameReady": true,
+      "triangles": 1100,
+      "style": "ivory",
+      "interfaceHidden": false,
+      "capture": "C:\\Users\\zhuzi\\Documents\\OutOfWindow\\.runtime\\ue-validation\\forest-ivory.png"
+    },
+    {
+      "case": "village-graphite",
+      "scene": "Village",
+      "captureSaved": true,
+      "frameReady": true,
+      "triangles": 1100,
+      "style": "graphite",
+      "interfaceHidden": false,
+      "capture": "C:\\Users\\zhuzi\\Documents\\OutOfWindow\\.runtime\\ue-validation\\village-graphite.png"
+    }
+  ],
+  "performanceClaim": false,
+  "performanceNote": "A separate old desktop application was running during Editor captures; timings are not a performance comparison.",
+  "package": {
+    "status": "Superseded: initial package had an uninitialized UV streaming ensure; do not use its pass verdict",
+    "executable": "D:/OutOfWindowBuildCache/DesktopFrameValidation/Archive/Windows/OutOfWindow.exe",
+    "gameBinarySha256": "ECCF496078B33694DDFBC409EA7314650224D32C441C5D7C8E52633F35C3A609",
+    "log": ".runtime/ue-desktop-frame/package-validation.log",
+    "cases": [
+      {
+        "case": "hiddenui",
+        "captureSaved": true,
+        "frameReady": true,
+        "triangles": 1100,
+        "style": "oak",
+        "interfaceHidden": true,
+        "frameTimeMeanMs": 16.670023196485374,
+        "frameTimeP95Ms": 16.690696716308594,
+        "screenshot": "C:/Users/zhuzi/Documents/OutOfWindow/.runtime/ue-desktop-frame/packaged-hiddenui.png"
+      },
+      {
+        "case": "ivory",
+        "captureSaved": true,
+        "frameReady": true,
+        "triangles": 1100,
+        "style": "ivory",
+        "interfaceHidden": false,
+        "frameTimeMeanMs": 16.667154512393186,
+        "frameTimeP95Ms": 16.666799545288086,
+        "screenshot": "C:/Users/zhuzi/Documents/OutOfWindow/.runtime/ue-desktop-frame/packaged-ivory.png"
+      }
+    ],
+    "note": "15-second smoke checks capped at 60 FPS; not a performance benchmark."
+  },
+  "standardPackage": {
+    "status": "BuildCookRun and both strict runtime checks passed",
+    "executable": "D:/OutOfWindowBuild/Windows/OutOfWindow.exe",
+    "gameBinarySha256": "4A6F56F18FEE60A79D941305604C4BBA6A7A923FB7CD99FE9EB1B8B783AE9EA5",
+    "log": ".runtime/ue-desktop-frame/package-final.log",
+    "smokeLog": ".runtime/ue-desktop-frame/final-smoke.log",
+    "cases": [
+      {
+        "case": "alley-hiddenui",
+        "ready": true,
+        "captureSaved": true,
+        "style": "oak",
+        "interfaceHidden": true,
+        "triangles": 1100,
+        "engineEnsures": 0,
+        "shaderFallbacks": 0,
+        "meanFrameTimeMs": 16.670753352010145,
+        "p95FrameTimeMs": 16.666799545288086,
+        "screenshot": "C:\\Users\\zhuzi\\Documents\\OutOfWindow\\.runtime\\ue-validation\\packaged-alley-hiddenui.png"
+      },
+      {
+        "case": "city-rainnight",
+        "ready": true,
+        "captureSaved": true,
+        "style": "graphite",
+        "interfaceHidden": false,
+        "triangles": 1100,
+        "engineEnsures": 0,
+        "shaderFallbacks": 0,
+        "meanFrameTimeMs": 16.671051091685147,
+        "p95FrameTimeMs": 16.69890022277832,
+        "screenshot": "C:\\Users\\zhuzi\\Documents\\OutOfWindow\\.runtime\\ue-validation\\packaged-city-rainnight.png"
+      }
+    ],
+    "streamingFix": "Initialize UVChannelData for all runtime frame and bird material slots; validation rejects ensures."
+  }
+}
