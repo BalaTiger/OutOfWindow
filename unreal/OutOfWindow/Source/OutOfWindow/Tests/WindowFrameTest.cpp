@@ -8,8 +8,10 @@
 #include "Components/StaticMeshComponent.h"
 #include "Engine/StaticMesh.h"
 #include "Engine/World.h"
+#include "HAL/IConsoleManager.h"
 #include "Materials/MaterialInstanceDynamic.h"
 #include "Materials/MaterialInterface.h"
+#include "Misc/App.h"
 #include "Misc/AutomationTest.h"
 #include "StaticMeshResources.h"
 #include "UObject/UObjectGlobals.h"
@@ -54,10 +56,14 @@ bool FWindowFrameTest::RunTest(const FString& Parameters)
     }
     UStaticMeshComponent* Component = Cast<UStaticMeshComponent>(Frame->GetRootComponent());
     UStaticMeshComponent* RainGlass = nullptr;
+    TArray<UStaticMeshComponent*> RoomWalls;
     TArray<UStaticMeshComponent*> MeshComponents;
     Frame->GetComponents(MeshComponents);
     for (UStaticMeshComponent* MeshComponent : MeshComponents)
+    {
         if (MeshComponent->GetFName() == TEXT("WindowRainGlass")) RainGlass = MeshComponent;
+        if (MeshComponent->GetName().StartsWith(TEXT("RoomWall"))) RoomWalls.Add(MeshComponent);
+    }
     if (!TestNotNull(TEXT("Frame root mesh component"), Component)
         || !TestNotNull(TEXT("Named rain glass component"), RainGlass))
     {
@@ -74,14 +80,74 @@ bool FWindowFrameTest::RunTest(const FString& Parameters)
         World->DestroyWorld(false);
         return false;
     }
-    TestTrue(TEXT("Room light illuminates only the dedicated indoor channel"), RoomBounce->LightingChannels.bChannel1
-        && !RoomBounce->LightingChannels.bChannel0 && !RoomBounce->LightingChannels.bChannel2);
-    TestTrue(TEXT("Frame receives the indoor light channel"), Component->LightingChannels.bChannel1);
-    TestEqual(TEXT("Room light cannot brighten the outdoor indirect lighting"), RoomBounce->IndirectLightingIntensity, 0.f);
+    TestTrue(TEXT("Room light shares the standard scene lighting channel"), RoomBounce->LightingChannels.bChannel0
+        && !RoomBounce->LightingChannels.bChannel1 && !RoomBounce->LightingChannels.bChannel2);
+    TestTrue(TEXT("Frame receives natural scene lighting"), Component->LightingChannels.bChannel0
+        && !Component->LightingChannels.bChannel1 && !Component->LightingChannels.bChannel2);
+    TestTrue(TEXT("Walls physically shadow the room light"), RoomBounce->CastShadows);
+    TestEqual(TEXT("Room light participates in indirect lighting"), RoomBounce->IndirectLightingIntensity, 1.f);
     TestEqual(TEXT("Room light cannot brighten outdoor volumetric fog"), RoomBounce->VolumetricScatteringIntensity, 0.f);
     TestFalse(TEXT("Room light cannot spill onto outdoor glass or precipitation"), RoomBounce->bAffectTranslucentLighting);
     TestTrue(TEXT("Frame follows the camera independently of world placement"), Component->GetAttachParent() == View);
     TestEqual(TEXT("Frame cannot collide with the scene"), Component->GetCollisionEnabled(), ECollisionEnabled::NoCollision);
+    UStaticMesh* RoomCube = LoadObject<UStaticMesh>(nullptr, TEXT("/Engine/BasicShapes/Cube.Cube"));
+    TestNotNull(TEXT("Room uses the native cube mesh"), RoomCube);
+    TestEqual(TEXT("Room has four window surrounds and five enclosing surfaces"), RoomWalls.Num(), 9);
+    auto CheckRoom = [&]()
+    {
+        TArray<FBox> WallBounds;
+        FBox Enclosure(ForceInit);
+        const FVector Lamp = RoomBounce->GetRelativeLocation();
+        const FVector2D HalfOpening = Frame->GetOpeningSize() * .5;
+        int32 FrontWalls = 0;
+        for (UStaticMeshComponent* Wall : RoomWalls)
+        {
+            TestTrue(TEXT("Room wall remains attached to the frame"), Wall->GetAttachParent() == Component);
+            TestTrue(TEXT("Room resizing reuses the native cube"), Wall->GetStaticMesh() == RoomCube);
+            TestTrue(TEXT("Room wall is visible and casts physical shadows"), Wall->IsVisible() && Wall->CastShadow);
+            TestTrue(TEXT("Room wall participates in distance fields and ray tracing"), Wall->bAffectDistanceFieldLighting && Wall->bVisibleInRayTracing);
+            TestTrue(TEXT("Room wall shares scene lighting"), Wall->LightingChannels.bChannel0
+                && !Wall->LightingChannels.bChannel1 && !Wall->LightingChannels.bChannel2);
+            TestEqual(TEXT("Room wall follows the movable camera"), Wall->GetMobility(), EComponentMobility::Movable);
+            TestEqual(TEXT("Room wall cannot collide with scene content"), Wall->GetCollisionEnabled(), ECollisionEnabled::NoCollision);
+            if (!TestNotNull(TEXT("Room wall has its cube mesh"), Wall->GetStaticMesh().Get())) continue;
+            TestNotNull(TEXT("Room wall has a surface material"), Wall->GetMaterial(0));
+            const FBox Bounds = Wall->GetStaticMesh()->GetBoundingBox().TransformBy(Wall->GetRelativeTransform());
+            WallBounds.Add(Bounds);
+            Enclosure += Bounds;
+            TestFalse(TEXT("Camera is outside every wall volume"), Bounds.IsInsideOrOn(FVector::ZeroVector));
+            TestFalse(TEXT("Indoor lamp is outside every wall volume"), Bounds.IsInsideOrOn(Lamp));
+            if (Bounds.Min.X > 0)
+            {
+                ++FrontWalls;
+                const FBox Aperture(FVector(Bounds.Min.X, -HalfOpening.X, -HalfOpening.Y),
+                    FVector(Bounds.Max.X, HalfOpening.X, HalfOpening.Y));
+                TestFalse(TEXT("Front wall leaves the entire window opening clear"), Bounds.Intersect(Aperture));
+                TestTrue(TEXT("Window joinery is seated in the front wall"), Bounds.Intersect(Component->GetStaticMesh()->GetBoundingBox()));
+            }
+        }
+        TestEqual(TEXT("Four wall pieces surround the window opening"), FrontWalls, 4);
+        TestTrue(TEXT("Camera is inside the room enclosure"), Enclosure.IsInside(FVector::ZeroVector));
+        TestTrue(TEXT("Indoor lamp is inside the room enclosure"), Enclosure.IsInside(Lamp));
+        for (const FVector& Direction : {FVector(1,0,0), FVector(-1,0,0), FVector(0,1,0), FVector(0,-1,0), FVector(0,0,1), FVector(0,0,-1)})
+        {
+            const FVector End = Direction * Enclosure.GetSize().GetMax() * 2;
+            bool bBlocked = false;
+            for (const FBox& Bounds : WallBounds)
+                bBlocked |= FMath::LineBoxIntersection(Bounds, FVector::ZeroVector, End, End);
+            TestEqual(FString::Printf(TEXT("Camera axis %s escapes only through the window"), *Direction.ToString()), bBlocked, Direction.X != 1);
+        }
+    };
+    CheckRoom();
+    if (RoomCube && FApp::CanEverRender())
+    {
+        const FStaticMeshRenderData* Data = RoomCube->GetRenderData();
+        if (TestTrue(TEXT("Room cube has render data"), Data && Data->LODResources.Num() > 0))
+        {
+            TestNotNull(TEXT("Room cube has distance-field occlusion data"), Data->LODResources[0].DistanceFieldData);
+            TestNotNull(TEXT("Room cube has Lumen surface-card data"), Data->LODResources[0].CardRepresentationData);
+        }
+    }
     TestTrue(TEXT("Rain glass is a distinct child of the frame"), RainGlass != Component && RainGlass->GetAttachParent() == Component);
     TestTrue(TEXT("Glass and joinery share camera-local coordinates"), RainGlass->GetRelativeTransform().Equals(FTransform::Identity));
     TestEqual(TEXT("Rain glass cannot collide with the scene"), RainGlass->GetCollisionEnabled(), ECollisionEnabled::NoCollision);
@@ -225,11 +291,28 @@ bool FWindowFrameTest::RunTest(const FString& Parameters)
     CheckDepth();
     CheckWinding();
 
-    const float DayRoomIntensity = RoomBounce->Intensity;
+    CheckRoom();
+    Frame->SetDaylight(1);
+    TestEqual(TEXT("Daytime frame receives no artificial room fill"), RoomBounce->Intensity, 0.f);
+    Frame->SetDaylight(.5f);
+    TestEqual(TEXT("Overcast daylight does not turn on the indoor lamp"), RoomBounce->Intensity, 0.f);
     Frame->SetDaylight(0);
     const float NightRoomIntensity = RoomBounce->Intensity;
     TestTrue(TEXT("The room stays lit at night"), RoomBounce->IsVisible() && NightRoomIntensity > 0);
-    TestTrue(TEXT("Daylight supplements the persistent indoor lamp"), DayRoomIntensity > NightRoomIntensity);
+    Frame->SetDaylight(.1f);
+    TestEqual(TEXT("Late twilight uses the full indoor lamp"), RoomBounce->Intensity, NightRoomIntensity);
+    Frame->SetDaylight(.3f);
+    TestTrue(TEXT("Indoor lamp fades smoothly through twilight"), RoomBounce->Intensity > 0 && RoomBounce->Intensity < NightRoomIntensity);
+    if (IConsoleVariable* Lumens = IConsoleManager::Get().FindConsoleVariable(TEXT("oow.FrameRoomLumens")))
+    {
+        const float OriginalLumens = Lumens->GetFloat();
+        Lumens->SetWithCurrentPriority(60.f);
+        Frame->SetDaylight(0);
+        TestEqual(TEXT("Indoor lamp brightness remains calibratable"), RoomBounce->Intensity, 60.f);
+        Lumens->SetWithCurrentPriority(OriginalLumens);
+    }
+    else AddError(TEXT("Indoor lamp calibration console variable is missing"));
+    Frame->SetDaylight(0);
     TestTrue(TEXT("Night uses a warm-white native light temperature"), RoomBounce->bUseTemperature
         && RoomBounce->Temperature >= 3000.f && RoomBounce->Temperature <= 4000.f);
     const bool bOriginalScreenMessages = GAreScreenMessagesEnabled;
@@ -267,6 +350,7 @@ bool FWindowFrameTest::RunTest(const FString& Parameters)
     TestFalse(TEXT("Resizing in clear weather does not show rain glass"), RainGlass->IsVisible());
     TestTrue(TEXT("Repeated resizing preserves the rain material"), RainGlass->GetMaterial(0) == RainMaterial);
     TestTrue(TEXT("Frame remains ready after resizing and UI toggles"), Frame->IsReady());
+    CheckRoom();
     CheckWinding();
     World->DestroyWorld(false);
     return true;

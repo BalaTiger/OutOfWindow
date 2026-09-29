@@ -1,8 +1,10 @@
-"""Give Alley window glazing continuous per-room UVs without interior geometry.
+"""Give Alley window glazing continuous per-room UVs and room dimensions.
 
 UV0 and original vertex attributes are preserved (zero UV0 if absent).
 UV1: whole-window projection, U left-to-right, V=0 bottom / V=1 top.
-UV2: (stable 24-bit room seed, 1); non-room faces (0,-1).
+UV2: (stable 24-bit room seed, flag): .5 basic IM, 1 detailed IM, 2 3D opening.
+Non-room faces use (0,-1); zero remains reserved for legacy material fallback.
+UV3: whole-window width/height in metres, constant within each room.
 True panes also receive a separate front-glass sheet, 1 cm outward, with native LODs.
 Run after scene import, before surface materials. City is deliberately untouched.
 --self-test validates CPU grouping; --generate-only also writes the local GLB.
@@ -18,10 +20,36 @@ import struct
 import sys
 
 DEST = '/Game/Scenes/Alley/WindowInteriors'
-RECIPE = 'window-uv-v2'
+RECIPE = 'window-uv-v5'
+# Approved fixed-camera allocation. Keep source IDs stable; the two wide groups
+# each become two physical interiors in build_room_boxes without regrouping UVs.
+HERO_ROOM_IDS = ('67294f945510fc8a', '14286f445050f0e5',
+                 '13a26cb6982569b0', 'e8143a4235edd362',
+                 '2c4f36af47ee8629', 'c5753d251fa65540',
+                 'fe8ba70448e8d0b4', 'e75ca7daf67b6031',
+                 '9a9fb7340f17b1d6', '4b36e0ec1c9d5fc3',
+                 'bb0077ee2a158352', '360ea453eb0f5fb6',
+                 'c21129e54a722aec')
+HERO_SPLIT_ROOM_IDS = ('360ea453eb0f5fb6', 'c21129e54a722aec')
+# Additional source panes behind the upper front opening and right-hand hero.
+HERO_APERTURE_ROOM_IDS = HERO_ROOM_IDS + ('2c5bb7bff6cbf8a5', '2e308641366c36c4')
+DETAILED_IM_ROOM_IDS = (
+    '471c1c70b1207c20', '4a1cdc1731bf1310', 'fdf301dfa678ff37',
+    'eb413e451f47192f', '8c708a69b99a2b9a', 'f0827a3a12bf8d8b',
+    '6ee94972fc6b2739', '75fdb9b1e6c53243', 'a6ce26ea8e599db0',
+    '0762ceebb689632f', '5b9e6146f2d8b662', 'bcec83782efce0d2',
+    '59dfb7a24a76e269', '9958cd02ff0d828e', '0b6d11a39eac3257',
+    'fdc1700240499a48', '03fc4c5a052d63ef')
 PREFIX = 'OOWInterior_'
 FRONT_PREFIX = 'OOWGlassFront_'
 GLASS = ('MASTER_Glass_', 'MASTER_Focus_Glass', 'MASTER_Frosted_Glass')
+
+
+def room_flag(identity):
+    # Exact binary levels survive Nanite UV quantization; seed equality does not.
+    if identity in HERO_APERTURE_ROOM_IDS:
+        return 2.
+    return 1. if identity in DETAILED_IM_ROOM_IDS else .5
 
 
 def sub(a, b): return tuple(x - y for x, y in zip(a, b))
@@ -331,6 +359,8 @@ def front_panes(doc, blob, items, islands):
 
 def generate(root, write=True):
     doc, blob, items, islands, rooms, original_islands = analyze(root)
+    assert set(HERO_APERTURE_ROOM_IDS) <= {room['id'] for room in rooms}, 'Missing authored hero aperture'
+    assert set(DETAILED_IM_ROOM_IDS) <= {room['id'] for room in rooms}, 'Missing detailed IM room'
     front_islands, skipped_front_panes = front_panes(doc, blob, items, islands)
     assignment = {}
     for island in islands:
@@ -368,7 +398,7 @@ def generate(root, write=True):
         if not used_rooms and not rejected: continue
         # A shared vertex at a bent corner needs separate UVs, without moving
         # it or changing any source triangle/material/normal/UV0 value.
-        remap, vertices, uv1, uv2, indices = {}, [], [], [], []
+        remap, vertices, uv1, uv2, uv3, indices = {}, [], [], [], [], []
         for tri_index, triangle in enumerate(item['triangles']):
             room_index = assignment.get((item['index'], tri_index), -1)
             for original in triangle:
@@ -383,12 +413,14 @@ def generate(root, write=True):
                               (dot(point, room['v']) - box[2])/(box[3]-box[2]))
                         assert all(-.000001 <= value <= 1.000001 for value in uv)
                         uv1.append(tuple(max(0., min(1., value)) for value in uv))
-                        uv2.append((room['seed'], 1.))
+                        uv2.append((room['seed'], room_flag(room['id'])))
+                        uv3.append((box[1]-box[0], box[3]-box[2]))
                     else:
                         uv1.append((0., 0.))
                         # Every non-room face on an adapted mesh is dark.
                         # Legacy v3 fallback belongs only to untagged meshes.
                         uv2.append((0., -1.))
+                        uv3.append((1., 1.))
                 indices.append(remap[key])
         source_primitive = item['primitive']
         primitive = {'attributes': {}, 'material': 0}
@@ -400,7 +432,7 @@ def generate(root, write=True):
             primitive['attributes'][semantic] = put(copied, accessor)
             assert all(copied[i*len(raw[0]):(i+1)*len(raw[0])] == raw[original] for i, original in enumerate(vertices))
         # Channels must be contiguous or importers may renumber UV1/UV2.
-        for channel, values in [(0, [(0., 0.)]*len(vertices)), (1, uv1), (2, uv2)]:
+        for channel, values in [(0, [(0., 0.)]*len(vertices)), (1, uv1), (2, uv2), (3, uv3)]:
             semantic = 'TEXCOORD_' + str(channel)
             if semantic in primitive['attributes']: continue
             raw = b''.join(struct.pack('<ff', *value) for value in values)
@@ -425,7 +457,7 @@ def generate(root, write=True):
                       'addedZeroUV0': 'TEXCOORD_0' not in source_primitive['attributes']})
         selected = sorted(index for index in front_islands if islands[index]['item'] == item['index'])
         if not selected: continue
-        front_vertices, front_positions, front_indices, front_uv1, front_uv2, front_remap = [], [], [], [], [], {}
+        front_vertices, front_positions, front_indices, front_uv1, front_uv2, front_uv3, front_remap = [], [], [], [], [], [], {}
         for island_index in selected:
             island = islands[island_index]
             assert island['eligible'] and not island['nonEmissiveRim']
@@ -445,6 +477,7 @@ def generate(root, write=True):
                         back_index = remap[original, room_index]
                         front_uv1.append(uv1[back_index])
                         front_uv2.append(uv2[back_index])
+                        front_uv3.append(uv3[back_index])
                     front_indices.append(front_remap[key])
         front_primitive = {'attributes': {}, 'material': 0}
         for semantic, index in source_primitive['attributes'].items():
@@ -459,7 +492,7 @@ def generate(root, write=True):
                 original_raw, _ = read_accessor(doc, blob, index)
                 raw = b''.join(original_raw[v] for v in front_vertices)
             front_primitive['attributes'][semantic] = put(raw, accessor)
-        for channel, values in [(0, [(0., 0.)]*len(front_vertices)), (1, front_uv1), (2, front_uv2)]:
+        for channel, values in [(0, [(0., 0.)]*len(front_vertices)), (1, front_uv1), (2, front_uv2), (3, front_uv3)]:
             semantic = 'TEXCOORD_' + str(channel)
             if semantic not in front_primitive['attributes']:
                 front_primitive['attributes'][semantic] = put(b''.join(struct.pack('<ff', *value) for value in values),
@@ -472,7 +505,7 @@ def generate(root, write=True):
         out['scenes'][0]['nodes'].append(mesh_index)
         front_stats.append({'actor': front_name, 'backingActor': item['name'], 'assetName': front_name,
                             'triangles': len(front_indices)//3, 'paneIslands': len(selected), 'offsetMeters': .01,
-                            'nonEmissiveRimTriangles': 0, 'uvChannels': 3})
+                            'nonEmissiveRimTriangles': 0, 'uvChannels': 4})
     data.extend(b'\0' * ((-len(data)) % 4))
     out['buffers'] = [{'byteLength': len(data)}]
     encoded = json.dumps(out, separators=(',', ':')).encode()
@@ -483,7 +516,7 @@ def generate(root, write=True):
     for island in islands:
         if island['nonEmissiveRim']:
             rejected_components[island['item'], island['connected']].append(island)
-    report = {'recipe': RECIPE, 'uvChannels': {'0': 'source or zero', '1': 'whole window, V0=bottom', '2': 'seed, flag: -1 non-emissive; 0 reserved legacy fallback; 1 room'},
+    report = {'recipe': RECIPE, 'uvChannels': {'0': 'source or zero', '1': 'whole window, V0=bottom', '2': 'seed, flag: -1 non-emissive; 0 reserved legacy fallback; 0.5 basic IM; 1 detailed IM; 2 3D aperture', '3': 'whole-window width/height in metres'},
               'sourceGlassActors': len(items), 'changedActors': len(stats), 'connectedIslands': original_islands,
               'planeIslands': len(islands), 'eligiblePlaneIslands': sum(i['eligible'] for i in islands),
               'roomGroups': len(rooms), 'joinedGroups': sum(len(r['islands']) > 1 for r in rooms),
@@ -500,7 +533,8 @@ def generate(root, write=True):
                               for (item_index, component), parts in rejected_components.items()],
               **shader_distribution(rooms),
               'generatedSha256': hashlib.sha256(glb).hexdigest(), 'actors': stats,
-              'rooms': [{'id': r['id'], 'seed': r['seed'], 'centerMeters': list(r['center']),
+              'rooms': [{'id': r['id'], 'seed': r['seed'], 'flag': room_flag(r['id']),
+                         'centerMeters': list(r['center']),
                          'sashes': len(r['islands']), 'widthMeters': r['box'][1]-r['box'][0],
                          'heightMeters': r['box'][3]-r['box'][2],
                          'normalThreeXYZ': list(islands[r['islands'][0]]['outwardNormal']),
@@ -562,7 +596,7 @@ def main():
             build.set_editor_property('use_full_precision_u_vs', True)
             mesh_editor.set_lod_build_settings(mesh, 0, build)
             mesh_editor.set_nanite_settings(mesh, original_settings[entry['actor']]['nanite'], True)
-            assert mesh_editor.get_num_uv_channels(mesh, 0) >= 3, 'Required UV channels missing'
+            assert mesh_editor.get_num_uv_channels(mesh, 0) >= 4, 'Required UV channels missing'
             mesh.set_material(0, material)
             original = original_settings[entry['actor']]['original']
             u.EditorAssetLibrary.set_metadata_tag(mesh, 'OOWWindowGeometry', expected)
@@ -603,7 +637,7 @@ def main():
                                       u.StaticMeshReductionSettings(percent_triangles=.7, screen_size=.25),
                                       u.StaticMeshReductionSettings(percent_triangles=.4, screen_size=.08)]
             mesh_editor.set_lods(mesh, lods)
-            assert mesh_editor.get_num_uv_channels(mesh, 0) >= 3, 'Front glass UV channels missing'
+            assert mesh_editor.get_num_uv_channels(mesh, 0) >= 4, 'Front glass UV channels missing'
             material = front_materials[label] or u.load_asset('/Engine/EngineMaterials/DefaultMaterial.DefaultMaterial')
             mesh.set_material(0, material)
             u.EditorAssetLibrary.set_metadata_tag(mesh, 'OOWWindowGeometry', expected)
@@ -634,6 +668,12 @@ def self_test(write=False):
     assert report == repeated, 'Grouping/seed generation must be deterministic'
     assert report['roomGroups'] > 50 and report['joinedGroups'] > 10
     assert all(report['imageDistribution']), 'All six room variations must be reachable'
+    assert {room['id'] for room in report['rooms'] if room['flag'] == 2} == set(HERO_APERTURE_ROOM_IDS)
+    assert {room['id'] for room in report['rooms'] if room['flag'] == 1} == set(DETAILED_IM_ROOM_IDS)
+    assert len(HERO_ROOM_IDS) == 13 and len(HERO_SPLIT_ROOM_IDS) == 2
+    assert set(HERO_SPLIT_ROOM_IDS) <= set(HERO_ROOM_IDS)
+    assert set(HERO_APERTURE_ROOM_IDS).isdisjoint(DETAILED_IM_ROOM_IDS)
+    assert collections.Counter(room['flag'] for room in report['rooms']) == {2.: 15, 1.: 17, .5: 361}
     right = next(a for a in report['actors'] if a['actor'] == 'OOW_00760_paris_building_09_8')
     left = next(a for a in report['actors'] if a['actor'] == 'OOW_00719_Paris_Building_08_paris_building_08_1')
     assert right['roomGroups'] < right['connectedIslands']

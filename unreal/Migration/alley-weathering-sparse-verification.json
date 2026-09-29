@@ -1,0 +1,124 @@
+{
+  "passed": true,
+  "verifiedAt": "2026-09-28T20:20:06.7052616+08:00",
+  "buildId": "alley-weathering-v2_b72bcb11e6",
+  "parameters": {
+    "OOWExposureCoverage": 0.49,
+    "OOWReliefStrength": 0.35,
+    "OOWWeatheringContrast": 0.7,
+    "OOWWeatheringTileCm": 240.0,
+    "OOWWeatheringPatchCm": 900.0
+  },
+  "changedWallActors": 2,
+  "protectedExistingAssets": 6346,
+  "changedExistingAssets": [
+    "Maps/Alley.umap"
+  ],
+  "addedAssets": [
+    "Materials/OOW/AlleyWeathering/MI_Plaster_alley_weathering_v2_b72bcb11e6_b1f233f7b1.uasset",
+    "Materials/OOW/AlleyWeathering/MI_Plaster_alley_weathering_v2_b72bcb11e6_c51c2df806.uasset",
+    "Materials/OOW/AlleyWeathering/M_Plaster_alley_weathering_v2_b72bcb11e6_cb83535f40.uasset"
+  ],
+  "maskSampling": {
+    "passed": true,
+    "method": "CPU approximation of sparse exposure on the two exported Alley walls.\n\nReads source PNG / GLB only. BOX mips and bilinear sampling approximate the\nlinear UE texture; this is not a GPU pixel match or a visibility measurement.\n",
+    "rows": [
+      {
+        "actor": "OOW_00726_Paris_Building_08_paris_building_08_7",
+        "samples": 16000,
+        "verticalAreaM2": 3014.1353086521885,
+        "oldMeanExposure": 0.15740958993345228,
+        "thresholdOnlyMeanExposure": 0.08615270622321552,
+        "sparseMeanExposure": 0.05490490547945933,
+        "oldCoverageAboveHalf": 0.1589375,
+        "sparseCoverageAboveHalf": 0.053875,
+        "macroZeroFraction": 0.236625,
+        "macroAboveHalfFraction": 0.69725,
+        "oneTileRepeatMeanAbsDifference": 0.038916190036363034,
+        "viewFrustum": {
+          "samples": 6219,
+          "caveat": "Frustum and facing only; no frame, balconies or other occluders",
+          "oldMeanExposure": 0.1586670790046587,
+          "sparseMeanExposure": 0.0541623856117676,
+          "macroZeroFraction": 0.23910596558932304,
+          "macroAboveHalfFraction": 0.6941630487216595,
+          "alternativeAxisMeanExposure": 0.05209525140572207,
+          "alternativeAxisMacroZeroFraction": 0.2477890336066892,
+          "alternativeAxisMacroAboveHalfFraction": 0.688374336710082,
+          "horizontalTileMeanAbsDifference": 0.0326340256267005,
+          "alternativeAxisHorizontalTileMeanAbsDifference": 0.03949614564694318
+        }
+      },
+      {
+        "actor": "OOW_00759_paris_building_09_7",
+        "samples": 16000,
+        "verticalAreaM2": 1713.0816534803237,
+        "oldMeanExposure": 0.16431228528055344,
+        "thresholdOnlyMeanExposure": 0.08948737539348661,
+        "sparseMeanExposure": 0.060930252127365754,
+        "oldCoverageAboveHalf": 0.1651875,
+        "sparseCoverageAboveHalf": 0.060625,
+        "macroZeroFraction": 0.20725,
+        "macroAboveHalfFraction": 0.727,
+        "oneTileRepeatMeanAbsDifference": 0.03777071961595174,
+        "viewFrustum": {
+          "samples": 4527,
+          "caveat": "Frustum and facing only; no frame, balconies or other occluders",
+          "oldMeanExposure": 0.16677295006653725,
+          "sparseMeanExposure": 0.06147923493451264,
+          "macroZeroFraction": 0.21426993593991606,
+          "macroAboveHalfFraction": 0.7170311464546058,
+          "alternativeAxisMeanExposure": 0.06174318880879856,
+          "alternativeAxisMacroZeroFraction": 0.2299536116633532,
+          "alternativeAxisMacroAboveHalfFraction": 0.7066489949193726,
+          "horizontalTileMeanAbsDifference": 0.036364230355107725,
+          "alternativeAxisHorizontalTileMeanAbsDifference": 0.03572757461927086
+        }
+      }
+    ]
+  },
+  "packagedComparison": {
+    "passed": true,
+    "dry": ".runtime/ue-alley-weathering-sparse/after-dry.png",
+    "rain": ".runtime/ue-alley-weathering-sparse/after-rain.png",
+    "dryWetness": 0,
+    "rainWetness": 0.9999980926513672,
+    "rainWater": 0.4858918786048889,
+    "imageSize": [
+      1280,
+      820
+    ]
+  },
+  "beforeAfterDry": {
+    "matchedSettings": true,
+    "before": ".runtime/ue-alley-weathering-sparse/before-dry.png",
+    "after": ".runtime/ue-alley-weathering-sparse/after-dry.png"
+  },
+  "nativeDry": {
+    "water": 0,
+    "image": ".runtime/ue-alley-weathering-sparse/native-dry.png",
+    "shaderFallback": false,
+    "wetness": 0,
+    "height": 1440,
+    "width": 2560
+  },
+  "live": {
+    "liveTime": true,
+    "testMode": false,
+    "weatherMode": "real",
+    "wetness": 0,
+    "materialInstances": 130,
+    "scene": "Alley",
+    "frame": "ivory",
+    "quality": 1,
+    "weatherLabel": "阴",
+    "state": ".runtime/ue-alley-weathering-sparse/live-state.json",
+    "water": 0,
+    "processId": 44460
+  },
+  "deployment": {
+    "backup": "D:\\OutOfWindowBuildBackups\\alley-weathering-sparse-before-20260928-201841",
+    "verifiedFileCount": 10,
+    "target": "D:\\OutOfWindowBuild\\Windows"
+  }
+}

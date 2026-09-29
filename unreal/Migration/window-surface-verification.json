@@ -1,0 +1,210 @@
+{
+  "verifiedAt": "2026-09-28T19:11:21.977157+08:00",
+  "recipe": "v13",
+  "diagnosis": {
+    "lowerLeftActor": "OOW_00719_Paris_Building_08_paris_building_08_1",
+    "sourceMaterial": "MASTER_Glass_Dirty",
+    "curtainAnimationFound": true,
+    "curtainGeometryOverlapsLowerLeftWindow": true,
+    "movingClothActor": "OOW_00728_Paris_Building_08_paris_building_08_9",
+    "movingClothMaterial": "MASTER_Awning_Fabric_Cyan",
+    "apparentMotion": "Misclassified interior cloth receives awning wind WPO and crosses the 3.02 cm gap to the opaque glass. Hiding that actor in a 16:17 diagnostic replay removes the pale cyan artifact.",
+    "previousDiagnosisCorrected": "Earlier 00703 identification referred to a different window.",
+    "deployedFixStatus": "Not fixed in installed v13; diagnostic process changes only.",
+    "evidence": ".runtime/ue-window-curtain-diagnosis/"
+  },
+  "reflection": {
+    "local": "Native Lumen plus one live SceneCaptureCube of actual buildings/ground/sky",
+    "resolutionPerFace": 128,
+    "mip": 2,
+    "captureSource": "SceneColorHDRNoAlpha",
+    "fixedDiffuseTint": false,
+    "nativeF0": 0.04,
+    "artDirectedSupplementRange": [
+      0.25,
+      0.4
+    ],
+    "stableRefreshSeconds": 30,
+    "transitionRefreshSeconds": 2,
+    "feedbackGuards": [
+      "Capture camera position",
+      "Hardware ray tracing and Lumen card capture"
+    ],
+    "limitation": "One coarse local probe approximates parallax; strength is visually calibrated, not a bare-glass BSDF."
+  },
+  "checks": {
+    "assetAuditFailures": 0,
+    "captureCadenceTest": "passed",
+    "packaging": "passed",
+    "evidence": "C:\\Users\\zhuzi\\Documents\\OutOfWindow\\.runtime\\ue-window-local-reflection"
+  },
+  "packagedCaptures": {
+    "overcast": {
+      "actualWeather": "overcast",
+      "quality": 1,
+      "capturedFrames": 8,
+      "sunLux": 3150.00048828125,
+      "interiorLights": 12,
+      "interiorLightLumens": 0,
+      "capture": "C:\\Users\\zhuzi\\Documents\\OutOfWindow\\.runtime\\ue-window-local-reflection\\packaged-overcast.png",
+      "skyIntensity": 0.8500000238418579,
+      "windowReflectionCaptureRequests": 5,
+      "windowReflectionResolution": 128,
+      "windowReflectionLastCaptureSeconds": 38.395057678222656,
+      "windowReflectionExported": true,
+      "windowReflectionLocation": [
+        -2282.341957795995,
+        -21212.653630624915,
+        1800
+      ],
+      "windowReflectionHDR": true,
+      "windowReflectionAutoMips": true,
+      "windowReflectionHidesFrame": true,
+      "windowReflectionBoundMaterials": 5,
+      "frameTimeMeanMs": 159.9606998830602,
+      "frameTimeP95Ms": 371.685302734375
+    },
+    "clear": {
+      "actualWeather": "clear",
+      "quality": 0,
+      "capturedFrames": 1,
+      "sunLux": 80999.984375,
+      "interiorLights": 12,
+      "interiorLightLumens": 0,
+      "capture": "C:\\Users\\zhuzi\\Documents\\OutOfWindow\\.runtime\\ue-window-local-reflection\\packaged-clear.png",
+      "skyIntensity": 1,
+      "windowReflectionCaptureRequests": 5,
+      "windowReflectionResolution": 128,
+      "windowReflectionLastCaptureSeconds": 38.31989669799805,
+      "windowReflectionExported": true,
+      "windowReflectionLocation": [
+        -2282.341957795995,
+        -21212.653630624915,
+        1800
+      ],
+      "windowReflectionHDR": true,
+      "windowReflectionAutoMips": true,
+      "windowReflectionHidesFrame": true,
+      "windowReflectionBoundMaterials": 5,
+      "frameTimeMeanMs": 92.26421406302035,
+      "frameTimeP95Ms": 119.52649688720703
+    },
+    "night": {
+      "actualWeather": "clear",
+      "quality": 1,
+      "capturedFrames": 1,
+      "sunLux": 0,
+      "interiorLights": 12,
+      "interiorLightLumens": 24.203731536865234,
+      "capture": "C:\\Users\\zhuzi\\Documents\\OutOfWindow\\.runtime\\ue-window-local-reflection\\packaged-night.png",
+      "skyIntensity": 0.07000000029802322,
+      "windowReflectionCaptureRequests": 5,
+      "windowReflectionResolution": 128,
+      "windowReflectionLastCaptureSeconds": 38.210731506347656,
+      "windowReflectionExported": true,
+      "windowReflectionLocation": [
+        -2282.341957795995,
+        -21212.653630624915,
+        1800
+      ],
+      "windowReflectionHDR": true,
+      "windowReflectionAutoMips": true,
+      "windowReflectionHidesFrame": true,
+      "windowReflectionBoundMaterials": 5,
+      "frameTimeMeanMs": 78.52033113453486,
+      "frameTimeP95Ms": 134.8398895263672
+    },
+    "rain": {
+      "actualWeather": "rain",
+      "quality": 2,
+      "capturedFrames": 1,
+      "sunLux": 3190.638916015625,
+      "interiorLights": 12,
+      "interiorLightLumens": 0,
+      "capture": "C:\\Users\\zhuzi\\Documents\\OutOfWindow\\.runtime\\ue-window-local-reflection\\packaged-rain.png",
+      "skyIntensity": 0.8500518202781677,
+      "windowReflectionCaptureRequests": 5,
+      "windowReflectionResolution": 128,
+      "windowReflectionLastCaptureSeconds": 39.10560607910156,
+      "windowReflectionExported": true,
+      "windowReflectionLocation": [
+        -2282.341957795995,
+        -21212.653630624915,
+        1800
+      ],
+      "windowReflectionHDR": true,
+      "windowReflectionAutoMips": true,
+      "windowReflectionHidesFrame": true,
+      "windowReflectionBoundMaterials": 5,
+      "frameTimeMeanMs": 387.5569651677058,
+      "frameTimeP95Ms": 400
+    }
+  },
+  "deployment": {
+    "backup": "D:\\OutOfWindowBuildBackups\\window-local-reflection-before-20260928-191058",
+    "target": "D:\\OutOfWindowBuild\\Windows",
+    "source": "D:\\OutOfWindowBuildLocalReflection\\Windows",
+    "files": [
+      {
+        "file": "OutOfWindow.exe",
+        "before": "A9987E8E768DD752A598158E434A9A212B77FB3213B12E08D1E677D0D786B087",
+        "after": "A9987E8E768DD752A598158E434A9A212B77FB3213B12E08D1E677D0D786B087"
+      },
+      {
+        "file": "THIRD_PARTY_ASSETS.md",
+        "before": "04B68118DCBC85162546118ABBA924CBA8291C181367A717006FF288F32FE19F",
+        "after": "04B68118DCBC85162546118ABBA924CBA8291C181367A717006FF288F32FE19F"
+      },
+      {
+        "file": "ASSET_INVENTORY.md",
+        "before": "6314D135E80DA92426B3EBDCDF6F6C2F3604716DEE1992F6DCFD5C656B9B2D42",
+        "after": "6314D135E80DA92426B3EBDCDF6F6C2F3604716DEE1992F6DCFD5C656B9B2D42"
+      },
+      {
+        "file": "OutOfWindow\\Content\\Paks\\global.ucas",
+        "before": "58EC82A23E9D29C355B585DDED52561DF64683008A19331841B0529308752AF0",
+        "after": "58EC82A23E9D29C355B585DDED52561DF64683008A19331841B0529308752AF0"
+      },
+      {
+        "file": "OutOfWindow\\Content\\Paks\\global.utoc",
+        "before": "1EA127066D8742B8B52D50702978763C6C6B680F883DF33EED23876C2EEF6B45",
+        "after": "1EA127066D8742B8B52D50702978763C6C6B680F883DF33EED23876C2EEF6B45"
+      },
+      {
+        "file": "OutOfWindow\\Content\\Paks\\OutOfWindow-Windows.pak",
+        "before": "145395B99116C5C22A279E9FBC4BBA438F2EC5E6307063A86C0F950EC7E9BE9F",
+        "after": "4029E69BEE4A3741546650DB28B1A0F9C1CE18B598F6038BA3A8FF17E52B316E"
+      },
+      {
+        "file": "OutOfWindow\\Content\\Paks\\OutOfWindow-Windows.ucas",
+        "before": "119AB449ABA1B41B570C37374C1A10AB919282D75DF16250EBA61B6342E2A367",
+        "after": "9A9C4198255F5368AAAD2F6568BFBF8D30BB9D9E52048BD7F261BEC2AA29F10D"
+      },
+      {
+        "file": "OutOfWindow\\Content\\Paks\\OutOfWindow-Windows.utoc",
+        "before": "998B3DE7780E595A7F2BA9648A651657CFD487D664A74A9409C3A53A57821144",
+        "after": "4EFF1A4C4D42180DEFD3C55B6F0713628AB49707F2AA4EDC34E9B1E59C452A12"
+      },
+      {
+        "file": "OutOfWindow\\Binaries\\Win64\\OutOfWindow.exe",
+        "before": "AC5B139879A02DA038707810CF0B06172804EEC408623D3DE8F4E2D38183F8B3",
+        "after": "FB883135F55B86B8C4A2B9B8CAA6E0AA15B8FC6AE7B4517375ED7101D4E21680"
+      },
+      {
+        "file": "OutOfWindow\\Binaries\\Win64\\OutOfWindow.pdb",
+        "before": "8B67CDA94F739AA0597A3FFE240E98D8FC642A789CD1DF4326123F94B7F4973F",
+        "after": "6D03D8F06AA80FD46667C7E4B5DE68FD8C715A7008E497A66106D3CFFFE7F15A"
+      }
+    ],
+    "deployedAt": "2026-09-28T19:11:07.1620396+08:00"
+  },
+  "supersededBy": {
+    "recipe": "v14",
+    "geometryRecipe": "window-uv-v4",
+    "deployedAt": "2026-09-28T21:09:05.9072386+08:00",
+    "passed": true,
+    "verification": "unreal/Migration/window-depth-verification.json",
+    "scope": "Three misclassified Cyan interior cloth actors hidden; true exterior awning retained; eight-frame narrow-window regression and installed hashes/runtime passed.",
+    "historicalRecord": "All other v13 parameters, captures, timings, and deployment data below remain historical evidence, not the current installed state."
+  }
+}

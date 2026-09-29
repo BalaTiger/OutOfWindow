@@ -1,0 +1,16 @@
+{
+  "tool": "built-in image_gen",
+  "created": "2026-09-28",
+  "assets": [
+    {
+      "file": "plaster-relief-height.png",
+      "purpose": "Authored grayscale artistic height/coverage data; not a measured scan.",
+      "prompt": "Use case: scientific-educational. Asset type: single-channel linear grayscale HEIGHT DATA TEXTURE for a photoreal Unreal Engine old Paris alley lime-plaster wall, NOT a beauty render. Generate one square 1024x1024 seamless tile, orthographic flat technical map filling the whole image. Height semantics must be consistent: intact lime plaster is pale gray about 75-85% luminance, thin chipped-off areas expose a recessed rough mortar layer at about 38-48% luminance, sparse small pits at 20-30%. About 15-22% total area consists of irregular disconnected exposed-mortar islands with chipped crenellated margins and small detached flakes; several scales of islands, no regular grid, no long dramatic cracks, no bricks. Most of the intact plaster remains continuous and gently granular. The exposed mortar has noticeably coarser isotropic sand-grain height detail than the fine plaster, subtle not salt-and-pepper. Edge transition is a thin physical height step, not a drawn outline. Opposite edges tile seamlessly. All RGB channels identical neutral grayscale; no colors, absolutely no illumination, shadows, specular highlights, perspective, ambient occlusion, text, labels, border or watermark. This will be sampled as actual elevation and as a mask to separate surviving plaster from exposed rough base; don't bake any lighting into it."
+    },
+    {
+      "file": "runoff-mask.png",
+      "purpose": "Grayscale dry deposit opacity mask; black outside affected area.",
+      "prompt": "Use case: scientific-educational. Asset type: a grayscale OPACITY MASK texture for one localized old dry rain-runoff dirt decal on historic lime-plaster facade in Unreal Engine. One square 1024x1024 flat technical image, pure black background opaque, neutral gray/white marks only. A compact asymmetrical group of five to eight fine gravity-aligned vertical mineral and dust runoff traces starting below a short imagined window-sill edge in the upper quarter, tapering and breaking up downwards. Central longest trail extends through about 65% of the image height, nearby shorter thinner irregular trails. Sparse granular edges and interrupted wispy deposits, natural weathered dust and old dry mineral streaks, NOT current liquid. Large black negative space between trails. All marks must fade completely to pure black before every image edge with at least 12% pure black margin. Total marked area about 12-18%, brightest deposits soft light gray, no broad dark cloud or uniform smear. No visible wall, no sill object, no drips or droplets, no gloss, no shading, no relief, no shadows, no perspective, no text or watermark. This is a mask: white indicates where the dry deposit material applies, black means untouched wall; not a photograph or final colored decal."
+    }
+  ]
+}

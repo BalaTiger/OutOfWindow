@@ -10,11 +10,12 @@
 #include "MeshUVChannelInfo.h"
 #include "PhysicsEngine/BodySetup.h"
 #include "StaticMeshAttributes.h"
+#include "UObject/ConstructorHelpers.h"
 
 namespace
 {
 TAutoConsoleVariable<float> FrameRoomLumens(TEXT("oow.FrameRoomLumens"), 30.f,
-    TEXT("Effective always-on room bounce reaching the window, in lumens."));
+    TEXT("Night indoor lamp lumens, calibrated to scene exposure; 0 disables the lamp."));
 // Closed chamfered joinery, in camera-local centimetres (X forward, Y right).
 // Meshes are rebuilt only when the camera projection changes.
 struct FJoinery
@@ -154,8 +155,25 @@ AWindowFrame::AWindowFrame()
     Frame->SetMobility(EComponentMobility::Movable);
     Frame->SetCollisionEnabled(ECollisionEnabled::NoCollision);
     Frame->SetReceivesDecals(false);
-    Frame->SetLightingChannels(true, true, false);
+    // The room walls provide the occlusion; daylight uses the actual scene lights.
+    Frame->SetLightingChannels(true, false, false);
     MaterialSource = FSoftObjectPath(TEXT("/Game/Materials/OOW/DesktopFrame/M_DesktopFrame.M_DesktopFrame"));
+    // Reuse cooked solid meshes: runtime FastBuild joinery has no distance fields
+    // or Lumen surface cards, so it cannot serve as a reliable room enclosure.
+    static ConstructorHelpers::FObjectFinder<UStaticMesh> WallMesh(TEXT("/Engine/BasicShapes/Cube.Cube"));
+    for (int32 I = 0; I < 9; ++I)
+    {
+        UStaticMeshComponent* Wall = CreateDefaultSubobject<UStaticMeshComponent>(*FString::Printf(TEXT("RoomWall%d"), I));
+        Wall->SetupAttachment(Frame);
+        Wall->SetMobility(EComponentMobility::Movable);
+        Wall->SetStaticMesh(WallMesh.Object);
+        Wall->SetCollisionEnabled(ECollisionEnabled::NoCollision);
+        Wall->SetReceivesDecals(false);
+        Wall->SetCastShadow(true);
+        Wall->bAffectDistanceFieldLighting = true;
+        Wall->bVisibleInRayTracing = true;
+        RoomWalls.Add(Wall);
+    }
     RainGlass = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("WindowRainGlass"));
     RainGlass->SetupAttachment(Frame);
     RainGlass->SetMobility(EComponentMobility::Movable);
@@ -168,7 +186,7 @@ AWindowFrame::AWindowFrame()
     RoomBounce = CreateDefaultSubobject<URectLightComponent>(TEXT("IndoorBounce"));
     RoomBounce->SetupAttachment(Frame);
     RoomBounce->SetMobility(EComponentMobility::Movable);
-    const FVector LampPosition(-250, -90, 140);
+    const FVector LampPosition(-250, -90, 110);
     RoomBounce->SetRelativeLocation(LampPosition);
     RoomBounce->SetRelativeRotation((FVector(94, 0, 0) - LampPosition).Rotation());
     RoomBounce->SetSourceWidth(120);
@@ -176,12 +194,11 @@ AWindowFrame::AWindowFrame()
     RoomBounce->SetAttenuationRadius(600);
     RoomBounce->SetIntensityUnits(ELightUnits::Lumens);
     RoomBounce->SetUseTemperature(true);
-    RoomBounce->SetLightingChannels(false, true, false);
-    // ponytail: one area-light proxy for room bounce; use room GI if an interior is modelled.
-    // Geometry behind a scene's fixed camera must not block this local fill.
-    RoomBounce->SetCastShadows(false);
+    RoomBounce->SetTemperature(4000);
+    RoomBounce->SetLightingChannels(true, false, false);
+    RoomBounce->SetCastShadows(true);
     RoomBounce->SetAffectTranslucentLighting(false);
-    RoomBounce->SetIndirectLightingIntensity(0);
+    RoomBounce->SetIndirectLightingIntensity(1);
     RoomBounce->SetVolumetricScatteringIntensity(0);
     SetDaylight(1);
     Tags.Add(TEXT("OOWDesktopFrame"));
@@ -206,6 +223,12 @@ void AWindowFrame::BeginPlay()
         Materials.Add(Material);
     }
     SetStyle(StyleId);
+    RoomMaterial = UMaterialInstanceDynamic::Create(Source, this);
+    RoomMaterial->SetVectorParameterValue(TEXT("Color"), FLinearColor(.55f, .53f, .49f));
+    RoomMaterial->SetScalarParameterValue(TEXT("Roughness"), .85f);
+    RoomMaterial->SetScalarParameterValue(TEXT("Metallic"), 0);
+    RoomMaterial->SetScalarParameterValue(TEXT("Grain"), 0);
+    for (UStaticMeshComponent* Wall : RoomWalls) Wall->SetMaterial(0, RoomMaterial);
     if (UMaterialInterface* RainSource = RainMaterialSource.LoadSynchronous())
     {
         RainMaterial = UMaterialInstanceDynamic::Create(RainSource, this);
@@ -275,6 +298,24 @@ void AWindowFrame::FitToView(UCameraComponent* Camera, float AspectRatio)
     if (!Mesh || !GlassMesh) return;
     Frame->SetStaticMesh(Mesh);
     RainGlass->SetStaticMesh(GlassMesh);
+    // Front wall has a real opening, overlapped by the outer frame profile.
+    // All panels are closed 30 cm solids; the camera and lamp are inside.
+    const float HoleW = W + 8, HoleH = H + 8;
+    const float RoomW = FMath::Max(220.f, W + 80), RoomH = FMath::Max(180.f, H + 80);
+    auto Wall = [this](int32 Index, FVector Centre, FVector Half)
+    {
+        RoomWalls[Index]->SetRelativeLocation(Centre);
+        RoomWalls[Index]->SetRelativeScale3D(Half / 50); // Native cube is 100 cm.
+    };
+    for (int32 Side = 0; Side < 2; ++Side)
+    {
+        const float Sign = Side == 0 ? -1.f : 1.f;
+        Wall(Side, {80, Sign * (RoomW + HoleW) * .5f, 0}, {15, (RoomW - HoleW) * .5f, RoomH});
+        Wall(2 + Side, {80, 0, Sign * (RoomH + HoleH) * .5f}, {15, HoleW, (RoomH - HoleH) * .5f});
+        Wall(4 + Side, {-125, Sign * (RoomW + 15), 0}, {220, 15, RoomH + 30});
+        Wall(6 + Side, {-125, 0, Sign * (RoomH + 15)}, {220, RoomW + 30, 15});
+    }
+    Wall(8, {-330, 0, 0}, {15, RoomW + 30, RoomH + 30});
     TriangleCount = Geometry.Triangles;
     OpeningSize = FVector2D((W - 1.25f) * 2, (H - 1.25f) * 2);
     LastFov = Fov; LastAspect = AspectRatio;
@@ -282,13 +323,16 @@ void AWindowFrame::FitToView(UCameraComponent* Camera, float AspectRatio)
 
 void AWindowFrame::SetDaylight(float Daylight)
 {
-    const float Day = FMath::Clamp(Daylight, 0.f, 1.f);
-    const float Lamp = FMath::Clamp(FrameRoomLumens.GetValueOnGameThread(), 1.f, 3000.f);
-    const float DayFill = 45000.f * Day;
-    // Approximate the warm lamp and neutral daytime fill on one area light.
-    // Native temperature preserves the lamp's colour without tint clipping.
-    RoomBounce->SetIntensity(Lamp + DayFill);
-    RoomBounce->SetTemperature(FMath::Lerp(4000.f, 6500.f, DayFill / (Lamp + DayFill)));
+    const float Day = FMath::IsFinite(Daylight) ? FMath::Clamp(Daylight, 0.f, 1.f) : 1.f;
+    const float Lamp = FMath::Clamp(FrameRoomLumens.GetValueOnGameThread(), 0.f, 3000.f);
+    // Match the scene's occupied-window dusk transition. During the day only
+    // sunlight, skylight and their Lumen bounces illuminate the frame and room.
+    RoomBounce->SetIntensity(Lamp * FMath::SmoothStep(.58f, .86f, 1.f - Day));
+}
+
+float AWindowFrame::GetRoomLampLumens() const
+{
+    return RoomBounce->Intensity;
 }
 
 void AWindowFrame::SetRainIntensity(float Intensity)
@@ -305,5 +349,8 @@ bool AWindowFrame::IsReady() const
     for (const FStaticMaterial& Slot : Frame->GetStaticMesh()->GetStaticMaterials())
         if (!Slot.UVChannelData.bInitialized) return false;
     if (!RainGlass->GetStaticMesh()->GetStaticMaterials()[0].UVChannelData.bInitialized) return false;
+    if (!RoomMaterial || RoomWalls.Num() != 9) return false;
+    for (const UStaticMeshComponent* Wall : RoomWalls)
+        if (!Wall->GetStaticMesh() || !Wall->IsVisible()) return false;
     return true;
 }

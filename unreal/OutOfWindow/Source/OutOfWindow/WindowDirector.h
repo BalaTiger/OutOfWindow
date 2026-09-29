@@ -11,6 +11,8 @@ class APostProcessVolume;
 class UDirectionalLightComponent;
 class ULightComponent;
 class USkyLightComponent;
+class USceneCaptureComponentCube;
+class UTextureRenderTargetCube;
 class USkyAtmosphereComponent;
 class UExponentialHeightFogComponent;
 class UVolumetricCloudComponent;
@@ -24,6 +26,7 @@ class SWindowVisibilityButton;
 class SWidget;
 class IHttpRequest;
 class IConsoleObject;
+class FWindowSkySampling;
 
 UCLASS()
 class OUTOFWINDOW_API AWindowDirector : public AActor
@@ -54,6 +57,7 @@ private:
     void BindCamera();
     void MakeInterface();
     void ApplyLighting(float DeltaSeconds);
+    void UpdateCloudSampling(float DeltaSeconds);
     void UpdateMaterials(float DeltaSeconds);
     void UpdateAudio();
     void ToggleAudio();
@@ -70,6 +74,8 @@ private:
     UPROPERTY() TObjectPtr<UDirectionalLightComponent> Sun;
     UPROPERTY() TArray<TObjectPtr<ULightComponent>> NightLights;
     UPROPERTY() TObjectPtr<USkyLightComponent> Sky;
+    UPROPERTY() TObjectPtr<USceneCaptureComponentCube> WindowReflectionCapture;
+    UPROPERTY() TObjectPtr<UTextureRenderTargetCube> WindowReflectionTexture;
     UPROPERTY() TObjectPtr<USkyAtmosphereComponent> Atmosphere;
     UPROPERTY() TObjectPtr<UExponentialHeightFogComponent> Fog;
     UPROPERTY() TObjectPtr<UVolumetricCloudComponent> Cloud;
@@ -84,6 +90,7 @@ private:
 
     TSharedPtr<SWidget> Interface;
     TSharedPtr<SWindowVisibilityButton> VisibilityControl;
+    TSharedPtr<FWindowSkySampling, ESPMode::ThreadSafe> SkySampling;
     TSharedPtr<IHttpRequest, ESPMode::ThreadSafe> GeoRequest;
     TSharedPtr<IHttpRequest, ESPMode::ThreadSafe> ForecastRequest;
     TUniquePtr<FWindowDesktop> Desktop;
@@ -102,6 +109,8 @@ private:
     float Water = 0;
     float MaterialTimer = 0;
     float LastSkyCapture = -100;
+    float LastWindowReflectionCapture = -100;
+    int32 WindowReflectionCaptureRequests = 0;
     float FastLightingUntil = 0;
     float SolarMinutes = 0;
     float TestSeconds = 12;
@@ -110,6 +119,9 @@ private:
     float BaseFogDensity = .008f;
     float BaseRayleighScattering = 0, BaseMieScattering = 0, BaseMieAbsorption = 0;
     float Cloudiness = .25f;
+    float Storminess = 0;
+    float VisibleSkyFraction = -1, VisibleSkyPixels = -1;
+    float CloudSampleScale = 1, CloudTargetSampleScale = 1;
     FVector2D CloudDriftUV = FVector2D::ZeroVector;
     FVector2D CloudWindMetersPerSecond = FVector2D::ZeroVector;
     float SunAzimuth = 0;

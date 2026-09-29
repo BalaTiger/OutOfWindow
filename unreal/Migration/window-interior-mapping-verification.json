@@ -1,0 +1,299 @@
+{
+  "version": "v16/window-uv-v5/hero-rooms-v2/interior-cubes-v3",
+  "assetAudit": "Migration/window-interiors-audit.json",
+  "assetAuditPassed": true,
+  "counts": {
+    "actors": 68,
+    "leafMaterials": 5,
+    "masters": 1,
+    "textures": 6,
+    "frontActors": 66,
+    "curtainActors": 74,
+    "awningControls": 1,
+    "heroRooms": 15,
+    "heroGlass": 15,
+    "failures": 0
+  },
+  "roomSourceTriangles": 10032,
+  "roomTriangles": 9520,
+  "glassTriangles": 30,
+  "runtimeLights": {
+    "point": 8,
+    "rect": 4
+  },
+  "gpuOrientation": ".runtime/ue-window-rebuild/cube-orientation/verification.json",
+  "visualReview": "Production projection and cube sampled on GPU from below, level and above; actual fixed-camera oblique windows reviewed. No inverted floor or neighbor-room intrusion found at the tested viewpoints.",
+  "neighborGeometryReview": ".runtime/ue-window-rebuild/neighbor-rooms-review.json",
+  "cases": [
+    {
+      "name": "packaged-2021",
+      "state": ".runtime\\ue-window-rebuild\\packaged-2021.json",
+      "capture": ".runtime\\ue-window-rebuild\\packaged-2021.png",
+      "captureSha256": "63fcb6d5014296b0dab9cb96d71b123c636ae55ec263d8ad4f57df2e03657c16",
+      "hour": 20.349998474121094,
+      "actualWeather": "overcast",
+      "interiorLights": 12,
+      "interiorLightLumens": 1482.3240966796875,
+      "frameTimeMeanMs": 16.718588763283627,
+      "frameTimeP95Ms": 16.714702606201172,
+      "capturedFrames": 1
+    },
+    {
+      "name": "packaged-noon",
+      "state": ".runtime\\ue-window-rebuild\\packaged-noon.json",
+      "capture": ".runtime\\ue-window-rebuild\\packaged-noon.png",
+      "captureSha256": "7f22764dbbf8f84027ec97a78f6352b5182a7bc65334d8c3d5ecab405487aec1",
+      "hour": 12,
+      "actualWeather": "clear",
+      "interiorLights": 12,
+      "interiorLightLumens": 0,
+      "frameTimeMeanMs": 16.725812485563768,
+      "frameTimeP95Ms": 16.673099517822266,
+      "capturedFrames": 1
+    },
+    {
+      "name": "packaged-night",
+      "state": ".runtime\\ue-window-rebuild\\packaged-night.json",
+      "capture": ".runtime\\ue-window-rebuild\\packaged-night.png",
+      "captureSha256": "7a00bc974c4c9fb331c309ec7a9b6c589f8c15ae6af3819bd430c660ee288521",
+      "hour": 23,
+      "actualWeather": "clear",
+      "interiorLights": 12,
+      "interiorLightLumens": 1482.3240966796875,
+      "frameTimeMeanMs": 16.717446892084237,
+      "frameTimeP95Ms": 16.68400001525879,
+      "capturedFrames": 1
+    },
+    {
+      "name": "packaged-rain",
+      "state": ".runtime\\ue-window-rebuild\\packaged-rain.json",
+      "capture": ".runtime\\ue-window-rebuild\\packaged-rain.png",
+      "captureSha256": "6abd03bb313a254c44bb3e7ecb4dd4c0a27e4b74a3e47169f2a693f26d70ea52",
+      "hour": 23,
+      "actualWeather": "rain",
+      "interiorLights": 12,
+      "interiorLightLumens": 1482.3240966796875,
+      "frameTimeMeanMs": 16.713871663475196,
+      "frameTimeP95Ms": 16.695600509643555,
+      "capturedFrames": 1
+    },
+    {
+      "name": "packaged-1280",
+      "state": ".runtime\\ue-window-rebuild\\packaged-1280.json",
+      "capture": ".runtime\\ue-window-rebuild\\packaged-1280.png",
+      "captureSha256": "86115a1aa0dd65abf6a17f548c3ea8e8a3b9cdb43a45c264a9f5b3cd47f5ed85",
+      "hour": 20.349998474121094,
+      "actualWeather": "overcast",
+      "interiorLights": 12,
+      "interiorLightLumens": 1482.3240966796875,
+      "frameTimeMeanMs": 16.722957486743663,
+      "frameTimeP95Ms": 16.666799545288086,
+      "capturedFrames": 1
+    },
+    {
+      "name": "packaged-1617",
+      "state": ".runtime\\ue-window-rebuild\\packaged-1617.json",
+      "capture": ".runtime\\ue-window-rebuild\\packaged-1617.png",
+      "captureSha256": "06a856aaea32f8a03ba99ae62ea20149893db836c2525d5db0f9c4093305291a",
+      "hour": 16.28333282470703,
+      "actualWeather": "overcast",
+      "interiorLights": 12,
+      "interiorLightLumens": 0,
+      "frameTimeMeanMs": 17.286106012097154,
+      "frameTimeP95Ms": 16.700599670410156,
+      "capturedFrames": 8
+    }
+  ],
+  "gpuComparison": {
+    "baseline-gpu": {
+      "source": "C:\\Users\\zhuzi\\Documents\\OutOfWindow\\.runtime\\ue-window-rebuild\\baseline-gpu.csv",
+      "frames": 900,
+      "warmupFramesDiscarded": 900,
+      "GPUTime": {
+        "median": 13.787949999999999,
+        "mean": 13.140432777777777,
+        "p95": 14.4226
+      },
+      "GPU/BasePass": {
+        "median": 0.0544,
+        "mean": 0.06289088888888889,
+        "p95": 0.0595
+      },
+      "GPU/NaniteBasePass": {
+        "median": 0.5851500000000001,
+        "mean": 0.6510605555555555,
+        "p95": 0.8013
+      },
+      "GPU/Lights": {
+        "median": 1.7178,
+        "mean": 2.3730978888888887,
+        "p95": 3.9141
+      },
+      "GPU/RenderDeferredLighting": {
+        "median": 0.3369,
+        "mean": 0.3945858888888889,
+        "p95": 0.5391
+      },
+      "GPU/ShadowDepths": {
+        "median": 1.3477000000000001,
+        "mean": 1.8326294444444444,
+        "p95": 3.4663
+      },
+      "GPU/ShadowProjection": {
+        "median": 0.0,
+        "mean": 0.0,
+        "p95": 0.0
+      },
+      "GPU/LumenSceneLighting": {
+        "median": 0.0,
+        "mean": 0.0,
+        "p95": 0.0
+      },
+      "GPU/LumenScreenProbeGather": {
+        "median": 0.0325,
+        "mean": 0.03415644444444445,
+        "p95": 0.0358
+      },
+      "GPU/LumenReflections": {
+        "median": 1.3392,
+        "mean": 1.6838321111111112,
+        "p95": 3.5676
+      },
+      "GPU/Translucency": {
+        "median": 0.0828,
+        "mean": 0.09336977777777777,
+        "p95": 0.0877
+      },
+      "RHI/DrawCalls": {
+        "median": 392.0,
+        "mean": 332.3333333333333,
+        "p95": 397.0
+      },
+      "RHI/PrimitivesDrawn": {
+        "median": 51365.0,
+        "mean": 43750.49444444444,
+        "p95": 51509.0
+      }
+    },
+    "candidate-gpu": {
+      "source": "C:\\Users\\zhuzi\\Documents\\OutOfWindow\\.runtime\\ue-window-rebuild\\candidate-gpu.csv",
+      "frames": 900,
+      "warmupFramesDiscarded": 900,
+      "GPUTime": {
+        "median": 9.2156,
+        "mean": 9.233984666666666,
+        "p95": 9.6189
+      },
+      "GPU/BasePass": {
+        "median": 0.0546,
+        "mean": 0.05737711111111111,
+        "p95": 0.0573
+      },
+      "GPU/NaniteBasePass": {
+        "median": 0.54,
+        "mean": 0.5538426666666667,
+        "p95": 0.676
+      },
+      "GPU/Lights": {
+        "median": 1.41535,
+        "mean": 1.4554265555555554,
+        "p95": 1.651
+      },
+      "GPU/RenderDeferredLighting": {
+        "median": 0.3354,
+        "mean": 0.34754155555555555,
+        "p95": 0.4477
+      },
+      "GPU/ShadowDepths": {
+        "median": 1.12485,
+        "mean": 1.1616066666666667,
+        "p95": 1.3544
+      },
+      "GPU/ShadowProjection": {
+        "median": 0.0,
+        "mean": 0.0,
+        "p95": 0.0
+      },
+      "GPU/LumenSceneLighting": {
+        "median": 0.0,
+        "mean": 0.0,
+        "p95": 0.0
+      },
+      "GPU/LumenScreenProbeGather": {
+        "median": 0.0345,
+        "mean": 0.03616688888888889,
+        "p95": 0.0374
+      },
+      "GPU/LumenReflections": {
+        "median": 1.3320500000000002,
+        "mean": 1.371324888888889,
+        "p95": 1.5458
+      },
+      "GPU/Translucency": {
+        "median": 0.0961,
+        "mean": 0.09899155555555555,
+        "p95": 0.1
+      },
+      "RHI/DrawCalls": {
+        "median": 413.0,
+        "mean": 410.81888888888886,
+        "p95": 421.0
+      },
+      "RHI/PrimitivesDrawn": {
+        "median": 30311.0,
+        "mean": 30303.63,
+        "p95": 31627.0
+      }
+    }
+  },
+  "performanceMethod": "Same machine, 1920x1080, quality 1 (85% screen percentage), 20:21 overcast; t.MaxFPS=0, r.VSync=0, native csvGpuStats; 1800 frames per build, last 900 measured. One capture per build, not a repeated benchmark.",
+  "limitations": [
+    "Cube furniture is projected onto one proxy box; it does not have independent depth or complete occlusion.",
+    "Fill lights approximate indirect bounce in offline cubes; no baked GI solver.",
+    "Allocation is for the fixed camera and tested aspect ratios, not arbitrary free camera movement."
+  ],
+  "candidate": "D:\\OutOfWindowBuildInteriorMapping\\Windows",
+  "candidateFiles": [
+    {
+      "file": "OutOfWindow.exe",
+      "sha256": "a9987e8e768dd752a598158e434a9a212b77fb3213b12e08d1e677d0d786b087"
+    },
+    {
+      "file": "OutOfWindow/Content/Paks/global.ucas",
+      "sha256": "58ec82a23e9d29c355b585dded52561df64683008a19331841b0529308752af0"
+    },
+    {
+      "file": "OutOfWindow/Content/Paks/global.utoc",
+      "sha256": "1ea127066d8742b8b52d50702978763c6c6b680f883df33eed23876c2eef6b45"
+    },
+    {
+      "file": "OutOfWindow/Content/Paks/OutOfWindow-Windows.pak",
+      "sha256": "977a93b1027223ef3b5f5c202e8c15cb1ac8fa39040226eb565160e736634c9f"
+    },
+    {
+      "file": "OutOfWindow/Content/Paks/OutOfWindow-Windows.ucas",
+      "sha256": "bdc7abcb345f4c94d6cb66ead6ebe624d2c872a67541361a2e5b2af365688a7d"
+    },
+    {
+      "file": "OutOfWindow/Content/Paks/OutOfWindow-Windows.utoc",
+      "sha256": "a8f3e7fa52d717a8efccb7a26893452d5aca69ef9504bee673400b600b73b2ee"
+    },
+    {
+      "file": "OutOfWindow/Binaries/Win64/OutOfWindow.exe",
+      "sha256": "fb883135f55b86b8c4a2b9b8caa6e0aa15b8fc6ae7b4517375ed7101d4e21680"
+    },
+    {
+      "file": "OutOfWindow/Binaries/Win64/OutOfWindow.pdb",
+      "sha256": "6d03d8f06aa80fd46667c7e4b5de68fd8c715a7008e497a66106d3cfffe7f15a"
+    }
+  ],
+  "deployment": {
+    "testMode": false,
+    "target": "D:\\OutOfWindowBuild\\Windows",
+    "status": "installed_and_running",
+    "verification": ".runtime/ue-window-rebuild/installed-verification.json",
+    "backup": "D:\\OutOfWindowBuildBackups\\interior-mapping-before-20260929-105821",
+    "liveTime": true,
+    "deployedAt": "2026-09-29T10:58:30.2054773+08:00"
+  }
+}

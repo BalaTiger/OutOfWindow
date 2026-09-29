@@ -1,0 +1,67 @@
+{
+  "passed": true,
+  "kind": "dry color-only DBuffer deposits",
+  "actors": [
+    {
+      "actor": "OOWWeatheringDecal_BalconyA",
+      "wall": "OOW_00759_paris_building_09_7",
+      "centreCm": [
+        -2612.95020675,
+        -22203.41206525,
+        2185.37778
+      ],
+      "normal": [
+        0.736333,
+        0.676619,
+        0.0
+      ],
+      "sizeCm": [
+        90.0,
+        44.0
+      ],
+      "halfDepthCm": 2.0
+    },
+    {
+      "actor": "OOWWeatheringDecal_BalconyB",
+      "wall": "OOW_00759_paris_building_09_7",
+      "centreCm": [
+        -2243.88850675,
+        -22664.89248525,
+        2172.23968
+      ],
+      "normal": [
+        0.736333,
+        0.676619,
+        0.0
+      ],
+      "sizeCm": [
+        90.0,
+        42.0
+      ],
+      "halfDepthCm": 2.0
+    },
+    {
+      "actor": "OOWWeatheringDecal_UpperWall",
+      "wall": "OOW_00759_paris_building_09_7",
+      "centreCm": [
+        -2603.15136675,
+        -22194.92745525,
+        2701.62429
+      ],
+      "normal": [
+        0.736333,
+        0.676619,
+        0.0
+      ],
+      "sizeCm": [
+        75.0,
+        28.0
+      ],
+      "halfDepthCm": 2.0
+    }
+  ],
+  "failures": [],
+  "sourceHash": "9b313b3e86419b27d53174b56233c6a4a79eaf287797f3539320702811b7333e",
+  "texture": "/Game/Materials/OOW/AlleyWeathering/Textures/R_9b313b3e86/runoff-mask.runoff-mask",
+  "material": "/Game/Materials/OOW/AlleyWeathering/M_DryRunoff_v2_9b313b3e86.M_DryRunoff_v2_9b313b3e86"
+}

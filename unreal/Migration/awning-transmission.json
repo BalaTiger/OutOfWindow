@@ -1,8 +1,163 @@
 {
-  "recipe": "awning-native-v6",
+  "recipe": "awning-native-v7",
   "appliedToUnreal": true,
   "sourceRoomCount": 393,
   "maxLights": 12,
+  "heroLights": [
+    {
+      "name": "OOWHeroLight_67294f945510fc8a",
+      "room": "67294f945510fc8a",
+      "positionCm": [
+        -6035.360468674695,
+        -23460.505361453008,
+        1696.3708052093455
+      ],
+      "lumens": 246.03750000000002,
+      "temperatureKelvin": 2850,
+      "radiusCm": 734.4,
+      "sourceRadiusCm": 12.15,
+      "tags": [
+        "OOWNightLight",
+        "OOWInteriorLight",
+        "OOWHeroLight",
+        "OOWRoom_67294f945510fc8a"
+      ]
+    },
+    {
+      "name": "OOWHeroLight_14286f445050f0e5",
+      "room": "14286f445050f0e5",
+      "positionCm": [
+        -5863.306613475478,
+        -23869.925175790577,
+        1696.3708052093455
+      ],
+      "lumens": 246.03750000000002,
+      "temperatureKelvin": 2970,
+      "radiusCm": 734.4,
+      "sourceRadiusCm": 12.15,
+      "tags": [
+        "OOWNightLight",
+        "OOWInteriorLight",
+        "OOWHeroLight",
+        "OOWRoom_14286f445050f0e5"
+      ]
+    },
+    {
+      "name": "OOWHeroLight_13a26cb6982569b0",
+      "room": "13a26cb6982569b0",
+      "positionCm": [
+        -2895.2832302429497,
+        -22304.06826350094,
+        1715.4956402954742
+      ],
+      "lumens": 134.83941368599443,
+      "temperatureKelvin": 3090,
+      "radiusCm": 543.6763520397477,
+      "sourceRadiusCm": 8.994645530069356,
+      "tags": [
+        "OOWNightLight",
+        "OOWInteriorLight",
+        "OOWHeroLight",
+        "OOWRoom_13a26cb6982569b0"
+      ]
+    },
+    {
+      "name": "OOWHeroLight_e8143a4235edd362",
+      "room": "e8143a4235edd362",
+      "positionCm": [
+        -2553.5065773404845,
+        -22659.228713851033,
+        1715.4956402954742
+      ],
+      "lumens": 134.83941368599443,
+      "temperatureKelvin": 3210,
+      "radiusCm": 543.6763520397477,
+      "sourceRadiusCm": 8.994645530069356,
+      "tags": [
+        "OOWNightLight",
+        "OOWInteriorLight",
+        "OOWHeroLight",
+        "OOWRoom_e8143a4235edd362"
+      ]
+    },
+    {
+      "name": "OOWHeroLight_2c4f36af47ee8629",
+      "room": "2c4f36af47ee8629",
+      "positionCm": [
+        -2909.8814749023377,
+        -22298.120130675637,
+        2827.040715750496
+      ],
+      "lumens": 167.10733670083252,
+      "temperatureKelvin": 2850,
+      "radiusCm": 605.2429986065137,
+      "sourceRadiusCm": 10.013211374004822,
+      "tags": [
+        "OOWNightLight",
+        "OOWInteriorLight",
+        "OOWHeroLight",
+        "OOWRoom_2c4f36af47ee8629"
+      ]
+    },
+    {
+      "name": "OOWHeroLight_fe8ba70448e8d0b4",
+      "room": "fe8ba70448e8d0b4",
+      "positionCm": [
+        -2165.5547278655895,
+        -23091.517645981563,
+        1715.2986602623641
+      ],
+      "lumens": 134.83941368599406,
+      "temperatureKelvin": 3090,
+      "radiusCm": 543.676352039747,
+      "sourceRadiusCm": 8.994645530069345,
+      "tags": [
+        "OOWNightLight",
+        "OOWInteriorLight",
+        "OOWHeroLight",
+        "OOWRoom_fe8ba70448e8d0b4"
+      ]
+    },
+    {
+      "name": "OOWHeroLight_4b36e0ec1c9d5fc3",
+      "room": "4b36e0ec1c9d5fc3",
+      "positionCm": [
+        -4797.054358233103,
+        -21567.344080291066,
+        1662.3918802242158
+      ],
+      "lumens": 165.27453513492677,
+      "temperatureKelvin": 2970,
+      "radiusCm": 601.9147523601764,
+      "sourceRadiusCm": 9.958148476547036,
+      "tags": [
+        "OOWNightLight",
+        "OOWInteriorLight",
+        "OOWHeroLight",
+        "OOWRoom_4b36e0ec1c9d5fc3"
+      ]
+    },
+    {
+      "name": "OOWHeroLight_360ea453eb0f5fb6_R",
+      "room": "360ea453eb0f5fb6_R",
+      "positionCm": [
+        -5865.834629219163,
+        -23863.96731483208,
+        2367.0612107448724
+      ],
+      "lumens": 246.03750000000002,
+      "temperatureKelvin": 3210,
+      "radiusCm": 734.4,
+      "sourceRadiusCm": 12.15,
+      "tags": [
+        "OOWNightLight",
+        "OOWInteriorLight",
+        "OOWHeroLight",
+        "OOWRoom_360ea453eb0f5fb6_R"
+      ]
+    }
+  ],
+  "maxRectLights": 4,
   "shaderOccupancy": "step(.62,frac(seed*73.137+.11))",
   "nightEnvelope": "smoothstep(.58,.86,Night), driven by WindowDirector",
   "transmission": {
@@ -2490,70 +2645,6 @@
   ],
   "lights": [
     {
-      "name": "OOWInteriorLight_13a26cb6982569b0",
-      "room": "13a26cb6982569b0",
-      "seed": 0.07669711112976074,
-      "occupied": true,
-      "associatedAwning": true,
-      "positionCm": [
-        -2664.8334975090424,
-        -22258.34879264822,
-        1759.9691654163728
-      ],
-      "outwardUE": [
-        0.7361130748947704,
-        0.6768585826957991,
-        0.0
-      ],
-      "colorLinear": [
-        0.9414910939455032,
-        0.7229332214698315,
-        0.5108751911276579
-      ],
-      "lumens": 2.002143176651001,
-      "radiusCm": 400,
-      "widthCm": 122.62531837993464,
-      "heightCm": 178.6436542777664,
-      "actual": {
-        "intensity": 2.002143144607544,
-        "castShadows": true,
-        "transmission": true,
-        "volumetricScattering": 0.0
-      }
-    },
-    {
-      "name": "OOWInteriorLight_fe8ba70448e8d0b4",
-      "room": "fe8ba70448e8d0b4",
-      "seed": 0.994318425655365,
-      "occupied": true,
-      "associatedAwning": true,
-      "positionCm": [
-        -1935.0698985046267,
-        -23045.9754373545,
-        1759.7721853832627
-      ],
-      "outwardUE": [
-        0.7366334579171695,
-        0.6762922065771524,
-        0.0
-      ],
-      "colorLinear": [
-        0.966672292381525,
-        0.7109973334111571,
-        0.4749919833563268
-      ],
-      "lumens": 2.0862334599494945,
-      "radiusCm": 400,
-      "widthCm": 122.53869166875859,
-      "heightCm": 178.64365427776616,
-      "actual": {
-        "intensity": 2.086233377456665,
-        "castShadows": true,
-        "transmission": true,
-        "volumetricScattering": 0.0
-      }
-    },
-    {
       "name": "OOWInteriorLight_725339a8d820d2d9",
       "room": "725339a8d820d2d9",
       "seed": 0.4465823769569397,
@@ -2618,70 +2709,6 @@
       }
     },
     {
-      "name": "OOWInteriorLight_14286f445050f0e5",
-      "room": "14286f445050f0e5",
-      "seed": 0.07874196767807007,
-      "occupied": true,
-      "associatedAwning": true,
-      "positionCm": [
-        -5558.78920743721,
-        -23898.469821985305,
-        1774.2049219568237
-      ],
-      "outwardUE": [
-        0.9220191939827945,
-        0.38714416685172737,
-        0.0
-      ],
-      "colorLinear": [
-        0.9330791675627231,
-        0.7269204745752692,
-        0.5228621862231194
-      ],
-      "lumens": 2.054030184650421,
-      "radiusCm": 400,
-      "widthCm": 160,
-      "heightCm": 190,
-      "actual": {
-        "intensity": 2.054030179977417,
-        "castShadows": true,
-        "transmission": true,
-        "volumetricScattering": 0.0
-      }
-    },
-    {
-      "name": "OOWInteriorLight_2c5bb7bff6cbf8a5",
-      "room": "2c5bb7bff6cbf8a5",
-      "seed": 0.1732744574546814,
-      "occupied": true,
-      "associatedAwning": false,
-      "positionCm": [
-        -2655.0710176326506,
-        -22248.647153028476,
-        2862.7618807820504
-      ],
-      "outwardUE": [
-        0.7360150707186605,
-        0.6769651510048396,
-        0.0
-      ],
-      "colorLinear": [
-        0.9442008643686772,
-        0.721648790289247,
-        0.507013768274635
-      ],
-      "lumens": 2.052735393238068,
-      "radiusCm": 400,
-      "widthCm": 122.62531709472213,
-      "heightCm": 180.94832066515215,
-      "actual": {
-        "intensity": 2.0527353286743164,
-        "castShadows": true,
-        "transmission": true,
-        "volumetricScattering": 0.0
-      }
-    },
-    {
       "name": "OOWInteriorLight_fdf301dfa678ff37",
       "room": "fdf301dfa678ff37",
       "seed": 0.9919891953468323,
@@ -2740,134 +2767,6 @@
       "heightCm": 178.61164502238606,
       "actual": {
         "intensity": 1.7324450016021729,
-        "castShadows": true,
-        "transmission": true,
-        "volumetricScattering": 0.0
-      }
-    },
-    {
-      "name": "OOWInteriorLight_67567e878c583066",
-      "room": "67567e878c583066",
-      "seed": 0.4036635160446167,
-      "occupied": true,
-      "associatedAwning": false,
-      "positionCm": [
-        -3317.9147593001303,
-        -22592.759106020985,
-        2893.8847260134116
-      ],
-      "outwardUE": [
-        -0.6761970242932444,
-        0.7367208320232038,
-        0.0
-      ],
-      "colorLinear": [
-        0.9964493940472604,
-        0.6968829872215986,
-        0.4325596134826539
-      ],
-      "lumens": 2.298719521522523,
-      "radiusCm": 400,
-      "widthCm": 122.69795187667185,
-      "heightCm": 178.6436542777664,
-      "actual": {
-        "intensity": 2.2987194061279297,
-        "castShadows": true,
-        "transmission": true,
-        "volumetricScattering": 0.0
-      }
-    },
-    {
-      "name": "OOWInteriorLight_86f2f551136a7674",
-      "room": "86f2f551136a7674",
-      "seed": 0.527144730091095,
-      "occupied": true,
-      "associatedAwning": false,
-      "positionCm": [
-        -3720.9811113077917,
-        -22896.116965302877,
-        3328.2256990207034
-      ],
-      "outwardUE": [
-        -0.6750425261687243,
-        0.7377788204223181,
-        0.0
-      ],
-      "colorLinear": [
-        0.9884847238242628,
-        0.7006582409072994,
-        0.44390926855042545
-      ],
-      "lumens": 2.2319812392234812,
-      "radiusCm": 400,
-      "widthCm": 106.40686942762017,
-      "heightCm": 118.08214309813316,
-      "actual": {
-        "intensity": 2.2319812774658203,
-        "castShadows": true,
-        "transmission": true,
-        "volumetricScattering": 0.0
-      }
-    },
-    {
-      "name": "OOWInteriorLight_f44e7363bff0d19f",
-      "room": "f44e7363bff0d19f",
-      "seed": 0.9543220400810242,
-      "occupied": true,
-      "associatedAwning": false,
-      "positionCm": [
-        -4716.922963169406,
-        -21814.517899866736,
-        1158.6005466599745
-      ],
-      "outwardUE": [
-        0.7592070399739422,
-        -0.6508491917902371,
-        0.0
-      ],
-      "colorLinear": [
-        0.9312054237186906,
-        0.7278086291573407,
-        0.5255322712008658
-      ],
-      "lumens": 1.8713491738319392,
-      "radiusCm": 400,
-      "widthCm": 154.52359540756618,
-      "heightCm": 190,
-      "actual": {
-        "intensity": 1.8713492155075073,
-        "castShadows": true,
-        "transmission": true,
-        "volumetricScattering": 0.0
-      }
-    },
-    {
-      "name": "OOWInteriorLight_f0827a3a12bf8d8b",
-      "room": "f0827a3a12bf8d8b",
-      "seed": 0.9394909143447876,
-      "occupied": true,
-      "associatedAwning": false,
-      "positionCm": [
-        -5016.2780287168625,
-        -22163.27865298694,
-        1752.1228602205485
-      ],
-      "outwardUE": [
-        0.7585873228445598,
-        -0.6515713879687504,
-        0.0
-      ],
-      "colorLinear": [
-        0.9922162256598476,
-        0.6988895090372323,
-        0.43859187843471714
-      ],
-      "lumens": 2.29501825695038,
-      "radiusCm": 400,
-      "widthCm": 160,
-      "heightCm": 190,
-      "actual": {
-        "intensity": 2.295018196105957,
         "castShadows": true,
         "transmission": true,
         "volumetricScattering": 0.0

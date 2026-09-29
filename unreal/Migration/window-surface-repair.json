@@ -1,0 +1,45 @@
+{
+  "masters": {
+    "/InterchangeAssets/gltf/M_Default.M_Default": {
+      "usesMaterialAttributes": false,
+      "properties": {
+        "BASE_COLOR": {
+          "node": "MaterialExpressionMaterialFunctionCall",
+          "output": "BaseColor"
+        },
+        "ROUGHNESS": {
+          "node": "MaterialExpressionMaterialFunctionCall",
+          "output": "Roughness"
+        },
+        "EMISSIVE_COLOR": {
+          "node": "MaterialExpressionMaterialFunctionCall",
+          "output": "EmissiveColor"
+        },
+        "WORLD_POSITION_OFFSET": null,
+        "MATERIAL_ATTRIBUTES": null
+      },
+      "example": "/Game/Scenes/Alley/alley/Materials/MenuSign_02_Glass.MenuSign_02_Glass",
+      "chain": [
+        "/Game/Scenes/Alley/alley/Materials/MenuSign_02_Glass.MenuSign_02_Glass",
+        "/InterchangeAssets/gltf/MaterialInstances/MI_Default_Blend_DS.MI_Default_Blend_DS"
+      ]
+    }
+  },
+  "scenes": [
+    {
+      "scene": "alley",
+      "slots": 96,
+      "waterActors": 0,
+      "windActors": 123,
+      "hiddenCurtainActors": 74,
+      "interiorSlots": 68,
+      "glassFrontActors": 66,
+      "glassBackingSlots": 66,
+      "profiles": {
+        "glass//": 14,
+        "glass//window": 82
+      }
+    }
+  ],
+  "failures": []
+}

@@ -1,0 +1,519 @@
+{
+  "recipe": "interior-cubes-v3",
+  "bakedInUnreal": true,
+  "faceSize": 256,
+  "sourceGeometry": "Migration\\Generated\\interior-atlas-rooms.glb",
+  "sourceGeometrySha256": "3d8db5a9dfdde596fd34018e8b4ecd0ffd441f7021fb16befabb814bb2278fae",
+  "boxMin": [
+    -1.8,
+    -0.45,
+    0.0
+  ],
+  "boxMax": [
+    1.8,
+    3.05,
+    3.4
+  ],
+  "windowMin": [
+    -1.0,
+    0.0
+  ],
+  "windowMax": [
+    1.0,
+    2.75
+  ],
+  "captureCenter": [
+    0.0,
+    1.375,
+    0.2
+  ],
+  "canonicalAxes": [
+    "right",
+    "up",
+    "inward"
+  ],
+  "capturePlacement": "Window centre height, 0.20 m behind the window plane",
+  "cubeAxes": [
+    "right",
+    "inward",
+    "up"
+  ],
+  "windowRayScale": [
+    "2/widthMeters",
+    "2.75/heightMeters",
+    "2.75/heightMeters"
+  ],
+  "sampling": "ray-box hit minus captureCenter, then swizzle xzy for TextureCube",
+  "captureSource": "SceneColor HDR; no tone mapping; fixed direct lighting; Night=1",
+  "limits": "Furniture radiance is projected onto one room box. It has no independent depth or disocclusion. Near windows requiring accurate furniture occlusion retain real geometry.",
+  "rooms": [
+    {
+      "id": "template_00",
+      "name": "OOWRoomTemplate_00",
+      "originMeters": [
+        0,
+        0,
+        0
+      ],
+      "right": [
+        1,
+        0,
+        0
+      ],
+      "up": [
+        0,
+        1,
+        0
+      ],
+      "inward": [
+        0,
+        0,
+        1
+      ],
+      "apertureWidthMeters": 2.0,
+      "apertureHeightMeters": 2.75,
+      "widthMeters": 3.6,
+      "heightMeters": 3.5,
+      "depthMeters": 3.4,
+      "floorMeters": -0.45,
+      "furnitureScale": 1.0,
+      "layout": "study",
+      "occupied": true,
+      "lampLocalMeters": [
+        -1.224,
+        0.93,
+        1.972
+      ],
+      "imBoxMin": [
+        -1.8,
+        -0.45,
+        0
+      ],
+      "imBoxMax": [
+        1.8,
+        3.05,
+        3.4
+      ],
+      "imWindowMin": [
+        -1,
+        0
+      ],
+      "imWindowMax": [
+        1,
+        2.75
+      ],
+      "materialSlots": [
+        "surface",
+        "lamp"
+      ],
+      "triangles": 696,
+      "cubeAsset": "/Game/Materials/OOW/InteriorMapping/T_RoomCube_01",
+      "hdrExport": "Art\\InteriorMapping\\room-cube-01.hdr",
+      "hdrExportSha256": "44beba6e3d82df492b8901f71e7bc1edcb814a2696d0963f81365d7455b2fbc9",
+      "luminance": {
+        "width": 512,
+        "height": 256,
+        "min": 0.0,
+        "max": 4.191599999999999,
+        "mean": 0.1037281156522722,
+        "p95": 0.25425781249999996,
+        "p99": 0.9448828125000001,
+        "nonBlackFraction": 0.6061172485351562
+      },
+      "textureClass": "TextureCube",
+      "captured": true
+    },
+    {
+      "id": "template_01",
+      "name": "OOWRoomTemplate_01",
+      "originMeters": [
+        0,
+        0,
+        0
+      ],
+      "right": [
+        1,
+        0,
+        0
+      ],
+      "up": [
+        0,
+        1,
+        0
+      ],
+      "inward": [
+        0,
+        0,
+        1
+      ],
+      "apertureWidthMeters": 2.0,
+      "apertureHeightMeters": 2.75,
+      "widthMeters": 3.6,
+      "heightMeters": 3.5,
+      "depthMeters": 3.4,
+      "floorMeters": -0.45,
+      "furnitureScale": 1.0,
+      "layout": "sitting",
+      "occupied": true,
+      "lampLocalMeters": [
+        -1.224,
+        0.93,
+        1.972
+      ],
+      "imBoxMin": [
+        -1.8,
+        -0.45,
+        0
+      ],
+      "imBoxMax": [
+        1.8,
+        3.05,
+        3.4
+      ],
+      "imWindowMin": [
+        -1,
+        0
+      ],
+      "imWindowMax": [
+        1,
+        2.75
+      ],
+      "materialSlots": [
+        "surface",
+        "lamp"
+      ],
+      "triangles": 576,
+      "cubeAsset": "/Game/Materials/OOW/InteriorMapping/T_RoomCube_02",
+      "hdrExport": "Art\\InteriorMapping\\room-cube-02.hdr",
+      "hdrExportSha256": "2f0c371f979732708da3b40cdd0426bbe67cd65c333ddeb3894678ba1974cc42",
+      "luminance": {
+        "width": 512,
+        "height": 256,
+        "min": 0.0,
+        "max": 24.968549999999997,
+        "mean": 0.21070154905213395,
+        "p95": 0.6405671875000001,
+        "p99": 1.9921874999999998,
+        "nonBlackFraction": 0.6075439453125
+      },
+      "textureClass": "TextureCube",
+      "captured": true
+    },
+    {
+      "id": "template_02",
+      "name": "OOWRoomTemplate_02",
+      "originMeters": [
+        0,
+        0,
+        0
+      ],
+      "right": [
+        1,
+        0,
+        0
+      ],
+      "up": [
+        0,
+        1,
+        0
+      ],
+      "inward": [
+        0,
+        0,
+        1
+      ],
+      "apertureWidthMeters": 2.0,
+      "apertureHeightMeters": 2.75,
+      "widthMeters": 3.6,
+      "heightMeters": 3.5,
+      "depthMeters": 3.4,
+      "floorMeters": -0.45,
+      "furnitureScale": 1.0,
+      "layout": "kitchen",
+      "occupied": true,
+      "lampLocalMeters": [
+        -1.224,
+        0.93,
+        1.972
+      ],
+      "imBoxMin": [
+        -1.8,
+        -0.45,
+        0
+      ],
+      "imBoxMax": [
+        1.8,
+        3.05,
+        3.4
+      ],
+      "imWindowMin": [
+        -1,
+        0
+      ],
+      "imWindowMax": [
+        1,
+        2.75
+      ],
+      "materialSlots": [
+        "surface",
+        "lamp"
+      ],
+      "triangles": 660,
+      "cubeAsset": "/Game/Materials/OOW/InteriorMapping/T_RoomCube_03",
+      "hdrExport": "Art\\InteriorMapping\\room-cube-03.hdr",
+      "hdrExportSha256": "5d09c30e7243cdc8d20b13b048f3dc66c1730400673f6f1ad41ee62744b910be",
+      "luminance": {
+        "width": 512,
+        "height": 256,
+        "min": 0.0,
+        "max": 68.3168,
+        "mean": 0.22141131436195968,
+        "p95": 0.6210875000000001,
+        "p99": 2.17519375,
+        "nonBlackFraction": 0.6168365478515625
+      },
+      "textureClass": "TextureCube",
+      "captured": true
+    },
+    {
+      "id": "template_03",
+      "name": "OOWRoomTemplate_03",
+      "originMeters": [
+        0,
+        0,
+        0
+      ],
+      "right": [
+        1,
+        0,
+        0
+      ],
+      "up": [
+        0,
+        1,
+        0
+      ],
+      "inward": [
+        0,
+        0,
+        1
+      ],
+      "apertureWidthMeters": 2.0,
+      "apertureHeightMeters": 2.75,
+      "widthMeters": 3.6,
+      "heightMeters": 3.5,
+      "depthMeters": 3.4,
+      "floorMeters": -0.45,
+      "furnitureScale": 1.0,
+      "layout": "bedroom",
+      "occupied": true,
+      "lampLocalMeters": [
+        -1.224,
+        0.93,
+        1.972
+      ],
+      "imBoxMin": [
+        -1.8,
+        -0.45,
+        0
+      ],
+      "imBoxMax": [
+        1.8,
+        3.05,
+        3.4
+      ],
+      "imWindowMin": [
+        -1,
+        0
+      ],
+      "imWindowMax": [
+        1,
+        2.75
+      ],
+      "materialSlots": [
+        "surface",
+        "lamp"
+      ],
+      "triangles": 516,
+      "cubeAsset": "/Game/Materials/OOW/InteriorMapping/T_RoomCube_04",
+      "hdrExport": "Art\\InteriorMapping\\room-cube-04.hdr",
+      "hdrExportSha256": "c21a60efa7ed1d5aa99d5176c68975fd1481077a2e592bf3b836c3ceab54631d",
+      "luminance": {
+        "width": 512,
+        "height": 256,
+        "min": 0.0,
+        "max": 29.274949999999997,
+        "mean": 0.2113377938981767,
+        "p95": 0.614371875,
+        "p99": 2.0575968749999998,
+        "nonBlackFraction": 0.6075439453125
+      },
+      "textureClass": "TextureCube",
+      "captured": true
+    },
+    {
+      "id": "template_04",
+      "name": "OOWRoomTemplate_04",
+      "originMeters": [
+        0,
+        0,
+        0
+      ],
+      "right": [
+        1,
+        0,
+        0
+      ],
+      "up": [
+        0,
+        1,
+        0
+      ],
+      "inward": [
+        0,
+        0,
+        1
+      ],
+      "apertureWidthMeters": 2.0,
+      "apertureHeightMeters": 2.75,
+      "widthMeters": 3.6,
+      "heightMeters": 3.5,
+      "depthMeters": 3.4,
+      "floorMeters": -0.45,
+      "furnitureScale": 1.0,
+      "layout": "dining",
+      "occupied": true,
+      "lampLocalMeters": [
+        -1.224,
+        0.93,
+        1.972
+      ],
+      "imBoxMin": [
+        -1.8,
+        -0.45,
+        0
+      ],
+      "imBoxMax": [
+        1.8,
+        3.05,
+        3.4
+      ],
+      "imWindowMin": [
+        -1,
+        0
+      ],
+      "imWindowMax": [
+        1,
+        2.75
+      ],
+      "materialSlots": [
+        "surface",
+        "lamp"
+      ],
+      "triangles": 684,
+      "cubeAsset": "/Game/Materials/OOW/InteriorMapping/T_RoomCube_05",
+      "hdrExport": "Art\\InteriorMapping\\room-cube-05.hdr",
+      "hdrExportSha256": "3446b7084520cefebd7554c1c8b83e4ee7ef6de1a6578b730c64433716d0e6eb",
+      "luminance": {
+        "width": 512,
+        "height": 256,
+        "min": 0.0,
+        "max": 8.927724999999999,
+        "mean": 0.20669860000772258,
+        "p95": 0.614084375,
+        "p99": 1.9691593749999998,
+        "nonBlackFraction": 0.6075439453125
+      },
+      "textureClass": "TextureCube",
+      "captured": true
+    },
+    {
+      "id": "template_05",
+      "name": "OOWRoomTemplate_05",
+      "originMeters": [
+        0,
+        0,
+        0
+      ],
+      "right": [
+        1,
+        0,
+        0
+      ],
+      "up": [
+        0,
+        1,
+        0
+      ],
+      "inward": [
+        0,
+        0,
+        1
+      ],
+      "apertureWidthMeters": 2.0,
+      "apertureHeightMeters": 2.75,
+      "widthMeters": 3.6,
+      "heightMeters": 3.5,
+      "depthMeters": 3.4,
+      "floorMeters": -0.45,
+      "furnitureScale": 1.0,
+      "layout": "reading",
+      "occupied": true,
+      "lampLocalMeters": [
+        -1.224,
+        0.93,
+        1.972
+      ],
+      "imBoxMin": [
+        -1.8,
+        -0.45,
+        0
+      ],
+      "imBoxMax": [
+        1.8,
+        3.05,
+        3.4
+      ],
+      "imWindowMin": [
+        -1,
+        0
+      ],
+      "imWindowMax": [
+        1,
+        2.75
+      ],
+      "materialSlots": [
+        "surface",
+        "lamp"
+      ],
+      "triangles": 900,
+      "cubeAsset": "/Game/Materials/OOW/InteriorMapping/T_RoomCube_06",
+      "hdrExport": "Art\\InteriorMapping\\room-cube-06.hdr",
+      "hdrExportSha256": "320e250f42101c6b26b2e90b2071b698842073b20f85ec966ba53a80a4149359",
+      "luminance": {
+        "width": 512,
+        "height": 256,
+        "min": 0.0,
+        "max": 41.925999999999995,
+        "mean": 0.2136367309824325,
+        "p95": 0.5757046875,
+        "p99": 1.960178125,
+        "nonBlackFraction": 0.6169204711914062
+      },
+      "textureClass": "TextureCube",
+      "captured": true
+    }
+  ],
+  "captureSynchronization": "FinishLoadingBeforeScreenshot; CaptureScene end-of-frame updates; TextureCube ReadFloat16Pixels/FlushRenderingCommands",
+  "lighting": {
+    "lampLumens": 135.0,
+    "ceilingFillLumens": 120.0,
+    "windowFillLumens": 60.0,
+    "lampShadows": true,
+    "ceilingFillShadows": false,
+    "windowFillShadows": false,
+    "night": 1.0,
+    "lumen": false,
+    "runtimeCapture": false
+  }
+}

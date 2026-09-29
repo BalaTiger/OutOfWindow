@@ -1,5 +1,9 @@
 # 夜窗室内图
 
+**历史素材：** 当前工程的 `v16` 室内材质管线已改用真实模板烘焙的静态 cubemap，此目录六张 PNG 不再作为活动室内纹理。新方案见 [InteriorMapping/README.md](../InteriorMapping/README.md) 和 [v16 实施记录](../../Migration/window-interior-mapping.md)；GPU 验证及安装版更新状态以新记录为准。
+
+以下原有内容完整保留为 v14 及更早版本的历史说明，其中“当前”和已通过的验证均指当时版本，不代表 v16 已验收或部署。
+
 这六张图用于固定机位后巷的夜间窗户，在同一整窗内显示一幅连续的室内画面，减少重复的亮色块。它们由本工程于 **2026-09-23 使用内置 `image_gen` 生成**，每张原图均为 **1024×1536 PNG，2:3 竖幅**；尺寸已读取 PNG 头核对。
 
 | 文件 | 提示词中的室内主题 | 已落盘的 UE 资产名 |
@@ -13,14 +17,14 @@
 
 完整提示词、生成日期与工具原始输出路径保存在 [prompts.json](prompts.json)。图像来自文字生成，本轮没有下载或添加第三方室内照片；提示词要求摄影风格，**实际来源仍是 AI 生成，不是摄影或扫描素材**，也没有对应的实测 PBR 通道。
 
-当前 **v6** 使用整窗 UV1 与组内恒定的 UV2=`(seed,flag)`：`1` 是房间，`-1` 明确禁用室内和旧窗发光；`0` 仅供旧窗回退。房间选择、亮灭、亮度和色温由同一个整窗种子决定。`window-uv-v2` 保留原顶点位置和 UV0，排除 26 组包边的 259 个三角面及另外 52 个非窗面，留下 393 个房间组。UV1 底部为 0、顶部为 1，采图使用 `1-V`。
+当前 **v14** 将后巷夜窗分成两种实现：中央并排的两个宽窗与前方红篷下的两个窗使用真实浅房间，包含墙、地板、家具、灯具、静态褶皱窗帘和独立透明玻璃；其余适用窗户在材质中计算五面虚拟房间，以这六张 AI 图作为后墙卡片，提供随视角变化的房间边界。虚拟房间里的家具仍然是图片，没有独立几何深度。
 
-纹理仍为六次采样，原生 `TMGS_SHARPEN0` mip 配合材质实例覆盖：`OOWInteriorMipBias=1.5`、`OOWInteriorGain=0.8`、`OOWInteriorHighlightGain=8`、`OOWInteriorHighlightThreshold=0.32`。底图与从同一采样提取的灯具高亮分别控制，避免把家具和灯芯一起均匀提亮；`Night=0` 时室内图发光为零。主材质默认值不代表实例的实际运行值。
+`window-uv-v4` 保留原顶点位置和 UV0：UV1 是整窗坐标；UV2=`(seed,flag)` 中 `1` 为普通房间、`2` 为真实房间开孔、`-1` 禁止窗发光；UV3 保存整窗宽高，单位为米。四个重点窗及一片后方重复玻璃共五个组使用 `flag=2`，开孔不再依赖种子浮点值精确匹配，避免 Nanite UV 量化后原图片仍挡在房间前。普通房间继续用种子选择图像和亮灭。仍有 393 个房间组，26 组包边的 259 个三角面及另外 52 个非窗面保持排除。后墙图像按原始 2:3 比例做 cover 裁剪，不再直接拉伸铺满宽窗。
 
-66 个独立玻璃前层使用原生 **ThinTranslucent / SurfaceForwardShading**，关闭 Nanite，使用三档原生 LOD；室内图仍留在后方不透明网格上。`OOWWindowGlassFront` / `OOWWindowGlassBacking` 标签将两层分开，避免后层重复施加玻璃衰减。其他未标记窗保留 v3，非窗表面保持 v2；雨篷另有独立 v6 配方。
+纹理仍为六次采样，使用原生 `TMGS_SHARPEN0` mip；当前实例覆盖为 `OOWInteriorMipBias=0.35`、`OOWInteriorGain=0.8`、`OOWInteriorHighlightGain=2`、`OOWInteriorHighlightThreshold=0.55`。这些参数用于虚拟房间卡片，不控制四个真实房间的照明。六张源 PNG 未修改，导入仍使用 sRGB、Clamp 和 `STRETCH_TO_POWER_OF_TWO`。
 
-上表 UE 资产均位于 `/Game/Materials/OOW/WindowInteriors/`，以实际导入名称为准。导入器设置 sRGB、Clamp、`STRETCH_TO_POWER_OF_TWO` 与 mip 生成；不使用产生黑边的 padding，不修改六张源 PNG。v6 已完成打包、资产审计和后巷夜间/雨夜/白天、都市夜间四例回归，资产审计为 0 失败。实现、重建顺序与完整验证见 [v6 修复记录](../../Migration/window-lookdev-repair.md)和 [验证数据](../../Migration/window-lookdev-verification.json)。实机截图：[后巷夜间](../Lookdev/alley-night-implemented-v6.png)、[雨夜](../Lookdev/alley-rainnight-implemented-v6.png)、[白天](../Lookdev/alley-day-implemented-v6.png)。
+四个真实房间在原窗面开孔，并移除一处重复玻璃和挡住新房间的源室内底板；其独立玻璃使用原生 **ThinTranslucent**。66 个旧透明前片继续隐藏。71 个旧窗帘与另外三处误归为 Cyan 雨篷的室内布帘共 74 个 Actor 隐藏并关闭风动；真正的室外 Cyan 雨篷保留。局部窗灯总预算保持 12 盏：4 盏室内 PointLight 和最多 8 盏窗外 RectLight。非真实房间窗的共享 HDR 反射补偿在夜间降至日间的 12%，原生镜面反射保留。
 
-**历史版本：** v4 原图室内、v5 首轮 1.25 / 0.62 轻度柔化，以及 v5 后续 Blur2 / 2.0 / 1.8 增强阶段的构建、审计和独立程序验证保留在 [夜窗修复记录](../../Migration/night-window-repair.md)。这些成绩属于各自旧包，不能作为当前 v6 的验收结果。
+上表 UE 图像资产位于 `/Game/Materials/OOW/WindowInteriors/`。`window-uv-v4` 开孔修正后的资产审计通过，记录 68 个窗网格、4 个真实房间、4 个新玻璃、74 个隐藏窗帘及 0 失败；编辑器夜景和候选包五例回归通过，16:17 连续 8 帧未见原浅青色布帘穿出。**2026-09-28 已部署并重启，10 个部署文件哈希及正常实时运行状态核对通过。** 画面证据来自编辑器和候选包，没有新增安装版截图。实施范围、重建顺序、测试日期与画质限制见 [窗内景深度修复](../../Migration/window-depth-repair.md)及 [本轮验收](../../Migration/window-depth-verification.json)。
 
-这是 **原生玻璃前层加 2D 室内贴图近似**：家具、墙壁和灯具没有真实室内几何，不提供随视点移动的正确视差或遮挡；六张图也不能完全消除重复。图片中的透视和光照已经烘在图像中，适合本项目的固定机位，不应当作可进入的室内场景。
+**历史版本：** [v4/v5 夜窗记录](../../Migration/night-window-repair.md)、[v6 玻璃与窗灯记录](../../Migration/window-lookdev-repair.md)及 [v13 窗面反射记录](../../Migration/window-surface-repair.md)保留各自验证结果。v14 的四个真实房间仍是为固定机位制作的简化布景，尚非照片级；其余房间的透视、家具细节和光照仍部分烘在 AI 图像中，不是完整可进入的建筑室内。

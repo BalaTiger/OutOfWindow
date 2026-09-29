@@ -27,11 +27,15 @@ public:
     bool IsReady() const;
     int32 GetTriangleCount() const { return TriangleCount; }
     FVector2D GetOpeningSize() const { return OpeningSize; }
+    int32 GetRoomWallCount() const { return RoomWalls.Num(); }
+    float GetRoomLampLumens() const;
 
 private:
     UPROPERTY() TObjectPtr<UStaticMeshComponent> Frame;
     UPROPERTY() TObjectPtr<UStaticMeshComponent> RainGlass;
     UPROPERTY() TObjectPtr<URectLightComponent> RoomBounce;
+    UPROPERTY() TArray<TObjectPtr<UStaticMeshComponent>> RoomWalls;
+    UPROPERTY() TObjectPtr<UMaterialInstanceDynamic> RoomMaterial;
     UPROPERTY() TArray<TObjectPtr<UMaterialInstanceDynamic>> Materials;
     UPROPERTY() TSoftObjectPtr<UMaterialInterface> MaterialSource;
     UPROPERTY() TObjectPtr<UMaterialInstanceDynamic> RainMaterial;

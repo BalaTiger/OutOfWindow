@@ -1,9 +1,10 @@
 {
-  "recipe": "window-uv-v2",
+  "recipe": "window-uv-v5",
   "uvChannels": {
     "0": "source or zero",
     "1": "whole window, V0=bottom",
-    "2": "seed, flag: -1 non-emissive; 0 reserved legacy fallback; 1 room"
+    "2": "seed, flag: -1 non-emissive; 0 reserved legacy fallback; 0.5 basic IM; 1 detailed IM; 2 3D aperture",
+    "3": "whole-window width/height in metres"
   },
   "sourceGlassActors": 82,
   "changedActors": 68,
@@ -63,7 +64,7 @@
       "paneIslands": 1,
       "offsetMeters": 0.01,
       "nonEmissiveRimTriangles": 0,
-      "uvChannels": 3,
+      "uvChannels": 4,
       "unrealMesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWGlassFront_OOW_00092_Paris_Building_01_paris_building_01_bottom_42.OOWGlassFront_OOW_00092_Paris_Building_01_paris_building_01_bottom_42"
     },
     {
@@ -74,7 +75,7 @@
       "paneIslands": 3,
       "offsetMeters": 0.01,
       "nonEmissiveRimTriangles": 0,
-      "uvChannels": 3,
+      "uvChannels": 4,
       "unrealMesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWGlassFront_OOW_00093_Paris_Building_01_paris_building_01_bottom_43.OOWGlassFront_OOW_00093_Paris_Building_01_paris_building_01_bottom_43"
     },
     {
@@ -85,7 +86,7 @@
       "paneIslands": 1,
       "offsetMeters": 0.01,
       "nonEmissiveRimTriangles": 0,
-      "uvChannels": 3,
+      "uvChannels": 4,
       "unrealMesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWGlassFront_OOW_00107_Paris_Building_01_paris_building_01_bottom_63.OOWGlassFront_OOW_00107_Paris_Building_01_paris_building_01_bottom_63"
     },
     {
@@ -96,7 +97,7 @@
       "paneIslands": 1,
       "offsetMeters": 0.01,
       "nonEmissiveRimTriangles": 0,
-      "uvChannels": 3,
+      "uvChannels": 4,
       "unrealMesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWGlassFront_OOW_00108_Paris_Building_01_paris_building_01_bottom_64.OOWGlassFront_OOW_00108_Paris_Building_01_paris_building_01_bottom_64"
     },
     {
@@ -107,7 +108,7 @@
       "paneIslands": 1,
       "offsetMeters": 0.01,
       "nonEmissiveRimTriangles": 0,
-      "uvChannels": 3,
+      "uvChannels": 4,
       "unrealMesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWGlassFront_OOW_00109_Paris_Building_01_paris_building_01_bottom_65.OOWGlassFront_OOW_00109_Paris_Building_01_paris_building_01_bottom_65"
     },
     {
@@ -118,7 +119,7 @@
       "paneIslands": 1,
       "offsetMeters": 0.01,
       "nonEmissiveRimTriangles": 0,
-      "uvChannels": 3,
+      "uvChannels": 4,
       "unrealMesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWGlassFront_OOW_00110_Paris_Building_01_paris_building_01_bottom_66.OOWGlassFront_OOW_00110_Paris_Building_01_paris_building_01_bottom_66"
     },
     {
@@ -129,7 +130,7 @@
       "paneIslands": 2,
       "offsetMeters": 0.01,
       "nonEmissiveRimTriangles": 0,
-      "uvChannels": 3,
+      "uvChannels": 4,
       "unrealMesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWGlassFront_OOW_00165_Paris_Building_01_paris_building_01_bottom_123.OOWGlassFront_OOW_00165_Paris_Building_01_paris_building_01_bottom_123"
     },
     {
@@ -140,7 +141,7 @@
       "paneIslands": 3,
       "offsetMeters": 0.01,
       "nonEmissiveRimTriangles": 0,
-      "uvChannels": 3,
+      "uvChannels": 4,
       "unrealMesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWGlassFront_OOW_00191_Paris_Building_01_paris_building_01_bottom_147.OOWGlassFront_OOW_00191_Paris_Building_01_paris_building_01_bottom_147"
     },
     {
@@ -151,7 +152,7 @@
       "paneIslands": 1,
       "offsetMeters": 0.01,
       "nonEmissiveRimTriangles": 0,
-      "uvChannels": 3,
+      "uvChannels": 4,
       "unrealMesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWGlassFront_OOW_00193_Paris_Building_01_paris_building_01_bottom_149.OOWGlassFront_OOW_00193_Paris_Building_01_paris_building_01_bottom_149"
     },
     {
@@ -162,7 +163,7 @@
       "paneIslands": 1,
       "offsetMeters": 0.01,
       "nonEmissiveRimTriangles": 0,
-      "uvChannels": 3,
+      "uvChannels": 4,
       "unrealMesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWGlassFront_OOW_00209_Paris_MainBalcony_01_1_4.OOWGlassFront_OOW_00209_Paris_MainBalcony_01_1_4"
     },
     {
@@ -173,7 +174,7 @@
       "paneIslands": 1,
       "offsetMeters": 0.01,
       "nonEmissiveRimTriangles": 0,
-      "uvChannels": 3,
+      "uvChannels": 4,
       "unrealMesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWGlassFront_OOW_00215_Paris_Building_01_paris_building_01_6.OOWGlassFront_OOW_00215_Paris_Building_01_paris_building_01_6"
     },
     {
@@ -184,7 +185,7 @@
       "paneIslands": 2,
       "offsetMeters": 0.01,
       "nonEmissiveRimTriangles": 0,
-      "uvChannels": 3,
+      "uvChannels": 4,
       "unrealMesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWGlassFront_OOW_00225_Paris_Building_01_paris_building_01_15_1_1.OOWGlassFront_OOW_00225_Paris_Building_01_paris_building_01_15_1_1"
     },
     {
@@ -195,7 +196,7 @@
       "paneIslands": 2,
       "offsetMeters": 0.01,
       "nonEmissiveRimTriangles": 0,
-      "uvChannels": 3,
+      "uvChannels": 4,
       "unrealMesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWGlassFront_OOW_00228_Paris_Building_01_paris_building_01_17_1_1.OOWGlassFront_OOW_00228_Paris_Building_01_paris_building_01_17_1_1"
     },
     {
@@ -206,7 +207,7 @@
       "paneIslands": 2,
       "offsetMeters": 0.01,
       "nonEmissiveRimTriangles": 0,
-      "uvChannels": 3,
+      "uvChannels": 4,
       "unrealMesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWGlassFront_OOW_00230_Paris_Building_01_paris_building_01_18_1_1.OOWGlassFront_OOW_00230_Paris_Building_01_paris_building_01_18_1_1"
     },
     {
@@ -217,7 +218,7 @@
       "paneIslands": 2,
       "offsetMeters": 0.01,
       "nonEmissiveRimTriangles": 0,
-      "uvChannels": 3,
+      "uvChannels": 4,
       "unrealMesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWGlassFront_OOW_00235_Paris_Building_01_paris_building_01_22_1_1.OOWGlassFront_OOW_00235_Paris_Building_01_paris_building_01_22_1_1"
     },
     {
@@ -228,7 +229,7 @@
       "paneIslands": 2,
       "offsetMeters": 0.01,
       "nonEmissiveRimTriangles": 0,
-      "uvChannels": 3,
+      "uvChannels": 4,
       "unrealMesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWGlassFront_OOW_00238_Paris_Building_01_paris_building_01_24_1_1.OOWGlassFront_OOW_00238_Paris_Building_01_paris_building_01_24_1_1"
     },
     {
@@ -239,7 +240,7 @@
       "paneIslands": 2,
       "offsetMeters": 0.01,
       "nonEmissiveRimTriangles": 0,
-      "uvChannels": 3,
+      "uvChannels": 4,
       "unrealMesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWGlassFront_OOW_00240_Paris_Building_01_paris_building_01_25_1_1.OOWGlassFront_OOW_00240_Paris_Building_01_paris_building_01_25_1_1"
     },
     {
@@ -250,7 +251,7 @@
       "paneIslands": 2,
       "offsetMeters": 0.01,
       "nonEmissiveRimTriangles": 0,
-      "uvChannels": 3,
+      "uvChannels": 4,
       "unrealMesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWGlassFront_OOW_00247_Paris_Building_01_paris_building_01_31_1_1.OOWGlassFront_OOW_00247_Paris_Building_01_paris_building_01_31_1_1"
     },
     {
@@ -261,7 +262,7 @@
       "paneIslands": 2,
       "offsetMeters": 0.01,
       "nonEmissiveRimTriangles": 0,
-      "uvChannels": 3,
+      "uvChannels": 4,
       "unrealMesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWGlassFront_OOW_00250_Paris_Building_01_paris_building_01_33_1_1.OOWGlassFront_OOW_00250_Paris_Building_01_paris_building_01_33_1_1"
     },
     {
@@ -272,7 +273,7 @@
       "paneIslands": 2,
       "offsetMeters": 0.01,
       "nonEmissiveRimTriangles": 0,
-      "uvChannels": 3,
+      "uvChannels": 4,
       "unrealMesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWGlassFront_OOW_00252_Paris_Building_01_paris_building_01_34_1_1.OOWGlassFront_OOW_00252_Paris_Building_01_paris_building_01_34_1_1"
     },
     {
@@ -283,7 +284,7 @@
       "paneIslands": 2,
       "offsetMeters": 0.01,
       "nonEmissiveRimTriangles": 0,
-      "uvChannels": 3,
+      "uvChannels": 4,
       "unrealMesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWGlassFront_OOW_00254_Paris_Building_01_paris_building_01_35_1_1.OOWGlassFront_OOW_00254_Paris_Building_01_paris_building_01_35_1_1"
     },
     {
@@ -294,7 +295,7 @@
       "paneIslands": 2,
       "offsetMeters": 0.01,
       "nonEmissiveRimTriangles": 0,
-      "uvChannels": 3,
+      "uvChannels": 4,
       "unrealMesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWGlassFront_OOW_00256_Paris_Building_01_paris_building_01_36_1_1.OOWGlassFront_OOW_00256_Paris_Building_01_paris_building_01_36_1_1"
     },
     {
@@ -305,7 +306,7 @@
       "paneIslands": 2,
       "offsetMeters": 0.01,
       "nonEmissiveRimTriangles": 0,
-      "uvChannels": 3,
+      "uvChannels": 4,
       "unrealMesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWGlassFront_OOW_00259_Paris_Building_01_paris_building_01_38_1_1.OOWGlassFront_OOW_00259_Paris_Building_01_paris_building_01_38_1_1"
     },
     {
@@ -316,7 +317,7 @@
       "paneIslands": 2,
       "offsetMeters": 0.01,
       "nonEmissiveRimTriangles": 0,
-      "uvChannels": 3,
+      "uvChannels": 4,
       "unrealMesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWGlassFront_OOW_00262_Paris_Building_01_paris_building_01_40_1_1.OOWGlassFront_OOW_00262_Paris_Building_01_paris_building_01_40_1_1"
     },
     {
@@ -327,7 +328,7 @@
       "paneIslands": 2,
       "offsetMeters": 0.01,
       "nonEmissiveRimTriangles": 0,
-      "uvChannels": 3,
+      "uvChannels": 4,
       "unrealMesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWGlassFront_OOW_00264_Paris_Building_01_paris_building_01_41_1_1.OOWGlassFront_OOW_00264_Paris_Building_01_paris_building_01_41_1_1"
     },
     {
@@ -338,7 +339,7 @@
       "paneIslands": 2,
       "offsetMeters": 0.01,
       "nonEmissiveRimTriangles": 0,
-      "uvChannels": 3,
+      "uvChannels": 4,
       "unrealMesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWGlassFront_OOW_00268_Paris_Building_01_paris_building_01_44_1_1.OOWGlassFront_OOW_00268_Paris_Building_01_paris_building_01_44_1_1"
     },
     {
@@ -349,7 +350,7 @@
       "paneIslands": 2,
       "offsetMeters": 0.01,
       "nonEmissiveRimTriangles": 0,
-      "uvChannels": 3,
+      "uvChannels": 4,
       "unrealMesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWGlassFront_OOW_00273_Paris_Building_01_paris_building_01_48_1_1.OOWGlassFront_OOW_00273_Paris_Building_01_paris_building_01_48_1_1"
     },
     {
@@ -360,7 +361,7 @@
       "paneIslands": 2,
       "offsetMeters": 0.01,
       "nonEmissiveRimTriangles": 0,
-      "uvChannels": 3,
+      "uvChannels": 4,
       "unrealMesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWGlassFront_OOW_00275_Paris_Building_01_paris_building_01_50_1.OOWGlassFront_OOW_00275_Paris_Building_01_paris_building_01_50_1"
     },
     {
@@ -371,7 +372,7 @@
       "paneIslands": 2,
       "offsetMeters": 0.01,
       "nonEmissiveRimTriangles": 0,
-      "uvChannels": 3,
+      "uvChannels": 4,
       "unrealMesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWGlassFront_OOW_00341_Paris_Building_01_paris_building_01_202.OOWGlassFront_OOW_00341_Paris_Building_01_paris_building_01_202"
     },
     {
@@ -382,7 +383,7 @@
       "paneIslands": 2,
       "offsetMeters": 0.01,
       "nonEmissiveRimTriangles": 0,
-      "uvChannels": 3,
+      "uvChannels": 4,
       "unrealMesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWGlassFront_OOW_00346_Paris_Building_01_paris_building_01_207.OOWGlassFront_OOW_00346_Paris_Building_01_paris_building_01_207"
     },
     {
@@ -393,7 +394,7 @@
       "paneIslands": 2,
       "offsetMeters": 0.01,
       "nonEmissiveRimTriangles": 0,
-      "uvChannels": 3,
+      "uvChannels": 4,
       "unrealMesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWGlassFront_OOW_00352_Paris_Building_01_paris_building_01_213.OOWGlassFront_OOW_00352_Paris_Building_01_paris_building_01_213"
     },
     {
@@ -404,7 +405,7 @@
       "paneIslands": 2,
       "offsetMeters": 0.01,
       "nonEmissiveRimTriangles": 0,
-      "uvChannels": 3,
+      "uvChannels": 4,
       "unrealMesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWGlassFront_OOW_00371_Paris_Building_01_paris_building_01_229_1_2.OOWGlassFront_OOW_00371_Paris_Building_01_paris_building_01_229_1_2"
     },
     {
@@ -415,7 +416,7 @@
       "paneIslands": 4,
       "offsetMeters": 0.01,
       "nonEmissiveRimTriangles": 0,
-      "uvChannels": 3,
+      "uvChannels": 4,
       "unrealMesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWGlassFront_OOW_00398_Paris_Building_01_paris_building_01_255_1_1.OOWGlassFront_OOW_00398_Paris_Building_01_paris_building_01_255_1_1"
     },
     {
@@ -426,7 +427,7 @@
       "paneIslands": 42,
       "offsetMeters": 0.01,
       "nonEmissiveRimTriangles": 0,
-      "uvChannels": 3,
+      "uvChannels": 4,
       "unrealMesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWGlassFront_OOW_00467_paris_building_02_7.OOWGlassFront_OOW_00467_paris_building_02_7"
     },
     {
@@ -437,7 +438,7 @@
       "paneIslands": 14,
       "offsetMeters": 0.01,
       "nonEmissiveRimTriangles": 0,
-      "uvChannels": 3,
+      "uvChannels": 4,
       "unrealMesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWGlassFront_OOW_00474_paris_building_03_3.OOWGlassFront_OOW_00474_paris_building_03_3"
     },
     {
@@ -448,7 +449,7 @@
       "paneIslands": 11,
       "offsetMeters": 0.01,
       "nonEmissiveRimTriangles": 0,
-      "uvChannels": 3,
+      "uvChannels": 4,
       "unrealMesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWGlassFront_OOW_00486_paris_building_03_mirrored_5.OOWGlassFront_OOW_00486_paris_building_03_mirrored_5"
     },
     {
@@ -459,7 +460,7 @@
       "paneIslands": 11,
       "offsetMeters": 0.01,
       "nonEmissiveRimTriangles": 0,
-      "uvChannels": 3,
+      "uvChannels": 4,
       "unrealMesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWGlassFront_OOW_00496_paris_building_03_mirrored_5__2_.OOWGlassFront_OOW_00496_paris_building_03_mirrored_5__2_"
     },
     {
@@ -470,7 +471,7 @@
       "paneIslands": 39,
       "offsetMeters": 0.01,
       "nonEmissiveRimTriangles": 0,
-      "uvChannels": 3,
+      "uvChannels": 4,
       "unrealMesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWGlassFront_OOW_00508_paris_building_04_7.OOWGlassFront_OOW_00508_paris_building_04_7"
     },
     {
@@ -481,7 +482,7 @@
       "paneIslands": 2,
       "offsetMeters": 0.01,
       "nonEmissiveRimTriangles": 0,
-      "uvChannels": 3,
+      "uvChannels": 4,
       "unrealMesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWGlassFront_OOW_00513_paris_building_04_12.OOWGlassFront_OOW_00513_paris_building_04_12"
     },
     {
@@ -492,7 +493,7 @@
       "paneIslands": 1,
       "offsetMeters": 0.01,
       "nonEmissiveRimTriangles": 0,
-      "uvChannels": 3,
+      "uvChannels": 4,
       "unrealMesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWGlassFront_OOW_00524_paris_building_05_1_1.OOWGlassFront_OOW_00524_paris_building_05_1_1"
     },
     {
@@ -503,7 +504,7 @@
       "paneIslands": 1,
       "offsetMeters": 0.01,
       "nonEmissiveRimTriangles": 0,
-      "uvChannels": 3,
+      "uvChannels": 4,
       "unrealMesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWGlassFront_OOW_00567_paris_building_05_41_1.OOWGlassFront_OOW_00567_paris_building_05_41_1"
     },
     {
@@ -514,7 +515,7 @@
       "paneIslands": 40,
       "offsetMeters": 0.01,
       "nonEmissiveRimTriangles": 0,
-      "uvChannels": 3,
+      "uvChannels": 4,
       "unrealMesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWGlassFront_OOW_00591_paris_building_05_56.OOWGlassFront_OOW_00591_paris_building_05_56"
     },
     {
@@ -525,7 +526,7 @@
       "paneIslands": 1,
       "offsetMeters": 0.01,
       "nonEmissiveRimTriangles": 0,
-      "uvChannels": 3,
+      "uvChannels": 4,
       "unrealMesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWGlassFront_OOW_00601_paris_building_05_66.OOWGlassFront_OOW_00601_paris_building_05_66"
     },
     {
@@ -536,7 +537,7 @@
       "paneIslands": 1,
       "offsetMeters": 0.01,
       "nonEmissiveRimTriangles": 0,
-      "uvChannels": 3,
+      "uvChannels": 4,
       "unrealMesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWGlassFront_OOW_00608_paris_building_05_1__2__1.OOWGlassFront_OOW_00608_paris_building_05_1__2__1"
     },
     {
@@ -547,7 +548,7 @@
       "paneIslands": 1,
       "offsetMeters": 0.01,
       "nonEmissiveRimTriangles": 0,
-      "uvChannels": 3,
+      "uvChannels": 4,
       "unrealMesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWGlassFront_OOW_00651_paris_building_05_41__2__1.OOWGlassFront_OOW_00651_paris_building_05_41__2__1"
     },
     {
@@ -558,7 +559,7 @@
       "paneIslands": 40,
       "offsetMeters": 0.01,
       "nonEmissiveRimTriangles": 0,
-      "uvChannels": 3,
+      "uvChannels": 4,
       "unrealMesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWGlassFront_OOW_00675_paris_building_05_56__2_.OOWGlassFront_OOW_00675_paris_building_05_56__2_"
     },
     {
@@ -569,7 +570,7 @@
       "paneIslands": 1,
       "offsetMeters": 0.01,
       "nonEmissiveRimTriangles": 0,
-      "uvChannels": 3,
+      "uvChannels": 4,
       "unrealMesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWGlassFront_OOW_00685_paris_building_05_66__2_.OOWGlassFront_OOW_00685_paris_building_05_66__2_"
     },
     {
@@ -580,7 +581,7 @@
       "paneIslands": 32,
       "offsetMeters": 0.01,
       "nonEmissiveRimTriangles": 0,
-      "uvChannels": 3,
+      "uvChannels": 4,
       "unrealMesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWGlassFront_OOW_00703_paris_building_07_9.OOWGlassFront_OOW_00703_paris_building_07_9"
     },
     {
@@ -591,7 +592,7 @@
       "paneIslands": 32,
       "offsetMeters": 0.01,
       "nonEmissiveRimTriangles": 0,
-      "uvChannels": 3,
+      "uvChannels": 4,
       "unrealMesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWGlassFront_OOW_00715_paris_building_07_9__2_.OOWGlassFront_OOW_00715_paris_building_07_9__2_"
     },
     {
@@ -602,7 +603,7 @@
       "paneIslands": 14,
       "offsetMeters": 0.01,
       "nonEmissiveRimTriangles": 0,
-      "uvChannels": 3,
+      "uvChannels": 4,
       "unrealMesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWGlassFront_OOW_00719_Paris_Building_08_paris_building_08_1.OOWGlassFront_OOW_00719_Paris_Building_08_paris_building_08_1"
     },
     {
@@ -613,7 +614,7 @@
       "paneIslands": 14,
       "offsetMeters": 0.01,
       "nonEmissiveRimTriangles": 0,
-      "uvChannels": 3,
+      "uvChannels": 4,
       "unrealMesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWGlassFront_OOW_00731_Paris_Building_08_paris_building_08_1__2_.OOWGlassFront_OOW_00731_Paris_Building_08_paris_building_08_1__2_"
     },
     {
@@ -624,7 +625,7 @@
       "paneIslands": 14,
       "offsetMeters": 0.01,
       "nonEmissiveRimTriangles": 0,
-      "uvChannels": 3,
+      "uvChannels": 4,
       "unrealMesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWGlassFront_OOW_00742_Paris_Building_08_paris_building_08_1__3_.OOWGlassFront_OOW_00742_Paris_Building_08_paris_building_08_1__3_"
     },
     {
@@ -635,7 +636,7 @@
       "paneIslands": 5,
       "offsetMeters": 0.01,
       "nonEmissiveRimTriangles": 0,
-      "uvChannels": 3,
+      "uvChannels": 4,
       "unrealMesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWGlassFront_OOW_00756_paris_building_09_4.OOWGlassFront_OOW_00756_paris_building_09_4"
     },
     {
@@ -646,7 +647,7 @@
       "paneIslands": 64,
       "offsetMeters": 0.01,
       "nonEmissiveRimTriangles": 0,
-      "uvChannels": 3,
+      "uvChannels": 4,
       "unrealMesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWGlassFront_OOW_00760_paris_building_09_8.OOWGlassFront_OOW_00760_paris_building_09_8"
     },
     {
@@ -657,7 +658,7 @@
       "paneIslands": 38,
       "offsetMeters": 0.01,
       "nonEmissiveRimTriangles": 0,
-      "uvChannels": 3,
+      "uvChannels": 4,
       "unrealMesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWGlassFront_OOW_00780_paris_building_10_10.OOWGlassFront_OOW_00780_paris_building_10_10"
     },
     {
@@ -668,7 +669,7 @@
       "paneIslands": 3,
       "offsetMeters": 0.01,
       "nonEmissiveRimTriangles": 0,
-      "uvChannels": 3,
+      "uvChannels": 4,
       "unrealMesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWGlassFront_OOW_00789_paris_building_10_19.OOWGlassFront_OOW_00789_paris_building_10_19"
     },
     {
@@ -679,7 +680,7 @@
       "paneIslands": 38,
       "offsetMeters": 0.01,
       "nonEmissiveRimTriangles": 0,
-      "uvChannels": 3,
+      "uvChannels": 4,
       "unrealMesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWGlassFront_OOW_00801_paris_building_10_10__2_.OOWGlassFront_OOW_00801_paris_building_10_10__2_"
     },
     {
@@ -690,7 +691,7 @@
       "paneIslands": 3,
       "offsetMeters": 0.01,
       "nonEmissiveRimTriangles": 0,
-      "uvChannels": 3,
+      "uvChannels": 4,
       "unrealMesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWGlassFront_OOW_00810_paris_building_10_19__2_.OOWGlassFront_OOW_00810_paris_building_10_19__2_"
     },
     {
@@ -701,7 +702,7 @@
       "paneIslands": 1,
       "offsetMeters": 0.01,
       "nonEmissiveRimTriangles": 0,
-      "uvChannels": 3,
+      "uvChannels": 4,
       "unrealMesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWGlassFront_OOW_00841_paris_building_11_27.OOWGlassFront_OOW_00841_paris_building_11_27"
     },
     {
@@ -712,7 +713,7 @@
       "paneIslands": 1,
       "offsetMeters": 0.01,
       "nonEmissiveRimTriangles": 0,
-      "uvChannels": 3,
+      "uvChannels": 4,
       "unrealMesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWGlassFront_OOW_00851_paris_building_11_37.OOWGlassFront_OOW_00851_paris_building_11_37"
     },
     {
@@ -723,7 +724,7 @@
       "paneIslands": 1,
       "offsetMeters": 0.01,
       "nonEmissiveRimTriangles": 0,
-      "uvChannels": 3,
+      "uvChannels": 4,
       "unrealMesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWGlassFront_OOW_00861_paris_building_11_47.OOWGlassFront_OOW_00861_paris_building_11_47"
     },
     {
@@ -734,7 +735,7 @@
       "paneIslands": 1,
       "offsetMeters": 0.01,
       "nonEmissiveRimTriangles": 0,
-      "uvChannels": 3,
+      "uvChannels": 4,
       "unrealMesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWGlassFront_OOW_00909_paris_building_11_95.OOWGlassFront_OOW_00909_paris_building_11_95"
     },
     {
@@ -745,7 +746,7 @@
       "paneIslands": 1,
       "offsetMeters": 0.01,
       "nonEmissiveRimTriangles": 0,
-      "uvChannels": 3,
+      "uvChannels": 4,
       "unrealMesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWGlassFront_OOW_00910_paris_building_11_96.OOWGlassFront_OOW_00910_paris_building_11_96"
     },
     {
@@ -756,7 +757,7 @@
       "paneIslands": 1,
       "offsetMeters": 0.01,
       "nonEmissiveRimTriangles": 0,
-      "uvChannels": 3,
+      "uvChannels": 4,
       "unrealMesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWGlassFront_OOW_00926_paris_building_11_112.OOWGlassFront_OOW_00926_paris_building_11_112"
     },
     {
@@ -767,7 +768,7 @@
       "paneIslands": 1,
       "offsetMeters": 0.01,
       "nonEmissiveRimTriangles": 0,
-      "uvChannels": 3,
+      "uvChannels": 4,
       "unrealMesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWGlassFront_OOW_00936_paris_building_11_122.OOWGlassFront_OOW_00936_paris_building_11_122"
     },
     {
@@ -778,7 +779,7 @@
       "paneIslands": 1,
       "offsetMeters": 0.01,
       "nonEmissiveRimTriangles": 0,
-      "uvChannels": 3,
+      "uvChannels": 4,
       "unrealMesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWGlassFront_OOW_00948_paris_building_11_134.OOWGlassFront_OOW_00948_paris_building_11_134"
     }
   ],
@@ -1247,7 +1248,7 @@
     "occupied": "step(.62,frac(seed*73.137+.11))",
     "precision": "CPU float32 estimate; GPU FMA may differ at boundaries"
   },
-  "generatedSha256": "14a6883853a0c26863860ca785d07eaeaf3af5e163adef59866a2a1d722a29fc",
+  "generatedSha256": "26bebb467f35e4eb9a1de7163cf66654cd7adde763d7c7a59857570c1ad4a622",
   "actors": [
     {
       "actor": "OOW_00092_Paris_Building_01_paris_building_01_bottom_42",
@@ -1265,7 +1266,7 @@
       "nonEmissiveOtherTriangles": 0,
       "addedZeroUV0": false,
       "unrealMesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWInterior_OOW_00092_Paris_Building_01_paris_building_01_bottom_42.OOWInterior_OOW_00092_Paris_Building_01_paris_building_01_bottom_42",
-      "unrealMaterial": "/Game/Materials/OOW/Instances/MI_glass__window_v5_bc00ed9809.MI_glass__window_v5_bc00ed9809"
+      "unrealMaterial": "/Game/Materials/OOW/Instances/MI_glass__window_v14_glassback_0c5c0c7440.MI_glass__window_v14_glassback_0c5c0c7440"
     },
     {
       "actor": "OOW_00093_Paris_Building_01_paris_building_01_bottom_43",
@@ -1283,7 +1284,7 @@
       "nonEmissiveOtherTriangles": 0,
       "addedZeroUV0": false,
       "unrealMesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWInterior_OOW_00093_Paris_Building_01_paris_building_01_bottom_43.OOWInterior_OOW_00093_Paris_Building_01_paris_building_01_bottom_43",
-      "unrealMaterial": "/Game/Materials/OOW/Instances/MI_glass__window_v5_bc00ed9809.MI_glass__window_v5_bc00ed9809"
+      "unrealMaterial": "/Game/Materials/OOW/Instances/MI_glass__window_v14_glassback_0c5c0c7440.MI_glass__window_v14_glassback_0c5c0c7440"
     },
     {
       "actor": "OOW_00107_Paris_Building_01_paris_building_01_bottom_63",
@@ -1301,7 +1302,7 @@
       "nonEmissiveOtherTriangles": 0,
       "addedZeroUV0": false,
       "unrealMesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWInterior_OOW_00107_Paris_Building_01_paris_building_01_bottom_63.OOWInterior_OOW_00107_Paris_Building_01_paris_building_01_bottom_63",
-      "unrealMaterial": "/Game/Materials/OOW/Instances/MI_glass__window_v5_bc00ed9809.MI_glass__window_v5_bc00ed9809"
+      "unrealMaterial": "/Game/Materials/OOW/Instances/MI_glass__window_v14_glassback_0c5c0c7440.MI_glass__window_v14_glassback_0c5c0c7440"
     },
     {
       "actor": "OOW_00108_Paris_Building_01_paris_building_01_bottom_64",
@@ -1319,7 +1320,7 @@
       "nonEmissiveOtherTriangles": 0,
       "addedZeroUV0": false,
       "unrealMesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWInterior_OOW_00108_Paris_Building_01_paris_building_01_bottom_64.OOWInterior_OOW_00108_Paris_Building_01_paris_building_01_bottom_64",
-      "unrealMaterial": "/Game/Materials/OOW/Instances/MI_glass__window_v5_bc00ed9809.MI_glass__window_v5_bc00ed9809"
+      "unrealMaterial": "/Game/Materials/OOW/Instances/MI_glass__window_v14_glassback_0c5c0c7440.MI_glass__window_v14_glassback_0c5c0c7440"
     },
     {
       "actor": "OOW_00109_Paris_Building_01_paris_building_01_bottom_65",
@@ -1337,7 +1338,7 @@
       "nonEmissiveOtherTriangles": 0,
       "addedZeroUV0": false,
       "unrealMesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWInterior_OOW_00109_Paris_Building_01_paris_building_01_bottom_65.OOWInterior_OOW_00109_Paris_Building_01_paris_building_01_bottom_65",
-      "unrealMaterial": "/Game/Materials/OOW/Instances/MI_glass__window_v5_bc00ed9809.MI_glass__window_v5_bc00ed9809"
+      "unrealMaterial": "/Game/Materials/OOW/Instances/MI_glass__window_v14_glassback_0c5c0c7440.MI_glass__window_v14_glassback_0c5c0c7440"
     },
     {
       "actor": "OOW_00110_Paris_Building_01_paris_building_01_bottom_66",
@@ -1355,7 +1356,7 @@
       "nonEmissiveOtherTriangles": 0,
       "addedZeroUV0": false,
       "unrealMesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWInterior_OOW_00110_Paris_Building_01_paris_building_01_bottom_66.OOWInterior_OOW_00110_Paris_Building_01_paris_building_01_bottom_66",
-      "unrealMaterial": "/Game/Materials/OOW/Instances/MI_glass__window_v5_bc00ed9809.MI_glass__window_v5_bc00ed9809"
+      "unrealMaterial": "/Game/Materials/OOW/Instances/MI_glass__window_v14_glassback_0c5c0c7440.MI_glass__window_v14_glassback_0c5c0c7440"
     },
     {
       "actor": "OOW_00165_Paris_Building_01_paris_building_01_bottom_123",
@@ -1373,7 +1374,7 @@
       "nonEmissiveOtherTriangles": 1,
       "addedZeroUV0": false,
       "unrealMesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWInterior_OOW_00165_Paris_Building_01_paris_building_01_bottom_123.OOWInterior_OOW_00165_Paris_Building_01_paris_building_01_bottom_123",
-      "unrealMaterial": "/Game/Materials/OOW/Instances/MI_glass__window_v5_bc00ed9809.MI_glass__window_v5_bc00ed9809"
+      "unrealMaterial": "/Game/Materials/OOW/Instances/MI_glass__window_v14_glassback_0c5c0c7440.MI_glass__window_v14_glassback_0c5c0c7440"
     },
     {
       "actor": "OOW_00191_Paris_Building_01_paris_building_01_bottom_147",
@@ -1391,7 +1392,7 @@
       "nonEmissiveOtherTriangles": 0,
       "addedZeroUV0": false,
       "unrealMesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWInterior_OOW_00191_Paris_Building_01_paris_building_01_bottom_147.OOWInterior_OOW_00191_Paris_Building_01_paris_building_01_bottom_147",
-      "unrealMaterial": "/Game/Materials/OOW/Instances/MI_glass__window_v5_bc00ed9809.MI_glass__window_v5_bc00ed9809"
+      "unrealMaterial": "/Game/Materials/OOW/Instances/MI_glass__window_v14_glassback_0c5c0c7440.MI_glass__window_v14_glassback_0c5c0c7440"
     },
     {
       "actor": "OOW_00192_Paris_Building_01_paris_building_01_bottom_148",
@@ -1409,7 +1410,7 @@
       "nonEmissiveOtherTriangles": 0,
       "addedZeroUV0": false,
       "unrealMesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWInterior_OOW_00192_Paris_Building_01_paris_building_01_bottom_148.OOWInterior_OOW_00192_Paris_Building_01_paris_building_01_bottom_148",
-      "unrealMaterial": "/Game/Materials/OOW/Instances/MI_glass__window_v5_bc00ed9809.MI_glass__window_v5_bc00ed9809"
+      "unrealMaterial": "/Game/Materials/OOW/Instances/MI_glass__window_v14_fff60b3e8a.MI_glass__window_v14_fff60b3e8a"
     },
     {
       "actor": "OOW_00193_Paris_Building_01_paris_building_01_bottom_149",
@@ -1427,7 +1428,7 @@
       "nonEmissiveOtherTriangles": 0,
       "addedZeroUV0": false,
       "unrealMesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWInterior_OOW_00193_Paris_Building_01_paris_building_01_bottom_149.OOWInterior_OOW_00193_Paris_Building_01_paris_building_01_bottom_149",
-      "unrealMaterial": "/Game/Materials/OOW/Instances/MI_glass__window_v5_bc00ed9809.MI_glass__window_v5_bc00ed9809"
+      "unrealMaterial": "/Game/Materials/OOW/Instances/MI_glass__window_v14_glassback_0c5c0c7440.MI_glass__window_v14_glassback_0c5c0c7440"
     },
     {
       "actor": "OOW_00194_Paris_Building_01_paris_building_01_bottom_150",
@@ -1445,7 +1446,7 @@
       "nonEmissiveOtherTriangles": 0,
       "addedZeroUV0": false,
       "unrealMesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWInterior_OOW_00194_Paris_Building_01_paris_building_01_bottom_150.OOWInterior_OOW_00194_Paris_Building_01_paris_building_01_bottom_150",
-      "unrealMaterial": "/Game/Materials/OOW/Instances/MI_glass__window_v5_bc00ed9809.MI_glass__window_v5_bc00ed9809"
+      "unrealMaterial": "/Game/Materials/OOW/Instances/MI_glass__window_v14_fff60b3e8a.MI_glass__window_v14_fff60b3e8a"
     },
     {
       "actor": "OOW_00209_Paris_MainBalcony_01_1_4",
@@ -1463,7 +1464,7 @@
       "nonEmissiveOtherTriangles": 0,
       "addedZeroUV0": false,
       "unrealMesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWInterior_OOW_00209_Paris_MainBalcony_01_1_4.OOWInterior_OOW_00209_Paris_MainBalcony_01_1_4",
-      "unrealMaterial": "/Game/Materials/OOW/Instances/MI_glass__window_v5_cc27e73129.MI_glass__window_v5_cc27e73129"
+      "unrealMaterial": "/Game/Materials/OOW/Instances/MI_glass__window_v14_glassback_d88c2dc2d8.MI_glass__window_v14_glassback_d88c2dc2d8"
     },
     {
       "actor": "OOW_00215_Paris_Building_01_paris_building_01_6",
@@ -1481,7 +1482,7 @@
       "nonEmissiveOtherTriangles": 0,
       "addedZeroUV0": false,
       "unrealMesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWInterior_OOW_00215_Paris_Building_01_paris_building_01_6.OOWInterior_OOW_00215_Paris_Building_01_paris_building_01_6",
-      "unrealMaterial": "/Game/Materials/OOW/Instances/MI_glass__window_v5_cc27e73129.MI_glass__window_v5_cc27e73129"
+      "unrealMaterial": "/Game/Materials/OOW/Instances/MI_glass__window_v14_glassback_d88c2dc2d8.MI_glass__window_v14_glassback_d88c2dc2d8"
     },
     {
       "actor": "OOW_00225_Paris_Building_01_paris_building_01_15_1_1",
@@ -1499,7 +1500,7 @@
       "nonEmissiveOtherTriangles": 0,
       "addedZeroUV0": false,
       "unrealMesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWInterior_OOW_00225_Paris_Building_01_paris_building_01_15_1_1.OOWInterior_OOW_00225_Paris_Building_01_paris_building_01_15_1_1",
-      "unrealMaterial": "/Game/Materials/OOW/Instances/MI_glass__window_v5_cc27e73129.MI_glass__window_v5_cc27e73129"
+      "unrealMaterial": "/Game/Materials/OOW/Instances/MI_glass__window_v14_glassback_d88c2dc2d8.MI_glass__window_v14_glassback_d88c2dc2d8"
     },
     {
       "actor": "OOW_00228_Paris_Building_01_paris_building_01_17_1_1",
@@ -1517,7 +1518,7 @@
       "nonEmissiveOtherTriangles": 0,
       "addedZeroUV0": false,
       "unrealMesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWInterior_OOW_00228_Paris_Building_01_paris_building_01_17_1_1.OOWInterior_OOW_00228_Paris_Building_01_paris_building_01_17_1_1",
-      "unrealMaterial": "/Game/Materials/OOW/Instances/MI_glass__window_v5_cc27e73129.MI_glass__window_v5_cc27e73129"
+      "unrealMaterial": "/Game/Materials/OOW/Instances/MI_glass__window_v14_glassback_d88c2dc2d8.MI_glass__window_v14_glassback_d88c2dc2d8"
     },
     {
       "actor": "OOW_00230_Paris_Building_01_paris_building_01_18_1_1",
@@ -1535,7 +1536,7 @@
       "nonEmissiveOtherTriangles": 0,
       "addedZeroUV0": false,
       "unrealMesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWInterior_OOW_00230_Paris_Building_01_paris_building_01_18_1_1.OOWInterior_OOW_00230_Paris_Building_01_paris_building_01_18_1_1",
-      "unrealMaterial": "/Game/Materials/OOW/Instances/MI_glass__window_v5_cc27e73129.MI_glass__window_v5_cc27e73129"
+      "unrealMaterial": "/Game/Materials/OOW/Instances/MI_glass__window_v14_glassback_d88c2dc2d8.MI_glass__window_v14_glassback_d88c2dc2d8"
     },
     {
       "actor": "OOW_00235_Paris_Building_01_paris_building_01_22_1_1",
@@ -1553,7 +1554,7 @@
       "nonEmissiveOtherTriangles": 0,
       "addedZeroUV0": false,
       "unrealMesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWInterior_OOW_00235_Paris_Building_01_paris_building_01_22_1_1.OOWInterior_OOW_00235_Paris_Building_01_paris_building_01_22_1_1",
-      "unrealMaterial": "/Game/Materials/OOW/Instances/MI_glass__window_v5_cc27e73129.MI_glass__window_v5_cc27e73129"
+      "unrealMaterial": "/Game/Materials/OOW/Instances/MI_glass__window_v14_glassback_d88c2dc2d8.MI_glass__window_v14_glassback_d88c2dc2d8"
     },
     {
       "actor": "OOW_00238_Paris_Building_01_paris_building_01_24_1_1",
@@ -1571,7 +1572,7 @@
       "nonEmissiveOtherTriangles": 0,
       "addedZeroUV0": false,
       "unrealMesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWInterior_OOW_00238_Paris_Building_01_paris_building_01_24_1_1.OOWInterior_OOW_00238_Paris_Building_01_paris_building_01_24_1_1",
-      "unrealMaterial": "/Game/Materials/OOW/Instances/MI_glass__window_v5_cc27e73129.MI_glass__window_v5_cc27e73129"
+      "unrealMaterial": "/Game/Materials/OOW/Instances/MI_glass__window_v14_glassback_d88c2dc2d8.MI_glass__window_v14_glassback_d88c2dc2d8"
     },
     {
       "actor": "OOW_00240_Paris_Building_01_paris_building_01_25_1_1",
@@ -1589,7 +1590,7 @@
       "nonEmissiveOtherTriangles": 0,
       "addedZeroUV0": false,
       "unrealMesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWInterior_OOW_00240_Paris_Building_01_paris_building_01_25_1_1.OOWInterior_OOW_00240_Paris_Building_01_paris_building_01_25_1_1",
-      "unrealMaterial": "/Game/Materials/OOW/Instances/MI_glass__window_v5_cc27e73129.MI_glass__window_v5_cc27e73129"
+      "unrealMaterial": "/Game/Materials/OOW/Instances/MI_glass__window_v14_glassback_d88c2dc2d8.MI_glass__window_v14_glassback_d88c2dc2d8"
     },
     {
       "actor": "OOW_00247_Paris_Building_01_paris_building_01_31_1_1",
@@ -1607,7 +1608,7 @@
       "nonEmissiveOtherTriangles": 0,
       "addedZeroUV0": false,
       "unrealMesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWInterior_OOW_00247_Paris_Building_01_paris_building_01_31_1_1.OOWInterior_OOW_00247_Paris_Building_01_paris_building_01_31_1_1",
-      "unrealMaterial": "/Game/Materials/OOW/Instances/MI_glass__window_v5_cc27e73129.MI_glass__window_v5_cc27e73129"
+      "unrealMaterial": "/Game/Materials/OOW/Instances/MI_glass__window_v14_glassback_d88c2dc2d8.MI_glass__window_v14_glassback_d88c2dc2d8"
     },
     {
       "actor": "OOW_00250_Paris_Building_01_paris_building_01_33_1_1",
@@ -1625,7 +1626,7 @@
       "nonEmissiveOtherTriangles": 0,
       "addedZeroUV0": false,
       "unrealMesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWInterior_OOW_00250_Paris_Building_01_paris_building_01_33_1_1.OOWInterior_OOW_00250_Paris_Building_01_paris_building_01_33_1_1",
-      "unrealMaterial": "/Game/Materials/OOW/Instances/MI_glass__window_v5_cc27e73129.MI_glass__window_v5_cc27e73129"
+      "unrealMaterial": "/Game/Materials/OOW/Instances/MI_glass__window_v14_glassback_d88c2dc2d8.MI_glass__window_v14_glassback_d88c2dc2d8"
     },
     {
       "actor": "OOW_00252_Paris_Building_01_paris_building_01_34_1_1",
@@ -1643,7 +1644,7 @@
       "nonEmissiveOtherTriangles": 0,
       "addedZeroUV0": false,
       "unrealMesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWInterior_OOW_00252_Paris_Building_01_paris_building_01_34_1_1.OOWInterior_OOW_00252_Paris_Building_01_paris_building_01_34_1_1",
-      "unrealMaterial": "/Game/Materials/OOW/Instances/MI_glass__window_v5_cc27e73129.MI_glass__window_v5_cc27e73129"
+      "unrealMaterial": "/Game/Materials/OOW/Instances/MI_glass__window_v14_glassback_d88c2dc2d8.MI_glass__window_v14_glassback_d88c2dc2d8"
     },
     {
       "actor": "OOW_00254_Paris_Building_01_paris_building_01_35_1_1",
@@ -1661,7 +1662,7 @@
       "nonEmissiveOtherTriangles": 0,
       "addedZeroUV0": false,
       "unrealMesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWInterior_OOW_00254_Paris_Building_01_paris_building_01_35_1_1.OOWInterior_OOW_00254_Paris_Building_01_paris_building_01_35_1_1",
-      "unrealMaterial": "/Game/Materials/OOW/Instances/MI_glass__window_v5_cc27e73129.MI_glass__window_v5_cc27e73129"
+      "unrealMaterial": "/Game/Materials/OOW/Instances/MI_glass__window_v14_glassback_d88c2dc2d8.MI_glass__window_v14_glassback_d88c2dc2d8"
     },
     {
       "actor": "OOW_00256_Paris_Building_01_paris_building_01_36_1_1",
@@ -1679,7 +1680,7 @@
       "nonEmissiveOtherTriangles": 0,
       "addedZeroUV0": false,
       "unrealMesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWInterior_OOW_00256_Paris_Building_01_paris_building_01_36_1_1.OOWInterior_OOW_00256_Paris_Building_01_paris_building_01_36_1_1",
-      "unrealMaterial": "/Game/Materials/OOW/Instances/MI_glass__window_v5_cc27e73129.MI_glass__window_v5_cc27e73129"
+      "unrealMaterial": "/Game/Materials/OOW/Instances/MI_glass__window_v14_glassback_d88c2dc2d8.MI_glass__window_v14_glassback_d88c2dc2d8"
     },
     {
       "actor": "OOW_00259_Paris_Building_01_paris_building_01_38_1_1",
@@ -1697,7 +1698,7 @@
       "nonEmissiveOtherTriangles": 0,
       "addedZeroUV0": false,
       "unrealMesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWInterior_OOW_00259_Paris_Building_01_paris_building_01_38_1_1.OOWInterior_OOW_00259_Paris_Building_01_paris_building_01_38_1_1",
-      "unrealMaterial": "/Game/Materials/OOW/Instances/MI_glass__window_v5_cc27e73129.MI_glass__window_v5_cc27e73129"
+      "unrealMaterial": "/Game/Materials/OOW/Instances/MI_glass__window_v14_glassback_d88c2dc2d8.MI_glass__window_v14_glassback_d88c2dc2d8"
     },
     {
       "actor": "OOW_00262_Paris_Building_01_paris_building_01_40_1_1",
@@ -1715,7 +1716,7 @@
       "nonEmissiveOtherTriangles": 0,
       "addedZeroUV0": false,
       "unrealMesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWInterior_OOW_00262_Paris_Building_01_paris_building_01_40_1_1.OOWInterior_OOW_00262_Paris_Building_01_paris_building_01_40_1_1",
-      "unrealMaterial": "/Game/Materials/OOW/Instances/MI_glass__window_v5_cc27e73129.MI_glass__window_v5_cc27e73129"
+      "unrealMaterial": "/Game/Materials/OOW/Instances/MI_glass__window_v14_glassback_d88c2dc2d8.MI_glass__window_v14_glassback_d88c2dc2d8"
     },
     {
       "actor": "OOW_00264_Paris_Building_01_paris_building_01_41_1_1",
@@ -1733,7 +1734,7 @@
       "nonEmissiveOtherTriangles": 0,
       "addedZeroUV0": false,
       "unrealMesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWInterior_OOW_00264_Paris_Building_01_paris_building_01_41_1_1.OOWInterior_OOW_00264_Paris_Building_01_paris_building_01_41_1_1",
-      "unrealMaterial": "/Game/Materials/OOW/Instances/MI_glass__window_v5_cc27e73129.MI_glass__window_v5_cc27e73129"
+      "unrealMaterial": "/Game/Materials/OOW/Instances/MI_glass__window_v14_glassback_d88c2dc2d8.MI_glass__window_v14_glassback_d88c2dc2d8"
     },
     {
       "actor": "OOW_00268_Paris_Building_01_paris_building_01_44_1_1",
@@ -1751,7 +1752,7 @@
       "nonEmissiveOtherTriangles": 0,
       "addedZeroUV0": false,
       "unrealMesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWInterior_OOW_00268_Paris_Building_01_paris_building_01_44_1_1.OOWInterior_OOW_00268_Paris_Building_01_paris_building_01_44_1_1",
-      "unrealMaterial": "/Game/Materials/OOW/Instances/MI_glass__window_v5_cc27e73129.MI_glass__window_v5_cc27e73129"
+      "unrealMaterial": "/Game/Materials/OOW/Instances/MI_glass__window_v14_glassback_d88c2dc2d8.MI_glass__window_v14_glassback_d88c2dc2d8"
     },
     {
       "actor": "OOW_00273_Paris_Building_01_paris_building_01_48_1_1",
@@ -1769,7 +1770,7 @@
       "nonEmissiveOtherTriangles": 0,
       "addedZeroUV0": false,
       "unrealMesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWInterior_OOW_00273_Paris_Building_01_paris_building_01_48_1_1.OOWInterior_OOW_00273_Paris_Building_01_paris_building_01_48_1_1",
-      "unrealMaterial": "/Game/Materials/OOW/Instances/MI_glass__window_v5_cc27e73129.MI_glass__window_v5_cc27e73129"
+      "unrealMaterial": "/Game/Materials/OOW/Instances/MI_glass__window_v14_glassback_d88c2dc2d8.MI_glass__window_v14_glassback_d88c2dc2d8"
     },
     {
       "actor": "OOW_00275_Paris_Building_01_paris_building_01_50_1",
@@ -1787,7 +1788,7 @@
       "nonEmissiveOtherTriangles": 0,
       "addedZeroUV0": false,
       "unrealMesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWInterior_OOW_00275_Paris_Building_01_paris_building_01_50_1.OOWInterior_OOW_00275_Paris_Building_01_paris_building_01_50_1",
-      "unrealMaterial": "/Game/Materials/OOW/Instances/MI_glass__window_v5_cc27e73129.MI_glass__window_v5_cc27e73129"
+      "unrealMaterial": "/Game/Materials/OOW/Instances/MI_glass__window_v14_glassback_d88c2dc2d8.MI_glass__window_v14_glassback_d88c2dc2d8"
     },
     {
       "actor": "OOW_00341_Paris_Building_01_paris_building_01_202",
@@ -1805,7 +1806,7 @@
       "nonEmissiveOtherTriangles": 0,
       "addedZeroUV0": false,
       "unrealMesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWInterior_OOW_00341_Paris_Building_01_paris_building_01_202.OOWInterior_OOW_00341_Paris_Building_01_paris_building_01_202",
-      "unrealMaterial": "/Game/Materials/OOW/Instances/MI_glass__window_v5_cc27e73129.MI_glass__window_v5_cc27e73129"
+      "unrealMaterial": "/Game/Materials/OOW/Instances/MI_glass__window_v14_glassback_d88c2dc2d8.MI_glass__window_v14_glassback_d88c2dc2d8"
     },
     {
       "actor": "OOW_00346_Paris_Building_01_paris_building_01_207",
@@ -1823,7 +1824,7 @@
       "nonEmissiveOtherTriangles": 0,
       "addedZeroUV0": false,
       "unrealMesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWInterior_OOW_00346_Paris_Building_01_paris_building_01_207.OOWInterior_OOW_00346_Paris_Building_01_paris_building_01_207",
-      "unrealMaterial": "/Game/Materials/OOW/Instances/MI_glass__window_v5_cc27e73129.MI_glass__window_v5_cc27e73129"
+      "unrealMaterial": "/Game/Materials/OOW/Instances/MI_glass__window_v14_glassback_d88c2dc2d8.MI_glass__window_v14_glassback_d88c2dc2d8"
     },
     {
       "actor": "OOW_00352_Paris_Building_01_paris_building_01_213",
@@ -1841,7 +1842,7 @@
       "nonEmissiveOtherTriangles": 0,
       "addedZeroUV0": false,
       "unrealMesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWInterior_OOW_00352_Paris_Building_01_paris_building_01_213.OOWInterior_OOW_00352_Paris_Building_01_paris_building_01_213",
-      "unrealMaterial": "/Game/Materials/OOW/Instances/MI_glass__window_v5_cc27e73129.MI_glass__window_v5_cc27e73129"
+      "unrealMaterial": "/Game/Materials/OOW/Instances/MI_glass__window_v14_glassback_d88c2dc2d8.MI_glass__window_v14_glassback_d88c2dc2d8"
     },
     {
       "actor": "OOW_00371_Paris_Building_01_paris_building_01_229_1_2",
@@ -1859,7 +1860,7 @@
       "nonEmissiveOtherTriangles": 0,
       "addedZeroUV0": false,
       "unrealMesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWInterior_OOW_00371_Paris_Building_01_paris_building_01_229_1_2.OOWInterior_OOW_00371_Paris_Building_01_paris_building_01_229_1_2",
-      "unrealMaterial": "/Game/Materials/OOW/Instances/MI_glass__window_v5_cc27e73129.MI_glass__window_v5_cc27e73129"
+      "unrealMaterial": "/Game/Materials/OOW/Instances/MI_glass__window_v14_glassback_d88c2dc2d8.MI_glass__window_v14_glassback_d88c2dc2d8"
     },
     {
       "actor": "OOW_00398_Paris_Building_01_paris_building_01_255_1_1",
@@ -1877,7 +1878,7 @@
       "nonEmissiveOtherTriangles": 0,
       "addedZeroUV0": false,
       "unrealMesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWInterior_OOW_00398_Paris_Building_01_paris_building_01_255_1_1.OOWInterior_OOW_00398_Paris_Building_01_paris_building_01_255_1_1",
-      "unrealMaterial": "/Game/Materials/OOW/Instances/MI_glass__window_v5_cc27e73129.MI_glass__window_v5_cc27e73129"
+      "unrealMaterial": "/Game/Materials/OOW/Instances/MI_glass__window_v14_glassback_d88c2dc2d8.MI_glass__window_v14_glassback_d88c2dc2d8"
     },
     {
       "actor": "OOW_00467_paris_building_02_7",
@@ -1895,7 +1896,7 @@
       "nonEmissiveOtherTriangles": 0,
       "addedZeroUV0": true,
       "unrealMesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWInterior_OOW_00467_paris_building_02_7.OOWInterior_OOW_00467_paris_building_02_7",
-      "unrealMaterial": "/Game/Materials/OOW/Instances/MI_glass__window_v5_e8c3a2e099.MI_glass__window_v5_e8c3a2e099"
+      "unrealMaterial": "/Game/Materials/OOW/Instances/MI_glass__window_v14_glassback_ac52f8f337.MI_glass__window_v14_glassback_ac52f8f337"
     },
     {
       "actor": "OOW_00474_paris_building_03_3",
@@ -1913,7 +1914,7 @@
       "nonEmissiveOtherTriangles": 0,
       "addedZeroUV0": false,
       "unrealMesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWInterior_OOW_00474_paris_building_03_3.OOWInterior_OOW_00474_paris_building_03_3",
-      "unrealMaterial": "/Game/Materials/OOW/Instances/MI_glass__window_v5_bc00ed9809.MI_glass__window_v5_bc00ed9809"
+      "unrealMaterial": "/Game/Materials/OOW/Instances/MI_glass__window_v14_glassback_0c5c0c7440.MI_glass__window_v14_glassback_0c5c0c7440"
     },
     {
       "actor": "OOW_00486_paris_building_03_mirrored_5",
@@ -1931,7 +1932,7 @@
       "nonEmissiveOtherTriangles": 0,
       "addedZeroUV0": false,
       "unrealMesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWInterior_OOW_00486_paris_building_03_mirrored_5.OOWInterior_OOW_00486_paris_building_03_mirrored_5",
-      "unrealMaterial": "/Game/Materials/OOW/Instances/MI_glass__window_v5_bc00ed9809.MI_glass__window_v5_bc00ed9809"
+      "unrealMaterial": "/Game/Materials/OOW/Instances/MI_glass__window_v14_glassback_0c5c0c7440.MI_glass__window_v14_glassback_0c5c0c7440"
     },
     {
       "actor": "OOW_00496_paris_building_03_mirrored_5__2_",
@@ -1949,7 +1950,7 @@
       "nonEmissiveOtherTriangles": 0,
       "addedZeroUV0": false,
       "unrealMesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWInterior_OOW_00496_paris_building_03_mirrored_5__2_.OOWInterior_OOW_00496_paris_building_03_mirrored_5__2_",
-      "unrealMaterial": "/Game/Materials/OOW/Instances/MI_glass__window_v5_bc00ed9809.MI_glass__window_v5_bc00ed9809"
+      "unrealMaterial": "/Game/Materials/OOW/Instances/MI_glass__window_v14_glassback_0c5c0c7440.MI_glass__window_v14_glassback_0c5c0c7440"
     },
     {
       "actor": "OOW_00508_paris_building_04_7",
@@ -1967,7 +1968,7 @@
       "nonEmissiveOtherTriangles": 0,
       "addedZeroUV0": false,
       "unrealMesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWInterior_OOW_00508_paris_building_04_7.OOWInterior_OOW_00508_paris_building_04_7",
-      "unrealMaterial": "/Game/Materials/OOW/Instances/MI_glass__window_v5_bc00ed9809.MI_glass__window_v5_bc00ed9809"
+      "unrealMaterial": "/Game/Materials/OOW/Instances/MI_glass__window_v14_glassback_0c5c0c7440.MI_glass__window_v14_glassback_0c5c0c7440"
     },
     {
       "actor": "OOW_00513_paris_building_04_12",
@@ -1985,7 +1986,7 @@
       "nonEmissiveOtherTriangles": 0,
       "addedZeroUV0": false,
       "unrealMesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWInterior_OOW_00513_paris_building_04_12.OOWInterior_OOW_00513_paris_building_04_12",
-      "unrealMaterial": "/Game/Materials/OOW/Instances/MI_glass__window_v5_67b8de1ae5.MI_glass__window_v5_67b8de1ae5"
+      "unrealMaterial": "/Game/Materials/OOW/Instances/MI_glass__window_v14_glassback_a5d9a12b1d.MI_glass__window_v14_glassback_a5d9a12b1d"
     },
     {
       "actor": "OOW_00524_paris_building_05_1_1",
@@ -2003,7 +2004,7 @@
       "nonEmissiveOtherTriangles": 6,
       "addedZeroUV0": false,
       "unrealMesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWInterior_OOW_00524_paris_building_05_1_1.OOWInterior_OOW_00524_paris_building_05_1_1",
-      "unrealMaterial": "/Game/Materials/OOW/Instances/MI_glass__window_v5_cc27e73129.MI_glass__window_v5_cc27e73129"
+      "unrealMaterial": "/Game/Materials/OOW/Instances/MI_glass__window_v14_glassback_d88c2dc2d8.MI_glass__window_v14_glassback_d88c2dc2d8"
     },
     {
       "actor": "OOW_00567_paris_building_05_41_1",
@@ -2021,7 +2022,7 @@
       "nonEmissiveOtherTriangles": 7,
       "addedZeroUV0": false,
       "unrealMesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWInterior_OOW_00567_paris_building_05_41_1.OOWInterior_OOW_00567_paris_building_05_41_1",
-      "unrealMaterial": "/Game/Materials/OOW/Instances/MI_glass__window_v5_cc27e73129.MI_glass__window_v5_cc27e73129"
+      "unrealMaterial": "/Game/Materials/OOW/Instances/MI_glass__window_v14_glassback_d88c2dc2d8.MI_glass__window_v14_glassback_d88c2dc2d8"
     },
     {
       "actor": "OOW_00591_paris_building_05_56",
@@ -2039,7 +2040,7 @@
       "nonEmissiveOtherTriangles": 0,
       "addedZeroUV0": false,
       "unrealMesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWInterior_OOW_00591_paris_building_05_56.OOWInterior_OOW_00591_paris_building_05_56",
-      "unrealMaterial": "/Game/Materials/OOW/Instances/MI_glass__window_v5_cc27e73129.MI_glass__window_v5_cc27e73129"
+      "unrealMaterial": "/Game/Materials/OOW/Instances/MI_glass__window_v14_glassback_d88c2dc2d8.MI_glass__window_v14_glassback_d88c2dc2d8"
     },
     {
       "actor": "OOW_00601_paris_building_05_66",
@@ -2057,7 +2058,7 @@
       "nonEmissiveOtherTriangles": 0,
       "addedZeroUV0": false,
       "unrealMesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWInterior_OOW_00601_paris_building_05_66.OOWInterior_OOW_00601_paris_building_05_66",
-      "unrealMaterial": "/Game/Materials/OOW/Instances/MI_glass__window_v5_67b8de1ae5.MI_glass__window_v5_67b8de1ae5"
+      "unrealMaterial": "/Game/Materials/OOW/Instances/MI_glass__window_v14_glassback_a5d9a12b1d.MI_glass__window_v14_glassback_a5d9a12b1d"
     },
     {
       "actor": "OOW_00608_paris_building_05_1__2__1",
@@ -2075,7 +2076,7 @@
       "nonEmissiveOtherTriangles": 4,
       "addedZeroUV0": false,
       "unrealMesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWInterior_OOW_00608_paris_building_05_1__2__1.OOWInterior_OOW_00608_paris_building_05_1__2__1",
-      "unrealMaterial": "/Game/Materials/OOW/Instances/MI_glass__window_v5_cc27e73129.MI_glass__window_v5_cc27e73129"
+      "unrealMaterial": "/Game/Materials/OOW/Instances/MI_glass__window_v14_glassback_d88c2dc2d8.MI_glass__window_v14_glassback_d88c2dc2d8"
     },
     {
       "actor": "OOW_00651_paris_building_05_41__2__1",
@@ -2093,7 +2094,7 @@
       "nonEmissiveOtherTriangles": 6,
       "addedZeroUV0": false,
       "unrealMesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWInterior_OOW_00651_paris_building_05_41__2__1.OOWInterior_OOW_00651_paris_building_05_41__2__1",
-      "unrealMaterial": "/Game/Materials/OOW/Instances/MI_glass__window_v5_cc27e73129.MI_glass__window_v5_cc27e73129"
+      "unrealMaterial": "/Game/Materials/OOW/Instances/MI_glass__window_v14_glassback_d88c2dc2d8.MI_glass__window_v14_glassback_d88c2dc2d8"
     },
     {
       "actor": "OOW_00675_paris_building_05_56__2_",
@@ -2111,7 +2112,7 @@
       "nonEmissiveOtherTriangles": 0,
       "addedZeroUV0": false,
       "unrealMesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWInterior_OOW_00675_paris_building_05_56__2_.OOWInterior_OOW_00675_paris_building_05_56__2_",
-      "unrealMaterial": "/Game/Materials/OOW/Instances/MI_glass__window_v5_cc27e73129.MI_glass__window_v5_cc27e73129"
+      "unrealMaterial": "/Game/Materials/OOW/Instances/MI_glass__window_v14_glassback_d88c2dc2d8.MI_glass__window_v14_glassback_d88c2dc2d8"
     },
     {
       "actor": "OOW_00685_paris_building_05_66__2_",
@@ -2129,7 +2130,7 @@
       "nonEmissiveOtherTriangles": 0,
       "addedZeroUV0": false,
       "unrealMesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWInterior_OOW_00685_paris_building_05_66__2_.OOWInterior_OOW_00685_paris_building_05_66__2_",
-      "unrealMaterial": "/Game/Materials/OOW/Instances/MI_glass__window_v5_67b8de1ae5.MI_glass__window_v5_67b8de1ae5"
+      "unrealMaterial": "/Game/Materials/OOW/Instances/MI_glass__window_v14_glassback_a5d9a12b1d.MI_glass__window_v14_glassback_a5d9a12b1d"
     },
     {
       "actor": "OOW_00703_paris_building_07_9",
@@ -2147,7 +2148,7 @@
       "nonEmissiveOtherTriangles": 0,
       "addedZeroUV0": true,
       "unrealMesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWInterior_OOW_00703_paris_building_07_9.OOWInterior_OOW_00703_paris_building_07_9",
-      "unrealMaterial": "/Game/Materials/OOW/Instances/MI_glass__window_v5_e8c3a2e099.MI_glass__window_v5_e8c3a2e099"
+      "unrealMaterial": "/Game/Materials/OOW/Instances/MI_glass__window_v14_glassback_ac52f8f337.MI_glass__window_v14_glassback_ac52f8f337"
     },
     {
       "actor": "OOW_00715_paris_building_07_9__2_",
@@ -2165,7 +2166,7 @@
       "nonEmissiveOtherTriangles": 0,
       "addedZeroUV0": true,
       "unrealMesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWInterior_OOW_00715_paris_building_07_9__2_.OOWInterior_OOW_00715_paris_building_07_9__2_",
-      "unrealMaterial": "/Game/Materials/OOW/Instances/MI_glass__window_v5_e8c3a2e099.MI_glass__window_v5_e8c3a2e099"
+      "unrealMaterial": "/Game/Materials/OOW/Instances/MI_glass__window_v14_glassback_ac52f8f337.MI_glass__window_v14_glassback_ac52f8f337"
     },
     {
       "actor": "OOW_00719_Paris_Building_08_paris_building_08_1",
@@ -2183,7 +2184,7 @@
       "nonEmissiveOtherTriangles": 0,
       "addedZeroUV0": false,
       "unrealMesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWInterior_OOW_00719_Paris_Building_08_paris_building_08_1.OOWInterior_OOW_00719_Paris_Building_08_paris_building_08_1",
-      "unrealMaterial": "/Game/Materials/OOW/Instances/MI_glass__window_v5_cc27e73129.MI_glass__window_v5_cc27e73129"
+      "unrealMaterial": "/Game/Materials/OOW/Instances/MI_glass__window_v14_glassback_d88c2dc2d8.MI_glass__window_v14_glassback_d88c2dc2d8"
     },
     {
       "actor": "OOW_00731_Paris_Building_08_paris_building_08_1__2_",
@@ -2201,7 +2202,7 @@
       "nonEmissiveOtherTriangles": 0,
       "addedZeroUV0": false,
       "unrealMesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWInterior_OOW_00731_Paris_Building_08_paris_building_08_1__2_.OOWInterior_OOW_00731_Paris_Building_08_paris_building_08_1__2_",
-      "unrealMaterial": "/Game/Materials/OOW/Instances/MI_glass__window_v5_cc27e73129.MI_glass__window_v5_cc27e73129"
+      "unrealMaterial": "/Game/Materials/OOW/Instances/MI_glass__window_v14_glassback_d88c2dc2d8.MI_glass__window_v14_glassback_d88c2dc2d8"
     },
     {
       "actor": "OOW_00742_Paris_Building_08_paris_building_08_1__3_",
@@ -2219,7 +2220,7 @@
       "nonEmissiveOtherTriangles": 0,
       "addedZeroUV0": false,
       "unrealMesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWInterior_OOW_00742_Paris_Building_08_paris_building_08_1__3_.OOWInterior_OOW_00742_Paris_Building_08_paris_building_08_1__3_",
-      "unrealMaterial": "/Game/Materials/OOW/Instances/MI_glass__window_v5_cc27e73129.MI_glass__window_v5_cc27e73129"
+      "unrealMaterial": "/Game/Materials/OOW/Instances/MI_glass__window_v14_glassback_d88c2dc2d8.MI_glass__window_v14_glassback_d88c2dc2d8"
     },
     {
       "actor": "OOW_00756_paris_building_09_4",
@@ -2237,7 +2238,7 @@
       "nonEmissiveOtherTriangles": 28,
       "addedZeroUV0": false,
       "unrealMesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWInterior_OOW_00756_paris_building_09_4.OOWInterior_OOW_00756_paris_building_09_4",
-      "unrealMaterial": "/Game/Materials/OOW/Instances/MI_glass__window_v5_cc27e73129.MI_glass__window_v5_cc27e73129"
+      "unrealMaterial": "/Game/Materials/OOW/Instances/MI_glass__window_v14_glassback_d88c2dc2d8.MI_glass__window_v14_glassback_d88c2dc2d8"
     },
     {
       "actor": "OOW_00760_paris_building_09_8",
@@ -2255,7 +2256,7 @@
       "nonEmissiveOtherTriangles": 0,
       "addedZeroUV0": true,
       "unrealMesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWInterior_OOW_00760_paris_building_09_8.OOWInterior_OOW_00760_paris_building_09_8",
-      "unrealMaterial": "/Game/Materials/OOW/Instances/MI_glass__window_v5_e8c3a2e099.MI_glass__window_v5_e8c3a2e099"
+      "unrealMaterial": "/Game/Materials/OOW/Instances/MI_glass__window_v14_glassback_ac52f8f337.MI_glass__window_v14_glassback_ac52f8f337"
     },
     {
       "actor": "OOW_00780_paris_building_10_10",
@@ -2273,7 +2274,7 @@
       "nonEmissiveOtherTriangles": 0,
       "addedZeroUV0": false,
       "unrealMesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWInterior_OOW_00780_paris_building_10_10.OOWInterior_OOW_00780_paris_building_10_10",
-      "unrealMaterial": "/Game/Materials/OOW/Instances/MI_glass__window_v5_cc27e73129.MI_glass__window_v5_cc27e73129"
+      "unrealMaterial": "/Game/Materials/OOW/Instances/MI_glass__window_v14_glassback_d88c2dc2d8.MI_glass__window_v14_glassback_d88c2dc2d8"
     },
     {
       "actor": "OOW_00789_paris_building_10_19",
@@ -2291,7 +2292,7 @@
       "nonEmissiveOtherTriangles": 0,
       "addedZeroUV0": false,
       "unrealMesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWInterior_OOW_00789_paris_building_10_19.OOWInterior_OOW_00789_paris_building_10_19",
-      "unrealMaterial": "/Game/Materials/OOW/Instances/MI_glass__window_v5_67b8de1ae5.MI_glass__window_v5_67b8de1ae5"
+      "unrealMaterial": "/Game/Materials/OOW/Instances/MI_glass__window_v14_glassback_a5d9a12b1d.MI_glass__window_v14_glassback_a5d9a12b1d"
     },
     {
       "actor": "OOW_00801_paris_building_10_10__2_",
@@ -2309,7 +2310,7 @@
       "nonEmissiveOtherTriangles": 0,
       "addedZeroUV0": false,
       "unrealMesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWInterior_OOW_00801_paris_building_10_10__2_.OOWInterior_OOW_00801_paris_building_10_10__2_",
-      "unrealMaterial": "/Game/Materials/OOW/Instances/MI_glass__window_v5_cc27e73129.MI_glass__window_v5_cc27e73129"
+      "unrealMaterial": "/Game/Materials/OOW/Instances/MI_glass__window_v14_glassback_d88c2dc2d8.MI_glass__window_v14_glassback_d88c2dc2d8"
     },
     {
       "actor": "OOW_00810_paris_building_10_19__2_",
@@ -2327,7 +2328,7 @@
       "nonEmissiveOtherTriangles": 0,
       "addedZeroUV0": false,
       "unrealMesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWInterior_OOW_00810_paris_building_10_19__2_.OOWInterior_OOW_00810_paris_building_10_19__2_",
-      "unrealMaterial": "/Game/Materials/OOW/Instances/MI_glass__window_v5_67b8de1ae5.MI_glass__window_v5_67b8de1ae5"
+      "unrealMaterial": "/Game/Materials/OOW/Instances/MI_glass__window_v14_glassback_a5d9a12b1d.MI_glass__window_v14_glassback_a5d9a12b1d"
     },
     {
       "actor": "OOW_00841_paris_building_11_27",
@@ -2345,7 +2346,7 @@
       "nonEmissiveOtherTriangles": 0,
       "addedZeroUV0": false,
       "unrealMesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWInterior_OOW_00841_paris_building_11_27.OOWInterior_OOW_00841_paris_building_11_27",
-      "unrealMaterial": "/Game/Materials/OOW/Instances/MI_glass__window_v5_cc27e73129.MI_glass__window_v5_cc27e73129"
+      "unrealMaterial": "/Game/Materials/OOW/Instances/MI_glass__window_v14_glassback_d88c2dc2d8.MI_glass__window_v14_glassback_d88c2dc2d8"
     },
     {
       "actor": "OOW_00851_paris_building_11_37",
@@ -2363,7 +2364,7 @@
       "nonEmissiveOtherTriangles": 0,
       "addedZeroUV0": false,
       "unrealMesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWInterior_OOW_00851_paris_building_11_37.OOWInterior_OOW_00851_paris_building_11_37",
-      "unrealMaterial": "/Game/Materials/OOW/Instances/MI_glass__window_v5_cc27e73129.MI_glass__window_v5_cc27e73129"
+      "unrealMaterial": "/Game/Materials/OOW/Instances/MI_glass__window_v14_glassback_d88c2dc2d8.MI_glass__window_v14_glassback_d88c2dc2d8"
     },
     {
       "actor": "OOW_00861_paris_building_11_47",
@@ -2381,7 +2382,7 @@
       "nonEmissiveOtherTriangles": 0,
       "addedZeroUV0": false,
       "unrealMesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWInterior_OOW_00861_paris_building_11_47.OOWInterior_OOW_00861_paris_building_11_47",
-      "unrealMaterial": "/Game/Materials/OOW/Instances/MI_glass__window_v5_cc27e73129.MI_glass__window_v5_cc27e73129"
+      "unrealMaterial": "/Game/Materials/OOW/Instances/MI_glass__window_v14_glassback_d88c2dc2d8.MI_glass__window_v14_glassback_d88c2dc2d8"
     },
     {
       "actor": "OOW_00909_paris_building_11_95",
@@ -2399,7 +2400,7 @@
       "nonEmissiveOtherTriangles": 0,
       "addedZeroUV0": false,
       "unrealMesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWInterior_OOW_00909_paris_building_11_95.OOWInterior_OOW_00909_paris_building_11_95",
-      "unrealMaterial": "/Game/Materials/OOW/Instances/MI_glass__window_v5_cc27e73129.MI_glass__window_v5_cc27e73129"
+      "unrealMaterial": "/Game/Materials/OOW/Instances/MI_glass__window_v14_glassback_d88c2dc2d8.MI_glass__window_v14_glassback_d88c2dc2d8"
     },
     {
       "actor": "OOW_00910_paris_building_11_96",
@@ -2417,7 +2418,7 @@
       "nonEmissiveOtherTriangles": 0,
       "addedZeroUV0": false,
       "unrealMesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWInterior_OOW_00910_paris_building_11_96.OOWInterior_OOW_00910_paris_building_11_96",
-      "unrealMaterial": "/Game/Materials/OOW/Instances/MI_glass__window_v5_cc27e73129.MI_glass__window_v5_cc27e73129"
+      "unrealMaterial": "/Game/Materials/OOW/Instances/MI_glass__window_v14_glassback_d88c2dc2d8.MI_glass__window_v14_glassback_d88c2dc2d8"
     },
     {
       "actor": "OOW_00926_paris_building_11_112",
@@ -2435,7 +2436,7 @@
       "nonEmissiveOtherTriangles": 0,
       "addedZeroUV0": false,
       "unrealMesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWInterior_OOW_00926_paris_building_11_112.OOWInterior_OOW_00926_paris_building_11_112",
-      "unrealMaterial": "/Game/Materials/OOW/Instances/MI_glass__window_v5_cc27e73129.MI_glass__window_v5_cc27e73129"
+      "unrealMaterial": "/Game/Materials/OOW/Instances/MI_glass__window_v14_glassback_d88c2dc2d8.MI_glass__window_v14_glassback_d88c2dc2d8"
     },
     {
       "actor": "OOW_00936_paris_building_11_122",
@@ -2453,7 +2454,7 @@
       "nonEmissiveOtherTriangles": 0,
       "addedZeroUV0": false,
       "unrealMesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWInterior_OOW_00936_paris_building_11_122.OOWInterior_OOW_00936_paris_building_11_122",
-      "unrealMaterial": "/Game/Materials/OOW/Instances/MI_glass__window_v5_cc27e73129.MI_glass__window_v5_cc27e73129"
+      "unrealMaterial": "/Game/Materials/OOW/Instances/MI_glass__window_v14_glassback_d88c2dc2d8.MI_glass__window_v14_glassback_d88c2dc2d8"
     },
     {
       "actor": "OOW_00948_paris_building_11_134",
@@ -2471,13 +2472,14 @@
       "nonEmissiveOtherTriangles": 0,
       "addedZeroUV0": false,
       "unrealMesh": "/Game/Scenes/Alley/WindowInteriors/alley-window-interiors/StaticMeshes/OOWInterior_OOW_00948_paris_building_11_134.OOWInterior_OOW_00948_paris_building_11_134",
-      "unrealMaterial": "/Game/Materials/OOW/Instances/MI_glass__window_v5_cc27e73129.MI_glass__window_v5_cc27e73129"
+      "unrealMaterial": "/Game/Materials/OOW/Instances/MI_glass__window_v14_glassback_d88c2dc2d8.MI_glass__window_v14_glassback_d88c2dc2d8"
     }
   ],
   "rooms": [
     {
       "id": "81188e2339f54afe",
       "seed": 0.5042809247970581,
+      "flag": 0.5,
       "centerMeters": [
         -6.639038962566005,
         10.412170418797114,
@@ -2498,6 +2500,7 @@
     {
       "id": "8662d2c825fbe3a2",
       "seed": 0.5249453783035278,
+      "flag": 0.5,
       "centerMeters": [
         -6.960730766028622,
         9.459265406579899,
@@ -2518,6 +2521,7 @@
     {
       "id": "dd5e1e8884a754ea",
       "seed": 0.8647173643112183,
+      "flag": 0.5,
       "centerMeters": [
         -2.367197520892083,
         9.459654260659738,
@@ -2538,6 +2542,7 @@
     {
       "id": "5721f34f1e08e80c",
       "seed": 0.3403617739677429,
+      "flag": 0.5,
       "centerMeters": [
         2.2492781149549503,
         9.460043114739577,
@@ -2558,6 +2563,7 @@
     {
       "id": "597d3185f35f1525",
       "seed": 0.3495665192604065,
+      "flag": 0.5,
       "centerMeters": [
         -6.659842126629965,
         10.412170418797116,
@@ -2578,6 +2584,7 @@
     {
       "id": "0feb8781286ec87d",
       "seed": 0.06218761205673218,
+      "flag": 0.5,
       "centerMeters": [
         -8.83579851514748,
         10.412170418797114,
@@ -2598,6 +2605,7 @@
     {
       "id": "519d41a1db12dbb7",
       "seed": 0.3188057541847229,
+      "flag": 0.5,
       "centerMeters": [
         -11.111138610806135,
         10.412170418797114,
@@ -2618,6 +2626,7 @@
     {
       "id": "ceea35ced65f32ef",
       "seed": 0.8082612156867981,
+      "flag": 0.5,
       "centerMeters": [
         -11.090121143201552,
         10.412170418797116,
@@ -2638,6 +2647,7 @@
     {
       "id": "65750a9ce64bb75d",
       "seed": 0.39631712436676025,
+      "flag": 0.5,
       "centerMeters": [
         -10.87453156371684,
         10.80992698244357,
@@ -2658,6 +2668,7 @@
     {
       "id": "f9d1adff22f86c1e",
       "seed": 0.9758556485176086,
+      "flag": 0.5,
       "centerMeters": [
         -11.709313770980541,
         10.74196599531965,
@@ -2678,6 +2689,7 @@
     {
       "id": "a9420b6160040a02",
       "seed": 0.6611639857292175,
+      "flag": 0.5,
       "centerMeters": [
         -6.947230215691963,
         9.45926540659525,
@@ -2698,6 +2710,7 @@
     {
       "id": "7b948892fe9eede1",
       "seed": 0.48273515701293945,
+      "flag": 0.5,
       "centerMeters": [
         -2.3536971519161605,
         9.459654260659738,
@@ -2718,6 +2731,7 @@
     {
       "id": "633c8f160be8d625",
       "seed": 0.3876428008079529,
+      "flag": 0.5,
       "centerMeters": [
         2.2627783016643304,
         9.460043114724224,
@@ -2738,6 +2752,7 @@
     {
       "id": "441d06664e9b49dc",
       "seed": 0.26606786251068115,
+      "flag": 0.5,
       "centerMeters": [
         -11.092330063741196,
         10.412170418797114,
@@ -2758,6 +2773,7 @@
     {
       "id": "f6739c4245bf6177",
       "seed": 0.9627015590667725,
+      "flag": 0.5,
       "centerMeters": [
         -8.81932249988538,
         10.412170418797114,
@@ -2778,6 +2794,7 @@
     {
       "id": "f3bc9747bde848c8",
       "seed": 0.9520964026451111,
+      "flag": 0.5,
       "centerMeters": [
         -6.641099496139688,
         10.412170418797116,
@@ -2798,6 +2815,7 @@
     {
       "id": "2c83c15b0cceb5e4",
       "seed": 0.17388540506362915,
+      "flag": 0.5,
       "centerMeters": [
         -11.343533286431791,
         16.46140094692432,
@@ -2818,6 +2836,7 @@
     {
       "id": "572e7fdeb416619d",
       "seed": 0.3405532240867615,
+      "flag": 0.5,
       "centerMeters": [
         -11.25868263068289,
         16.250464076607592,
@@ -2838,6 +2857,7 @@
     {
       "id": "b9c0945584bc8400",
       "seed": 0.7255947589874268,
+      "flag": 0.5,
       "centerMeters": [
         -8.33750982775622,
         16.5792302309016,
@@ -2858,6 +2878,7 @@
     {
       "id": "4e17733214410f38",
       "seed": 0.30504530668258667,
+      "flag": 0.5,
       "centerMeters": [
         -11.289988741601787,
         16.582810736937684,
@@ -2878,6 +2899,7 @@
     {
       "id": "0f147fee39cc64d5",
       "seed": 0.058906495571136475,
+      "flag": 0.5,
       "centerMeters": [
         -7.01157126975339,
         26.72108554869533,
@@ -2898,6 +2920,7 @@
     {
       "id": "73242b8d7760dfd1",
       "seed": 0.44977062940597534,
+      "flag": 0.5,
       "centerMeters": [
         -6.088280791785954,
         16.5792302309016,
@@ -2918,6 +2941,7 @@
     {
       "id": "cd7a3a54b4c5df1f",
       "seed": 0.802646279335022,
+      "flag": 0.5,
       "centerMeters": [
         -6.021008190175783,
         26.764488537580316,
@@ -2938,6 +2962,7 @@
     {
       "id": "6b295e4825bffea2",
       "seed": 0.4185999631881714,
+      "flag": 0.5,
       "centerMeters": [
         -6.021008584001703,
         21.8905440174904,
@@ -2958,6 +2983,7 @@
     {
       "id": "81beed727082f31b",
       "seed": 0.5068195462226868,
+      "flag": 0.5,
       "centerMeters": [
         -8.270295461071914,
         21.8905440174904,
@@ -2978,6 +3004,7 @@
     {
       "id": "9af577158d9cc46a",
       "seed": 0.6053079962730408,
+      "flag": 0.5,
       "centerMeters": [
         2.4925549799039612,
         16.5792302309016,
@@ -2998,6 +3025,7 @@
     {
       "id": "752cf91452a90f95",
       "seed": 0.4577174782752991,
+      "flag": 0.5,
       "centerMeters": [
         -2.1357990832462614,
         16.5792302309016,
@@ -3018,6 +3046,7 @@
     {
       "id": "b6db58490b35357b",
       "seed": 0.7142844200134277,
+      "flag": 0.5,
       "centerMeters": [
         -8.270295067491634,
         26.764488537580316,
@@ -3038,6 +3067,7 @@
     {
       "id": "a90de42da4212c12",
       "seed": 0.6603682041168213,
+      "flag": 0.5,
       "centerMeters": [
         6.715692992044167,
         16.5792302309016,
@@ -3058,6 +3088,7 @@
     {
       "id": "691092874452ba09",
       "seed": 0.4104090929031372,
+      "flag": 0.5,
       "centerMeters": [
         -2.1230696520443595,
         21.8905440174904,
@@ -3078,6 +3109,7 @@
     {
       "id": "0f7069a7d9cffd0f",
       "seed": 0.060308992862701416,
+      "flag": 0.5,
       "centerMeters": [
         2.5156859302553465,
         21.8905440174904,
@@ -3098,6 +3130,7 @@
     {
       "id": "84bb8d3995568dd1",
       "seed": 0.5184867978096008,
+      "flag": 0.5,
       "centerMeters": [
         -2.1466764031296113,
         26.730481684655253,
@@ -3118,6 +3151,7 @@
     {
       "id": "2e7fcc5e751af943",
       "seed": 0.18163752555847168,
+      "flag": 0.5,
       "centerMeters": [
         2.496241319135436,
         26.730481684655253,
@@ -3138,6 +3172,7 @@
     {
       "id": "6043280cc8b04263",
       "seed": 0.3760247230529785,
+      "flag": 0.5,
       "centerMeters": [
         -6.850840442763104,
         16.5792302309016,
@@ -3158,6 +3193,7 @@
     {
       "id": "5a25ed497cec5f07",
       "seed": 0.35214120149612427,
+      "flag": 0.5,
       "centerMeters": [
         -5.3616707943269715,
         27.35386386646887,
@@ -3178,6 +3214,7 @@
     {
       "id": "82f0634eaf56aee4",
       "seed": 0.5114805102348328,
+      "flag": 0.5,
       "centerMeters": [
         -8.654536227851558,
         27.35386386646887,
@@ -3198,6 +3235,7 @@
     {
       "id": "9f960d2b2a6e35f1",
       "seed": 0.6233833432197571,
+      "flag": 0.5,
       "centerMeters": [
         -11.385750016336782,
         20.990515308288057,
@@ -3218,6 +3256,7 @@
     {
       "id": "413f97fddbf702f4",
       "seed": 0.2548765540122986,
+      "flag": 0.5,
       "centerMeters": [
         -7.551451504329874,
         20.990515308288057,
@@ -3238,6 +3277,7 @@
     {
       "id": "aa93fd787cfdf2cd",
       "seed": 0.6663206219673157,
+      "flag": 0.5,
       "centerMeters": [
         -11.407270229483409,
         20.990515308288057,
@@ -3258,6 +3298,7 @@
     {
       "id": "d95e4d2b303e8f05",
       "seed": 0.8490951657295227,
+      "flag": 0.5,
       "centerMeters": [
         6.412565950324309,
         27.35357514693586,
@@ -3278,6 +3319,7 @@
     {
       "id": "1c5ad4c8e3ada43f",
       "seed": 0.11076092720031738,
+      "flag": 0.5,
       "centerMeters": [
         6.412565950324309,
         22.359412490931767,
@@ -3298,6 +3340,7 @@
     {
       "id": "80ac507a864190ba",
       "seed": 0.502629280090332,
+      "flag": 0.5,
       "centerMeters": [
         -1.3316410406538908,
         31.54235929259405,
@@ -3318,6 +3361,7 @@
     {
       "id": "17c9d5bc313bd4b2",
       "seed": 0.09292346239089966,
+      "flag": 0.5,
       "centerMeters": [
         -8.177111278006944,
         31.54235929259405,
@@ -3338,6 +3382,7 @@
     {
       "id": "97b787fd1ce96f1e",
       "seed": 0.5926441550254822,
+      "flag": 0.5,
       "centerMeters": [
         2.3005808390151845,
         22.173181278407586,
@@ -3358,6 +3403,7 @@
     {
       "id": "a55a4153964dd202",
       "seed": 0.6459084153175354,
+      "flag": 0.5,
       "centerMeters": [
         4.152803368336576,
         22.173181278407586,
@@ -3378,6 +3424,7 @@
     {
       "id": "92d4f3209093ef7c",
       "seed": 0.5735618472099304,
+      "flag": 0.5,
       "centerMeters": [
         4.152803368336576,
         27.77672342716354,
@@ -3398,6 +3445,7 @@
     {
       "id": "335a2179b110062e",
       "seed": 0.2005940079689026,
+      "flag": 0.5,
       "centerMeters": [
         5.994187848919982,
         22.173181278407586,
@@ -3418,6 +3466,7 @@
     {
       "id": "ed746c6e00921814",
       "seed": 0.9275577068328857,
+      "flag": 0.5,
       "centerMeters": [
         7.877027865926175,
         22.173181278407586,
@@ -3438,6 +3487,7 @@
     {
       "id": "b2f70c4185df6077",
       "seed": 0.6990821361541748,
+      "flag": 0.5,
       "centerMeters": [
         7.877027865926175,
         27.77672342716354,
@@ -3458,6 +3508,7 @@
     {
       "id": "7e7038b030e435f7",
       "seed": 0.4938998222351074,
+      "flag": 0.5,
       "centerMeters": [
         5.994187848919982,
         27.77672342716354,
@@ -3478,6 +3529,7 @@
     {
       "id": "4b6d49391b358eec",
       "seed": 0.2946363091468811,
+      "flag": 0.5,
       "centerMeters": [
         22.362350955459654,
         22.04745991304698,
@@ -3498,6 +3550,7 @@
     {
       "id": "5b3bf3318c43bd53",
       "seed": 0.3563835024833679,
+      "flag": 0.5,
       "centerMeters": [
         24.245461923684292,
         22.04745991304698,
@@ -3518,6 +3571,7 @@
     {
       "id": "0adb2e98f0f9d72b",
       "seed": 0.04240691661834717,
+      "flag": 0.5,
       "centerMeters": [
         24.245461923684292,
         27.651002061802927,
@@ -3538,6 +3592,7 @@
     {
       "id": "75c956c71565739c",
       "seed": 0.4601033926010132,
+      "flag": 0.5,
       "centerMeters": [
         22.362350955459654,
         27.651002061802927,
@@ -3558,6 +3613,7 @@
     {
       "id": "0b18925b1812ee43",
       "seed": 0.04334366321563721,
+      "flag": 0.5,
       "centerMeters": [
         20.505793206643062,
         22.04745991304698,
@@ -3578,6 +3634,7 @@
     {
       "id": "8cc386da77fbf6a0",
       "seed": 0.5498584508895874,
+      "flag": 0.5,
       "centerMeters": [
         20.505793206643062,
         27.651002061802927,
@@ -3598,6 +3655,7 @@
     {
       "id": "5af6e816d0459c3b",
       "seed": 0.3553299903869629,
+      "flag": 0.5,
       "centerMeters": [
         7.568549903721318,
         16.00687344893184,
@@ -3618,6 +3676,7 @@
     {
       "id": "c8be570751ae0dca",
       "seed": 0.7841543555259705,
+      "flag": 0.5,
       "centerMeters": [
         24.126785290003376,
         16.00687344893184,
@@ -3638,6 +3697,7 @@
     {
       "id": "7b6e37f2701362cb",
       "seed": 0.48215049505233765,
+      "flag": 0.5,
       "centerMeters": [
         3.7333708821766116,
         34.17632025572438,
@@ -3658,6 +3718,7 @@
     {
       "id": "3bbb365d7b7942ad",
       "seed": 0.23332536220550537,
+      "flag": 0.5,
       "centerMeters": [
         5.588844826119397,
         34.17632025572438,
@@ -3678,6 +3739,7 @@
     {
       "id": "8d718febb9a17fec",
       "seed": 0.5525140166282654,
+      "flag": 0.5,
       "centerMeters": [
         7.470330087033342,
         34.17632025572438,
@@ -3698,6 +3760,7 @@
     {
       "id": "ce3edc7e064c188a",
       "seed": 0.8056466579437256,
+      "flag": 0.5,
       "centerMeters": [
         1.7798125971550753,
         34.17632025572438,
@@ -3718,6 +3781,7 @@
     {
       "id": "fd74e9f395d215c8",
       "seed": 0.9900651574134827,
+      "flag": 0.5,
       "centerMeters": [
         29.777201999551103,
         34.17632025572438,
@@ -3738,6 +3802,7 @@
     {
       "id": "4f7a4b1dec24a79e",
       "seed": 0.31045979261398315,
+      "flag": 0.5,
       "centerMeters": [
         27.921728055608313,
         34.17632025572438,
@@ -3758,6 +3823,7 @@
     {
       "id": "4415ae0534fd1176",
       "seed": 0.2659558057785034,
+      "flag": 0.5,
       "centerMeters": [
         26.04024279469437,
         34.17632025572438,
@@ -3778,6 +3844,7 @@
     {
       "id": "555449f220c05ca3",
       "seed": 0.3333173394203186,
+      "flag": 0.5,
       "centerMeters": [
         24.149545192353138,
         34.17632025572438,
@@ -3798,6 +3865,7 @@
     {
       "id": "27c22da1dbcd4b72",
       "seed": 0.1553066372871399,
+      "flag": 0.5,
       "centerMeters": [
         22.264808516817794,
         34.17632025572438,
@@ -3818,6 +3886,7 @@
     {
       "id": "82aa3d69921b5f7b",
       "seed": 0.5104101300239563,
+      "flag": 0.5,
       "centerMeters": [
         20.381697548593152,
         34.17632025572438,
@@ -3838,6 +3907,7 @@
     {
       "id": "d1700d2cd6e08271",
       "seed": 0.8181160092353821,
+      "flag": 0.5,
       "centerMeters": [
         18.49804467793161,
         34.17632025572438,
@@ -3858,6 +3928,7 @@
     {
       "id": "6c356e4150b860e4",
       "seed": 0.4226902723312378,
+      "flag": 0.5,
       "centerMeters": [
         31.730760284572636,
         34.17632025572438,
@@ -3878,6 +3949,7 @@
     {
       "id": "8b5ab5db13316e1a",
       "seed": 0.5443528294563293,
+      "flag": 0.5,
       "centerMeters": [
         -24.726978088246863,
         16.59952351719533,
@@ -3898,6 +3970,7 @@
     {
       "id": "884062815d17097f",
       "seed": 0.532232403755188,
+      "flag": 0.5,
       "centerMeters": [
         -24.684104585140084,
         21.934962847449395,
@@ -3918,6 +3991,7 @@
     {
       "id": "520a90c36f3021b8",
       "seed": 0.32047367095947266,
+      "flag": 0.5,
       "centerMeters": [
         -21.7817365561958,
         21.934962847449395,
@@ -3938,6 +4012,7 @@
     {
       "id": "14d1e8de4299c4b8",
       "seed": 0.08132791519165039,
+      "flag": 0.5,
       "centerMeters": [
         -21.82461005930257,
         16.59952351719533,
@@ -3958,6 +4033,7 @@
     {
       "id": "dc49da76a57aac14",
       "seed": 0.8605018854141235,
+      "flag": 0.5,
       "centerMeters": [
         -27.629346117191155,
         16.59952351719533,
@@ -3978,6 +4054,7 @@
     {
       "id": "a306cc6e1be26d46",
       "seed": 0.6368224620819092,
+      "flag": 0.5,
       "centerMeters": [
         -27.58647261408437,
         21.934962847449395,
@@ -3998,6 +4075,7 @@
     {
       "id": "011d64e12be6ef46",
       "seed": 0.004354715347290039,
+      "flag": 0.5,
       "centerMeters": [
         -24.684104585140084,
         11.134623020697266,
@@ -4018,6 +4096,7 @@
     {
       "id": "8cc05095668e608f",
       "seed": 0.549809455871582,
+      "flag": 0.5,
       "centerMeters": [
         -21.7817365561958,
         11.134623020697266,
@@ -4038,6 +4117,7 @@
     {
       "id": "0d7170c188d72a0b",
       "seed": 0.052512168884277344,
+      "flag": 0.5,
       "centerMeters": [
         -22.273520856538273,
         21.930759562831085,
@@ -4058,6 +4138,7 @@
     {
       "id": "43872c8fcce86794",
       "seed": 0.2637813091278076,
+      "flag": 0.5,
       "centerMeters": [
         -25.623959025794598,
         21.930759562831085,
@@ -4078,6 +4159,7 @@
     {
       "id": "5ec768d032ca5340",
       "seed": 0.37023019790649414,
+      "flag": 0.5,
       "centerMeters": [
         -29.01306741353939,
         21.930759562831085,
@@ -4098,6 +4180,7 @@
     {
       "id": "f8a9e84a36c5032c",
       "seed": 0.9713425636291504,
+      "flag": 0.5,
       "centerMeters": [
         -32.32357437892175,
         21.930759562831085,
@@ -4118,6 +4201,7 @@
     {
       "id": "bb4bc829dd36e450",
       "seed": 0.7316250801086426,
+      "flag": 0.5,
       "centerMeters": [
         -35.08134941699611,
         21.930759562831085,
@@ -4138,6 +4222,7 @@
     {
       "id": "0ffe3d77b271e710",
       "seed": 0.0624731183052063,
+      "flag": 0.5,
       "centerMeters": [
         -38.39143605391664,
         21.930759562831085,
@@ -4158,6 +4243,7 @@
     {
       "id": "0624f3ee2d014fef",
       "seed": 0.02400130033493042,
+      "flag": 0.5,
       "centerMeters": [
         -70.16937691077166,
         27.06234075303439,
@@ -4178,6 +4264,7 @@
     {
       "id": "7dc8bae456367eea",
       "seed": 0.4913440942764282,
+      "flag": 0.5,
       "centerMeters": [
         -63.64944578602132,
         27.06234075303439,
@@ -4198,6 +4285,7 @@
     {
       "id": "f45fd7f8ac7dbbfb",
       "seed": 0.9545873999595642,
+      "flag": 0.5,
       "centerMeters": [
         -57.33805394727645,
         27.06234075303439,
@@ -4218,6 +4306,7 @@
     {
       "id": "5bb7cffb0cd7320c",
       "seed": 0.358273446559906,
+      "flag": 0.5,
       "centerMeters": [
         -48.637993543971675,
         22.03614674261472,
@@ -4238,6 +4327,7 @@
     {
       "id": "9958cd02ff0d828e",
       "seed": 0.599011242389679,
+      "flag": 1.0,
       "centerMeters": [
         -51.71682784078781,
         22.03614674261472,
@@ -4258,6 +4348,7 @@
     {
       "id": "73e0f9a6173ce769",
       "seed": 0.4526515603065491,
+      "flag": 0.5,
       "centerMeters": [
         -45.600668495512835,
         16.70191041543838,
@@ -4278,6 +4369,7 @@
     {
       "id": "bf422fadee42e0f9",
       "seed": 0.7471036314964294,
+      "flag": 0.5,
       "centerMeters": [
         -45.55935785599936,
         11.23738668671957,
@@ -4298,6 +4390,7 @@
     {
       "id": "947010d51154a8f8",
       "seed": 0.5798349380493164,
+      "flag": 0.5,
       "centerMeters": [
         -48.637993543971675,
         11.23738668671957,
@@ -4318,6 +4411,7 @@
     {
       "id": "0b6d11a39eac3257",
       "seed": 0.04463297128677368,
+      "flag": 1.0,
       "centerMeters": [
         -51.75813848030127,
         16.70191041543838,
@@ -4338,6 +4432,7 @@
     {
       "id": "a4898f3921632667",
       "seed": 0.6427239775657654,
+      "flag": 0.5,
       "centerMeters": [
         -45.55935785599936,
         22.03614674261472,
@@ -4358,6 +4453,7 @@
     {
       "id": "e59796eea275c05a",
       "seed": 0.8968442678451538,
+      "flag": 0.5,
       "centerMeters": [
         -48.679304183485144,
         16.70191041543838,
@@ -4378,6 +4474,7 @@
     {
       "id": "ac45b23e5df70ab9",
       "seed": 0.6729384660720825,
+      "flag": 0.5,
       "centerMeters": [
         77.0197326167058,
         27.0627244317201,
@@ -4398,6 +4495,7 @@
     {
       "id": "14935ae60e5bc411",
       "seed": 0.08037340641021729,
+      "flag": 0.5,
       "centerMeters": [
         75.75860651689749,
         27.0627244317201,
@@ -4418,6 +4516,7 @@
     {
       "id": "7dcaedf1d26744b6",
       "seed": 0.49137765169143677,
+      "flag": 0.5,
       "centerMeters": [
         74.53698120584755,
         27.0627244317201,
@@ -4438,6 +4537,7 @@
     {
       "id": "3802b60dd9279378",
       "seed": 0.21879136562347412,
+      "flag": 0.5,
       "centerMeters": [
         66.9849015055731,
         22.036339660357708,
@@ -4458,6 +4558,7 @@
     {
       "id": "8ae3ad64b64b24fd",
       "seed": 0.5425365567207336,
+      "flag": 0.5,
       "centerMeters": [
         71.37383776844044,
         22.036339660357708,
@@ -4478,6 +4579,7 @@
     {
       "id": "396ced511be61f39",
       "seed": 0.22431832551956177,
+      "flag": 0.5,
       "centerMeters": [
         62.603213093854094,
         16.702283607748985,
@@ -4498,6 +4600,7 @@
     {
       "id": "ea9b4f4d5f7cdff0",
       "seed": 0.9164323210716248,
+      "flag": 0.5,
       "centerMeters": [
         62.59524045759094,
         11.236860253076895,
@@ -4518,6 +4621,7 @@
     {
       "id": "91f19b23b9dbc1f2",
       "seed": 0.5700928568840027,
+      "flag": 0.5,
       "centerMeters": [
         66.9849015055731,
         11.236860253076895,
@@ -4538,6 +4642,7 @@
     {
       "id": "e8170281a4b96603",
       "seed": 0.906601071357727,
+      "flag": 0.5,
       "centerMeters": [
         71.3818104047036,
         16.702283607748985,
@@ -4558,6 +4663,7 @@
     {
       "id": "4b00c3083fb543dc",
       "seed": 0.2929803729057312,
+      "flag": 0.5,
       "centerMeters": [
         62.59524045759094,
         22.036339660357708,
@@ -4578,6 +4684,7 @@
     {
       "id": "3037019b7076f055",
       "seed": 0.18833929300308228,
+      "flag": 0.5,
       "centerMeters": [
         66.99214935672143,
         16.702283607748985,
@@ -4598,6 +4705,7 @@
     {
       "id": "4cc5d225eeea1cf4",
       "seed": 0.29989349842071533,
+      "flag": 0.5,
       "centerMeters": [
         -4.060038409690455,
         31.82552909550303,
@@ -4618,6 +4726,7 @@
     {
       "id": "42b0624dfebbb157",
       "seed": 0.260503888130188,
+      "flag": 0.5,
       "centerMeters": [
         -0.9548724803645487,
         31.82552909550303,
@@ -4638,6 +4747,7 @@
     {
       "id": "2599860c4258a427",
       "seed": 0.1468738317489624,
+      "flag": 0.5,
       "centerMeters": [
         2.1470680206329296,
         31.82552909550303,
@@ -4658,6 +4768,7 @@
     {
       "id": "7f9458d3e514b454",
       "seed": 0.49835729598999023,
+      "flag": 0.5,
       "centerMeters": [
         6.423985984129453,
         37.4246422859176,
@@ -4678,6 +4789,7 @@
     {
       "id": "e9bb7385e3779796",
       "seed": 0.9130164980888367,
+      "flag": 0.5,
       "centerMeters": [
         3.315594626475117,
         37.4246422859176,
@@ -4698,6 +4810,7 @@
     {
       "id": "73be057ce923cfff",
       "seed": 0.4521182179450989,
+      "flag": 0.5,
       "centerMeters": [
         0.2168795538060673,
         37.4246422859176,
@@ -4718,6 +4831,7 @@
     {
       "id": "1e4ab8baa140c1b2",
       "seed": 0.11832761764526367,
+      "flag": 0.5,
       "centerMeters": [
         -2.8907054467661615,
         37.4246422859176,
@@ -4738,6 +4852,7 @@
     {
       "id": "4a327fb9f14213c5",
       "seed": 0.2898330092430115,
+      "flag": 0.5,
       "centerMeters": [
         -4.060038409690455,
         26.69571572687485,
@@ -4758,6 +4873,7 @@
     {
       "id": "3c03c6be9843b918",
       "seed": 0.23443257808685303,
+      "flag": 0.5,
       "centerMeters": [
         2.1470680206329296,
         26.69571572687485,
@@ -4778,6 +4894,7 @@
     {
       "id": "c4705430a9b1e304",
       "seed": 0.7673389911651611,
+      "flag": 0.5,
       "centerMeters": [
         5.255920153762754,
         26.69571572687485,
@@ -4798,6 +4915,7 @@
     {
       "id": "1334c340197c99e6",
       "seed": 0.0750238299369812,
+      "flag": 0.5,
       "centerMeters": [
         2.1470680206329296,
         21.772329771266108,
@@ -4818,6 +4936,7 @@
     {
       "id": "b40edd55e07498dd",
       "seed": 0.7033517956733704,
+      "flag": 0.5,
       "centerMeters": [
         -4.060038409690455,
         21.772329771266108,
@@ -4838,6 +4957,7 @@
     {
       "id": "ce08115d54689e3a",
       "seed": 0.8048105835914612,
+      "flag": 0.5,
       "centerMeters": [
         -4.060038409690455,
         16.824983490931892,
@@ -4858,6 +4978,7 @@
     {
       "id": "e02f70cc96dde6a3",
       "seed": 0.8757238388061523,
+      "flag": 0.5,
       "centerMeters": [
         -0.9548724803645487,
         16.824983490931892,
@@ -4878,6 +4999,7 @@
     {
       "id": "a2b1239ba4b0666e",
       "seed": 0.6355153918266296,
+      "flag": 0.5,
       "centerMeters": [
         5.255920153762754,
         16.824983490931892,
@@ -4898,6 +5020,7 @@
     {
       "id": "ad5ccf27853c17b7",
       "seed": 0.6771973967552185,
+      "flag": 0.5,
       "centerMeters": [
         5.255920153762754,
         21.772329771266108,
@@ -4918,6 +5041,7 @@
     {
       "id": "558d283dcdcdae2b",
       "seed": 0.3341851234436035,
+      "flag": 0.5,
       "centerMeters": [
         2.1470680206329296,
         16.824983490931892,
@@ -4938,6 +5062,7 @@
     {
       "id": "5d438b38cdaaf0af",
       "seed": 0.3643118739128113,
+      "flag": 0.5,
       "centerMeters": [
         -0.9548724803645487,
         26.69571572687485,
@@ -4958,6 +5083,7 @@
     {
       "id": "455176acc3e15e1d",
       "seed": 0.270774245262146,
+      "flag": 0.5,
       "centerMeters": [
         5.255920153762754,
         31.82552909550303,
@@ -4978,6 +5104,7 @@
     {
       "id": "211594bc6deade26",
       "seed": 0.12923550605773926,
+      "flag": 0.5,
       "centerMeters": [
         -0.9253828499332002,
         21.772329771266108,
@@ -4998,6 +5125,7 @@
     {
       "id": "8ae7bae7a3207b4f",
       "seed": 0.5425983667373657,
+      "flag": 0.5,
       "centerMeters": [
         -3.7249394451404836,
         10.051814388969262,
@@ -5018,6 +5146,7 @@
     {
       "id": "c53ed08c11a4dd86",
       "seed": 0.7704896926879883,
+      "flag": 0.5,
       "centerMeters": [
         -4.594998736734139,
         11.923484370408918,
@@ -5038,6 +5167,7 @@
     {
       "id": "fa2eaff38e65ec09",
       "seed": 0.9772748351097107,
+      "flag": 0.5,
       "centerMeters": [
         -5.02997078559653,
         10.051814388969262,
@@ -5058,6 +5188,7 @@
     {
       "id": "02f05fbec9b749e6",
       "seed": 0.011480271816253662,
+      "flag": 0.5,
       "centerMeters": [
         -3.28985220240922,
         11.923484370408918,
@@ -5078,6 +5209,7 @@
     {
       "id": "23a14b8736e00c60",
       "seed": 0.13917988538742065,
+      "flag": 0.5,
       "centerMeters": [
         -0.15819168324264743,
         10.707958666066768,
@@ -5098,6 +5230,7 @@
     {
       "id": "0b986964ffac0186",
       "seed": 0.045294344425201416,
+      "flag": 0.5,
       "centerMeters": [
         -2.6364725781646525,
         10.707958666066768,
@@ -5118,6 +5251,7 @@
     {
       "id": "aecd61a34ee6771c",
       "seed": 0.6828213334083557,
+      "flag": 0.5,
       "centerMeters": [
         -1.255758865859402,
         10.539314842037495,
@@ -5138,6 +5272,7 @@
     {
       "id": "54b5ec15cb3a17b3",
       "seed": 0.3309009075164795,
+      "flag": 0.5,
       "centerMeters": [
         1.84495290053677,
         11.920719717555977,
@@ -5158,6 +5293,7 @@
     {
       "id": "359332d02c006314",
       "seed": 0.20927727222442627,
+      "flag": 0.5,
       "centerMeters": [
         1.818535106608687,
         10.058265245626119,
@@ -5178,6 +5314,7 @@
     {
       "id": "c320bfab5bf9f06e",
       "seed": 0.7622184157371521,
+      "flag": 0.5,
       "centerMeters": [
         3.078619168968327,
         10.836898319196887,
@@ -5198,6 +5335,7 @@
     {
       "id": "6386968feea0e477",
       "seed": 0.3887723684310913,
+      "flag": 0.5,
       "centerMeters": [
         -2.893335475779139,
         10.836898319196887,
@@ -5218,6 +5356,7 @@
     {
       "id": "672972fd552b5c34",
       "seed": 0.4029761552810669,
+      "flag": 0.5,
       "centerMeters": [
         9.958810528743788,
         9.748506171158043,
@@ -5238,6 +5377,7 @@
     {
       "id": "5cf2b88e589581f0",
       "seed": 0.36307859420776367,
+      "flag": 0.5,
       "centerMeters": [
         7.658450106243784,
         9.743715672405061,
@@ -5258,6 +5398,7 @@
     {
       "id": "d0715db165d0a6f3",
       "seed": 0.8142297863960266,
+      "flag": 0.5,
       "centerMeters": [
         17.190125802523944,
         33.06855301292553,
@@ -5278,6 +5419,7 @@
     {
       "id": "f85c8b471c96acfc",
       "seed": 0.9701620936393738,
+      "flag": 0.5,
       "centerMeters": [
         9.533861679920541,
         33.06855301292553,
@@ -5298,6 +5440,7 @@
     {
       "id": "531e534fb5417794",
       "seed": 0.32468146085739136,
+      "flag": 0.5,
       "centerMeters": [
         13.063245210797852,
         33.08378557024481,
@@ -5318,6 +5461,7 @@
     {
       "id": "edbe6b17118fe175",
       "seed": 0.928686797618866,
+      "flag": 0.5,
       "centerMeters": [
         16.144410742555337,
         10.492379810019765,
@@ -5338,6 +5482,7 @@
     {
       "id": "7e48d5a7cde65c56",
       "seed": 0.49329882860183716,
+      "flag": 0.5,
       "centerMeters": [
         13.27802426899971,
         17.475174492144475,
@@ -5358,6 +5503,7 @@
     {
       "id": "3c736e833409346f",
       "seed": 0.2361363172531128,
+      "flag": 0.5,
       "centerMeters": [
         10.992759857174638,
         17.452325656165556,
@@ -5378,6 +5524,7 @@
     {
       "id": "d3d3ac997ebc9eb6",
       "seed": 0.8274486064910889,
+      "flag": 0.5,
       "centerMeters": [
         10.992759857174638,
         22.781245427349376,
@@ -5398,6 +5545,7 @@
     {
       "id": "290459c94c2537b0",
       "seed": 0.160222589969635,
+      "flag": 0.5,
       "centerMeters": [
         13.27802426899971,
         22.798001240400588,
@@ -5418,6 +5566,7 @@
     {
       "id": "4d648e7220767ef7",
       "seed": 0.3023155927658081,
+      "flag": 0.5,
       "centerMeters": [
         10.992759857174638,
         28.369118672960973,
@@ -5438,6 +5587,7 @@
     {
       "id": "c899b649f6f238fb",
       "seed": 0.7835954427719116,
+      "flag": 0.5,
       "centerMeters": [
         8.462632086442133,
         28.369118672960973,
@@ -5458,6 +5608,7 @@
     {
       "id": "e746e538c70848f5",
       "seed": 0.9034255146980286,
+      "flag": 0.5,
       "centerMeters": [
         8.462632086442133,
         22.781245427349376,
@@ -5478,6 +5629,7 @@
     {
       "id": "1f93741c37e2b93b",
       "seed": 0.12334370613098145,
+      "flag": 0.5,
       "centerMeters": [
         8.462632086442133,
         17.452325656165556,
@@ -5498,6 +5650,7 @@
     {
       "id": "f25361a7e0e891bb",
       "seed": 0.9465847611427307,
+      "flag": 0.5,
       "centerMeters": [
         13.27802426899971,
         28.408723321991104,
@@ -5518,6 +5671,7 @@
     {
       "id": "a3cf9275bf039977",
       "seed": 0.6398860216140747,
+      "flag": 0.5,
       "centerMeters": [
         16.097570628798547,
         28.369118672960973,
@@ -5538,6 +5692,7 @@
     {
       "id": "c289a1c247cacc5c",
       "seed": 0.7599125504493713,
+      "flag": 0.5,
       "centerMeters": [
         16.097570628798547,
         22.781245427349376,
@@ -5558,6 +5713,7 @@
     {
       "id": "813e16aafc4c774d",
       "seed": 0.5048536062240601,
+      "flag": 0.5,
       "centerMeters": [
         16.097570628798547,
         17.452325656165556,
@@ -5578,6 +5734,7 @@
     {
       "id": "bdbb36cdda27bfb0",
       "seed": 0.7411378622055054,
+      "flag": 0.5,
       "centerMeters": [
         18.628079213464034,
         17.452325656165556,
@@ -5598,6 +5755,7 @@
     {
       "id": "ce743350573be0f6",
       "seed": 0.8064605593681335,
+      "flag": 0.5,
       "centerMeters": [
         18.690913512406066,
         10.492379810019765,
@@ -5618,6 +5776,7 @@
     {
       "id": "fac3bb5e2e86e036",
       "seed": 0.9795491099357605,
+      "flag": 0.5,
       "centerMeters": [
         18.628079213464034,
         22.781245427349376,
@@ -5638,6 +5797,7 @@
     {
       "id": "fab166d9937564bc",
       "seed": 0.9792693853378296,
+      "flag": 0.5,
       "centerMeters": [
         18.628079213464034,
         28.369118672960973,
@@ -5658,6 +5818,7 @@
     {
       "id": "a442a085b23b2fcf",
       "seed": 0.6416416168212891,
+      "flag": 0.5,
       "centerMeters": [
         9.576305471373527,
         9.6420608604095,
@@ -5678,6 +5839,7 @@
     {
       "id": "5bbf0cf5279fe42e",
       "seed": 0.3583838939666748,
+      "flag": 0.5,
       "centerMeters": [
         42.88499785440461,
         9.74790735881392,
@@ -5698,6 +5860,7 @@
     {
       "id": "5df08dfaa610a1a8",
       "seed": 0.36695176362991333,
+      "flag": 0.5,
       "centerMeters": [
         47.02747222927008,
         9.743715672405061,
@@ -5718,6 +5881,7 @@
     {
       "id": "72ba46899f5f8ba0",
       "seed": 0.4481548070907593,
+      "flag": 0.5,
       "centerMeters": [
         30.03011178477159,
         33.06855301292553,
@@ -5738,6 +5902,7 @@
     {
       "id": "edb767c64e4e6066",
       "seed": 0.9285797476768494,
+      "flag": 0.5,
       "centerMeters": [
         43.87107978945266,
         33.06855301292553,
@@ -5758,6 +5923,7 @@
     {
       "id": "b0666f4e6122f714",
       "seed": 0.6890630125999451,
+      "flag": 0.5,
       "centerMeters": [
         36.84591955728369,
         33.08378557024481,
@@ -5778,6 +5944,7 @@
     {
       "id": "af6c0eea99b1f32c",
       "seed": 0.6852425336837769,
+      "flag": 0.5,
       "centerMeters": [
         32.51492269747924,
         10.492379810019765,
@@ -5798,6 +5965,7 @@
     {
       "id": "40b463e705f21805",
       "seed": 0.25275248289108276,
+      "flag": 0.5,
       "centerMeters": [
         37.02985268691401,
         17.475174492144475,
@@ -5818,6 +5986,7 @@
     {
       "id": "ef133357eb48ba0d",
       "seed": 0.933886706829071,
+      "flag": 0.5,
       "centerMeters": [
         41.71767220192261,
         17.452325656165556,
@@ -5838,6 +6007,7 @@
     {
       "id": "cbf0d9c560ac7f4d",
       "seed": 0.7966437935829163,
+      "flag": 0.5,
       "centerMeters": [
         41.71767220192261,
         22.781245427349376,
@@ -5858,6 +6028,7 @@
     {
       "id": "bb646ca46ec96a8a",
       "seed": 0.7320010662078857,
+      "flag": 0.5,
       "centerMeters": [
         37.02985268691401,
         22.798001240400588,
@@ -5878,6 +6049,7 @@
     {
       "id": "b0617a1a26ff4102",
       "seed": 0.6889873743057251,
+      "flag": 0.5,
       "centerMeters": [
         41.71767220192261,
         28.369118672960973,
@@ -5898,6 +6070,7 @@
     {
       "id": "f7292f3d60f7837d",
       "seed": 0.9654721617698669,
+      "flag": 0.5,
       "centerMeters": [
         46.2924851823188,
         28.369118672960973,
@@ -5918,6 +6091,7 @@
     {
       "id": "1b634e49234daf4d",
       "seed": 0.10698401927947998,
+      "flag": 0.5,
       "centerMeters": [
         46.2924851823188,
         22.781245427349376,
@@ -5938,6 +6112,7 @@
     {
       "id": "a4a40c5da1811f2a",
       "seed": 0.6431281566619873,
+      "flag": 0.5,
       "centerMeters": [
         46.2924851823188,
         17.452325656165556,
@@ -5958,6 +6133,7 @@
     {
       "id": "eb8be66ab030aabd",
       "seed": 0.9201034307479858,
+      "flag": 0.5,
       "centerMeters": [
         37.02985268691401,
         28.408723321991104,
@@ -5978,6 +6154,7 @@
     {
       "id": "13eec9acebf425e8",
       "seed": 0.07786232233047485,
+      "flag": 0.5,
       "centerMeters": [
         32.48750409430454,
         28.369118672960973,
@@ -5998,6 +6175,7 @@
     {
       "id": "89a5eccde130ae39",
       "seed": 0.5376880168914795,
+      "flag": 0.5,
       "centerMeters": [
         32.48750409430454,
         22.781245427349376,
@@ -6018,6 +6196,7 @@
     {
       "id": "dab72a0f8b7ba897",
       "seed": 0.8543573617935181,
+      "flag": 0.5,
       "centerMeters": [
         32.48750409430454,
         17.452325656165556,
@@ -6038,6 +6217,7 @@
     {
       "id": "228797566553d06f",
       "seed": 0.13488143682479858,
+      "flag": 0.5,
       "centerMeters": [
         27.914023962673784,
         17.452325656165556,
@@ -6058,6 +6238,7 @@
     {
       "id": "44fcf982a9c9595b",
       "seed": 0.2694850564002991,
+      "flag": 0.5,
       "centerMeters": [
         27.910787044243435,
         10.492379810019765,
@@ -6078,6 +6259,7 @@
     {
       "id": "d255fdc2ec68f3e1",
       "seed": 0.8216245770454407,
+      "flag": 0.5,
       "centerMeters": [
         27.914214369640273,
         22.781245427349376,
@@ -6098,6 +6280,7 @@
     {
       "id": "da5bf402daf34efe",
       "seed": 0.8529655933380127,
+      "flag": 0.5,
       "centerMeters": [
         27.914214369640273,
         28.369118672960973,
@@ -6118,6 +6301,7 @@
     {
       "id": "6b1f5f214d2ca7b1",
       "seed": 0.41844743490219116,
+      "flag": 0.5,
       "centerMeters": [
         45.89892949925044,
         9.6420608604095,
@@ -6138,6 +6322,7 @@
     {
       "id": "15e4eb462d85b430",
       "seed": 0.08552426099777222,
+      "flag": 0.5,
       "centerMeters": [
         -37.741469063555826,
         11.586005466599744,
@@ -6158,6 +6343,7 @@
     {
       "id": "c0788cd7a3294f16",
       "seed": 0.7518393993377686,
+      "flag": 0.5,
       "centerMeters": [
         -37.74221088531102,
         17.521228602205486,
@@ -6178,6 +6364,7 @@
     {
       "id": "d3197b5f4fe0982e",
       "seed": 0.8246075510978699,
+      "flag": 0.5,
       "centerMeters": [
         -38.70843372145413,
         31.092764885801365,
@@ -6198,6 +6385,7 @@
     {
       "id": "2edb1c66726695e1",
       "seed": 0.1830308437347412,
+      "flag": 0.5,
       "centerMeters": [
         -35.04949064166806,
         31.092764885801365,
@@ -6218,6 +6406,7 @@
     {
       "id": "e8b830de95fc0139",
       "seed": 0.9090604782104492,
+      "flag": 0.5,
       "centerMeters": [
         -31.670678002187962,
         31.092764885801365,
@@ -6238,6 +6427,7 @@
     {
       "id": "826c3dba2227100c",
       "seed": 0.5094640851020813,
+      "flag": 0.5,
       "centerMeters": [
         -31.54939014521338,
         31.092764885801365,
@@ -6258,6 +6448,7 @@
     {
       "id": "43f203c19107d16a",
       "seed": 0.2654115557670593,
+      "flag": 0.5,
       "centerMeters": [
         -34.57212834219927,
         31.092764885801365,
@@ -6278,6 +6469,7 @@
     {
       "id": "a022ff611650fea6",
       "seed": 0.6255339980125427,
+      "flag": 0.5,
       "centerMeters": [
         -37.676930570853756,
         31.092764885801365,
@@ -6298,6 +6490,7 @@
     {
       "id": "088f2c77f880ed4c",
       "seed": 0.03343462944030762,
+      "flag": 0.5,
       "centerMeters": [
         -41.68972262786843,
         31.092764885801365,
@@ -6318,6 +6511,7 @@
     {
       "id": "0762ceebb689632f",
       "seed": 0.02885138988494873,
+      "flag": 1.0,
       "centerMeters": [
         -53.07631565925317,
         31.092764885801365,
@@ -6338,6 +6532,7 @@
     {
       "id": "6ee94972fc6b2739",
       "seed": 0.4332471489906311,
+      "flag": 1.0,
       "centerMeters": [
         -50.12924328129729,
         31.092764885801365,
@@ -6358,6 +6553,7 @@
     {
       "id": "bb0077ee2a158352",
       "seed": 0.7304758429527283,
+      "flag": 2.0,
       "centerMeters": [
         -46.999960934721344,
         31.092764885801365,
@@ -6378,6 +6574,7 @@
     {
       "id": "75fdb9b1e6c53243",
       "seed": 0.46090275049209595,
+      "flag": 1.0,
       "centerMeters": [
         -53.07631565925317,
         24.364627021610232,
@@ -6398,6 +6595,7 @@
     {
       "id": "8c708a69b99a2b9a",
       "seed": 0.548592209815979,
+      "flag": 1.0,
       "centerMeters": [
         -50.12924328129729,
         24.364627021610232,
@@ -6418,6 +6616,7 @@
     {
       "id": "9a9fb7340f17b1d6",
       "seed": 0.6039995551109314,
+      "flag": 2.0,
       "centerMeters": [
         -46.999960934721344,
         24.364627021610232,
@@ -6438,6 +6637,7 @@
     {
       "id": "d7db0a9eb51c2a75",
       "seed": 0.8431860208511353,
+      "flag": 0.5,
       "centerMeters": [
         -38.70843372145413,
         24.364627021610232,
@@ -6458,6 +6658,7 @@
     {
       "id": "82e83d05e16e08c1",
       "seed": 0.5113561749458313,
+      "flag": 0.5,
       "centerMeters": [
         -35.04949064166806,
         24.364627021610232,
@@ -6478,6 +6679,7 @@
     {
       "id": "5142b22d34a608c1",
       "seed": 0.317423939704895,
+      "flag": 0.5,
       "centerMeters": [
         -31.670678002187962,
         24.364627021610232,
@@ -6498,6 +6700,7 @@
     {
       "id": "e95cd18b4f4d31e2",
       "seed": 0.9115725159645081,
+      "flag": 0.5,
       "centerMeters": [
         -41.68972262786843,
         24.364627021610232,
@@ -6518,6 +6721,7 @@
     {
       "id": "27557c472aac9614",
       "seed": 0.15364813804626465,
+      "flag": 0.5,
       "centerMeters": [
         -37.676930570853756,
         24.364627021610232,
@@ -6538,6 +6742,7 @@
     {
       "id": "fa927f2a37db04ce",
       "seed": 0.9787978529930115,
+      "flag": 0.5,
       "centerMeters": [
         -34.57212834219927,
         24.364627021610232,
@@ -6558,6 +6763,7 @@
     {
       "id": "3672e76daa546f55",
       "seed": 0.21269077062606812,
+      "flag": 0.5,
       "centerMeters": [
         -31.54939014521338,
         24.364627021610232,
@@ -6578,6 +6784,7 @@
     {
       "id": "22b86b0fdc698b47",
       "seed": 0.13562649488449097,
+      "flag": 0.5,
       "centerMeters": [
         -53.209843575188486,
         11.586005466599744,
@@ -6598,6 +6805,7 @@
     {
       "id": "a6ce26ea8e599db0",
       "seed": 0.6515830755233765,
+      "flag": 1.0,
       "centerMeters": [
         -53.2098435751885,
         17.521228602205486,
@@ -6618,6 +6826,7 @@
     {
       "id": "bd1d85ea07ee1eb0",
       "seed": 0.7387316823005676,
+      "flag": 0.5,
       "centerMeters": [
         -50.18933084346819,
         11.586005466599744,
@@ -6638,6 +6847,7 @@
     {
       "id": "f0827a3a12bf8d8b",
       "seed": 0.9394909143447876,
+      "flag": 1.0,
       "centerMeters": [
         -50.18933084346819,
         17.521228602205486,
@@ -6658,6 +6868,7 @@
     {
       "id": "f44e7363bff0d19f",
       "seed": 0.9543220400810242,
+      "flag": 0.5,
       "centerMeters": [
         -47.19580187809315,
         11.586005466599744,
@@ -6678,6 +6889,7 @@
     {
       "id": "4b36e0ec1c9d5fc3",
       "seed": 0.2938060760498047,
+      "flag": 2.0,
       "centerMeters": [
         -47.19654369984834,
         17.521228602205486,
@@ -6698,6 +6910,7 @@
     {
       "id": "efb8fe8ea621559e",
       "seed": 0.936416506767273,
+      "flag": 0.5,
       "centerMeters": [
         -34.75016556344637,
         11.586005466599744,
@@ -6718,6 +6931,7 @@
     {
       "id": "c2f03eae56877511",
       "seed": 0.7614783048629761,
+      "flag": 0.5,
       "centerMeters": [
         -34.750165563446366,
         17.521228602205486,
@@ -6738,6 +6952,7 @@
     {
       "id": "85b661b45ba7ae47",
       "seed": 0.5223141312599182,
+      "flag": 0.5,
       "centerMeters": [
         -31.729652831726064,
         11.586005466599744,
@@ -6758,6 +6973,7 @@
     {
       "id": "07bc165f10242aeb",
       "seed": 0.03021371364593506,
+      "flag": 0.5,
       "centerMeters": [
         -31.72965283172607,
         17.521228602205486,
@@ -6778,6 +6994,7 @@
     {
       "id": "dbec8cf1f875f3c2",
       "seed": 0.8590781688690186,
+      "flag": 0.5,
       "centerMeters": [
         87.62910448127685,
         11.585482860892208,
@@ -6798,6 +7015,7 @@
     {
       "id": "51516a1ef518b10f",
       "seed": 0.3176485300064087,
+      "flag": 0.5,
       "centerMeters": [
         87.62875057318193,
         17.520787043821382,
@@ -6818,6 +7036,7 @@
     {
       "id": "27b1f2ccb9a50a76",
       "seed": 0.15505897998809814,
+      "flag": 0.5,
       "centerMeters": [
         102.36583755386877,
         31.093074007093026,
@@ -6838,6 +7057,7 @@
     {
       "id": "35a5c05bd0efe7df",
       "seed": 0.20956039428710938,
+      "flag": 0.5,
       "centerMeters": [
         97.81050951006793,
         31.093074007093026,
@@ -6858,6 +7078,7 @@
     {
       "id": "9a55d5f2179fa829",
       "seed": 0.6028721928596497,
+      "flag": 0.5,
       "centerMeters": [
         93.60555048024082,
         31.093074007093026,
@@ -6878,6 +7099,7 @@
     {
       "id": "88873ff038a43bcc",
       "seed": 0.5333136916160583,
+      "flag": 0.5,
       "centerMeters": [
         90.43418004163621,
         31.093074007093026,
@@ -6898,6 +7120,7 @@
     {
       "id": "47a725b40f3cba27",
       "seed": 0.2798941731452942,
+      "flag": 0.5,
       "centerMeters": [
         88.91060569299287,
         31.093074007093026,
@@ -6918,6 +7141,7 @@
     {
       "id": "7c03a7496bf07031",
       "seed": 0.484430730342865,
+      "flag": 0.5,
       "centerMeters": [
         87.34535866617236,
         31.093074007093026,
@@ -6938,6 +7162,7 @@
     {
       "id": "c53a79bd6df4bce8",
       "seed": 0.7704234719276428,
+      "flag": 0.5,
       "centerMeters": [
         84.4317217976954,
         31.093074007093026,
@@ -6958,6 +7183,7 @@
     {
       "id": "842b4be35c73624b",
       "seed": 0.5162855982780457,
+      "flag": 0.5,
       "centerMeters": [
         79.58335785129836,
         31.093074007093026,
@@ -6978,6 +7204,7 @@
     {
       "id": "0ad8fda2573823ca",
       "seed": 0.042373478412628174,
+      "flag": 0.5,
       "centerMeters": [
         81.06977184997479,
         31.093074007093026,
@@ -6998,6 +7225,7 @@
     {
       "id": "771c96ebcc1b3cfe",
       "seed": 0.4652799367904663,
+      "flag": 0.5,
       "centerMeters": [
         82.64563611964297,
         31.093074007093026,
@@ -7018,6 +7246,7 @@
     {
       "id": "dd5189363b2d49bd",
       "seed": 0.8645253777503967,
+      "flag": 0.5,
       "centerMeters": [
         79.58335785129836,
         24.365458076655088,
@@ -7038,6 +7267,7 @@
     {
       "id": "8cd03c35eaa92481",
       "seed": 0.5500524044036865,
+      "flag": 0.5,
       "centerMeters": [
         81.06977184997479,
         24.365458076655088,
@@ -7058,6 +7288,7 @@
     {
       "id": "9ea8c3af46f85516",
       "seed": 0.6197625994682312,
+      "flag": 0.5,
       "centerMeters": [
         82.64563611964297,
         24.365458076655088,
@@ -7078,6 +7309,7 @@
     {
       "id": "589fe6d9c159b84e",
       "seed": 0.34618985652923584,
+      "flag": 0.5,
       "centerMeters": [
         102.36583755386877,
         24.365458076655088,
@@ -7098,6 +7330,7 @@
     {
       "id": "f372d84e66b5f20f",
       "seed": 0.9509711265563965,
+      "flag": 0.5,
       "centerMeters": [
         97.81050951006793,
         24.365458076655088,
@@ -7118,6 +7351,7 @@
     {
       "id": "acb111f7dc524155",
       "seed": 0.6745768189430237,
+      "flag": 0.5,
       "centerMeters": [
         93.60555048024082,
         24.365458076655088,
@@ -7138,6 +7372,7 @@
     {
       "id": "ae6689e0db92f3af",
       "seed": 0.6812520623207092,
+      "flag": 0.5,
       "centerMeters": [
         84.4317217976954,
         24.365458076655088,
@@ -7158,6 +7393,7 @@
     {
       "id": "5f534df851ffc052",
       "seed": 0.3723648190498352,
+      "flag": 0.5,
       "centerMeters": [
         87.34535866617236,
         24.365458076655088,
@@ -7178,6 +7414,7 @@
     {
       "id": "fd770e75d5643bd8",
       "seed": 0.9900978803634644,
+      "flag": 0.5,
       "centerMeters": [
         88.91060569299287,
         24.365458076655088,
@@ -7198,6 +7435,7 @@
     {
       "id": "fc7974445b8f517f",
       "seed": 0.9862282276153564,
+      "flag": 0.5,
       "centerMeters": [
         90.43418004163621,
         24.365458076655088,
@@ -7218,6 +7456,7 @@
     {
       "id": "b171a13bdd51ea12",
       "seed": 0.6931400895118713,
+      "flag": 0.5,
       "centerMeters": [
         79.83233219607666,
         11.585482860892208,
@@ -7238,6 +7477,7 @@
     {
       "id": "9f56f87306447b50",
       "seed": 0.6224207878112793,
+      "flag": 0.5,
       "centerMeters": [
         79.83250915012412,
         17.520787043821382,
@@ -7258,6 +7498,7 @@
     {
       "id": "b2ab53311b049c27",
       "seed": 0.6979267001152039,
+      "flag": 0.5,
       "centerMeters": [
         81.35431395829283,
         11.585482860892208,
@@ -7278,6 +7519,7 @@
     {
       "id": "ffb606262f616ebe",
       "seed": 0.9988712072372437,
+      "flag": 0.5,
       "centerMeters": [
         81.35431395829283,
         17.520787043821382,
@@ -7298,6 +7540,7 @@
     {
       "id": "e4b595cf8127e544",
       "seed": 0.893395721912384,
+      "flag": 0.5,
       "centerMeters": [
         82.8632895980206,
         11.585482860892208,
@@ -7318,6 +7561,7 @@
     {
       "id": "7646b282e2226d73",
       "seed": 0.462016224861145,
+      "flag": 0.5,
       "centerMeters": [
         82.86328959802059,
         17.520787043821382,
@@ -7338,6 +7582,7 @@
     {
       "id": "9e680890154a8fda",
       "seed": 0.6187748908996582,
+      "flag": 0.5,
       "centerMeters": [
         89.13675296564865,
         11.585482860892208,
@@ -7358,6 +7603,7 @@
     {
       "id": "11eb9373d26cb2a5",
       "seed": 0.07000082731246948,
+      "flag": 0.5,
       "centerMeters": [
         89.13710687374356,
         17.520787043821382,
@@ -7378,6 +7624,7 @@
     {
       "id": "79de6b9271c308d0",
       "seed": 0.47605007886886597,
+      "flag": 0.5,
       "centerMeters": [
         90.65820386572244,
         11.585482860892208,
@@ -7398,6 +7645,7 @@
     {
       "id": "aa537b10043a3e98",
       "seed": 0.6653363108634949,
+      "flag": 0.5,
       "centerMeters": [
         90.65855777381735,
         17.520787043821382,
@@ -7418,6 +7666,7 @@
     {
       "id": "59dfb7a24a76e269",
       "seed": 0.3510698676109314,
+      "flag": 1.0,
       "centerMeters": [
         -57.08732549558217,
         11.65481911922907,
@@ -7438,6 +7687,7 @@
     {
       "id": "360ea453eb0f5fb6",
       "seed": 0.21116089820861816,
+      "flag": 2.0,
       "centerMeters": [
         -56.51734860012379,
         24.448733376429885,
@@ -7458,6 +7708,7 @@
     {
       "id": "14286f445050f0e5",
       "seed": 0.07874196767807007,
+      "flag": 2.0,
       "centerMeters": [
         -55.620162746161505,
         17.742049219568237,
@@ -7478,6 +7729,7 @@
     {
       "id": "5b9e6146f2d8b662",
       "seed": 0.3578854203224182,
+      "flag": 1.0,
       "centerMeters": [
         -56.599150839749754,
         17.742049219568237,
@@ -7498,6 +7750,7 @@
     {
       "id": "67294f945510fc8a",
       "seed": 0.40297406911849976,
+      "flag": 2.0,
       "centerMeters": [
         -57.34064856023034,
         17.742049219568237,
@@ -7518,6 +7771,7 @@
     {
       "id": "bcec83782efce0d2",
       "seed": 0.7379838824272156,
+      "flag": 1.0,
       "centerMeters": [
         -56.567485456668734,
         31.08329082738476,
@@ -7538,6 +7792,7 @@
     {
       "id": "b2ed03685ddf3c6a",
       "seed": 0.6989290118217468,
+      "flag": 0.5,
       "centerMeters": [
         -56.57100383256663,
         24.417067993348862,
@@ -7558,6 +7813,7 @@
     {
       "id": "c21129e54a722aec",
       "seed": 0.7580743432044983,
+      "flag": 2.0,
       "centerMeters": [
         -56.51734860012379,
         30.797422785681093,
@@ -7578,6 +7834,7 @@
     {
       "id": "03fc4c5a052d63ef",
       "seed": 0.01556849479675293,
+      "flag": 1.0,
       "centerMeters": [
         -55.439845981394576,
         37.3695290644484,
@@ -7598,6 +7855,7 @@
     {
       "id": "fdc1700240499a48",
       "seed": 0.9912328720092773,
+      "flag": 1.0,
       "centerMeters": [
         -57.315140334970636,
         37.3695290644484,
@@ -7618,6 +7876,7 @@
     {
       "id": "05bf7b4accb2b2ef",
       "seed": 0.022453010082244873,
+      "flag": 0.5,
       "centerMeters": [
         -56.67303673360547,
         37.3695290644484,
@@ -7638,6 +7897,7 @@
     {
       "id": "4fe3a44350f9a69d",
       "seed": 0.31206727027893066,
+      "flag": 0.5,
       "centerMeters": [
         12.21397061792263,
         11.65481911922907,
@@ -7658,6 +7918,7 @@
     {
       "id": "66b9aa137755829f",
       "seed": 0.4012705087661743,
+      "flag": 0.5,
       "centerMeters": [
         18.085150448281908,
         24.448733376429885,
@@ -7678,6 +7939,7 @@
     {
       "id": "3806211fb8b9bd75",
       "seed": 0.2188435196876526,
+      "flag": 0.5,
       "centerMeters": [
         19.485134207902213,
         17.742049219568237,
@@ -7698,6 +7960,7 @@
     {
       "id": "cc597d1ab07d8f06",
       "seed": 0.7982404828071594,
+      "flag": 0.5,
       "centerMeters": [
         12.352946465889335,
         17.742049219568237,
@@ -7718,6 +7981,7 @@
     {
       "id": "f1058b97255753ff",
       "seed": 0.9414908289909363,
+      "flag": 0.5,
       "centerMeters": [
         16.80039349931754,
         17.742049219568237,
@@ -7738,6 +8002,7 @@
     {
       "id": "8e9849f2b6e5e358",
       "seed": 0.5570111870765686,
+      "flag": 0.5,
       "centerMeters": [
         12.230682903437613,
         31.08329082738476,
@@ -7758,6 +8023,7 @@
     {
       "id": "dfe550c8ec7e974a",
       "seed": 0.8745927810668945,
+      "flag": 0.5,
       "centerMeters": [
         12.23596046728445,
         24.417067993348862,
@@ -7778,6 +8044,7 @@
     {
       "id": "4fc7e76ff723aaea",
       "seed": 0.3116440176963806,
+      "flag": 0.5,
       "centerMeters": [
         18.085150448281908,
         30.798302379655567,
@@ -7798,6 +8065,7 @@
     {
       "id": "1ec4eb60fd0db945",
       "seed": 0.12019222974777222,
+      "flag": 0.5,
       "centerMeters": [
         19.42982973675723,
         37.3695290644484,
@@ -7818,6 +8086,7 @@
     {
       "id": "872b6b25d84ebc5a",
       "seed": 0.5280062556266785,
+      "flag": 0.5,
       "centerMeters": [
         16.452074285426303,
         37.3695290644484,
@@ -7838,6 +8107,7 @@
     {
       "id": "facc6eafef88233b",
       "seed": 0.9796818494796753,
+      "flag": 0.5,
       "centerMeters": [
         12.464764849894195,
         37.3695290644484,
@@ -7858,6 +8128,7 @@
     {
       "id": "384885a9c71648eb",
       "seed": 0.21985656023025513,
+      "flag": 0.5,
       "centerMeters": [
         22.706134776113444,
         11.65481911922907,
@@ -7878,6 +8149,7 @@
     {
       "id": "4bb988d160a077dd",
       "seed": 0.29579973220825195,
+      "flag": 0.5,
       "centerMeters": [
         21.615878044754382,
         24.448733376429885,
@@ -7898,6 +8170,7 @@
     {
       "id": "673d26cc62137bdd",
       "seed": 0.40327680110931396,
+      "flag": 0.5,
       "centerMeters": [
         20.564323448272127,
         17.742049219568237,
@@ -7918,6 +8191,7 @@
     {
       "id": "90ff373ce9872b75",
       "seed": 0.5663942694664001,
+      "flag": 0.5,
       "centerMeters": [
         22.18717433117448,
         17.742049219568237,
@@ -7938,6 +8212,7 @@
     {
       "id": "33b6e1a1175d35ea",
       "seed": 0.20200926065444946,
+      "flag": 0.5,
       "centerMeters": [
         22.580352837763833,
         17.742049219568237,
@@ -7958,6 +8233,7 @@
     {
       "id": "8cd79d1b4cfa5489",
       "seed": 0.5501649975776672,
+      "flag": 0.5,
       "centerMeters": [
         22.164304887838185,
         31.08329082738476,
@@ -7978,6 +8254,7 @@
     {
       "id": "8b28e730d62cf9c0",
       "seed": 0.5435928702354431,
+      "flag": 0.5,
       "centerMeters": [
         22.16782326373608,
         24.417067993348862,
@@ -7998,6 +8275,7 @@
     {
       "id": "15c4437bd722969f",
       "seed": 0.08502596616744995,
+      "flag": 0.5,
       "centerMeters": [
         21.615878044754382,
         30.797422785681093,
@@ -8018,6 +8296,7 @@
     {
       "id": "96f1e9307f2cd7f4",
       "seed": 0.5896287560462952,
+      "flag": 0.5,
       "centerMeters": [
         20.381148003088164,
         37.3695290644484,
@@ -8038,6 +8317,7 @@
     {
       "id": "5367bbe8411b3820",
       "seed": 0.3258015513420105,
+      "flag": 0.5,
       "centerMeters": [
         22.583431416674486,
         37.3695290644484,
@@ -8058,6 +8338,7 @@
     {
       "id": "07ce57988dea325c",
       "seed": 0.03049224615097046,
+      "flag": 0.5,
       "centerMeters": [
         22.254023473234415,
         37.3695290644484,
@@ -8078,6 +8359,7 @@
     {
       "id": "89ba62225c48cbc4",
       "seed": 0.538000226020813,
+      "flag": 0.5,
       "centerMeters": [
         -9.541679561753867,
         28.924488781428238,
@@ -8098,6 +8380,7 @@
     {
       "id": "a75d9cfc8d30e83c",
       "seed": 0.6537721157073975,
+      "flag": 0.5,
       "centerMeters": [
         -20.903569206666468,
         10.426670948356549,
@@ -8118,6 +8401,7 @@
     {
       "id": "64ef97c19e1699aa",
       "seed": 0.3942808508872986,
+      "flag": 0.5,
       "centerMeters": [
         -19.993577126215325,
         10.426670948356549,
@@ -8138,6 +8422,7 @@
     {
       "id": "479acd350ca2d849",
       "seed": 0.27970582246780396,
+      "flag": 0.5,
       "centerMeters": [
         -19.081657436767642,
         10.426670948356549,
@@ -8158,6 +8443,7 @@
     {
       "id": "661a25cde057f0db",
       "seed": 0.3988364338874817,
+      "flag": 0.5,
       "centerMeters": [
         -8.699917136476344,
         28.923088857485325,
@@ -8178,6 +8464,7 @@
     {
       "id": "26673102d773ea34",
       "seed": 0.1500120759010315,
+      "flag": 0.5,
       "centerMeters": [
         -12.34060059842975,
         28.92111905715423,
@@ -8198,6 +8485,7 @@
     {
       "id": "e75ca7daf67b6031",
       "seed": 0.9037575125694275,
+      "flag": 2.0,
       "centerMeters": [
         -19.59045071703898,
         28.92111905715423,
@@ -8218,6 +8506,7 @@
     {
       "id": "fdf301dfa678ff37",
       "seed": 0.9919891953468323,
+      "flag": 1.0,
       "centerMeters": [
         -23.520202377581136,
         28.92111905715423,
@@ -8238,6 +8527,7 @@
     {
       "id": "2c4f36af47ee8629",
       "seed": 0.17308366298675537,
+      "flag": 2.0,
       "centerMeters": [
         -26.56182031383911,
         28.92111905715423,
@@ -8258,6 +8548,7 @@
     {
       "id": "c5753d251fa65540",
       "seed": 0.7713201642036438,
+      "flag": 2.0,
       "centerMeters": [
         -23.522172177912232,
         23.956483547661023,
@@ -8278,6 +8569,7 @@
     {
       "id": "eb413e451f47192f",
       "seed": 0.9189642667770386,
+      "flag": 1.0,
       "centerMeters": [
         -19.592420517370076,
         23.956483547661023,
@@ -8298,6 +8590,7 @@
     {
       "id": "136b2b9292d54db4",
       "seed": 0.07585400342941284,
+      "flag": 0.5,
       "centerMeters": [
         -16.255086306405893,
         23.956483547661023,
@@ -8318,6 +8611,7 @@
     {
       "id": "56d9b24d10dbd861",
       "seed": 0.3392592668533325,
+      "flag": 0.5,
       "centerMeters": [
         -12.346509999423047,
         23.956483547661023,
@@ -8338,6 +8632,7 @@
     {
       "id": "15c8c6a7b80d8d14",
       "seed": 0.08509480953216553,
+      "flag": 0.5,
       "centerMeters": [
         -8.701886936807444,
         23.957468447826574,
@@ -8358,6 +8653,7 @@
     {
       "id": "4a1cdc1731bf1310",
       "seed": 0.2895028591156006,
+      "flag": 1.0,
       "centerMeters": [
         -29.762007176750537,
         28.938847260134118,
@@ -8378,6 +8674,7 @@
     {
       "id": "67567e878c583066",
       "seed": 0.4036635160446167,
+      "flag": 0.5,
       "centerMeters": [
         -33.15548069715104,
         28.938847260134118,
@@ -8398,6 +8695,7 @@
     {
       "id": "920d3146ed2277a7",
       "seed": 0.5705137848854065,
+      "flag": 0.5,
       "centerMeters": [
         -33.12100919135681,
         23.993909753951904,
@@ -8418,6 +8716,7 @@
     {
       "id": "acea17a7e315633e",
       "seed": 0.6754469275474548,
+      "flag": 0.5,
       "centerMeters": [
         -36.983295190558835,
         23.956483547661023,
@@ -8438,6 +8737,7 @@
     {
       "id": "202decf31717300d",
       "seed": 0.1257007122039795,
+      "flag": 0.5,
       "centerMeters": [
         -29.718671569466366,
         23.956483547661023,
@@ -8458,6 +8758,7 @@
     {
       "id": "2c5bb7bff6cbf8a5",
       "seed": 0.1732744574546814,
+      "flag": 2.0,
       "centerMeters": [
         -26.57647070380166,
         28.627618807820504,
@@ -8478,6 +8779,7 @@
     {
       "id": "af35e78b9385fe72",
       "seed": 0.6844162344932556,
+      "flag": 0.5,
       "centerMeters": [
         -37.53385438310096,
         23.976181550972015,
@@ -8498,6 +8800,7 @@
     {
       "id": "49a7956859f2dcc2",
       "seed": 0.28771334886550903,
+      "flag": 0.5,
       "centerMeters": [
         -9.728152909309932,
         23.947619446171082,
@@ -8518,6 +8821,7 @@
     {
       "id": "9c79155952b855ba",
       "seed": 0.6112225651741028,
+      "flag": 0.5,
       "centerMeters": [
         -9.857174830996906,
         23.84322002862284,
@@ -8538,6 +8842,7 @@
     {
       "id": "eb6bf0a6fac773f4",
       "seed": 0.9196157455444336,
+      "flag": 0.5,
       "centerMeters": [
         -23.318297843643506,
         10.928962832897554,
@@ -8558,6 +8863,7 @@
     {
       "id": "2a5507a34aa8e0a1",
       "seed": 0.16535991430282593,
+      "flag": 0.5,
       "centerMeters": [
         -26.6672046315529,
         10.928962832897554,
@@ -8578,6 +8884,7 @@
     {
       "id": "444405955a697e74",
       "seed": 0.2666628956794739,
+      "flag": 0.5,
       "centerMeters": [
         -16.29054271236567,
         10.928962832897554,
@@ -8598,6 +8905,7 @@
     {
       "id": "3d05d24f0139930a",
       "seed": 0.23837006092071533,
+      "flag": 0.5,
       "centerMeters": [
         -30.569871537542447,
         10.928962832897554,
@@ -8618,6 +8926,7 @@
     {
       "id": "f8c9bb0d9a164f5a",
       "seed": 0.9718281626701355,
+      "flag": 0.5,
       "centerMeters": [
         -36.790254758111146,
         10.928962832897554,
@@ -8638,6 +8947,7 @@
     {
       "id": "13a26cb6982569b0",
       "seed": 0.07669711112976074,
+      "flag": 2.0,
       "centerMeters": [
         -26.674098932711743,
         17.599691654163728,
@@ -8658,6 +8968,7 @@
     {
       "id": "2e308641366c36c4",
       "seed": 0.1804279088973999,
+      "flag": 2.0,
       "centerMeters": [
         -23.335041146457847,
         17.599691654163728,
@@ -8678,6 +8989,7 @@
     {
       "id": "fe8ba70448e8d0b4",
       "seed": 0.994318425655365,
+      "flag": 2.0,
       "centerMeters": [
         -19.376481156073368,
         17.597721853832628,
@@ -8698,6 +9010,7 @@
     {
       "id": "ef128d1d32668b56",
       "seed": 0.9338768124580383,
+      "flag": 0.5,
       "centerMeters": [
         -16.073864675944797,
         17.599691654163728,
@@ -8718,6 +9031,7 @@
     {
       "id": "f6ae549d45b2e226",
       "seed": 0.9635975360870361,
+      "flag": 0.5,
       "centerMeters": [
         -12.146575265816516,
         17.599691654163728,
@@ -8738,6 +9052,7 @@
     {
       "id": "d50da7fadd7bb805",
       "seed": 0.83223956823349,
+      "flag": 0.5,
       "centerMeters": [
         -8.786588351044692,
         17.599691654163728,
@@ -8758,6 +9073,7 @@
     {
       "id": "471c1c70b1207c20",
       "seed": 0.2777726650238037,
+      "flag": 1.0,
       "centerMeters": [
         -29.684200063672137,
         17.636132960289054,
@@ -8778,6 +9094,7 @@
     {
       "id": "032f36bbb14d1ff7",
       "seed": 0.012439131736755371,
+      "flag": 0.5,
       "centerMeters": [
         -33.358862581337,
         17.6371178604546,
@@ -8798,6 +9115,7 @@
     {
       "id": "725339a8d820d2d9",
       "seed": 0.4465823769569397,
+      "flag": 0.5,
       "centerMeters": [
         -36.93306528211582,
         17.633178259792405,
@@ -8818,6 +9136,7 @@
     {
       "id": "e8143a4235edd362",
       "seed": 0.906558632850647,
+      "flag": 2.0,
       "centerMeters": [
         -23.256249133213892,
         17.599691654163728,
@@ -8838,6 +9157,7 @@
     {
       "id": "1df4a13937d879a7",
       "seed": 0.11701399087905884,
+      "flag": 0.5,
       "centerMeters": [
         -30.503883226450633,
         10.928962832897554,
@@ -8858,6 +9178,7 @@
     {
       "id": "a5dce4df2d3a2728",
       "seed": 0.6479017734527588,
+      "flag": 0.5,
       "centerMeters": [
         -13.598318109836349,
         23.986030552627504,
@@ -8878,6 +9199,7 @@
     {
       "id": "e2536bd374e296f5",
       "seed": 0.8840853571891785,
+      "flag": 0.5,
       "centerMeters": [
         -17.00656513272009,
         23.986030552627504,
@@ -8898,6 +9220,7 @@
     {
       "id": "999ab14a8bde8d9d",
       "seed": 0.6000166535377502,
+      "flag": 0.5,
       "centerMeters": [
         -16.94254662195938,
         28.924073757650874,
@@ -8918,6 +9241,7 @@
     {
       "id": "ac8fc01e08a24ec8",
       "seed": 0.6740684509277344,
+      "flag": 0.5,
       "centerMeters": [
         -13.548580651476104,
         28.924073757650874,
@@ -8938,6 +9262,7 @@
     {
       "id": "5926950396c2118d",
       "seed": 0.34824496507644653,
+      "flag": 0.5,
       "centerMeters": [
         -12.183016571941842,
         33.29604559252472,
@@ -8958,6 +9283,7 @@
     {
       "id": "d3b26a9296268253",
       "seed": 0.8269411325454712,
+      "flag": 0.5,
       "centerMeters": [
         -15.87737709291769,
         33.29604559252472,
@@ -8978,6 +9304,7 @@
     {
       "id": "32e9c7f17eac76b6",
       "seed": 0.1988796591758728,
+      "flag": 0.5,
       "centerMeters": [
         -11.781177304397684,
         33.204449877128624,
@@ -8998,6 +9325,7 @@
     {
       "id": "d6d96ad8d1032540",
       "seed": 0.8392549753189087,
+      "flag": 0.5,
       "centerMeters": [
         -15.80794163124646,
         33.28225699020703,
@@ -9018,6 +9346,7 @@
     {
       "id": "7496c99f768f13cb",
       "seed": 0.45542579889297485,
+      "flag": 0.5,
       "centerMeters": [
         -18.962946199063307,
         33.28225699020703,
@@ -9038,6 +9367,7 @@
     {
       "id": "b10abecad93814c3",
       "seed": 0.6915701627731323,
+      "flag": 0.5,
       "centerMeters": [
         -22.97850728652896,
         33.28225699020703,
@@ -9058,6 +9388,7 @@
     {
       "id": "14de981cadc3aa42",
       "seed": 0.08152151107788086,
+      "flag": 0.5,
       "centerMeters": [
         -33.49231655376894,
         33.28225699020703,
@@ -9078,6 +9409,7 @@
     {
       "id": "86f2f551136a7674",
       "seed": 0.527144730091095,
+      "flag": 0.5,
       "centerMeters": [
         -37.18618462466201,
         33.28225699020703,
@@ -9098,6 +9430,7 @@
     {
       "id": "22b6defe8b2b2dd3",
       "seed": 0.13560283184051514,
+      "flag": 0.5,
       "centerMeters": [
         0.3643286533204898,
         33.02773407967094,
@@ -9118,6 +9451,7 @@
     {
       "id": "346cf1f63b46a94a",
       "seed": 0.20478731393814087,
+      "flag": 0.5,
       "centerMeters": [
         0.9256320181352611,
         33.02773407967094,
@@ -9138,6 +9472,7 @@
     {
       "id": "ca7f072a3ca75e24",
       "seed": 0.7910007834434509,
+      "flag": 0.5,
       "centerMeters": [
         -2.934923226798152,
         33.02773407967094,
@@ -9158,6 +9493,7 @@
     {
       "id": "019c81b68b39afbf",
       "seed": 0.006294310092926025,
+      "flag": 0.5,
       "centerMeters": [
         -2.3736198619833813,
         33.02773407967094,
@@ -9178,6 +9514,7 @@
     {
       "id": "342a32ab296b8cb1",
       "seed": 0.20376884937286377,
+      "flag": 0.5,
       "centerMeters": [
         5.531269641505327,
         22.312341222528726,
@@ -9198,6 +9535,7 @@
     {
       "id": "f4b5ec903ced2513",
       "seed": 0.9559009075164795,
+      "flag": 0.5,
       "centerMeters": [
         2.237997555756161,
         22.299584327873845,
@@ -9218,6 +9556,7 @@
     {
       "id": "eb44e138de97372f",
       "seed": 0.9190197587013245,
+      "flag": 0.5,
       "centerMeters": [
         0.575216068083994,
         32.52204280249229,
@@ -9238,6 +9577,7 @@
     {
       "id": "58e8d9f50332bfcc",
       "seed": 0.34730297327041626,
+      "flag": 0.5,
       "centerMeters": [
         -0.9954765862982498,
         22.312341222528726,
@@ -9258,6 +9598,7 @@
     {
       "id": "d8bb91529e4b909b",
       "seed": 0.8466120362281799,
+      "flag": 0.5,
       "centerMeters": [
         -2.658357737209908,
         32.53479969714718,
@@ -9278,6 +9619,7 @@
     {
       "id": "c8869e2e197944d1",
       "seed": 0.7833040952682495,
+      "flag": 0.5,
       "centerMeters": [
         -4.150416095633548,
         22.312341222528726,
@@ -9298,6 +9640,7 @@
     {
       "id": "f568391bacb0bcd0",
       "seed": 0.9586215615272522,
+      "flag": 0.5,
       "centerMeters": [
         -4.110550799837045,
         17.697335254646482,
@@ -9318,6 +9661,7 @@
     {
       "id": "1d1eb732488e52a6",
       "seed": 0.1137499213218689,
+      "flag": 0.5,
       "centerMeters": [
         -1.0162065401124316,
         17.697335254646482,
@@ -9338,6 +9682,7 @@
     {
       "id": "3ac925abcfc5cb83",
       "seed": 0.2296317219734192,
+      "flag": 0.5,
       "centerMeters": [
         2.231619108428721,
         17.697335254646482,
@@ -9358,6 +9703,7 @@
     {
       "id": "21853cc48a9daef4",
       "seed": 0.13093924522399902,
+      "flag": 0.5,
       "centerMeters": [
         5.523296582346026,
         17.697335254646482,
@@ -9378,6 +9724,7 @@
     {
       "id": "c703b10c57b8c4f7",
       "seed": 0.7774000763893127,
+      "flag": 0.5,
       "centerMeters": [
         2.208497236866749,
         10.130902112470089,
@@ -9398,6 +9745,7 @@
     {
       "id": "ae2a5673d57b7eca",
       "seed": 0.6803334951400757,
+      "flag": 0.5,
       "centerMeters": [
         0.5564793790596374,
         10.130902112470089,
@@ -9418,6 +9766,7 @@
     {
       "id": "3c3de9243b6f2184",
       "seed": 0.23531967401504517,
+      "flag": 0.5,
       "centerMeters": [
         -0.61715492918943,
         10.130902112470089,
@@ -9438,6 +9787,7 @@
     {
       "id": "d3db58ab4398dd6d",
       "seed": 0.8275656700134277,
+      "flag": 0.5,
       "centerMeters": [
         -1.775640425035826,
         9.569399421176337,
@@ -9458,6 +9808,7 @@
     {
       "id": "669613a4dcb7097b",
       "seed": 0.40072745084762573,
+      "flag": 0.5,
       "centerMeters": [
         -4.738827861589942,
         9.569399421176337,
@@ -9478,6 +9829,7 @@
     {
       "id": "eaf95051c4fe8475",
       "seed": 0.9178667068481445,
+      "flag": 0.5,
       "centerMeters": [
         -3.258031449228815,
         9.569399421176337,
@@ -9498,6 +9850,7 @@
     {
       "id": "6ac87502b0efbe5c",
       "seed": 0.4171212315559387,
+      "flag": 0.5,
       "centerMeters": [
         0.9001182288254987,
         27.622199296144032,
@@ -9518,6 +9871,7 @@
     {
       "id": "9e5f025c4615c0bf",
       "seed": 0.618637204170227,
+      "flag": 0.5,
       "centerMeters": [
         -5.48829542256421,
         27.636550802630776,
@@ -9538,6 +9892,7 @@
     {
       "id": "335d098ee1b80c93",
       "seed": 0.20063835382461548,
+      "flag": 0.5,
       "centerMeters": [
         -2.332558607312982,
         27.636550802630776,
@@ -9558,6 +9913,7 @@
     {
       "id": "c7ebfee3dcaffcc0",
       "seed": 0.7809447050094604,
+      "flag": 0.5,
       "centerMeters": [
         4.193390314574665,
         27.636550802630776,
@@ -9578,6 +9934,7 @@
     {
       "id": "22bcb55627b24585",
       "seed": 0.13569194078445435,
+      "flag": 0.5,
       "centerMeters": [
         1.5484357253818377,
         10.434032289604923,
@@ -9598,6 +9955,7 @@
     {
       "id": "1d8c6d9ddde65b32",
       "seed": 0.11542397737503052,
+      "flag": 0.5,
       "centerMeters": [
         -3.957965578200551,
         9.591709132932092,
@@ -9618,6 +9976,7 @@
     {
       "id": "e1ea75ccf385eb6e",
       "seed": 0.8824837803840637,
+      "flag": 0.5,
       "centerMeters": [
         -0.07345978853412727,
         12.41057054988159,
@@ -9638,6 +9997,7 @@
     {
       "id": "7db31e2505ce191b",
       "seed": 0.49101436138153076,
+      "flag": 0.5,
       "centerMeters": [
         25.50739282993311,
         33.02773407967094,
@@ -9658,6 +10018,7 @@
     {
       "id": "43784b3b75ffc5e2",
       "seed": 0.26355427503585815,
+      "flag": 0.5,
       "centerMeters": [
         24.70191452836476,
         33.02773407967094,
@@ -9678,6 +10039,7 @@
     {
       "id": "a13394e49877eca6",
       "seed": 0.6296932697296143,
+      "flag": 0.5,
       "centerMeters": [
         29.991441301123842,
         33.02773407967094,
@@ -9698,6 +10060,7 @@
     {
       "id": "2c09c048674e8f8b",
       "seed": 0.17202377319335938,
+      "flag": 0.5,
       "centerMeters": [
         29.18616232603447,
         33.02773407967094,
@@ -9718,6 +10081,7 @@
     {
       "id": "67cac8c3ac4e193a",
       "seed": 0.4054379463195801,
+      "flag": 0.5,
       "centerMeters": [
         21.514983119152763,
         22.312341222528726,
@@ -9738,6 +10102,7 @@
     {
       "id": "064e23f12a72ae82",
       "seed": 0.02462977170944214,
+      "flag": 0.5,
       "centerMeters": [
         25.990560214986736,
         22.299584327873845,
@@ -9758,6 +10123,7 @@
     {
       "id": "676f4187a5ad520f",
       "seed": 0.4040413498878479,
+      "flag": 0.5,
       "centerMeters": [
         25.11940383859364,
         32.52204280249229,
@@ -9778,6 +10144,7 @@
     {
       "id": "b0d78a48608da4cb",
       "seed": 0.6907888650894165,
+      "flag": 0.5,
       "centerMeters": [
         30.419594577978295,
         22.312341222528726,
@@ -9798,6 +10165,7 @@
     {
       "id": "4ea6800eef842d8a",
       "seed": 0.30722808837890625,
+      "flag": 0.5,
       "centerMeters": [
         29.548537864824688,
         32.53479969714718,
@@ -9818,6 +10186,7 @@
     {
       "id": "b70b45891a81c056",
       "seed": 0.715015709400177,
+      "flag": 0.5,
       "centerMeters": [
         34.70730646737124,
         22.312341222528726,
@@ -9838,6 +10207,7 @@
     {
       "id": "be77a2a18ed63280",
       "seed": 0.7440129518508911,
+      "flag": 0.5,
       "centerMeters": [
         34.652591348890546,
         17.697335254646482,
@@ -9858,6 +10228,7 @@
     {
       "id": "69cd3c18673c3e2a",
       "seed": 0.413287878036499,
+      "flag": 0.5,
       "centerMeters": [
         30.44710163207788,
         17.697335254646482,
@@ -9878,6 +10249,7 @@
     {
       "id": "52648be6cc368a11",
       "seed": 0.3218466639518738,
+      "flag": 0.5,
       "centerMeters": [
         26.034810693320857,
         17.697335254646482,
@@ -9898,6 +10270,7 @@
     {
       "id": "062380895556385f",
       "seed": 0.02397918701171875,
+      "flag": 0.5,
       "centerMeters": [
         21.56122686227671,
         17.697335254646482,
@@ -9918,6 +10291,7 @@
     {
       "id": "c4f87354ac3b96dc",
       "seed": 0.7694160342216492,
+      "flag": 0.5,
       "centerMeters": [
         24.969012010201332,
         10.130902112470089,
@@ -9938,6 +10312,7 @@
     {
       "id": "41179990f746faaf",
       "seed": 0.25426632165908813,
+      "flag": 0.5,
       "centerMeters": [
         27.10997772095256,
         10.130902112470089,
@@ -9958,6 +10333,7 @@
     {
       "id": "56534a3641001718",
       "seed": 0.3372083902359009,
+      "flag": 0.5,
       "centerMeters": [
         28.705386858728637,
         10.130902112470089,
@@ -9978,6 +10354,7 @@
     {
       "id": "6ddd26ec2e27614e",
       "seed": 0.42915570735931396,
+      "flag": 0.5,
       "centerMeters": [
         31.712226794179923,
         9.569399421176337,
@@ -9998,6 +10375,7 @@
     {
       "id": "a275977c638268bf",
       "seed": 0.6346067786216736,
+      "flag": 0.5,
       "centerMeters": [
         35.73921964906374,
         9.569399421176337,
@@ -10018,6 +10396,7 @@
     {
       "id": "f83e9ffb86991118",
       "seed": 0.9697055220603943,
+      "flag": 0.5,
       "centerMeters": [
         33.726620190777254,
         9.569399421176337,
@@ -10038,6 +10417,7 @@
     {
       "id": "2da261f2422ad472",
       "seed": 0.1782589554786682,
+      "flag": 0.5,
       "centerMeters": [
         25.27647310403187,
         27.622199296144032,
@@ -10058,6 +10438,7 @@
     {
       "id": "3844f22cbbc5a156",
       "seed": 0.21980202198028564,
+      "flag": 0.5,
       "centerMeters": [
         33.99361800937433,
         27.636550802630776,
@@ -10078,6 +10459,7 @@
     {
       "id": "64220646e93ccf64",
       "seed": 0.39114415645599365,
+      "flag": 0.5,
       "centerMeters": [
         29.70520847730495,
         27.636550802630776,
@@ -10098,6 +10480,7 @@
     {
       "id": "0a5cbd2bcff6e2f5",
       "seed": 0.04047757387161255,
+      "flag": 0.5,
       "centerMeters": [
         20.800896008197896,
         27.636550802630776,
@@ -10118,6 +10501,7 @@
     {
       "id": "7e420d169ca3d084",
       "seed": 0.4931953549385071,
+      "flag": 0.5,
       "centerMeters": [
         24.600327069746577,
         10.434139083796897,
@@ -10138,6 +10522,7 @@
     {
       "id": "3ee3a13860a9fa20",
       "seed": 0.24566084146499634,
+      "flag": 0.5,
       "centerMeters": [
         33.30969517623896,
         9.591785506881202,
@@ -10158,6 +10543,7 @@
     {
       "id": "ad09a39fb5e8937e",
       "seed": 0.6759282946586609,
+      "flag": 0.5,
       "centerMeters": [
         27.874914629103813,
         12.410447502617293,
@@ -10178,6 +10564,7 @@
     {
       "id": "2549c1b322e25a22",
       "seed": 0.14565664529800415,
+      "flag": 0.5,
       "centerMeters": [
         -8.935805607925749,
         16.89082016002604,
@@ -10198,6 +10585,7 @@
     {
       "id": "6b5e77cb14063010",
       "seed": 0.41941016912460327,
+      "flag": 0.5,
       "centerMeters": [
         -8.935805604118293,
         22.10007993882026,
@@ -10218,6 +10606,7 @@
     {
       "id": "ca5261e51f139ea4",
       "seed": 0.7903195023536682,
+      "flag": 0.5,
       "centerMeters": [
         -9.27935421554819,
         11.321000207793976,
@@ -10238,6 +10627,7 @@
     {
       "id": "b623697ecc60cc4d",
       "seed": 0.7114778161048889,
+      "flag": 0.5,
       "centerMeters": [
         -0.22194113088903666,
         16.89082016002604,
@@ -10258,6 +10648,7 @@
     {
       "id": "d1220d6727870d61",
       "seed": 0.8169258236885071,
+      "flag": 0.5,
       "centerMeters": [
         -0.22194112708158195,
         22.10007993882026,
@@ -10278,6 +10669,7 @@
     {
       "id": "1c631feef4215d2c",
       "seed": 0.11088746786117554,
+      "flag": 0.5,
       "centerMeters": [
         -0.5421146450586702,
         11.321000207793976,
@@ -10298,6 +10690,7 @@
     {
       "id": "95f74cfd95e48701",
       "seed": 0.5858047008514404,
+      "flag": 0.5,
       "centerMeters": [
         -5.036517924193384,
         22.10007993882026,
@@ -10318,6 +10711,7 @@
     {
       "id": "7255afd320a176c1",
       "seed": 0.4466199278831482,
+      "flag": 0.5,
       "centerMeters": [
         -5.036517928000839,
         16.89082016002604,

@@ -1,0 +1,1306 @@
+{
+  "status": "applied_to_project_v16",
+  "implementationReport": "Migration/window-interior-mapping.md",
+  "deploymentStatusSource": "Migration/window-interior-mapping-verification.json",
+  "sourceAudit": ".runtime/ue-window-allocation/window-projection.json",
+  "camera": {
+    "positionThreeMeters": [
+      -20.0,
+      23.0,
+      -208.0
+    ],
+    "targetThreeMeters": [
+      -46,
+      23,
+      -246
+    ],
+    "verticalFovDegrees": 55,
+    "resolution": [
+      1920,
+      1080
+    ]
+  },
+  "methodLimits": [
+    "CPU source geometry and source alpha; not GPU material/lighting readback.",
+    "Static pose excludes wind displacement and procedural birds; current generated facade relief may differ slightly.",
+    "Visible area is sampled and rounded; tiny slivers and bevel boundaries are uncertain.",
+    "Distance/angles describe pane center, not perceived room contents.",
+    "CPU occupied/image hashes may differ after Nanite UV quantization; do not infer actual night brightness from them."
+  ],
+  "selectionBasis": "1920x1080 visible pane area, usable width, view angle, occlusion and coherent architectural openings; distance is supporting evidence, not the sole threshold.",
+  "sourceGroupCounts": {
+    "simplified_3d": 14,
+    "basic_im": 14,
+    "baked_room_im": 17
+  },
+  "proposedPhysicalRoomConfigurations": 15,
+  "geometricVisiblePixelShareEstimate": 0.7345,
+  "retireFullPerspectivePhotoBackboards": true,
+  "unchangedCurrentLightingSchedule": true,
+  "lightingScheduleScope": "The global night fade is unchanged. Authored occupancy adds two lit physical rooms (4b36e0ec1c9d5fc3 and 360ea453eb0f5fb6_R); no previously lit physical room is switched off. Eight room PointLights plus four exterior RectLights retain the 12-light budget.",
+  "lightBudgetProposal": "Reallocate the current 12 interior lights separately from geometry. Do not create one persistent shadow light for every room.",
+  "geometryBudgetProposal": "Rough target 500-1200 triangles and 2-3 material sections per simplified room. Authoring target, not measured performance.",
+  "otherSourceGroups": "Keep correct low-detail IM available for newly exposed rooms after viewport resize; no bespoke 3D for occluded/offscreen groups in this camera allocation. Closed shutters remain closed.",
+  "windows": [
+    {
+      "id": "2c5bb7bff6cbf8a5",
+      "screenLabel": 1,
+      "actors": [
+        "OOW_00760_paris_building_09_8"
+      ],
+      "currentType": "five_plane_image_room",
+      "distanceMeters": 16.896,
+      "viewIncidenceDegrees": 29.79,
+      "cameraElevationToWindowDegrees": 19.46,
+      "framedVisibleAreaPixelsEstimate": 2008,
+      "visibleBBoxPixels": [
+        1083.5,
+        237.5,
+        1199.5,
+        263.5
+      ],
+      "bboxPixels": [
+        1083.86,
+        69.52,
+        1200.46,
+        263.69
+      ],
+      "proposedTechnique": "simplified_3d",
+      "proposedName": "简化3D",
+      "reason": "与3号为同一窗的重叠玻璃，共用一个房间并一并开孔",
+      "roomConfigurations": 0
+    },
+    {
+      "id": "13a26cb6982569b0",
+      "screenLabel": 2,
+      "actors": [
+        "OOW_00760_paris_building_09_8"
+      ],
+      "currentType": "geometric_hero",
+      "distanceMeters": 16.943,
+      "viewIncidenceDegrees": 29.13,
+      "cameraElevationToWindowDegrees": -18.59,
+      "framedVisibleAreaPixelsEstimate": 11840,
+      "visibleBBoxPixels": [
+        1083.5,
+        851.5,
+        1197.5,
+        987.5
+      ],
+      "bboxPixels": [
+        1081.01,
+        800.43,
+        1196.7,
+        990.14
+      ],
+      "proposedTechnique": "simplified_3d",
+      "proposedName": "简化3D",
+      "reason": "近景大窗，保留3D并减少小物件与材质分区",
+      "roomConfigurations": 1
+    },
+    {
+      "id": "2c4f36af47ee8629",
+      "screenLabel": 3,
+      "actors": [
+        "OOW_00760_paris_building_09_8"
+      ],
+      "currentType": "five_plane_image_room",
+      "distanceMeters": 16.98,
+      "viewIncidenceDegrees": 30.41,
+      "cameraElevationToWindowDegrees": 20.41,
+      "framedVisibleAreaPixelsEstimate": 8068,
+      "visibleBBoxPixels": [
+        1097.5,
+        71.5,
+        1201.5,
+        243.5
+      ],
+      "bboxPixels": [
+        1084.32,
+        50.46,
+        1201.03,
+        243.05
+      ],
+      "proposedTechnique": "simplified_3d",
+      "proposedName": "简化3D",
+      "reason": "A：仰视大窗，原方案最明显漏项；与1号合并",
+      "roomConfigurations": 1
+    },
+    {
+      "id": "202decf31717300d",
+      "screenLabel": 4,
+      "actors": [
+        "OOW_00760_paris_building_09_8"
+      ],
+      "currentType": "five_plane_image_room",
+      "distanceMeters": 17.385,
+      "viewIncidenceDegrees": 76.65,
+      "cameraElevationToWindowDegrees": 3.15,
+      "framedVisibleAreaPixelsEstimate": 344,
+      "visibleBBoxPixels": [
+        977.5,
+        393.5,
+        979.5,
+        565.5
+      ],
+      "bboxPixels": [
+        953.68,
+        392.96,
+        979.81,
+        566.34
+      ],
+      "proposedTechnique": "basic_im",
+      "proposedName": "低细节IM",
+      "reason": "仅细缝/局部可见；保留空间方向和亮灭，无家具层",
+      "roomConfigurations": 0
+    },
+    {
+      "id": "471c1c70b1207c20",
+      "screenLabel": 5,
+      "actors": [
+        "OOW_00760_paris_building_09_8"
+      ],
+      "currentType": "five_plane_image_room",
+      "distanceMeters": 18.179,
+      "viewIncidenceDegrees": 76.98,
+      "cameraElevationToWindowDegrees": -17.16,
+      "framedVisibleAreaPixelsEstimate": 3004,
+      "visibleBBoxPixels": [
+        955.5,
+        781.5,
+        981.5,
+        961.5
+      ],
+      "bboxPixels": [
+        956.16,
+        766.42,
+        983.2,
+        964.91
+      ],
+      "proposedTechnique": "baked_room_im",
+      "proposedName": "烘焙房间IM",
+      "reason": "面积中等或斜视压窄；配套投影素材足够，不用整张摄影后板",
+      "roomConfigurations": 0
+    },
+    {
+      "id": "4a1cdc1731bf1310",
+      "screenLabel": 6,
+      "actors": [
+        "OOW_00760_paris_building_09_8"
+      ],
+      "currentType": "five_plane_image_room",
+      "distanceMeters": 18.334,
+      "viewIncidenceDegrees": 77.56,
+      "cameraElevationToWindowDegrees": 18.9,
+      "framedVisibleAreaPixelsEstimate": 1112,
+      "visibleBBoxPixels": [
+        949.5,
+        81.5,
+        975.5,
+        279.5
+      ],
+      "bboxPixels": [
+        950.19,
+        78.2,
+        975.95,
+        280.75
+      ],
+      "proposedTechnique": "baked_room_im",
+      "proposedName": "烘焙房间IM",
+      "reason": "面积中等或斜视压窄；配套投影素材足够，不用整张摄影后板",
+      "roomConfigurations": 0
+    },
+    {
+      "id": "c5753d251fa65540",
+      "screenLabel": 7,
+      "actors": [
+        "OOW_00760_paris_building_09_8"
+      ],
+      "currentType": "five_plane_image_room",
+      "distanceMeters": 18.772,
+      "viewIncidenceDegrees": 36.68,
+      "cameraElevationToWindowDegrees": 2.92,
+      "framedVisibleAreaPixelsEstimate": 5428,
+      "visibleBBoxPixels": [
+        1363.5,
+        397.5,
+        1439.5,
+        565.5
+      ],
+      "bboxPixels": [
+        1361.66,
+        397.57,
+        1461.41,
+        565.51
+      ],
+      "proposedTechnique": "simplified_3d",
+      "proposedName": "简化3D",
+      "reason": "前景中层较大窗，玻璃后应有真实几何遮挡",
+      "roomConfigurations": 1
+    },
+    {
+      "id": "e8143a4235edd362",
+      "screenLabel": 8,
+      "actors": [
+        "OOW_00760_paris_building_09_8"
+      ],
+      "currentType": "geometric_hero",
+      "distanceMeters": 19.223,
+      "viewIncidenceDegrees": 40.18,
+      "cameraElevationToWindowDegrees": -16.32,
+      "framedVisibleAreaPixelsEstimate": 6356,
+      "visibleBBoxPixels": [
+        1377.5,
+        821.5,
+        1439.5,
+        963.5
+      ],
+      "bboxPixels": [
+        1375.11,
+        785.12,
+        1476.62,
+        963.0
+      ],
+      "proposedTechnique": "simplified_3d",
+      "proposedName": "简化3D",
+      "reason": "部分被桌面框遮挡，但有效窗面仍大；保留3D",
+      "roomConfigurations": 1
+    },
+    {
+      "id": "fdf301dfa678ff37",
+      "screenLabel": 9,
+      "actors": [
+        "OOW_00760_paris_building_09_8"
+      ],
+      "currentType": "five_plane_image_room",
+      "distanceMeters": 19.66,
+      "viewIncidenceDegrees": 40.04,
+      "cameraElevationToWindowDegrees": 17.53,
+      "framedVisibleAreaPixelsEstimate": 2612,
+      "visibleBBoxPixels": [
+        1379.5,
+        97.5,
+        1419.5,
+        265.5
+      ],
+      "bboxPixels": [
+        1361.79,
+        94.1,
+        1461.54,
+        268.88
+      ],
+      "proposedTechnique": "baked_room_im",
+      "proposedName": "烘焙房间IM",
+      "reason": "面积中等或斜视压窄；配套投影素材足够，不用整张摄影后板",
+      "roomConfigurations": 0
+    },
+    {
+      "id": "eb413e451f47192f",
+      "screenLabel": 10,
+      "actors": [
+        "OOW_00760_paris_building_09_8"
+      ],
+      "currentType": "five_plane_image_room",
+      "distanceMeters": 22.709,
+      "viewIncidenceDegrees": 48.53,
+      "cameraElevationToWindowDegrees": 2.41,
+      "framedVisibleAreaPixelsEstimate": 1644,
+      "visibleBBoxPixels": [
+        1653.5,
+        407.5,
+        1707.5,
+        563.5
+      ],
+      "bboxPixels": [
+        1653.89,
+        407.75,
+        1740.02,
+        563.69
+      ],
+      "proposedTechnique": "baked_room_im",
+      "proposedName": "烘焙房间IM",
+      "reason": "面积中等或斜视压窄；配套投影素材足够，不用整张摄影后板",
+      "roomConfigurations": 0
+    },
+    {
+      "id": "032f36bbb14d1ff7",
+      "screenLabel": 11,
+      "actors": [
+        "OOW_00760_paris_building_09_8"
+      ],
+      "currentType": "five_plane_image_room",
+      "distanceMeters": 22.738,
+      "viewIncidenceDegrees": 80.08,
+      "cameraElevationToWindowDegrees": -13.64,
+      "framedVisibleAreaPixelsEstimate": 208,
+      "visibleBBoxPixels": [
+        901.5,
+        821.5,
+        915.5,
+        865.5
+      ],
+      "bboxPixels": [
+        901.32,
+        720.05,
+        917.33,
+        870.43
+      ],
+      "proposedTechnique": "basic_im",
+      "proposedName": "低细节IM",
+      "reason": "仅细缝/局部可见；保留空间方向和亮灭，无家具层",
+      "roomConfigurations": 0
+    },
+    {
+      "id": "67567e878c583066",
+      "screenLabel": 12,
+      "actors": [
+        "OOW_00760_paris_building_09_8"
+      ],
+      "currentType": "five_plane_image_room",
+      "distanceMeters": 23.036,
+      "viewIncidenceDegrees": 79.16,
+      "cameraElevationToWindowDegrees": 14.94,
+      "framedVisibleAreaPixelsEstimate": 336,
+      "visibleBBoxPixels": [
+        917.5,
+        193.5,
+        935.5,
+        331.5
+      ],
+      "bboxPixels": [
+        918.23,
+        184.29,
+        935.39,
+        335.59
+      ],
+      "proposedTechnique": "basic_im",
+      "proposedName": "低细节IM",
+      "reason": "仅细缝/局部可见；保留空间方向和亮灭，无家具层",
+      "roomConfigurations": 0
+    },
+    {
+      "id": "fe8ba70448e8d0b4",
+      "screenLabel": 13,
+      "actors": [
+        "OOW_00760_paris_building_09_8"
+      ],
+      "currentType": "five_plane_image_room",
+      "distanceMeters": 23.132,
+      "viewIncidenceDegrees": 50.4,
+      "cameraElevationToWindowDegrees": -13.51,
+      "framedVisibleAreaPixelsEstimate": 8568,
+      "visibleBBoxPixels": [
+        1669.5,
+        771.5,
+        1755.5,
+        929.5
+      ],
+      "bboxPixels": [
+        1668.78,
+        766.88,
+        1755.81,
+        930.73
+      ],
+      "proposedTechnique": "simplified_3d",
+      "proposedName": "简化3D",
+      "reason": "B：最右雨篷大窗，优先替换照片和纯色侧墙",
+      "roomConfigurations": 1
+    },
+    {
+      "id": "e75ca7daf67b6031",
+      "screenLabel": 14,
+      "actors": [
+        "OOW_00760_paris_building_09_8"
+      ],
+      "currentType": "five_plane_image_room",
+      "distanceMeters": 23.45,
+      "viewIncidenceDegrees": 50.07,
+      "cameraElevationToWindowDegrees": 14.63,
+      "framedVisibleAreaPixelsEstimate": 5120,
+      "visibleBBoxPixels": [
+        1671.5,
+        129.5,
+        1739.5,
+        287.5
+      ],
+      "bboxPixels": [
+        1654.03,
+        126.0,
+        1740.16,
+        287.83
+      ],
+      "proposedTechnique": "simplified_3d",
+      "proposedName": "简化3D",
+      "reason": "右上层大窗，仰视需要正确顶面和家具遮挡",
+      "roomConfigurations": 1
+    },
+    {
+      "id": "14de981cadc3aa42",
+      "screenLabel": 15,
+      "actors": [
+        "OOW_00760_paris_building_09_8"
+      ],
+      "currentType": "five_plane_image_room",
+      "distanceMeters": 24.45,
+      "viewIncidenceDegrees": 80.91,
+      "cameraElevationToWindowDegrees": 24.88,
+      "framedVisibleAreaPixelsEstimate": 92,
+      "visibleBBoxPixels": [
+        897.5,
+        71.5,
+        907.5,
+        93.5
+      ],
+      "bboxPixels": [
+        897.19,
+        -3.83,
+        910.57,
+        116.08
+      ],
+      "proposedTechnique": "basic_im",
+      "proposedName": "低细节IM",
+      "reason": "仅细缝/局部可见；保留空间方向和亮灭，无家具层",
+      "roomConfigurations": 0
+    },
+    {
+      "id": "acea17a7e315633e",
+      "screenLabel": 16,
+      "actors": [
+        "OOW_00760_paris_building_09_8"
+      ],
+      "currentType": "five_plane_image_room",
+      "distanceMeters": 27.107,
+      "viewIncidenceDegrees": 81.39,
+      "cameraElevationToWindowDegrees": 2.02,
+      "framedVisibleAreaPixelsEstimate": 756,
+      "visibleBBoxPixels": [
+        873.5,
+        449.5,
+        883.5,
+        555.5
+      ],
+      "bboxPixels": [
+        874.13,
+        447.34,
+        885.04,
+        556.6
+      ],
+      "proposedTechnique": "basic_im",
+      "proposedName": "低细节IM",
+      "reason": "仅细缝/局部可见；保留空间方向和亮灭，无家具层",
+      "roomConfigurations": 0
+    },
+    {
+      "id": "9a9fb7340f17b1d6",
+      "screenLabel": 17,
+      "actors": [
+        "OOW_00703_paris_building_07_9"
+      ],
+      "currentType": "five_plane_image_room",
+      "distanceMeters": 28.916,
+      "viewIncidenceDegrees": 61.48,
+      "cameraElevationToWindowDegrees": 2.7,
+      "framedVisibleAreaPixelsEstimate": 4692,
+      "visibleBBoxPixels": [
+        207.5,
+        399.5,
+        267.5,
+        549.5
+      ],
+      "bboxPixels": [
+        206.82,
+        398.94,
+        267.47,
+        555.41
+      ],
+      "proposedTechnique": "simplified_3d",
+      "proposedName": "简化3D",
+      "reason": "左墙最近一列，虽斜视仍有60像素宽",
+      "roomConfigurations": 1
+    },
+    {
+      "id": "86f2f551136a7674",
+      "screenLabel": 18,
+      "actors": [
+        "OOW_00760_paris_building_09_8"
+      ],
+      "currentType": "five_plane_image_room",
+      "distanceMeters": 29.021,
+      "viewIncidenceDegrees": 82.31,
+      "cameraElevationToWindowDegrees": 20.76,
+      "framedVisibleAreaPixelsEstimate": 208,
+      "visibleBBoxPixels": [
+        865.5,
+        105.5,
+        873.5,
+        173.5
+      ],
+      "bboxPixels": [
+        866.01,
+        97.46,
+        875.04,
+        190.51
+      ],
+      "proposedTechnique": "basic_im",
+      "proposedName": "低细节IM",
+      "reason": "仅细缝/局部可见；保留空间方向和亮灭，无家具层",
+      "roomConfigurations": 0
+    },
+    {
+      "id": "f8c9bb0d9a164f5a",
+      "screenLabel": 19,
+      "actors": [
+        "OOW_00760_paris_building_09_8"
+      ],
+      "currentType": "five_plane_image_room",
+      "distanceMeters": 29.484,
+      "viewIncidenceDegrees": 81.98,
+      "cameraElevationToWindowDegrees": -24.17,
+      "framedVisibleAreaPixelsEstimate": 308,
+      "visibleBBoxPixels": [
+        877.5,
+        947.5,
+        887.5,
+        1007.5
+      ],
+      "bboxPixels": [
+        877.38,
+        936.91,
+        889.1,
+        1082.11
+      ],
+      "proposedTechnique": "basic_im",
+      "proposedName": "低细节IM",
+      "reason": "仅细缝/局部可见；保留空间方向和亮灭，无家具层",
+      "roomConfigurations": 0
+    },
+    {
+      "id": "4b36e0ec1c9d5fc3",
+      "screenLabel": 20,
+      "actors": [
+        "OOW_00703_paris_building_07_9"
+      ],
+      "currentType": "five_plane_image_room",
+      "distanceMeters": 29.61,
+      "viewIncidenceDegrees": 61.69,
+      "cameraElevationToWindowDegrees": -11.46,
+      "framedVisibleAreaPixelsEstimate": 5576,
+      "visibleBBoxPixels": [
+        185.5,
+        725.5,
+        265.5,
+        885.5
+      ],
+      "bboxPixels": [
+        185.38,
+        719.28,
+        265.65,
+        886.37
+      ],
+      "proposedTechnique": "simplified_3d",
+      "proposedName": "简化3D",
+      "reason": "左墙最近一列下窗，约80像素宽，真实遮挡有收益",
+      "roomConfigurations": 1
+    },
+    {
+      "id": "bb0077ee2a158352",
+      "screenLabel": 21,
+      "actors": [
+        "OOW_00703_paris_building_07_9"
+      ],
+      "currentType": "five_plane_image_room",
+      "distanceMeters": 29.996,
+      "viewIncidenceDegrees": 62.6,
+      "cameraElevationToWindowDegrees": 15.65,
+      "framedVisibleAreaPixelsEstimate": 4812,
+      "visibleBBoxPixels": [
+        207.5,
+        89.5,
+        267.5,
+        273.5
+      ],
+      "bboxPixels": [
+        206.82,
+        89.2,
+        267.47,
+        273.59
+      ],
+      "proposedTechnique": "simplified_3d",
+      "proposedName": "简化3D",
+      "reason": "左墙最近一列上窗，仰视且窗面较大",
+      "roomConfigurations": 1
+    },
+    {
+      "id": "f44e7363bff0d19f",
+      "screenLabel": 22,
+      "actors": [
+        "OOW_00703_paris_building_07_9"
+      ],
+      "currentType": "five_plane_image_room",
+      "distanceMeters": 31.183,
+      "viewIncidenceDegrees": 63.2,
+      "cameraElevationToWindowDegrees": -21.47,
+      "framedVisibleAreaPixelsEstimate": 672,
+      "visibleBBoxPixels": [
+        203.5,
+        947.5,
+        255.5,
+        1007.5
+      ],
+      "bboxPixels": [
+        195.68,
+        943.67,
+        257.5,
+        1145.06
+      ],
+      "proposedTechnique": "basic_im",
+      "proposedName": "低细节IM",
+      "reason": "仅细缝/局部可见；保留空间方向和亮灭，无家具层",
+      "roomConfigurations": 0
+    },
+    {
+      "id": "8c708a69b99a2b9a",
+      "screenLabel": 23,
+      "actors": [
+        "OOW_00703_paris_building_07_9"
+      ],
+      "currentType": "five_plane_image_room",
+      "distanceMeters": 33.211,
+      "viewIncidenceDegrees": 65.42,
+      "cameraElevationToWindowDegrees": 2.35,
+      "framedVisibleAreaPixelsEstimate": 2552,
+      "visibleBBoxPixels": [
+        319.5,
+        423.5,
+        361.5,
+        547.5
+      ],
+      "bboxPixels": [
+        318.62,
+        423.61,
+        360.64,
+        552.72
+      ],
+      "proposedTechnique": "baked_room_im",
+      "proposedName": "烘焙房间IM",
+      "reason": "面积中等或斜视压窄；配套投影素材足够，不用整张摄影后板",
+      "roomConfigurations": 0
+    },
+    {
+      "id": "f0827a3a12bf8d8b",
+      "screenLabel": 24,
+      "actors": [
+        "OOW_00703_paris_building_07_9"
+      ],
+      "currentType": "five_plane_image_room",
+      "distanceMeters": 33.634,
+      "viewIncidenceDegrees": 65.34,
+      "cameraElevationToWindowDegrees": -10.08,
+      "framedVisibleAreaPixelsEstimate": 3544,
+      "visibleBBoxPixels": [
+        297.5,
+        695.5,
+        355.5,
+        827.5
+      ],
+      "bboxPixels": [
+        298.31,
+        691.81,
+        354.61,
+        827.21
+      ],
+      "proposedTechnique": "baked_room_im",
+      "proposedName": "烘焙房间IM",
+      "reason": "面积中等或斜视压窄；配套投影素材足够，不用整张摄影后板",
+      "roomConfigurations": 0
+    },
+    {
+      "id": "6ee94972fc6b2739",
+      "screenLabel": 25,
+      "actors": [
+        "OOW_00703_paris_building_07_9"
+      ],
+      "currentType": "five_plane_image_room",
+      "distanceMeters": 34.156,
+      "viewIncidenceDegrees": 66.14,
+      "cameraElevationToWindowDegrees": 13.71,
+      "framedVisibleAreaPixelsEstimate": 2448,
+      "visibleBBoxPixels": [
+        319.5,
+        169.5,
+        361.5,
+        315.5
+      ],
+      "bboxPixels": [
+        318.62,
+        168.04,
+        360.64,
+        316.47
+      ],
+      "proposedTechnique": "baked_room_im",
+      "proposedName": "烘焙房间IM",
+      "reason": "面积中等或斜视压窄；配套投影素材足够，不用整张摄影后板",
+      "roomConfigurations": 0
+    },
+    {
+      "id": "bd1d85ea07ee1eb0",
+      "screenLabel": 26,
+      "actors": [
+        "OOW_00703_paris_building_07_9"
+      ],
+      "currentType": "five_plane_image_room",
+      "distanceMeters": 35.027,
+      "viewIncidenceDegrees": 66.31,
+      "cameraElevationToWindowDegrees": -19.02,
+      "framedVisibleAreaPixelsEstimate": 432,
+      "visibleBBoxPixels": [
+        313.5,
+        963.5,
+        343.5,
+        1007.5
+      ],
+      "bboxPixels": [
+        305.34,
+        881.07,
+        348.81,
+        1043.05
+      ],
+      "proposedTechnique": "basic_im",
+      "proposedName": "低细节IM",
+      "reason": "仅细缝/局部可见；保留空间方向和亮灭，无家具层",
+      "roomConfigurations": 0
+    },
+    {
+      "id": "75fdb9b1e6c53243",
+      "screenLabel": 27,
+      "actors": [
+        "OOW_00703_paris_building_07_9"
+      ],
+      "currentType": "five_plane_image_room",
+      "distanceMeters": 37.371,
+      "viewIncidenceDegrees": 68.28,
+      "cameraElevationToWindowDegrees": 2.09,
+      "framedVisibleAreaPixelsEstimate": 1784,
+      "visibleBBoxPixels": [
+        393.5,
+        439.5,
+        425.5,
+        547.5
+      ],
+      "bboxPixels": [
+        393.26,
+        440.07,
+        424.64,
+        550.92
+      ],
+      "proposedTechnique": "baked_room_im",
+      "proposedName": "烘焙房间IM",
+      "reason": "面积中等或斜视压窄；配套投影素材足够，不用整张摄影后板",
+      "roomConfigurations": 0
+    },
+    {
+      "id": "a6ce26ea8e599db0",
+      "screenLabel": 28,
+      "actors": [
+        "OOW_00703_paris_building_07_9"
+      ],
+      "currentType": "five_plane_image_room",
+      "distanceMeters": 37.828,
+      "viewIncidenceDegrees": 68.21,
+      "cameraElevationToWindowDegrees": -8.95,
+      "framedVisibleAreaPixelsEstimate": 1744,
+      "visibleBBoxPixels": [
+        379.5,
+        675.5,
+        419.5,
+        783.5
+      ],
+      "bboxPixels": [
+        378.86,
+        671.47,
+        420.49,
+        784.99
+      ],
+      "proposedTechnique": "baked_room_im",
+      "proposedName": "烘焙房间IM",
+      "reason": "面积中等或斜视压窄；配套投影素材足够，不用整张摄影后板",
+      "roomConfigurations": 0
+    },
+    {
+      "id": "0762ceebb689632f",
+      "screenLabel": 29,
+      "actors": [
+        "OOW_00703_paris_building_07_9"
+      ],
+      "currentType": "five_plane_image_room",
+      "distanceMeters": 38.213,
+      "viewIncidenceDegrees": 68.78,
+      "cameraElevationToWindowDegrees": 12.23,
+      "framedVisibleAreaPixelsEstimate": 1552,
+      "visibleBBoxPixels": [
+        393.5,
+        221.5,
+        425.5,
+        345.5
+      ],
+      "bboxPixels": [
+        393.26,
+        220.65,
+        424.64,
+        345.91
+      ],
+      "proposedTechnique": "baked_room_im",
+      "proposedName": "烘焙房间IM",
+      "reason": "面积中等或斜视压窄；配套投影素材足够，不用整张摄影后板",
+      "roomConfigurations": 0
+    },
+    {
+      "id": "22b86b0fdc698b47",
+      "screenLabel": 30,
+      "actors": [
+        "OOW_00703_paris_building_07_9"
+      ],
+      "currentType": "five_plane_image_room",
+      "distanceMeters": 39.072,
+      "viewIncidenceDegrees": 68.93,
+      "cameraElevationToWindowDegrees": -16.99,
+      "framedVisibleAreaPixelsEstimate": 456,
+      "visibleBBoxPixels": [
+        383.5,
+        841.5,
+        413.5,
+        969.5
+      ],
+      "bboxPixels": [
+        384.05,
+        834.92,
+        416.09,
+        969.89
+      ],
+      "proposedTechnique": "basic_im",
+      "proposedName": "低细节IM",
+      "reason": "仅细缝/局部可见；保留空间方向和亮灭，无家具层",
+      "roomConfigurations": 0
+    },
+    {
+      "id": "b2ed03685ddf3c6a",
+      "screenLabel": 31,
+      "actors": [
+        "OOW_00719_Paris_Building_08_paris_building_08_1"
+      ],
+      "currentType": "five_plane_image_room",
+      "distanceMeters": 42.741,
+      "viewIncidenceDegrees": 73.31,
+      "cameraElevationToWindowDegrees": 1.9,
+      "framedVisibleAreaPixelsEstimate": 920,
+      "visibleBBoxPixels": [
+        479.5,
+        455.5,
+        495.5,
+        547.5
+      ],
+      "bboxPixels": [
+        477.28,
+        452.99,
+        496.52,
+        549.11
+      ],
+      "proposedTechnique": "basic_im",
+      "proposedName": "低细节IM",
+      "reason": "仅细缝/局部可见；保留空间方向和亮灭，无家具层",
+      "roomConfigurations": 0
+    },
+    {
+      "id": "5b9e6146f2d8b662",
+      "screenLabel": 32,
+      "actors": [
+        "OOW_00719_Paris_Building_08_paris_building_08_1"
+      ],
+      "currentType": "five_plane_image_room",
+      "distanceMeters": 43.125,
+      "viewIncidenceDegrees": 73.58,
+      "cameraElevationToWindowDegrees": -7.0,
+      "framedVisibleAreaPixelsEstimate": 2876,
+      "visibleBBoxPixels": [
+        467.5,
+        621.5,
+        509.5,
+        747.5
+      ],
+      "bboxPixels": [
+        468.37,
+        620.83,
+        508.67,
+        746.7
+      ],
+      "proposedTechnique": "baked_room_im",
+      "proposedName": "烘焙房间IM",
+      "reason": "面积中等或斜视压窄；配套投影素材足够，不用整张摄影后板",
+      "roomConfigurations": 0
+    },
+    {
+      "id": "bcec83782efce0d2",
+      "screenLabel": 33,
+      "actors": [
+        "OOW_00719_Paris_Building_08_paris_building_08_1"
+      ],
+      "currentType": "five_plane_image_room",
+      "distanceMeters": 43.47,
+      "viewIncidenceDegrees": 73.6,
+      "cameraElevationToWindowDegrees": 10.72,
+      "framedVisibleAreaPixelsEstimate": 1060,
+      "visibleBBoxPixels": [
+        479.5,
+        275.5,
+        495.5,
+        371.5
+      ],
+      "bboxPixels": [
+        477.24,
+        269.71,
+        496.49,
+        375.71
+      ],
+      "proposedTechnique": "baked_room_im",
+      "proposedName": "烘焙房间IM",
+      "reason": "面积中等或斜视压窄；配套投影素材足够，不用整张摄影后板",
+      "roomConfigurations": 0
+    },
+    {
+      "id": "59dfb7a24a76e269",
+      "screenLabel": 34,
+      "actors": [
+        "OOW_00719_Paris_Building_08_paris_building_08_1"
+      ],
+      "currentType": "five_plane_image_room",
+      "distanceMeters": 44.467,
+      "viewIncidenceDegrees": 73.19,
+      "cameraElevationToWindowDegrees": -14.78,
+      "framedVisibleAreaPixelsEstimate": 3196,
+      "visibleBBoxPixels": [
+        449.5,
+        775.5,
+        489.5,
+        921.5
+      ],
+      "bboxPixels": [
+        448.58,
+        771.14,
+        491.28,
+        923.38
+      ],
+      "proposedTechnique": "baked_room_im",
+      "proposedName": "烘焙房间IM",
+      "reason": "面积中等或斜视压窄；配套投影素材足够，不用整张摄影后板",
+      "roomConfigurations": 0
+    },
+    {
+      "id": "05bf7b4accb2b2ef",
+      "screenLabel": 35,
+      "actors": [
+        "OOW_00719_Paris_Building_08_paris_building_08_1"
+      ],
+      "currentType": "five_plane_image_room",
+      "distanceMeters": 45.252,
+      "viewIncidenceDegrees": 72.83,
+      "cameraElevationToWindowDegrees": 18.51,
+      "framedVisibleAreaPixelsEstimate": 608,
+      "visibleBBoxPixels": [
+        483.5,
+        125.5,
+        497.5,
+        189.5
+      ],
+      "bboxPixels": [
+        484.02,
+        125.56,
+        497.27,
+        190.71
+      ],
+      "proposedTechnique": "basic_im",
+      "proposedName": "低细节IM",
+      "reason": "仅细缝/局部可见；保留空间方向和亮灭，无家具层",
+      "roomConfigurations": 0
+    },
+    {
+      "id": "67294f945510fc8a",
+      "screenLabel": 36,
+      "actors": [
+        "OOW_00719_Paris_Building_08_paris_building_08_1"
+      ],
+      "currentType": "geometric_hero",
+      "distanceMeters": 46.322,
+      "viewIncidenceDegrees": 14.5,
+      "cameraElevationToWindowDegrees": -6.52,
+      "framedVisibleAreaPixelsEstimate": 9092,
+      "visibleBBoxPixels": [
+        523.5,
+        615.5,
+        643.5,
+        719.5
+      ],
+      "bboxPixels": [
+        523.83,
+        614.99,
+        643.69,
+        720.17
+      ],
+      "proposedTechnique": "simplified_3d",
+      "proposedName": "简化3D",
+      "reason": "虽远但正对、无遮挡、画面突出，保留3D",
+      "roomConfigurations": 1
+    },
+    {
+      "id": "360ea453eb0f5fb6",
+      "screenLabel": 37,
+      "actors": [
+        "OOW_00719_Paris_Building_08_paris_building_08_1"
+      ],
+      "currentType": "five_plane_image_room",
+      "distanceMeters": 46.595,
+      "viewIncidenceDegrees": 15.75,
+      "cameraElevationToWindowDegrees": 1.78,
+      "framedVisibleAreaPixelsEstimate": 15332,
+      "visibleBBoxPixels": [
+        523.5,
+        453.5,
+        741.5,
+        553.5
+      ],
+      "bboxPixels": [
+        523.83,
+        453.95,
+        742.28,
+        554.45
+      ],
+      "proposedTechnique": "simplified_3d",
+      "proposedName": "简化3D",
+      "reason": "源分组跨两个窗洞，应拆两个房间配置",
+      "roomConfigurations": 2
+    },
+    {
+      "id": "c21129e54a722aec",
+      "screenLabel": 38,
+      "actors": [
+        "OOW_00719_Paris_Building_08_paris_building_08_1"
+      ],
+      "currentType": "five_plane_image_room",
+      "distanceMeters": 47.22,
+      "viewIncidenceDegrees": 18.25,
+      "cameraElevationToWindowDegrees": 9.5,
+      "framedVisibleAreaPixelsEstimate": 17980,
+      "visibleBBoxPixels": [
+        523.5,
+        297.5,
+        741.5,
+        413.5
+      ],
+      "bboxPixels": [
+        523.83,
+        297.05,
+        742.28,
+        412.83
+      ],
+      "proposedTechnique": "simplified_3d",
+      "proposedName": "简化3D",
+      "reason": "源分组跨两个窗洞，仰视上层拆两个房间配置",
+      "roomConfigurations": 2
+    },
+    {
+      "id": "9958cd02ff0d828e",
+      "screenLabel": 39,
+      "actors": [
+        "OOW_00486_paris_building_03_mirrored_5"
+      ],
+      "currentType": "five_plane_image_room",
+      "distanceMeters": 47.475,
+      "viewIncidenceDegrees": 4.23,
+      "cameraElevationToWindowDegrees": -1.16,
+      "framedVisibleAreaPixelsEstimate": 2220,
+      "visibleBBoxPixels": [
+        797.5,
+        523.5,
+        845.5,
+        597.5
+      ],
+      "bboxPixels": [
+        796.56,
+        522.79,
+        848.27,
+        599.92
+      ],
+      "proposedTechnique": "baked_room_im",
+      "proposedName": "烘焙房间IM",
+      "reason": "面积中等或斜视压窄；配套投影素材足够，不用整张摄影后板",
+      "roomConfigurations": 0
+    },
+    {
+      "id": "14286f445050f0e5",
+      "screenLabel": 40,
+      "actors": [
+        "OOW_00719_Paris_Building_08_paris_building_08_1"
+      ],
+      "currentType": "geometric_hero",
+      "distanceMeters": 47.511,
+      "viewIncidenceDegrees": 19.29,
+      "cameraElevationToWindowDegrees": -6.35,
+      "framedVisibleAreaPixelsEstimate": 7792,
+      "visibleBBoxPixels": [
+        635.5,
+        611.5,
+        741.5,
+        709.5
+      ],
+      "bboxPixels": [
+        634.69,
+        611.15,
+        742.27,
+        710.4
+      ],
+      "proposedTechnique": "simplified_3d",
+      "proposedName": "简化3D",
+      "reason": "虽远但正对、无遮挡、画面突出，保留3D",
+      "roomConfigurations": 1
+    },
+    {
+      "id": "0b6d11a39eac3257",
+      "screenLabel": 41,
+      "actors": [
+        "OOW_00486_paris_building_03_mirrored_5"
+      ],
+      "currentType": "five_plane_image_room",
+      "distanceMeters": 47.939,
+      "viewIncidenceDegrees": 8.55,
+      "cameraElevationToWindowDegrees": -7.55,
+      "framedVisibleAreaPixelsEstimate": 1068,
+      "visibleBBoxPixels": [
+        797.5,
+        639.5,
+        847.5,
+        715.5
+      ],
+      "bboxPixels": [
+        796.52,
+        639.85,
+        848.14,
+        717.89
+      ],
+      "proposedTechnique": "baked_room_im",
+      "proposedName": "烘焙房间IM",
+      "reason": "面积中等或斜视压窄；配套投影素材足够，不用整张摄影后板",
+      "roomConfigurations": 0
+    },
+    {
+      "id": "fdc1700240499a48",
+      "screenLabel": 42,
+      "actors": [
+        "OOW_00719_Paris_Building_08_paris_building_08_1"
+      ],
+      "currentType": "five_plane_image_room",
+      "distanceMeters": 47.979,
+      "viewIncidenceDegrees": 21.41,
+      "cameraElevationToWindowDegrees": 17.43,
+      "framedVisibleAreaPixelsEstimate": 1484,
+      "visibleBBoxPixels": [
+        559.5,
+        167.5,
+        595.5,
+        219.5
+      ],
+      "bboxPixels": [
+        559.38,
+        166.34,
+        596.03,
+        219.14
+      ],
+      "proposedTechnique": "baked_room_im",
+      "proposedName": "烘焙房间IM",
+      "reason": "面积中等或斜视压窄；配套投影素材足够，不用整张摄影后板",
+      "roomConfigurations": 0
+    },
+    {
+      "id": "5bb7cffb0cd7320c",
+      "screenLabel": 43,
+      "actors": [
+        "OOW_00486_paris_building_03_mirrored_5"
+      ],
+      "currentType": "five_plane_image_room",
+      "distanceMeters": 47.995,
+      "viewIncidenceDegrees": 9.45,
+      "cameraElevationToWindowDegrees": -1.15,
+      "framedVisibleAreaPixelsEstimate": 124,
+      "visibleBBoxPixels": [
+        897.5,
+        585.5,
+        913.5,
+        597.5
+      ],
+      "bboxPixels": [
+        894.03,
+        523.11,
+        943.8,
+        598.8
+      ],
+      "proposedTechnique": "basic_im",
+      "proposedName": "低细节IM",
+      "reason": "仅细缝/局部可见；保留空间方向和亮灭，无家具层",
+      "roomConfigurations": 0
+    },
+    {
+      "id": "03fc4c5a052d63ef",
+      "screenLabel": 44,
+      "actors": [
+        "OOW_00719_Paris_Building_08_paris_building_08_1"
+      ],
+      "currentType": "five_plane_image_room",
+      "distanceMeters": 49.253,
+      "viewIncidenceDegrees": 24.91,
+      "cameraElevationToWindowDegrees": 16.96,
+      "framedVisibleAreaPixelsEstimate": 1224,
+      "visibleBBoxPixels": [
+        677.5,
+        189.5,
+        709.5,
+        237.5
+      ],
+      "bboxPixels": [
+        677.14,
+        188.43,
+        709.62,
+        237.79
+      ],
+      "proposedTechnique": "baked_room_im",
+      "proposedName": "烘焙房间IM",
+      "reason": "面积中等或斜视压窄；配套投影素材足够，不用整张摄影后板",
+      "roomConfigurations": 0
+    },
+    {
+      "id": "73e0f9a6173ce769",
+      "screenLabel": 45,
+      "actors": [
+        "OOW_00486_paris_building_03_mirrored_5"
+      ],
+      "currentType": "five_plane_image_room",
+      "distanceMeters": 49.361,
+      "viewIncidenceDegrees": 16.16,
+      "cameraElevationToWindowDegrees": -7.33,
+      "framedVisibleAreaPixelsEstimate": 136,
+      "visibleBBoxPixels": [
+        1005.5,
+        635.5,
+        1035.5,
+        645.5
+      ],
+      "bboxPixels": [
+        987.61,
+        636.22,
+        1035.53,
+        711.36
+      ],
+      "proposedTechnique": "basic_im",
+      "proposedName": "低细节IM",
+      "reason": "仅细缝/局部可见；保留空间方向和亮灭，无家具层",
+      "roomConfigurations": 0
+    }
+  ]
+}

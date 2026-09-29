@@ -1,0 +1,129 @@
+{
+  "date": "2026-09-28",
+  "scene": "Alley",
+  "recipe": "v9 ground/stone",
+  "packageSucceeded": true,
+  "semanticSelfTestPassed": true,
+  "assetAuditPassed": true,
+  "targetSlots": {
+    "stone": 329,
+    "ground": 49
+  },
+  "newAssets": 36,
+  "protectedAssetCount": 6324,
+  "changedProtectedActors": [],
+  "changedProtectedFiles": [],
+  "cases": [
+    {
+      "name": "packaged-light",
+      "rainIntensity": 0.32538148760795593,
+      "wetness": 0.9999983906745911,
+      "water": 0.4858677387237549,
+      "quality": 1,
+      "materialInstances": 129,
+      "wetnessMaterials": 129,
+      "lumenReflections": 1,
+      "screenshot": ".runtime/ue-wetness-repair/packaged-light.png",
+      "captureSaved": true,
+      "missingTags": []
+    },
+    {
+      "name": "packaged-clear",
+      "rainIntensity": 0,
+      "wetness": 0,
+      "water": 0,
+      "quality": 1,
+      "materialInstances": 129,
+      "wetnessMaterials": 129,
+      "lumenReflections": 1,
+      "screenshot": ".runtime/ue-wetness-repair/packaged-clear.png",
+      "captureSaved": true,
+      "missingTags": []
+    },
+    {
+      "name": "packaged-rainnight",
+      "rainIntensity": 0.6669074892997742,
+      "wetness": 0.9986395239830017,
+      "water": 0.9100024700164795,
+      "quality": 1,
+      "materialInstances": 129,
+      "wetnessMaterials": 129,
+      "lumenReflections": 1,
+      "screenshot": ".runtime/ue-wetness-repair/packaged-rainnight.png",
+      "captureSaved": true,
+      "missingTags": []
+    }
+  ],
+  "deployment": {
+    "backup": "D:\\OutOfWindowBuildBackups\\wet-surfaces-before-20260928-145015",
+    "source": "D:\\OutOfWindowBuildWetSurfaces\\Windows",
+    "target": "D:\\OutOfWindowBuild\\Windows",
+    "startedLauncherId": 27208,
+    "files": [
+      {
+        "file": "OutOfWindow.exe",
+        "sha256": "A9987E8E768DD752A598158E434A9A212B77FB3213B12E08D1E677D0D786B087"
+      },
+      {
+        "file": "THIRD_PARTY_ASSETS.md",
+        "sha256": "04B68118DCBC85162546118ABBA924CBA8291C181367A717006FF288F32FE19F"
+      },
+      {
+        "file": "ASSET_INVENTORY.md",
+        "sha256": "6314D135E80DA92426B3EBDCDF6F6C2F3604716DEE1992F6DCFD5C656B9B2D42"
+      },
+      {
+        "file": "OutOfWindow/Content/Paks/global.ucas",
+        "sha256": "58EC82A23E9D29C355B585DDED52561DF64683008A19331841B0529308752AF0"
+      },
+      {
+        "file": "OutOfWindow/Content/Paks/global.utoc",
+        "sha256": "1EA127066D8742B8B52D50702978763C6C6B680F883DF33EED23876C2EEF6B45"
+      },
+      {
+        "file": "OutOfWindow/Content/Paks/OutOfWindow-Windows.pak",
+        "sha256": "680825F364C0F6AA8AFE431F8586CA3926382C2D7B749B8DF59AD43503A10106"
+      },
+      {
+        "file": "OutOfWindow/Content/Paks/OutOfWindow-Windows.ucas",
+        "sha256": "1AE0CDC16DD5EDD4EE1B3C9FA63930D0A11845FE4EF8AD51E0D99308705B6DC7"
+      },
+      {
+        "file": "OutOfWindow/Content/Paks/OutOfWindow-Windows.utoc",
+        "sha256": "CDBC401B7279B6B453246D435261E0423931FE48B080CB837D81D898FE8AA5CF"
+      },
+      {
+        "file": "OutOfWindow/Binaries/Win64/OutOfWindow.exe",
+        "sha256": "7876D18C2621FB33FBE9FD0985E525771065B53E6EF3E206FF0D57F7B1E8B584"
+      },
+      {
+        "file": "OutOfWindow/Binaries/Win64/OutOfWindow.pdb",
+        "sha256": "3F8676D8BD93A2AE26A352821AC52BFDEAF9933C783526441D928ABA138E16DD"
+      },
+      {
+        "file": "OutOfWindow/Binaries/Win64/tbb12.dll",
+        "sha256": "645B681E3581C04D57F468BD85C17648172DECF873653AB00382211B96CC98FB"
+      },
+      {
+        "file": "OutOfWindow/Binaries/Win64/tbbmalloc.dll",
+        "sha256": "F81A11F2E6E93036BAB4E51A1DAAB9940FB8A9A5EC0F508C4CB76D398E27C100"
+      }
+    ],
+    "deployedAt": "2026-09-28T14:51:22.5515889+08:00"
+  },
+  "scope": "Only Alley ground/stone materials rebuilt; existing non-target assets and actor bindings unchanged. Real precipitation behavior unchanged; the new precipitation override is test-only.",
+  "restartState": {
+    "scene": "Alley",
+    "weatherMode": "real",
+    "actualWeather": "clear",
+    "localDateTime": "2026-09-28T14:51:38.05Z",
+    "quality": 1,
+    "desktopFrameStyle": "ivory",
+    "testMode": false,
+    "fallbackWeather": false,
+    "liveTime": true,
+    "materialInstances": 129,
+    "wetnessMaterials": 129,
+    "missingTags": []
+  }
+}

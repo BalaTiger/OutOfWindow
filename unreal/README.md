@@ -6,6 +6,10 @@
 
 **Windows Development 成品已成功打包，首轮 15 个独立程序用例全部通过自动检查。** 入口为 `D:\OutOfWindowBuild\Windows\OutOfWindow.exe`。完整矩阵在 Cook 完成后串行运行，每例 30 秒，覆盖五景、天气、三档画质与桌面接口。岸线和单实例启动逻辑修正后的最终包也通过海滨、桌面、正常联网与第二实例补测。精细档后巷平均约 24.5 FPS，尚不适合作为本机 60 FPS 档位；山林地形素材与完整人工交互仍有待完善。证据和边界见 [迁移验收清单](Migration/acceptance.md)。
 
+2026-09-28：后巷夜窗更新为 v14 / `window-uv-v4`。四个重点窗使用带家具、实际灯光与透明玻璃的浅房间，其余适用窗户使用五面虚拟房间和保比例裁剪的后墙图，UV3 保存窗宽高。四个窗及其一片重复玻璃用 UV2 的 `flag=2` 开孔，避免 Nanite UV 量化破坏种子精确匹配。74 个源窗帘与 66 个旧透明叠层隐藏，真正的室外雨篷保留；局部窗灯预算为 4 盏室内 PointLight 加最多 8 盏窗外 RectLight。**资产审计、编辑器夜景、候选包五例回归、部署及安装后哈希和正常运行核对均通过。** 画面验证为 1920×1080、Quality 1、固定 2026-09-23，安装后没有另拍截图；四个真实房间仍是简化布景，尚非照片级。范围和证据见 [窗内景深度修复](Migration/window-depth-repair.md)及 [本轮验收](Migration/window-depth-verification.json)；此前 [v13 窗面反射记录](Migration/window-surface-repair.md)保留为历史。
+
+**2026-09-29 最新后巷覆盖：** v16 / `window-uv-v5` 已部署。15 个物理窗洞使用简化 3D（UE 实际 9,520 面），17 个源组使用校准 cubemap IM，其余背景窗使用基础 IM；停用旧整张透视照片后墙，实时灯保持 12 盏。六组候选回归及安装哈希、正常重启通过；同设置单轮 GPU 中位数为 13.79 → 9.22 ms。详见 [逐窗改造及验收](Migration/window-interior-mapping.md)。上面的 v14 内容保留为历史。
+
 ## 启动与构建
 
 应用默认嵌入 Windows 桌面图标后方，作为动态桌面启动。右上角此时显示「还原」按钮；点击后恢复普通窗口和原来的位置、尺寸，按钮变为「最大化」，再次点击回到动态桌面。动态桌面按显示器完整尺寸铺满，不使用扣除任务栏后的工作区。托盘的显示／隐藏保持当前模式；退出后重新启动仍默认进入动态桌面。
@@ -14,11 +18,11 @@
 
 界面右上角的眼睛按钮可隐藏整套 UI，保留窗景、实体窗框和原窗口尺寸。按 `Esc` 恢复界面；也可将鼠标移回眼睛原来的位置，显示闭眼按钮后点击恢复。鼠标移开时该按钮再次隐藏。原「穿透」「收起／精简尺寸」及对应托盘功能已移除；设置面板自身的折叠按钮仍保留。
 
-前景窗框是独立的 `AWindowFrame` 三维 Actor，不属于 Slate UI，也不烘入地图。默认采用当代住宅石墨灰喷涂铝窗：大块固定玻璃、右侧约 22% 的窄开启扇、分层压条、密封条、竖向执手和浅色窗台，取消 Electron 旧版的中央十字分格。设置仍可选择烟熏橡木、象牙白、石墨灰，选择跨关卡保留。原生 PBR 材质接收场景光照及仅影响窗框的室内补光；框体为 1,452 个三角形，位于相机前 81–95.9 cm。仅视口投影改变时重建，相机参考宽高比也同步，避免二次 FOV 换算裁掉窗框。
+前景窗框是独立的 `AWindowFrame` 三维 Actor，不属于 Slate UI，也不烘入地图。默认采用当代住宅石墨灰喷涂铝窗：大块固定玻璃、右侧约 22% 的窄开启扇、分层压条、密封条、竖向执手和浅色窗台，取消 Electron 旧版的中央十字分格。设置仍可选择烟熏橡木、象牙白、石墨灰，选择跨关卡保留。原生 PBR 材质接收自然光与有阴影的夜间室内照明；框体为 1,452 个三角形，位于相机前 81–95.9 cm。仅视口投影改变时重建，相机参考宽高比也同步，避免二次 FOV 换算裁掉窗框。
 
 雨天在框体后 96 cm 的独立玻璃平面上显示局部折射水滴、静止小水珠和短水痕。水滴由材质 Time 沿玻璃向下运动，雨量控制密度，厘米 UV 保持横窄屏的水滴尺寸；晴天关闭透明组件。窗框和雨滴均不受「隐藏 UI」影响，也不参与碰撞。节能档沿用引擎关闭折射的设置，保留水滴着色与高光；均衡及精细档具有局部折射。
 
-夜间窗框按室内常亮暖白灯处理，白天叠加柔和补光；灯光仅影响实体窗框。网格已修正与 UE 左手坐标不一致的三角面绕序，恢复正确可见的外侧正面、倒角和窗台。[夜间窗框说明与验证](Migration/desktop-frame.md)。
+窗框安装在带真实窗洞的 30 cm 厚墙体中，侧墙、地板、天花板和后墙包围相机及室内灯。白天关闭室内灯，由场景太阳、天空光及 Lumen 间接光照亮；阴天沿用场景云量响应，不再额外叠加 45,000 lm 补光。夜晚渐亮 4000 K 室内灯，参与真实阴影和间接光，亮度保留 `oow.FrameRoomLumens` 调校入口。[窗框说明与验证](Migration/desktop-frame.md)。
 
 材质生成入口为 `Scripts/build_desktop_frame.py`，输出 `/Game/Materials/OOW/DesktopFrame` 下的 `M_DesktopFrame` 和 `M_WindowRainGlass`，已加入 Import 和 Cook。外观接口为控制台 `OOWFrame oak|ivory|graphite` 或启动参数 `-OOWFrame=ivory`，未知 ID 保持当前选择。仅渲染诊断可在 `-OOWCapture=...` 时加 `-OOWTestNoFrame` 去框；`-OOWTestHideUI -OOWCaptureUI` 则隐藏界面并保留框和雨滴。`validate.ps1 -Cases 'city-rainglass,alley-hiddenui,alley-narrow'` 同时检查连续雨滴截图、晴天和窄屏。设计参考与成品证据见 [窗框验收记录](Migration/desktop-frame.md)。
 
@@ -96,7 +100,7 @@ npm run dev -- --configLoader native
 .\unreal\Run-Unreal.ps1 -Mode Build
 ```
 
-`Import` 使用已编译的 `OutOfWindow.uproject`，依次运行 `import_scenes.py`、`build_window_interiors.py`、`build_surface_materials.py`、`build_precipitation.py`、`build_foam.py`、`build_coast_shoreline.py` 六个步骤，会重建生成区域内的关卡和材质。整窗分组与 UV 必须在表面材质生成前完成。手工修改应放在独立资产，或回写生成脚本。导入器已包含各景太阳方位标签与雾参数；`configure_maps.py` 是给现有地图应用同一配置的维护脚本。
+`Import` 使用已编译的 `OutOfWindow.uproject`，按 `Run-Unreal.ps1` 中的脚本顺序重建生成区域内的关卡和材质。窗户部分依次生成整窗 UV、清理真实房间后的旧底板、生成四个真实房间，再生成表面材质；后巷风化层和局部贴花在基础表面材质之后生成。手工修改应放在独立资产，或回写生成脚本。导入器已包含各景太阳方位标签与雾参数；`configure_maps.py` 是给现有地图应用同一配置的维护脚本。
 
 `build_foam.py` 恢复海滨岸边动态泡沫，在保持近岸 Y 边界的前提下把海面扩展至约 2 km 宽、X 中心设为 3,200 cm，向两侧延伸以隐藏侧边界；同时为山林/村庄的六个针叶网格启用 Nanite Preserve Area。实际资产路径和尺寸见 `Migration/foam-repair.json`。这些处理保留原素材，不会增加源贴图分辨率或补出地形细节。
 
@@ -121,12 +125,20 @@ npm run dev -- --configLoader native
 | `WindowGameMode` | 禁用自由移动 Pawn，为任意窗景启动统一 Director。 |
 | `WindowDirector` | 相机、时间天气、太阳天空、雾、画质、Slate UI、声音、车流及验证输出；通过 `OOWCamera`、`OOWSun`、`OOWSky` 等标签绑定场景。 |
 | `WindowPrecipitation` | 世界空间雨雪及落地飞溅；固定 ISM 由 GPU 材质移动，水花在切景时向下复杂碰撞采样，不做每帧逐粒子碰撞。 |
-| `build_window_interiors.py` | 给后巷玻璃生成整窗 UV1 与恒定种子 UV2，标记 `OOWWindowInterior`，为同窗多片玻璃提供连续的室内图坐标；本轮执行和画面验证见独立夜窗记录。 |
+| `build_window_interiors.py` | 给后巷玻璃生成整窗 UV1、恒定种子 UV2 和宽高 UV3，保留源 UV0；材质以此提供连续图像、开孔和虚拟房间视差。 |
+| `clear_hero_backings.py` / `build_room_boxes.py` | 保留源资产，生成去除必要旧底板的副本，以及十五个带家具和独立玻璃的简化房间。 |
+| `build_interior_atlas.py` | 在独立关卡离线烘焙六种室内 HDR cubemap，使用与运行时相同的房间盒体及捕获坐标；此步骤需要真实 RHI。 |
 | `build_surface_materials.py` | 生成项目内天气材质，保留原纹理/UV，通过材质实例接收湿润、积水、夜灯、风及雨量；仅对已标注叶片/布篷施加风动。 |
 | `WindowDesktop` | 独立游戏窗口的 Windows 动态桌面嵌入、还原／最大化切换、托盘、显隐和单实例；不接管编辑器窗口。 |
 | 公共渲染配置 | 五景共用 Lumen、VSM、TSR、Nanite 与纹理流送；禁用静态烘焙光照。 |
 
 固定机位优化使用 Lumen 自身历史和表面缓存。平稳阶段 GI 更新速度为 `0.5`，时间/天气调整后的短暂窗口提高到 `4`，SkyLight 实时捕获启用时间切片。材质天气参数约 10 Hz 更新，太阳、雨雪继续平滑运动；没有把整个 SSR 画面冻结数帧。
+
+三档画质均保留双面材质的独立背面 GI，避免节能／均衡档将后巷红色雨棚照成粉白并放大周围墙面提亮。该设置在每次应用画质后恢复，运行审计和渲染验收会检查实际值；原贴图、透射参数及其他画质选项保留。修改、原生分辨率回归及 GPU 对照见 [雨棚阴天修正](Migration/awning-overcast-repair.md)。
+
+体积云按主画面实际深度估算可见天空面积，包含建筑、Nanite 几何和窗框遮挡。每 2 秒异步读取 128×72 深度缩略图，结合内部渲染像素数平滑分配采样：天空较少时提高精度，开阔天空和高分辨率时按预算降低；节能／均衡／精细分别限制在 0.5–1／1–2／1.5–3 倍。保留 Mode0 时间重建，将云样本分配距离设为 5 km；`oow.CloudSampleBudget` 可调参考像素预算，默认 200000。它是工作量近似，不保证固定 GPU 耗时。
+
+实时标签直接区分气象服务的晴、晴间多云、多云、阴，以及小／中／大雨雪；毛毛雨、冻雨、阵雨、阵雪和雷暴保留具体类型，未知天气码显示「未知」。预览提供实时、晴、多云、阴、雨、雪、雾，选择雨雪后可切换小／中／大并改变粒子强度；旧 `OOWWeather rain|snow` 命令仍表示中等强度。普通多云不再自动混入雨云材质。实现与本机验证见 [自适应天空与天气分级](Migration/adaptive-cloud-weather.md)。
 
 后巷风动采用 v8 材质，恢复原版米到厘米换算后的树冠摆动、叶片轻颤和窗蓬下缘起伏，保留顶部／根部固定点，并随风速、风向与雨量变化。导入材质残留的 WPO `UseConstant` 标记曾使已连接的动画图仍编译为零位移；生成脚本通过 `WindowMaterialLibrary.EnableConnectedWorldPositionOffset` 按 UE-219232 的编辑器处理方式清除该标记，重用旧材质和重新生成时均自动修复。`WindowBirds` 在晴天白昼间歇生成 1–3 只远处飞鸟，复用 9 个组件和两份原创小网格，随后间隔 25–50 秒；夜间、雨雪雾及强风停飞。连续画面检查可在已有 `-OOWCapture=...png` 验证命令后追加 `-OOWCaptureFrames=64 -OOWCaptureInterval=0.1`，中间帧带数字后缀，最后一帧及审计 JSON 保留原路径；`Scripts/inspect_alley_motion.py` 对比叶片、窗蓬边缘和静态墙面，避免把单张截图误当作动画验证。
 
@@ -136,9 +148,13 @@ npm run dev -- --configLoader native
 
 ## 来源和实际限制
 
+后巷地面与石材使用 v9 雨湿材质：浅积水保持平滑水面，雨量控制覆盖范围，墙面增加局部湿痕，并修正带落叶路面的分类。可用 `Scripts/validate.ps1 -EngineRoot 'D:\Epic\Epic Games\UE_5.7' -Packaged -Cases alley-lightrain -CaptureSeconds 60` 复测固定小雨；实现与验证见 [后巷湿表面修复](Migration/wet-surface-repair.md)。
+
+后巷两面可见主墙增加抹灰／裸露砂浆的多通道混合，以及三处窗台旧流痕贴花；原雨湿响应继续保留。素材和完整生成提示词见 [墙面风化素材](Art/AlleyWeathering/README.md)，构建记录为 `Migration/alley-weathering.json`、`Migration/alley-weathering-decals.json`。
+
 许可总账：[THIRD_PARTY_ASSETS.md](../THIRD_PARTY_ASSETS.md)。ORCA Bistro、Helsinki 远景为 CC BY 4.0，Poly Haven、ambientCG 为 CC0，继承使用的 Three.js 水面法线按原记录保留 MIT 署名。再分发 Content 或打包程序时须附带许可记录和必要署名。研究用 Emerald Square 不在迁移范围内。
 
-夜窗追加了 [六张 AI 生成室内图](Art/WindowInteriors/README.md)，原图均为 1024×1536，提示词完整保留。415 个整窗组消除了已检查夜景中的方格亮灭切割，双扇图像连续。当前 **v5** 使用纹理 `TMGS_BLUR2`、实例有效 `OOWInteriorMipBias=2.0` 和 `OOWInteriorGain=1.8`；UE 构建、审计及最终包夜间/雨夜两例均通过，截图确认更柔和、更明亮的暖光与窗边光晕，外框保持清晰。原图、窗几何和六个采样数量保持不变，仍是没有真实室内几何或视差的 2D 近似。最终证据见 [glow-window-verification.json](Migration/glow-window-verification.json)，各阶段边界见 [夜窗修复记录](Migration/night-window-repair.md)；短测不证明性能提升，历史矩阵保持原记录。
+夜窗 v16 / `window-uv-v5` 按可见面积、角度和遮挡需求分配：15 个物理窗洞使用简化 3D；17 个源组使用从六种真实布局离线烘焙的 HDR cubemap，其余源组使用无家具的基础 Interior Mapping。射线与校准盒体求交后按捕获中心采样，不再把完整透视照片贴在后墙。实体房共约一万个三角形，实时灯总预算仍为 12。素材及边界见 [室内烘焙说明](Art/InteriorMapping/README.md)，实施、验证与部署状态见 [逐窗改造记录](Migration/window-interior-mapping.md)。[旧 AI 图](Art/WindowInteriors/README.md)及 [v14 记录](Migration/window-depth-repair.md)仅保留历史，不作为当前版本结论。
 
 **Nanite 不会补出源资产不存在的细节。** Bistro 载体仍有 157 张 768 px 内嵌图，多数 Poly Haven 贴图来自原来的 1K 素材；导出上限 2048 px 不表示已获得真实 2K 细节。部分 roughness/AO/height 来自基色推导，不等价于测量材质。窗户内部、玻璃厚度、近景破损、自然地形接缝和城市重复布景仍需要美术重做。
 

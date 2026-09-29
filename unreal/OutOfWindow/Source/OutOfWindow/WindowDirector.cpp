@@ -4,6 +4,8 @@
 #include "WindowPrecipitation.h"
 #include "WindowBirds.h"
 #include "WindowFrame.h"
+#include "WindowWeather.h"
+#include "WindowSkySampling.h"
 #include "Camera/CameraActor.h"
 #include "Camera/CameraComponent.h"
 #include "Components/AudioComponent.h"
@@ -13,6 +15,7 @@
 #include "Components/StaticMeshComponent.h"
 #include "Components/MeshComponent.h"
 #include "Components/SkyLightComponent.h"
+#include "Components/SceneCaptureComponentCube.h"
 #include "Components/SkyAtmosphereComponent.h"
 #include "Components/VolumetricCloudComponent.h"
 #include "Dom/JsonObject.h"
@@ -23,12 +26,14 @@
 #include "RHI.h"
 #include "Engine/PostProcessVolume.h"
 #include "Engine/StaticMesh.h"
+#include "Engine/TextureRenderTargetCube.h"
 #include "EngineUtils.h"
 #include "GameFramework/GameUserSettings.h"
 #include "GameFramework/PlayerController.h"
 #include "HAL/FileManager.h"
 #include "HAL/IConsoleManager.h"
 #include "HttpModule.h"
+#include "ImageUtils.h"
 #include "Interfaces/IHttpRequest.h"
 #include "Interfaces/IHttpResponse.h"
 #include "Kismet/GameplayStatics.h"
@@ -99,6 +104,7 @@ bool ValidLocation(double Latitude, double Longitude, double UtcOffset)
 TAutoConsoleVariable<float> NightBloom(TEXT("oow.NightBloom"), 1.3f, TEXT("Bloom intensity for OOWWindowLookdev volumes."));
 TAutoConsoleVariable<float> NightBloomSize(TEXT("oow.NightBloomSize"), 5.5f, TEXT("Bloom size scale for OOWWindowLookdev volumes."));
 TAutoConsoleVariable<float> NightExposureBias(TEXT("oow.NightExposureBias"), -1.15f, TEXT("Night exposure bias for OOWWindowLookdev volumes."));
+TAutoConsoleVariable<float> CloudSampleBudget(TEXT("oow.CloudSampleBudget"), 200000.f, TEXT("Reference internal sky pixels at cloud sample scale 1; bounded by the selected quality preset."));
 
 double Number(const TSharedPtr<FJsonObject>& Object, const TCHAR* Key, double Fallback)
 {
@@ -116,20 +122,13 @@ bool ReadJson(const FHttpResponsePtr& Response, bool bSuccess, TSharedPtr<FJsonO
 FDateTime LocalNow() { return Session.bTest ? FDateTime(2026, 9, 23) + FTimespan::FromHours(Session.Hour) : FDateTime::UtcNow() + FTimespan::FromSeconds(Session.OffsetSeconds); }
 float Smooth(float A, float B, float Value) { const float T = FMath::Clamp((Value - A) / (B - A), 0.f, 1.f); return T * T * (3.f - 2.f * T); }
 
-FString WeatherForCode(int32 Code)
-{
-    if (Code == 45 || Code == 48) return TEXT("fog");
-    if (Code == 71 || Code == 73 || Code == 75 || Code == 77 || Code == 85 || Code == 86) return TEXT("snow");
-    if ((Code >= 51 && Code <= 67) || (Code >= 80 && Code <= 82) || Code >= 95) return TEXT("rain");
-    return TEXT("clear");
-}
+int32 ActiveWeatherCode() { return Session.Weather == TEXT("real") ? Session.WeatherCode : WindowWeather::CodeForPreview(Session.Weather); }
 
-FString WeatherLabel(const FString& Mode)
+bool ShouldCaptureWindowReflection(float Elapsed, float LastCapture, float FastUntil)
 {
-    if (Mode == TEXT("rain")) return TEXT("雨");
-    if (Mode == TEXT("snow")) return TEXT("雪");
-    if (Mode == TEXT("fog")) return TEXT("雾");
-    return Session.WeatherCode == 3 && Session.Weather == TEXT("real") ? TEXT("阴天") : TEXT("晴");
+    // Let the weather interpolation settle before returning to the slow cadence.
+    const float Interval = Elapsed < 10.f || Elapsed < FastUntil + 6.f ? 2.f : 30.f;
+    return Elapsed > 2.f && Elapsed - LastCapture >= Interval;
 }
 
 void SetCVar(const TCHAR* Name, int32 Value)
@@ -203,9 +202,49 @@ void AWindowDirector::BeginPlay()
             Session.bFrameStyleInitialized = true;
         }
     }
+    if (Session.Scene == TEXT("Alley") && Camera && !WindowReflectionCapture)
+    {
+        WindowReflectionTexture = NewObject<UTextureRenderTargetCube>(this);
+        WindowReflectionTexture->ClearColor = FLinearColor::Black;
+        WindowReflectionTexture->bForceLinearGamma = true;
+        WindowReflectionTexture->bAutoGenerateMips = true;
+        WindowReflectionTexture->MipsSamplerFilter = TF_Trilinear;
+        WindowReflectionTexture->Init(128, PF_FloatRGBA);
+        WindowReflectionTexture->UpdateResourceImmediate();
+        WindowReflectionCapture = NewObject<USceneCaptureComponentCube>(this);
+        WindowReflectionCapture->TextureTarget = WindowReflectionTexture;
+        // SceneColor HDR has no exposure/tonemapping; the window's main view supplies them once.
+        WindowReflectionCapture->CaptureSource = SCS_SceneColorHDRNoAlpha;
+        WindowReflectionCapture->bCaptureEveryFrame = false;
+        WindowReflectionCapture->bCaptureOnMovement = false;
+        WindowReflectionCapture->bAlwaysPersistRenderingState = true;
+        WindowReflectionCapture->bUseRayTracingIfEnabled = true;
+        WindowReflectionCapture->PostProcessSettings.bOverride_DynamicGlobalIlluminationMethod = true;
+        WindowReflectionCapture->PostProcessSettings.DynamicGlobalIlluminationMethod = EDynamicGlobalIlluminationMethod::Lumen;
+        WindowReflectionCapture->PostProcessSettings.bOverride_ReflectionMethod = true;
+        WindowReflectionCapture->PostProcessSettings.ReflectionMethod = EReflectionMethod::None;
+        // ponytail: one local cube approximates parallax; native Lumen supplies precise nearby reflections.
+        const FVector CapturePosition = Camera->GetActorLocation() + Camera->GetActorForwardVector() * 500.f - FVector::UpVector * 500.f;
+        WindowReflectionCapture->SetWorldLocation(CapturePosition);
+        if (WindowFrame) WindowReflectionCapture->HiddenActors.Add(WindowFrame.Get());
+        WindowReflectionCapture->RegisterComponent();
+        WindowReflectionCapture->SetComponentTickEnabled(false);
+        for (UMaterialInstanceDynamic* Material : Materials)
+        {
+            UTexture* ExistingTexture = nullptr;
+            if (!Material->GetTextureParameterValue(FMaterialParameterInfo(TEXT("LocalWindowReflection")), ExistingTexture)) continue;
+            Material->SetTextureParameterValue(TEXT("LocalWindowReflection"), WindowReflectionTexture);
+            Material->SetVectorParameterValue(TEXT("LocalWindowCapturePosition"), FLinearColor(CapturePosition.X, CapturePosition.Y, CapturePosition.Z, 1.f));
+            Material->SetScalarParameterValue(TEXT("LocalWindowReflectionReady"), 0.f);
+        }
+    }
     RegisterCommands();
-    if (!bTestMode || FParse::Param(FCommandLine::Get(), TEXT("OOWTestDesktop"))) { Desktop = MakeUnique<FWindowDesktop>(); Desktop->Initialize(this); }
+    if (!bTestMode || FParse::Param(FCommandLine::Get(), TEXT("OOWTestDesktop")) || FParse::Param(FCommandLine::Get(), TEXT("OOWTestDesktopInput")))
+    {
+        Desktop = MakeUnique<FWindowDesktop>(); Desktop->Initialize(this);
+    }
     MakeInterface();
+    SkySampling = FSceneViewExtensions::NewExtension<FWindowSkySampling>(GetWorld());
     OOWQuality(Session.Quality);
 
     float StartHour;
@@ -215,6 +254,25 @@ void AWindowDirector::BeginPlay()
     if (FParse::Value(FCommandLine::Get(), TEXT("OOWWeather="), StartWeather)) OOWWeather(StartWeather);
     if (FParse::Value(FCommandLine::Get(), TEXT("OOWTestHour="), StartHour)) OOWTime(StartHour);
     if (FParse::Value(FCommandLine::Get(), TEXT("OOWTestWeather="), StartWeather)) OOWWeather(StartWeather);
+    float TestCloudCover;
+    if (bTestMode && FParse::Value(FCommandLine::Get(), TEXT("OOWTestCloudCover="), TestCloudCover) && FMath::IsFinite(TestCloudCover))
+    {
+        Session.CloudCover = FMath::Clamp(TestCloudCover, 0.f, 100.f);
+        Session.Weather = TEXT("real");
+    }
+    float TestPrecipitation;
+    if (bTestMode && FParse::Value(FCommandLine::Get(), TEXT("OOWTestPrecipitation="), TestPrecipitation) && FMath::IsFinite(TestPrecipitation) && TestPrecipitation >= 0.f)
+    {
+        Session.Precipitation = TestPrecipitation;
+        Session.Weather = TEXT("real");
+        Session.WeatherCode = 61;
+    }
+    int32 TestWeatherCode;
+    if (bTestMode && FParse::Value(FCommandLine::Get(), TEXT("OOWTestWeatherCode="), TestWeatherCode))
+    {
+        Session.WeatherCode = TestWeatherCode;
+        Session.Weather = TEXT("real");
+    }
     if (FParse::Value(FCommandLine::Get(), TEXT("OOWTestQuality="), StartQuality)) OOWQuality(StartQuality);
     FString ExpectedScene;
     if (FParse::Value(FCommandLine::Get(), TEXT("OOWTestScene="), ExpectedScene) && !Session.Scene.Equals(ExpectedScene, ESearchCase::IgnoreCase))
@@ -353,7 +411,6 @@ void AWindowDirector::FindSceneActors()
         CloudMaterial->SetVectorParameterValue(TEXT("Storm_AlbedoColor"), FLinearColor(.52f, .55f, .58f, 1.f / 3.f));
         Cloud->SetTracingStartMaxDistance(80.f);
         Cloud->SetTracingMaxDistance(25.f);
-        Cloud->SetViewSampleCountScale(Session.Quality == 0 ? .25f : Session.Quality == 1 ? .5f : 1.f);
         Cloud->SetReflectionViewSampleCountScale(.15f);
         Cloud->SetShadowViewSampleCountScale(.5f);
         Cloud->SetShadowReflectionViewSampleCountScale(.1f);
@@ -409,12 +466,6 @@ void AWindowDirector::MakeInterface()
 {
     if (!GEngine || !GEngine->GameViewport) return;
     const FSlateFontInfo Font = FCoreStyle::GetDefaultFontStyle(TEXT("Regular"), 13);
-    auto Button = [Font](TAttribute<FText> Label, TFunction<void()> Action)
-    {
-        return SNew(SButton).ContentPadding(FMargin(5, 5)).OnClicked_Lambda([Action = MoveTemp(Action)] { Action(); return FReply::Handled(); })
-            [SNew(STextBlock).Text(Label).Font(Font).ColorAndOpacity(FLinearColor(.88f, .90f, .85f))];
-    };
-    auto Label = [](const TCHAR* Text) { return TAttribute<FText>(FText::FromString(Text)); };
     const FLinearColor Ink(.96f, .97f, .95f), Muted(.92f, .95f, .93f, .58f), Accent(.74f, .90f, .78f);
     const FSlateFontInfo SmallFont = FCoreStyle::GetDefaultFontStyle(TEXT("Regular"), 8);
     static const FSlateRoundedBoxBrush PanelBrush(FLinearColor(FColor(12, 22, 28, 163)), 22.f, FLinearColor(1, 1, 1, .13f), 1.f);
@@ -422,15 +473,27 @@ void AWindowDirector::MakeInterface()
     static const FSlateRoundedBoxBrush SegmentActiveBrush(FLinearColor(1, 1, 1, .11f), 7.f);
     static const FSlateRoundedBoxBrush SceneBrush(FLinearColor(1, 1, 1, .035f), 12.f);
     static const FSlateRoundedBoxBrush SceneActiveBrush(FLinearColor(.68f, .85f, .73f, .10f), 12.f, FLinearColor(.76f, .90f, .80f, .40f), 1.f);
-    static const FSlateRoundedBoxBrush LiveBrush(FLinearColor(1, 1, 1, .04f), 99.f, FLinearColor(1, 1, 1, .13f), 1.f);
-    static const FSlateRoundedBoxBrush LiveActiveBrush(FLinearColor(1, 1, 1, .04f), 99.f, FLinearColor(.74f, .90f, .78f, .24f), 1.f);
+    static const FSlateRoundedBoxBrush LiveBrush(FLinearColor(1, 1, 1, .04f), FLinearColor(1, 1, 1, .13f), 1.f);
+    static const FSlateRoundedBoxBrush LiveActiveBrush(FLinearColor(1, 1, 1, .04f), FLinearColor(.74f, .90f, .78f, .24f), 1.f);
+    static const FSlateRoundedBoxBrush AmbientBrush(FLinearColor(.009f, .018f, .024f, .85f), FLinearColor(1, 1, 1, .13f), 1.f);
     static const FButtonStyle FlatStyle = FButtonStyle()
         .SetNormal(FSlateRoundedBoxBrush(FLinearColor::Transparent, 7.f))
         .SetHovered(FSlateRoundedBoxBrush(FLinearColor(1, 1, 1, .08f), 7.f))
         .SetPressed(FSlateRoundedBoxBrush(FLinearColor(1, 1, 1, .12f), 7.f))
         .SetNormalPadding(FMargin(0)).SetPressedPadding(FMargin(0));
     static const FButtonStyle QualityStyle = FButtonStyle(FlatStyle)
-        .SetNormal(FSlateRoundedBoxBrush(FLinearColor(.009f, .018f, .024f), 7.f, FLinearColor(1, 1, 1, .13f), 1.f));
+        .SetNormal(FSlateRoundedBoxBrush(FLinearColor(.009f, .018f, .024f), 7.f, FLinearColor(1, 1, 1, .13f), 1.f))
+        .SetHovered(FSlateRoundedBoxBrush(FLinearColor(.025f, .037f, .045f), 7.f, FLinearColor(1, 1, 1, .22f), 1.f))
+        .SetPressed(FSlateRoundedBoxBrush(FLinearColor(.015f, .027f, .033f), 7.f, FLinearColor(.74f, .90f, .78f, .3f), 1.f));
+    static const FComboButtonStyle MenuStyle = FComboButtonStyle(FCoreStyle::Get().GetWidgetStyle<FComboButtonStyle>("ComboButton"))
+        .SetButtonStyle(QualityStyle).SetContentPadding(FMargin(10, 6))
+        .SetMenuBorderBrush(FSlateNoResource()).SetMenuBorderPadding(0);
+    static const FButtonStyle SceneButtonStyle = FButtonStyle(FlatStyle)
+        .SetHovered(FSlateRoundedBoxBrush(FLinearColor(1, 1, 1, .08f), 12.f))
+        .SetPressed(FSlateRoundedBoxBrush(FLinearColor(1, 1, 1, .12f), 12.f));
+    static const FButtonStyle PillButtonStyle = FButtonStyle(FlatStyle)
+        .SetHovered(FSlateRoundedBoxBrush(FLinearColor(1, 1, 1, .08f)))
+        .SetPressed(FSlateRoundedBoxBrush(FLinearColor(1, 1, 1, .12f)));
     static const FSliderStyle TimeSliderStyle = FSliderStyle()
         .SetNormalBarImage(FSlateNoResource()).SetHoveredBarImage(FSlateNoResource()).SetDisabledBarImage(FSlateNoResource())
         .SetNormalThumbImage(FSlateRoundedBoxBrush(FLinearColor(.84f, .67f, .47f), 6.5f, FLinearColor::White, 2.f, FVector2D(13, 13)))
@@ -468,7 +531,7 @@ void AWindowDirector::MakeInterface()
         const FString Key = SceneKeys[Index], Name = SceneNames[Index];
         SceneRow->AddSlot().FillWidth(1).Padding(Index == 0 || Index == 2 ? 0 : 7, 0, 0, 0)
             [SNew(SBorder).Padding(0).BorderImage_Lambda([Key] { return Session.Scene == Key ? &SceneActiveBrush : &SceneBrush; })
-                [SNew(SButton).ButtonStyle(&FlatStyle).ContentPadding(6).HAlign(HAlign_Fill)
+                [SNew(SButton).ButtonStyle(&SceneButtonStyle).ContentPadding(6).HAlign(HAlign_Fill)
                     .ToolTipText(FText::FromString(Name)).OnClicked_Lambda([this, Key] { OOWScene(Key); return FReply::Handled(); })
                     [SNew(SHorizontalBox)
                         + SHorizontalBox::Slot().AutoWidth().VAlign(VAlign_Center)[SNew(SImage).Image(ScenePreviews[Index].Get())]
@@ -478,18 +541,30 @@ void AWindowDirector::MakeInterface()
                                 + SVerticalBox::Slot().AutoHeight().Padding(0, 3, 0, 0)[SNew(STextBlock).Text(FText::FromString(SceneDescriptions[Index])).Font(FCoreStyle::GetDefaultFontStyle(TEXT("Regular"), 6)).ColorAndOpacity(Muted)]]]]];
     }
     TSharedRef<SHorizontalBox> WeatherButtons = SNew(SHorizontalBox);
-    const TCHAR* WeatherKeys[] = { TEXT("real"), TEXT("clear"), TEXT("rain"), TEXT("snow"), TEXT("fog") };
-    const TCHAR* WeatherNames[] = { TEXT("实时"), TEXT("晴"), TEXT("雨"), TEXT("雪"), TEXT("雾") };
-    for (int32 Index = 0; Index < 5; ++Index)
+    const TCHAR* WeatherKeys[] = { TEXT("real"), TEXT("clear"), TEXT("cloudy"), TEXT("overcast"), TEXT("rain"), TEXT("snow"), TEXT("fog") };
+    const TCHAR* WeatherNames[] = { TEXT("实时"), TEXT("晴"), TEXT("多云"), TEXT("阴"), TEXT("雨"), TEXT("雪"), TEXT("雾") };
+    for (int32 Index = 0; Index < UE_ARRAY_COUNT(WeatherKeys); ++Index)
     {
         const FString Key = WeatherKeys[Index], Name = WeatherNames[Index];
+        const auto IsSelected = [this, Key] { return Session.Weather == TEXT("real") ? Key == TEXT("real") : ActualWeather() == Key; };
         WeatherButtons->AddSlot().FillWidth(1)
-            [SNew(SBorder).Padding(0).BorderImage_Lambda([Key]() -> const FSlateBrush* { return Session.Weather == Key ? &SegmentActiveBrush : FCoreStyle::Get().GetBrush(TEXT("NoBrush")); })
-                [SNew(SButton).ButtonStyle(&FlatStyle).ContentPadding(FMargin(6)).HAlign(HAlign_Center)
+            [SNew(SBorder).Padding(0).BorderImage_Lambda([IsSelected]() -> const FSlateBrush* { return IsSelected() ? &SegmentActiveBrush : FCoreStyle::Get().GetBrush(TEXT("NoBrush")); })
+                [SNew(SButton).ButtonStyle(&FlatStyle).ContentPadding(FMargin(3, 6)).HAlign(HAlign_Center).ToolTipText(FText::FromString(Name))
                     .OnClicked_Lambda([this, Key] { OOWWeather(Key); return FReply::Handled(); })
-                    [SNew(STextBlock).Text(FText::FromString(Name)).Font(SmallFont).ColorAndOpacity_Lambda([Key, Ink, Muted] { return Session.Weather == Key ? Ink : Muted; })]]];
+                    [SNew(STextBlock).Text(FText::FromString(Name)).Font(SmallFont).ColorAndOpacity_Lambda([IsSelected, Ink, Muted] { return IsSelected() ? Ink : Muted; })]]];
     }
-    TSharedRef<SComboButton> QualityMenu = SNew(SComboButton).ButtonStyle(&QualityStyle).ContentPadding(FMargin(8, 4))
+    TSharedRef<SHorizontalBox> PrecipitationButtons = SNew(SHorizontalBox);
+    for (const FString Level : { TEXT("light"), TEXT("moderate"), TEXT("heavy") })
+    {
+        const auto Mode = [this, Level] { return Level + TEXT("_") + ActualWeather(); };
+        PrecipitationButtons->AddSlot().FillWidth(1)
+            [SNew(SBorder).Padding(0).BorderImage_Lambda([Mode]() -> const FSlateBrush* { return Session.Weather == Mode() ? &SegmentActiveBrush : FCoreStyle::Get().GetBrush(TEXT("NoBrush")); })
+                [SNew(SButton).ButtonStyle(&FlatStyle).ContentPadding(6).HAlign(HAlign_Center)
+                    .OnClicked_Lambda([this, Mode] { OOWWeather(Mode()); return FReply::Handled(); })
+                    [SNew(STextBlock).Text_Lambda([Mode] { return FText::FromString(WindowWeather::LabelForCode(WindowWeather::CodeForPreview(Mode()))); })
+                        .Font(SmallFont).ColorAndOpacity(Ink)]]];
+    }
+    TSharedRef<SComboButton> QualityMenu = SNew(SComboButton).ComboButtonStyle(&MenuStyle).ForegroundColor(Ink)
         .ToolTipText(FText::FromString(TEXT("画质")))
         .OnGetMenuContent_Lambda([this, SmallFont, Ink]() -> TSharedRef<SWidget>
         {
@@ -506,7 +581,8 @@ void AWindowDirector::MakeInterface()
         })
         .ButtonContent()
         [SNew(STextBlock).Text_Lambda([] { return FText::FromString(Session.Quality == 0 ? TEXT("节能") : Session.Quality == 1 ? TEXT("均衡") : TEXT("精细")); }).Font(SmallFont).ColorAndOpacity(Ink)];
-    TSharedRef<SComboButton> LocationMenu = SNew(SComboButton).ButtonStyle(&QualityStyle)
+    TSharedRef<SComboButton> LocationMenu = SNew(SComboButton).ComboButtonStyle(&MenuStyle).ForegroundColor(Ink)
+        .MenuPlacement(MenuPlacement_AboveRightAnchor)
         .OnGetMenuContent_Lambda([this, SmallFont, Ink, Muted]() -> TSharedRef<SWidget>
         {
             const auto Follow = SNew(SCheckBox).IsChecked(Session.bFollowIP ? ECheckBoxState::Checked : ECheckBoxState::Unchecked)
@@ -541,7 +617,7 @@ void AWindowDirector::MakeInterface()
                                 + SVerticalBox::Slot().AutoHeight().Padding(0, 3)[Row(TEXT("离线 UTC 时差"), Offset)]]
                         + SVerticalBox::Slot().AutoHeight()[SNew(STextBlock).Text(FText::FromString(TEXT("未勾选时使用手动位置，不请求 IP 定位。\n联网后自动校准当地时区；设置保存在本机。"))).Font(SmallFont).ColorAndOpacity(Muted)]
                         + SVerticalBox::Slot().AutoHeight().Padding(0, 10, 0, 0)
-                            [SNew(SButton).ButtonStyle(&QualityStyle).HAlign(HAlign_Center)
+                            [SNew(SButton).ButtonStyle(&QualityStyle).ContentPadding(FMargin(12, 7)).HAlign(HAlign_Center).VAlign(VAlign_Center)
                                 .IsEnabled_Lambda([Draft] { return ValidLocation(Draft->X, Draft->Y, Draft->Z); })
                                 .OnClicked_Lambda([this, Follow, City, Draft]
                                 {
@@ -601,10 +677,34 @@ void AWindowDirector::MakeInterface()
                             .OnClicked_Lambda([this] { DesktopButton(TEXT("Maximize")); return FReply::Handled(); })
                             [SNew(SImage).Image_Lambda([this] { const auto& Style = FCoreStyle::Get().GetWidgetStyle<FWindowStyle>("Window"); return Desktop && Desktop->IsDesktopMode() ? &Style.RestoreButtonStyle.Normal : &Style.MaximizeButtonStyle.Normal; })]]]
                 + SHorizontalBox::Slot().AutoWidth()[TitleButton(TEXT("×"), TEXT("Close"))]]]
-        + SOverlay::Slot().HAlign(HAlign_Left).VAlign(VAlign_Top).Padding(30, 86, 20, 20)
+        + SOverlay::Slot().HAlign(HAlign_Right).VAlign(VAlign_Top).Padding(20, 86, 54, 20)
         [SNew(SVerticalBox)
-            + SVerticalBox::Slot().AutoHeight()[SNew(STextBlock).Text_Lambda([this] { return StatusText(); }).Font(Font).ShadowOffset(FVector2D(1, 1))]
-            + SVerticalBox::Slot().AutoHeight().Padding(0, 12)[Button(Label(TEXT("刷新天气")), [this] { RefreshWeather(); })]]
+            + SVerticalBox::Slot().AutoHeight()
+            [SNew(SBorder).BorderImage(&PanelBrush).Padding(14, 11)
+                [SNew(SVerticalBox)
+                    + SVerticalBox::Slot().AutoHeight()
+                    [SNew(SHorizontalBox)
+                        + SHorizontalBox::Slot().FillWidth(1).VAlign(VAlign_Center)
+                            [SNew(STextBlock).Text_Lambda([this] { return StatusText(); }).Font(Font).Justification(ETextJustify::Right).ShadowOffset(FVector2D(1, 1))]
+                        + SHorizontalBox::Slot().AutoWidth().VAlign(VAlign_Center).Padding(12, 0, 0, 0)
+                            [SNew(SButton).ButtonStyle(&FlatStyle).ContentPadding(FMargin(9, 5)).ToolTipText(FText::FromString(TEXT("刷新天气")))
+                                .OnClicked_Lambda([this] { RefreshWeather(); return FReply::Handled(); })
+                                [SNew(STextBlock).Text(FText::FromString(TEXT("刷新"))).Font(SmallFont).ColorAndOpacity(Muted)]]]
+                    + SVerticalBox::Slot().AutoHeight().HAlign(HAlign_Right).Padding(0, 6, 0, 0)
+                    [SNew(STextBlock).Visibility_Lambda([this] { return bCollapsed || LastViewportSize.Y >= 760 ? EVisibility::HitTestInvisible : EVisibility::Collapsed; })
+                        .Text_Lambda([] { return FText::FromString(FString::Printf(TEXT("%.0f FPS"), 1. / FMath::Max(.001, FApp::GetDeltaTime()))); }).Font(SmallFont).ColorAndOpacity(Muted)]
+                    + SVerticalBox::Slot().AutoHeight().HAlign(HAlign_Right).Padding(0, 4, 0, 0)
+                    [SNew(SBox).Visibility_Lambda([this] { return bPrivacyDismissed || (!bCollapsed && LastViewportSize.Y < 760) ? EVisibility::Collapsed : EVisibility::Visible; })
+                        [SNew(SButton).ButtonStyle(&FlatStyle).ContentPadding(0).ToolTipText(FText::FromString(TEXT("关闭提示")))
+                            .OnClicked_Lambda([this] { bPrivacyDismissed = true; return FReply::Handled(); })
+                            [SNew(STextBlock).Text(FText::FromString(TEXT("IP 定位可能不准确，可在「地理位置」中修改  ×"))).Font(SmallFont).ColorAndOpacity(Muted)]]]]]
+            + SVerticalBox::Slot().AutoHeight().HAlign(HAlign_Right).Padding(0, 22, 0, 0)
+            [SNew(SBox).WidthOverride(300).Visibility_Lambda([this] { return bCollapsed || LastViewportSize.Y >= 860 ? EVisibility::HitTestInvisible : EVisibility::Collapsed; })
+                [SNew(STextBlock).Text_Lambda([]
+                {
+                    const FString Text = Session.Scene == TEXT("City") ? TEXT("01 / 05  都市\n街区与天际线") : Session.Scene == TEXT("Alley") ? TEXT("02 / 05  后巷\n雨篷与石板路") : Session.Scene == TEXT("Village") ? TEXT("03 / 05  村庄\n田野与屋瓦") : Session.Scene == TEXT("Forest") ? TEXT("04 / 05  山林\n松涛与溪流") : TEXT("05 / 05  海滨\n潮汐与暮光");
+                    return FText::FromString(Text);
+                }).Font(FCoreStyle::GetDefaultFontStyle(TEXT("Regular"), 22)).Justification(ETextJustify::Right).ShadowOffset(FVector2D(1, 2))]]]
         + SOverlay::Slot().HAlign(HAlign_Right).VAlign(VAlign_Bottom).Padding(20, 20, 54, 63)
         [SNew(SBox).WidthOverride(410)
             [SNew(SBackgroundBlur).BlurStrength(20).CornerRadius(FVector4(22, 22, 22, 22)).Padding(0).LowQualityFallbackBrush(&PanelBrush)
@@ -632,7 +732,7 @@ void AWindowDirector::MakeInterface()
                             + SHorizontalBox::Slot().FillWidth(1).VAlign(VAlign_Center).Padding(8, 0, 0, 0)[SNew(STextBlock).Text_Lambda([this] { return FText::FromString(ClockText().ToString().Mid(7)); }).Font(SmallFont).ColorAndOpacity(Muted)]
                             + SHorizontalBox::Slot().AutoWidth().VAlign(VAlign_Center)
                             [SNew(SBorder).Padding(0).BorderImage_Lambda([] { return Session.bLiveTime ? &LiveActiveBrush : &LiveBrush; })
-                                [SNew(SButton).ButtonStyle(&FlatStyle).ContentPadding(FMargin(11, 7))
+                                [SNew(SButton).ButtonStyle(&PillButtonStyle).ContentPadding(FMargin(11, 7))
                                     .OnClicked_Lambda([this] { Session.bLiveTime = !Session.bLiveTime; FastLightingUntil = GetWorld()->GetTimeSeconds() + 4; return FReply::Handled(); })
                                     [SNew(STextBlock).Text(FText::FromString(TEXT("●  跟随当地"))).Font(SmallFont).ColorAndOpacity_Lambda([Accent, Muted] { return Session.bLiveTime ? Accent : Muted; })]]]]
                         + SVerticalBox::Slot().AutoHeight().Padding(0, 10, 0, 0)
@@ -649,6 +749,10 @@ void AWindowDirector::MakeInterface()
                         [SNew(SHorizontalBox)
                             + SHorizontalBox::Slot().AutoWidth().VAlign(VAlign_Center).Padding(0, 0, 14, 0)[SNew(STextBlock).Text(FText::FromString(TEXT("天气"))).Font(SmallFont).ColorAndOpacity(Muted)]
                             + SHorizontalBox::Slot().FillWidth(1)[SNew(SBorder).BorderImage(&SegmentBrush).Padding(3)[WeatherButtons]]]
+                        + SVerticalBox::Slot().AutoHeight()
+                        [SNew(SBorder).BorderImage(&SegmentBrush).Padding(3)
+                            .Visibility_Lambda([this] { return Session.Weather != TEXT("real") && (ActualWeather() == TEXT("rain") || ActualWeather() == TEXT("snow")) ? EVisibility::Visible : EVisibility::Collapsed; })
+                            [PrecipitationButtons]]
                         + SVerticalBox::Slot().AutoHeight().Padding(0, 12, 0, 0)
                         [SNew(SHorizontalBox)
                             + SHorizontalBox::Slot().FillWidth(1).VAlign(VAlign_Center)[SNew(STextBlock).Text(FText::FromString(TEXT("画质"))).Font(SmallFont).ColorAndOpacity(Muted)]
@@ -662,33 +766,27 @@ void AWindowDirector::MakeInterface()
                             + SHorizontalBox::Slot().FillWidth(1).VAlign(VAlign_Center)[SNew(STextBlock).Text(FText::FromString(TEXT("地理位置"))).Font(SmallFont).ColorAndOpacity(Muted)]
                             + SHorizontalBox::Slot().AutoWidth()[LocationMenu]]
                         + SVerticalBox::Slot().AutoHeight().Padding(0, 12, 0, 0)[SceneButtons]]]]]]
-        + SOverlay::Slot().HAlign(HAlign_Left).VAlign(VAlign_Center).Padding(30)
-        [SNew(SBox).WidthOverride(300).Visibility(EVisibility::HitTestInvisible)
-            [SNew(STextBlock).Text_Lambda([]
-            {
-                const FString Text = Session.Scene == TEXT("City") ? TEXT("01 / 05  都市\n街区与天际线") : Session.Scene == TEXT("Alley") ? TEXT("02 / 05  后巷\n雨篷与石板路") : Session.Scene == TEXT("Village") ? TEXT("03 / 05  村庄\n田野与屋瓦") : Session.Scene == TEXT("Forest") ? TEXT("04 / 05  山林\n松涛与溪流") : TEXT("05 / 05  海滨\n潮汐与暮光");
-                return FText::FromString(Text);
-            }).Font(FCoreStyle::GetDefaultFontStyle(TEXT("Regular"), 22)).ShadowOffset(FVector2D(1, 2))]]
-        + SOverlay::Slot().HAlign(HAlign_Left).VAlign(VAlign_Bottom).Padding(30, 20, 20, 28)
-        [SNew(SVerticalBox)
-            + SVerticalBox::Slot().AutoHeight().HAlign(HAlign_Left).Padding(0, 0, 0, 12)
-                [SNew(SBorder).BorderImage(&LiveBrush).Padding(0)
-                    [SNew(SButton).ButtonStyle(&FlatStyle).ContentPadding(FMargin(15, 9)).OnClicked_Lambda([this] { ToggleAudio(); return FReply::Handled(); })
-                        [SNew(STextBlock).Text_Lambda([] { return FText::FromString(Session.bAudio ? TEXT("♫  环境声景") : TEXT("♪  环境声景")); }).Font(SmallFont).ColorAndOpacity_Lambda([Ink, Muted] { return Session.bAudio ? Ink : Muted; })]]]
-            + SVerticalBox::Slot().AutoHeight()[SNew(STextBlock).Text_Lambda([] { return FText::FromString(FString::Printf(TEXT("固定窗景 · 实时天气 · Lumen · %.0f FPS"), 1. / FMath::Max(.001, FApp::GetDeltaTime()))); }).Font(Font)]
-            + SVerticalBox::Slot().AutoHeight().Padding(0, 8)[SNew(SBox).Visibility_Lambda([this] { return bPrivacyDismissed ? EVisibility::Collapsed : EVisibility::Visible; })
-                [Button(Label(TEXT("定位可选 · IP 可能不准确 · 可在设置中更改   ×")), [this] { bPrivacyDismissed = true; })]]];
+        + SOverlay::Slot().HAlign(HAlign_Right).VAlign(VAlign_Bottom).Padding(20, 20, 484, 63)
+        [SNew(SBorder).BorderImage(&AmbientBrush).Padding(0)
+            [SNew(SButton).ButtonStyle(&PillButtonStyle).ContentPadding(FMargin(15, 9)).OnClicked_Lambda([this] { ToggleAudio(); return FReply::Handled(); })
+                [SNew(STextBlock).Text_Lambda([] { return FText::FromString(Session.bAudio ? TEXT("♫  环境声景") : TEXT("♪  环境声景")); }).Font(SmallFont).ColorAndOpacity_Lambda([Ink, Muted] { return Session.bAudio ? Ink : Muted; })]]];
     Interface = SNew(SOverlay)
         + SOverlay::Slot()[Controls]
         + SOverlay::Slot().HAlign(HAlign_Right).VAlign(VAlign_Top).Padding(0, 25, 121, 0)[VisibilityButton];
     GEngine->GameViewport->AddViewportWidgetContent(Interface.ToSharedRef(), 10);
+    FString CaptureMenu;
+    if (bTestMode && FParse::Value(FCommandLine::Get(), TEXT("OOWTestMenu="), CaptureMenu))
+    {
+        const auto Menu = CaptureMenu == TEXT("location") ? LocationMenu : QualityMenu;
+        GetWorld()->GetTimerManager().SetTimerForNextTick([Menu] { Menu->SetIsOpen(true, false); });
+    }
 }
 
 FText AWindowDirector::StatusText() const
 {
     const FDateTime Now = LocalNow();
     const TCHAR* Status = bFetching ? TEXT("正在同步所选位置的天气") : Session.bFallback ? TEXT("离线天气示例 · 非实时") : Session.bFollowIP ? TEXT("实时天空 · IP 近似位置") : TEXT("实时天空 · 手动位置");
-    return FText::FromString(FString::Printf(TEXT("%s\n%s  %.0f°C\n%s · 风 %.0f km/h · %02d:%02d"), Status, *Session.City, Session.Temperature, *WeatherLabel(ActualWeather()), Session.WindSpeed, Now.GetHour(), Now.GetMinute()));
+    return FText::FromString(FString::Printf(TEXT("%s\n%s  %.0f°C\n%s · 风 %.0f km/h · %02d:%02d"), Status, *Session.City, Session.Temperature, WindowWeather::LabelForCode(ActiveWeatherCode()), Session.WindSpeed, Now.GetHour(), Now.GetMinute()));
 }
 
 FText AWindowDirector::ClockText() const
@@ -703,22 +801,21 @@ void AWindowDirector::DesktopButton(FName Action)
     if (DesktopAction) DesktopAction(Action);
 }
 
-FString AWindowDirector::ActualWeather() const { return Session.Weather == TEXT("real") ? WeatherForCode(Session.WeatherCode) : Session.Weather; }
+FString AWindowDirector::ActualWeather() const { return WindowWeather::FamilyForCode(ActiveWeatherCode()); }
 
 void AWindowDirector::OOWTime(float Hour)
 {
     if (!FMath::IsFinite(Hour)) return;
     const float NewHour = FMath::Fmod(FMath::Fmod(Hour, 24.f) + 24.f, 24.f);
-    if (FMath::Abs(NewHour - Session.Hour) > .12f) FastLightingUntil = GetWorld()->GetTimeSeconds() + 3;
+    if (!FMath::IsNearlyEqual(NewHour, Session.Hour)) FastLightingUntil = GetWorld()->GetTimeSeconds() + 3;
     Session.Hour = NewHour;
     Session.bLiveTime = false;
 }
 
 void AWindowDirector::OOWWeather(const FString& Mode)
 {
-    FString Normalized = Mode.ToLower();
-    if (Normalized == TEXT("live")) Normalized = TEXT("real");
-    if (Normalized != TEXT("real") && Normalized != TEXT("clear") && Normalized != TEXT("rain") && Normalized != TEXT("snow") && Normalized != TEXT("fog")) return;
+    const FString Normalized = WindowWeather::NormalizeMode(Mode);
+    if (Normalized.IsEmpty()) return;
     Session.Weather = Normalized;
     FastLightingUntil = GetWorld()->GetTimeSeconds() + 4;
 }
@@ -752,6 +849,8 @@ void AWindowDirector::OOWQuality(int32 Quality)
         Settings->ApplyNonResolutionSettings();
     }
     SetCVar(TEXT("r.Lumen.DiffuseIndirect.Allow"), 1);
+    // The GI quality 2 fallback washes out two-sided canvas and amplifies its wall bounce.
+    SetCVar(TEXT("r.Lumen.ScreenProbeGather.TwoSidedFoliageBackfaceDiffuse"), 1);
     SetCVar(TEXT("r.Lumen.Reflections.Allow"), 1);
     SetCVar(TEXT("r.Lumen.TranslucencyReflections.FrontLayer.Enable"), Session.Quality > 0 ? 1 : 0);
     SetCVar(TEXT("r.Lumen.TranslucencyReflections.FrontLayer.Allow"), Session.Quality > 0 ? 1 : 0);
@@ -759,7 +858,10 @@ void AWindowDirector::OOWQuality(int32 Quality)
     SetCVar(TEXT("r.SkyLight.RealTimeReflectionCapture.TimeSlice"), 1);
     SetCVar(TEXT("r.VolumetricCloud"), 1);
     SetCVar(TEXT("r.VolumetricRenderTarget"), 1);
-    if (Cloud) Cloud->SetViewSampleCountScale(Session.Quality == 0 ? .25f : Session.Quality == 1 ? .5f : 1.f);
+    // Mode 0 retains temporal reconstruction; Mode 1 amplified cloud shimmer in the A/B test.
+    SetCVar(TEXT("r.VolumetricRenderTarget.Mode"), 0);
+    SetCVar(TEXT("r.VolumetricCloud.DistanceToSampleMaxCount"), 5);
+    UpdateCloudSampling(0.f);
 }
 
 void AWindowDirector::ApplyLocation(bool bFollowIP, double Latitude, double Longitude, const FString& City, double UtcOffset)
@@ -840,7 +942,8 @@ void AWindowDirector::FetchForecast(double Latitude, double Longitude, const FSt
         Session.OffsetSeconds = Number(Json, TEXT("utc_offset_seconds"), Session.OffsetSeconds);
         Json->TryGetStringField(TEXT("timezone"), Session.Timezone);
         Session.Temperature = Number(*Current, TEXT("temperature_2m"), 22);
-        Session.WeatherCode = static_cast<int32>(Number(*Current, TEXT("weather_code"), 1));
+        const double Code = Number(*Current, TEXT("weather_code"), -1);
+        Session.WeatherCode = Code >= 0 && Code <= 99 && FMath::FloorToDouble(Code) == Code ? static_cast<int32>(Code) : -1;
         Session.CloudCover = FMath::Clamp(Number(*Current, TEXT("cloud_cover"), 35), 0., 100.);
         Session.Precipitation = FMath::Max(0., Number(*Current, TEXT("precipitation"), 0));
         Session.WindSpeed = FMath::Clamp(Number(*Current, TEXT("wind_speed_10m"), 8), 0., 100.);
@@ -894,6 +997,7 @@ void AWindowDirector::Tick(float DeltaSeconds)
         Session.Hour = Now.GetHour() + Now.GetMinute() / 60.f + Now.GetSecond() / 3600.f;
     }
     ApplyLighting(FMath::Min(DeltaSeconds, .1f));
+    UpdateCloudSampling(FMath::Min(DeltaSeconds, .1f));
     if (WindowFrame && Camera)
     {
         WindowFrame->FitToView(Camera->GetCameraComponent(), LastViewportSize.Y > 0 ? LastViewportSize.X / LastViewportSize.Y : Camera->GetCameraComponent()->AspectRatio);
@@ -903,7 +1007,7 @@ void AWindowDirector::Tick(float DeltaSeconds)
     if (Birds)
     {
         const float Bearing = FMath::DegreesToRadians(Session.WindDirection);
-        Birds->SetConditions(Daylight, ActualWeather() == TEXT("clear"),
+        Birds->SetConditions(Daylight, ActualWeather() == TEXT("clear") || ActualWeather() == TEXT("cloudy"),
             FVector(-FMath::Sin(Bearing), FMath::Cos(Bearing), 0) * Session.WindSpeed / 3.6f * 100.f);
     }
     Traffic.Tick(DeltaSeconds, ActualWeather());
@@ -952,6 +1056,18 @@ void AWindowDirector::Tick(float DeltaSeconds)
     }
 }
 
+void AWindowDirector::UpdateCloudSampling(float DeltaSeconds)
+{
+    if (!Cloud) return;
+    FIntPoint RenderSize;
+    if (SkySampling && SkySampling->GetMeasurement(VisibleSkyFraction, RenderSize))
+        VisibleSkyPixels = VisibleSkyFraction * static_cast<double>(RenderSize.X) * RenderSize.Y;
+    CloudTargetSampleScale = WindowCloudSampleScale(VisibleSkyPixels, Session.Quality, CloudSampleBudget.GetValueOnGameThread());
+    CloudSampleScale = DeltaSeconds > 0 ? FMath::FInterpTo(CloudSampleScale, CloudTargetSampleScale, DeltaSeconds, .6f) : CloudTargetSampleScale;
+    if (FMath::Abs(Cloud->ViewSampleCountScale - CloudSampleScale) > .02f)
+        Cloud->SetViewSampleCountScale(CloudSampleScale);
+}
+
 void AWindowDirector::ApplyLighting(float DeltaSeconds)
 {
     const FDateTime Date = LocalNow();
@@ -966,7 +1082,8 @@ void AWindowDirector::ApplyLighting(float DeltaSeconds)
     SolarElevation = FMath::RadiansToDegrees(Elevation);
     Daylight = Smooth(-.12f, .18f, FMath::Sin(Elevation));
     const FString Weather = ActualWeather();
-    float TargetCloudiness = Session.Weather == TEXT("real") ? Session.CloudCover / 100.f : Weather == TEXT("clear") ? .25f : .9f;
+    float TargetCloudiness = Session.Weather == TEXT("real") ? Session.CloudCover / 100.f
+        : Weather == TEXT("clear") ? .25f : Weather == TEXT("cloudy") ? .6f : Weather == TEXT("overcast") ? 1.f : .9f;
     if (Weather == TEXT("rain") || Weather == TEXT("snow")) TargetCloudiness = FMath::Max(TargetCloudiness, .96f);
     Cloudiness = FMath::FInterpTo(Cloudiness, TargetCloudiness, DeltaSeconds, .4f);
     const float CloudBlend = Smooth(.25f, .96f, Cloudiness);
@@ -1014,7 +1131,9 @@ void AWindowDirector::ApplyLighting(float DeltaSeconds)
         Cloud->SetLayerHeight(FMath::Lerp(2.5f, 3.5f, CloudBlend));
         CloudMaterial->SetScalarParameterValue(TEXT("Cloud_GlobalCoverage"), FMath::Lerp(-.12f, .7f, CloudBlend));
         CloudMaterial->SetScalarParameterValue(TEXT("Cloud_GlobalDensity"), FMath::Lerp(.012f, .03f, CloudBlend));
-        CloudMaterial->SetScalarParameterValue(TEXT("StormClouds"), CloudBlend * .9f);
+        // Ordinary cloud cover is not a precipitation cloud type.
+        Storminess = FMath::FInterpTo(Storminess, Weather == TEXT("rain") || Weather == TEXT("snow") ? CloudBlend * .9f : 0.f, DeltaSeconds, .4f);
+        CloudMaterial->SetScalarParameterValue(TEXT("StormClouds"), Storminess);
         const float Bearing = FMath::DegreesToRadians(Session.WindDirection);
         const float Speed = FMath::Clamp(static_cast<float>(Session.WindSpeed / 3.6), 0.f, 25.f);
         const FVector2D TargetWind(-FMath::Sin(Bearing) * Speed, FMath::Cos(Bearing) * Speed);
@@ -1046,12 +1165,27 @@ void AWindowDirector::ApplyLighting(float DeltaSeconds)
     {
         Sky->RecaptureSky(); LastSkyCapture = Elapsed;
     }
+    if (WindowReflectionCapture && ShouldCaptureWindowReflection(Elapsed, LastWindowReflectionCapture, FastLightingUntil))
+    {
+        WindowReflectionCapture->CaptureSceneDeferred();
+        LastWindowReflectionCapture = Elapsed;
+        if (WindowReflectionCaptureRequests == 0)
+            for (UMaterialInstanceDynamic* Material : Materials)
+            {
+                UTexture* Texture = nullptr;
+                if (Material->GetTextureParameterValue(FMaterialParameterInfo(TEXT("LocalWindowReflection")), Texture) && Texture == WindowReflectionTexture)
+                    Material->SetScalarParameterValue(TEXT("LocalWindowReflectionReady"), 1.f);
+            }
+        ++WindowReflectionCaptureRequests;
+    }
 }
 
 void AWindowDirector::UpdateMaterials(float DeltaSeconds)
 {
     const bool bRain = ActualWeather() == TEXT("rain");
-    const float RainIntensity = bRain ? static_cast<float>(FMath::Clamp(.24 + FMath::Sqrt(Session.Weather == TEXT("real") ? Session.Precipitation : 2.5) * .27, .24, 1.)) : 0.f;
+    const float RainIntensity = !bRain ? 0.f : Session.Weather == TEXT("real")
+        ? static_cast<float>(FMath::Clamp(.24 + FMath::Sqrt(Session.Precipitation) * .27, .24, 1.))
+        : WindowWeather::PrecipitationIntensityForCode(ActiveWeatherCode());
     if (WindowFrame) WindowFrame->SetRainIntensity(RainIntensity);
     Wetness = FMath::Lerp(Wetness, bRain ? 1.f : 0.f, 1.f - FMath::Exp(-DeltaSeconds * (bRain ? .22f : .012f)));
     Water = FMath::Lerp(Water, bRain ? FMath::Min(1.f, RainIntensity * 1.5f) * Wetness : 0.f, 1.f - FMath::Exp(-DeltaSeconds * (bRain ? .10f : .025f)));
@@ -1073,7 +1207,7 @@ void AWindowDirector::UpdateMaterials(float DeltaSeconds)
     if (Precipitation)
     {
         const float Bearing = FMath::DegreesToRadians(Session.WindDirection);
-        Precipitation->SetWeather(RainIntensity, ActualWeather() == TEXT("snow") ? .7f : 0.f, FVector(-FMath::Sin(Bearing), FMath::Cos(Bearing), 0) * Wind * 100);
+        Precipitation->SetWeather(RainIntensity, ActualWeather() == TEXT("snow") ? WindowWeather::PrecipitationIntensityForCode(ActiveWeatherCode()) : 0.f, FVector(-FMath::Sin(Bearing), FMath::Cos(Bearing), 0) * Wind * 100);
     }
 }
 
@@ -1106,6 +1240,9 @@ void AWindowDirector::OOWAudit()
     Json->SetStringField(TEXT("scene"), Session.Scene);
     Json->SetStringField(TEXT("weatherMode"), Session.Weather);
     Json->SetStringField(TEXT("actualWeather"), ActualWeather());
+    Json->SetNumberField(TEXT("weatherCode"), ActiveWeatherCode());
+    Json->SetStringField(TEXT("weatherLabel"), WindowWeather::LabelForCode(ActiveWeatherCode()));
+    Json->SetNumberField(TEXT("reportedCloudCover"), Session.CloudCover);
     Json->SetStringField(TEXT("city"), Session.City);
     Json->SetStringField(TEXT("timezone"), Session.Timezone);
     Json->SetStringField(TEXT("localDateTime"), LocalNow().ToIso8601());
@@ -1140,6 +1277,8 @@ void AWindowDirector::OOWAudit()
     Json->SetNumberField(TEXT("capturedFrames"), CapturedFrames);
     Json->SetBoolField(TEXT("desktopFrameReady"), WindowFrame && WindowFrame->IsReady());
     Json->SetNumberField(TEXT("desktopFrameTriangles"), WindowFrame ? WindowFrame->GetTriangleCount() : 0);
+    Json->SetNumberField(TEXT("desktopRoomWalls"), WindowFrame ? WindowFrame->GetRoomWallCount() : 0);
+    Json->SetNumberField(TEXT("desktopRoomLampLumens"), WindowFrame ? WindowFrame->GetRoomLampLumens() : 0);
     Json->SetStringField(TEXT("desktopFrameStyle"), WindowFrame ? WindowFrame->GetStyle().ToString() : TEXT("none"));
     Json->SetNumberField(TEXT("windowRainIntensity"), WindowFrame ? WindowFrame->GetRainIntensity() : 0);
     Json->SetBoolField(TEXT("interfaceHidden"), VisibilityControl && VisibilityControl->IsInterfaceHidden());
@@ -1193,18 +1332,45 @@ void AWindowDirector::OOWAudit()
     Json->SetStringField(TEXT("capture"), CapturePath);
     Json->SetBoolField(TEXT("captureSaved"), !CapturePath.IsEmpty() && IFileManager::Get().FileSize(*CapturePath) > 0);
     Json->SetNumberField(TEXT("skyIntensity"), Sky ? Sky->Intensity : 0);
+    Json->SetNumberField(TEXT("windowReflectionCaptureRequests"), WindowReflectionCaptureRequests);
+    Json->SetNumberField(TEXT("windowReflectionResolution"), WindowReflectionTexture ? WindowReflectionTexture->SizeX : 0);
+    Json->SetNumberField(TEXT("windowReflectionLastCaptureSeconds"), LastWindowReflectionCapture);
+    if (bTestMode && bCaptureRequested && WindowReflectionTexture && FParse::Param(FCommandLine::Get(), TEXT("OOWExportWindowReflection")))
+    {
+        TUniquePtr<FArchive> File(IFileManager::Get().CreateFileWriter(*FPaths::ChangeExtension(CapturePath, TEXT("reflection.hdr"))));
+        Json->SetBoolField(TEXT("windowReflectionExported"), File && FImageUtils::ExportRenderTargetCubeAsHDR(WindowReflectionTexture, *File));
+    }
+    if (WindowReflectionCapture)
+    {
+        const FVector Position = WindowReflectionCapture->GetComponentLocation();
+        Json->SetArrayField(TEXT("windowReflectionLocation"), { MakeShared<FJsonValueNumber>(Position.X), MakeShared<FJsonValueNumber>(Position.Y), MakeShared<FJsonValueNumber>(Position.Z) });
+        Json->SetBoolField(TEXT("windowReflectionHDR"), WindowReflectionCapture->CaptureSource == SCS_SceneColorHDRNoAlpha);
+        Json->SetBoolField(TEXT("windowReflectionAutoMips"), WindowReflectionTexture && WindowReflectionTexture->bAutoGenerateMips);
+        Json->SetBoolField(TEXT("windowReflectionHidesFrame"), !WindowFrame || WindowReflectionCapture->HiddenActors.Contains(WindowFrame.Get()));
+        int32 BoundMaterials = 0;
+        for (UMaterialInstanceDynamic* Material : Materials)
+        {
+            UTexture* Texture = nullptr;
+            if (Material->GetTextureParameterValue(FMaterialParameterInfo(TEXT("LocalWindowReflection")), Texture) && Texture == WindowReflectionTexture)
+                ++BoundMaterials;
+        }
+        Json->SetNumberField(TEXT("windowReflectionBoundMaterials"), BoundMaterials);
+    }
     Json->SetNumberField(TEXT("fogDensity"), Fog ? Fog->FogDensity : 0);
     Json->SetNumberField(TEXT("baseFogDensity"), BaseFogDensity);
     Json->SetNumberField(TEXT("cloudiness"), Cloudiness);
     Json->SetNumberField(TEXT("cloudLayerBottomKm"), Cloud ? Cloud->LayerBottomAltitude : 0);
     Json->SetNumberField(TEXT("cloudLayerHeightKm"), Cloud ? Cloud->LayerHeight : 0);
     Json->SetNumberField(TEXT("cloudViewSampleScale"), Cloud ? Cloud->ViewSampleCountScale : 0);
+    Json->SetNumberField(TEXT("visibleSkyFraction"), VisibleSkyFraction);
+    Json->SetNumberField(TEXT("visibleSkyPixels"), VisibleSkyPixels);
+    Json->SetNumberField(TEXT("cloudTargetSampleScale"), CloudTargetSampleScale);
     Json->SetBoolField(TEXT("cloudShadowsEnabled"), Sun && Sun->bCastCloudShadows);
     Json->SetNumberField(TEXT("cloudAnimationSeconds"), GetWorld()->GetTimeSeconds());
     Json->SetArrayField(TEXT("cloudDriftUV"), { MakeShared<FJsonValueNumber>(CloudDriftUV.X), MakeShared<FJsonValueNumber>(CloudDriftUV.Y) });
     Json->SetNumberField(TEXT("atmosphereMieScale"), Atmosphere ? Atmosphere->MieScatteringScale : 0);
     Json->SetNumberField(TEXT("atmosphereBaseMieScale"), BaseMieScattering);
-    for (const TCHAR* Name : { TEXT("r.VolumetricCloud"), TEXT("r.VolumetricRenderTarget"), TEXT("r.VolumetricRenderTarget.Mode") })
+    for (const TCHAR* Name : { TEXT("r.VolumetricCloud"), TEXT("r.VolumetricRenderTarget"), TEXT("r.VolumetricRenderTarget.Mode"), TEXT("r.VolumetricCloud.DistanceToSampleMaxCount") })
         if (IConsoleVariable* Variable = IConsoleManager::Get().FindConsoleVariable(Name)) Json->SetNumberField(Name, Variable->GetFloat());
     Json->SetNumberField(TEXT("sunAzimuthRadians"), SunAzimuth);
     Json->SetBoolField(TEXT("sunSweep"), bSunSweep);
@@ -1273,7 +1439,7 @@ void AWindowDirector::OOWAudit()
     Json->SetNumberField(TEXT("anchoredWindMeshComponents"), AnchoredWindMeshes);
     Json->SetNumberField(TEXT("compiledWindMaterialSlots"), CompiledWindSlots);
     Json->SetNumberField(TEXT("windStrengthMetersPerSecond"), WindStrength);
-    for (const TCHAR* Name : { TEXT("r.DynamicGlobalIlluminationMethod"), TEXT("r.ReflectionMethod"), TEXT("r.Lumen.DiffuseIndirect.Allow"), TEXT("r.Lumen.Reflections.Allow"), TEXT("r.Lumen.TranslucencyReflections.FrontLayer.Enable"), TEXT("r.Lumen.TranslucencyReflections.FrontLayer.Allow"), TEXT("r.Lumen.HardwareRayTracing.LightingMode"), TEXT("r.Lumen.HardwareRayTracing"), TEXT("r.RayTracing"), TEXT("r.AntiAliasingMethod"), TEXT("sg.GlobalIlluminationQuality"), TEXT("sg.ReflectionQuality"), TEXT("r.ScreenPercentage") })
+    for (const TCHAR* Name : { TEXT("r.DynamicGlobalIlluminationMethod"), TEXT("r.ReflectionMethod"), TEXT("r.Lumen.DiffuseIndirect.Allow"), TEXT("r.Lumen.ScreenProbeGather.TwoSidedFoliageBackfaceDiffuse"), TEXT("r.Lumen.Reflections.Allow"), TEXT("r.Lumen.TranslucencyReflections.FrontLayer.Enable"), TEXT("r.Lumen.TranslucencyReflections.FrontLayer.Allow"), TEXT("r.Lumen.HardwareRayTracing.LightingMode"), TEXT("r.Lumen.HardwareRayTracing"), TEXT("r.RayTracing"), TEXT("r.AntiAliasingMethod"), TEXT("sg.GlobalIlluminationQuality"), TEXT("sg.ReflectionQuality"), TEXT("r.ScreenPercentage") })
         if (IConsoleVariable* Variable = IConsoleManager::Get().FindConsoleVariable(Name)) Json->SetNumberField(Name, Variable->GetFloat());
     if (FrameTimes.Num())
     {
@@ -1313,6 +1479,7 @@ void AWindowDirector::EndPlay(const EEndPlayReason::Type EndPlayReason)
     if (Interface && GEngine && GEngine->GameViewport) GEngine->GameViewport->RemoveViewportWidgetContent(Interface.ToSharedRef());
     Interface.Reset();
     VisibilityControl.Reset();
+    SkySampling.Reset();
     FScreenshotRequest::OnScreenshotRequestProcessed().Remove(ScreenshotHandle);
     if (Desktop) { Desktop->Shutdown(); Desktop.Reset(); }
     AmbientAudio->Stop();
@@ -1320,6 +1487,22 @@ void AWindowDirector::EndPlay(const EEndPlayReason::Type EndPlayReason)
 }
 
 #if WITH_DEV_AUTOMATION_TESTS
+IMPLEMENT_SIMPLE_AUTOMATION_TEST(FWindowReflectionCadenceTest, "OutOfWindow.WindowReflection.CaptureCadence",
+    EAutomationTestFlags::EditorContext | EAutomationTestFlags::EngineFilter)
+bool FWindowReflectionCadenceTest::RunTest(const FString& Parameters)
+{
+    TestFalse(TEXT("Wait for initial lighting"), ShouldCaptureWindowReflection(2.f, -100.f, 4.f));
+    TestTrue(TEXT("First capture after lighting starts"), ShouldCaptureWindowReflection(2.1f, -100.f, 4.f));
+    TestFalse(TEXT("Warmup does not capture every frame"), ShouldCaptureWindowReflection(3.f, 2.1f, 4.f));
+    TestTrue(TEXT("Capture the settled weather after the fast GI period"), ShouldCaptureWindowReflection(106.f, 103.f, 104.f));
+    TestTrue(TEXT("Warm up the Lumen cache every two seconds"), ShouldCaptureWindowReflection(6.1f, 4.1f, 4.f));
+    TestFalse(TEXT("Stable lighting waits thirty seconds"), ShouldCaptureWindowReflection(37.f, 8.1f, 4.f));
+    TestTrue(TEXT("Periodic refresh follows current lighting"), ShouldCaptureWindowReflection(38.2f, 8.1f, 4.f));
+    TestTrue(TEXT("User lighting changes refresh promptly"), ShouldCaptureWindowReflection(42.f, 40.f, 44.f));
+    TestFalse(TEXT("Fast changes still respect rate limit"), ShouldCaptureWindowReflection(41.f, 40.f, 44.f));
+    return true;
+}
+
 IMPLEMENT_SIMPLE_AUTOMATION_TEST(FWindowLocationTest, "OutOfWindow.Location.OptionalTracking",
     EAutomationTestFlags::EditorContext | EAutomationTestFlags::EngineFilter)
 bool FWindowLocationTest::RunTest(const FString& Parameters)

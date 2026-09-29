@@ -14,6 +14,8 @@
 #include "Misc/Paths.h"
 #include "Serialization/JsonSerializer.h"
 #include "Widgets/SWindow.h"
+#include "Widgets/Input/SButton.h"
+#include "Widgets/Input/SCheckBox.h"
 #include "Layout/WidgetPath.h"
 
 #if PLATFORM_WINDOWS
@@ -56,6 +58,7 @@ struct FWindowDesktop::FImpl
 	HHOOK MouseHook = nullptr, EscapeHook = nullptr;
 	inline static FImpl* InputOwner = nullptr;
 	bool bForwardLeft = false;
+	bool bOriginalBackgroundInput = false;
 	static constexpr UINT RestoreUIMessage = WM_APP + 0x318;
 	LONG_PTR OriginalExStyle = 0;
 	UINT ShowInstanceMessage = 0;
@@ -66,6 +69,7 @@ struct FWindowDesktop::FImpl
 	bool bOriginalTopmost = false;
 	const uint64 AttachAfterFrame = GFrameCounter + 2;
 	bool bTestPending = FParse::Param(FCommandLine::Get(), TEXT("OOWTestDesktop"));
+	bool bInputTestPending = FParse::Param(FCommandLine::Get(), TEXT("OOWTestDesktopInput"));
 	double TestReadyAt = FPlatformTime::Seconds() + 15;
 
 	NOTIFYICONDATAW TrayData() const
@@ -115,18 +119,36 @@ struct FWindowDesktop::FImpl
 			|| !wcscmp(Class, L"Progman") || !wcscmp(Class, L"WorkerW");
 	}
 
+	static bool IsInteractivePath(const FWidgetPath& Path)
+	{
+		bool bInteractive = false;
+		for (int32 Index = 0; Index < Path.Widgets.Num(); ++Index)
+		{
+			if (!Path.Widgets[Index].Widget->IsEnabled()) return false;
+			bInteractive |= Path.Widgets[Index].Widget->IsInteractable();
+		}
+		return bInteractive;
+	}
+
 	bool IsControlAt(POINT Position) const
 	{
 		const auto Slate = SlateWindow();
 		if (!Slate || !IsWindowVisible(Window)) return false;
-		const FWidgetPath Path = FSlateApplication::Get().LocateWindowUnderMouse(FVector2D(Position.x, Position.y), { Slate.ToSharedRef() }, false, 0);
-		for (int32 Index = 0; Index < Path.Widgets.Num(); ++Index)
-		{
-			const FArrangedWidget& Item = Path.Widgets[Index];
-			const FName Type = Item.Widget->GetType();
-			if (Type == TEXT("SButton") || Type == TEXT("SWindowVisibilityButton") || Type == TEXT("SSlider") || Type == TEXT("SComboButton")) return Item.Widget->IsEnabled();
-		}
-		return false;
+		return IsInteractivePath(FSlateApplication::Get().LocateWindowUnderMouse(FVector2D(Position.x, Position.y), { Slate.ToSharedRef() }, false, 0));
+	}
+
+	void UpdateBackgroundInput(bool bOnDesktop, bool bWindowVisible)
+	{
+		// Slate otherwise rejects CaptureMouse replies and clears hover while the shell is active.
+		FSlateApplication::Get().SetHandleDeviceInputWhenApplicationNotActive(bOriginalBackgroundInput
+			|| (bDesktopMode && bWindowVisible && (bOnDesktop || bForwardLeft)));
+	}
+
+	void UpdateInput()
+	{
+		if (!bDesktopMode) return;
+		POINT Position = {};
+		UpdateBackgroundInput(GetCursorPos(&Position) && IsShellWindow(WindowFromPoint(Position)), IsWindowVisible(Window));
 	}
 
 	static LRESULT CALLBACK MouseInput(int Code, WPARAM Message, LPARAM Data)
@@ -136,9 +158,9 @@ struct FWindowDesktop::FImpl
 		{
 			const POINT Screen = reinterpret_cast<MSLLHOOKSTRUCT*>(Data)->pt;
 			const bool bOnDesktop = Self->IsShellWindow(WindowFromPoint(Screen));
-			const bool bControl = bOnDesktop && Self->IsControlAt(Screen);
 			bool bConsume = false;
-			if (Message == WM_LBUTTONDOWN && bControl) Self->bForwardLeft = bConsume = true;
+			if (Message == WM_LBUTTONDOWN && bOnDesktop && Self->IsControlAt(Screen)) Self->bForwardLeft = bConsume = true;
+			Self->UpdateBackgroundInput(bOnDesktop, true);
 			if (Message == WM_LBUTTONUP && Self->bForwardLeft) { Self->bForwardLeft = false; bConsume = true; }
 			if ((Message == WM_MOUSEMOVE && (bOnDesktop || Self->bForwardLeft)) || bConsume)
 			{
@@ -161,6 +183,8 @@ struct FWindowDesktop::FImpl
 
 	void StopInput()
 	{
+		if (InputOwner == this && FSlateApplication::IsInitialized())
+			FSlateApplication::Get().SetHandleDeviceInputWhenApplicationNotActive(bOriginalBackgroundInput);
 		if (MouseHook) UnhookWindowsHookEx(MouseHook);
 		if (EscapeHook) UnhookWindowsHookEx(EscapeHook);
 		MouseHook = EscapeHook = nullptr;
@@ -231,17 +255,19 @@ struct FWindowDesktop::FImpl
 		POINT Origin = { Monitor.rcMonitor.left, Monitor.rcMonitor.top }; ScreenToClient(DesktopHost, &Origin);
 		SetWindowPos(Window, bRaisedDesktop ? IconView : HWND_BOTTOM, Origin.x, Origin.y,
 			Monitor.rcMonitor.right - Monitor.rcMonitor.left, Monitor.rcMonitor.bottom - Monitor.rcMonitor.top, SWP_FRAMECHANGED | SWP_NOACTIVATE | SWP_SHOWWINDOW);
+		bOriginalBackgroundInput = FSlateApplication::Get().GetHandleDeviceInputWhenApplicationNotActive();
 		InputOwner = this;
 		MouseHook = SetWindowsHookExW(WH_MOUSE_LL, MouseInput, GetModuleHandleW(nullptr), 0);
 		EscapeHook = SetWindowsHookExW(WH_KEYBOARD_LL, EscapeInput, GetModuleHandleW(nullptr), 0);
 		if (!MouseHook || !EscapeHook) { RestoreWindow(true); return false; }
+		UpdateInput();
 		UE_LOG(LogWindowDesktop, Display, TEXT("OOW_DESKTOP_ATTACHED raised=%d width=%ld height=%ld"), bRaisedDesktop, Monitor.rcMonitor.right - Monitor.rcMonitor.left, Monitor.rcMonitor.bottom - Monitor.rcMonitor.top);
 		return true;
 	}
 
 	void RestoreInteractive()
 	{
-		if (bDesktopMode) { ShowWindow(Window, SW_SHOWNA); return; }
+		if (bDesktopMode) { ShowWindow(Window, SW_SHOWNA); UpdateInput(); return; }
 		ShowWindow(Window, IsIconic(Window) ? SW_RESTORE : SW_SHOW);
 		SetForegroundWindow(Window);
 	}
@@ -254,6 +280,7 @@ struct FWindowDesktop::FImpl
 			RestoreWindow(false);
 			ShowWindow(Window, SW_MINIMIZE);
 		}
+		UpdateInput();
 	}
 
 	void Action(FName Name)
@@ -300,6 +327,7 @@ struct FWindowDesktop::FImpl
 
 	void TestIfReady()
 	{
+		if (bInputTestPending) TestInputIfReady();
 		if (!bTestPending) return;
 		if (bDisabled || (!IsWindow(Window) && FPlatformTime::Seconds() >= TestReadyAt))
 		{
@@ -396,6 +424,67 @@ struct FWindowDesktop::FImpl
 		else { UE_LOG(LogWindowDesktop, Error, TEXT("OOW_DESKTOP_TEST_FAIL %s saved=%d"), *Path, bSaved); }
 	}
 
+	void TestInputIfReady()
+	{
+		const auto Slate = SlateWindow();
+		if (!Slate || !Slate->GetNativeWindow() || FPlatformTime::Seconds() < TestReadyAt) return;
+		bInputTestPending = false;
+		FSlateApplication& App = FSlateApplication::Get();
+		const bool bWasActive = App.IsActive(), bSavedBackground = App.GetHandleDeviceInputWhenApplicationNotActive();
+		const auto SavedFocus = App.GetKeyboardFocusedWidget();
+		TGuardValue<HWND> TestWindow(Window, static_cast<HWND>(Slate->GetNativeWindow()->GetOSWindowHandle()));
+		TGuardValue<bool> TestDesktop(bDesktopMode, true), TestOriginal(bOriginalBackgroundInput, false);
+		App.OnApplicationActivationChanged(false);
+		App.SetHandleDeviceInputWhenApplicationNotActive(false);
+		int32 Clicks = 0;
+		const auto Button = SNew(SButton).OnClicked_Lambda([&Clicks] { ++Clicks; return FReply::Handled(); });
+		const auto CheckBox = SNew(SCheckBox);
+		const FGeometry Geometry = FGeometry::MakeRoot(FVector2D(40, 40), FSlateLayoutTransform(Slate->GetPositionInScreen()));
+		const FVector2D Position = Geometry.GetAbsolutePosition() + FVector2D(20, 20);
+		const FPointerEvent Down(0, FSlateApplication::CursorPointerIndex, Position, Position, { EKeys::LeftMouseButton }, EKeys::LeftMouseButton, 0, FModifierKeysState());
+		const FPointerEvent Up(0, FSlateApplication::CursorPointerIndex, Position, Position, {}, EKeys::LeftMouseButton, 0, FModifierKeysState());
+		auto Click = [&](TSharedRef<SWidget> Widget)
+		{
+			FArrangedChildren Widgets(EVisibility::All);
+			Widgets.AddWidget(FArrangedWidget(Slate.ToSharedRef(), Slate->GetWindowGeometryInScreen()));
+			Widgets.AddWidget(FArrangedWidget(Widget, Geometry));
+			const FWidgetPath Path(Slate, Widgets);
+			const bool bInteractive = IsInteractivePath(Path);
+			Widget->SetEnabled(false);
+			const bool bDisabledRejected = !IsInteractivePath(Path);
+			Widget->SetEnabled(true);
+			const bool bWindowEnabled = Slate->IsEnabled();
+			Slate->SetEnabled(false);
+			const bool bDisabledAncestorRejected = !IsInteractivePath(Path);
+			Slate->SetEnabled(bWindowEnabled);
+			Widget->OnMouseEnter(Geometry, Down);
+			App.ProcessReply(Path, Widget->OnMouseButtonDown(Geometry, Down), &Path, &Down);
+			const bool bCaptured = Widget->HasMouseCapture();
+			App.ProcessReply(Path, Widget->OnMouseButtonUp(Geometry, Up), &Path, &Up);
+			Widget->OnMouseLeave(Up);
+			return bInteractive && bDisabledRejected && bDisabledAncestorRejected && bCaptured && !Widget->HasMouseCapture();
+		};
+		const bool bInactiveRejected = !Click(Button) && Clicks == 0;
+		// The capture test has an offscreen HWND; exercise visible-desktop policy explicitly.
+		UpdateBackgroundInput(true, true);
+		const bool bButton = Click(Button) && Clicks == 1;
+		const bool bCheckBox = Click(CheckBox) && CheckBox->IsChecked();
+		UpdateBackgroundInput(false, true);
+		const bool bOutside = !App.GetHandleDeviceInputWhenApplicationNotActive();
+		UpdateBackgroundInput(true, false);
+		const bool bHidden = !App.GetHandleDeviceInputWhenApplicationNotActive();
+		bOriginalBackgroundInput = true;
+		UpdateBackgroundInput(false, false);
+		const bool bOriginalPreserved = App.GetHandleDeviceInputWhenApplicationNotActive();
+		App.SetHandleDeviceInputWhenApplicationNotActive(bSavedBackground);
+		App.OnApplicationActivationChanged(bWasActive);
+		if (SavedFocus) App.SetKeyboardFocus(SavedFocus);
+		else App.ClearKeyboardFocus();
+		UE_LOG(LogWindowDesktop, Display, TEXT("OOW_DESKTOP_INPUT_TEST_%s inactiveRejected=%d button=%d checkbox=%d outside=%d hidden=%d original=%d"),
+			bInactiveRejected && bButton && bCheckBox && bOutside && bHidden && bOriginalPreserved ? TEXT("PASS") : TEXT("FAIL"),
+			bInactiveRejected, bButton, bCheckBox, bOutside, bHidden, bOriginalPreserved);
+	}
+
 	static LRESULT CALLBACK WindowProc(HWND Hwnd, UINT Message, WPARAM WParam, LPARAM LParam, UINT_PTR Id, DWORD_PTR User)
 	{
 		FImpl* Self = reinterpret_cast<FImpl*>(User);
@@ -438,6 +527,8 @@ struct FWindowDesktop::FImpl
 
 	void TryAttach()
 	{
+		// Capture-mode input regression owns no tray, desktop attachment, or global hooks.
+		if (FParse::Param(FCommandLine::Get(), TEXT("OOWTestDesktopInput"))) return;
 		if (bDisabled || Window || !Director.IsValid()) return;
 		// Startup applies the viewport's initial placement after BeginPlay.
 		if (GFrameCounter < AttachAfterFrame) return;
@@ -556,6 +647,7 @@ void FWindowDesktop::Tick()
 	Impl->TryAttach();
 #if PLATFORM_WINDOWS
 	if (IsWindow(Impl->Window) && RestoreEvent && WaitForSingleObject(RestoreEvent, 0) == WAIT_OBJECT_0) Impl->RestoreInteractive();
+	Impl->UpdateInput();
 #endif
 	Impl->TestIfReady();
 }

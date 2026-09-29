@@ -1,0 +1,59 @@
+{
+  "passed": true,
+  "verifiedAt": "2026-09-28T16:11:25.8461885+08:00",
+  "buildId": "alley-weathering-v1_8f15b5ec52",
+  "sourceImages": [
+    "unreal/Art/AlleyWeathering/plaster-relief-height.png",
+    "unreal/Art/AlleyWeathering/runoff-mask.png"
+  ],
+  "changedWallActors": 2,
+  "localizedDecals": 3,
+  "protectedExistingAssets": 6324,
+  "changedExistingAssets": [
+    "Maps/Alley.umap"
+  ],
+  "addedAssets": 6,
+  "packagedComparison": {
+    "passed": true,
+    "dry": ".runtime/ue-alley-weathering/packaged-dry.png",
+    "rain": ".runtime/ue-alley-weathering/packaged-rain.png",
+    "dryWetness": 0,
+    "rainWetness": 0.999996542930603,
+    "rainWater": 0.4858644902706146,
+    "imageSize": [
+      1280,
+      820
+    ]
+  },
+  "nativeDry": {
+    "water": 0,
+    "width": 2560,
+    "wetness": 0,
+    "image": ".runtime/ue-alley-weathering/native-dry.png",
+    "shaderFallback": false,
+    "height": 1440
+  },
+  "live": {
+    "weatherLabel": "阴",
+    "wetness": 0,
+    "weatherMode": "real",
+    "frame": "ivory",
+    "water": 0,
+    "processId": 8988,
+    "testMode": false,
+    "materialInstances": 130,
+    "state": ".runtime/ue-alley-weathering/live-state.json",
+    "quality": 1,
+    "scene": "Alley",
+    "liveTime": true
+  },
+  "deployment": {
+    "verifiedFileCount": 10,
+    "backup": "D:\\OutOfWindowBuildBackups\\alley-weathering-before-20260928-160954",
+    "target": "D:\\OutOfWindowBuild\\Windows"
+  },
+  "limitations": [
+    "Generated artistic height approximation; normal relief only, no silhouette displacement.",
+    "Localized dry deposits affect color only; receiving wall retains its wetness roughness and normal response."
+  ]
+}

@@ -1,0 +1,163 @@
+{
+  "verifiedAt": "2026-09-28T21:11:11.7023792+08:00",
+  "materialRecipe": "v14",
+  "geometryRecipe": "window-uv-v4",
+  "status": "Passed and deployed; candidate-package captures plus installed file hashes and normal runtime readback.",
+  "evidenceRoot": ".runtime/ue-interior-depth/",
+  "assets": {
+    "audit": "unreal/Migration/window-interiors-audit.json",
+    "passed": true,
+    "counts": {
+      "actors": 68,
+      "leafMaterials": 5,
+      "masters": 1,
+      "textures": 6,
+      "frontActors": 66,
+      "curtainActors": 74,
+      "awningControls": 1,
+      "heroRooms": 4,
+      "heroGlass": 4,
+      "failures": 0
+    },
+    "windowGeometryHash": "3ad542d70865cd46c80e5a9f3b20b7719ef817d3e26929c79a305217cc8c1eee",
+    "heroGeometryHash": "417cbd245fb363c82b5188c11c48f7a797fa10836546ced83bec9e7904021f04",
+    "roomTriangles": 20424,
+    "glassTriangles": 8,
+    "lights": {
+      "roomPointLights": 4,
+      "exteriorRectLights": 8,
+      "totalBudget": 12
+    },
+    "apertureRoomGroups": 5,
+    "apertureFlag": 2,
+    "newThirdPartyAssets": false
+  },
+  "editor": {
+    "passed": true,
+    "capture": ".runtime/ue-interior-depth/after-open-2021.png",
+    "assetAuditLog": ".runtime/ue-interior-depth/apertures.log"
+  },
+  "packaging": {
+    "passed": true,
+    "log": ".runtime/ue-interior-depth/package.log",
+    "source": "D:\\OutOfWindowBuildInteriorDepth\\Windows"
+  },
+  "renderSettings": {
+    "resolution": [
+      1920,
+      1080
+    ],
+    "quality": 1,
+    "screenPercentage": 85,
+    "fixedSimulationDate": "2026-09-23",
+    "secondsPerCase": 38,
+    "captureIntervalSeconds": 0.5,
+    "dateLimitation": "Fixed-date solar position differs from the live 2026-09-28 scene."
+  },
+  "packagedCases": [
+    {
+      "name": "2021",
+      "sceneLocalDateTime": "2026-09-23T20:20:59.994Z",
+      "weather": "overcast",
+      "frames": 1,
+      "captureSaved": true,
+      "interiorLights": 12,
+      "interiorLightLumens": 778.0562133789062,
+      "frameTimeMeanMs": 16.707310746053533,
+      "frameTimeP95Ms": 16.666799545288086,
+      "capture": ".runtime/ue-interior-depth/packaged-2021.png"
+    },
+    {
+      "name": "1617",
+      "sceneLocalDateTime": "2026-09-23T16:16:59.998Z",
+      "weather": "overcast",
+      "frames": 8,
+      "captureSaved": true,
+      "interiorLights": 12,
+      "interiorLightLumens": 0,
+      "frameTimeMeanMs": 17.31662038200692,
+      "frameTimeP95Ms": 16.69209861755371,
+      "capture": ".runtime/ue-interior-depth/packaged-1617.png"
+    },
+    {
+      "name": "day",
+      "sceneLocalDateTime": "2026-09-23T12:00:00.000Z",
+      "weather": "clear",
+      "frames": 1,
+      "captureSaved": true,
+      "interiorLights": 12,
+      "interiorLightLumens": 0,
+      "frameTimeMeanMs": 16.71039272848249,
+      "frameTimeP95Ms": 16.677501678466797,
+      "capture": ".runtime/ue-interior-depth/packaged-day.png"
+    },
+    {
+      "name": "night",
+      "sceneLocalDateTime": "2026-09-23T23:00:00.000Z",
+      "weather": "clear",
+      "frames": 1,
+      "captureSaved": true,
+      "interiorLights": 12,
+      "interiorLightLumens": 778.0562133789062,
+      "frameTimeMeanMs": 16.712588705430175,
+      "frameTimeP95Ms": 16.683101654052734,
+      "capture": ".runtime/ue-interior-depth/packaged-night.png"
+    },
+    {
+      "name": "rain",
+      "sceneLocalDateTime": "2026-09-23T23:00:00.000Z",
+      "weather": "rain",
+      "frames": 1,
+      "captureSaved": true,
+      "interiorLights": 12,
+      "interiorLightLumens": 778.0562133789062,
+      "frameTimeMeanMs": 16.717568440025563,
+      "frameTimeP95Ms": 16.72359848022461,
+      "capture": ".runtime/ue-interior-depth/packaged-rain.png"
+    }
+  ],
+  "visualChecks": {
+    "fourGeometricRoomsVisible": true,
+    "narrowWindowCyanClothAbsentAcrossEightFrames": true,
+    "narrowWindowMontage": ".runtime/ue-interior-depth/packaged-1617-narrow-window-8frames.png",
+    "sameConditionPackagedComparison": ".runtime/ue-interior-depth/hero-wide-before-after-crop.png"
+  },
+  "performance": {
+    "comparison": "20:21 overcast, same fixed date and quality, separate packaged runs",
+    "baselineMeanMs": 16.733100725900886,
+    "candidateMeanMs": 16.707310746053533,
+    "baselineEvidence": ".runtime/ue-interior-depth/baseline-uncontended-2021.json",
+    "limit": "Frame intervals are near the 60 FPS cap. These are not GPU timings and do not isolate the additional geometry or lighting cost."
+  },
+  "deployment": {
+    "passed": true,
+    "deployedAt": "2026-09-28T21:09:05.9072386+08:00",
+    "source": "D:\\OutOfWindowBuildInteriorDepth\\Windows",
+    "target": "D:\\OutOfWindowBuild\\Windows",
+    "backup": "D:\\OutOfWindowBuildBackups\\interior-depth-before-20260928-210857",
+    "evidence": ".runtime/ue-interior-depth/deployment.json"
+  },
+  "installedVerification": {
+    "passed": true,
+    "checkedAt": "2026-09-28T21:11:11.7023792+08:00",
+    "matchingFiles": 10,
+    "restarted": true,
+    "scene": "Alley",
+    "sceneLocalDateTime": "2026-09-28T21:09:21.312Z",
+    "liveTime": true,
+    "testMode": false,
+    "weatherMode": "real",
+    "interiorLights": 12,
+    "interiorLightLumens": 778.0562133789062,
+    "evaluatedWindMeshComponents": 123,
+    "independentInstalledCapture": false,
+    "hashEvidence": ".runtime/ue-interior-depth/installed-verification.json",
+    "runtimeEvidence": ".runtime/ue-interior-depth/installed-state.json"
+  },
+  "limitations": [
+    "The four geometric rooms are simplified fixed-camera sets, not photorealistic or complete enterable interiors.",
+    "Other applicable windows use a five-plane virtual room with existing AI images on the back plane; furniture has no independent geometry depth.",
+    "Visual acceptance uses editor and candidate-package captures. Installed verification uses matching files and normal live runtime state, without a new installed screenshot.",
+    "The five short cases do not cover every view, date, quality setting, long-run performance, or GPU cost."
+  ]
+}

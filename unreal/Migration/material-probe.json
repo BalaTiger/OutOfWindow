@@ -28,29 +28,30 @@
   "scenes": [
     {
       "scene": "alley",
-      "slots": 1735,
+      "slots": 1661,
       "waterActors": 0,
-      "windActors": 126,
+      "windActors": 123,
+      "hiddenCurtainActors": 74,
       "interiorSlots": 68,
       "glassFrontActors": 66,
       "glassBackingSlots": 66,
       "profiles": {
-        "generic//": 621,
+        "generic//": 550,
         "generic//lamp": 64,
         "glass//": 14,
         "glass//window": 82,
         "metal//": 205,
-        "foliage//": 20,
+        "foliage//": 18,
         "foliage/foliage/": 100,
         "wood//": 216,
-        "fabric/awning/": 26,
+        "fabric/awning/": 23,
         "fabric//": 11,
         "stone//": 329,
-        "ground//": 47
+        "ground//": 49
       },
       "interiorLighting": {
-        "lights": 12,
-        "awningLights": 5,
+        "lights": 8,
+        "awningLights": 3,
         "report": "Migration/awning-transmission.json"
       }
     }

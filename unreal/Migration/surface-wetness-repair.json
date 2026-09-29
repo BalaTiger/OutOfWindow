@@ -1,0 +1,44 @@
+{
+  "masters": {
+    "/InterchangeAssets/gltf/M_Default.M_Default": {
+      "usesMaterialAttributes": false,
+      "properties": {
+        "BASE_COLOR": {
+          "node": "MaterialExpressionMaterialFunctionCall",
+          "output": "BaseColor"
+        },
+        "ROUGHNESS": {
+          "node": "MaterialExpressionMaterialFunctionCall",
+          "output": "Roughness"
+        },
+        "EMISSIVE_COLOR": {
+          "node": "MaterialExpressionMaterialFunctionCall",
+          "output": "EmissiveColor"
+        },
+        "WORLD_POSITION_OFFSET": null,
+        "MATERIAL_ATTRIBUTES": null
+      },
+      "example": "/Game/Scenes/Alley/alley/Materials/MASTER_Roofing_Shingle_Grey.MASTER_Roofing_Shingle_Grey",
+      "chain": [
+        "/Game/Scenes/Alley/alley/Materials/MASTER_Roofing_Shingle_Grey.MASTER_Roofing_Shingle_Grey",
+        "/InterchangeAssets/gltf/MaterialInstances/MI_Default_Opaque.MI_Default_Opaque"
+      ]
+    }
+  },
+  "scenes": [
+    {
+      "scene": "alley",
+      "slots": 378,
+      "waterActors": 0,
+      "windActors": 126,
+      "interiorSlots": 0,
+      "glassFrontActors": 0,
+      "glassBackingSlots": 0,
+      "profiles": {
+        "stone//": 329,
+        "ground//": 49
+      }
+    }
+  ],
+  "failures": []
+}

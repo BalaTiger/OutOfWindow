@@ -1,0 +1,1119 @@
+{
+  "recipe": "hero-rooms-v2",
+  "appliedToUnreal": true,
+  "rooms": [
+    {
+      "id": "67294f945510fc8a",
+      "sourceRoomId": "67294f945510fc8a",
+      "name": "OOWHeroRoom_67294f945510fc8a_v3",
+      "seed": 0.40297406911849976,
+      "originMeters": [
+        -57.340648560230356,
+        15.708208052093454,
+        -234.90351841602828
+      ],
+      "right": [
+        0.38730688549117004,
+        0.0,
+        -0.9219508535985689
+      ],
+      "up": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "inward": [
+        -0.9219508535985688,
+        -0.0,
+        -0.38730688549117
+      ],
+      "apertureWidthMeters": 4.82371388624037,
+      "apertureHeightMeters": 4.067682334949566,
+      "apertureSourceBounds": [
+        191.94921436793769,
+        196.77292825417805,
+        15.708208052093454,
+        19.77589038704302
+      ],
+      "widthMeters": 4.241495682332554,
+      "heightMeters": 5.147682334949566,
+      "depthMeters": 4.59,
+      "floorMeters": -0.6075,
+      "furnitureScale": 1.35,
+      "layout": "study",
+      "occupied": true,
+      "sourceActors": [
+        "OOW_00719_Paris_Building_08_paris_building_08_1"
+      ],
+      "lampLocalMeters": [
+        -1.4421085319930684,
+        1.2555,
+        2.6622
+      ],
+      "light": {
+        "name": "OOWHeroLight_67294f945510fc8a",
+        "room": "67294f945510fc8a",
+        "positionCm": [
+          -6035.360468674695,
+          -23460.505361453008,
+          1696.3708052093455
+        ],
+        "lumens": 246.03750000000002,
+        "temperatureKelvin": 2850,
+        "radiusCm": 734.4,
+        "sourceRadiusCm": 12.15,
+        "tags": [
+          "OOWNightLight",
+          "OOWInteriorLight",
+          "OOWHeroLight",
+          "OOWRoom_67294f945510fc8a"
+        ]
+      },
+      "neighbourConstraints": [
+        "14286f445050f0e5"
+      ],
+      "materialSlots": [
+        "surface",
+        "lamp"
+      ],
+      "triangles": 696,
+      "glass": {
+        "name": "OOWHeroGlass_67294f945510fc8a_v3",
+        "triangles": 2,
+        "offsetMeters": 0.01,
+        "unrealMesh": "/Game/Scenes/Alley/HeroRooms/alley-hero-rooms-v3/StaticMeshes/OOWHeroGlass_67294f945510fc8a_v3.OOWHeroGlass_67294f945510fc8a_v3"
+      },
+      "unrealMesh": "/Game/Scenes/Alley/HeroRooms/alley-hero-rooms-v3/StaticMeshes/OOWHeroRoom_67294f945510fc8a_v3.OOWHeroRoom_67294f945510fc8a_v3",
+      "renderTriangles": 664
+    },
+    {
+      "id": "14286f445050f0e5",
+      "sourceRoomId": "14286f445050f0e5",
+      "name": "OOWHeroRoom_14286f445050f0e5_v3",
+      "seed": 0.07874196767807007,
+      "originMeters": [
+        -55.620162746161505,
+        15.708208052093454,
+        -238.99824826569287
+      ],
+      "right": [
+        0.38714416685172737,
+        0.0,
+        -0.9220191939827945
+      ],
+      "up": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "inward": [
+        -0.9220191939827945,
+        -0.0,
+        -0.38714416685172737
+      ],
+      "apertureWidthMeters": 4.825741317434847,
+      "apertureHeightMeters": 4.067682334949566,
+      "apertureSourceBounds": [
+        196.41508000399637,
+        201.2408213214312,
+        15.708208052093454,
+        19.77589038704302
+      ],
+      "widthMeters": 4.2414955626329345,
+      "heightMeters": 5.147682334949566,
+      "depthMeters": 4.59,
+      "floorMeters": -0.6075,
+      "furnitureScale": 1.35,
+      "layout": "sitting",
+      "occupied": true,
+      "sourceActors": [
+        "OOW_00719_Paris_Building_08_paris_building_08_1"
+      ],
+      "lampLocalMeters": [
+        -1.4421084912951978,
+        1.2555,
+        2.6622
+      ],
+      "light": {
+        "name": "OOWHeroLight_14286f445050f0e5",
+        "room": "14286f445050f0e5",
+        "positionCm": [
+          -5863.306613475478,
+          -23869.925175790577,
+          1696.3708052093455
+        ],
+        "lumens": 246.03750000000002,
+        "temperatureKelvin": 2970,
+        "radiusCm": 734.4,
+        "sourceRadiusCm": 12.15,
+        "tags": [
+          "OOWNightLight",
+          "OOWInteriorLight",
+          "OOWHeroLight",
+          "OOWRoom_14286f445050f0e5"
+        ]
+      },
+      "neighbourConstraints": [
+        "67294f945510fc8a"
+      ],
+      "materialSlots": [
+        "surface",
+        "lamp"
+      ],
+      "triangles": 576,
+      "glass": {
+        "name": "OOWHeroGlass_14286f445050f0e5_v3",
+        "triangles": 2,
+        "offsetMeters": 0.01,
+        "unrealMesh": "/Game/Scenes/Alley/HeroRooms/alley-hero-rooms-v3/StaticMeshes/OOWHeroGlass_14286f445050f0e5_v3.OOWHeroGlass_14286f445050f0e5_v3"
+      },
+      "unrealMesh": "/Game/Scenes/Alley/HeroRooms/alley-hero-rooms-v3/StaticMeshes/OOWHeroRoom_14286f445050f0e5_v3.OOWHeroRoom_14286f445050f0e5_v3",
+      "renderTriangles": 544
+    },
+    {
+      "id": "13a26cb6982569b0",
+      "sourceRoomId": "13a26cb6982569b0",
+      "name": "OOWHeroRoom_13a26cb6982569b0_v3",
+      "seed": 0.07669711112976074,
+      "originMeters": [
+        -26.674098932711725,
+        16.225509698180907,
+        -222.60717797687656
+      ],
+      "right": [
+        0.6768585826957992,
+        0.0,
+        -0.7361130748947705
+      ],
+      "up": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "inward": [
+        -0.7361130748947704,
+        -0.0,
+        -0.6768585826957991
+      ],
+      "apertureWidthMeters": 1.8865433596913022,
+      "apertureHeightMeters": 2.7483639119656367,
+      "apertureSourceBounds": [
+        144.86618979607758,
+        146.75273315576888,
+        16.225509698180907,
+        18.973873610146544
+      ],
+      "widthMeters": 3.5978582120277425,
+      "heightMeters": 3.547887959082913,
+      "depthMeters": 3.397977200248423,
+      "floorMeters": -0.4497322765034678,
+      "furnitureScale": 0.9994050588965951,
+      "layout": "kitchen",
+      "occupied": true,
+      "sourceActors": [
+        "OOW_00760_paris_building_09_8"
+      ],
+      "lampLocalMeters": [
+        -1.2232717920894325,
+        0.9294467047738334,
+        1.9708267761440854
+      ],
+      "light": {
+        "name": "OOWHeroLight_13a26cb6982569b0",
+        "room": "13a26cb6982569b0",
+        "positionCm": [
+          -2895.2832302429497,
+          -22304.06826350094,
+          1715.4956402954742
+        ],
+        "lumens": 134.83941368599443,
+        "temperatureKelvin": 3090,
+        "radiusCm": 543.6763520397477,
+        "sourceRadiusCm": 8.994645530069356,
+        "tags": [
+          "OOWNightLight",
+          "OOWInteriorLight",
+          "OOWHeroLight",
+          "OOWRoom_13a26cb6982569b0"
+        ]
+      },
+      "materialSlots": [
+        "surface",
+        "lamp"
+      ],
+      "triangles": 660,
+      "glass": {
+        "name": "OOWHeroGlass_13a26cb6982569b0_v3",
+        "triangles": 2,
+        "offsetMeters": 0.01,
+        "unrealMesh": "/Game/Scenes/Alley/HeroRooms/alley-hero-rooms-v3/StaticMeshes/OOWHeroGlass_13a26cb6982569b0_v3.OOWHeroGlass_13a26cb6982569b0_v3"
+      },
+      "unrealMesh": "/Game/Scenes/Alley/HeroRooms/alley-hero-rooms-v3/StaticMeshes/OOWHeroRoom_13a26cb6982569b0_v3.OOWHeroRoom_13a26cb6982569b0_v3",
+      "renderTriangles": 628
+    },
+    {
+      "id": "e8143a4235edd362",
+      "sourceRoomId": "e8143a4235edd362",
+      "name": "OOWHeroRoom_e8143a4235edd362_v3",
+      "seed": 0.906558632850647,
+      "originMeters": [
+        -23.256249133213892,
+        16.225509698180907,
+        -226.15922042393046
+      ],
+      "right": [
+        0.6767171012174411,
+        0.0,
+        -0.7362431425282437
+      ],
+      "up": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "inward": [
+        -0.7362431425282437,
+        -0.0,
+        -0.6767171012174411
+      ],
+      "apertureWidthMeters": 1.886210075459445,
+      "apertureHeightMeters": 2.7483639119656367,
+      "apertureSourceBounds": [
+        149.8271686203035,
+        151.71337869576294,
+        16.225509698180907,
+        18.973873610146544
+      ],
+      "widthMeters": 3.5978582120277425,
+      "heightMeters": 3.547887959082913,
+      "depthMeters": 3.397977200248423,
+      "floorMeters": -0.4497322765034678,
+      "furnitureScale": 0.9994050588965951,
+      "layout": "bedroom",
+      "occupied": true,
+      "sourceActors": [
+        "OOW_00760_paris_building_09_8"
+      ],
+      "lampLocalMeters": [
+        -1.2232717920894325,
+        0.9294467047738334,
+        1.9708267761440854
+      ],
+      "light": {
+        "name": "OOWHeroLight_e8143a4235edd362",
+        "room": "e8143a4235edd362",
+        "positionCm": [
+          -2553.5065773404845,
+          -22659.228713851033,
+          1715.4956402954742
+        ],
+        "lumens": 134.83941368599443,
+        "temperatureKelvin": 3210,
+        "radiusCm": 543.6763520397477,
+        "sourceRadiusCm": 8.994645530069356,
+        "tags": [
+          "OOWNightLight",
+          "OOWInteriorLight",
+          "OOWHeroLight",
+          "OOWRoom_e8143a4235edd362"
+        ]
+      },
+      "materialSlots": [
+        "surface",
+        "lamp"
+      ],
+      "triangles": 516,
+      "glass": {
+        "name": "OOWHeroGlass_e8143a4235edd362_v3",
+        "triangles": 2,
+        "offsetMeters": 0.01,
+        "unrealMesh": "/Game/Scenes/Alley/HeroRooms/alley-hero-rooms-v3/StaticMeshes/OOWHeroGlass_e8143a4235edd362_v3.OOWHeroGlass_e8143a4235edd362_v3"
+      },
+      "unrealMesh": "/Game/Scenes/Alley/HeroRooms/alley-hero-rooms-v3/StaticMeshes/OOWHeroRoom_e8143a4235edd362_v3.OOWHeroRoom_e8143a4235edd362_v3",
+      "renderTriangles": 484
+    },
+    {
+      "id": "2c4f36af47ee8629",
+      "sourceRoomId": "2c4f36af47ee8629",
+      "name": "OOWHeroRoom_2c4f36af47ee8629_v3",
+      "seed": 0.17308366298675537,
+      "originMeters": [
+        -26.562034525755767,
+        27.235708648857795,
+        -222.49860599391295
+      ],
+      "right": [
+        0.6768585826957992,
+        0.0,
+        -0.7361130748947705
+      ],
+      "up": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "inward": [
+        -0.7361130748947704,
+        -0.0,
+        -0.6768585826957991
+      ],
+      "apertureWidthMeters": 1.8871763188415116,
+      "apertureHeightMeters": 3.0595923642792506,
+      "apertureSourceBounds": [
+        144.86180381593857,
+        146.74898013478008,
+        27.235708648857795,
+        30.295301013137045
+      ],
+      "widthMeters": 4.005284549601929,
+      "heightMeters": 3.9496555975241234,
+      "depthMeters": 3.78276874129071,
+      "floorMeters": -0.5006605687002411,
+      "furnitureScale": 1.1125790415560912,
+      "layout": "dining",
+      "occupied": true,
+      "sourceActors": [
+        "OOW_00760_paris_building_09_8"
+      ],
+      "lampLocalMeters": [
+        -1.361796746864656,
+        1.0346985086471645,
+        2.1940058699486116
+      ],
+      "light": {
+        "name": "OOWHeroLight_2c4f36af47ee8629",
+        "room": "2c4f36af47ee8629",
+        "positionCm": [
+          -2909.8814749023377,
+          -22298.120130675637,
+          2827.040715750496
+        ],
+        "lumens": 167.10733670083252,
+        "temperatureKelvin": 2850,
+        "radiusCm": 605.2429986065137,
+        "sourceRadiusCm": 10.013211374004822,
+        "tags": [
+          "OOWNightLight",
+          "OOWInteriorLight",
+          "OOWHeroLight",
+          "OOWRoom_2c4f36af47ee8629"
+        ]
+      },
+      "materialSlots": [
+        "surface",
+        "lamp"
+      ],
+      "triangles": 684,
+      "glass": {
+        "name": "OOWHeroGlass_2c4f36af47ee8629_v3",
+        "triangles": 2,
+        "offsetMeters": 0.01,
+        "unrealMesh": "/Game/Scenes/Alley/HeroRooms/alley-hero-rooms-v3/StaticMeshes/OOWHeroGlass_2c4f36af47ee8629_v3.OOWHeroGlass_2c4f36af47ee8629_v3"
+      },
+      "unrealMesh": "/Game/Scenes/Alley/HeroRooms/alley-hero-rooms-v3/StaticMeshes/OOWHeroRoom_2c4f36af47ee8629_v3.OOWHeroRoom_2c4f36af47ee8629_v3",
+      "renderTriangles": 636
+    },
+    {
+      "id": "c5753d251fa65540",
+      "sourceRoomId": "c5753d251fa65540",
+      "name": "OOWHeroRoom_c5753d251fa65540_v3",
+      "seed": 0.7713201642036438,
+      "originMeters": [
+        -23.522172177912232,
+        22.582547816719593,
+        -226.4133246666422
+      ],
+      "right": [
+        0.67671710121744,
+        0.0,
+        -0.7362431425282445
+      ],
+      "up": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "inward": [
+        -0.7362431425282445,
+        -0.0,
+        -0.67671710121744
+      ],
+      "apertureWidthMeters": 1.886210075459445,
+      "apertureHeightMeters": 2.7478714618828626,
+      "apertureSourceBounds": [
+        149.83429645453236,
+        151.7205065299918,
+        22.582547816719593,
+        25.330419278602456
+      ],
+      "widthMeters": 3.597213550101202,
+      "heightMeters": 3.547252250794241,
+      "depthMeters": 3.3973683528733574,
+      "floorMeters": -0.44965169376265024,
+      "furnitureScale": 0.9992259861392228,
+      "layout": "reading",
+      "occupied": false,
+      "sourceActors": [
+        "OOW_00760_paris_building_09_8"
+      ],
+      "lampLocalMeters": [
+        -1.2230526070344088,
+        0.929280167109477,
+        1.9704736446665472
+      ],
+      "light": null,
+      "materialSlots": [
+        "surface",
+        "lamp"
+      ],
+      "triangles": 900,
+      "glass": {
+        "name": "OOWHeroGlass_c5753d251fa65540_v3",
+        "triangles": 2,
+        "offsetMeters": 0.01,
+        "unrealMesh": "/Game/Scenes/Alley/HeroRooms/alley-hero-rooms-v3/StaticMeshes/OOWHeroGlass_c5753d251fa65540_v3.OOWHeroGlass_c5753d251fa65540_v3"
+      },
+      "unrealMesh": "/Game/Scenes/Alley/HeroRooms/alley-hero-rooms-v3/StaticMeshes/OOWHeroRoom_c5753d251fa65540_v3.OOWHeroRoom_c5753d251fa65540_v3",
+      "renderTriangles": 868
+    },
+    {
+      "id": "fe8ba70448e8d0b4",
+      "sourceRoomId": "fe8ba70448e8d0b4",
+      "name": "OOWHeroRoom_fe8ba70448e8d0b4_v3",
+      "seed": 0.994318425655365,
+      "originMeters": [
+        -19.376481156073385,
+        16.22353989784981,
+        -230.48342460077518
+      ],
+      "right": [
+        0.6762922065771524,
+        0.0,
+        -0.7366334579171695
+      ],
+      "up": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "inward": [
+        -0.7366334579171695,
+        -0.0,
+        -0.6762922065771524
+      ],
+      "apertureWidthMeters": 1.8852106410578244,
+      "apertureHeightMeters": 2.748363911965633,
+      "apertureSourceBounds": [
+        155.73503353898985,
+        157.62024418004768,
+        16.22353989784981,
+        18.971903809815444
+      ],
+      "widthMeters": 3.5978582120277376,
+      "heightMeters": 3.5478879590829084,
+      "depthMeters": 3.3979772002484188,
+      "floorMeters": -0.4497322765034672,
+      "furnitureScale": 0.9994050588965938,
+      "layout": "study",
+      "occupied": true,
+      "sourceActors": [
+        "OOW_00760_paris_building_09_8"
+      ],
+      "lampLocalMeters": [
+        -1.223271792089431,
+        0.9294467047738322,
+        1.9708267761440827
+      ],
+      "light": {
+        "name": "OOWHeroLight_fe8ba70448e8d0b4",
+        "room": "fe8ba70448e8d0b4",
+        "positionCm": [
+          -2165.5547278655895,
+          -23091.517645981563,
+          1715.2986602623641
+        ],
+        "lumens": 134.83941368599406,
+        "temperatureKelvin": 3090,
+        "radiusCm": 543.676352039747,
+        "sourceRadiusCm": 8.994645530069345,
+        "tags": [
+          "OOWNightLight",
+          "OOWInteriorLight",
+          "OOWHeroLight",
+          "OOWRoom_fe8ba70448e8d0b4"
+        ]
+      },
+      "materialSlots": [
+        "surface",
+        "lamp"
+      ],
+      "triangles": 696,
+      "glass": {
+        "name": "OOWHeroGlass_fe8ba70448e8d0b4_v3",
+        "triangles": 2,
+        "offsetMeters": 0.01,
+        "unrealMesh": "/Game/Scenes/Alley/HeroRooms/alley-hero-rooms-v3/StaticMeshes/OOWHeroGlass_fe8ba70448e8d0b4_v3.OOWHeroGlass_fe8ba70448e8d0b4_v3"
+      },
+      "unrealMesh": "/Game/Scenes/Alley/HeroRooms/alley-hero-rooms-v3/StaticMeshes/OOWHeroRoom_fe8ba70448e8d0b4_v3.OOWHeroRoom_fe8ba70448e8d0b4_v3",
+      "renderTriangles": 664
+    },
+    {
+      "id": "e75ca7daf67b6031",
+      "sourceRoomId": "e75ca7daf67b6031",
+      "name": "OOWHeroRoom_e75ca7daf67b6031_v3",
+      "seed": 0.9037575125694275,
+      "originMeters": [
+        -19.590450717038962,
+        27.54693710117141,
+        -230.68631403487836
+      ],
+      "right": [
+        0.67671710121744,
+        0.0,
+        -0.7362431425282446
+      ],
+      "up": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "inward": [
+        -0.7362431425282446,
+        -0.0,
+        -0.67671710121744
+      ],
+      "apertureWidthMeters": 1.886210075459445,
+      "apertureHeightMeters": 2.7483639119656367,
+      "apertureSourceBounds": [
+        155.6409187247889,
+        157.52712880024833,
+        27.54693710117141,
+        30.295301013137045
+      ],
+      "widthMeters": 3.5978582120277425,
+      "heightMeters": 3.547887959082913,
+      "depthMeters": 3.397977200248423,
+      "floorMeters": -0.4497322765034678,
+      "furnitureScale": 0.9994050588965951,
+      "layout": "sitting",
+      "occupied": false,
+      "sourceActors": [
+        "OOW_00760_paris_building_09_8"
+      ],
+      "lampLocalMeters": [
+        -1.2232717920894325,
+        0.9294467047738334,
+        1.9708267761440854
+      ],
+      "light": null,
+      "materialSlots": [
+        "surface",
+        "lamp"
+      ],
+      "triangles": 576,
+      "glass": {
+        "name": "OOWHeroGlass_e75ca7daf67b6031_v3",
+        "triangles": 2,
+        "offsetMeters": 0.01,
+        "unrealMesh": "/Game/Scenes/Alley/HeroRooms/alley-hero-rooms-v3/StaticMeshes/OOWHeroGlass_e75ca7daf67b6031_v3.OOWHeroGlass_e75ca7daf67b6031_v3"
+      },
+      "unrealMesh": "/Game/Scenes/Alley/HeroRooms/alley-hero-rooms-v3/StaticMeshes/OOWHeroRoom_e75ca7daf67b6031_v3.OOWHeroRoom_e75ca7daf67b6031_v3",
+      "renderTriangles": 544
+    },
+    {
+      "id": "9a9fb7340f17b1d6",
+      "sourceRoomId": "9a9fb7340f17b1d6",
+      "name": "OOWHeroRoom_9a9fb7340f17b1d6_v3",
+      "seed": 0.6039995551109314,
+      "originMeters": [
+        -46.999960934721344,
+        22.66520610817504,
+        -218.2592653907884
+      ],
+      "right": [
+        -0.6513119723890092,
+        0.0,
+        -0.7588100649192383
+      ],
+      "up": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "inward": [
+        -0.7588100649192383,
+        -0.0,
+        0.6513119723890092
+      ],
+      "apertureWidthMeters": 2.3755969358665823,
+      "apertureHeightMeters": 3.398841826870388,
+      "apertureSourceBounds": [
+        195.04116613107587,
+        197.41676306694245,
+        22.66520610817504,
+        26.064047935045426
+      ],
+      "widthMeters": 4.449392936993963,
+      "heightMeters": 4.387595812869047,
+      "depthMeters": 4.202204440494298,
+      "floorMeters": -0.5561741171242454,
+      "furnitureScale": 1.235942482498323,
+      "layout": "kitchen",
+      "occupied": false,
+      "sourceActors": [
+        "OOW_00703_paris_building_07_9"
+      ],
+      "lampLocalMeters": [
+        -1.5127935985779475,
+        1.14942650872344,
+        2.4372785754866926
+      ],
+      "light": null,
+      "materialSlots": [
+        "surface",
+        "lamp"
+      ],
+      "triangles": 660,
+      "glass": {
+        "name": "OOWHeroGlass_9a9fb7340f17b1d6_v3",
+        "triangles": 2,
+        "offsetMeters": 0.01,
+        "unrealMesh": "/Game/Scenes/Alley/HeroRooms/alley-hero-rooms-v3/StaticMeshes/OOWHeroGlass_9a9fb7340f17b1d6_v3.OOWHeroGlass_9a9fb7340f17b1d6_v3"
+      },
+      "unrealMesh": "/Game/Scenes/Alley/HeroRooms/alley-hero-rooms-v3/StaticMeshes/OOWHeroRoom_9a9fb7340f17b1d6_v3.OOWHeroRoom_9a9fb7340f17b1d6_v3",
+      "renderTriangles": 628
+    },
+    {
+      "id": "4b36e0ec1c9d5fc3",
+      "sourceRoomId": "4b36e0ec1c9d5fc3",
+      "name": "OOWHeroRoom_4b36e0ec1c9d5fc3_v3",
+      "seed": 0.2938060760498047,
+      "originMeters": [
+        -47.19703283951834,
+        15.594346631203472,
+        -218.12201962337625
+      ],
+      "right": [
+        -0.6512776270551527,
+        0.0,
+        -0.7588395433142698
+      ],
+      "up": [
+        0.000195985332958411,
+        0.9999999666483561,
+        -0.00016820533894331603
+      ],
+      "inward": [
+        -0.7588395180057236,
+        0.00025826979456346623,
+        0.651277605333973
+      ],
+      "apertureWidthMeters": 3.083037865846933,
+      "apertureHeightMeters": 3.042767590056039,
+      "apertureSourceBounds": [
+        194.7164663766312,
+        197.79950424247812,
+        15.621785473152423,
+        18.664553063208462
+      ],
+      "widthMeters": 3.9832593906188145,
+      "heightMeters": 3.927936343526887,
+      "depthMeters": 3.7619672022511024,
+      "floorMeters": -0.4979074238273518,
+      "furnitureScale": 1.1064609418385596,
+      "layout": "bedroom",
+      "occupied": true,
+      "sourceActors": [
+        "OOW_00703_paris_building_07_9"
+      ],
+      "lampLocalMeters": [
+        -1.354308192810397,
+        1.0290086759098604,
+        2.181940977305639
+      ],
+      "light": {
+        "name": "OOWHeroLight_4b36e0ec1c9d5fc3",
+        "room": "4b36e0ec1c9d5fc3",
+        "positionCm": [
+          -4797.054358233103,
+          -21567.344080291066,
+          1662.3918802242158
+        ],
+        "lumens": 165.27453513492677,
+        "temperatureKelvin": 2970,
+        "radiusCm": 601.9147523601764,
+        "sourceRadiusCm": 9.958148476547036,
+        "tags": [
+          "OOWNightLight",
+          "OOWInteriorLight",
+          "OOWHeroLight",
+          "OOWRoom_4b36e0ec1c9d5fc3"
+        ]
+      },
+      "materialSlots": [
+        "surface",
+        "lamp"
+      ],
+      "triangles": 516,
+      "glass": {
+        "name": "OOWHeroGlass_4b36e0ec1c9d5fc3_v3",
+        "triangles": 2,
+        "offsetMeters": 0.01,
+        "unrealMesh": "/Game/Scenes/Alley/HeroRooms/alley-hero-rooms-v3/StaticMeshes/OOWHeroGlass_4b36e0ec1c9d5fc3_v3.OOWHeroGlass_4b36e0ec1c9d5fc3_v3"
+      },
+      "unrealMesh": "/Game/Scenes/Alley/HeroRooms/alley-hero-rooms-v3/StaticMeshes/OOWHeroRoom_4b36e0ec1c9d5fc3_v3.OOWHeroRoom_4b36e0ec1c9d5fc3_v3",
+      "renderTriangles": 484
+    },
+    {
+      "id": "bb0077ee2a158352",
+      "sourceRoomId": "bb0077ee2a158352",
+      "name": "OOWHeroRoom_bb0077ee2a158352_v3",
+      "seed": 0.7304758429527283,
+      "originMeters": [
+        -46.999960934721344,
+        29.393343972366168,
+        -218.2592653907884
+      ],
+      "right": [
+        -0.6513119723890092,
+        0.0,
+        -0.7588100649192383
+      ],
+      "up": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "inward": [
+        -0.7588100649192383,
+        -0.0,
+        0.6513119723890092
+      ],
+      "apertureWidthMeters": 2.3755969358665823,
+      "apertureHeightMeters": 3.398841826870388,
+      "apertureSourceBounds": [
+        195.04116613107587,
+        197.41676306694245,
+        29.393343972366168,
+        32.792185799236556
+      ],
+      "widthMeters": 4.449392936993963,
+      "heightMeters": 4.387595812869047,
+      "depthMeters": 4.202204440494298,
+      "floorMeters": -0.5561741171242454,
+      "furnitureScale": 1.235942482498323,
+      "layout": "dining",
+      "occupied": false,
+      "sourceActors": [
+        "OOW_00703_paris_building_07_9"
+      ],
+      "lampLocalMeters": [
+        -1.5127935985779475,
+        1.14942650872344,
+        2.4372785754866926
+      ],
+      "light": null,
+      "materialSlots": [
+        "surface",
+        "lamp"
+      ],
+      "triangles": 684,
+      "glass": {
+        "name": "OOWHeroGlass_bb0077ee2a158352_v3",
+        "triangles": 2,
+        "offsetMeters": 0.01,
+        "unrealMesh": "/Game/Scenes/Alley/HeroRooms/alley-hero-rooms-v3/StaticMeshes/OOWHeroGlass_bb0077ee2a158352_v3.OOWHeroGlass_bb0077ee2a158352_v3"
+      },
+      "unrealMesh": "/Game/Scenes/Alley/HeroRooms/alley-hero-rooms-v3/StaticMeshes/OOWHeroRoom_bb0077ee2a158352_v3.OOWHeroRoom_bb0077ee2a158352_v3",
+      "renderTriangles": 636
+    },
+    {
+      "id": "360ea453eb0f5fb6_L",
+      "sourceRoomId": "360ea453eb0f5fb6",
+      "name": "OOWHeroRoom_360ea453eb0f5fb6_L_v3",
+      "seed": 0.21116089820861816,
+      "originMeters": [
+        -57.41453445408606,
+        22.41511210744872,
+        -234.72672002715927
+      ],
+      "right": [
+        0.38729300168349906,
+        0.0,
+        -0.9219566859928862
+      ],
+      "up": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "inward": [
+        -0.921956685992886,
+        -0.0,
+        -0.387293001683499
+      ],
+      "apertureWidthMeters": 4.440481993085314,
+      "apertureHeightMeters": 4.067242537962329,
+      "apertureSourceBounds": [
+        191.95138052469343,
+        196.39186251777875,
+        22.41511210744872,
+        26.48235464541105
+      ],
+      "widthMeters": 4.433111623821536,
+      "heightMeters": 5.147242537962329,
+      "depthMeters": 4.59,
+      "floorMeters": -0.6075,
+      "furnitureScale": 1.35,
+      "layout": "reading",
+      "occupied": false,
+      "sourceActors": [
+        "OOW_00719_Paris_Building_08_paris_building_08_1"
+      ],
+      "lampLocalMeters": [
+        -1.5072579520993223,
+        1.2555,
+        2.6622
+      ],
+      "light": null,
+      "neighbourConstraints": [
+        "360ea453eb0f5fb6_R"
+      ],
+      "materialSlots": [
+        "surface",
+        "lamp"
+      ],
+      "triangles": 900,
+      "glass": {
+        "name": "OOWHeroGlass_360ea453eb0f5fb6_L_v3",
+        "triangles": 2,
+        "offsetMeters": 0.01,
+        "unrealMesh": "/Game/Scenes/Alley/HeroRooms/alley-hero-rooms-v3/StaticMeshes/OOWHeroGlass_360ea453eb0f5fb6_L_v3.OOWHeroGlass_360ea453eb0f5fb6_L_v3"
+      },
+      "unrealMesh": "/Game/Scenes/Alley/HeroRooms/alley-hero-rooms-v3/StaticMeshes/OOWHeroRoom_360ea453eb0f5fb6_L_v3.OOWHeroRoom_360ea453eb0f5fb6_L_v3",
+      "renderTriangles": 868
+    },
+    {
+      "id": "360ea453eb0f5fb6_R",
+      "sourceRoomId": "360ea453eb0f5fb6",
+      "name": "OOWHeroRoom_360ea453eb0f5fb6_R_v3",
+      "seed": 0.21116089820861816,
+      "originMeters": [
+        -55.6201627461615,
+        22.41511210744872,
+        -238.9982482656929
+      ],
+      "right": [
+        0.38729300168349906,
+        0.0,
+        -0.9219566859928862
+      ],
+      "up": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "inward": [
+        -0.921956685992886,
+        -0.0,
+        -0.387293001683499
+      ],
+      "apertureWidthMeters": 4.825741254557755,
+      "apertureHeightMeters": 4.067242537962329,
+      "apertureSourceBounds": [
+        196.39186251777875,
+        201.2176037723365,
+        22.41511210744872,
+        26.48235464541105
+      ],
+      "widthMeters": 4.433111623821536,
+      "heightMeters": 5.147242537962329,
+      "depthMeters": 4.59,
+      "floorMeters": -0.6075,
+      "furnitureScale": 1.35,
+      "layout": "study",
+      "occupied": true,
+      "sourceActors": [
+        "OOW_00719_Paris_Building_08_paris_building_08_1"
+      ],
+      "lampLocalMeters": [
+        -1.5072579520993223,
+        1.2555,
+        2.6622
+      ],
+      "light": {
+        "name": "OOWHeroLight_360ea453eb0f5fb6_R",
+        "room": "360ea453eb0f5fb6_R",
+        "positionCm": [
+          -5865.834629219163,
+          -23863.96731483208,
+          2367.0612107448724
+        ],
+        "lumens": 246.03750000000002,
+        "temperatureKelvin": 3210,
+        "radiusCm": 734.4,
+        "sourceRadiusCm": 12.15,
+        "tags": [
+          "OOWNightLight",
+          "OOWInteriorLight",
+          "OOWHeroLight",
+          "OOWRoom_360ea453eb0f5fb6_R"
+        ]
+      },
+      "neighbourConstraints": [
+        "360ea453eb0f5fb6_L"
+      ],
+      "materialSlots": [
+        "surface",
+        "lamp"
+      ],
+      "triangles": 696,
+      "glass": {
+        "name": "OOWHeroGlass_360ea453eb0f5fb6_R_v3",
+        "triangles": 2,
+        "offsetMeters": 0.01,
+        "unrealMesh": "/Game/Scenes/Alley/HeroRooms/alley-hero-rooms-v3/StaticMeshes/OOWHeroGlass_360ea453eb0f5fb6_R_v3.OOWHeroGlass_360ea453eb0f5fb6_R_v3"
+      },
+      "unrealMesh": "/Game/Scenes/Alley/HeroRooms/alley-hero-rooms-v3/StaticMeshes/OOWHeroRoom_360ea453eb0f5fb6_R_v3.OOWHeroRoom_360ea453eb0f5fb6_R_v3",
+      "renderTriangles": 664
+    },
+    {
+      "id": "c21129e54a722aec_L",
+      "sourceRoomId": "c21129e54a722aec",
+      "name": "OOWHeroRoom_c21129e54a722aec_L_v3",
+      "seed": 0.7580743432044983,
+      "originMeters": [
+        -57.414534454086066,
+        28.76270202423184,
+        -234.72672002715925
+      ],
+      "right": [
+        0.3872930016834991,
+        0.0,
+        -0.921956685992886
+      ],
+      "up": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "inward": [
+        -0.921956685992886,
+        -0.0,
+        -0.3872930016834991
+      ],
+      "apertureWidthMeters": 4.440481993085314,
+      "apertureHeightMeters": 4.0694415228985115,
+      "apertureSourceBounds": [
+        191.9513805246934,
+        196.39186251777872,
+        28.76270202423184,
+        32.83214354713035
+      ],
+      "widthMeters": 4.433111623821504,
+      "heightMeters": 5.1494415228985115,
+      "depthMeters": 4.59,
+      "floorMeters": -0.6075,
+      "furnitureScale": 1.35,
+      "layout": "study",
+      "occupied": false,
+      "sourceActors": [
+        "OOW_00719_Paris_Building_08_paris_building_08_1"
+      ],
+      "lampLocalMeters": [
+        -1.5072579520993115,
+        1.2555,
+        2.6622
+      ],
+      "light": null,
+      "neighbourConstraints": [
+        "c21129e54a722aec_R"
+      ],
+      "materialSlots": [
+        "surface",
+        "lamp"
+      ],
+      "triangles": 696,
+      "glass": {
+        "name": "OOWHeroGlass_c21129e54a722aec_L_v3",
+        "triangles": 2,
+        "offsetMeters": 0.01,
+        "unrealMesh": "/Game/Scenes/Alley/HeroRooms/alley-hero-rooms-v3/StaticMeshes/OOWHeroGlass_c21129e54a722aec_L_v3.OOWHeroGlass_c21129e54a722aec_L_v3"
+      },
+      "unrealMesh": "/Game/Scenes/Alley/HeroRooms/alley-hero-rooms-v3/StaticMeshes/OOWHeroRoom_c21129e54a722aec_L_v3.OOWHeroRoom_c21129e54a722aec_L_v3",
+      "renderTriangles": 664
+    },
+    {
+      "id": "c21129e54a722aec_R",
+      "sourceRoomId": "c21129e54a722aec",
+      "name": "OOWHeroRoom_c21129e54a722aec_R_v3",
+      "seed": 0.7580743432044983,
+      "originMeters": [
+        -55.62016274616152,
+        28.76270202423184,
+        -238.99824826569284
+      ],
+      "right": [
+        0.3872930016834991,
+        0.0,
+        -0.921956685992886
+      ],
+      "up": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "inward": [
+        -0.921956685992886,
+        -0.0,
+        -0.3872930016834991
+      ],
+      "apertureWidthMeters": 4.825741254557755,
+      "apertureHeightMeters": 4.0694415228985115,
+      "apertureSourceBounds": [
+        196.39186251777872,
+        201.21760377233647,
+        28.76270202423184,
+        32.83214354713035
+      ],
+      "widthMeters": 4.433111623821504,
+      "heightMeters": 5.1494415228985115,
+      "depthMeters": 4.59,
+      "floorMeters": -0.6075,
+      "furnitureScale": 1.35,
+      "layout": "sitting",
+      "occupied": false,
+      "sourceActors": [
+        "OOW_00719_Paris_Building_08_paris_building_08_1"
+      ],
+      "lampLocalMeters": [
+        -1.5072579520993115,
+        1.2555,
+        2.6622
+      ],
+      "light": null,
+      "neighbourConstraints": [
+        "c21129e54a722aec_L"
+      ],
+      "materialSlots": [
+        "surface",
+        "lamp"
+      ],
+      "triangles": 576,
+      "glass": {
+        "name": "OOWHeroGlass_c21129e54a722aec_R_v3",
+        "triangles": 2,
+        "offsetMeters": 0.01,
+        "unrealMesh": "/Game/Scenes/Alley/HeroRooms/alley-hero-rooms-v3/StaticMeshes/OOWHeroGlass_c21129e54a722aec_R_v3.OOWHeroGlass_c21129e54a722aec_R_v3"
+      },
+      "unrealMesh": "/Game/Scenes/Alley/HeroRooms/alley-hero-rooms-v3/StaticMeshes/OOWHeroRoom_c21129e54a722aec_R_v3.OOWHeroRoom_c21129e54a722aec_R_v3",
+      "renderTriangles": 544
+    }
+  ],
+  "nightEnvelope": "smoothstep(.58,.86,Night), existing WindowDirector",
+  "sourceGeometryChanged": false,
+  "generatedSha256": "4b88344c2e3e168719b6cc46f328d9d4112864b42d56d55eff6e53941ccc8b5e",
+  "totalTriangles": 10032,
+  "glassTriangles": 30,
+  "totalRenderTriangles": 9520
+}

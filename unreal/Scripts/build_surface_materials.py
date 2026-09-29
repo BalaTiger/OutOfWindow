@@ -1,15 +1,16 @@
 """Adapt imported glTF materials without editing any imported/plugin master.
 
 Run in UE after import_scenes.py. OOW_MATERIAL_SCENES defaults to all five maps;
+OOW_MATERIAL_KINDS=ground,stone restricts repairs to those surface kinds.
 OOW_MATERIAL_PROBE_ONLY=1 only writes Migration/material-probe.json. Runtime MIDs
 drive Wetness/Water/RainIntensity/Night [0,1], WindStrength [m/s] and
 WindDirection [world unit XY]. Water expands ground puddles; RainIntensity
 drives their ripples independently of retained water after rain stops.
 Native Time drives water/wind. Plain Python --self-test checks semantic routing.
 OOWWindowInterior actors use UV1 for room images and constant UV2=(seed,flag):
-1=room, 0=legacy fallback, -1=non-emissive frame. Tagged interiors use v6;
-wind surfaces use v8, other windows retain v3 and other surfaces retain v2. OOWWindowGlassFront
-actors receive a separate native thin-translucent glass surface.
+2=hero aperture, 1=detailed room, .5=basic room, 0=legacy fallback, -1=frame.
+Tagged interiors use v16 calibrated baked cubemaps and geometric room openings.
+Wind surfaces use v8, ground/stone use v9, other windows retain v3 and other surfaces retain v2.
 """
 import hashlib
 import json
@@ -21,9 +22,21 @@ import sys
 
 VERSION = 'v2'
 DEST = '/Game/Materials/OOW'
-INTERIOR_OVERRIDES = {'OOWInteriorEnabled': 1.0, 'OOWInteriorMipBias': 1.5,
-                      'OOWInteriorGain': .8, 'OOWInteriorHighlightGain': 8.0,
-                      'OOWInteriorHighlightThreshold': .32}
+INTERIOR_OVERRIDES = {'OOWInteriorEnabled': 1.0, 'OOWInteriorMipBias': 0.,
+                      'OOWInteriorGain': 1.0}
+LEGACY_CURTAIN_ACTORS = {
+    'OOW_00728_Paris_Building_08_paris_building_08_9',
+    'OOW_00739_Paris_Building_08_paris_building_08_9__2_',
+    'OOW_00751_Paris_Building_08_paris_building_08_9__3_',
+}
+
+
+def source_curtain(node):
+    # These three Bistro variants are vertical indoor hanging cloth, despite
+    # their shared Cyan awning material. The actual outdoor Cyan awnings stay.
+    return node.get('materials') == ['MASTER_Curtains'] or (
+        node.get('name') in LEGACY_CURTAIN_ACTORS
+        and node.get('materials') == ['MASTER_Awning_Fabric_Cyan'])
 PROFILES = {  # wet albedo multiplier, roughness multiplier, roughness floor
     'stone': (.80, .52, .27), 'ground': (.76, .34, .16),
     'wood': (.82, .55, .24), 'metal': (.94, .58, .13),
@@ -48,12 +61,14 @@ def classify(name, motion=None, source=None, semantic=None):
     window = glass and bool(re.search(r'^master_(focus_)?glass|^master_frosted_glass|facade_glass', n))
     if glass:
         kind = 'glass'
-    elif motion == 'foliage' or re.search(r'foliage|leaves|leaf|needles', n):
+    elif motion == 'foliage':
         kind = 'foliage'
     elif re.search(r'fabric|awning|canvas', n):
         kind = 'fabric'
     elif ground_node or re.search(r'pavement|road|asphalt|cobble|ground|terrain|curbstone', n):
         kind = 'ground'
+    elif re.search(r'foliage|leaves|leaf|needles', n):
+        kind = 'foliage'
     elif re.search(r'brick|concrete|plaster|masonry|stone|roof', n):
         kind = 'stone'
     elif re.search(r'wood|timber|bark', n):
@@ -86,7 +101,9 @@ def asset_name(prefix, identity):
 def recipe_for(profile, interior=False):
     if profile[1] in ('foliage', 'awning'):
         return 'v8'
-    return ('v6' if interior else 'v3') if profile[2] == 'window' else VERSION
+    if profile[0] in ('ground', 'stone'):
+        return 'v9'
+    return ('v16' if interior else 'v3') if profile[2] == 'window' else VERSION
 
 
 def wind_anchor_data(lower, upper):
@@ -267,128 +284,100 @@ def window_interior_textures():
     global interior_textures
     if interior_textures is not None:
         return interior_textures
-    source = Path(u.Paths.project_dir()).parent / 'Art' / 'WindowInteriors'
-    files = [source / ('room-%02d.png' % index) for index in range(1, 7)]
-    missing = [str(path) for path in files if not path.is_file()]
-    if missing:
-        raise RuntimeError('Missing room images: ' + ', '.join(missing))
-    folder = DEST + '/WindowInteriors'
-    textures = []
-    for index, path in enumerate(files, 1):
-        name = 'T_Room_%02d' % index
-        texture = u.load_asset(folder + '/' + name)
-        if texture is None:
-            texture = u.load_asset(folder + '/' + path.stem)
-        if texture is None:
-            imported_name = re.sub(r'[^A-Za-z0-9_]', '_', path.stem)
-            texture = u.load_asset(folder + '/' + imported_name)
-        if texture is None:
-            # Bypass AssetTools' Interchange completion callback, which syncs the
-            # Content Browser even for automated imports and asserts without Slate.
-            manager = u.InterchangeManager.get_interchange_manager_scripted()
-            params = u.ImportAssetParameters()
-            params.is_automated, params.replace_existing = True, True
-            imported = manager.import_asset(folder, manager.create_source_data(str(path)), params)
-            texture = next((candidate for candidate in (imported or []) if isinstance(candidate, u.Texture2D)), None)
-        if not isinstance(texture, u.Texture2D):
-            raise RuntimeError('Room import did not produce Texture2D: ' + str(path))
-        texture.set_editor_property('srgb', True)
-        texture.set_editor_property('compression_settings', u.TextureCompressionSettings.TC_DEFAULT)
-        texture.set_editor_property('address_x', u.TextureAddress.TA_CLAMP)
-        texture.set_editor_property('address_y', u.TextureAddress.TA_CLAMP)
-        texture.set_editor_property('power_of_two_mode', u.TexturePowerOfTwoSetting.STRETCH_TO_POWER_OF_TWO)
-        # Sharpen0 uses the native high-quality downsample without extra sharpening;
-        # retain bright lamp cores instead of pre-blurring every furniture edge.
-        texture.set_editor_property('mip_gen_settings', u.TextureMipGenSettings.TMGS_SHARPEN0)
-        texture.set_editor_property('virtual_texture_streaming', False)
-        u.EditorAssetLibrary.save_loaded_asset(texture)
-        textures.append(texture)
+    from build_interior_atlas import TEXTURE_PATHS
+    textures = [u.load_asset(path) for path in TEXTURE_PATHS]
+    if not all(isinstance(texture, u.TextureCube) for texture in textures):
+        raise RuntimeError('Bake build_interior_atlas.py with a real RHI before building window materials')
     interior_textures = textures
     return textures
 
 
-def add_window_interior(g, fallback, night, textures):
+def hero_aperture(g, metadata):
+    # Integer semantic flags survive Nanite's UV quantization and interpolation.
+    return g.custom('return S.y>1.5 ? 0. : 1.;',
+                    {'S': metadata}, description='OOW hero aperture')
+
+
+def room_box_projection(g, uv, metadata):
+    # The baked cube and ray intersection share one calibrated room, in metres.
+    # ponytail: furniture is baked onto the proxy walls; large windows use geometry.
+    from build_interior_atlas import CAPTURE_CENTER
+    code = r'''
+float2 size=max(Size.xy,float2(.05,.05));
+float3 n=normalize(Normal);
+float major=abs(n.x)>=abs(n.y)?n.x:n.y;
+float3 cn=n*(major<0.?-1.:1.);
+float3 right=normalize(float3(cn.y,-cn.x,0.));
+float3 up=normalize(float3(0.,0.,1.)-n*n.z);
+float3 view=normalize(View);
+float3 ray=float3(-dot(view,right),-dot(view,up),max(.001,abs(dot(view,n))));
+ray*=float3(2./size.x,2.75/size.y,2.75/size.y);
+float3 p=float3((UV.x-.5)*2.,UV.y*2.75,0.);
+float3 lo=float3(-1.8,-.45,0.), hi=float3(1.8,3.05,3.4);
+float2 side=(float2(ray.x>0.?hi.x:lo.x,ray.y>0.?hi.y:lo.y)-p.xy)
+    /float2(abs(ray.x)<.0001?.0001:ray.x,abs(ray.y)<.0001?.0001:ray.y);
+if(abs(ray.x)<.0001) side.x=1.e6;
+if(abs(ray.y)<.0001) side.y=1.e6;
+float rear=hi.z/ray.z;
+float t=min(rear,min(side.x,side.y));
+float3 hit=p+ray*t;
+// Cube uses UE axes: X=right, Y=inward, Z=up; capture centre is fixed.
+float3 direction=hit-Capture;
+return direction.xzy;
+'''
+    return g.custom(code, {'UV': uv, 'Size': g.node(u.MaterialExpressionTextureCoordinate, coordinate_index=3),
+                          'Normal': g.node(u.MaterialExpressionVertexNormalWS),
+                          'View': g.node(u.MaterialExpressionCameraVectorWS), 'Seed': metadata,
+                          'Capture': g.vector(CAPTURE_CENTER)},
+                    True, 'OOW room-box projection')
+
+
+def add_window_interior(g, fallback, night, textures, aperture):
     # UV2 is constant for every pane in one authored window group. Only texture
     # detail varies across UV1; occupancy, room choice and tint never vary per pixel.
-    uv = g.node(u.MaterialExpressionTextureCoordinate, coordinate_index=1, v_tiling=-1.0)
-    image_uv = g.node(u.MaterialExpressionAdd)
-    g.connect(uv, image_uv, 'A')
-    g.connect(g.node(u.MaterialExpressionConstant2Vector, r=0, g=1), image_uv, 'B')
+    from build_interior_atlas import CAPTURE_CENTER
+    uv = g.node(u.MaterialExpressionTextureCoordinate, coordinate_index=1)
     metadata = g.node(u.MaterialExpressionTextureCoordinate, coordinate_index=2)
+    projection = room_box_projection(g, uv, metadata)
     inputs = {'F': fallback, 'N': night, 'S': metadata,
-              'Enabled': g.scalar('OOWInteriorEnabled'), 'Intensity': g.scalar('OOWInteriorGain', .6),
-              'Highlights': g.scalar('OOWInteriorHighlightGain', 4),
-              'Threshold': g.scalar('OOWInteriorHighlightThreshold', .32),
+              'Enabled': g.scalar('OOWInteriorEnabled'), 'Intensity': g.scalar('OOWInteriorGain', 1),
               'GlassLayer': g.scalar('OOWInteriorGlassLayer'),
+              'Aperture': aperture, 'Projection': projection, 'UV': uv,
+              'Capture': g.vector(CAPTURE_CENTER),
               'Normal': g.node(u.MaterialExpressionPixelNormalWS),
               'View': g.node(u.MaterialExpressionCameraVectorWS)}
-    mip_bias = g.scalar('OOWInteriorMipBias', 1)
+    mip_bias = g.scalar('OOWInteriorMipBias', 0)
     for index, texture in enumerate(textures):
-        sample = g.node(u.MaterialExpressionTextureSampleParameter2D,
+        sample = g.node(u.MaterialExpressionTextureSampleParameterCube,
                         parameter_name='OOWRoom%02d' % (index + 1), texture=texture,
-                        sampler_type=u.MaterialSamplerType.SAMPLERTYPE_COLOR,
+                        sampler_type=u.MaterialSamplerType.SAMPLERTYPE_LINEAR_COLOR,
                         mip_value_mode=u.TextureMipValueMode.TMVM_MIP_BIAS,
                         sampler_source=u.SamplerSourceMode.SSM_CLAMP_WORLD_GROUP_SETTINGS)
-        g.connect(image_uv, sample, '')  # First input is UVs; geometry V=0 at bottom, images V=0 at top.
+        g.connect(projection, sample, '')
         g.connect(mip_bias, sample, 'Bias')  # MaterialEditingLibrary uses the shortened MipBias pin name.
         inputs['R%d' % index] = (sample[0], 'RGB')
-    code = ('if(S.y<-.5 || (GlassLayer>.5 && S.y<.5)) return float3(0,0,0); '
+    code = ('if(Aperture<.5 || S.y<-.5 || (GlassLayer>.5 && S.y<.25)) return float3(0,0,0); '
             'float seed=saturate(S.x); float id=floor(frac(seed*17.171+.37)*6.); '
             'float3 room=id<1?R0:id<2?R1:id<3?R2:id<4?R3:id<5?R4:R5; '
             'float occupied=step(.62,frac(seed*73.137+.11)); '
             'float gain=lerp(.8,1.2,frac(seed*31.718+.07)); '
             'float3 tint=lerp(float3(1.,.88,.75),float3(.9,.94,1.),frac(seed*41.137+.43)); '
-            'float lum=dot(room,float3(.2126,.7152,.0722)); '
-            'float highlight=smoothstep(saturate(Threshold),min(.99,saturate(Threshold)+.4),lum); '
-            'float3 lampColor=room/max(.001,max(room.r,max(room.g,room.b))); '
-            'float3 inside=(room*max(0.,Intensity)+lampColor*max(0.,Highlights)*highlight*highlight) '
+            'float3 hit=Projection.xzy+Capture; '
+            'float floorFace=1.-step(-.449,hit.y), ceilingFace=step(3.049,hit.y); '
+            'float sideFace=step(1.799,abs(hit.x)); '
+            'float3 basic=lerp(float3(.10,.072,.043),float3(.17,.14,.10),ceilingFace); '
+            'basic=lerp(basic,float3(.026,.016,.009),floorFace); '
+            'basic*=lerp(.55,1.,saturate(hit.z/3.4))*(1.-sideFace*.18); '
+            'room=lerp(basic,room,step(.75,S.y)); '
+            'float3 inside=room*max(0.,Intensity) '
             '*tint*(gain*occupied*smoothstep(.58,.86,saturate(N))); '
             'float NoV=saturate(abs(dot(normalize(Normal),normalize(View)))); '
             'float fresnel=.04+.96*pow(1.-NoV,5.); '
             'float transmission=lerp((1.-fresnel)*(1.-fresnel),1.,saturate(GlassLayer)); '
-            'return lerp(F,inside,saturate(Enabled)*step(.5,S.y))*transmission;')
+            'return lerp(F,inside,saturate(Enabled)*step(.25,S.y))*transmission;')
     # The separate ThinTranslucent front sheet handles Fresnel when present.
     # Without that sheet this is a view-dependent approximation, not real glass.
-    return g.custom(code, inputs, True, 'OOW room base plus HDR lamp highlights; constant per-window occupancy')
-
-
-def window_glass_material():
-    """A real transparent front sheet; opaque room cards remain behind this mesh."""
-    path = DEST + '/M_WindowGlassFront_v6'
-    material = u.load_asset(path)
-    if material:
-        ensure_mesh_usage(material)
-        finish(material, recipe='v6')
-        return material
-    material = u.AssetToolsHelpers.get_asset_tools().create_asset(
-        path.rsplit('/', 1)[1], DEST, u.Material, u.MaterialFactoryNew())
-    if not material:
-        raise RuntimeError('Cannot create native front glass material')
-    material.set_editor_property('blend_mode', u.BlendMode.BLEND_TRANSLUCENT)
-    material.set_editor_property('shading_model', u.MaterialShadingModel.MSM_THIN_TRANSLUCENT)
-    material.set_editor_property('translucency_lighting_mode', u.TranslucencyLightingMode.TLM_SURFACE_PER_PIXEL_LIGHTING)
-    material.set_editor_property('two_sided', True)
-    g, p = Graph(material), u.MaterialProperty
-    wet = g.scalar('Wetness')
-    g.output(g.vector((0, 0, 0)), p.MP_BASE_COLOR)
-    g.output(g.vector((0, 0, 0)), p.MP_EMISSIVE_COLOR)
-    g.output(g.constant(0), p.MP_METALLIC)
-    g.output(g.constant(.5), p.MP_SPECULAR)  # Dielectric F0=.04, IOR approximately 1.5.
-    # ThinTranslucent's opacity is coverage of a coating, not glass visibility.
-    # Zero leaves the native transmission/reflections and full surface coverage.
-    g.output(g.constant(0), p.MP_OPACITY)
-    g.output(g.custom('return clamp(R+.02*saturate(W),.025,.3);',
-                      {'R': g.scalar('OOWGlassRoughness', .07), 'W': wet}), p.MP_ROUGHNESS)
-    g.output(g.custom('float a=max(0.,A)*lerp(1.,2.5,saturate(W)); '
-                      'return normalize(float3(a*sin(P.x*.051+P.z*.023),a*sin(P.y*.043-P.z*.037),1.));',
-                      {'P': g.position(), 'A': g.scalar('OOWGlassDistortion', .0015), 'W': wet}, True,
-                      'OOW small glass waviness; no room-mask distortion'), p.MP_NORMAL)
-    transmission = g.node(u.MaterialExpressionThinTranslucentMaterialOutput)
-    g.connect(g.vector((.95, .97, .98)), transmission, '')
-    ensure_mesh_usage(material)
-    mel.recompile_material(material)
-    finish(material, recipe='v6')
-    return material
+    return g.custom(code, inputs, True, 'OOW calibrated baked HDR interior; constant per-window occupancy')
 
 
 def add_puddles(g, roughness):
@@ -404,12 +393,15 @@ def add_puddles(g, roughness):
         'dot(i+float2(0,1),float2(127.1,311.7)), '
         'dot(i+float2(1,1),float2(127.1,311.7))))*43758.5453); '
         'float depression=lerp(lerp(h.x,h.y,f.x),lerp(h.z,h.w,f.x),f.y); '
-        'float water=saturate(W); float edge=lerp(.08,.58,water); '
-        'return water*(1.-smoothstep(edge-.045,edge+.045,depression))*smoothstep(.88,.98,Up.z);',
+        'float water=saturate(W); float edge=lerp(.18,.68,water); '
+        # Shallow water is already smooth; depth expands coverage, not roughness.
+        'return smoothstep(.02,.16,water)*(1.-smoothstep(edge-.045,edge+.045,depression))*smoothstep(.88,.98,Up.z);',
         {'P': position, 'W': g.scalar('Water'), 'Up': g.node(u.MaterialExpressionVertexNormalWS)},
         description='OOW low-frequency ground puddle coverage')
-    g.output(g.custom('return lerp(R,.065+.025*saturate(Rain),M);',
+    g.output(g.custom('return lerp(R,min(R,.055+.025*saturate(Rain)),M);',
                       {'R': roughness, 'Rain': rain, 'M': mask}), p.MP_ROUGHNESS)
+    g.output(g.custom('return C*(1.-.18*M);',
+                      {'C': g.read(p.MP_BASE_COLOR, (0, 0, 0)), 'M': mask}, True), p.MP_BASE_COLOR)
     ripple = g.custom(
         'float2 q=P.xy/65., cell=floor(q); '
         'float seed=frac(sin(dot(cell,float2(127.1,311.7)))*43758.5453); '
@@ -431,6 +423,28 @@ def add_puddles(g, roughness):
     original = g.read(p.MP_NORMAL, (0, 0, 1))
     g.output(g.custom('return normalize(lerp(O,R,M));',
                       {'O': original, 'R': ripple, 'M': mask}, True), p.MP_NORMAL)
+
+
+def add_stone_wetness(g, wet, roughness):
+    """Local vertical wet streaks over the existing damp masonry response."""
+    p = u.MaterialProperty
+    mask = g.custom(
+        'float2 a=float2(abs(N.y)>.55?P.x:P.y,P.z)*.01; float mask=.08; '
+        '[unroll] for(int k=0;k<2;k++) { '
+        'float2 q=k==0?a*float2(.72,.12):float2(a.x*1.15,floor(a.y*.22)); '
+        'float2 i=floor(q), f=frac(q); f=f*f*(3.-2.*f); '
+        'float4 h=frac(sin(float4(dot(i,float2(127.1,311.7)), '
+        'dot(i+float2(1,0),float2(127.1,311.7)), '
+        'dot(i+float2(0,1),float2(127.1,311.7)), '
+        'dot(i+float2(1,1),float2(127.1,311.7))))*43758.5453); '
+        'mask+=lerp(lerp(h.x,h.y,f.x),lerp(h.z,h.w,f.x),f.y)*(k==0?.26:.16); } '
+        'return saturate(W)*mask*(1.-smoothstep(.55,.9,abs(N.z)));',
+        {'P': g.position(), 'N': g.node(u.MaterialExpressionVertexNormalWS), 'W': wet},
+        description='OOW vertical masonry wet streaks; dry surfaces and upward roofs unchanged')
+    g.output(g.custom('return C*(1.-.28*M);',
+                      {'C': g.read(p.MP_BASE_COLOR, (0, 0, 0)), 'M': mask}, True), p.MP_BASE_COLOR)
+    g.output(g.custom('return lerp(R,min(R,.24),saturate(M*2.));',
+                      {'R': roughness, 'M': mask}), p.MP_ROUGHNESS)
 
 
 def weather_master(base, profile, interior=False):
@@ -465,6 +479,8 @@ def weather_master(base, profile, interior=False):
         g.output(weather_roughness, p.MP_ROUGHNESS)
         if kind == 'ground':
             add_puddles(g, weather_roughness)
+        elif kind == 'stone':
+            add_stone_wetness(g, wet, weather_roughness)
         if lighting == 'lamp':
             gain = g.scalar('OOWLampGain', 1)
             g.output(g.custom('return E * G * smoothstep(.58,.86,saturate(N));',
@@ -476,13 +492,48 @@ def weather_master(base, profile, interior=False):
                                        'return float3(.62,.36,.16)*step(.62,h)*smoothstep(.58,.86,saturate(N));',
                                        {'P': g.node(u.MaterialExpressionObjectPositionWS), 'N': night}, True)
             if interior:
-                window_emission = add_window_interior(g, window_emission, night, textures)
-                # The front sheet owns specular reflection on real room panes.
-                # Frame/unsupported faces keep their original surface response.
-                specular = g.read(p.MP_SPECULAR, .5)
-                g.output(g.custom('return lerp(O,0.,saturate(G)*step(.5,S.y));',
-                                  {'O': specular, 'G': g.scalar('OOWInteriorGlassLayer'),
-                                   'S': g.node(u.MaterialExpressionTextureCoordinate, coordinate_index=2)}), p.MP_SPECULAR)
+                metadata = g.node(u.MaterialExpressionTextureCoordinate, coordinate_index=2)
+                aperture = hero_aperture(g, metadata)
+                window_emission = add_window_interior(g, window_emission, night, textures, aperture)
+                material.set_editor_property('blend_mode', u.BlendMode.BLEND_MASKED)
+                material.set_editor_property('opacity_mask_clip_value', .5)
+                g.output(aperture, p.MP_OPACITY_MASK)
+                # No diffuse tint or constant emission: all daytime window colour
+                # comes from the current scene's native specular reflection.
+                for prop, value in ((p.MP_BASE_COLOR, (0., 0., 0.)),
+                                    (p.MP_SPECULAR, .5), (p.MP_METALLIC, 0.),
+                                    (p.MP_AMBIENT_OCCLUSION, 1.),
+                                    (p.MP_NORMAL, (0., 0., 1.))):
+                    is_vector = isinstance(value, tuple)
+                    target = g.vector(value) if is_vector else g.constant(value)
+                    g.output(g.custom('return lerp(O,V,step(.25,S.y));',
+                                      {'O': g.read(prop, value), 'V': target, 'S': metadata}, is_vector,
+                                      'OOW opaque pane; preserve non-pane source faces'), prop)
+                g.output(g.custom('return lerp(O,lerp(.20,.16,saturate(W)),step(.25,S.y));',
+                                  {'O': weather_roughness, 'W': wet, 'S': metadata}), p.MP_ROUGHNESS)
+                # ponytail: one low-resolution outdoor cube approximates distant
+                # surroundings; native Lumen retains accurate local reflections.
+                fallback = u.load_asset('/Engine/EngineResources/GrayDarkTextureCube')
+                environment = g.node(u.MaterialExpressionTextureObjectParameter,
+                    parameter_name='LocalWindowReflection', texture=fallback,
+                    sampler_type=(u.MaterialSamplerType.SAMPLERTYPE_COLOR if fallback.get_editor_property('srgb')
+                                  else u.MaterialSamplerType.SAMPLERTYPE_LINEAR_COLOR))
+                capture_position = g.node(u.MaterialExpressionVectorParameter,
+                                          parameter_name='LocalWindowCapturePosition')
+                window_emission = g.custom(
+                    '[branch] if (Aperture<.5 || GetRayTracingQualitySwitch() || Ready<.5 || S.y<.25 || distance(Camera,Capture)<1.) return E; '
+                    'float3 environment=TextureCubeSampleLevel(LocalWindowReflection,LocalWindowReflectionSampler,R,2).rgb; '
+                    'float NoV=saturate(abs(dot(normalize(N),normalize(V)))); '
+                    'float fresnel=min(.4,.25+.75*pow(1.-NoV,5.))*lerp(1.,.12,smoothstep(.58,.86,saturate(Night))); '
+                    'return E+environment*fresnel;',
+                    {'E': window_emission, 'LocalWindowReflection': environment, 'S': metadata,
+                     'Aperture': aperture, 'Night': night,
+                     'Ready': g.scalar('LocalWindowReflectionReady'),
+                     'R': g.node(u.MaterialExpressionReflectionVectorWS),
+                     'Camera': g.node(u.MaterialExpressionCameraPositionWS), 'Capture': capture_position,
+                     'N': g.node(u.MaterialExpressionPixelNormalWS),
+                     'V': g.node(u.MaterialExpressionCameraVectorWS)}, True,
+                    'Current outdoor HDR capture; skip its own six views to prevent feedback')
             g.output(window_emission, p.MP_EMISSIVE_COLOR)
         if kind == 'fabric' and wind == 'awning':
             add_awning_transmission(g, albedo, emission, night)
@@ -557,7 +608,7 @@ def adapt(original, profile, source, interior=False, glass_backing=False):
         if interior_leaf:
             for parameter, value in INTERIOR_OVERRIDES.items():
                 mel.set_material_instance_scalar_parameter_value(copied, parameter, value)
-            mel.set_material_instance_scalar_parameter_value(copied, 'OOWInteriorGlassLayer', float(glass_backing))
+            mel.set_material_instance_scalar_parameter_value(copied, 'OOWInteriorGlassLayer', 0.)
         if created or interior_leaf or awning_leaf:
             mel.update_material_instance(copied)
             finish(copied, item, recipe)
@@ -616,6 +667,9 @@ def main():
     ids = os.environ.get('OOW_MATERIAL_SCENES', 'alley,city,village,forest,coast').split(',')
     report, failures = [], []
     probe_only = os.environ.get('OOW_MATERIAL_PROBE_ONLY') == '1'
+    kinds = set(filter(None, os.environ.get('OOW_MATERIAL_KINDS', '').split(',')))
+    if kinds - PROFILES.keys():
+        raise RuntimeError('Unknown OOW_MATERIAL_KINDS: ' + str(kinds - PROFILES.keys()))
     for scene_id in (value.strip() for value in ids if value.strip()):
         path = '/Game/Maps/' + scene_id.capitalize()
         if not levels.load_level(path):
@@ -623,7 +677,7 @@ def main():
         metadata = json.loads((root / 'Migration' / 'Exported' / (scene_id + '.json')).read_text(encoding='utf-8'))
         nodes = {n['name']: n for n in metadata['nodes']}
         sources = glb_materials(root / 'Migration' / 'Exported' / (scene_id + '.glb'))
-        counts = {'scene': scene_id, 'slots': 0, 'waterActors': 0, 'windActors': 0,
+        counts = {'scene': scene_id, 'slots': 0, 'waterActors': 0, 'windActors': 0, 'hiddenCurtainActors': 0,
                   'interiorSlots': 0, 'glassFrontActors': 0, 'glassBackingSlots': 0, 'profiles': {}}
         for actor in actors.get_all_level_actors():
             if not isinstance(actor, u.StaticMeshActor):
@@ -631,17 +685,33 @@ def main():
             label = actor.get_actor_label()
             comp = actor.static_mesh_component
             tags = {str(tag) for tag in actor.tags}
+            if tags & {'OOWHeroRoom', 'OOWHeroGlass'}:
+                continue
             if 'OOWWindowGlassFront' in tags:
+                if kinds and 'glass' not in kinds:
+                    continue
                 if not probe_only:
-                    glass = window_glass_material()
-                    for index in range(comp.get_num_materials()):
-                        comp.set_material(index, glass)
+                    actor.set_actor_hidden_in_game(True)
+                    comp.set_visibility(False)
+                    comp.set_editor_property('visible_in_ray_tracing', False)
                 counts['glassFrontActors'] += 1
                 continue
             semantic = nodes.get(label) or next((v for k, v in nodes.items() if label.startswith(k)), None)
             if not semantic:
                 continue
+            if scene_id == 'alley' and source_curtain(semantic):
+                if not kinds or 'glass' in kinds:
+                    if not probe_only:
+                        actor.set_actor_hidden_in_game(True)
+                        comp.set_visibility(False)
+                        comp.set_editor_property('evaluate_world_position_offset', False)
+                        comp.set_editor_property('evaluate_world_position_offset_in_ray_tracing', False)
+                        comp.set_editor_property('visible_in_ray_tracing', False)
+                    counts['hiddenCurtainActors'] += 1
+                continue
             if semantic.get('water') or 'OOWWater' in tags:
+                if kinds:
+                    continue
                 if not probe_only:
                     water = water_material(scene_id)
                     for index in range(comp.get_num_materials()):
@@ -660,6 +730,8 @@ def main():
                 name = names[index] if index < len(names) else original.get_name()
                 source = sources.get(name, {})
                 profile = classify(name, semantic.get('motion'), source, semantic)
+                if kinds and profile[0] not in kinds:
+                    continue
                 try:
                     original = original_material(original)
                     probe(original)
@@ -684,12 +756,15 @@ def main():
                     failures.append(item)
                     u.log_error('OOW_MATERIAL_FAILURE ' + json.dumps(item))
         if not probe_only:
-            if scene_id == 'alley':
+            if failures:
+                raise RuntimeError('Material repair failed; map not saved: ' + json.dumps(failures))
+            if scene_id == 'alley' and not kinds:
                 world = u.get_editor_subsystem(u.UnrealEditorSubsystem).get_editor_world()
                 counts['interiorLighting'] = configure_window_lighting(root, world)
             levels.save_current_level()
         report.append(counts)
-        (root / 'Migration' / 'material-probe.json').write_text(json.dumps({'masters': probes, 'scenes': report, 'failures': failures}, indent=2), encoding='utf-8')
+        report_name = ('window-surface-repair.json' if kinds == {'glass'} else 'surface-wetness-repair.json') if kinds else 'material-probe.json'
+        (root / 'Migration' / report_name).write_text(json.dumps({'masters': probes, 'scenes': report, 'failures': failures}, indent=2), encoding='utf-8')
         u.log('OOW_MATERIAL_SCENE ' + json.dumps(counts))
     if failures:
         raise RuntimeError('%d material slots require attention; see Migration/material-probe.json' % len(failures))
@@ -697,6 +772,30 @@ def main():
 
 
 def self_test():
+    cyan_curtains = {
+        'OOW_00728_Paris_Building_08_paris_building_08_9',
+        'OOW_00739_Paris_Building_08_paris_building_08_9__2_',
+        'OOW_00751_Paris_Building_08_paris_building_08_9__3_',
+    }
+    awning_control = 'OOW_00517_paris_building_04_16'
+    assert source_curtain({'name': 'ordinary_curtain', 'materials': ['MASTER_Curtains']})
+    for label in cyan_curtains:
+        assert source_curtain({'name': label, 'materials': ['MASTER_Awning_Fabric_Cyan']})
+        assert not source_curtain({'name': label, 'materials': ['MASTER_Concrete']})
+    assert not source_curtain({'name': awning_control, 'materials': ['MASTER_Awning_Fabric_Cyan'],
+                               'motion': 'awning'})
+    alley_export = Path(__file__).resolve().parent.parent / 'Migration' / 'Exported' / 'alley.json'
+    if alley_export.exists():
+        alley_nodes = json.loads(alley_export.read_text(encoding='utf-8'))['nodes']
+        by_name = {node['name']: node for node in alley_nodes}
+        expected_curtains = {node['name'] for node in alley_nodes if node['materials'] == ['MASTER_Curtains']} | cyan_curtains
+        assert len(expected_curtains) == 74
+        assert {node['name'] for node in alley_nodes if source_curtain(node)} == expected_curtains
+        assert all(by_name[label]['materials'] == ['MASTER_Awning_Fabric_Cyan'] for label in cyan_curtains)
+        awning = by_name[awning_control]
+        assert not source_curtain(awning)
+        assert classify(awning['materials'][0], awning.get('motion'), semantic=awning) == ('fabric', 'awning', '')
+        print('Alley curtain routing passed: 74 hidden targets; outdoor Cyan awning 00517 retains wind routing')
     assert classify('MASTER_Concrete', 'building') == ('stone', '', '')
     assert classify('MASTER_Awning_Fabric_Cyan', 'awning') == ('fabric', 'awning', '')
     assert classify('MASTER_Focus_Glass') == ('glass', '', 'window')
@@ -705,10 +804,15 @@ def self_test():
     assert classify('modular_urban_apartments_facade_glass')[2] == 'window'
     assert recipe_for(classify('MASTER_Focus_Glass')) == 'v3'
     assert recipe_for(classify('modular_urban_apartments_facade_glass')) == 'v3'
-    assert recipe_for(classify('MASTER_Focus_Glass'), interior=True) == 'v6'
+    assert recipe_for(classify('MASTER_Focus_Glass'), interior=True) == 'v16'
     assert recipe_for(classify('MASTER_Awning_Fabric_Cyan', 'awning')) == 'v8'
     assert recipe_for(classify('Foliage_Leaves', 'foliage')) == 'v8'
     assert recipe_for(classify('Foliage_Leaves')) == 'v2'
+    for name in ('Pavement_Cobble_Leaves_BLENDSHADER', 'Pavement_Cobblestone_Wet_Leaves_BLENDSHADER'):
+        assert classify(name) == ('ground', '', '')
+        assert recipe_for(classify(name)) == 'v9'
+    assert classify('Pavement_Leaves', 'foliage') == ('foliage', 'foliage', '')
+    assert recipe_for(classify('MASTER_Concrete')) == 'v9'
     assert wind_anchor_data((-3000, -22000, 1860), (-3000, -22000, 2040)) == (1860, 180)
     for lower, upper in (((0, 0, 2), (0, 0, 1)), ((0, 0, 1), (1, 0, 2))):
         try:
@@ -717,7 +821,7 @@ def self_test():
         except RuntimeError:
             pass
     assert all(recipe_for(classify(name)) == 'v2'
-               for name in ('MASTER_Concrete', 'Streetlight_Glass', 'Vespa_Odometer_Glass', 'MASTER_Awning_Fabric_Cyan'))
+               for name in ('Streetlight_Glass', 'Vespa_Odometer_Glass', 'MASTER_Awning_Fabric_Cyan'))
     assert recipe_for(classify('Streetlight_Glass'), interior=True) == 'v2'
     assert classify('Material_42', 'foliage') == ('foliage', 'foliage', '')
     assert classify('MASTER_Building_Details')[1] == ''
@@ -755,7 +859,7 @@ def self_test():
         assert 0 < darken <= 1 and 0 < scale <= 1 and 0 < floor < 1
         for dry in (0., .07, .3, .9):
             assert min(dry, max(floor, dry * scale)) <= dry
-    print('OOW v2 surfaces/v3 windows/v6 interiors/v8 wind routing, provenance/idempotency guards and wetness bounds passed')
+    print('OOW v9 ground/stone, v2 other surfaces/v3 windows/v16 interiors/v8 wind routing, provenance/idempotency guards and wetness bounds passed')
 
 
 if __name__ == '__main__':

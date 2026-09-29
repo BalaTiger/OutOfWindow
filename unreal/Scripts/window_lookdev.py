@@ -12,6 +12,7 @@ from pathlib import Path
 import sys
 
 import build_window_interiors as windows
+import build_room_boxes
 
 LIGHT_PREFIX = 'OOWInteriorLight_'
 MAX_LIGHTS = 12
@@ -93,6 +94,10 @@ def in_view(point, camera):
 
 def plan_window_lighting(root):
     root = Path(root)
+    hero_lights = [room['light'] for room in build_room_boxes.plan(root)['rooms'] if room['light']]
+    rect_budget = MAX_LIGHTS-len(hero_lights)
+    if rect_budget < 0:
+        raise RuntimeError('Physical interior lights exceed the shared window-light budget')
     metadata = json.loads((root / 'Migration' / 'Exported' / 'alley.json').read_text(encoding='utf-8'))
     geometry = json.loads((root / 'Migration' / 'window-interiors-geometry.json').read_text(encoding='utf-8'))
     rooms, camera = geometry['rooms'], metadata['camera']
@@ -115,13 +120,16 @@ def plan_window_lighting(root):
                                  'room': room['id'], 'distanceMeters': distance,
                                  'occupied': windows.shader_choice(room['seed'])[1]})
     associated = {a['room'] for a in associations}
-    selected = [room for room in rooms if windows.shader_choice(room['seed'])[1]
+    selected = [room for room in rooms if room['id'] not in windows.HERO_APERTURE_ROOM_IDS
+                and windows.shader_choice(room['seed'])[1]
                 and in_view(room['centerMeters'], camera)
                 and windows.dot(room['normalThreeXYZ'], windows.sub(camera['position'], room['centerMeters'])) > 0]
     selected.sort(key=lambda room: (room['id'] not in associated,
                                    windows.length(windows.sub(room['centerMeters'], camera['position']))))
     lights, selected_rooms = [], []
     for room in selected:
+        if len(lights) >= rect_budget:
+            break
         # Source glass occasionally contains near-coincident separate apertures;
         # do not double the emitted energy by placing two rects in one opening.
         if any(windows.length(windows.sub(room['centerMeters'], other['centerMeters'])) < .75
@@ -144,10 +152,9 @@ def plan_window_lighting(root):
                        'lumens': 2 * gain, 'radiusCm': 400,
                        'widthCm': min(160, room['widthMeters']*65),
                        'heightCm': min(190, room['heightMeters']*65)})
-        if len(lights) == MAX_LIGHTS:
-            break
-    return {'recipe': 'awning-native-v6', 'appliedToUnreal': False,
+    return {'recipe': 'awning-native-v7', 'appliedToUnreal': False,
             'sourceRoomCount': len(rooms), 'maxLights': MAX_LIGHTS,
+            'heroLights': hero_lights, 'maxRectLights': rect_budget,
             'shaderOccupancy': 'step(.62,frac(seed*73.137+.11))',
             'nightEnvelope': 'smoothstep(.58,.86,Night), driven by WindowDirector',
             'transmission': {'shadingModel': 'TwoSidedFoliage', 'gain': TRANSMISSION_GAIN,
@@ -389,11 +396,17 @@ def audit_window_lighting(root, world=None):
             check('NoV' in code and 'exp(' in code and 'saturate(C)' in code, path, 'View-path transmission input missing')
             check(inputs['NORMAL'] is not None or original_normal is None, path, 'Original fabric normal input lost')
             check(inputs['ROUGHNESS'] is not None and inputs['WORLD_POSITION_OFFSET'] is not None, path, 'Fabric roughness/wind input missing')
-            check(str(u.EditorAssetLibrary.get_metadata_tag(master, 'OOWRecipe')) == 'v6', path, 'Awning recipe is not v6')
+            from build_surface_materials import recipe_for
+            check(str(u.EditorAssetLibrary.get_metadata_tag(master, 'OOWRecipe')) == recipe_for(('fabric', 'awning', '')),
+                  path, 'Awning recipe differs from the surface builder')
     expected_names = {light['name'] for light in plan['lights']}
-    actual_names = {actor.get_actor_label() for actor in actors if 'OOWInteriorLight' in {str(tag) for tag in actor.tags}}
+    actual_names = {actor.get_actor_label() for actor in actors if 'OOWInteriorLight' in {str(tag) for tag in actor.tags}
+                    and not actor.actor_has_tag('OOWHeroLight')}
     check(actual_names == expected_names, 'lights', 'Saved window light set differs from plan')
-    check(0 < len(actual_names) <= MAX_LIGHTS, 'lights', 'Window light budget/count invalid')
+    check(len(actual_names) <= plan['maxRectLights'], 'lights', 'Window light budget/count invalid')
+    actual_hero = {actor.get_actor_label() for actor in actors if actor.actor_has_tag('OOWHeroLight')}
+    check(actual_hero == {light['name'] for light in plan['heroLights']}, 'lights', 'Physical-room light set differs from plan')
+    check(len(actual_names)+len(actual_hero) <= MAX_LIGHTS, 'lights', 'Combined window light budget exceeded')
     for light in plan['lights']:
         actor = by_name.get(light['name'])
         if not isinstance(actor, u.RectLight):
@@ -436,7 +449,10 @@ def self_test():
     assert not in_view((40, 0, -10), camera)
     root = Path(__file__).resolve().parents[1]
     plan = plan_window_lighting(root)
-    assert 0 < len(plan['lights']) <= MAX_LIGHTS
+    assert len(plan['lights']) == plan['maxRectLights'] == 4
+    assert len(plan['heroLights']) == 8
+    assert len(plan['lights'])+len(plan['heroLights']) <= MAX_LIGHTS
+    assert not ({light['room'] for light in plan['lights']} & set(windows.HERO_APERTURE_ROOM_IDS))
     assert all(windows.shader_choice(light['seed'])[1] for light in plan['lights'])
     assert any(light['associatedAwning'] for light in plan['lights'])
     assert len({light['room'] for light in plan['lights']}) == len(plan['lights'])
