@@ -18,10 +18,11 @@ TARGETS = {'OOW_00726_Paris_Building_08_paris_building_08_7': 'MASTER_Concrete',
            'OOW_00759_paris_building_09_7': 'MASTER_Concrete'}
 PARAMETERS = {
     'OOWExposureCoverage': .49,  # Linear height threshold; transition is +/- .05.
-    'OOWReliefStrength': .35,    # Full macro height in centimetres, not displacement.
+    'OOWReliefStrength': .70,    # Full macro height in centimetres, not displacement.
     'OOWWeatheringContrast': .70,
     'OOWWeatheringTileCm': 240.,
     'OOWWeatheringPatchCm': 900.,
+    'OOWWeatheringWarpCm': 180.,  # Low-frequency UV warp; breaks tiling without gating relief.
 }
 BASE_CODE = 'return C * lerp(1.0, 0.80000, saturate(W));'
 ROUGH_CODE = ('float r = saturate(R); return lerp(r, min(r, max(0.27000, r*0.52000)), saturate(W));')
@@ -94,10 +95,40 @@ def add_dry_layer(material, texture):
     g, p = surface.Graph(material), u.MaterialProperty
     position, vertex_normal = g.position(), g.node(u.MaterialExpressionVertexNormalWS)
     vertical = g.custom('return 1.-smoothstep(.55,.9,abs(N.z));', {'N': vertex_normal})
-    uv3 = g.custom('return float3(float2(abs(N.y)>.55?P.x:P.y,P.z)/max(Scale,20.),0);',
+    # Reuse the height at a facade-sized scale for both the sparse colour macro
+    # and a low-frequency UV warp. Warping shifts the height field instead of
+    # zeroing it, so it breaks tile repetition without touching relief coverage.
+    patch_uv3 = g.custom(
+        'return float3(float2(dot(P.xy,float2(.61,.79)),P.z)/max(Scale,100.)+'
+        'float2(.173,.619),0);',
+        {'P': position, 'Scale': g.scalar('OOWWeatheringPatchCm', PARAMETERS['OOWWeatheringPatchCm'])}, True,
+        'OOW alley large sparse weathering regions')
+    patch_uv = g.node(u.MaterialExpressionComponentMask, r=True, g=True, b=False, a=False)
+    g.connect(patch_uv3, patch_uv, '')
+    warp_uv3 = g.custom(
+        'return float3(float2(dot(P.xy,float2(.61,.79)),P.z)/max(Scale,100.)+'
+        'float2(.723,.188),0);',
+        {'P': position, 'Scale': g.scalar('OOWWeatheringPatchCm', PARAMETERS['OOWWeatheringPatchCm'])}, True,
+        'OOW alley warp phase, offset so X/Y warp decorrelate')
+    warp_uv = g.node(u.MaterialExpressionComponentMask, r=True, g=True, b=False, a=False)
+    g.connect(warp_uv3, warp_uv, '')
+    patch_samples = []
+    for node_uv in (patch_uv, warp_uv):
+        sample = g.node(u.MaterialExpressionTextureSampleParameter2D,
+                        parameter_name='OOWPlasterHeight', texture=texture,
+                        sampler_type=u.MaterialSamplerType.SAMPLERTYPE_MASKS,
+                        mip_value_mode=u.TextureMipValueMode.TMVM_MIP_BIAS)
+        g.connect(node_uv, sample, 'UVs')
+        g.connect(g.constant(3.), sample, 'Bias')
+        patch_samples.append(sample)
+    patch_sample, warp_sample = patch_samples
+    uv3 = g.custom('return float3((float2(abs(N.y)>.55?P.x:P.y,P.z)'
+                   '+(float2(WX,WY)-.5)*Warp)/max(Scale,20.),0);',
                    {'P': position, 'N': vertex_normal,
-                    'Scale': g.scalar('OOWWeatheringTileCm', PARAMETERS['OOWWeatheringTileCm'])}, True,
-                   'OOW alley world-aligned plaster, centimetres')
+                    'Scale': g.scalar('OOWWeatheringTileCm', PARAMETERS['OOWWeatheringTileCm']),
+                    'WX': (patch_sample[0], 'R'), 'WY': (warp_sample[0], 'R'),
+                    'Warp': g.scalar('OOWWeatheringWarpCm', PARAMETERS['OOWWeatheringWarpCm'])}, True,
+                   'OOW alley world-aligned plaster warped by facade-scale noise, centimetres')
     uv = g.node(u.MaterialExpressionComponentMask, r=True, g=True, b=False, a=False)
     g.connect(uv3, uv, '')
     samples = []
@@ -110,25 +141,17 @@ def add_dry_layer(material, texture):
         g.connect(g.constant(bias), sample, 'Bias')
         samples.append((sample[0], 'R'))
     detail, height = samples
-    # Reuse the height at a facade-sized scale to leave continuous intact plaster.
-    # A different projection and phase prevent repeating the fine tile's layout.
-    patch_uv3 = g.custom(
-        'return float3(float2(dot(P.xy,float2(.61,.79)),P.z)/max(Scale,100.)+'
-        'float2(.173,.619),0);',
-        {'P': position, 'Scale': g.scalar('OOWWeatheringPatchCm', PARAMETERS['OOWWeatheringPatchCm'])}, True,
-        'OOW alley large sparse weathering regions')
-    patch_uv = g.node(u.MaterialExpressionComponentMask, r=True, g=True, b=False, a=False)
-    g.connect(patch_uv3, patch_uv, '')
-    patch_sample = g.node(u.MaterialExpressionTextureSampleParameter2D,
-                          parameter_name='OOWPlasterHeight', texture=texture,
-                          sampler_type=u.MaterialSamplerType.SAMPLERTYPE_MASKS,
-                          mip_value_mode=u.TextureMipValueMode.TMVM_MIP_BIAS)
-    g.connect(patch_uv, patch_sample, 'UVs')
-    g.connect(g.constant(3.), patch_sample, 'Bias')
     exposure = g.custom('return (1.-smoothstep(T-.05,T+.05,H))*smoothstep(.60,.72,Patch)*V;',
                          {'H': height, 'Patch': (patch_sample[0], 'R'), 'V': vertical,
                           'T': g.scalar('OOWExposureCoverage', PARAMETERS['OOWExposureCoverage'])},
-                         description='OOW alley shared sparse exposure for color, roughness and relief')
+                         description='OOW alley shared sparse exposure for color and roughness')
+    # Relief keeps the dense threshold-only mask: the sparse macro gate would
+    # erase the height gradient on ~95% of the wall, which is exactly where
+    # the eye reads plaster relief. Tighter +/-.025 edge steepens the boundary.
+    relief_exposure = g.custom('return (1.-smoothstep(T-.025,T+.025,H))*V;',
+                               {'H': height, 'V': vertical,
+                                'T': g.scalar('OOWExposureCoverage', PARAMETERS['OOWExposureCoverage'])},
+                               description='OOW alley dense relief exposure, independent of sparse regions')
     grain = g.custom('return clamp((D-H)*4.,-.5,.5);', {'D': detail, 'H': height},
                      description='OOW alley fine aggregate separated from macro relief')
     dry_color = g.custom(
@@ -156,9 +179,9 @@ def add_dry_layer(material, texture):
         g.connect(original_normal, transformed, '')
         original_normal = transformed
     physical_height = g.custom(
-        'return -E*max(Relief,0.)+'
-        'G*.035*lerp(1.,.35,saturate(WetMask*2.))*V;',
-        {'E': exposure, 'G': grain, 'V': vertical, 'WetMask': wet_mask,
+        'return -RE*max(Relief,0.)+'
+        'G*.05*lerp(1.,.35,saturate(WetMask*2.))*V;',
+        {'RE': relief_exposure, 'G': grain, 'V': vertical, 'WetMask': wet_mask,
          'Relief': g.scalar('OOWReliefStrength', PARAMETERS['OOWReliefStrength'])},
         description='OOW alley mortar recess matches exposure; wet streaks soften only fine grain')
     normal = g.custom(
@@ -283,6 +306,7 @@ def self_test():
     assert 'OOW_00754_paris_building_09_2' not in TARGETS  # Visible trim is not the main wall.
     assert 0 < PARAMETERS['OOWExposureCoverage'] < 1
     assert 0 < PARAMETERS['OOWReliefStrength'] < 1
+    assert 0 < PARAMETERS['OOWWeatheringWarpCm'] <= PARAMETERS['OOWWeatheringTileCm']
     print('Alley facade target contract passed:', len(TARGETS), 'slots; no Unreal import or asset writes')
 
 

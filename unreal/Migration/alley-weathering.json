@@ -1,43 +1,46 @@
 {
   "passed": true,
   "version": "alley-weathering-v2",
-  "buildId": "alley-weathering-v2_b72bcb11e6",
+  "buildId": "alley-weathering-v2_73d21b0a86",
   "texture": "/Game/Materials/OOW/AlleyWeathering/Textures/H_e62da2c6be/plaster-relief-height.plaster-relief-height",
   "sourceHash": "e62da2c6becd1c63e6af87bb60cf396f82d37bd430302e7ef89a6fd453383196",
   "parameters": {
     "OOWExposureCoverage": 0.49,
-    "OOWReliefStrength": 0.35,
+    "OOWReliefStrength": 0.7,
     "OOWWeatheringContrast": 0.7,
     "OOWWeatheringTileCm": 240.0,
-    "OOWWeatheringPatchCm": 900.0
+    "OOWWeatheringPatchCm": 900.0,
+    "OOWWeatheringWarpCm": 180.0
   },
   "changedSlots": [
     {
       "actor": "OOW_00726_Paris_Building_08_paris_building_08_7",
       "slot": 0,
       "sourceName": "MASTER_Concrete",
-      "before": "/Game/Materials/OOW/AlleyWeathering/MI_Plaster_alley_weathering_v1_8f15b5ec52_489931d5d8.MI_Plaster_alley_weathering_v1_8f15b5ec52_489931d5d8",
-      "after": "/Game/Materials/OOW/AlleyWeathering/MI_Plaster_alley_weathering_v2_b72bcb11e6_c51c2df806.MI_Plaster_alley_weathering_v2_b72bcb11e6_c51c2df806",
+      "before": "/Game/Materials/OOW/AlleyWeathering/MI_Plaster_alley_weathering_v2_01f0bccfeb_cde0103c53.MI_Plaster_alley_weathering_v2_01f0bccfeb_cde0103c53",
+      "after": "/Game/Materials/OOW/AlleyWeathering/MI_Plaster_alley_weathering_v2_73d21b0a86_a45df49bda.MI_Plaster_alley_weathering_v2_73d21b0a86_a45df49bda",
       "resolvedParameters": {
         "OOWExposureCoverage": 0.49000000953674316,
-        "OOWReliefStrength": 0.3499999940395355,
+        "OOWReliefStrength": 0.699999988079071,
         "OOWWeatheringContrast": 0.699999988079071,
         "OOWWeatheringTileCm": 240.0,
-        "OOWWeatheringPatchCm": 900.0
+        "OOWWeatheringPatchCm": 900.0,
+        "OOWWeatheringWarpCm": 180.0
       }
     },
     {
       "actor": "OOW_00759_paris_building_09_7",
       "slot": 0,
       "sourceName": "MASTER_Concrete",
-      "before": "/Game/Materials/OOW/AlleyWeathering/MI_Plaster_alley_weathering_v1_8f15b5ec52_489931d5d8.MI_Plaster_alley_weathering_v1_8f15b5ec52_489931d5d8",
-      "after": "/Game/Materials/OOW/AlleyWeathering/MI_Plaster_alley_weathering_v2_b72bcb11e6_c51c2df806.MI_Plaster_alley_weathering_v2_b72bcb11e6_c51c2df806",
+      "before": "/Game/Materials/OOW/AlleyWeathering/MI_Plaster_alley_weathering_v2_01f0bccfeb_cde0103c53.MI_Plaster_alley_weathering_v2_01f0bccfeb_cde0103c53",
+      "after": "/Game/Materials/OOW/AlleyWeathering/MI_Plaster_alley_weathering_v2_73d21b0a86_a45df49bda.MI_Plaster_alley_weathering_v2_73d21b0a86_a45df49bda",
       "resolvedParameters": {
         "OOWExposureCoverage": 0.49000000953674316,
-        "OOWReliefStrength": 0.3499999940395355,
+        "OOWReliefStrength": 0.699999988079071,
         "OOWWeatheringContrast": 0.699999988079071,
         "OOWWeatheringTileCm": 240.0,
-        "OOWWeatheringPatchCm": 900.0
+        "OOWWeatheringPatchCm": 900.0,
+        "OOWWeatheringWarpCm": 180.0
       }
     }
   ],
