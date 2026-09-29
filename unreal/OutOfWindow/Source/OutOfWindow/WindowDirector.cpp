@@ -1106,12 +1106,16 @@ void AWindowDirector::ApplyLighting(float DeltaSeconds)
         Sun->SetIntensity(FMath::FInterpTo(Sun->Intensity, TargetLux, DeltaSeconds, 2));
         Sun->SetLightColor(FMath::Lerp(FLinearColor(1.f, .94f, .86f), FLinearColor(1.f, .53f, .26f), Glow * .8f));
     }
-    if (Sky) Sky->SetIntensity(FMath::FInterpTo(Sky->Intensity, (.07f + Daylight * .93f) * FMath::Lerp(1.f, .85f, CloudBlend), DeltaSeconds, 2));
+    // Overcast diffuse light is several stops below a clear sky; the old .85
+    // floor kept rainy days nearly as bright as fair weather.
+    if (Sky) Sky->SetIntensity(FMath::FInterpTo(Sky->Intensity, (.07f + Daylight * .93f) * FMath::Lerp(1.f, .45f, CloudBlend), DeltaSeconds, 2));
     if (Atmosphere)
     {
         Atmosphere->SetRayleighScatteringScale(BaseRayleighScattering * FMath::Lerp(1.f, .35f, CloudBlend));
-        Atmosphere->SetMieScatteringScale(BaseMieScattering * FMath::Lerp(1.f, 3.f, CloudBlend));
-        Atmosphere->SetMieAbsorptionScale(BaseMieAbsorption * FMath::Lerp(1.f, 1.4f, CloudBlend));
+        // Less Mie scatter and more absorption darken the visible overcast
+        // backdrop itself, not just the light it casts into the scene.
+        Atmosphere->SetMieScatteringScale(BaseMieScattering * FMath::Lerp(1.f, 2.1f, CloudBlend));
+        Atmosphere->SetMieAbsorptionScale(BaseMieAbsorption * FMath::Lerp(1.f, 2.6f, CloudBlend));
     }
     for (int32 Index = 0; Index < NightLights.Num(); ++Index)
     {
@@ -1123,17 +1127,23 @@ void AWindowDirector::ApplyLighting(float DeltaSeconds)
     {
         const float Density = BaseFogDensity * (Weather == TEXT("fog") ? 4.f : Weather == TEXT("rain") ? 1.8f : 1.f);
         Fog->SetFogDensity(FMath::FInterpTo(Fog->FogDensity, Density, DeltaSeconds, 1.5f));
-        Fog->SetFogInscatteringColor(FMath::Lerp(FLinearColor(.018f, .027f, .055f), FLinearColor(.52f, .60f, .65f), Daylight));
+        Fog->SetFogInscatteringColor(FMath::Lerp(FLinearColor(.018f, .027f, .055f),
+            FLinearColor(.52f, .60f, .65f) * FMath::Lerp(1.f, .68f, CloudBlend), Daylight));
     }
     if (CloudMaterial)
     {
-        Cloud->SetLayerBottomAltitude(FMath::Lerp(2.2f, 1.2f, CloudBlend));
-        Cloud->SetLayerHeight(FMath::Lerp(2.5f, 3.5f, CloudBlend));
-        CloudMaterial->SetScalarParameterValue(TEXT("Cloud_GlobalCoverage"), FMath::Lerp(-.12f, .7f, CloudBlend));
-        CloudMaterial->SetScalarParameterValue(TEXT("Cloud_GlobalDensity"), FMath::Lerp(.012f, .03f, CloudBlend));
         // Ordinary cloud cover is not a precipitation cloud type.
         Storminess = FMath::FInterpTo(Storminess, Weather == TEXT("rain") || Weather == TEXT("snow") ? CloudBlend * .9f : 0.f, DeltaSeconds, .4f);
         CloudMaterial->SetScalarParameterValue(TEXT("StormClouds"), Storminess);
+        // Rain reshapes the layer toward nimbostratus: lower base, taller and
+        // denser deck, near-total coverage, and a darker albedo. Fair-weather
+        // cumulus parameters are untouched (Storminess interpolates to 0).
+        Cloud->SetLayerBottomAltitude(FMath::Lerp(2.2f, 1.2f, CloudBlend) - Storminess * .45f);
+        Cloud->SetLayerHeight(FMath::Lerp(2.5f, 3.5f, CloudBlend) + Storminess * 1.6f);
+        CloudMaterial->SetScalarParameterValue(TEXT("Cloud_GlobalCoverage"), FMath::Min(1.f, FMath::Lerp(-.12f, .7f, CloudBlend) + Storminess * .28f));
+        CloudMaterial->SetScalarParameterValue(TEXT("Cloud_GlobalDensity"), FMath::Lerp(.012f, .03f, CloudBlend) * (1.f + Storminess * .9f));
+        CloudMaterial->SetVectorParameterValue(TEXT("Storm_AlbedoColor"),
+            FMath::Lerp(FLinearColor(.52f, .55f, .58f, 1.f / 3.f), FLinearColor(.24f, .26f, .30f, 1.f / 3.f), Storminess));
         const float Bearing = FMath::DegreesToRadians(Session.WindDirection);
         const float Speed = FMath::Clamp(static_cast<float>(Session.WindSpeed / 3.6), 0.f, 25.f);
         const FVector2D TargetWind(-FMath::Sin(Bearing) * Speed, FMath::Cos(Bearing) * Speed);

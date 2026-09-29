@@ -15,7 +15,7 @@ FOLDER = '/Game/Materials/OOW/DesktopFrame'
 NAME = 'M_DesktopFrame'
 RECIPE = 'desktop-frame-v1'
 RAIN_NAME = 'M_WindowRainGlass'
-RAIN_RECIPE = 'window-rain-glass-v1'
+RAIN_RECIPE = 'window-rain-glass-v3'
 RAIN_PERIOD = 256.0
 
 # Smooth, irregular fibres instead of periodic bands. The analytic gradients
@@ -63,6 +63,7 @@ return broad * .50 + fibre * .34 + pore * .16;
 RAIN = r'''
 struct WindowDrops
 {
+    float mergeAt, waveSeed;
     float3 hash(float2 p)
     {
         float3 q = frac(float3(p.x, p.y, p.x) * float3(.1031, .1030, .0973));
@@ -77,6 +78,22 @@ struct WindowDrops
         float mask = 1.0 - smoothstep(1.0-aa, 1.0+aa, length(q));
         return float3(mask, q * mask);
     }
+    // Fall distance at cycle phase ph [0,1]: a slow base acceleration, a
+    // gentle two-cycle sway from uneven surface friction, and one sudden
+    // speedup where the drop merges with another or hits a clean patch.
+    // speedOf is its analytic derivative; the trail solver inverts travelOf,
+    // so drop motion and residue timing can never drift apart.
+    float travelOf(float ph)
+    {
+        return ph*.55 + ph*ph*.45 + .045*sin(ph*12.566 + waveSeed)
+             + .09*smoothstep(mergeAt-.03, mergeAt+.03, ph);
+    }
+    float speedOf(float ph)
+    {
+        float u = saturate((ph-(mergeAt-.03))/.06);
+        return .55 + .9*ph + .565*cos(ph*12.566 + waveSeed)
+             + .09*(6.0*u-6.0*u*u)/.06;
+    }
 };
 WindowDrops drops;
 float rain = saturate(Rain);
@@ -90,24 +107,49 @@ float2 cell = floor(UV / cellSize);
 float3 seed = drops.hash(cell + 19.7);
 float cycle = seed.z < .5 ? 8.0 : 16.0;
 float phase = frac(T / cycle + seed.y);
-float travel = phase * .55 + phase * phase * .45;
-float2 centre = float2((seed.y-.5)*cellSize.x*.66 + sin(phase*6.283185)*.055,
+drops.mergeAt = .2 + .55*frac(seed.x*7.31);
+drops.waveSeed = seed.x*21.0;
+float travel = min(drops.travelOf(phase), 1.0);
+float speed = drops.speedOf(phase);
+// Drops do not slide straight: a slow primary sway plus a faster jitter give
+// each cell its own meandering course, with per-cell frequency and phase so
+// neighbouring drops never move in lockstep.
+float wanderFreq = 1.0 + seed.x*1.5;
+float wanderPhase = phase*6.283185*wanderFreq + seed.y*6.283185;
+float wanderNow = sin(wanderPhase)*.14 + sin(phase*29.515 + seed.x*39.0)*.06;
+float2 centre = float2((seed.y-.5)*cellSize.x*.66 + wanderNow,
                       (.42 - .84*travel)*cellSize.y);
 float2 p = (frac(UV/cellSize)-.5)*cellSize - centre;
 float alive = smoothstep(0.0, .08, phase) * (1.0-smoothstep(.90, 1.0, phase));
 float enabled = saturate((rain-seed.x)*10.0) * alive;
-float width = lerp(.24, .34, seed.z);
-float3 falling = drops.bead(p, float2(width, width*1.65), footprint) * enabled;
+// The drop sheds water into its trail as it falls, so it shrinks; faster
+// drops stretch along the fall direction.
+float width = lerp(.24, .34, seed.z) * (1.0 - .45*travel);
+float stretch = 1.0 + clamp(speed-1.0, 0.0, 1.2)*.55;
+float3 falling = drops.bead(p, float2(width, width*1.65*stretch), footprint) * enabled;
 
-// Only a minority of larger drops leave a short, narrow trace above them.
-float tailLength = lerp(.9, 2.3, seed.y);
-float tailWidth = lerp(.045, .06, seed.z);
+// Residue trails: the trace follows the actual course, re-evaluating the
+// meander at the phase when the drop passed each height, and fades with the
+// time since deposition — a slow drop leaves a short fresh trace, a fast one
+// a long thinning trace, so trail and motion always match.
+float tailWidth = lerp(.05, .075, seed.z);
 float tailAA = max(footprint.x*.6, .006);
-float tail = (1.0-smoothstep(tailWidth, tailWidth+tailAA, abs(p.x)))
-           * smoothstep(width, width*2.0, p.y)
-           * (1.0-smoothstep(tailLength*.45, tailLength, p.y))
-           * step(.72, seed.z) * enabled * .16;
-float2 tailSlope = float2(clamp(p.x/tailWidth, -1.0, 1.0)*tail*.25, 0);
+float travelAt = max(travel - p.y/(.84*cellSize.y), 0.0);
+// Newton refinement of the quadratic first guess against the true motion.
+float phaseAt = (-.55 + sqrt(.3025 + 1.8*travelAt))/.9;
+for (int it=0; it<2; it++)
+    phaseAt -= (drops.travelOf(phaseAt)-travelAt)/max(drops.speedOf(phaseAt),.1);
+phaseAt = clamp(phaseAt, 0.0, 1.0);
+float ageSince = max(phase - phaseAt, 0.0); // cycle units since the drop passed
+float wanderThen = sin(phaseAt*6.283185*wanderFreq + seed.y*6.283185)*.14
+                 + sin(phaseAt*29.515 + seed.x*39.0)*.06;
+float tailX = p.x + wanderNow - wanderThen;
+float residue = 1.0 - smoothstep(0.0, .30+.15*seed.x, ageSince);
+float tail = (1.0-smoothstep(tailWidth, tailWidth+tailAA, abs(tailX)))
+           * smoothstep(width*.5, width*1.5, p.y)
+           * residue
+           * step(.38, seed.z) * enabled * .24;
+float2 tailSlope = float2(clamp(tailX/tailWidth, -1.0, 1.0)*tail*.25, 0);
 
 // Small pinned beads appear between the sliding drops; no uniform haze or tint.
 float2 smallCellSize = float2(1.4, 1.8);
