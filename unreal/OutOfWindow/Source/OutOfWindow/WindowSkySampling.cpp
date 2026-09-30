@@ -23,6 +23,21 @@ float WindowSkyFraction(const float* Depth, FIntPoint Size, int32 RowPitch)
     return static_cast<float>(SkyPixels) / (Size.X * Size.Y);
 }
 
+bool WindowSkyMask(const float* Depth, FIntPoint Size, int32 RowPitch, TArray<uint8>& OutMask, bool& OutOnly)
+{
+    if (!Depth || Size.X <= 0 || Size.Y <= 0 || RowPitch < Size.X) return false;
+    OutMask.SetNumUninitialized(Size.X * Size.Y);
+    OutOnly = true;
+    for (int32 Y = 0; Y < Size.Y; ++Y)
+        for (int32 X = 0; X < Size.X; ++X)
+        {
+            const bool bSky = Depth[Y * RowPitch + X] == 0.f;
+            OutMask[Y * Size.X + X] = bSky ? 255 : 0;
+            OutOnly &= bSky;
+        }
+    return true;
+}
+
 float WindowCloudSampleScale(float VisibleSkyPixels, int32 Quality, float BudgetPixels)
 {
     Quality = FMath::Clamp(Quality, 0, 2);
@@ -48,6 +63,14 @@ bool FWindowSkySampling::GetMeasurement(float& OutSkyFraction, FIntPoint& OutRen
     return SkyFraction >= 0;
 }
 
+void FWindowSkySampling::CopySkyMask(TArray<uint8>& OutMask, FIntPoint& OutMaskSize, bool& OutOnly) const
+{
+    FScopeLock Lock(&MeasurementLock);
+    OutMask = SkyMask;
+    OutMaskSize = SkyMask.Num() == SampleSize.X * SampleSize.Y ? SampleSize : FIntPoint::ZeroValue;
+    OutOnly = bSkyMaskOnly;
+}
+
 void FWindowSkySampling::PostRenderBasePassDeferred_RenderThread(FRDGBuilder& GraphBuilder, FSceneView& View,
     const FRenderTargetBindingSlots& RenderTargets,
     TRDGUniformBufferRef<FSceneTextureUniformParameters> SceneTextures)
@@ -61,6 +84,9 @@ void FWindowSkySampling::PostRenderBasePassDeferred_RenderThread(FRDGBuilder& Gr
         int32 RowPitch = 0, BufferHeight = 0;
         const float* Depth = static_cast<const float*>(Readback->Lock(RowPitch, &BufferHeight));
         const float Fraction = BufferHeight >= SampleSize.Y ? WindowSkyFraction(Depth, SampleSize, RowPitch) : -1;
+        TArray<uint8> Mask;
+        bool bOnly = true;
+        const bool bMasked = BufferHeight >= SampleSize.Y && WindowSkyMask(Depth, SampleSize, RowPitch, Mask, bOnly);
         if (Depth) Readback->Unlock();
         bReadbackPending = false;
         if (Fraction >= 0)
@@ -68,6 +94,7 @@ void FWindowSkySampling::PostRenderBasePassDeferred_RenderThread(FRDGBuilder& Gr
             FScopeLock Lock(&MeasurementLock);
             SkyFraction = Fraction;
             RenderSize = PendingRenderSize;
+            if (bMasked) { SkyMask = MoveTemp(Mask); bSkyMaskOnly = bOnly; }
         }
     }
 

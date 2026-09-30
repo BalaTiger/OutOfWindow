@@ -1404,6 +1404,19 @@ void AWindowDirector::OOWAudit()
     Json->SetNumberField(TEXT("visibleSkyFraction"), VisibleSkyFraction);
     Json->SetNumberField(TEXT("visibleSkyPixels"), VisibleSkyPixels);
     Json->SetNumberField(TEXT("cloudTargetSampleScale"), CloudTargetSampleScale);
+    if (SkySampling)
+    {
+        // Which pixels the sky measurement actually covered. Without this a sky
+        // brightness number cannot be told apart from a roofline one.
+        TArray<uint8> Mask;
+        FIntPoint MaskSize;
+        bool bOnly = true;
+        SkySampling->CopySkyMask(Mask, MaskSize, bOnly);
+        Json->SetNumberField(TEXT("skyMaskWidth"), MaskSize.X);
+        Json->SetNumberField(TEXT("skyMaskHeight"), MaskSize.Y);
+        Json->SetBoolField(TEXT("skyMaskIsOnlySky"), bOnly);
+        if (MaskSize.X > 0) Json->SetStringField(TEXT("skyMask"), BytesToHexLower(Mask.GetData(), Mask.Num()));
+    }
     Json->SetBoolField(TEXT("cloudShadowsEnabled"), Sun && Sun->bCastCloudShadows);
     Json->SetNumberField(TEXT("cloudAnimationSeconds"), GetWorld()->GetTimeSeconds());
     Json->SetArrayField(TEXT("cloudDriftUV"), { MakeShared<FJsonValueNumber>(CloudDriftUV.X), MakeShared<FJsonValueNumber>(CloudDriftUV.Y) });
