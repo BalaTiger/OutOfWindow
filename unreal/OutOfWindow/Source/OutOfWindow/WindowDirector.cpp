@@ -1115,10 +1115,16 @@ void AWindowDirector::ApplyLighting(float DeltaSeconds)
     if (Atmosphere)
     {
         Atmosphere->SetRayleighScatteringScale(BaseRayleighScattering * FMath::Lerp(1.f, .35f, CloudBlend));
-        // Less Mie scatter and more absorption darken the visible overcast
-        // backdrop itself, not just the light it casts into the scene.
-        Atmosphere->SetMieScatteringScale(BaseMieScattering * FMath::Lerp(1.f, 2.1f, CloudBlend));
-        Atmosphere->SetMieAbsorptionScale(BaseMieAbsorption * FMath::Lerp(1.f, 2.6f, CloudBlend));
+        // Mie is the aerosol term: a single-scatter lobe over the default profile,
+        // no spatial structure. 2.1x was faking the overcast deck with it, which
+        // is why the patch rendered as a flat white sheet -- it lays a uniform
+        // veil over everything below the cloud and buries whatever structure the
+        // deck has. Real 550nm AOD is ~0.1-0.2 and humidity growth is tens of
+        // percent, so the honest overcast signal here is a modest scatter bump
+        // plus enough absorption to keep the veil grey. The deck itself has to
+        // come from cloud extinction, below.
+        Atmosphere->SetMieScatteringScale(BaseMieScattering * FMath::Lerp(1.f, 1.25f, CloudBlend));
+        Atmosphere->SetMieAbsorptionScale(BaseMieAbsorption * FMath::Lerp(1.f, 1.3f, CloudBlend));
     }
     for (int32 Index = 0; Index < NightLights.Num(); ++Index)
     {
