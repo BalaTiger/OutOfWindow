@@ -7,9 +7,15 @@ unreal/**/Binaries/
 unreal/**/Intermediate/
 unreal/**/Saved/
 unreal/**/DerivedDataCache/
-unreal/**/.vs/
 unreal/Migration/Exported/
 unreal/Migration/Generated/
 unreal/Migration/ue-api.txt
-unreal/Build/
+unreal/**/Build/
 unreal/**/__pycache__/
+# .vs/ and friends are written wherever the project file is opened, not just
+# under unreal/, so these are anchored on the repo root on purpose.
+.vs/
+*.sln
+*.suo
+*.sdf
+*.opensdf
