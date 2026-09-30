@@ -155,8 +155,10 @@ void AWindowPrecipitation::CreateParticles(UInstancedStaticMeshComponent* Compon
         const FVector Centre = VolumeMin + FVector(Random.FRand() * VolumeSize.X,
             Random.FRand() * VolumeSize.Y, Random.FRand() * VolumeSize.Z);
         const float Size = Random.FRandRange(0.025f, 0.065f);
+        // Sub-centimetre streaks alias away at window distance; rain drops are
+        // seen as 1-2 cm refractive filaments, not hairlines.
         const FVector Scale = bSnow ? FVector(Size, Size, Size)
-            : FVector(Random.FRandRange(0.006f, 0.012f), Random.FRandRange(0.2f, 0.45f), 1.0);
+            : FVector(Random.FRandRange(0.010f, 0.020f), Random.FRandRange(0.3f, 0.6f), 1.0);
         const int32 Instance = Component->AddInstance(FTransform(Rotation, Centre, Scale), true);
         float Data[] = {static_cast<float>(Centre.X), static_cast<float>(Centre.Y),
                               static_cast<float>(Centre.Z), Random.FRand()};

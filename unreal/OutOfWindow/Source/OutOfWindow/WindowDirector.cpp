@@ -1140,8 +1140,16 @@ void AWindowDirector::ApplyLighting(float DeltaSeconds)
         // cumulus parameters are untouched (Storminess interpolates to 0).
         Cloud->SetLayerBottomAltitude(FMath::Lerp(2.2f, 1.2f, CloudBlend) - Storminess * .45f);
         Cloud->SetLayerHeight(FMath::Lerp(2.5f, 3.5f, CloudBlend) + Storminess * 1.6f);
-        CloudMaterial->SetScalarParameterValue(TEXT("Cloud_GlobalCoverage"), FMath::Min(1.f, FMath::Lerp(-.12f, .7f, CloudBlend) + Storminess * .28f));
-        CloudMaterial->SetScalarParameterValue(TEXT("Cloud_GlobalDensity"), FMath::Lerp(.012f, .03f, CloudBlend) * (1.f + Storminess * .9f));
+        // Nimbostratus is a featureless solid deck: coverage must go nearly
+        // full — a .95 ceiling leaves a sparse-puff regime whose ragged blobs
+        // shimmer against the dusk gradient. Capped below 1.0: the material
+        // divides by (1-coverage) and exactly 1.0 kills the deck outright.
+        // Erosion noise is flattened for the same reason, and the density
+        // boost eased now that the deck is solid.
+        CloudMaterial->SetScalarParameterValue(TEXT("Cloud_GlobalCoverage"), FMath::Min(.99f, FMath::Lerp(-.12f, .7f, CloudBlend) + Storminess * .45f));
+        CloudMaterial->SetScalarParameterValue(TEXT("Cloud_GlobalDensity"), FMath::Lerp(.012f, .03f, CloudBlend) * (1.f + Storminess * .5f));
+        CloudMaterial->SetVectorParameterValue(TEXT("Noise_Strength"),
+            FMath::Lerp(FLinearColor(.8f, .08f, .03f, 2.5f), FLinearColor(.5f, .015f, .005f, 2.5f), Storminess));
         CloudMaterial->SetVectorParameterValue(TEXT("Storm_AlbedoColor"),
             FMath::Lerp(FLinearColor(.52f, .55f, .58f, 1.f / 3.f), FLinearColor(.24f, .26f, .30f, 1.f / 3.f), Storminess));
         const float Bearing = FMath::DegreesToRadians(Session.WindDirection);

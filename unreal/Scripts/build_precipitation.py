@@ -98,18 +98,22 @@ return p - Centre;
 
     shape = ('1.0 - smoothstep(0.6, 1.0, length(UV * 2.0 - 1.0))' if snow else
              'pow(saturate(1.0 - abs(UV.x * 2.0 - 1.0)), 1.5) * saturate(1.0 - abs(UV.y * 2.0 - 1.0))')
-    near_fade = '100.0, 350.0' if snow else '800.0, 1800.0'
+    # Rain reads against the now much darker storm sky, so drops need a bright
+    # refractive albedo and presence close to the pane: the glass sits 96 cm
+    # from the camera, so fading in from 1.4 m keeps the room interior dry
+    # while the old 8-18 m band hid the rain that matters most.
+    near_fade = '100.0, 350.0' if snow else '140.0, 420.0'
     opacity = custom(material,
         'float population = saturate((Amount - Rank) * 20.0);\n'
         'float distanceFade = smoothstep(' + near_fade + ', Depth) * (1.0 - smoothstep(9000.0, 12000.0, Depth));\n'
-        'return (' + shape + ') * population * distanceFade * ' + ('0.9;' if snow else '0.33;'),
+        'return (' + shape + ') * population * distanceFade * ' + ('0.9;' if snow else '0.5;'),
         u.CustomMaterialOutputType.CMOT_FLOAT1,
         {'UV': uv, 'Rank': rank, 'Amount': amount, 'Depth': depth})
     fade = expression(material, u.MaterialExpressionDepthFade, fade_distance_default=20.0)
     connect(opacity, fade, 'Opacity')
     LIB.connect_material_property(fade, '', u.MaterialProperty.MP_OPACITY)
     colour = expression(material, u.MaterialExpressionConstant3Vector,
-                        constant=u.LinearColor(0.85, 0.9, 0.98, 1) if snow else u.LinearColor(0.42, 0.48, 0.56, 1))
+                        constant=u.LinearColor(0.85, 0.9, 0.98, 1) if snow else u.LinearColor(0.72, 0.78, 0.86, 1))
     roughness = expression(material, u.MaterialExpressionConstant, r=0.7 if snow else 0.15)
     LIB.connect_material_property(colour, '', u.MaterialProperty.MP_BASE_COLOR)
     LIB.connect_material_property(roughness, '', u.MaterialProperty.MP_ROUGHNESS)
