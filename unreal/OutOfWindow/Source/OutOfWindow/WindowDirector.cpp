@@ -1102,7 +1102,10 @@ void AWindowDirector::ApplyLighting(float DeltaSeconds)
             Direction = FVector(FMath::Sin(SunAzimuth) * FMath::Cos(Elevation), -FMath::Cos(SunAzimuth) * FMath::Cos(Elevation), FMath::Sin(Elevation));
         }
         Sun->GetOwner()->SetActorRotation(FMath::RInterpTo(Sun->GetOwner()->GetActorRotation(), (-Direction).Rotation(), DeltaSeconds, 3));
-        const float TargetLux = 90000.f * Smooth(-.015f, .08f, FMath::Sin(Elevation)) * FMath::Lerp(.9f, .035f, CloudBlend);
+        // Cumulonimbus structure is a directional-light effect: a lit anvil over
+        // a self-shadowed base. Cutting the sun 29x under full cover left only
+        // ambient, which lit the deck isotropically and erased that gradient.
+        const float TargetLux = 90000.f * Smooth(-.015f, .08f, FMath::Sin(Elevation)) * FMath::Lerp(.9f, .18f, CloudBlend);
         Sun->SetIntensity(FMath::FInterpTo(Sun->Intensity, TargetLux, DeltaSeconds, 2));
         Sun->SetLightColor(FMath::Lerp(FLinearColor(1.f, .94f, .86f), FLinearColor(1.f, .53f, .26f), Glow * .8f));
     }
@@ -1140,18 +1143,28 @@ void AWindowDirector::ApplyLighting(float DeltaSeconds)
         // cumulus parameters are untouched (Storminess interpolates to 0).
         Cloud->SetLayerBottomAltitude(FMath::Lerp(2.2f, 1.2f, CloudBlend) - Storminess * .45f);
         Cloud->SetLayerHeight(FMath::Lerp(2.5f, 3.5f, CloudBlend) + Storminess * 1.6f);
-        // Nimbostratus is a featureless solid deck: coverage must go nearly
-        // full — a .95 ceiling leaves a sparse-puff regime whose ragged blobs
-        // shimmer against the dusk gradient. Capped below 1.0: the material
-        // divides by (1-coverage) and exactly 1.0 kills the deck outright.
-        // Erosion noise is flattened for the same reason, and the density
-        // boost eased now that the deck is solid.
-        CloudMaterial->SetScalarParameterValue(TEXT("Cloud_GlobalCoverage"), FMath::Min(.99f, FMath::Lerp(-.12f, .7f, CloudBlend) + Storminess * .45f));
-        CloudMaterial->SetScalarParameterValue(TEXT("Cloud_GlobalDensity"), FMath::Lerp(.012f, .03f, CloudBlend) * (1.f + Storminess * .5f));
+        // The deck has to stay readable as a deck: the material's
+        // (1-coverage) divisor is what draws the shell detail, so a ceiling
+        // near 1 clips it to nothing no matter how dense the deck is. .96 was
+        // still a flat white sheet; .78 leaves a 22% gap for the towers to
+        // silhouette against and gives the divisor room to work.
+        CloudMaterial->SetScalarParameterValue(TEXT("Cloud_GlobalCoverage"), FMath::Min(.78f, FMath::Lerp(-.12f, .55f, CloudBlend) + Storminess * .25f));
+        CloudMaterial->SetScalarParameterValue(TEXT("Cloud_GlobalDensity"), FMath::Lerp(.012f, .03f, CloudBlend) * (1.f + Storminess * 1.6f));
+        // Storm structure, not storm blur. Layout_CloudGlobalScale is pinned at
+        // 32 by validate.ps1, so the base lobe is ~8x wider than the window's
+        // whole sky patch: everything visible inside one lobe has to come from
+        // the mid and high octaves. Prior passes shrank them (.05/.015) and the
+        // patch went smooth; Storminess now grows them instead of eating them.
         CloudMaterial->SetVectorParameterValue(TEXT("Noise_Strength"),
-            FMath::Lerp(FLinearColor(.8f, .08f, .03f, 2.5f), FLinearColor(.5f, .015f, .005f, 2.5f), Storminess));
+            FLinearColor(FMath::Lerp(.8f, .78f, Storminess), FMath::Lerp(.08f, .16f, Storminess),
+                FMath::Lerp(.03f, .09f, Storminess), 2.5f));
         CloudMaterial->SetVectorParameterValue(TEXT("Storm_AlbedoColor"),
             FMath::Lerp(FLinearColor(.52f, .55f, .58f, 1.f / 3.f), FLinearColor(.24f, .26f, .30f, 1.f / 3.f), Storminess));
+        // Dimmed for a leaden deck, but not so far that the lit crowns stop
+        // reading against the shadowed base. .48 flattened the whole mass into
+        // one value; the base is carried by extinction (density above), not albedo.
+        CloudMaterial->SetVectorParameterValue(TEXT("Cloud_AlbedoColor"),
+            FMath::Lerp(FLinearColor(.98f, .98f, .98f, .5f), FLinearColor(.66f, .70f, .76f, .5f), CloudBlend));
         const float Bearing = FMath::DegreesToRadians(Session.WindDirection);
         const float Speed = FMath::Clamp(static_cast<float>(Session.WindSpeed / 3.6), 0.f, 25.f);
         const FVector2D TargetWind(-FMath::Sin(Bearing) * Speed, FMath::Cos(Bearing) * Speed);
@@ -1173,10 +1186,18 @@ void AWindowDirector::ApplyLighting(float DeltaSeconds)
             FPostProcessSettings& Settings = PostProcess->Settings;
             Settings.bOverride_BloomIntensity = true;
             Settings.bOverride_BloomSizeScale = true;
+            Settings.bOverride_BloomThreshold = true;
             Settings.bOverride_AutoExposureBias = true;
             Settings.BloomIntensity = FMath::Lerp(.675f, FMath::Clamp(NightBloom.GetValueOnGameThread(), 0.f, 4.f), Night);
             Settings.BloomSizeScale = FMath::Lerp(4.f, FMath::Clamp(NightBloomSize.GetValueOnGameThread(), 1.f, 10.f), Night);
-            Settings.AutoExposureBias = FMath::Lerp(-.5f, FMath::Clamp(NightExposureBias.GetValueOnGameThread(), -4.f, 2.f), Night);
+            // The volume asset ships threshold -1, so every sky pixel past 1.0
+            // fed the bloom. With a bright deck that is a flat white gain on top
+            // of the very structure we are trying to show. -1 stays for night.
+            Settings.BloomThreshold = FMath::Lerp(1.2f, -1.f, Night);
+            // A full overcast deck at noon sits ~1.2 stops above where the
+            // towers can still read against it; the day bias is set for that
+            // rather than for fair weather.
+            Settings.AutoExposureBias = FMath::Lerp(FMath::Lerp(-1.1f, -.5f, CloudBlend), FMath::Clamp(NightExposureBias.GetValueOnGameThread(), -4.f, 2.f), Night);
         }
     }
     if (Sky && !Sky->IsRealTimeCaptureEnabled() && Elapsed - LastSkyCapture > (Elapsed < FastLightingUntil ? 1.f : 30.f))
