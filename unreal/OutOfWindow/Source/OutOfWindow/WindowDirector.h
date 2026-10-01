@@ -3,6 +3,7 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
 #include "WindowDesktop.h"
+#include "WindowFrameLighting.h"
 #include "WindowTraffic.h"
 #include "WindowDirector.generated.h"
 
@@ -27,6 +28,7 @@ class SWidget;
 class IHttpRequest;
 class IConsoleObject;
 class FWindowSkySampling;
+class UStaticMesh;
 
 UCLASS()
 class OUTOFWINDOW_API AWindowDirector : public AActor
@@ -59,6 +61,7 @@ private:
     void ApplyLighting(float DeltaSeconds);
     void UpdateCloudSampling(float DeltaSeconds);
     void UpdateMaterials(float DeltaSeconds);
+    void UpdateFrameShadowLighting();
     void UpdateAudio();
     void ToggleAudio();
     void FetchForecast(double Latitude, double Longitude, const FString& City, const FString& Timezone);
@@ -94,6 +97,10 @@ private:
     TSharedPtr<IHttpRequest, ESPMode::ThreadSafe> GeoRequest;
     TSharedPtr<IHttpRequest, ESPMode::ThreadSafe> ForecastRequest;
     TUniquePtr<FWindowDesktop> Desktop;
+    TUniquePtr<FWindowFrameLighting> FrameLighting;
+    TWeakObjectPtr<UStaticMesh> FrameLightingMesh;
+    bool bFrameLightingDirty = true;
+    bool bFrameLightingEnabled = false;
     TArray<IConsoleObject*> Commands;
     TArray<float> FrameTimes;
     TArray<float> NightLightIntensities;

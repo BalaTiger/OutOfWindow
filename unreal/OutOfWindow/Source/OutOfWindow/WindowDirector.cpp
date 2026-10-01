@@ -4,6 +4,7 @@
 #include "WindowPrecipitation.h"
 #include "WindowBirds.h"
 #include "WindowFrame.h"
+#include "WindowFrameLighting.h"
 #include "WindowWeather.h"
 #include "WindowSkySampling.h"
 #include "Camera/CameraActor.h"
@@ -11,6 +12,8 @@
 #include "Components/AudioComponent.h"
 #include "Components/DirectionalLightComponent.h"
 #include "Components/LightComponent.h"
+#include "Components/PointLightComponent.h"
+#include "Components/RectLightComponent.h"
 #include "Components/ExponentialHeightFogComponent.h"
 #include "Components/StaticMeshComponent.h"
 #include "Components/MeshComponent.h"
@@ -104,6 +107,8 @@ bool ValidLocation(double Latitude, double Longitude, double UtcOffset)
 TAutoConsoleVariable<float> NightBloom(TEXT("oow.NightBloom"), 1.3f, TEXT("Bloom intensity for OOWWindowLookdev volumes."));
 TAutoConsoleVariable<float> NightBloomSize(TEXT("oow.NightBloomSize"), 5.5f, TEXT("Bloom size scale for OOWWindowLookdev volumes."));
 TAutoConsoleVariable<float> NightExposureBias(TEXT("oow.NightExposureBias"), -1.15f, TEXT("Night exposure bias for OOWWindowLookdev volumes."));
+TAutoConsoleVariable<int32> FrameShadowLighting(TEXT("oow.FrameShadowLighting"), 1,
+    TEXT("Calibrate the Alley foreground lamp area and use native area shadows for the room lamp; 0 restores authored light settings."));
 TAutoConsoleVariable<float> CloudSampleBudget(TEXT("oow.CloudSampleBudget"), 200000.f, TEXT("Reference internal sky pixels at cloud sample scale 1; bounded by the selected quality preset."));
 TAutoConsoleVariable<float> CloudLayoutScale(TEXT("oow.CloudLayoutScale"), 32.f, TEXT("Cloud layout period in kilometres (4-64), for cloud-shape look development."));
 TAutoConsoleVariable<float> StormOffsetX(TEXT("oow.StormOffsetXKm"), 0.f, TEXT("Storm cell layout X offset in kilometres."));
@@ -866,6 +871,7 @@ void AWindowDirector::OOWScene(const FString& Scene)
 void AWindowDirector::OOWQuality(int32 Quality)
 {
     Session.Quality = FMath::Clamp(Quality, 0, 2);
+    bFrameLightingDirty = true;
     if (UGameUserSettings* Settings = GEngine ? GEngine->GetGameUserSettings() : nullptr)
     {
         Settings->SetOverallScalabilityLevel(Session.Quality + 1);
@@ -1028,6 +1034,7 @@ void AWindowDirector::Tick(float DeltaSeconds)
     {
         WindowFrame->FitToView(Camera->GetCameraComponent(), LastViewportSize.Y > 0 ? LastViewportSize.X / LastViewportSize.Y : Camera->GetCameraComponent()->AspectRatio);
         WindowFrame->SetDaylight(Daylight);
+        UpdateFrameShadowLighting();
     }
     UpdateMaterials(DeltaSeconds);
     if (Birds)
@@ -1092,6 +1099,32 @@ void AWindowDirector::UpdateCloudSampling(float DeltaSeconds)
     CloudSampleScale = DeltaSeconds > 0 ? FMath::FInterpTo(CloudSampleScale, CloudTargetSampleScale, DeltaSeconds, .6f) : CloudTargetSampleScale;
     if (FMath::Abs(Cloud->ViewSampleCountScale - CloudSampleScale) > .02f)
         Cloud->SetViewSampleCountScale(CloudSampleScale);
+}
+
+void AWindowDirector::UpdateFrameShadowLighting()
+{
+    UStaticMeshComponent* FrameMesh = WindowFrame ? Cast<UStaticMeshComponent>(WindowFrame->GetRootComponent()) : nullptr;
+    const bool bEnabled = FrameShadowLighting.GetValueOnGameThread() != 0;
+    if (!FrameMesh || !FrameMesh->GetStaticMesh() || !Camera)
+    {
+        if (FrameLighting) FrameLighting->Reset();
+        FrameLightingMesh.Reset();
+        bFrameLightingDirty = true;
+        return;
+    }
+    if (!bFrameLightingDirty && FrameLightingMesh == FrameMesh->GetStaticMesh() && bEnabled == bFrameLightingEnabled) return;
+    if (!FrameLighting) FrameLighting = MakeUnique<FWindowFrameLighting>();
+    if (bEnabled)
+    {
+        const IConsoleVariable* RayTracing = IConsoleManager::Get().FindConsoleVariable(TEXT("r.RayTracing"));
+        const bool bHardwareShadows = GRHISupportsRayTracing && GRHISupportsRayTracingShaders && RayTracing && RayTracing->GetInt() != 0;
+        FrameLighting->Update(*Session.Scene, Camera->GetActorLocation(), FrameMesh->Bounds.GetBox(), NightLights,
+            WindowFrame->FindComponentByClass<URectLightComponent>(), Session.Quality, bHardwareShadows);
+    }
+    else FrameLighting->Reset();
+    FrameLightingMesh = FrameMesh->GetStaticMesh();
+    bFrameLightingEnabled = bEnabled;
+    bFrameLightingDirty = false;
 }
 
 void AWindowDirector::ApplyLighting(float DeltaSeconds)
@@ -1368,6 +1401,26 @@ void AWindowDirector::OOWAudit()
     Json->SetNumberField(TEXT("desktopFrameTriangles"), WindowFrame ? WindowFrame->GetTriangleCount() : 0);
     Json->SetNumberField(TEXT("desktopRoomWalls"), WindowFrame ? WindowFrame->GetRoomWallCount() : 0);
     Json->SetNumberField(TEXT("desktopRoomLampLumens"), WindowFrame ? WindowFrame->GetRoomLampLumens() : 0);
+    Json->SetNumberField(TEXT("desktopFrameManagedLights"), FrameLighting ? FrameLighting->GetManagedLightCount() : 0);
+    if (WindowFrame)
+    {
+        if (const URectLightComponent* Indoor = WindowFrame->FindComponentByClass<URectLightComponent>())
+        {
+            Json->SetBoolField(TEXT("desktopRoomRayTracedShadows"), Indoor->CastRaytracedShadow == ECastRayTracedShadow::Enabled);
+            Json->SetNumberField(TEXT("desktopRoomShadowSamples"), Indoor->SamplesPerPixel);
+        }
+        if (const UStaticMeshComponent* RootMesh = Cast<UStaticMeshComponent>(WindowFrame->GetRootComponent()))
+        {
+            const auto Keys = FWindowFrameLighting::SelectExteriorLights(*Session.Scene, Camera ? Camera->GetActorLocation() : FVector::ZeroVector,
+                RootMesh->Bounds.GetBox(), NightLights);
+            if (!Keys.IsEmpty())
+            {
+                const UPointLightComponent* Key = CastChecked<UPointLightComponent>(Keys[0]);
+                Json->SetNumberField(TEXT("desktopKeyLightRadiusCm"), Key->SourceRadius);
+                Json->SetBoolField(TEXT("desktopKeyRayTracedShadows"), Key->CastRaytracedShadow == ECastRayTracedShadow::Enabled);
+            }
+        }
+    }
     Json->SetStringField(TEXT("desktopFrameStyle"), WindowFrame ? WindowFrame->GetStyle().ToString() : TEXT("none"));
     Json->SetNumberField(TEXT("windowRainIntensity"), WindowFrame ? WindowFrame->GetRainIntensity() : 0);
     Json->SetBoolField(TEXT("interfaceHidden"), VisibilityControl && VisibilityControl->IsInterfaceHidden());
@@ -1591,6 +1644,8 @@ void AWindowDirector::EndPlay(const EEndPlayReason::Type EndPlayReason)
     Interface.Reset();
     VisibilityControl.Reset();
     SkySampling.Reset();
+    if (FrameLighting) FrameLighting->Reset();
+    FrameLighting.Reset();
     FScreenshotRequest::OnScreenshotRequestProcessed().Remove(ScreenshotHandle);
     if (Desktop) { Desktop->Shutdown(); Desktop.Reset(); }
     AmbientAudio->Stop();
