@@ -105,7 +105,7 @@ foreach ($case in $Cases.Split(',')) {
         if ($null -eq $sampleScale -or $sampleScale -lt $sampleFloor - .001 -or $sampleScale -gt $sampleCap + .001) { throw "$case cloud samples escaped its quality budget" }
     }
     if ($state.cloudParameters.Layout_CloudGlobalScale -ne 32 -or $state.cloudDriftUV.Count -ne 2 -or ([math]::Abs($state.cloudDriftUV[0]) + [math]::Abs($state.cloudDriftUV[1])) -le .00001) { throw "$case cloud layout is not drifting with weather wind" }
-    if ($weather -in @('rain', 'snow') -and ($state.cloudParameters.StormClouds -lt .65 -or $state.atmosphereMieScale -lt 2 * $state.atmosphereBaseMieScale)) { throw "$case retained a clear-weather sky" }
+    if ($weather -in @('rain', 'snow') -and ($state.cloudParameters.StormClouds -lt .65 -or $state.atmosphereMieScale -lt $state.atmosphereBaseMieScale - .000001 -or $state.atmosphereMieScale -gt 1.5 * $state.atmosphereBaseMieScale)) { throw "$case has no precipitation clouds or excessive aerosol haze" }
     if ($weather -notin @('rain', 'snow') -and $state.cloudParameters.StormClouds -gt .01) { throw "$case applied storm clouds without precipitation" }
     if ($variant -eq 'cloudmotion' -and $state.capturedFrames -ne 16) { throw "$case lacks its 30-second cloud-motion sequence" }
     if ($state.staticMeshComponents -lt 6 -or $state.naniteMeshComponents -lt 1 -or $state.materialInstances -lt 1) { throw "$case has missing geometry or materials" }

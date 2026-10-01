@@ -1,0 +1,40 @@
+{
+  "recipe": "storm-details-v3",
+  "master": "/Game/Weather/M_OOW_StormCells_v3.M_OOW_StormCells_v3",
+  "instance": "/Game/Weather/MI_OOW_StormCells_v3.MI_OOW_StormCells_v3",
+  "sourceMaster": "/Game/Weather/M_OOW_StormCells_v2.M_OOW_StormCells_v2",
+  "sourceInstance": "/Game/Weather/MI_OOW_StormCells_v2.MI_OOW_StormCells_v2",
+  "codeSha256": "d5146c9fa3ecb153f5fc4a7ca7ceb0469691122efb2ea2bf1ae81d89c9f28175",
+  "shapeCodeSha256": "3262ce9503ef765359ce72179a93790918beeb04fa0aeabc1971531ddb509288",
+  "defaults": {
+    "OOW_DetailStrength": 1.0,
+    "OOW_DetailScaleKm": 0.35,
+    "OOW_DetailDensityScale": 0.9
+  },
+  "volumeTextureSamples": 2,
+  "maxNeighbourCells": 9,
+  "changes": "Interior density modulation and noise scale only; native graph, macro envelope, colours, AO, phase and multiple scattering preserved.",
+  "zeroStrength": "Exactly the v2 density expression and original sampling frequencies.",
+  "compilationVerified": true,
+  "mapsModified": false,
+  "verifiedShaderPlatform": "PCD3D_SM6",
+  "productionEnabled": true,
+  "verification": "alley-storm-details-verification.json",
+  "runtimeDefaults": {
+    "detailStrength": 1,
+    "detailScaleKm": 0.35,
+    "detailDensityScale": 1.35,
+    "note": "Generator defaults densityScale=0.9; WindowDirector overrides it to the accepted 1.35 each update.",
+    "overcastExposureBiasEV": -1.1,
+    "shadowViewSampleScale": 0.5,
+    "shadowTracingDistanceKm": 15,
+    "multipleScatterControls": [
+      0.6666666666666666,
+      0.25,
+      0.18,
+      1
+    ],
+    "noiseTextureSamples": 2,
+    "noAdditionalVolumeTextureReads": true
+  }
+}

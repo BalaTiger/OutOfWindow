@@ -1,0 +1,856 @@
+{
+  "createdAt": "2026-10-01T21:21:08.259564+08:00",
+  "status": "Editor build and cloud-specific rendering checks passed; full regression stopped at an existing wind evaluation assertion.",
+  "scope": "UE 5.7 Editor -game preview; no packaged build, cook or deployment performed in this change.",
+  "environment": {
+    "engine": "D:/UE_5.7",
+    "shaderPlatform": "PCD3D_SM6",
+    "gpu": "NVIDIA GeForce RTX 3060 Ti 8 GB",
+    "lookdevResolution": [
+      1280,
+      820
+    ],
+    "quality": 1,
+    "diagnosticDate": "2026-09-23",
+    "hour": 12,
+    "weather": "moderate_rain",
+    "fixedTimeStepFPS": 10,
+    "weatherSettled": true,
+    "cloudMotionFrozen": true
+  },
+  "findings": [
+    "The engine simple-cloud material supports stratocumulus, altostratus, cirrostratus and nimbostratus; its storm scalar does not construct a cumulonimbus tower/anvil.",
+    "The dense native rain deck strongly darkens the alley. Histogram exposure favors the dark scene while the roughly 2.4% sky opening contributes little; rain also had an additional +0.6 EV bias.",
+    "Exposure-only A/B reduces white sky luminance but does not produce the required storm-cell silhouette. Removing fog or bloom barely changes sky contrast.",
+    "The accepted new material uses absolute cloud ray-sample world position, base/tower/anvil density envelopes, volume-noise erosion and physical wind drift. Clear weather blends back to the native graph."
+  ],
+  "productionChanges": {
+    "material": "/Game/Weather/MI_OOW_StormCells_v2.MI_OOW_StormCells_v2",
+    "cellSpacingKm": 4,
+    "overcastExposureBiasEV": -1.1,
+    "priorAlleyOvercastExposureBiasEV": -0.5,
+    "nightExposureUnchangedEV": -1.15,
+    "nativeOverride": "-OOWNativeClouds"
+  },
+  "image": "unreal/Art/Lookdev/alley-storm-ab.png",
+  "wholeRepairComparison": {
+    "note": "Cloud shape and alley exposure both change here. Do not attribute this entire delta to one variable.",
+    "baseline": {
+      "pixels": 12820,
+      "meanRGB": [
+        236.3292511700468,
+        244.32535101404056,
+        250.8858814352574
+      ],
+      "luminanceMean": 243.09905048361932,
+      "luminanceStd": 4.928804755579651,
+      "coefficientOfVariation": 0.0202748827927313,
+      "p1": 237.31119999999999,
+      "p5": 238.23899999999998,
+      "p50": 240.6642,
+      "p95": 252.5066,
+      "p99": 253.647,
+      "p95MinusP5": 14.267600000000016,
+      "p5P95MichelsonContrast": 0.029073312119354745,
+      "fractionLuminanceGe230": 1.0,
+      "fractionLuminanceGe245": 0.3158346333853354,
+      "fractionLuminanceGe250": 0.1419656786271451,
+      "fractionAnyChannelGe250": 0.559204368174727,
+      "fractionAllChannelsGe250": 0.06450858034321373,
+      "fractionAllChannelsEq255": 0.0
+    },
+    "candidate": {
+      "pixels": 12820,
+      "meanRGB": [
+        135.34414976599064,
+        137.8591263650546,
+        146.43939157566302
+      ],
+      "luminanceMean": 137.94393748829953,
+      "luminanceStd": 23.704391391731644,
+      "coefficientOfVariation": 0.17184076243830768,
+      "p1": 116.22460000000001,
+      "p5": 118.15239999999999,
+      "p50": 123.2246,
+      "p95": 185.14839999999998,
+      "p99": 192.20364199999997,
+      "p95MinusP5": 66.996,
+      "p5P95MichelsonContrast": 0.22088962508506407,
+      "fractionLuminanceGe230": 0.0,
+      "fractionLuminanceGe245": 0.0,
+      "fractionLuminanceGe250": 0.0,
+      "fractionAnyChannelGe250": 0.0,
+      "fractionAllChannelsGe250": 0.0,
+      "fractionAllChannelsEq255": 0.0
+    },
+    "source": ".runtime/ue-cloud-ab/final/cloud-ab-metrics.json",
+    "mask": "3x3 minimum filter on depth grid, with zero border; nearest-neighbour resize; common intersection across all cases"
+  },
+  "shapeOnlyComparison": {
+    "note": "Same -0.5 EV, storminess, coverage, density, layer heights, frozen wind and camera; only cloud material changes.",
+    "source": ".runtime/ue-cloud-ab/positioned/cloud-ab-metrics.json",
+    "candidate": {
+      "pixels": 12820,
+      "meanRGB": [
+        174.47792511700467,
+        176.5893135725429,
+        184.1936817472699
+      ],
+      "luminanceMean": 176.68946776911076,
+      "luminanceStd": 18.87531976574391,
+      "coefficientOfVariation": 0.10682764515658208,
+      "p1": 158.1524,
+      "p5": 160.0802,
+      "p50": 165.2246,
+      "p95": 212.14839999999998,
+      "p99": 217.1444,
+      "p95MinusP5": 52.06819999999999,
+      "p5P95MichelsonContrast": 0.1398823196283144,
+      "fractionLuminanceGe230": 0.0,
+      "fractionLuminanceGe245": 0.0,
+      "fractionLuminanceGe250": 0.0,
+      "fractionAnyChannelGe250": 0.0,
+      "fractionAllChannelsGe250": 0.0,
+      "fractionAllChannelsEq255": 0.0
+    }
+  },
+  "exposureFogBloomComparison": {
+    "source": ".runtime/ue-cloud-ab/settled/cloud-ab-metrics.json",
+    "note": "Original logger schema; compare within this matrix. Layout8 was rejected from lighting-only attribution.",
+    "cases": [
+      {
+        "name": "baseline",
+        "status": "accepted",
+        "metrics": {
+          "pixels": 12820,
+          "meanRGB": [
+            236.33135725429017,
+            244.32488299531983,
+            250.8882995319813
+          ],
+          "luminanceMean": 243.09933809672384,
+          "luminanceStd": 4.933397667524278,
+          "coefficientOfVariation": 0.020293751954032012,
+          "p1": 237.31119999999999,
+          "p5": 238.23899999999998,
+          "p50": 240.6642,
+          "p95": 252.5066,
+          "p99": 253.647,
+          "p95MinusP5": 14.267600000000016,
+          "p5P95MichelsonContrast": 0.029073312119354745,
+          "fractionLuminanceGe230": 1.0,
+          "fractionLuminanceGe245": 0.3162246489859594,
+          "fractionLuminanceGe250": 0.14149765990639626,
+          "fractionAnyChannelGe250": 0.5598283931357254,
+          "fractionAllChannelsGe250": 0.06489859594383775,
+          "fractionAllChannelsEq255": 0.0
+        }
+      },
+      {
+        "name": "exposure-minus1",
+        "status": "accepted",
+        "metrics": {
+          "pixels": 12820,
+          "meanRGB": [
+            214.82051482059282,
+            229.67815912636505,
+            242.07519500780032
+          ],
+          "luminanceMean": 227.4144899375975,
+          "luminanceStd": 9.320084302055,
+          "coefficientOfVariation": 0.04098280766811486,
+          "p1": 217.11579999999998,
+          "p5": 218.11579999999998,
+          "p50": 223.3966,
+          "p95": 245.51059999999998,
+          "p99": 247.65099999999998,
+          "p95MinusP5": 27.394800000000004,
+          "p5P95MichelsonContrast": 0.05908809334412364,
+          "fractionLuminanceGe230": 0.3248829953198128,
+          "fractionLuminanceGe245": 0.06575663026521061,
+          "fractionLuminanceGe250": 0.0,
+          "fractionAnyChannelGe250": 0.10577223088923557,
+          "fractionAllChannelsGe250": 0.0,
+          "fractionAllChannelsEq255": 0.0
+        }
+      },
+      {
+        "name": "exposure-minus2",
+        "status": "accepted",
+        "metrics": {
+          "pixels": 12820,
+          "meanRGB": [
+            182.03853354134165,
+            203.45873634945397,
+            224.84664586583463
+          ],
+          "luminanceMean": 200.44900829953198,
+          "luminanceStd": 15.708609992712233,
+          "coefficientOfVariation": 0.07836711254384844,
+          "p1": 182.860718,
+          "p5": 184.6344,
+          "p50": 193.3456,
+          "p95": 231.5238,
+          "p99": 236.3702,
+          "p95MinusP5": 46.889399999999995,
+          "p5P95MichelsonContrast": 0.11267205596333317,
+          "fractionLuminanceGe230": 0.06840873634945398,
+          "fractionLuminanceGe245": 0.0,
+          "fractionLuminanceGe250": 0.0,
+          "fractionAnyChannelGe250": 0.0,
+          "fractionAllChannelsGe250": 0.0,
+          "fractionAllChannelsEq255": 0.0
+        }
+      },
+      {
+        "name": "no-fog",
+        "status": "accepted",
+        "metrics": {
+          "pixels": 12820,
+          "meanRGB": [
+            236.48042121684867,
+            244.27932917316693,
+            250.85631825273012
+          ],
+          "luminanceMean": 243.09613995319813,
+          "luminanceStd": 4.827924235438764,
+          "coefficientOfVariation": 0.019860143548014606,
+          "p1": 237.31119999999999,
+          "p5": 238.31119999999999,
+          "p50": 240.6642,
+          "p95": 252.7192,
+          "p99": 253.8596,
+          "p95MinusP5": 14.408000000000015,
+          "p5P95MichelsonContrast": 0.029342378801801305,
+          "fractionLuminanceGe230": 1.0,
+          "fractionLuminanceGe245": 0.3114664586583463,
+          "fractionLuminanceGe250": 0.12784711388455539,
+          "fractionAnyChannelGe250": 0.5782371294851794,
+          "fractionAllChannelsGe250": 0.07363494539781591,
+          "fractionAllChannelsEq255": 0.0
+        }
+      },
+      {
+        "name": "no-bloom",
+        "status": "accepted",
+        "metrics": {
+          "pixels": 12820,
+          "meanRGB": [
+            235.27106084243368,
+            243.6695007800312,
+            250.5383775351014
+          ],
+          "luminanceMean": 242.379925351014,
+          "luminanceStd": 4.987872071253629,
+          "coefficientOfVariation": 0.02057873424967107,
+          "p1": 236.38339999999997,
+          "p5": 237.31119999999999,
+          "p50": 240.37939999999998,
+          "p95": 251.79139999999998,
+          "p99": 252.93179999999998,
+          "p95MinusP5": 14.480199999999996,
+          "p5P95MichelsonContrast": 0.0296056492032551,
+          "fractionLuminanceGe230": 1.0,
+          "fractionLuminanceGe245": 0.2972698907956318,
+          "fractionLuminanceGe250": 0.11497659906396256,
+          "fractionAnyChannelGe250": 0.4926677067082683,
+          "fractionAllChannelsGe250": 0.05296411856474259,
+          "fractionAllChannelsEq255": 0.0
+        }
+      }
+    ]
+  },
+  "clearNativeControl": {
+    "source": ".runtime/ue-cloud-ab/clear/cloud-ab-metrics.json",
+    "native": {
+      "pixels": 12940,
+      "meanRGB": [
+        226.17372488408037,
+        232.67017001545594,
+        237.95525502318392
+      ],
+      "luminanceMean": 231.67060891808345,
+      "luminanceStd": 13.420070329078978,
+      "coefficientOfVariation": 0.05792737538763145,
+      "p1": 203.8494,
+      "p5": 205.06199999999998,
+      "p50": 238.9318,
+      "p95": 244.07219999999998,
+      "p99": 244.99999999999997,
+      "p95MinusP5": 39.0102,
+      "p5P95MichelsonContrast": 0.08685644513377071,
+      "fractionLuminanceGe230": 0.6602009273570325,
+      "fractionLuminanceGe245": 0.0026275115919629057,
+      "fractionLuminanceGe250": 0.0,
+      "fractionAnyChannelGe250": 0.0,
+      "fractionAllChannelsGe250": 0.0,
+      "fractionAllChannelsEq255": 0.0
+    },
+    "projectMaterial": {
+      "pixels": 12940,
+      "meanRGB": [
+        226.16669242658423,
+        232.66823802163833,
+        237.95193199381762
+      ],
+      "luminanceMean": 231.66749213292115,
+      "luminanceStd": 13.419952268408126,
+      "coefficientOfVariation": 0.05792764511262684,
+      "p1": 203.8494,
+      "p5": 205.06199999999998,
+      "p50": 238.9318,
+      "p95": 244.0,
+      "p99": 244.99999999999997,
+      "p95MinusP5": 38.93800000000002,
+      "p5P95MichelsonContrast": 0.08670963029603933,
+      "fractionLuminanceGe230": 0.6604327666151468,
+      "fractionLuminanceGe245": 0.002472952086553323,
+      "fractionLuminanceGe250": 0.0,
+      "fractionAnyChannelGe250": 0.0,
+      "fractionAllChannelsGe250": 0.0,
+      "fractionAllChannelsEq255": 0.0
+    }
+  },
+  "renderingChecks": [
+    {
+      "case": "clear/baseline",
+      "state": ".runtime\\ue-cloud-ab\\clear\\baseline.json",
+      "capture": ".runtime\\ue-cloud-ab\\clear\\baseline.png",
+      "captureSha256": "4abcce6c70183e9e7bcf1dcbcc4bcf887ae58f645f8ce40a813b1e2e0d2d8672",
+      "weatherCode": 0,
+      "hour": 12,
+      "cloudMaterial": "/Engine/EngineSky/VolumetricClouds/m_SimpleVolumetricCloud_Inst.m_SimpleVolumetricCloud_Inst",
+      "exposureBias": -1.0999999046325684,
+      "storminess": 0,
+      "capturedFrames": 1,
+      "driftUV": [
+        0,
+        0
+      ],
+      "shaderFallback": false
+    },
+    {
+      "case": "clear/cells",
+      "state": ".runtime\\ue-cloud-ab\\clear\\cells.json",
+      "capture": ".runtime\\ue-cloud-ab\\clear\\cells.png",
+      "captureSha256": "dd26fdc7cb1fca53cbb1f96bc73aa10607c17ba8cf63ab469b2efa092ba4fa62",
+      "weatherCode": 0,
+      "hour": 12,
+      "cloudMaterial": "/Game/Weather/MI_OOW_StormCells_v2.MI_OOW_StormCells_v2",
+      "exposureBias": -1.0999999046325684,
+      "storminess": 0,
+      "capturedFrames": 1,
+      "driftUV": [
+        0,
+        0
+      ],
+      "shaderFallback": false
+    },
+    {
+      "case": "night/cells",
+      "state": ".runtime\\ue-cloud-ab\\night\\cells.json",
+      "capture": ".runtime\\ue-cloud-ab\\night\\cells.png",
+      "captureSha256": "44fc30f367331a9a4d59fae4088bf079cbbdb00e1975164af227fc7e89d0183b",
+      "weatherCode": 0,
+      "hour": 23,
+      "cloudMaterial": "/Game/Weather/MI_OOW_StormCells_v2.MI_OOW_StormCells_v2",
+      "exposureBias": -1.1500000953674316,
+      "storminess": 0,
+      "capturedFrames": 1,
+      "driftUV": [
+        0,
+        0
+      ],
+      "shaderFallback": false
+    },
+    {
+      "case": "light-rain/cells",
+      "state": ".runtime\\ue-cloud-ab\\light-rain\\cells.json",
+      "capture": ".runtime\\ue-cloud-ab\\light-rain\\cells.png",
+      "captureSha256": "f005a013abdeecaef5f736ae856495c24bf33e5e2048e522eee0c1cb65595518",
+      "weatherCode": 61,
+      "hour": 12,
+      "cloudMaterial": "/Game/Weather/MI_OOW_StormCells_v2.MI_OOW_StormCells_v2",
+      "exposureBias": -1.0999999046325684,
+      "storminess": 0.8999999761581421,
+      "capturedFrames": 1,
+      "driftUV": [
+        0,
+        0
+      ],
+      "shaderFallback": false
+    },
+    {
+      "case": "heavy-rain/cells",
+      "state": ".runtime\\ue-cloud-ab\\heavy-rain\\cells.json",
+      "capture": ".runtime\\ue-cloud-ab\\heavy-rain\\cells.png",
+      "captureSha256": "0fea67f7ba637a278496e1272dee9bc12f664aefe4af6cb101b014408589ebac",
+      "weatherCode": 65,
+      "hour": 12,
+      "cloudMaterial": "/Game/Weather/MI_OOW_StormCells_v2.MI_OOW_StormCells_v2",
+      "exposureBias": -1.0999999046325684,
+      "storminess": 0.8999999761581421,
+      "capturedFrames": 1,
+      "driftUV": [
+        0,
+        0
+      ],
+      "shaderFallback": false
+    },
+    {
+      "case": "motion/cells",
+      "state": ".runtime\\ue-cloud-ab\\motion\\cells.json",
+      "capture": ".runtime\\ue-cloud-ab\\motion\\cells.png",
+      "captureSha256": "b00e127969d6344b730a87efde828fb2ae48384969be1ced73ebe082fa3b73c9",
+      "weatherCode": 63,
+      "hour": 12,
+      "cloudMaterial": "/Game/Weather/MI_OOW_StormCells_v2.MI_OOW_StormCells_v2",
+      "exposureBias": -1.0999999046325684,
+      "storminess": 0.8999999761581421,
+      "capturedFrames": 4,
+      "driftUV": [
+        0.0016959665856654334,
+        -0.000979166307734943
+      ],
+      "shaderFallback": false,
+      "frameSha256": [
+        "8fc84d570bd2c13137dc2cd700cb378970c241915d425246ecdc29b2da16e1df",
+        "d3588415e0582e5b1b92af74742f9e7eb3668a89ef1e0dfc74a0930ec8a1efbd",
+        "b61eafb0403b431543de6698855516c69fdd187f6c89083b621cd6708c446b69",
+        "b00e127969d6344b730a87efde828fb2ae48384969be1ced73ebe082fa3b73c9"
+      ],
+      "motionEvidence": "Four distinct rendered frames plus non-zero integrated wind drift; rain glass also moves, so pixel differences alone are not a cloud-speed measurement."
+    },
+    {
+      "case": "coast-rain",
+      "passed": true,
+      "state": ".runtime/ue-validation/coast-rain.json",
+      "capture": ".runtime/ue-validation/coast-rain.png",
+      "cloudMaterial": "/Game/Weather/MI_OOW_StormCells_v2.MI_OOW_StormCells_v2",
+      "visibleSkyFraction": 0.2358940988779068,
+      "exposureBias": -0.5,
+      "note": "Other scene retains its existing volume exposure; visual sky inspection completed."
+    }
+  ],
+  "performance": {
+    "createdAt": "2026-10-01T21:00:04.501307+08:00",
+    "status": "GPU CSV available; two completed 600-frame captures analyzed",
+    "units": "milliseconds",
+    "order": [
+      "baseline",
+      "cells"
+    ],
+    "configuration": {
+      "resolution": [
+        2560,
+        1440
+      ],
+      "quality": 1,
+      "scene": "Alley",
+      "weather": "moderate_rain",
+      "singleInstanceRuns": true,
+      "fixedTimeStep": false,
+      "targetFPSCap": 60,
+      "weatherSettledAtStart": true,
+      "cloudMotionFrozenForDiagnostic": true
+    },
+    "warmWindow": {
+      "discardedInitialFrames": 300,
+      "analyzedFinalFrames": 300,
+      "rangeOneBasedInclusive": [
+        301,
+        600
+      ]
+    },
+    "GPUColumnsUsed": [
+      "GPUTime",
+      "GPU/VolumetricCloud",
+      "GPU/VolumetricCloudShadow",
+      "GPU/VolCloudReconstruction",
+      "GPU/VolCloudComposeOverScene"
+    ],
+    "otherColumnsUsed": [
+      "FrameTime"
+    ],
+    "cloudScopeSumColumns": [
+      "GPU/VolumetricCloud",
+      "GPU/VolumetricCloudShadow",
+      "GPU/VolCloudReconstruction",
+      "GPU/VolCloudComposeOverScene"
+    ],
+    "percentileMethod": "p95 = linear interpolation at zero-based ordered-sample index 0.95 * (n - 1)",
+    "csvParsing": "Use final EVENTS header because HasHeaderRowAtEnd=1; it extends initial columns. Pad earlier rows for appended late-discovered stats; analyze numeric frame rows only.",
+    "cases": {
+      "baseline": {
+        "csv": "D:\\MyGitRepo\\OutOfWindow\\unreal\\OutOfWindow\\Saved\\Profiling\\CSV\\cloud-ab-perf-baseline.csv",
+        "csvSha256": "18f1979f7ec649243e81e642c531160492d09a022f726abe5b2988b4c21c54d7",
+        "capturedFrames": 600,
+        "analyzedFrameRangeOneBasedInclusive": [
+          301,
+          600
+        ],
+        "analysisWindowSecondsFromFrameTimeSum": 6.327716099999998,
+        "csvFinalHeaderColumns": 327,
+        "csvMetadata": {
+          "engineversion": "5.7.4-51494982+++UE5+Release-5.7",
+          "systemresolution.resx": "2560",
+          "systemresolution.resy": "1440",
+          "rhiname": "D3D12",
+          "rhifeaturelevel": "SM6",
+          "shaderplatform": "PCD3D_SM6",
+          "targetframerate": "60",
+          "starttimestamp": "1790859318",
+          "endtimestamp": "1790859331",
+          "captureduration": "12.976753"
+        },
+        "statistics": {
+          "GPUTime": {
+            "count": 300,
+            "meanMs": 19.460317,
+            "medianMs": 19.39395,
+            "p95Ms": 20.101335,
+            "minMs": 18.2589,
+            "maxMs": 35.4786,
+            "zeroCount": 0
+          },
+          "FrameTime": {
+            "count": 300,
+            "meanMs": 21.092387,
+            "medianMs": 20.9229,
+            "p95Ms": 22.03323,
+            "minMs": 18.8229,
+            "maxMs": 56.3091,
+            "zeroCount": 0
+          },
+          "GPU/VolumetricCloud": {
+            "count": 300,
+            "meanMs": 0.068832,
+            "medianMs": 0.0665,
+            "p95Ms": 0.0757,
+            "minMs": 0.0,
+            "maxMs": 0.6359,
+            "zeroCount": 1
+          },
+          "GPU/VolumetricCloudShadow": {
+            "count": 300,
+            "meanMs": 0.4992493333333333,
+            "medianMs": 0.48735,
+            "p95Ms": 0.50601,
+            "minMs": 0.0,
+            "maxMs": 3.9666,
+            "zeroCount": 1
+          },
+          "GPU/VolCloudReconstruction": {
+            "count": 300,
+            "meanMs": 0.041769,
+            "medianMs": 0.0409,
+            "p95Ms": 0.046005,
+            "minMs": 0.0,
+            "maxMs": 0.2806,
+            "zeroCount": 1
+          },
+          "GPU/VolCloudComposeOverScene": {
+            "count": 300,
+            "meanMs": 0.082236,
+            "medianMs": 0.0819,
+            "p95Ms": 0.084,
+            "minMs": 0.0,
+            "maxMs": 0.1087,
+            "zeroCount": 1
+          },
+          "sumNamedCloudScopes": {
+            "count": 300,
+            "meanMs": 0.6920863333333334,
+            "medianMs": 0.6785,
+            "p95Ms": 0.698815,
+            "minMs": 0.0,
+            "maxMs": 4.7676,
+            "zeroCount": 1
+          }
+        },
+        "audit": {
+          "path": "D:\\MyGitRepo\\OutOfWindow\\.runtime\\ue-cloud-ab\\perf\\baseline.json",
+          "frameTimeMeanMs": 21.078089923428415,
+          "frameTimeP95Ms": 22.16120147705078,
+          "captureSaved": true,
+          "cloudMaterial": "/Engine/EngineSky/VolumetricClouds/m_SimpleVolumetricCloud_Inst.m_SimpleVolumetricCloud_Inst",
+          "scene": "Alley",
+          "actualWeather": "rain",
+          "quality": 1,
+          "cloudViewSampleScale": 1.9857317209243774,
+          "cloudiness": 0.9599999785423279,
+          "cloudParameters": {
+            "Cloud_GlobalCoverage": 0.7749999761581421,
+            "Cloud_GlobalDensity": 0.07320000231266022,
+            "StormClouds": 0.8999999761581421,
+            "Layout_CloudGlobalScale": 32,
+            "OOW_CellSpacingKm": 4,
+            "Layout_WindControls": [
+              0,
+              0,
+              0,
+              0.18000000715255737
+            ],
+            "OOW_StormOffsetKm": [
+              0,
+              0
+            ]
+          },
+          "finalViewPostProcess": {
+            "bloomIntensity": 0.675000011920929,
+            "bloomSizeScale": 4,
+            "bloomThreshold": 1.2000000476837158,
+            "exposureBias": -1.0999999046325684,
+            "minBrightness": -4,
+            "maxBrightness": 16,
+            "lastEyeAdaptationExposure": 0.06101122498512268,
+            "lastAverageSceneLuminance": 1.3761334419250488
+          }
+        }
+      },
+      "cells": {
+        "csv": "D:\\MyGitRepo\\OutOfWindow\\unreal\\OutOfWindow\\Saved\\Profiling\\CSV\\cloud-ab-perf-cells.csv",
+        "csvSha256": "ebafc795ee5cdb70d5e828973010153ea0f7d3c49cb01800c8e3fef476a86f58",
+        "capturedFrames": 600,
+        "analyzedFrameRangeOneBasedInclusive": [
+          301,
+          600
+        ],
+        "analysisWindowSecondsFromFrameTimeSum": 6.617673700000002,
+        "csvFinalHeaderColumns": 327,
+        "csvMetadata": {
+          "engineversion": "5.7.4-51494982+++UE5+Release-5.7",
+          "systemresolution.resx": "2560",
+          "systemresolution.resy": "1440",
+          "rhiname": "D3D12",
+          "rhifeaturelevel": "SM6",
+          "shaderplatform": "PCD3D_SM6",
+          "targetframerate": "60",
+          "starttimestamp": "1790859366",
+          "endtimestamp": "1790859379",
+          "captureduration": "13.523469"
+        },
+        "statistics": {
+          "GPUTime": {
+            "count": 300,
+            "meanMs": 20.367915333333332,
+            "medianMs": 20.2959,
+            "p95Ms": 20.98212,
+            "minMs": 18.9172,
+            "maxMs": 43.4773,
+            "zeroCount": 0
+          },
+          "FrameTime": {
+            "count": 300,
+            "meanMs": 22.058912333333335,
+            "medianMs": 22.002,
+            "p95Ms": 22.992825,
+            "minMs": 20.4374,
+            "maxMs": 51.8266,
+            "zeroCount": 0
+          },
+          "GPU/VolumetricCloud": {
+            "count": 300,
+            "meanMs": 0.51048,
+            "medianMs": 0.4844,
+            "p95Ms": 0.519105,
+            "minMs": 0.4659,
+            "maxMs": 6.5587,
+            "zeroCount": 0
+          },
+          "GPU/VolumetricCloudShadow": {
+            "count": 300,
+            "meanMs": 0.810409,
+            "medianMs": 0.7589,
+            "p95Ms": 1.0237150000000002,
+            "minMs": 0.7397,
+            "maxMs": 5.3636,
+            "zeroCount": 0
+          },
+          "GPU/VolCloudReconstruction": {
+            "count": 300,
+            "meanMs": 0.041181,
+            "medianMs": 0.041,
+            "p95Ms": 0.042,
+            "minMs": 0.0399,
+            "maxMs": 0.0583,
+            "zeroCount": 0
+          },
+          "GPU/VolCloudComposeOverScene": {
+            "count": 300,
+            "meanMs": 0.10184599999999999,
+            "medianMs": 0.0829,
+            "p95Ms": 0.33185,
+            "minMs": 0.0819,
+            "maxMs": 0.5304,
+            "zeroCount": 0
+          },
+          "sumNamedCloudScopes": {
+            "count": 300,
+            "meanMs": 1.463916,
+            "medianMs": 1.37255,
+            "p95Ms": 1.669985,
+            "minMs": 1.3337,
+            "maxMs": 12.089199999999998,
+            "zeroCount": 0
+          }
+        },
+        "audit": {
+          "path": "D:\\MyGitRepo\\OutOfWindow\\.runtime\\ue-cloud-ab\\perf\\cells.json",
+          "frameTimeMeanMs": 22.006308388541463,
+          "frameTimeP95Ms": 23.15489959716797,
+          "captureSaved": true,
+          "cloudMaterial": "/Game/Weather/MI_OOW_StormCells_v2.MI_OOW_StormCells_v2",
+          "scene": "Alley",
+          "actualWeather": "rain",
+          "quality": 1,
+          "cloudViewSampleScale": 1.9974592924118042,
+          "cloudiness": 0.9599999785423279,
+          "cloudParameters": {
+            "Cloud_GlobalCoverage": 0.7749999761581421,
+            "Cloud_GlobalDensity": 0.07320000231266022,
+            "StormClouds": 0.8999999761581421,
+            "Layout_CloudGlobalScale": 32,
+            "OOW_CellSpacingKm": 4,
+            "Layout_WindControls": [
+              0,
+              0,
+              0,
+              0.18000000715255737
+            ],
+            "OOW_StormOffsetKm": [
+              0,
+              0
+            ]
+          },
+          "finalViewPostProcess": {
+            "bloomIntensity": 0.675000011920929,
+            "bloomSizeScale": 4,
+            "bloomThreshold": 1.2000000476837158,
+            "exposureBias": -1.0999999046325684,
+            "minBrightness": -4,
+            "maxBrightness": 16,
+            "lastEyeAdaptationExposure": 0.0016484542284160852,
+            "lastAverageSceneLuminance": 50.92120361328125
+          }
+        }
+      }
+    },
+    "cellsMinusBaseline": {
+      "csvStatistics": {
+        "GPUTime": {
+          "meanMs": 0.9075983333333326,
+          "meanPercent": 4.663841464315985,
+          "medianMs": 0.9019499999999994,
+          "medianPercent": 4.650677144160934,
+          "p95Ms": 0.8807849999999995,
+          "p95Percent": 4.381723900427507
+        },
+        "FrameTime": {
+          "meanMs": 0.9665253333333368,
+          "meanPercent": 4.582342118667445,
+          "medianMs": 1.0791000000000004,
+          "medianPercent": 5.157506846565249,
+          "p95Ms": 0.9595950000000002,
+          "p95Percent": 4.355217097084722
+        },
+        "GPU/VolumetricCloud": {
+          "meanMs": 0.44164800000000004,
+          "meanPercent": 641.63179916318,
+          "medianMs": 0.4179,
+          "medianPercent": 628.421052631579,
+          "p95Ms": 0.44340500000000005,
+          "p95Percent": 585.7397622192867
+        },
+        "GPU/VolumetricCloudShadow": {
+          "meanMs": 0.3111596666666667,
+          "meanPercent": 62.32550469104283,
+          "medianMs": 0.27155,
+          "medianPercent": 55.719708628295884,
+          "p95Ms": 0.5177050000000002,
+          "p95Percent": 102.31121914586674
+        },
+        "GPU/VolCloudReconstruction": {
+          "meanMs": -0.0005879999999999982,
+          "meanPercent": -1.4077425842131683,
+          "medianMs": 0.00010000000000000286,
+          "medianPercent": 0.24449877750611948,
+          "p95Ms": -0.004004999999999995,
+          "p95Percent": -8.705575480925976
+        },
+        "GPU/VolCloudComposeOverScene": {
+          "meanMs": 0.01960999999999999,
+          "meanPercent": 23.84600418308282,
+          "medianMs": 0.0010000000000000009,
+          "medianPercent": 1.221001221001222,
+          "p95Ms": 0.24784999999999996,
+          "p95Percent": 295.05952380952374
+        },
+        "sumNamedCloudScopes": {
+          "meanMs": 0.7718296666666666,
+          "meanPercent": 111.52216558724129,
+          "medianMs": 0.69405,
+          "medianPercent": 102.2918201915991,
+          "p95Ms": 0.9711700000000001,
+          "p95Percent": 138.97383427659682
+        }
+      },
+      "finalAuditFrameStatistics": {
+        "frameTimeMeanMs": 0.9282184651130478,
+        "frameTimeMeanPercent": 4.403712425960038,
+        "frameTimeP95Ms": 0.9936981201171875,
+        "frameTimeP95Percent": 4.483954180671206
+      }
+    },
+    "limitations": [
+      "One native run followed by one candidate run; no repeated or order-balanced statistical benchmark and no confidence interval.",
+      "Runs use Editor -game offscreen rendering, not the packaged visible desktop application.",
+      "Only the final 300 of the first 600 captured frames are analyzed; this removes much startup work but cannot prove all shaders, caches or periodic passes were equally warm.",
+      "Weather is pre-settled and cloud motion frozen to isolate shape cost; this does not measure animated production transitions.",
+      "Named GPU cloud scope times include the scopes UE records; their sum is work accounting and may overlap asynchronous GPU activity, so it is not an independent critical-path GPU duration.",
+      "Audit frameTimeMeanMs/P95 cover the application audit sampling interval, which differs from the final-300-frame CSV window.",
+      "GPU timings and frame interval changes can include unrelated system activity and differences in cloud shadows, reflections or scene lighting caused by cloud shape."
+    ]
+  },
+  "editorBuild": {
+    "result": "Succeeded",
+    "source": ".runtime/ue-cloud-ab/build-final.log"
+  },
+  "regressionLimitation": {
+    "assertion": "alley-clear has inactive wind geometry or materials",
+    "expectedWindComponents": 126,
+    "evaluatedWindComponents": 123,
+    "reproducedOnNativeControl": true,
+    "cloudFixChangesAssertion": false,
+    "nativeEvidence": ".runtime/ue-cloud-ab/final/baseline-before.json",
+    "candidateEvidence": ".runtime/ue-cloud-ab/final/cells.json"
+  },
+  "preview": {
+    "running": true,
+    "processId": 16092,
+    "sameOriginalArguments": true,
+    "command": "UnrealEditor.exe OutOfWindow.uproject /Game/Maps/Alley -game -windowed -ResX=1280 -ResY=820 -NoSplash",
+    "codeBuiltBeforePreviewStart": true,
+    "currentLogHasShaderFallback": false
+  },
+  "limitations": [
+    "The roof opening shows a cloud base and volumetric shading; it does not establish that a complete cumulonimbus tower/anvil silhouette is visible from this narrow camera.",
+    "This is a stylized procedural storm morphology, not a meteorological cloud simulation or a reconstruction of the real cloud position.",
+    "Screenshot luminance metrics use display RGB, not scene HDR radiance. Depth-mask erosion excludes roof/frame edges; rain glass remains in the rendered sky view.",
+    "Early pilot captures with shader compilation fallback, unconverged weather, or uninitialized no-offset world coordinates were discarded.",
+    "GPU results are one sequential native/candidate pair with frozen clouds; no confidence interval or long-run animated performance claim.",
+    "Full regression is not green because the original 123/126 wind assertion remains unresolved."
+  ],
+  "sourceSha256": {
+    "unreal\\OutOfWindow\\Source\\OutOfWindow\\WindowDirector.cpp": "a9077e82678832551e06dfe1e96519fb6260302db63cf6e41cd8b18355c45d4e",
+    "unreal\\Scripts\\build_storm_clouds.py": "c4664604a7207ed2ea33b542e622b12812301effd29b4c3a2a8c12076eba3516",
+    "unreal\\OutOfWindow\\Content\\Weather\\M_OOW_StormCells_v2.uasset": "9c0fcb190abfbc081bfac8b9ed9d1cf9505f29988fa715ed9f5f3a4693ecc800",
+    "unreal\\OutOfWindow\\Content\\Weather\\MI_OOW_StormCells_v2.uasset": "aacb4e51b320b3df9ecbee5cf0949e92f400bc453c937c0767a3bbbd94809eaa"
+  },
+  "materialGeneratorReuse": {
+    "passed": true,
+    "source": ".runtime/ue-cloud-ab/reuse.log",
+    "assetChanges": false
+  },
+  "supersededBy": "alley-storm-details-verification.json"
+}
