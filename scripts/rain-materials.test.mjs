@@ -4,6 +4,36 @@ import * as THREE from 'three';
 import { calibrateBistroMaterial } from '../src/asset-materials.js';
 import { RainResponse } from '../src/rain-response.js';
 
+test('awning motion fixes the canopy and shares its hem deformation with shadows', () => {
+  const response = new RainResponse();
+  const geometry = new THREE.BufferGeometry();
+  geometry.setAttribute('position', new THREE.Float32BufferAttribute([
+    0, 0, 0, 1, .11, 0, 0, .22, 0, 1, 1, 0,
+  ], 3));
+  const material = new THREE.MeshStandardMaterial();
+  const mesh = new THREE.Mesh(geometry, material);
+  mesh.updateMatrixWorld();
+  response.attachMotion(mesh, 'awning');
+  const weights = mesh.geometry.getAttribute('rwMotion');
+  assert.equal(weights.getX(0), 1);
+  assert.ok(Math.abs(weights.getX(1) - .25) < 1e-6);
+  assert.ok(weights.getX(2) < 1e-12);
+  assert.equal(weights.getX(3), 0);
+  const surface = { ...THREE.ShaderLib.standard, uniforms: {} };
+  const shadow = { ...THREE.ShaderLib.depth, uniforms: {} };
+  material.onBeforeCompile(surface);
+  mesh.customDepthMaterial.onBeforeCompile(shadow);
+  const motion = shader => shader.vertexShader.split('// Displacements')[0];
+  assert.equal(motion(surface), motion(shadow));
+  const cloth = surface.vertexShader.match(/if\(cloth\) \{([\s\S]*?)\n \}/)[1];
+  assert.doesNotMatch(cloth.replace(/\/\/[^\n]*/g, ''), /impact|fract\(|rwRain/);
+  mesh.geometry.dispose(); geometry.dispose(); material.dispose();
+  mesh.customDepthMaterial.dispose();
+  response.reflector.getRenderTarget().dispose();
+  response.reflector.geometry.dispose(); response.reflector.material.dispose();
+  response.neutral.dispose();
+});
+
 test('different rain shader variants cannot share a material program cache entry', () => {
   const response = new RainResponse();
   const programs = new Map();

@@ -188,13 +188,101 @@ bool FWindowFrameTest::RunTest(const FString& Parameters)
                 {
                     const FVector4f PackedNormal = Vertices.VertexTangentZ(Vertex);
                     const FVector3f Normal(PackedNormal.X, PackedNormal.Y, PackedNormal.Z);
-                    if (!(FVector3f::DotProduct(FaceNormal, Normal) > .99f)) InvalidTriangle = Index / 3;
+                    const FVector4f PackedTangent = Vertices.VertexTangentX(Vertex);
+                    const FVector3f Tangent(PackedTangent.X, PackedTangent.Y, PackedTangent.Z);
+                    const FVector2f UV = Vertices.GetVertexUV(Vertex, 0);
+                    // Analytic rounded normals differ from their chord's face
+                    // normal by at most half of one 22.5-degree arc segment.
+                    if (Positions.VertexPosition(Vertex).ContainsNaN() || Normal.ContainsNaN() || Tangent.ContainsNaN()
+                        || !FMath::IsFinite(UV.X) || !FMath::IsFinite(UV.Y)
+                        || !FMath::IsNearlyEqual(Normal.SizeSquared(), 1.f, .025f)
+                        || !FMath::IsNearlyEqual(Tangent.SizeSquared(), 1.f, .025f)
+                        || FMath::Abs(FVector3f::DotProduct(Normal, Tangent)) > .025f
+                        || !FMath::IsNearlyEqual(FMath::Abs(PackedNormal.W), 1.f, .01f)
+                        || !(FVector3f::DotProduct(FaceNormal, Normal.GetSafeNormal()) > .97f))
+                        InvalidTriangle = Index / 3;
                 }
                 if (InvalidTriangle != INDEX_NONE) break;
             }
-            TestTrue(FString::Printf(TEXT("%s rendered winding matches every stored normal (first invalid triangle: %d)"),
+            TestTrue(FString::Printf(TEXT("%s rendered winding and finite tangent basis agree with its surface (first invalid triangle: %d)"),
                 *Part->GetName(), InvalidTriangle), InvalidTriangle == INDEX_NONE);
         }
+    };
+    auto CheckRoundedProfiles = [&]()
+    {
+        const FStaticMeshRenderData* Data = Component->GetStaticMesh()->GetRenderData();
+        if (!Data || Data->LODResources.IsEmpty()) return;
+        const FStaticMeshLODResources& LOD = Data->LODResources[0];
+        const auto& Positions = LOD.VertexBuffers.PositionVertexBuffer;
+        const auto& Vertices = LOD.VertexBuffers.StaticMeshVertexBuffer;
+        auto PositionKey = [](const FVector3f& Point)
+        {
+            // Weld render instances by position, independent of UV seams and
+            // the intentionally hard normals on each piece's flat end.
+            return FIntVector(FMath::RoundToInt(Point.X * 10000), FMath::RoundToInt(Point.Y * 10000),
+                FMath::RoundToInt(Point.Z * 10000));
+        };
+        struct FSharedCorner
+        {
+            FVector3f Normal = FVector3f::ZeroVector, Tangent = FVector3f::ZeroVector;
+            int32 Count = 0;
+            bool bCurved = false;
+        };
+        TMap<FIntVector, FSharedCorner> AlongY, AlongZ;
+        bool bContinuous = true;
+        for (uint32 Vertex = 0; Vertex < Vertices.GetNumVertices(); ++Vertex)
+        {
+            const FVector4f PackedNormal = Vertices.VertexTangentZ(Vertex);
+            const FVector4f PackedTangent = Vertices.VertexTangentX(Vertex);
+            const FVector3f Normal = FVector3f(PackedNormal.X, PackedNormal.Y, PackedNormal.Z).GetSafeNormal();
+            const FVector3f Tangent = FVector3f(PackedTangent.X, PackedTangent.Y, PackedTangent.Z).GetSafeNormal();
+            const FVector3f Along = Vertices.VertexTangentY(Vertex).GetSafeNormal();
+            const int32 Axis = Along.Y > .99f ? 1 : Along.Z > .99f ? 2 : INDEX_NONE;
+            // End-grain caps have a cross-piece bitangent; their hard seam is
+            // intentional and must not be confused with an arc discontinuity.
+            if (Axis == INDEX_NONE || FMath::Abs(Normal[Axis]) > .01f) continue;
+            FSharedCorner& Shared = (Axis == 1 ? AlongY : AlongZ).FindOrAdd(PositionKey(Positions.VertexPosition(Vertex)));
+            if (Shared.Count == 0)
+            {
+                Shared.Normal = Normal;
+                Shared.Tangent = Tangent;
+            }
+            else
+                bContinuous &= FVector3f::DotProduct(Shared.Normal, Normal) > .9999f
+                    && FVector3f::DotProduct(Shared.Tangent, Tangent) > .9999f;
+            ++Shared.Count;
+            Shared.bCurved |= FMath::Abs(Normal[(Axis + 1) % 3]) > .1f
+                && FMath::Abs(Normal[(Axis + 2) % 3]) > .1f;
+        }
+        int32 CurvedSharedPositions = 0;
+        for (const auto* SharedPositions : {&AlongY, &AlongZ})
+            for (const auto& Entry : *SharedPositions)
+                CurvedSharedPositions += Entry.Value.bCurved && Entry.Value.Count > 1 ? 1 : 0;
+        TestTrue(TEXT("Rounded profiles have shared intermediate arc corners"), CurvedSharedPositions > 0);
+        TestTrue(TEXT("Rounded strips share continuous normals and tangents at coincident corners"), bContinuous);
+
+        TMap<FIntVector, uint32> WeldedVertices;
+        TMap<uint64, int32> EdgeCounts;
+        const FIndexArrayView Indices = LOD.IndexBuffer.GetArrayView();
+        for (int32 Index = 0; Index + 2 < Indices.Num(); Index += 3)
+        {
+            uint32 Triangle[3];
+            for (int32 Corner = 0; Corner < 3; ++Corner)
+            {
+                const FIntVector Key = PositionKey(Positions.VertexPosition(Indices[Index + Corner]));
+                const uint32 NewIndex = WeldedVertices.Num();
+                Triangle[Corner] = WeldedVertices.FindOrAdd(Key, NewIndex);
+            }
+            for (int32 Corner = 0; Corner < 3; ++Corner)
+            {
+                const uint32 A = Triangle[Corner], B = Triangle[(Corner + 1) % 3];
+                const uint64 Key = (uint64(FMath::Min(A, B)) << 32) | FMath::Max(A, B);
+                ++EdgeCounts.FindOrAdd(Key);
+            }
+        }
+        bool bClosed = !EdgeCounts.IsEmpty();
+        for (const auto& Edge : EdgeCounts) bClosed &= Edge.Value == 2;
+        TestTrue(TEXT("Every rounded extrusion remains closed after welding render seams"), bClosed);
     };
     auto CheckDepth = [&]()
     {
@@ -210,6 +298,7 @@ bool FWindowFrameTest::RunTest(const FString& Parameters)
     };
     CheckDepth();
     CheckWinding();
+    CheckRoundedProfiles();
     UStaticMesh* WideMesh = Component->GetStaticMesh();
     UStaticMesh* WideGlassMesh = RainGlass->GetStaticMesh();
     const FBoxSphereBounds WideGlassBounds = WideGlassMesh->GetBounds();
@@ -290,6 +379,7 @@ bool FWindowFrameTest::RunTest(const FString& Parameters)
     TestEqual(TEXT("Projection changes preserve rain intensity"), RainMaterial->K2_GetScalarParameterValue(TEXT("RainIntensity")), .6f);
     CheckDepth();
     CheckWinding();
+    CheckRoundedProfiles();
 
     CheckRoom();
     Frame->SetDaylight(1);
@@ -352,6 +442,7 @@ bool FWindowFrameTest::RunTest(const FString& Parameters)
     TestTrue(TEXT("Frame remains ready after resizing and UI toggles"), Frame->IsReady());
     CheckRoom();
     CheckWinding();
+    CheckRoundedProfiles();
     World->DestroyWorld(false);
     return true;
 }

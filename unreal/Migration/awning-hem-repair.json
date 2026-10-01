@@ -1,0 +1,124 @@
+{
+  "recipe": "v17",
+  "frequencyHz": 2.0,
+  "movingHeightFraction": 0.22,
+  "maxDisplacementCm": 6.0,
+  "rainImpulses": false,
+  "slots": [
+    {
+      "actor": "OOW_01309_paris_bistroawning_7_1",
+      "slot": 0,
+      "material": "/Game/Materials/OOW/Instances/MI_fabric_awning__v17_b8aa1d7724.MI_fabric_awning__v17_b8aa1d7724"
+    },
+    {
+      "actor": "OOW_01312_paris_bistroawning_6_1_1",
+      "slot": 0,
+      "material": "/Game/Materials/OOW/Instances/MI_fabric_awning__v17_b8aa1d7724.MI_fabric_awning__v17_b8aa1d7724"
+    },
+    {
+      "actor": "OOW_01314_paris_bistroawning_1_1_1",
+      "slot": 0,
+      "material": "/Game/Materials/OOW/Instances/MI_fabric_awning__v17_b8aa1d7724.MI_fabric_awning__v17_b8aa1d7724"
+    },
+    {
+      "actor": "OOW_01316_paris_bistroawning_2_1_1",
+      "slot": 0,
+      "material": "/Game/Materials/OOW/Instances/MI_fabric_awning__v17_b8aa1d7724.MI_fabric_awning__v17_b8aa1d7724"
+    },
+    {
+      "actor": "OOW_01318_paris_bistroawning_3_1_1",
+      "slot": 0,
+      "material": "/Game/Materials/OOW/Instances/MI_fabric_awning__v17_b8aa1d7724.MI_fabric_awning__v17_b8aa1d7724"
+    },
+    {
+      "actor": "OOW_01320_paris_bistroawning_4_1_1",
+      "slot": 0,
+      "material": "/Game/Materials/OOW/Instances/MI_fabric_awning__v17_b8aa1d7724.MI_fabric_awning__v17_b8aa1d7724"
+    },
+    {
+      "actor": "OOW_01321_Paris_bistroAwning_02A",
+      "slot": 0,
+      "material": "/Game/Materials/OOW/Instances/MI_fabric_awning__v17_d3400cb7fc.MI_fabric_awning__v17_d3400cb7fc"
+    },
+    {
+      "actor": "OOW_01322_Paris_BistroAwning_02B",
+      "slot": 0,
+      "material": "/Game/Materials/OOW/Instances/MI_fabric_awning__v17_d3400cb7fc.MI_fabric_awning__v17_d3400cb7fc"
+    },
+    {
+      "actor": "OOW_01323_Paris_BistroAwning_02B1",
+      "slot": 0,
+      "material": "/Game/Materials/OOW/Instances/MI_fabric_awning__v17_d3400cb7fc.MI_fabric_awning__v17_d3400cb7fc"
+    },
+    {
+      "actor": "OOW_01324_Paris_BistroAwning_02B2",
+      "slot": 0,
+      "material": "/Game/Materials/OOW/Instances/MI_fabric_awning__v17_d3400cb7fc.MI_fabric_awning__v17_d3400cb7fc"
+    },
+    {
+      "actor": "OOW_01325_Paris_BistroAwning_02B3",
+      "slot": 0,
+      "material": "/Game/Materials/OOW/Instances/MI_fabric_awning__v17_d3400cb7fc.MI_fabric_awning__v17_d3400cb7fc"
+    },
+    {
+      "actor": "OOW_01326_Paris_BistroAwning_02B4",
+      "slot": 0,
+      "material": "/Game/Materials/OOW/Instances/MI_fabric_awning__v17_d3400cb7fc.MI_fabric_awning__v17_d3400cb7fc"
+    },
+    {
+      "actor": "OOW_01327_Paris_BistroAwning_02B5",
+      "slot": 0,
+      "material": "/Game/Materials/OOW/Instances/MI_fabric_awning__v17_d3400cb7fc.MI_fabric_awning__v17_d3400cb7fc"
+    },
+    {
+      "actor": "OOW_01328_Paris_bistroAwning_02A1",
+      "slot": 0,
+      "material": "/Game/Materials/OOW/Instances/MI_fabric_awning__v17_d3400cb7fc.MI_fabric_awning__v17_d3400cb7fc"
+    },
+    {
+      "actor": "OOW_01329_Paris_bistroAwning_02A2",
+      "slot": 0,
+      "material": "/Game/Materials/OOW/Instances/MI_fabric_awning__v17_d3400cb7fc.MI_fabric_awning__v17_d3400cb7fc"
+    },
+    {
+      "actor": "OOW_01330_Paris_BistroAwning_02B6",
+      "slot": 0,
+      "material": "/Game/Materials/OOW/Instances/MI_fabric_awning__v17_d3400cb7fc.MI_fabric_awning__v17_d3400cb7fc"
+    },
+    {
+      "actor": "OOW_01331_Paris_BistroAwning_02B7",
+      "slot": 0,
+      "material": "/Game/Materials/OOW/Instances/MI_fabric_awning__v17_d3400cb7fc.MI_fabric_awning__v17_d3400cb7fc"
+    },
+    {
+      "actor": "OOW_01332_Paris_BistroAwning_02B8",
+      "slot": 0,
+      "material": "/Game/Materials/OOW/Instances/MI_fabric_awning__v17_d3400cb7fc.MI_fabric_awning__v17_d3400cb7fc"
+    },
+    {
+      "actor": "OOW_00517_paris_building_04_16",
+      "slot": 0,
+      "material": "/Game/Materials/OOW/Instances/MI_fabric_awning__v17_19eda37693.MI_fabric_awning__v17_19eda37693"
+    },
+    {
+      "actor": "OOW_00598_paris_building_05_63",
+      "slot": 0,
+      "material": "/Game/Materials/OOW/Instances/MI_fabric_awning__v17_8e453b14b2.MI_fabric_awning__v17_8e453b14b2"
+    },
+    {
+      "actor": "OOW_00682_paris_building_05_63__2_",
+      "slot": 0,
+      "material": "/Game/Materials/OOW/Instances/MI_fabric_awning__v17_8e453b14b2.MI_fabric_awning__v17_8e453b14b2"
+    },
+    {
+      "actor": "OOW_00788_paris_building_10_18",
+      "slot": 0,
+      "material": "/Game/Materials/OOW/Instances/MI_fabric_awning__v17_8e453b14b2.MI_fabric_awning__v17_8e453b14b2"
+    },
+    {
+      "actor": "OOW_00809_paris_building_10_18__2_",
+      "slot": 0,
+      "material": "/Game/Materials/OOW/Instances/MI_fabric_awning__v17_8e453b14b2.MI_fabric_awning__v17_8e453b14b2"
+    }
+  ]
+}

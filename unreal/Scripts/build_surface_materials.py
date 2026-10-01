@@ -10,7 +10,7 @@ Native Time drives water/wind. Plain Python --self-test checks semantic routing.
 OOWWindowInterior actors use UV1 for room images and constant UV2=(seed,flag):
 2=hero aperture, 1=detailed room, .5=basic room, 0=legacy fallback, -1=frame.
 Tagged interiors use v16 calibrated baked cubemaps and geometric room openings.
-Wind surfaces use v8, ground/stone use v9, other windows retain v3 and other surfaces retain v2.
+Awning hems use v17, foliage uses v8, ground/stone uses v9, other windows retain v3 and other surfaces retain v2.
 """
 import hashlib
 import json
@@ -99,7 +99,9 @@ def asset_name(prefix, identity):
 
 
 def recipe_for(profile, interior=False):
-    if profile[1] in ('foliage', 'awning'):
+    if profile[1] == 'awning':
+        return 'v17'
+    if profile[1] == 'foliage':
         return 'v8'
     if profile[0] in ('ground', 'stone'):
         return 'v9'
@@ -547,8 +549,22 @@ def weather_master(base, profile, interior=False):
             height = g.node(u.MaterialExpressionScalarParameter, parameter_name='WindHeight',
                             default_value=100., use_custom_primitive_data=True, primitive_data_index=1)
             cloth = wind == 'awning'
+            # Keep the canopy taut. Only its bottom 22% (the hanging valance)
+            # bends, with a smooth attachment and no repeating rain impulses.
+            cloth_code = (
+                'float fraction=saturate((P.z-MinZ)/max(Height,.01)); '
+                'float hem=1.-smoothstep(0.,.22,fraction); hem*=hem; '
+                'float wind=sqrt(clamp(W/4.,0.,2.5)); '
+                'float phase=dot(P.xy,float2(.006,.004)); '
+                'float envelope=.85+.15*sin(T*.73+phase*.2); '
+                'float swing=sin(T*12.566371+phase)*envelope; '
+                'float ripple=sin(T*15.079645+phase*2.4)*.16; '
+                'float2 direction=D.xy/max(length(D.xy),.001); '
+                'float2 horizontal=direction*(swing+ripple)*wind*2.5; '
+                'float vertical=sin(T*12.566371+phase+.6)*wind*.35; '
+                'return O+float3(horizontal,vertical)*hem;')
             offset = g.custom(
-                'float height=max(Height,.01); float fraction=saturate((P.z-MinZ)/height); '
+                cloth_code if cloth else 'float height=max(Height,.01); float fraction=saturate((P.z-MinZ)/height); '
                 'float anchor=%s; float amplitude=%s; '
                 'float wind=sqrt(clamp(W/4.,0.,2.5)); float phase=dot(P.xy,float2(.0131,.0087)); '
                 'float gust=.65+.35*sin(T*.73+phase*.2); '
@@ -559,16 +575,15 @@ def weather_master(base, profile, interior=False):
                 'float2 horizontal=direction*(sway+flutter*.45)*wind*amplitude; '
                 'float vertical=flutter*wind*%.3f+impact*%.3f; '
                 'return O+float3(horizontal,vertical)*anchor;'
-                % ('pow(1.-fraction,1.5)' if cloth else 'pow(fraction,1.25)',
-                   '11.5' if cloth else 'clamp(height*.055,4.5,32.)',
-                   4.5 if cloth else 2., 5.5 if cloth else 2.5),
+                % ('pow(fraction,1.25)', 'clamp(height*.055,4.5,32.)', 2., 2.5),
                 {'P': position, 'MinZ': minimum, 'Height': height, 'T': g.node(u.MaterialExpressionTime),
                  'W': g.scalar('WindStrength', 8. / 3.6), 'Rain': g.scalar('RainIntensity'),
-                 'D': direction, 'O': old}, True, 'OOW v8 anchored gusts, leaf flutter and cloth rain impacts')
+                 'D': direction, 'O': old}, True,
+                'OOW v17 continuous 2 Hz valance swing' if cloth else 'OOW v8 anchored foliage gusts and leaf flutter')
             g.output(offset, p.MP_WORLD_POSITION_OFFSET)
             # Source motion is in metres; UE WPO is in centimetres. These cover
-            # the worst-case gust plus rain impulse and pad Nanite cluster bounds.
-            material.set_editor_property('max_world_position_offset_displacement', 24.0 if cloth else 60.0)
+            # the worst-case hem swing or foliage gust and pad Nanite bounds.
+            material.set_editor_property('max_world_position_offset_displacement', 6.0 if cloth else 60.0)
         ensure_mesh_usage(material)
         mel.recompile_material(material)
     else:
@@ -805,7 +820,7 @@ def self_test():
     assert recipe_for(classify('MASTER_Focus_Glass')) == 'v3'
     assert recipe_for(classify('modular_urban_apartments_facade_glass')) == 'v3'
     assert recipe_for(classify('MASTER_Focus_Glass'), interior=True) == 'v16'
-    assert recipe_for(classify('MASTER_Awning_Fabric_Cyan', 'awning')) == 'v8'
+    assert recipe_for(classify('MASTER_Awning_Fabric_Cyan', 'awning')) == 'v17'
     assert recipe_for(classify('Foliage_Leaves', 'foliage')) == 'v8'
     assert recipe_for(classify('Foliage_Leaves')) == 'v2'
     for name in ('Pavement_Cobble_Leaves_BLENDSHADER', 'Pavement_Cobblestone_Wet_Leaves_BLENDSHADER'):
@@ -859,7 +874,7 @@ def self_test():
         assert 0 < darken <= 1 and 0 < scale <= 1 and 0 < floor < 1
         for dry in (0., .07, .3, .9):
             assert min(dry, max(floor, dry * scale)) <= dry
-    print('OOW v9 ground/stone, v2 other surfaces/v3 windows/v16 interiors/v8 wind routing, provenance/idempotency guards and wetness bounds passed')
+    print('OOW v9 ground/stone, v2 surfaces/v3 windows/v16 interiors/v8 foliage/v17 awning routing, provenance/idempotency guards and wetness bounds passed')
 
 
 if __name__ == '__main__':

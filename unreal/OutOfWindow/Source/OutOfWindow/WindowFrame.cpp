@@ -16,7 +16,7 @@ namespace
 {
 TAutoConsoleVariable<float> FrameRoomLumens(TEXT("oow.FrameRoomLumens"), 30.f,
     TEXT("Night indoor lamp lumens, calibrated to scene exposure; 0 disables the lamp."));
-// Closed chamfered joinery, in camera-local centimetres (X forward, Y right).
+// Closed rounded extrusions, in camera-local centimetres (X forward, Y right).
 // Meshes are rebuilt only when the camera projection changes.
 struct FJoinery
 {
@@ -36,32 +36,45 @@ struct FJoinery
         }
     }
 
-    void Face(TArray<FVector3f> Points, const FVector3f& Outward, int32 Material, int32 GrainAxis)
+    void Face(TArray<FVector3f> Points, const FVector3f& Outward, int32 Material, int32 GrainAxis,
+        TArray<FVector3f> CornerNormals = {}, TArray<FVector2f> CornerUVs = {})
     {
+        check(CornerNormals.IsEmpty() || CornerNormals.Num() == Points.Num());
+        check(CornerUVs.IsEmpty() || CornerUVs.Num() == Points.Num());
         FVector3f Normal = FVector3f::CrossProduct(Points[1] - Points[0], Points[2] - Points[0]).GetSafeNormal();
         if (FVector3f::DotProduct(Normal, Outward) < 0)
         {
-            Swap(Points[0], Points[2]);
+            // Reversing only three corners works for triangles/quads, but
+            // would cross the perimeter of a rounded extrusion's end cap.
+            for (int32 Index = 0; Index < Points.Num() / 2; ++Index)
+            {
+                const int32 Other = Points.Num() - 1 - Index;
+                Swap(Points[Index], Points[Other]);
+                if (!CornerNormals.IsEmpty()) Swap(CornerNormals[Index], CornerNormals[Other]);
+                if (!CornerUVs.IsEmpty()) Swap(CornerUVs[Index], CornerUVs[Other]);
+            }
             Normal *= -1;
         }
-        // U across / V along each piece of timber, including the sill end grain.
-        FVector3f Along = FVector3f::ZeroVector; Along[GrainAxis] = 1;
-        if (FMath::Abs(FVector3f::DotProduct(Along, Normal)) > .95f)
-            Along = FVector3f(1, 0, 0);
-        const FVector3f Tangent = FVector3f::CrossProduct(Along, Normal).GetSafeNormal();
-        const FVector3f Bitangent = FVector3f::CrossProduct(Normal, Tangent);
         TArray<FVertexInstanceID> Corners;
-        for (const FVector3f& Point : Points)
+        for (int32 Index = 0; Index < Points.Num(); ++Index)
         {
+            const FVector3f& Point = Points[Index];
+            const FVector3f VertexNormal = CornerNormals.IsEmpty() ? Normal : CornerNormals[Index];
+            // U across / V along each extrusion, including its flat end grain.
+            FVector3f Along = FVector3f::ZeroVector; Along[GrainAxis] = 1;
+            if (FMath::Abs(FVector3f::DotProduct(Along, VertexNormal)) > .95f)
+                Along = FVector3f(1, 0, 0);
+            const FVector3f Tangent = FVector3f::CrossProduct(Along, VertexNormal).GetSafeNormal();
+            const FVector3f Bitangent = FVector3f::CrossProduct(VertexNormal, Tangent);
             const FVertexID Vertex = Mesh.CreateVertex();
             Attributes.GetVertexPositions()[Vertex] = Point;
             const FVertexInstanceID Instance = Mesh.CreateVertexInstance(Vertex);
-            Attributes.GetVertexInstanceNormals()[Instance] = Normal;
+            Attributes.GetVertexInstanceNormals()[Instance] = VertexNormal;
             Attributes.GetVertexInstanceTangents()[Instance] = Tangent;
             Attributes.GetVertexInstanceBinormalSigns()[Instance] = 1;
             Attributes.GetVertexInstanceColors()[Instance] = FVector4f(1, 1, 1, 1);
-            Attributes.GetVertexInstanceUVs().Set(Instance, 0, FVector2f(
-                FVector3f::DotProduct(Point, Tangent), FVector3f::DotProduct(Point, Bitangent)));
+            Attributes.GetVertexInstanceUVs().Set(Instance, 0, CornerUVs.IsEmpty() ? FVector2f(
+                FVector3f::DotProduct(Point, Tangent), FVector3f::DotProduct(Point, Bitangent)) : CornerUVs[Index]);
             Corners.Add(Instance);
         }
         for (int32 I = 1; I < Corners.Num() - 1; ++I)
@@ -76,42 +89,61 @@ struct FJoinery
     void Box(FVector3f Centre, FVector3f Half, float Bevel, int32 Material = 0)
     {
         const int32 GrainAxis = Half.Y > Half.Z ? 1 : 2;
+        const int32 A = (GrainAxis + 1) % 3, B = (GrainAxis + 2) % 3;
         const float R = FMath::Min(Bevel, Half.GetMin() * .8f);
         const FVector3f Core = Half - FVector3f(R);
-        // Six planar faces and the twelve long bevels.
-        for (int32 Axis = 0; Axis < 3; ++Axis)
+        constexpr int32 ArcSegments = 4;
+        TArray<FVector3f> Section, Normals;
+        TArray<float> Distances;
+        float Perimeter = 0;
+        // A rounded rectangle extruded along the piece's length. Shared arc
+        // endpoints have the same analytic normal and tangent on both strips.
+        for (int32 Corner = 0; Corner < 4; ++Corner)
         {
-            const int32 B = (Axis + 1) % 3, C = (Axis + 2) % 3;
-            for (float Sign : {-1.f, 1.f})
+            const float SA = Corner == 0 || Corner == 3 ? 1.f : -1.f;
+            const float SB = Corner < 2 ? 1.f : -1.f;
+            for (int32 Step = 0; Step <= ArcSegments; ++Step)
             {
-                FVector3f N = FVector3f::ZeroVector; N[Axis] = Sign;
-                TArray<FVector3f> FacePoints;
-                for (const FVector2f& Corner : {FVector2f(-1,-1), FVector2f(1,-1), FVector2f(1,1), FVector2f(-1,1)})
-                {
-                    FVector3f P = Centre; P[Axis] += Sign * Half[Axis];
-                    P[B] += Corner.X * Core[B]; P[C] += Corner.Y * Core[C];
-                    FacePoints.Add(P);
-                }
-                Face(FacePoints, N, Material, GrainAxis);
+                const float Angle = (Corner + float(Step) / ArcSegments) * HALF_PI;
+                float Sin, Cos;
+                FMath::SinCos(&Sin, &Cos, Angle);
+                // Exact cardinal endpoints keep the flats and bounds exact.
+                if (FMath::Abs(Sin) < 1.e-6f) Sin = 0;
+                if (FMath::Abs(Cos) < 1.e-6f) Cos = 0;
+                FVector3f N = FVector3f::ZeroVector; N[A] = Cos; N[B] = Sin;
+                FVector3f P = Centre; P[A] += SA * Core[A] + R * Cos; P[B] += SB * Core[B] + R * Sin;
+                Section.Add(P);
+                Normals.Add(N.GetSafeNormal());
+                Distances.Add(Perimeter + R * HALF_PI * Step / ArcSegments);
             }
-            for (float SB : {-1.f, 1.f}) for (float SC : {-1.f, 1.f})
-            {
-                FVector3f A = Centre, Bp = Centre, Cpoint = Centre, D = Centre;
-                A[Axis] -= Core[Axis]; Bp[Axis] += Core[Axis];
-                Cpoint[Axis] += Core[Axis]; D[Axis] -= Core[Axis];
-                A[B] += SB * Half[B]; Bp[B] += SB * Half[B];
-                A[C] += SC * Core[C]; Bp[C] += SC * Core[C];
-                Cpoint[B] += SB * Core[B]; D[B] += SB * Core[B];
-                Cpoint[C] += SC * Half[C]; D[C] += SC * Half[C];
-                FVector3f N = FVector3f::ZeroVector; N[B] = SB; N[C] = SC;
-                Face({A, Bp, Cpoint, D}, N, Material, GrainAxis);
-            }
+            Perimeter += R * HALF_PI + 2 * Core[Corner % 2 == 0 ? A : B];
         }
-        // Eight triangular corners close the chamfers.
-        for (float X : {-1.f, 1.f}) for (float Y : {-1.f, 1.f}) for (float Z : {-1.f, 1.f})
+        for (int32 Index = 0; Index < Section.Num(); ++Index)
         {
-            const FVector3f N(X, Y, Z), P = Centre + Core * N;
-            Face({P + FVector3f(X * R,0,0), P + FVector3f(0,Y * R,0), P + FVector3f(0,0,Z * R)}, N, Material, GrainAxis);
+            const int32 Next = (Index + 1) % Section.Num();
+            FVector3f P0 = Section[Index], P1 = Section[Index], P2 = Section[Next], P3 = Section[Next];
+            P0[GrainAxis] -= Half[GrainAxis]; P1[GrainAxis] += Half[GrainAxis];
+            P2[GrainAxis] += Half[GrainAxis]; P3[GrainAxis] -= Half[GrainAxis];
+            const float U0 = Distances[Index], U1 = Next == 0 ? Perimeter : Distances[Next];
+            // Arc length gives centimetre UVs that stay continuous as the
+            // tangent rotates; the only wrap lies on the upper/back flat.
+            Face({P0, P1, P2, P3}, Normals[Index] + Normals[Next], Material, GrainAxis,
+                {Normals[Index], Normals[Index], Normals[Next], Normals[Next]},
+                {{U0, P0[GrainAxis]}, {U0, P1[GrainAxis]}, {U1, P2[GrainAxis]}, {U1, P3[GrainAxis]}});
+        }
+        // Flat closed ends retain the physical butt joints between pieces.
+        for (float Sign : {-1.f, 1.f})
+        {
+            FVector3f CapCentre = Centre; CapCentre[GrainAxis] += Sign * Half[GrainAxis];
+            FVector3f N = FVector3f::ZeroVector; N[GrainAxis] = Sign;
+            for (int32 Index = 0; Index < Section.Num(); ++Index)
+            {
+                FVector3f P0 = Section[Index], P1 = Section[(Index + 1) % Section.Num()];
+                P0[GrainAxis] += Sign * Half[GrainAxis]; P1[GrainAxis] += Sign * Half[GrainAxis];
+                // A centre fan avoids tiny near-collinear triangles on the
+                // small seals, while keeping the entire end in one plane.
+                Face({CapCentre, P0, P1}, N, Material, GrainAxis);
+            }
         }
     }
 

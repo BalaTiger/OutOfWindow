@@ -38,6 +38,15 @@ vec3 rainMotion(vec3 p) {
  vec3 delta=vec3(0.0);
  delta.xz=direction*gain*(sway+flutter*.45)*wind*amplitude;
  delta.y=gain*(flutter*wind*(cloth?.045:.02)+impact*(cloth?.055:.025));
+ if(cloth) {
+   // Continuous 2 Hz motion in the hanging hem; rain adds no impact jerks.
+   float hemPhase=phase;
+   float envelope=.85+.15*sin(rwTime*.73+hemPhase*.2);
+   float swing=sin(rwTime*12.566371+hemPhase)*envelope;
+   float ripple=sin(rwTime*15.079645+hemPhase*2.4)*.16;
+   delta.xz=direction*gain*(swing+ripple)*wind*.025;
+   delta.y=gain*sin(rwTime*12.566371+hemPhase+.6)*wind*.0035;
+ }
  // Displacements are in metres, independent of asset scale and orientation.
  p+=transpose(normalMatrix)*(mat3(viewMatrix)*delta);
  return p;
@@ -319,8 +328,10 @@ export class RainResponse {
     const position=mesh.geometry.attributes.position, weights=new Float32Array(position.count*4);
     for(let i=0;i<position.count;i++) {
       const fraction=clamp((position.getY(i)-box.min.y)/height,0,1);
-      weights[i*4]=type==='awning'?Math.pow(1-fraction,1.5):Math.pow(fraction,1.25);
-      weights[i*4+1]=position.getX(i)*1.31+position.getZ(i)*.87;
+      const hem=1-THREE.MathUtils.smoothstep(fraction,0,.22);
+      weights[i*4]=type==='awning'?hem*hem:Math.pow(fraction,1.25);
+      const worldPosition=new THREE.Vector3().fromBufferAttribute(position,i).applyMatrix4(mesh.matrixWorld);
+      weights[i*4+1]=type==='awning'?worldPosition.x*.6+worldPosition.z*.4:position.getX(i)*1.31+position.getZ(i)*.87;
       weights[i*4+2]=Math.min(worldHeight,8);
       weights[i*4+3]=type==='awning'?1:0;
     }
@@ -334,7 +345,7 @@ export class RainResponse {
         shader.vertexShader=motionGLSL+shader.vertexShader;
         shader.vertexShader=shader.vertexShader.replace('#include <begin_vertex>', '#include <begin_vertex>\ntransformed=rainMotion(transformed);');
       };
-      material.customProgramCacheKey=()=>key+'-rain-motion-v2';material.needsUpdate=true;
+      material.customProgramCacheKey=()=>key+'-rain-motion-v3';material.needsUpdate=true;
     };
     (Array.isArray(mesh.material)?mesh.material:[mesh.material]).forEach(patch);
     const material=Array.isArray(mesh.material)?mesh.material[0]:mesh.material;
