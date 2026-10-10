@@ -1,0 +1,41 @@
+ M unreal/OutOfWindow/Source/OutOfWindow/OutOfWindow.Build.cs
+ M unreal/OutOfWindow/Source/OutOfWindow/Tests/WindowBirdsTest.cpp
+ M unreal/OutOfWindow/Source/OutOfWindow/Tests/WindowWeatherTest.cpp
+ M unreal/OutOfWindow/Source/OutOfWindow/WindowBirds.cpp
+ M unreal/OutOfWindow/Source/OutOfWindow/WindowBirds.h
+ M unreal/OutOfWindow/Source/OutOfWindow/WindowDirector.cpp
+ M unreal/OutOfWindow/Source/OutOfWindow/WindowDirector.h
+ M unreal/OutOfWindow/Source/OutOfWindow/WindowSkySampling.cpp
+ M unreal/OutOfWindow/Source/OutOfWindow/WindowSkySampling.h
+ M unreal/OutOfWindow/Source/OutOfWindow/WindowWeather.h
+ M unreal/Run-Unreal.ps1
+?? scripts/__pycache__/
+?? scripts/okta-v0-sweep.ps1
+?? scripts/okta-v0.py
+?? unreal/Art/CityDesign_CommercialScale04/
+?? unreal/Art/CityDesign_CurvedDistrict02/
+?? unreal/Art/CityDesign_CurvedDistrict02_Study/
+?? unreal/Art/CityDesign_Mall01/
+?? unreal/Art/CityDesign_WindowCamera05/
+?? unreal/Art/CityDesign_WindowScale03/
+?? unreal/Migration/storm-cloud-cirrus-material.json
+?? unreal/Migration/storm-cloud-layers-material.json
+?? unreal/Migration/window-clouds-macro-v8-material.json
+?? unreal/Migration/window-clouds-v7-material.json
+?? unreal/OutOfWindow/Content/Weather/MI_OOW_StormCells_v4.uasset
+?? unreal/OutOfWindow/Content/Weather/MI_OOW_StormCells_v5.uasset
+?? unreal/OutOfWindow/Content/Weather/MI_OOW_StormCells_v6.uasset
+?? unreal/OutOfWindow/Content/Weather/MI_OOW_WindowCloudsMacro_v8.uasset
+?? unreal/OutOfWindow/Content/Weather/MI_OOW_WindowClouds_v7.uasset
+?? unreal/OutOfWindow/Content/Weather/M_OOW_StormCells_v4.uasset
+?? unreal/OutOfWindow/Content/Weather/M_OOW_StormCells_v5.uasset
+?? unreal/OutOfWindow/Content/Weather/M_OOW_StormCells_v6.uasset
+?? unreal/OutOfWindow/Content/Weather/M_OOW_WindowCloudsMacro_v8.uasset
+?? unreal/OutOfWindow/Content/Weather/M_OOW_WindowClouds_v7.uasset
+?? unreal/OutOfWindow/Content/Weather/OOW_H64_Scattering_Test/
+?? unreal/OutOfWindow/Content/Weather/OOW_Houdini64_Test/
+?? unreal/OutOfWindow/Source/OutOfWindow/Tests/WindowAstronomyTest.cpp
+?? unreal/OutOfWindow/Source/OutOfWindow/WindowAstronomy.h
+?? unreal/Scripts/build_storm_cirrus.py
+?? unreal/Scripts/build_storm_layers.py
+?? unreal/Scripts/build_window_clouds.py

@@ -1,0 +1,112 @@
+{
+  "status": "PREPARED_WAITING_FOR_PARENT_CPU_SLOT_RELEASE",
+  "reference_id": "n79504",
+  "reference_confirmed_by_user": true,
+  "authorization": "User: 按方案修改。 Sentinel_f43a0a4878e4819182b061e9636a3662",
+  "source_blend": "C:/Users/zhuzi/Documents/OutOfWindow/unreal/Art/CityDesign_Composition06/Composition06_ReferenceScene.blend",
+  "source_preview": "C:/Users/zhuzi/Documents/OutOfWindow/unreal/Art/CityDesign_Composition06/preview-scene-low.png",
+  "camera_locked": true,
+  "camera_expected": {
+    "name": "Composition06_Fixed_Scene_Camera",
+    "eye_m": [
+      6,
+      -138,
+      70.5
+    ],
+    "type": "PERSP",
+    "lens_mm": 28.27022933959961,
+    "sensor_width_mm": 36,
+    "sensor_height_mm": 24,
+    "sensor_fit": "VERTICAL",
+    "shift_x": 0,
+    "shift_y": 0,
+    "vfov_deg": 46,
+    "resolution": [
+      640,
+      360
+    ],
+    "pixel_aspect": [
+      1,
+      1
+    ]
+  },
+  "road_end_y_before": 320,
+  "road_end_y_after": 900,
+  "road_strip_objects": [
+    "WB06_left_bounds",
+    "WB06_left_bounds_Outer_Walk",
+    "WB06_left_bounds_Inner_Walk",
+    "WB06_left_bounds_Lane_Line",
+    "WB06_right_bounds",
+    "WB06_right_bounds_Outer_Walk",
+    "WB06_right_bounds_Inner_Walk",
+    "WB06_right_bounds_Lane_Line"
+  ],
+  "context_translation_only": {
+    "WB06_Far_Left_Tower": [
+      24.5,
+      22,
+      0
+    ],
+    "WB06_Far_Right_Slab": [
+      -21.5,
+      -7,
+      0
+    ]
+  },
+  "lane_dashes": {
+    "world_y_stations": [
+      0,
+      100,
+      200,
+      300
+    ],
+    "world_x_lanes": [
+      -68,
+      -60,
+      82.75,
+      90.25
+    ],
+    "length_m": 8,
+    "width_m": 0.32,
+    "height_m": 0.013,
+    "bottom_z_m": 7.035
+  },
+  "trees": {
+    "world_y_stations": [
+      -30,
+      90,
+      210,
+      330
+    ],
+    "world_x_rows": [
+      -50.8,
+      73.5
+    ],
+    "height_m": 7.4,
+    "max_crown_radius_m": 1.4,
+    "ground_z_m": 7.12
+  },
+  "ground_extension_bounds": [
+    -500,
+    500,
+    800,
+    1000,
+    6.3,
+    6.9
+  ],
+  "preview": {
+    "threads": 2,
+    "resolution": [
+      640,
+      360
+    ],
+    "samples": 8,
+    "device": "CPU",
+    "one_preview": true
+  },
+  "preservation": "Keep all Camera06 source files, original City, game window frame, commercial source assets and user changes. Only eight road strips and two far-context transforms may change in new blend. Main bodies, bridges, camera, light and world remain identical.",
+  "visibility_limit": "Physical road occupancy conflicts can be removed; foreground main buildings still occlude some far-road projections. Do not promise continuous visible convergence without actual pixel review.",
+  "planned_blend_not_created": "C:/Users/zhuzi/Documents/OutOfWindow/unreal/Art/CityDesign_RoadContinuity07/RoadContinuity07_Camera06Locked.blend",
+  "planned_preview_not_created": "C:/Users/zhuzi/Documents/OutOfWindow/unreal/Art/CityDesign_RoadContinuity07/preview-road-continuity-low.png"
+}

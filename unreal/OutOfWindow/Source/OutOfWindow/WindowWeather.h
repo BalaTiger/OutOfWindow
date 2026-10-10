@@ -10,8 +10,8 @@ inline const TCHAR* LabelForCode(int32 Code)
     switch (Code)
     {
     case 0: return TEXT("晴");
-    case 1: return TEXT("晴间多云");
-    case 2: return TEXT("多云");
+    case 1: return TEXT("大致晴朗");
+    case 2: return TEXT("局部多云");
     case 3: return TEXT("阴");
     case 45: return TEXT("雾");
     case 48: return TEXT("雾凇");
@@ -58,9 +58,52 @@ inline const TCHAR* FamilyForCode(int32 Code)
     }
 }
 
+// Deterministic test presets, not an asserted weather_code -> live cloud_cover relation.
+// Live data retains the provider's independent weather_code and cloud_cover.
+inline double DefaultCloudCoverForCode(int32 Code)
+{
+    switch (Code)
+    {
+    case 0: return 10;
+    case 1: return 40;
+    case 2: return 70;
+    case 3: return 100;
+    case 45: case 48: return 90;
+    default:
+    {
+        const FString Family = FamilyForCode(Code);
+        return Family == TEXT("rain") || Family == TEXT("snow") ? 95 : 35;
+    }
+    }
+}
+
+// GB/T 35663-2017 discrete tenths. Continuous provider data rounds to the nearest
+// tenth (ties upward): the engineering boundaries are 25%, 55%, and 85%.
+inline int32 CloudAmountTenths(double Percent)
+{
+    return FMath::IsFinite(Percent) ? FMath::Clamp(FMath::FloorToInt(FMath::Clamp(Percent, 0., 100.) / 10. + .5), 0, 10) : 0;
+}
+inline const TCHAR* CloudLabel(double Percent)
+{
+    const int32 N = CloudAmountTenths(Percent);
+    return N <= 2 ? TEXT("晴") : N <= 5 ? TEXT("少云") : N <= 8 ? TEXT("多云") : TEXT("阴");
+}
+inline const TCHAR* CloudMode(double Percent)
+{
+    const int32 N = CloudAmountTenths(Percent);
+    return N <= 2 ? TEXT("clear") : N <= 5 ? TEXT("few") : N <= 8 ? TEXT("cloudy") : TEXT("overcast");
+}
+inline double PresetCloudCover(const FString& Mode)
+{
+    return Mode == TEXT("clear") ? 10. : Mode == TEXT("few") ? 40.
+        : Mode == TEXT("cloudy") ? 70. : Mode == TEXT("overcast") ? 100.
+        : Mode == TEXT("fog") ? 90. : 95.;
+}
+
 inline int32 CodeForPreview(const FString& Mode)
 {
     if (Mode == TEXT("clear")) return 0;
+    if (Mode == TEXT("few")) return 1;
     if (Mode == TEXT("cloudy")) return 2;
     if (Mode == TEXT("overcast")) return 3;
     if (Mode == TEXT("fog")) return 45;

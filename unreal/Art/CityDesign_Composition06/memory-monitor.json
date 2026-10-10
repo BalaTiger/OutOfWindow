@@ -1,0 +1,68 @@
+{
+  "status": "COMPLETED",
+  "reference": "n79504",
+  "baseline": {
+    "utc": "2026-10-09T08:13:38.266783+00:00",
+    "physical_available_gib": 13.099029541015625,
+    "commit_headroom_gib": 31.381366729736328,
+    "system_committed_gib": 29.391921997070312,
+    "commit_limit_gib": 60.77328872680664
+  },
+  "samples": [
+    {
+      "utc": "2026-10-09T08:13:38.279719+00:00",
+      "physical_available_gib": 13.10007095336914,
+      "commit_headroom_gib": 31.36699676513672,
+      "system_committed_gib": 29.406291961669922,
+      "commit_limit_gib": 60.77328872680664,
+      "private_gib": 0.015026092529296875,
+      "pagefile_peak_gib": 0.015026092529296875,
+      "working_set_peak_gib": 0.002063751220703125,
+      "elapsed_seconds": 0.014999999999417923
+    },
+    {
+      "utc": "2026-10-09T08:13:40.286509+00:00",
+      "physical_available_gib": 12.831100463867188,
+      "commit_headroom_gib": 30.863555908203125,
+      "system_committed_gib": 29.909732818603516,
+      "commit_limit_gib": 60.77328872680664,
+      "private_gib": 0.5070571899414062,
+      "pagefile_peak_gib": 0.8024482727050781,
+      "working_set_peak_gib": 0.56182861328125,
+      "elapsed_seconds": 2.014999999999418
+    },
+    {
+      "utc": "2026-10-09T08:13:42.293146+00:00",
+      "physical_available_gib": 12.529067993164062,
+      "commit_headroom_gib": 30.619415283203125,
+      "system_committed_gib": 30.153873443603516,
+      "commit_limit_gib": 60.77328872680664,
+      "private_gib": 0.7010879516601562,
+      "pagefile_peak_gib": 0.8024482727050781,
+      "working_set_peak_gib": 0.56182861328125,
+      "elapsed_seconds": 4.014999999999418
+    }
+  ],
+  "limits": {
+    "start_physical_gib": 8,
+    "start_commit_headroom_gib": 10,
+    "runtime_minimum_physical_gib": 4,
+    "runtime_minimum_commit_headroom_gib": 6,
+    "own_private_cap_gib": 4
+  },
+  "single_cpu_process": true,
+  "pid": 23204,
+  "exit_code": 0,
+  "elapsed_seconds": 6.0310000000026776,
+  "after": {
+    "utc": "2026-10-09T08:13:44.299954+00:00",
+    "physical_available_gib": 13.117103576660156,
+    "commit_headroom_gib": 31.393413543701172,
+    "system_committed_gib": 29.37987518310547,
+    "commit_limit_gib": 60.77328872680664
+  },
+  "peak_private_gib": 0.8024482727050781,
+  "peak_working_set_gib": 0.56182861328125,
+  "minimum_physical_available_gib": 12.529067993164062,
+  "minimum_commit_headroom_gib": 30.619415283203125
+}

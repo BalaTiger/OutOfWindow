@@ -1,0 +1,79 @@
+{
+  "recipe": "storm-layers-v6",
+  "master": "/Game/Weather/M_OOW_StormCells_v6",
+  "instance": "/Game/Weather/MI_OOW_StormCells_v6",
+  "sourceMaster": "/Game/Weather/M_OOW_StormCells_v4",
+  "codeSha256": "ab1d95c470c4a38c9de2f29a666ee9b372f9871db5edcbc394b79eb85bc3afd4",
+  "lowHeightConsumers": [
+    {
+      "node": "MaterialExpressionAppendVector_11",
+      "pin": "A"
+    },
+    {
+      "node": "MaterialExpressionAppendVector_8",
+      "pin": "A"
+    },
+    {
+      "node": "MaterialExpressionAppendVector_7",
+      "pin": "A"
+    },
+    {
+      "node": "MaterialExpressionAppendVector_4",
+      "pin": "A"
+    },
+    {
+      "node": "MaterialExpressionMultiply_32",
+      "pin": "A"
+    },
+    {
+      "node": "MaterialExpressionIf_1",
+      "pin": "A"
+    },
+    {
+      "node": "MaterialExpressionCustom_1",
+      "pin": "Height"
+    },
+    {
+      "node": "MaterialExpressionCustom_2",
+      "pin": "Height"
+    },
+    {
+      "node": "MaterialExpressionCustom_3",
+      "pin": "Height"
+    },
+    {
+      "node": "MaterialExpressionCustom_4",
+      "pin": "Height"
+    },
+    {
+      "node": "MaterialExpressionCustom_6",
+      "pin": "Height"
+    }
+  ],
+  "highAltitudeKm": [
+    8,
+    10
+  ],
+  "lowLayerPreserved": true,
+  "highLayerWindIntegrated": true,
+  "highConservativeDensity": true,
+  "zeroExtinctionSamplesSkipped": true,
+  "closedOvercastSheet": true,
+  "mapsModified": false,
+  "compilationVerified": true,
+  "validation": {
+    "verifiedAtUtc": "2026-10-05T15:47:43.465159+00:00",
+    "loadedInstance": "/Game/Weather/MI_OOW_StormCells_v6.MI_OOW_StormCells_v6",
+    "runtimeLog": "C:\\Users\\zhuzi\\Documents\\Codex\\2026-10-05\\task\\oow-lighting\\captures\\new-clear.log",
+    "runtimeLogSha256": "84ea95b250eceb3a2e20bb9943f8db099e0b794a3ca68072cad404326dde1237",
+    "runtimeShadersRemaining": 0,
+    "fallbackObserved": false,
+    "finalDomeGroupsAccepted": 12,
+    "automationSucceeded": 16,
+    "evidenceSummary": "C:\\Users\\zhuzi\\Documents\\Codex\\2026-10-05\\task\\oow-lighting\\validation-summary.json",
+    "assets": {
+      "M_OOW_StormCells_v6.uasset": "52fdc382479bdd91e40e8c2f4e4c718f9bb07280e93bca71a5c849476ad2972e",
+      "MI_OOW_StormCells_v6.uasset": "f9445756370c1b473cf4a27f1e29a405f0547a8f843625da66574b45ba848f5a"
+    }
+  }
+}

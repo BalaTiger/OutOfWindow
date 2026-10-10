@@ -1,0 +1,28 @@
+{
+  "state": "RESOURCE_BLOCKED_NO_PREVIEW_LAUNCH",
+  "sample": {
+    "utc": "2026-10-07T14:41:30.857963+00:00",
+    "physical_available_gib": 8.023761749267578,
+    "commit_headroom_gib": 2.2563400268554688,
+    "system_committed_gib": 64.6231803894043,
+    "commit_limit_gib": 66.87952041625977,
+    "process_count": 384
+  },
+  "required_start_physical_available_gib": 8.0,
+  "required_start_commit_headroom_gib": 10.0,
+  "maximum_new_private_commit_budget_gib": 4.0,
+  "preserve_physical_gib": 4.0,
+  "preserve_commit_headroom_gib": 6.0,
+  "reason": "Current commit headroom2.256GiB is below required10GiB and below reserved6GiB. Do not lower thresholds.",
+  "formal_window_restored_stable_per_main": true,
+  "this_round_blender_launches": 0,
+  "this_round_ue_gpu_launches": 0,
+  "repaired_A_render_launches": 0,
+  "B_render_launches": 0,
+  "B08_geometry_pass_preserved": true,
+  "formal_launcher_pid_reported_by_main": 13724,
+  "formal_game_pid_reported_by_main": 24648,
+  "no_user_program_closed_or_settings_changed": true,
+  "no_auto_polling_or_queued_preview": true,
+  "next_state": "Paused resource checkpoint; later explicit main resource window and freshly sufficient capacity are required. Night work prioritizes ToE."
+}

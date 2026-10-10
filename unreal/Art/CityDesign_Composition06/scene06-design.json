@@ -1,0 +1,552 @@
+{
+  "reference_id": "n79504",
+  "reference_confirmed_by_user": true,
+  "confirmation": "Parent relayed user: 是这张。 Sentinel_d94a07bbb1748191808cf73cce749827",
+  "reference_url": "https://media-prod.zha.com/zhweb-prod-media/media/dxrb5gjv/01499_cp_hc_nov12_n79504.jpg?w=1920",
+  "stage": "explicit_composition_whitebox_not_final_architecture",
+  "ground_z_m": 6.9,
+  "camera": {
+    "eye_m": [
+      6,
+      -138,
+      70.5
+    ],
+    "target_m": [
+      -1,
+      28,
+      32
+    ],
+    "vfov_deg": 46,
+    "aspect": [
+      16,
+      9
+    ]
+  },
+  "volumes": [
+    {
+      "name": "WB06_Left_Front_Primary",
+      "center_xy": [
+        -24,
+        -1
+      ],
+      "height_m": 60,
+      "rotation_deg": -7,
+      "crown_height_m": 2.8,
+      "sections_z_rx_ry": [
+        [
+          0,
+          24.5,
+          23
+        ],
+        [
+          6.4,
+          25.5,
+          23.4
+        ],
+        [
+          12,
+          25.5,
+          23.1
+        ],
+        [
+          22,
+          24.8,
+          22.2
+        ],
+        [
+          33,
+          23.5,
+          20.8
+        ],
+        [
+          43,
+          21.7,
+          18.9
+        ],
+        [
+          51,
+          19.9,
+          17
+        ],
+        [
+          56,
+          18.1,
+          15.2
+        ],
+        [
+          60,
+          16.7,
+          13.8
+        ]
+      ]
+    },
+    {
+      "name": "WB06_Right_Back_Secondary",
+      "center_xy": [
+        38,
+        80
+      ],
+      "height_m": 58,
+      "rotation_deg": 9,
+      "crown_height_m": 2.3,
+      "sections_z_rx_ry": [
+        [
+          0,
+          25,
+          24.8
+        ],
+        [
+          6.4,
+          26,
+          25.3
+        ],
+        [
+          15,
+          26.1,
+          24.8
+        ],
+        [
+          27,
+          24.8,
+          23.1
+        ],
+        [
+          38,
+          23,
+          21.5
+        ],
+        [
+          47,
+          20.3,
+          18.9
+        ],
+        [
+          53,
+          17.9,
+          16.6
+        ],
+        [
+          58,
+          16,
+          14.9
+        ]
+      ]
+    },
+    {
+      "name": "WB06_Middle_Rear_Left",
+      "center_xy": [
+        -3,
+        114
+      ],
+      "height_m": 54,
+      "rotation_deg": -12,
+      "crown_height_m": 2,
+      "sections_z_rx_ry": [
+        [
+          0,
+          18,
+          19
+        ],
+        [
+          6.4,
+          19,
+          19.8
+        ],
+        [
+          18,
+          18.8,
+          19.4
+        ],
+        [
+          30,
+          17.4,
+          18
+        ],
+        [
+          42,
+          15.2,
+          15.8
+        ],
+        [
+          50,
+          13,
+          13.6
+        ],
+        [
+          54,
+          11.5,
+          12
+        ]
+      ]
+    },
+    {
+      "name": "WB06_Middle_Rear_Right",
+      "center_xy": [
+        24,
+        145
+      ],
+      "height_m": 55,
+      "rotation_deg": 14,
+      "crown_height_m": 2,
+      "sections_z_rx_ry": [
+        [
+          0,
+          17,
+          18
+        ],
+        [
+          6.4,
+          18,
+          19
+        ],
+        [
+          18,
+          17.8,
+          18.7
+        ],
+        [
+          32,
+          16.4,
+          17.3
+        ],
+        [
+          44,
+          14,
+          15
+        ],
+        [
+          51,
+          12,
+          13
+        ],
+        [
+          55,
+          10.8,
+          11.6
+        ]
+      ]
+    }
+  ],
+  "context_boxes_name_bounds_material": [
+    [
+      "WB06_Context_Left_Solid_Civic",
+      [
+        -123,
+        -81,
+        31,
+        76,
+        6.9,
+        75
+      ],
+      "solid"
+    ],
+    [
+      "WB06_Context_Left_Office",
+      [
+        -94,
+        -78,
+        87,
+        125,
+        6.9,
+        77
+      ],
+      "office"
+    ],
+    [
+      "WB06_Context_Right_Horizontal_Slab",
+      [
+        102,
+        153,
+        115,
+        150,
+        6.9,
+        53
+      ],
+      "solid"
+    ],
+    [
+      "WB06_Context_Right_Low_Rear",
+      [
+        115,
+        159,
+        168,
+        198,
+        6.9,
+        35
+      ],
+      "solid"
+    ],
+    [
+      "WB06_Far_West_Block",
+      [
+        -209,
+        -170,
+        239,
+        277,
+        6.9,
+        30
+      ],
+      "far"
+    ],
+    [
+      "WB06_Far_West_Tall",
+      [
+        -161,
+        -137,
+        257,
+        282,
+        6.9,
+        39
+      ],
+      "far"
+    ],
+    [
+      "WB06_Far_Left_Slab",
+      [
+        -126,
+        -81,
+        245,
+        280,
+        6.9,
+        33
+      ],
+      "far"
+    ],
+    [
+      "WB06_Far_Left_Tower",
+      [
+        -71,
+        -47,
+        276,
+        303,
+        6.9,
+        45
+      ],
+      "far"
+    ],
+    [
+      "WB06_Far_Mid_Block",
+      [
+        -36,
+        5,
+        259,
+        295,
+        6.9,
+        32
+      ],
+      "far"
+    ],
+    [
+      "WB06_Far_Mid_Tower",
+      [
+        14,
+        37,
+        278,
+        305,
+        6.9,
+        43
+      ],
+      "far"
+    ],
+    [
+      "WB06_Far_Right_Slab",
+      [
+        45,
+        92,
+        251,
+        282,
+        6.9,
+        37
+      ],
+      "far"
+    ],
+    [
+      "WB06_Far_East_Block",
+      [
+        105,
+        149,
+        274,
+        306,
+        6.9,
+        31
+      ],
+      "far"
+    ],
+    [
+      "WB06_Far_East_Tower",
+      [
+        161,
+        186,
+        257,
+        284,
+        6.9,
+        44
+      ],
+      "far"
+    ],
+    [
+      "WB06_Far_Edge_Slab",
+      [
+        196,
+        244,
+        273,
+        310,
+        6.9,
+        33
+      ],
+      "far"
+    ]
+  ],
+  "roads": {
+    "left_bounds": [
+      -76,
+      -52,
+      -195,
+      320,
+      6.91,
+      7.03
+    ],
+    "right_bounds": [
+      76,
+      97,
+      -195,
+      320,
+      6.91,
+      7.03
+    ]
+  },
+  "bridge_paths": [
+    {
+      "name": "WB06_Court_Lower_Bridge",
+      "centerline_xy": [
+        [
+          -5,
+          7
+        ],
+        [
+          -1,
+          15
+        ],
+        [
+          3,
+          24
+        ],
+        [
+          8,
+          35
+        ],
+        [
+          15,
+          48
+        ],
+        [
+          23,
+          62
+        ]
+      ],
+      "base_z": 24.0,
+      "width_m": 7,
+      "height_m": 3.6
+    },
+    {
+      "name": "WB06_Court_Upper_Bridge",
+      "centerline_xy": [
+        [
+          -10,
+          14
+        ],
+        [
+          -5,
+          23
+        ],
+        [
+          1,
+          34
+        ],
+        [
+          8,
+          47
+        ],
+        [
+          15,
+          60
+        ],
+        [
+          20,
+          68
+        ]
+      ],
+      "base_z": 36.0,
+      "width_m": 6.3,
+      "height_m": 3.4
+    },
+    {
+      "name": "WB06_Rear_Left_Connection",
+      "centerline_xy": [
+        [
+          -10,
+          17
+        ],
+        [
+          -8,
+          32
+        ],
+        [
+          -7,
+          49
+        ],
+        [
+          -6,
+          68
+        ],
+        [
+          -5,
+          86
+        ],
+        [
+          -4,
+          99
+        ]
+      ],
+      "base_z": 31.0,
+      "width_m": 6,
+      "height_m": 3.4
+    },
+    {
+      "name": "WB06_Rear_Right_Connection",
+      "centerline_xy": [
+        [
+          32,
+          97
+        ],
+        [
+          30,
+          106
+        ],
+        [
+          28,
+          117
+        ],
+        [
+          26,
+          130
+        ]
+      ],
+      "base_z": 35.0,
+      "width_m": 6,
+      "height_m": 3.4
+    }
+  ],
+  "render": {
+    "threads": 2,
+    "width": 640,
+    "height": 360,
+    "samples": 8,
+    "engine": "CYCLES",
+    "device": "CPU",
+    "one_preview": true
+  },
+  "no_simulated_frame_sill_room": true,
+  "original_assets_are_not_loaded_or_edited": true,
+  "modeling_method": "Individually designed fixed world positions and explicit loft sections, editable meshes created by Blender Python assistance. No random generation, downloaded scripts, Geometry Nodes city generator or claim of manual GUI modeling."
+}

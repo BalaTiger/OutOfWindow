@@ -1,0 +1,243 @@
+{
+  "status": "PASS",
+  "method": "Import both actual FBX files in factory-empty Blender 5.0.1 temporary background scene; no save/render/UE.",
+  "one_unit_m": 1,
+  "objects": [
+    {
+      "name": "OOW_Curved_A",
+      "triangles": 80616,
+      "world_bounds_blender_m": {
+        "min": [
+          -63.3643913269043,
+          -14.288010597229004,
+          6.759995937347412
+        ],
+        "max": [
+          -23.297000885009766,
+          27.639375686645508,
+          35.9900016784668
+        ]
+      },
+      "maximum_source_bounds_delta_m": 4.291534423828125e-06,
+      "invalid_corner_normals": 0,
+      "uv": [
+        {
+          "name": "UVMap",
+          "loops": 164520,
+          "complete": true,
+          "finite": true
+        },
+        {
+          "name": "LightmapUV",
+          "loops": 164520,
+          "complete": true,
+          "finite": true
+        }
+      ],
+      "errors": []
+    },
+    {
+      "name": "OOW_Curved_B",
+      "triangles": 83012,
+      "world_bounds_blender_m": {
+        "min": [
+          -74.489990234375,
+          32.68199920654297,
+          6.759987831115723
+        ],
+        "max": [
+          -28.594554901123047,
+          75.5687484741211,
+          41.93999099731445
+        ]
+      },
+      "maximum_source_bounds_delta_m": 1.239776611328125e-05,
+      "invalid_corner_normals": 0,
+      "uv": [
+        {
+          "name": "UVMap",
+          "loops": 171876,
+          "complete": true,
+          "finite": true
+        },
+        {
+          "name": "LightmapUV",
+          "loops": 171876,
+          "complete": true,
+          "finite": true
+        }
+      ],
+      "errors": []
+    },
+    {
+      "name": "OOW_Curved_Bridge",
+      "triangles": 5712,
+      "world_bounds_blender_m": {
+        "min": [
+          -39.59397506713867,
+          19.88039207458496,
+          17.9999942779541
+        ],
+        "max": [
+          -27.280000686645508,
+          39.61979293823242,
+          22.4899959564209
+        ]
+      },
+      "maximum_source_bounds_delta_m": 5.7220458984375e-06,
+      "invalid_corner_normals": 0,
+      "uv": [
+        {
+          "name": "UVMap",
+          "loops": 11424,
+          "complete": true,
+          "finite": true
+        },
+        {
+          "name": "LightmapUV",
+          "loops": 11424,
+          "complete": true,
+          "finite": true
+        }
+      ],
+      "errors": []
+    },
+    {
+      "name": "OOW_Curved_Court",
+      "triangles": 360,
+      "world_bounds_blender_m": {
+        "min": [
+          -58.349998474121094,
+          5.000000953674316,
+          6.979990005493164
+        ],
+        "max": [
+          -22.0,
+          60.0,
+          7.489996910095215
+        ]
+      },
+      "maximum_source_bounds_delta_m": 1.0013580322265625e-05,
+      "invalid_corner_normals": 0,
+      "uv": [
+        {
+          "name": "UVMap",
+          "loops": 720,
+          "complete": true,
+          "finite": true
+        },
+        {
+          "name": "LightmapUV",
+          "loops": 720,
+          "complete": true,
+          "finite": true
+        }
+      ],
+      "errors": []
+    },
+    {
+      "name": "OOW_View_Office_B07",
+      "triangles": 11760,
+      "world_bounds_blender_m": {
+        "min": [
+          21.049999237060547,
+          -9.14999771118164,
+          6.809995651245117
+        ],
+        "max": [
+          53.150001525878906,
+          25.150001525878906,
+          41.755001068115234
+        ]
+      },
+      "maximum_source_bounds_delta_m": 4.291534423828125e-06,
+      "invalid_corner_normals": 0,
+      "uv": [
+        {
+          "name": "UVMap",
+          "loops": 27864,
+          "complete": true,
+          "finite": true
+        },
+        {
+          "name": "LightmapUV",
+          "loops": 27864,
+          "complete": true,
+          "finite": true
+        }
+      ],
+      "errors": []
+    },
+    {
+      "name": "OOW_View_Office_B08",
+      "triangles": 21852,
+      "world_bounds_blender_m": {
+        "min": [
+          23.049999237060547,
+          34.35000228881836,
+          6.764988422393799
+        ],
+        "max": [
+          55.150001525878906,
+          69.6500015258789,
+          56.7549934387207
+        ]
+      },
+      "maximum_source_bounds_delta_m": 1.1444091796875e-05,
+      "invalid_corner_normals": 0,
+      "uv": [
+        {
+          "name": "UVMap",
+          "loops": 46008,
+          "complete": true,
+          "finite": true
+        },
+        {
+          "name": "LightmapUV",
+          "loops": 46008,
+          "complete": true,
+          "finite": true
+        }
+      ],
+      "errors": []
+    },
+    {
+      "name": "OOW_View_Office_B13",
+      "triangles": 31606,
+      "world_bounds_blender_m": {
+        "min": [
+          -87.1500015258789,
+          66.8499984741211,
+          6.7649827003479
+        ],
+        "max": [
+          -55.04999923706055,
+          105.1500015258789,
+          72.7549819946289
+        ]
+      },
+      "maximum_source_bounds_delta_m": 1.71661376953125e-05,
+      "invalid_corner_normals": 0,
+      "uv": [
+        {
+          "name": "UVMap",
+          "loops": 65838,
+          "complete": true,
+          "finite": true
+        },
+        {
+          "name": "LightmapUV",
+          "loops": 65838,
+          "complete": true,
+          "finite": true
+        }
+      ],
+      "errors": []
+    }
+  ],
+  "errors": [],
+  "limitations": [
+    "Blender FBX round-trip does not validate UE importer or materials.",
+    "UV overlap, self-intersection, visual shading and collision not tested."
+  ]
+}

@@ -1,0 +1,225 @@
+{
+  "updated_utc": "2026-10-07T11:05:25.766242+00:00",
+  "files": [
+    {
+      "relative_path": "build-review-v4.log",
+      "bytes": 3416,
+      "sha256": "b2940b4685e721a6627d249f404e8065cec5b1f3ab0104e9d30249b72db88946"
+    },
+    {
+      "relative_path": "checkpoint-status.json",
+      "bytes": 1165,
+      "sha256": "79a956113d7b38c42a23e88f879d01cfdb2ba1027bc612a390b8f95f2a957f9a"
+    },
+    {
+      "relative_path": "CityDesign_CommercialScale04.blend",
+      "bytes": 24785982,
+      "sha256": "0981e1a979ec8653ae85f9273c75656f116342dd930a5d0c738fcc8ea4cbc4e7"
+    },
+    {
+      "relative_path": "CityDesign_CommercialScale04.blend1",
+      "bytes": 24818490,
+      "sha256": "2846676be8e62566d06cdb71d066abf8139b79904b099b8b70c55015dc5539a4"
+    },
+    {
+      "relative_path": "CityDesign_CommercialScale04_CHECKPOINT_BASE_ONLY.blend",
+      "bytes": 17361632,
+      "sha256": "f7d42c47522578fab59bdea1305bd2e401ef49e64d58331359378b3cf7d8f9c1"
+    },
+    {
+      "relative_path": "CityDesign_CommercialScale04_Commercial.fbx",
+      "bytes": 6060716,
+      "sha256": "91a4e227378525147c7e9e29c8ebee5ed876323f36184b85803a83b7bb876886"
+    },
+    {
+      "relative_path": "CityDesign_CommercialScale04_Commercial.glb",
+      "bytes": 11293444,
+      "sha256": "47366f3f172f2a8c558b6be881db45ffa0f43d6093d57c9bba3a6bf0b2c51c6e"
+    },
+    {
+      "relative_path": "CityDesign_CommercialScale04_geometry_checkpoint.blend",
+      "bytes": 14833410,
+      "sha256": "ff2066a017208099a565dd8e19caa926829d816dadc93c1b07a6bd98e4d589c7"
+    },
+    {
+      "relative_path": "CityDesign_CommercialScale04_OfficeVisible.fbx",
+      "bytes": 1785740,
+      "sha256": "2d5f880cac4689a404b4597cd591a152a18216d4dfdf36c3bcd2df2abc35f55d"
+    },
+    {
+      "relative_path": "CityDesign_CommercialScale04_OfficeVisible.glb",
+      "bytes": 6012528,
+      "sha256": "8cae5cbcdde662a8243b5404afa263bd5fe9ba801d66c125136b7f0d3a7de1bc"
+    },
+    {
+      "relative_path": "commercial_height_evidence.json",
+      "bytes": 3177,
+      "sha256": "d16deb81ec77fdbbbeadbb87043d5909c39b5898f87693e1aeb961addf0ed19d"
+    },
+    {
+      "relative_path": "commercial_scale_audit.json",
+      "bytes": 6937,
+      "sha256": "d5751dcb88b23b20d7233a6624772b1de01e5646b57edf436e12b83353fa29e7"
+    },
+    {
+      "relative_path": "design_manifest.json",
+      "bytes": 3912,
+      "sha256": "669b251193c8b50dcc6a3bc35688cb53758517124ef9b68a0743a1beb99acc48"
+    },
+    {
+      "relative_path": "export_audit.json",
+      "bytes": 169629,
+      "sha256": "6cd3bebef4b32d8bf9cf65e9c21b4084d3366b5edea18320b427c3fc2f167dca"
+    },
+    {
+      "relative_path": "export_manifest.json",
+      "bytes": 20782,
+      "sha256": "c51c1f3ce81769116c2fefe171cbde049bbeb5120387e90666df4f6c5a7f9349"
+    },
+    {
+      "relative_path": "fbx_roundtrip_audit.json",
+      "bytes": 5774,
+      "sha256": "d00ce37cc469ef7925ddf5e3029427ca128c6ea68ec00ed35fa44283b0263816"
+    },
+    {
+      "relative_path": "finalize-v4.log",
+      "bytes": 2582,
+      "sha256": "c5466211ef6d5fefde8e75f12cf4861fc58fa41e8febb647070af4b739670d5b"
+    },
+    {
+      "relative_path": "fixed_window_refinements.json",
+      "bytes": 1870,
+      "sha256": "a034f01177f76eff04f91d4fce8142d55d6e5de635bdacb43ce1af9f3ae975b4"
+    },
+    {
+      "relative_path": "fixed_window_visual_review.json",
+      "bytes": 2461,
+      "sha256": "305eb1d3675fee31ac4d566b0918973039a4fea64380cb3e6a394f8f75346a47"
+    },
+    {
+      "relative_path": "mesh_audit.json",
+      "bytes": 3726534,
+      "sha256": "e6f6824741a9aa1aa28bca83c33716d92787df84d68bf164a3fc2c3b8a769996"
+    },
+    {
+      "relative_path": "office_candidate_changes.json",
+      "bytes": 1275,
+      "sha256": "db73fdc20f97073cab20491091a3c3911b0b0ce5fbbe72da86b5d858e169b6fa"
+    },
+    {
+      "relative_path": "PLAN.md",
+      "bytes": 1050,
+      "sha256": "3d45d37cccc6d1c4260c73e67b2e9b50185055e50da2e02a12cb7e96d56b5826"
+    },
+    {
+      "relative_path": "preview-window.png",
+      "bytes": 5285115,
+      "sha256": "af7d11888f4ef56babea4bdb092967505cbae81e1f1289fcc8259591872f2a89"
+    },
+    {
+      "relative_path": "protected-after-v4.json",
+      "bytes": 21801,
+      "sha256": "89018d4e877e1b7eec71c0d01e34d7c92ddd2650f5b24edc6d39b5dda8f59f2e"
+    },
+    {
+      "relative_path": "protected-before-v4.json",
+      "bytes": 12642,
+      "sha256": "72e565c9a11924fcd60568ff1dfcfa3578e058e24f44e483d20b98fb4a407451"
+    },
+    {
+      "relative_path": "README.md",
+      "bytes": 7372,
+      "sha256": "3b49032e97c5b46cdd584001602b641b31a4d62f985f98425453006fe162f64d"
+    },
+    {
+      "relative_path": "RESUME.md",
+      "bytes": 1117,
+      "sha256": "b62148a6cb6c8a9c516ae17f813ca7bf696b07f8b859b876c5be3fc23c633589"
+    },
+    {
+      "relative_path": "SourceScripts/build_commercial_scale04.py",
+      "bytes": 26756,
+      "sha256": "be6985b3764cbf0d959049b520ae225af3923f5b4e75a86bafacfce032ed38c3"
+    },
+    {
+      "relative_path": "SourceScripts/build_review_commercial_scale04.py",
+      "bytes": 1142,
+      "sha256": "8bb9b466ddf03c2cdb477fb3116959d36b88522ed6d3052590fafa0d03046247"
+    },
+    {
+      "relative_path": "SourceScripts/commercial_scale04_details.py",
+      "bytes": 10064,
+      "sha256": "fe512a8c9838be1781bb49e68c35df618dde57d0284711fed99767308bd93e3f"
+    },
+    {
+      "relative_path": "SourceScripts/commercial_scale04_storefronts.py",
+      "bytes": 4439,
+      "sha256": "10551143280e63026b6cb6586939279c983e5844995111c99c80d0c133531b4a"
+    },
+    {
+      "relative_path": "SourceScripts/export_commercial_scale04.py",
+      "bytes": 7681,
+      "sha256": "8772b675bbf9dac60ca64cf6ada918742c5294c183d73df833cf1f573b0042ed"
+    },
+    {
+      "relative_path": "SourceScripts/finalize_commercial_scale04.py",
+      "bytes": 2380,
+      "sha256": "ac31afd26c004e58b20b890c3cf23deca34125873a5324c33e05d7698e53df40"
+    },
+    {
+      "relative_path": "SourceScripts/new_curved_validation.py",
+      "bytes": 9453,
+      "sha256": "7cc9373a032b9e91aad132dff59b9491b91ca25847518985c9d45bfb69fdc534"
+    },
+    {
+      "relative_path": "SourceScripts/prepare_commercial_scale04.py",
+      "bytes": 7638,
+      "sha256": "c7ff70c78a9d972a1d17f1c339f70394e872734cb079b462c3fa42fffeed4769"
+    },
+    {
+      "relative_path": "SourceScripts/refine_commercial_scale04.py",
+      "bytes": 11732,
+      "sha256": "5a4809ecf5dab400f1b94534ceaf60f13f22331c1d6e3b7bb58647a16e52366a"
+    },
+    {
+      "relative_path": "SourceScripts/render_commercial_scale04.py",
+      "bytes": 1025,
+      "sha256": "8771e3dfe8480e07ca553dc821e30bda24d81c4e51d290deb5bb18f113b06628"
+    },
+    {
+      "relative_path": "SourceScripts/validate_city_sample.py",
+      "bytes": 16715,
+      "sha256": "e1231f3cb22e85d58afed55795c4895d49ceac485fe3b2df249b0b70be4452ad"
+    },
+    {
+      "relative_path": "SourceScripts/verify_commercial_scale04_fbx.py",
+      "bytes": 3459,
+      "sha256": "53a60b0b1fc34b68f8f93c18ef8ff75e50915fc862d88061052c65fa9fe94173"
+    },
+    {
+      "relative_path": "SourceScripts/verify_commercial_scale04_geometry.py",
+      "bytes": 5606,
+      "sha256": "67b388fe78b1fc0458e3ef546c0ff764aaf7e944a2a9341e345bb66bab46651b"
+    },
+    {
+      "relative_path": "SourceScripts/verify_window_scale03_exports.py",
+      "bytes": 25106,
+      "sha256": "79985b9e994cdd4fd8e8ea1003eb6aa7fbe28afd498c36c200c6621dba97012c"
+    },
+    {
+      "relative_path": "SourceScripts/write_commercial_scale04_handoff.py",
+      "bytes": 17859,
+      "sha256": "11f39accce3104b42bd1d24dd45f75f0ceb44705a61eb42ed61cb57dbaff320f"
+    },
+    {
+      "relative_path": "storefront_revision.json",
+      "bytes": 940,
+      "sha256": "da14446a2260e0c5a4722985bc6735af146550f5c65fdeb48c64a16d6699c350"
+    },
+    {
+      "relative_path": "window-draft.png",
+      "bytes": 1450479,
+      "sha256": "bf9e89a7e21d5981a6bd058cf6c714ececd4ae492ab8830aa5bebd4e0882daa4"
+    }
+  ]
+}

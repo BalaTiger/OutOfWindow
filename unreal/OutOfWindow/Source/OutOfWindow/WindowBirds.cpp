@@ -151,10 +151,11 @@ void AWindowBirds::SetView(const FVector& CameraLocation, const FVector& CameraF
     HideBirds();
 }
 
-void AWindowBirds::SetConditions(float Daylight, bool bFairWeather, const FVector& WindVelocity)
+void AWindowBirds::SetConditions(float Daylight, float WeatherActivity, const FVector& WindVelocity)
 {
-    const bool bNewPermitted = bFairWeather && Daylight > .55f && WindVelocity.Size2D() < 1400.0;
+    const bool bNewPermitted = WeatherActivity > 0.f && Daylight > .55f && WindVelocity.Size2D() < 1400.0;
     Wind = FVector(WindVelocity.X, WindVelocity.Y, 0).GetClampedToMaxSize(1400.0);
+    Activity = FMath::Max(WeatherActivity, .05f);
     if (bPermitted && !bNewPermitted)
     {
         FlightAge = -1.0f;
@@ -181,19 +182,48 @@ FVector AWindowBirds::GetFirstBirdLocation() const
     return Bodies[0]->GetComponentLocation();
 }
 
+FVector AWindowBirds::GetBirdLocation(int32 Index) const
+{
+    return Bodies.IsValidIndex(Index) ? Bodies[Index]->GetComponentLocation() : FVector::ZeroVector;
+}
+
 void AWindowBirds::StartFlight()
 {
-    // The alley's sky is a narrow opening above/left of centre. Paths cross
-    // behind its roofs; entries/exits stay offscreen, without a visible reset.
-    const float Depth = CompletedFlights == 0 ? 5000.0f : Random.FRandRange(4500.0f, 5500.0f);
-    const FVector Centre = ViewLocation + ViewForward * Depth - ViewRight * (Depth * .2f)
-        + FVector::UpVector * (Depth * .38f);
-    const float Direction = CompletedFlights == 0 || Random.FRand() > .5f ? 1.0f : -1.0f;
-    FlightStart = Centre - ViewRight * (4600.0f * Direction) + FVector::UpVector * 25.0;
-    FlightEnd = Centre + ViewRight * (4600.0f * Direction) - FVector::UpVector * 25.0;
+    // The alley's sky is a narrow opening above/left of centre. Each flight picks
+    // its own crossing: depth, how high above the roofline, how far left, which
+    // way, climb or dive, and how far back the flock trails.
+    const float Depth = CompletedFlights == 0
+        ? Random.FRandRange(4800.0f, 5600.0f) : Random.FRandRange(4000.0f, 6500.0f);
+    const FVector Centre = ViewLocation + ViewForward * Depth
+        - ViewRight * (Depth * Random.FRandRange(.14f, .28f))
+        + FVector::UpVector * (Depth * Random.FRandRange(.30f, .44f));
+    PathLateral = FVector::CrossProduct(FVector::UpVector,
+        ViewForward.RotateAngleAxis(Random.FRandRange(-14.0f, 14.0f), FVector::UpVector)).GetSafeNormal();
+    // A small climb or dive, so crossings are not all dead level.
+    const FVector PathUp = PathLateral.RotateAngleAxis(-Random.FRandRange(-10.0f, 10.0f),
+        FVector::CrossProduct(PathLateral, FVector::UpVector));
+    CrossSign = CompletedFlights == 0 || Random.FRand() > .5f ? 1.0f : -1.0f;
+    const float Span = Random.FRandRange(4300.0f, 5000.0f) * CrossSign;
+    FlightStart = Centre - PathLateral * Span - PathUp * 40.0f;
+    FlightEnd = Centre + PathLateral * Span + PathUp * 40.0f;
     FlightDuration = 9200.0f / FMath::Clamp(1100.0f +
-        static_cast<float>(FVector::DotProduct(Wind, ViewRight)) * Direction * .12f, 900.0f, 1300.0f);
+        static_cast<float>(FVector::DotProduct(Wind, PathLateral)) * CrossSign * .12f, 900.0f, 1300.0f);
     FlockSize = CompletedFlights == 0 ? 3 : Random.RandRange(1, 3);
+    // Each bird gets its own place in the group, pace, entry lag, climb, flap
+    // phase and cadence. Sampled once per crossing, against the fixed component
+    // count, so the flock does not jitter frame to frame.
+    FlightLifetime = 0.0f;
+    for (int32 Bird = 0; Bird < Bodies.Num(); ++Bird)
+    {
+        FBirdVariation& V = Flock[Bird];
+        V.Offset = FVector2D(Random.FRandRange(-90.0f, 90.0f), Random.FRandRange(-34.0f, 34.0f));
+        V.Speed = Random.FRandRange(.86f, 1.14f);
+        V.Lag = Bird == 0 ? 0.0f : Random.FRandRange(0.0f, 1.1f);
+        V.Climb = Random.FRandRange(-55.0f, 55.0f);
+        V.Phase = Random.FRandRange(0.0f, 2 * PI);
+        V.Rate = Random.FRandRange(4.0f, 5.2f);
+        if (Bird < FlockSize) FlightLifetime = FMath::Max(FlightLifetime, V.Lag + FlightDuration / V.Speed);
+    }
     FlightAge = 0.0f;
 }
 
@@ -209,31 +239,34 @@ void AWindowBirds::Tick(float DeltaSeconds)
         StartFlight();
     }
     FlightAge += Dt;
-    if (FlightAge > FlightDuration + (FlockSize - 1) * .42f)
+    if (FlightAge > FlightLifetime)
     {
         HideBirds();
         ++CompletedFlights;
         FlightAge = -1.0f;
-        WaitRemaining = Random.FRandRange(25.0f, 50.0f);
+        // Rain and snow thin the flock out; clear skies keep the base cadence.
+        WaitRemaining = Random.FRandRange(25.0f, 50.0f) / Activity;
         return;
     }
     const FRotator Heading = (FlightEnd - FlightStart).Rotation();
     for (int32 Bird = 0; Bird < Bodies.Num(); ++Bird)
     {
-        const float Age = FlightAge - Bird * .42f;
-        const float Progress = Age / FlightDuration;
+        const FBirdVariation& V = Flock[Bird];
+        const float Age = FlightAge - V.Lag;
+        const float Progress = Age / FlightDuration * V.Speed;
         const bool bVisible = Bird < FlockSize && Progress >= 0 && Progress <= 1;
         Bodies[Bird]->SetVisibility(bVisible, true);
         if (!bVisible) continue;
-        const float Phase = Age * (Bird == 1 ? 4.2f : 4.6f) * 2 * PI + Bird;
-        const float Glide = FMath::SmoothStep(.15f, .7f, FMath::Sin(Age * 1.55f + Bird * .8f));
+        const float Phase = Age * V.Rate * 2 * PI + V.Phase;
+        const float Glide = FMath::SmoothStep(.15f, .7f, FMath::Sin(Age * 1.55f + V.Phase));
         const float Flap = FMath::Lerp(FMath::Sin(Phase) * 38.0f, 7.0f, Glide);
         const FVector Position = FMath::Lerp(FlightStart, FlightEnd, Progress)
-            + ViewForward * (Bird * 55.0f)
-            + FVector::UpVector * (Bird * 24.0f + FMath::Sin(Progress * PI) * 45.0f
+            + ViewForward * V.Offset.X
+            + FVector::UpVector * (V.Offset.Y + V.Climb * Progress
+                                  + FMath::Sin(Progress * PI) * 45.0f
                                   + FMath::Sin(Phase) * (1.0f - Glide) * 1.2f);
         Bodies[Bird]->SetWorldLocationAndRotation(Position,
-            FRotator(Heading.Pitch, Heading.Yaw, FMath::Sin(Age * .65f + Bird) * 5.0f));
+            FRotator(Heading.Pitch, Heading.Yaw, FMath::Sin(Age * .65f + V.Phase) * 5.0f));
         Wings[Bird * 2]->SetRelativeRotation(FRotator(0, 0, Flap));
         Wings[Bird * 2 + 1]->SetRelativeRotation(FRotator(0, 0, -Flap));
     }

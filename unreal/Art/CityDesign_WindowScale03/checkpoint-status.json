@@ -1,0 +1,32 @@
+{
+  "updated_utc": "2026-10-07T10:21:26.362081+00:00",
+  "state": "LOCAL_CANDIDATE_COMPLETE_VISUAL_REVIEW_PENDING",
+  "blender_version": "5.0.1",
+  "blender_executable": "D:\\Blender\\blender.exe",
+  "main_blend": "CityDesign_WindowScale03.blend",
+  "base_checkpoint_unchanged": true,
+  "cpu_fixed_preview": "preview-window.png",
+  "preview_size": [
+    2560,
+    1440
+  ],
+  "technical_status": {
+    "source_mesh": "PASS",
+    "actual_glb_bytes": "PASS",
+    "fbx_readback": "PASS"
+  },
+  "protected_selected_files_status": "PASS",
+  "source_new_mesh_triangles_including_hidden_C": 208248,
+  "export_commercial_triangles": 151988,
+  "export_office_triangles": 65218,
+  "visual_accepted": false,
+  "remaining_visual_issues": [
+    "Repeated curved white lines and cool glass still dominate; doughnut/toy effect reduced, not eliminated.",
+    "Stone service bays and bronze restaurant bays have weak functional distinction at the fixed-window distance.",
+    "Central office remains pale against the sky.",
+    "Tree still obscures left half of main entrance; full entrance envelope remains visually bulky.",
+    "Dark B entrance backing reduces perception of court depth under the bridge."
+  ],
+  "ue_import_map_edit_gpu_git_commit_deploy": false,
+  "next_action": "Main-session fixed-window visual review; coordinate before UE/GPU work."
+}

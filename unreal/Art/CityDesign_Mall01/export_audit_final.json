@@ -1,0 +1,276 @@
+{
+  "auditType": "Independent read-only GLB binary/JSON validation; no Blender or UE execution",
+  "createdUTC": "2026-10-07T06:32:27.631072+00:00",
+  "source": {
+    "path": "C:\\Users\\zhuzi\\Documents\\OutOfWindow\\unreal\\Art\\CityDesign_Mall01\\CityDesign_Mall01_Architecture.glb",
+    "bytes": 13027980,
+    "mtimeUTC": "2026-10-07T06:29:46.041214+00:00",
+    "sha256": "0c8093dfad665e35c0101980e19115b945b829a50385c014a516b041cb0aa617",
+    "glTFVersion": "2.0",
+    "generator": "Khronos glTF Blender I/O v5.0.21"
+  },
+  "counts": {
+    "nodes": 2,
+    "meshes": 2,
+    "primitives": 16,
+    "materials": 15,
+    "images": 3,
+    "textures": 3,
+    "cameras": 0,
+    "triangles": 108288
+  },
+  "meshes": [
+    {
+      "node": "OOW_Mall01_Architecture",
+      "mesh": "OOW_Mall01_Architecture_Mesh.001",
+      "primitiveCount": 11,
+      "materialCount": 11,
+      "materialNames": [
+        "Mall_01_Limestone",
+        "Mall_07_Concrete_Paving",
+        "Mall_02_Terracotta_Ceramic",
+        "Mall_06_Interior_Dark",
+        "Mall_03_Precast_Ivory",
+        "Mall_05_Glass",
+        "Mall_04_Bronze",
+        "Mall_08_Warm_Oak",
+        "Mall_11_Luminous_Soffit",
+        "Mall_09_Roof_Membrane",
+        "Mall_10_Planter_Soil"
+      ],
+      "triangleCount": 49736,
+      "verticesByPrimitive": 93224,
+      "attributesByPrimitive": {
+        "POSITION": 11,
+        "NORMAL": 11,
+        "TEXCOORD_0": 11,
+        "TEXCOORD_1": 11
+      },
+      "glTFWorldBoundsMeters": {
+        "min": [
+          -68.15999603271484,
+          6.550000190734863,
+          -62.0
+        ],
+        "max": [
+          -19.0,
+          31.300001621246338,
+          18.0
+        ]
+      },
+      "UEWorldBoundsMeters": {
+        "min": [
+          -68.15999603271484,
+          -62.0,
+          6.550000190734863
+        ],
+        "max": [
+          -19.0,
+          18.0,
+          31.300001621246338
+        ]
+      },
+      "exactZeroAreaTriangles": 0,
+      "uv1Bounds": {
+        "min": [
+          0.0029616188257932663,
+          0.00296175479888916
+        ],
+        "max": [
+          0.9929566383361816,
+          0.9970383644104004
+        ]
+      }
+    },
+    {
+      "node": "OOW_Neighbor01_Architecture",
+      "mesh": "OOW_Neighbor01_Architecture_Mesh.001",
+      "primitiveCount": 5,
+      "materialCount": 5,
+      "materialNames": [
+        "Mall_06_Interior_Dark",
+        "Neighbor_02_Pale_Stone",
+        "Neighbor_01_Warm_Clay_Brick",
+        "Neighbor_03_Glass",
+        "Neighbor_04_Charcoal_Metal"
+      ],
+      "triangleCount": 58552,
+      "verticesByPrimitive": 116784,
+      "attributesByPrimitive": {
+        "POSITION": 5,
+        "NORMAL": 5,
+        "TEXCOORD_0": 5,
+        "TEXCOORD_1": 5
+      },
+      "glTFWorldBoundsMeters": {
+        "min": [
+          -48.599998474121094,
+          6.600000381469727,
+          -110.6500015258789
+        ],
+        "max": [
+          -19.850000381469727,
+          51.999998569488525,
+          -74.4000015258789
+        ]
+      },
+      "UEWorldBoundsMeters": {
+        "min": [
+          -48.599998474121094,
+          -110.6500015258789,
+          6.600000381469727
+        ],
+        "max": [
+          -19.850000381469727,
+          -74.4000015258789,
+          51.999998569488525
+        ]
+      },
+      "exactZeroAreaTriangles": 0,
+      "uv1Bounds": {
+        "min": [
+          0.003584078513085842,
+          0.007774174213409424
+        ],
+        "max": [
+          0.996415913105011,
+          0.996415913105011
+        ]
+      }
+    }
+  ],
+  "axes": {
+    "glTF": "X horizontal, Y up, Z avenue; metres",
+    "conversionToUE": "UE metres = (glTF X, glTF Z, glTF Y); UE centimetres multiply by 100"
+  },
+  "glTFWorldBoundsMeters": {
+    "min": [
+      -68.15999603271484,
+      6.550000190734863,
+      -110.6500015258789
+    ],
+    "max": [
+      -19.0,
+      51.999998569488525,
+      18.0
+    ]
+  },
+  "UEWorldBoundsMeters": {
+    "min": [
+      -68.15999603271484,
+      -110.6500015258789,
+      6.550000190734863
+    ],
+    "max": [
+      -19.0,
+      18.0,
+      51.999998569488525
+    ]
+  },
+  "UEWorldBoundsCentimeters": {
+    "min": [
+      -6815.999603271484,
+      -11065.00015258789,
+      655.0000190734863
+    ],
+    "max": [
+      -1900.0,
+      1800.0,
+      5199.9998569488525
+    ]
+  },
+  "attributesByPrimitive": {
+    "POSITION": 16,
+    "NORMAL": 16,
+    "TEXCOORD_0": 16,
+    "TEXCOORD_1": 16
+  },
+  "textureBindings": [
+    {
+      "material": "Mall_01_Limestone",
+      "channel": "baseColorTexture",
+      "textureIndex": 0,
+      "uvSet": 0
+    },
+    {
+      "material": "Neighbor_01_Warm_Clay_Brick",
+      "channel": "baseColorTexture",
+      "textureIndex": 2,
+      "uvSet": 0
+    },
+    {
+      "material": "Neighbor_01_Warm_Clay_Brick",
+      "channel": "normalTexture",
+      "textureIndex": 1,
+      "uvSet": 0
+    }
+  ],
+  "images": [
+    {
+      "name": "Travertine001_2K-JPG_Color",
+      "mimeType": "image/jpeg",
+      "embedded": true,
+      "bufferBytes": 3944954
+    },
+    {
+      "name": "Neighbor_Brick_Normal",
+      "mimeType": "image/png",
+      "embedded": true,
+      "bufferBytes": 6815
+    },
+    {
+      "name": "Neighbor_Brick_BaseColor",
+      "mimeType": "image/png",
+      "embedded": true,
+      "bufferBytes": 7839
+    }
+  ],
+  "normalValidation": {
+    "rawAccessorMinLength": 0.9999999244104937,
+    "rawAccessorMaxLength": 1.0000001233495959,
+    "nonUnitCountTolerance0_001": 0,
+    "allAttributeNonFiniteCount": 0,
+    "note": "Validates authored NORMAL accessor lengths; does not verify shading or imported material appearance."
+  },
+  "uv1Validation": {
+    "min": [
+      0.0029616188257932663,
+      0.00296175479888916
+    ],
+    "max": [
+      0.996415913105011,
+      0.9970383644104004
+    ],
+    "nonFiniteCount": 0,
+    "islandOverlapTested": false,
+    "texelDensityTested": false,
+    "note": "UV island overlap and texel density have not been measured."
+  },
+  "geometryValidation": {
+    "indexErrors": 0,
+    "attributeErrors": [],
+    "exactZeroAreaTriangles": 0,
+    "nonzeroTrianglesBelowArea1e_12SquareMeters": 0
+  },
+  "excludedNameMatches": [],
+  "checks": {
+    "stableFileSnapshot": true,
+    "twoGeometryNodes": true,
+    "twoMeshes": true,
+    "normalFiniteAndUnit": true,
+    "uv1FiniteAndUnitSquare": true,
+    "attributesPresentAndMatching": true,
+    "indicesInRange": true,
+    "texturesUV0": true,
+    "threeEmbeddedImages": true,
+    "noContextNoCamera": true,
+    "noExactZeroAreaTriangles": true
+  },
+  "allCheckedRequirementsPass": true,
+  "limits": [
+    "UV island overlap not tested.",
+    "No Blender, UE import, rendering, or performance validation in this audit.",
+    "Normal map image content and UE normal orientation not visually tested.",
+    "GLB does not explicitly carry the original limestone Multiply colour tint; UE material matching remains integration work."
+  ]
+}

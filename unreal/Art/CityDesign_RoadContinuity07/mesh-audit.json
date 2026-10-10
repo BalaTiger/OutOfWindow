@@ -1,0 +1,1277 @@
+{
+  "status": "PASS",
+  "objects": [
+    {
+      "name": "WB06_Left_Front_Primary_MainVolume",
+      "triangles": 1148,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "WB06_Left_Front_Primary_FloorBand_00",
+      "triangles": 252,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "WB06_Left_Front_Primary_FloorBand_01",
+      "triangles": 252,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "WB06_Left_Front_Primary_FloorBand_02",
+      "triangles": 252,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "WB06_Left_Front_Primary_FloorBand_03",
+      "triangles": 252,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "WB06_Left_Front_Primary_FloorBand_04",
+      "triangles": 252,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "WB06_Left_Front_Primary_FloorBand_05",
+      "triangles": 252,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "WB06_Left_Front_Primary_FloorBand_06",
+      "triangles": 252,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "WB06_Left_Front_Primary_FloorBand_07",
+      "triangles": 252,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "WB06_Left_Front_Primary_FloorBand_08",
+      "triangles": 252,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "WB06_Left_Front_Primary_FloorBand_09",
+      "triangles": 252,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "WB06_Left_Front_Primary_FloorBand_10",
+      "triangles": 252,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "WB06_Left_Front_Primary_FloorBand_11",
+      "triangles": 252,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "WB06_Left_Front_Primary_FloorBand_12",
+      "triangles": 252,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "WB06_Left_Front_Primary_FloorBand_13",
+      "triangles": 252,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "WB06_Left_Front_Primary_FloorBand_14",
+      "triangles": 252,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "WB06_Left_Front_Primary_FloorBand_15",
+      "triangles": 252,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "WB06_Left_Front_Primary_DistinctRoofCrown",
+      "triangles": 508,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "WB06_Right_Back_Secondary_MainVolume",
+      "triangles": 1020,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "WB06_Right_Back_Secondary_FloorBand_00",
+      "triangles": 252,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "WB06_Right_Back_Secondary_FloorBand_01",
+      "triangles": 252,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "WB06_Right_Back_Secondary_FloorBand_02",
+      "triangles": 252,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "WB06_Right_Back_Secondary_FloorBand_03",
+      "triangles": 252,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "WB06_Right_Back_Secondary_FloorBand_04",
+      "triangles": 252,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "WB06_Right_Back_Secondary_FloorBand_05",
+      "triangles": 252,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "WB06_Right_Back_Secondary_FloorBand_06",
+      "triangles": 252,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "WB06_Right_Back_Secondary_FloorBand_07",
+      "triangles": 252,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "WB06_Right_Back_Secondary_FloorBand_08",
+      "triangles": 252,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "WB06_Right_Back_Secondary_FloorBand_09",
+      "triangles": 252,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "WB06_Right_Back_Secondary_FloorBand_10",
+      "triangles": 252,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "WB06_Right_Back_Secondary_FloorBand_11",
+      "triangles": 252,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "WB06_Right_Back_Secondary_FloorBand_12",
+      "triangles": 252,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "WB06_Right_Back_Secondary_FloorBand_13",
+      "triangles": 252,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "WB06_Right_Back_Secondary_FloorBand_14",
+      "triangles": 252,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "WB06_Right_Back_Secondary_FloorBand_15",
+      "triangles": 252,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "WB06_Right_Back_Secondary_DistinctRoofCrown",
+      "triangles": 508,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "WB06_Middle_Rear_Left_MainVolume",
+      "triangles": 892,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "WB06_Middle_Rear_Left_FloorBand_00",
+      "triangles": 252,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "WB06_Middle_Rear_Left_FloorBand_01",
+      "triangles": 252,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "WB06_Middle_Rear_Left_FloorBand_02",
+      "triangles": 252,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "WB06_Middle_Rear_Left_FloorBand_03",
+      "triangles": 252,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "WB06_Middle_Rear_Left_FloorBand_04",
+      "triangles": 252,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "WB06_Middle_Rear_Left_FloorBand_05",
+      "triangles": 252,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "WB06_Middle_Rear_Left_FloorBand_06",
+      "triangles": 252,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "WB06_Middle_Rear_Left_FloorBand_07",
+      "triangles": 252,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "WB06_Middle_Rear_Left_FloorBand_08",
+      "triangles": 252,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "WB06_Middle_Rear_Left_FloorBand_09",
+      "triangles": 252,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "WB06_Middle_Rear_Left_FloorBand_10",
+      "triangles": 252,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "WB06_Middle_Rear_Left_FloorBand_11",
+      "triangles": 252,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "WB06_Middle_Rear_Left_FloorBand_12",
+      "triangles": 252,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "WB06_Middle_Rear_Left_FloorBand_13",
+      "triangles": 252,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "WB06_Middle_Rear_Left_FloorBand_14",
+      "triangles": 252,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "WB06_Middle_Rear_Left_DistinctRoofCrown",
+      "triangles": 508,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "WB06_Middle_Rear_Right_MainVolume",
+      "triangles": 892,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "WB06_Middle_Rear_Right_FloorBand_00",
+      "triangles": 252,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "WB06_Middle_Rear_Right_FloorBand_01",
+      "triangles": 252,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "WB06_Middle_Rear_Right_FloorBand_02",
+      "triangles": 252,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "WB06_Middle_Rear_Right_FloorBand_03",
+      "triangles": 252,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "WB06_Middle_Rear_Right_FloorBand_04",
+      "triangles": 252,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "WB06_Middle_Rear_Right_FloorBand_05",
+      "triangles": 252,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "WB06_Middle_Rear_Right_FloorBand_06",
+      "triangles": 252,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "WB06_Middle_Rear_Right_FloorBand_07",
+      "triangles": 252,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "WB06_Middle_Rear_Right_FloorBand_08",
+      "triangles": 252,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "WB06_Middle_Rear_Right_FloorBand_09",
+      "triangles": 252,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "WB06_Middle_Rear_Right_FloorBand_10",
+      "triangles": 252,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "WB06_Middle_Rear_Right_FloorBand_11",
+      "triangles": 252,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "WB06_Middle_Rear_Right_FloorBand_12",
+      "triangles": 252,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "WB06_Middle_Rear_Right_FloorBand_13",
+      "triangles": 252,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "WB06_Middle_Rear_Right_FloorBand_14",
+      "triangles": 252,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "WB06_Middle_Rear_Right_DistinctRoofCrown",
+      "triangles": 508,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "WB06_Court_Lower_Bridge",
+      "triangles": 44,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "WB06_Court_Lower_Bridge_TopEdge",
+      "triangles": 44,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "WB06_Court_Lower_Bridge_WalkingDeck",
+      "triangles": 44,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "WB06_Court_Upper_Bridge",
+      "triangles": 44,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "WB06_Court_Upper_Bridge_TopEdge",
+      "triangles": 44,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "WB06_Court_Upper_Bridge_WalkingDeck",
+      "triangles": 44,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "WB06_Rear_Left_Connection",
+      "triangles": 44,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "WB06_Rear_Left_Connection_TopEdge",
+      "triangles": 44,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "WB06_Rear_Left_Connection_WalkingDeck",
+      "triangles": 44,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "WB06_Rear_Right_Connection",
+      "triangles": 28,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "WB06_Rear_Right_Connection_TopEdge",
+      "triangles": 28,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "WB06_Rear_Right_Connection_WalkingDeck",
+      "triangles": 28,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "WB06_Ground",
+      "triangles": 12,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "WB06_left_bounds",
+      "triangles": 12,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "WB06_left_bounds_Outer_Walk",
+      "triangles": 12,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "WB06_left_bounds_Inner_Walk",
+      "triangles": 12,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "WB06_left_bounds_Lane_Line",
+      "triangles": 12,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "WB06_right_bounds",
+      "triangles": 12,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "WB06_right_bounds_Outer_Walk",
+      "triangles": 12,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "WB06_right_bounds_Inner_Walk",
+      "triangles": 12,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "WB06_right_bounds_Lane_Line",
+      "triangles": 12,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "WB06_Left_Entrance_Plaza",
+      "triangles": 252,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "WB06_Right_Public_Platform",
+      "triangles": 252,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "WB06_Foreground_Landscape_Island",
+      "triangles": 252,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "WB06_Landscape_Main_Path",
+      "triangles": 36,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "WB06_Landscape_Cross_Path",
+      "triangles": 28,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "WB06_Central_Court_Walk",
+      "triangles": 44,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "WB06_Commercial_Entry_Canopy",
+      "triangles": 12,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "WB06_Commercial_Entry_Recess",
+      "triangles": 12,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "WB06_Entry_Column_-34",
+      "triangles": 12,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "WB06_Entry_Column_-14",
+      "triangles": 12,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "WB06_Context_Left_Solid_Civic",
+      "triangles": 12,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "WB06_Context_Left_Solid_Civic_Central_Recess",
+      "triangles": 12,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "WB06_Context_Left_Office",
+      "triangles": 12,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "WB06_Context_Right_Horizontal_Slab",
+      "triangles": 12,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "WB06_Context_Right_Horizontal_Slab_Recess_0",
+      "triangles": 12,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "WB06_Context_Right_Horizontal_Slab_Recess_1",
+      "triangles": 12,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "WB06_Context_Right_Horizontal_Slab_Recess_2",
+      "triangles": 12,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "WB06_Context_Right_Horizontal_Slab_Recess_3",
+      "triangles": 12,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "WB06_Context_Right_Horizontal_Slab_Recess_4",
+      "triangles": 12,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "WB06_Context_Right_Horizontal_Slab_Recess_5",
+      "triangles": 12,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "WB06_Context_Right_Horizontal_Slab_Recess_6",
+      "triangles": 12,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "WB06_Context_Right_Low_Rear",
+      "triangles": 12,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "WB06_Far_West_Block",
+      "triangles": 12,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "WB06_Far_West_Tall",
+      "triangles": 12,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "WB06_Far_Left_Slab",
+      "triangles": 12,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "WB06_Far_Left_Tower",
+      "triangles": 12,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "WB06_Far_Mid_Block",
+      "triangles": 12,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "WB06_Far_Mid_Tower",
+      "triangles": 12,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "WB06_Far_Right_Slab",
+      "triangles": 12,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "WB06_Far_East_Block",
+      "triangles": 12,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "WB06_Far_East_Tower",
+      "triangles": 12,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "WB06_Far_Edge_Slab",
+      "triangles": 12,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "Road07_Background_Ground_Continuation",
+      "triangles": 12,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "Road07_Equidistant_Lane_Dashes",
+      "triangles": 192,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "Road07_Depth_Tree_0_0_Trunk",
+      "triangles": 92,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "Road07_Depth_Tree_0_0_Crown",
+      "triangles": 188,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "Road07_Depth_Tree_1_0_Trunk",
+      "triangles": 92,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "Road07_Depth_Tree_1_0_Crown",
+      "triangles": 188,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "Road07_Depth_Tree_0_1_Trunk",
+      "triangles": 92,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "Road07_Depth_Tree_0_1_Crown",
+      "triangles": 188,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "Road07_Depth_Tree_1_1_Trunk",
+      "triangles": 92,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "Road07_Depth_Tree_1_1_Crown",
+      "triangles": 188,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "Road07_Depth_Tree_0_2_Trunk",
+      "triangles": 92,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "Road07_Depth_Tree_0_2_Crown",
+      "triangles": 188,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "Road07_Depth_Tree_1_2_Trunk",
+      "triangles": 92,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "Road07_Depth_Tree_1_2_Crown",
+      "triangles": 188,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "Road07_Depth_Tree_0_3_Trunk",
+      "triangles": 92,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "Road07_Depth_Tree_0_3_Crown",
+      "triangles": 188,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "Road07_Depth_Tree_1_3_Trunk",
+      "triangles": 92,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    },
+    {
+      "name": "Road07_Depth_Tree_1_3_Crown",
+      "triangles": 188,
+      "edge_incidence_not_two": 0,
+      "degenerate_faces": 0,
+      "positive_signed_volume": true,
+      "uv_finite_complete": true,
+      "normal_finite": true
+    }
+  ],
+  "bad_objects": [],
+  "total_triangles": 25816,
+  "mesh_objects": 141
+}

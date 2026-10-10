@@ -1,0 +1,73 @@
+{
+  "checked_utc": "2026-10-07T08:19:19.691789+00:00",
+  "all_unchanged": true,
+  "files": [
+    {
+      "relative_path": "unreal\\OutOfWindow\\Content\\Maps\\City.umap",
+      "sha256": "56CB09F9E2B33AE3181C3F0B7F65852BFF9163DE14B4C05A83E617FEE7484E5F",
+      "after_sha256": "56CB09F9E2B33AE3181C3F0B7F65852BFF9163DE14B4C05A83E617FEE7484E5F",
+      "unchanged": true
+    },
+    {
+      "relative_path": "unreal\\Art\\City\\modern-city.glb",
+      "sha256": "8063F1D17E102BB15B5B16D025BBDDCC312A5CADD13F0D362B790D6186B336CC",
+      "after_sha256": "8063F1D17E102BB15B5B16D025BBDDCC312A5CADD13F0D362B790D6186B336CC",
+      "unchanged": true
+    },
+    {
+      "relative_path": "unreal\\Scripts\\build_city_lookdev.py",
+      "sha256": "2D8D0050FE111DB4FA453DE780D8F960A921FF241D3094BF662A06BE902DD44F",
+      "after_sha256": "2D8D0050FE111DB4FA453DE780D8F960A921FF241D3094BF662A06BE902DD44F",
+      "unchanged": true
+    },
+    {
+      "relative_path": "unreal\\Run-Unreal.ps1",
+      "sha256": "E80E545A7BFC8B5499561C045517637EDC0BBCC323BF28C98BCAC488F1B7269E",
+      "after_sha256": "E80E545A7BFC8B5499561C045517637EDC0BBCC323BF28C98BCAC488F1B7269E",
+      "unchanged": true
+    },
+    {
+      "relative_path": "unreal\\Art\\CityDesign_Mall01\\CityDesign_Mall01.blend",
+      "sha256": "1040C13879020107C0155031C12AAEB8BFDAFEFCA598CBBB8A0A6573BF8C8DB6",
+      "after_sha256": "1040C13879020107C0155031C12AAEB8BFDAFEFCA598CBBB8A0A6573BF8C8DB6",
+      "unchanged": true
+    },
+    {
+      "relative_path": "unreal\\Art\\CityDesign_Mall01\\CityDesign_Mall01_Architecture.glb",
+      "sha256": "0C8093DFAD665E35C0101980E19115B945B829A50385C014A516B041CB0AA617",
+      "after_sha256": "0C8093DFAD665E35C0101980E19115B945B829A50385C014A516B041CB0AA617",
+      "unchanged": true
+    },
+    {
+      "relative_path": "unreal\\Art\\CityDesign_Mall01\\CityDesign_Mall01_Architecture.fbx",
+      "sha256": "968DE087730952C7287E2806DA58D4782F5815D0C534CF8CF227260DA6C0C7D9",
+      "after_sha256": "968DE087730952C7287E2806DA58D4782F5815D0C534CF8CF227260DA6C0C7D9",
+      "unchanged": true
+    },
+    {
+      "relative_path": "unreal\\Art\\CityDesign_Mall01\\preview-window.png",
+      "sha256": "E9F59F49852F2433F7A9609D85D98B3BC59B8BE46BD1B23BBBB9DAC39FA6CFA3",
+      "after_sha256": "E9F59F49852F2433F7A9609D85D98B3BC59B8BE46BD1B23BBBB9DAC39FA6CFA3",
+      "unchanged": true
+    },
+    {
+      "relative_path": "unreal\\Art\\CityDesign_Mall01\\preview-close.png",
+      "sha256": "1CF9527C896B4D4AE25F486B296A698E12FA7726CAB7B1EA520D419CC5636E0C",
+      "after_sha256": "1CF9527C896B4D4AE25F486B296A698E12FA7726CAB7B1EA520D419CC5636E0C",
+      "unchanged": true
+    },
+    {
+      "relative_path": "unreal\\Art\\CityDesign_Mall01\\preview-neighbor.png",
+      "sha256": "B18C69FBD3460BCF9B9DAEA32ED812248891E7F7D56A33B28930E5308FFE9AFA",
+      "after_sha256": "B18C69FBD3460BCF9B9DAEA32ED812248891E7F7D56A33B28930E5308FFE9AFA",
+      "unchanged": true
+    },
+    {
+      "relative_path": "unreal\\Art\\CityDesign_Mall01\\README.md",
+      "sha256": "29AE58BDF2975B23D310ABD8ADF1C1D37411EB393ECA3A7C044B8624C13BB9F0",
+      "after_sha256": "29AE58BDF2975B23D310ABD8ADF1C1D37411EB393ECA3A7C044B8624C13BB9F0",
+      "unchanged": true
+    }
+  ],
+  "note": "Existing worktree edits from other tasks were retained; no commit/push/deploy."
+}

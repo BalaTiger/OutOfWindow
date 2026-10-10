@@ -1,4 +1,5 @@
-﻿#include "WindowDirector.h"
+#include "WindowDirector.h"
+#include "BufferVisualizationData.h"
 #include "WindowVisibilityButton.h"
 #include "WindowDesktop.h"
 #include "WindowPrecipitation.h"
@@ -6,6 +7,7 @@
 #include "WindowFrame.h"
 #include "WindowFrameLighting.h"
 #include "WindowWeather.h"
+#include "WindowAstronomy.h"
 #include "WindowSkySampling.h"
 #include "Camera/CameraActor.h"
 #include "Camera/CameraComponent.h"
@@ -30,10 +32,17 @@
 #include "Engine/PostProcessVolume.h"
 #include "Engine/StaticMesh.h"
 #include "Engine/TextureRenderTargetCube.h"
+#include "Engine/VolumeTexture.h"
+#include "Engine/TextureRenderTarget2D.h"
+#include "Kismet/KismetRenderingLibrary.h"
+#include "TextureResource.h"
 #include "EngineUtils.h"
 #include "GameFramework/GameUserSettings.h"
 #include "GameFramework/PlayerController.h"
 #include "HAL/FileManager.h"
+#include "HAL/PlatformTime.h"
+#include "HAL/PlatformProcess.h"
+#include "CoreGlobals.h"
 #include "HAL/IConsoleManager.h"
 #include "HttpModule.h"
 #include "ImageUtils.h"
@@ -55,6 +64,7 @@
 #include "UnrealClient.h"
 #if WITH_EDITOR
 #include "ShaderCompiler.h"
+#include "TextureCompiler.h"
 #endif
 #include "Widgets/Input/SButton.h"
 #include "Widgets/Input/SComboButton.h"
@@ -89,6 +99,7 @@ struct FWindowSession
     double Temperature = 22, CloudCover = 35, Precipitation = 0, WindSpeed = 8, WindDirection = 240, Gust = 8;
     int32 WeatherCode = 1, Quality = 1;
     float Hour = 10, Wetness = 0, Water = 0;
+    FDateTime TestDate = FDateTime(2026, 9, 23);
     bool bLiveTime = true, bAudio = false, bHasWeather = false, bFallback = true, bTest = false;
     bool bRefreshPending = false;
     bool bFrameStyleInitialized = false;
@@ -104,6 +115,7 @@ bool ValidLocation(double Latitude, double Longitude, double UtcOffset)
         && FMath::IsFinite(Longitude) && FMath::Abs(Longitude) <= 180
         && FMath::IsFinite(UtcOffset) && UtcOffset >= -12 && UtcOffset <= 14;
 }
+TAutoConsoleVariable<float> FullMoonLux(TEXT("oow.FullMoonLux"), .26f, TEXT("Reference full-moon source illuminance in lux; lunar phase uses a calibrated visual approximation."));
 TAutoConsoleVariable<float> NightBloom(TEXT("oow.NightBloom"), 1.3f, TEXT("Bloom intensity for OOWWindowLookdev volumes."));
 TAutoConsoleVariable<float> NightBloomSize(TEXT("oow.NightBloomSize"), 5.5f, TEXT("Bloom size scale for OOWWindowLookdev volumes."));
 TAutoConsoleVariable<float> NightExposureBias(TEXT("oow.NightExposureBias"), -1.15f, TEXT("Night exposure bias for OOWWindowLookdev volumes."));
@@ -117,6 +129,16 @@ TAutoConsoleVariable<float> StormCellSpacing(TEXT("oow.StormCellSpacingKm"), 4.f
 TAutoConsoleVariable<float> StormDetailStrength(TEXT("oow.StormDetailStrength"), 1.f, TEXT("Storm interior density detail (0 reproduces v2; 1 enables porous density lobes)."));
 TAutoConsoleVariable<float> StormDetailScale(TEXT("oow.StormDetailScaleKm"), .35f, TEXT("Storm interior breakup scale in kilometres (0.08-1)."));
 TAutoConsoleVariable<float> StormDetailDensity(TEXT("oow.StormDetailDensityScale"), 1.35f, TEXT("Extinction multiplier for detailed storm cells (0.1-2)."));
+TAutoConsoleVariable<float> CloudCoverGamma(TEXT("oow.CloudCoverGamma"), 3.f, TEXT("Cover -> coverage gamma. >1 biases the okta toward clear."));
+TAutoConsoleVariable<float> ProbeCover(TEXT("oow.ProbeCoverage"), -1.f, TEXT("Test override for Cloud_GlobalCoverage; -1 leaves it computed."));
+TAutoConsoleVariable<float> ProbeDens(TEXT("oow.ProbeDensity"), -1.f, TEXT("Test override for Cloud_GlobalDensity; -1 leaves it computed."));
+TAutoConsoleVariable<float> ProbeFairDensity(TEXT("oow.ProbeFairDensity"), -1.f, TEXT("Test-only override for ordinary cloud extinction; -1 leaves it computed."));
+TAutoConsoleVariable<float> ProbeSheetDensity(TEXT("oow.ProbeOvercastSheetDensity"), -1.f, TEXT("Test-only override for the overcast support extinction; -1 leaves it computed."));
+TAutoConsoleVariable<float> ProbeBottom(TEXT("oow.ProbeBottomKm"), -1.f, TEXT("Test override for the cloud layer bottom altitude (km)."));
+TAutoConsoleVariable<float> ProbeHeight(TEXT("oow.ProbeHeightKm"), -1.f, TEXT("Test override for the cloud layer height (km)."));
+TAutoConsoleVariable<float> ProbeCirrusStrength(TEXT("oow.ProbeCirrusStrength"), -1.f, TEXT("Test override for OOW_CirrusStrength; -1 leaves it computed."));
+TAutoConsoleVariable<float> ProbeCirrusCoverage(TEXT("oow.ProbeCirrusCoverage"), -1.f, TEXT("Test override for OOW_CirrusCoverage; -1 leaves it computed."));
+TAutoConsoleVariable<float> ProbeCirrusDensity(TEXT("oow.ProbeCirrusDensity"), -1.f, TEXT("Test override for OOW_CirrusDensity; -1 leaves it computed."));
 TAutoConsoleVariable<float> StormShadowSamples(TEXT("oow.StormShadowSampleScale"), .5f, TEXT("Cloud internal light-ray shadow sample scale (0.5-2)."));
 TAutoConsoleVariable<float> StormShadowDistance(TEXT("oow.StormShadowDistanceKm"), 15.f, TEXT("Cloud internal light-ray shadow tracing distance in kilometres (2-15)."));
 TAutoConsoleVariable<float> StormScatterOcclusion(TEXT("oow.StormScatterOcclusion"), .25f, TEXT("Storm multiple-scattering extinction factor (0.1-0.8); higher retains more occlusion."));
@@ -135,10 +157,17 @@ bool ReadJson(const FHttpResponsePtr& Response, bool bSuccess, TSharedPtr<FJsonO
         && FJsonSerializer::Deserialize(TJsonReaderFactory<>::Create(Response->GetContentAsString()), Json) && Json.IsValid();
 }
 
-FDateTime LocalNow() { return Session.bTest ? FDateTime(2026, 9, 23) + FTimespan::FromHours(Session.Hour) : FDateTime::UtcNow() + FTimespan::FromSeconds(Session.OffsetSeconds); }
+FDateTime LocalNow() { return Session.bTest ? Session.TestDate + FTimespan::FromHours(Session.Hour) : FDateTime::UtcNow() + FTimespan::FromSeconds(Session.OffsetSeconds); }
 float Smooth(float A, float B, float Value) { const float T = FMath::Clamp((Value - A) / (B - A), 0.f, 1.f); return T * T * (3.f - 2.f * T); }
 
 int32 ActiveWeatherCode() { return Session.Weather == TEXT("real") ? Session.WeatherCode : WindowWeather::CodeForPreview(Session.Weather); }
+double RequestedCloudCover() { return Session.Weather == TEXT("real") ? Session.CloudCover : WindowWeather::PresetCloudCover(Session.Weather); }
+const TCHAR* DisplayWeatherLabel()
+{
+    const int32 Code = ActiveWeatherCode();
+    // Preserve rain, snow, fog, thunderstorm, and unknown provider semantics.
+    return Code >= 0 && Code <= 3 ? WindowWeather::CloudLabel(RequestedCloudCover()) : WindowWeather::LabelForCode(Code);
+}
 
 bool ShouldCaptureWindowReflection(float Elapsed, float LastCapture, float FastUntil)
 {
@@ -162,6 +191,20 @@ AWindowDirector::AWindowDirector()
     AmbientAudio->bAutoActivate = false;
     AmbientAudio->bAllowSpatialization = false;
     AmbientAudio->bIsUISound = true;
+    Moon = CreateDefaultSubobject<UDirectionalLightComponent>(TEXT("MoonLight"));
+    Moon->SetupAttachment(RootComponent);
+    Moon->SetMobility(EComponentMobility::Movable);
+    Moon->SetAtmosphereSunLight(true);
+    Moon->SetAtmosphereSunLightIndex(1);
+    Moon->SetIntensity(0.f);
+    Moon->SetLightColor(FLinearColor::White);
+    Moon->SetLightSourceAngle(.568f);
+    // This task adds lunar illumination; hide the phase-less native disk.
+    Moon->SetAtmosphereSunDiskColorScale(FLinearColor::Black);
+    Moon->bPerPixelAtmosphereTransmittance = true;
+    Moon->bCastCloudShadows = true;
+    Moon->CloudShadowMapResolutionScale = .25f;
+    Moon->CloudShadowExtent = 8.f;
     Random.Initialize(92119);
 }
 
@@ -172,6 +215,25 @@ void AWindowDirector::BeginPlay()
     Super::BeginPlay();
     bTestMode = FParse::Value(FCommandLine::Get(), TEXT("OOWCapture="), CapturePath);
     Session.bTest = bTestMode;
+    if (bTestMode && FParse::Param(FCommandLine::Get(),TEXT("OOWDiagHDR")))
+    {
+        GetBufferVisualizationData().GetMaterial(FName(TEXT("PreTonemapHDRColor")));
+        GetBufferVisualizationData().GetMaterial(FName(TEXT("PostTonemapHDRColor")));
+    }
+
+    bLegacyLighting = bTestMode && FParse::Param(FCommandLine::Get(), TEXT("OOWTestLegacyLighting"));
+    bLegacyClouds = bTestMode && FParse::Param(FCommandLine::Get(), TEXT("OOWTestLegacyClouds"));
+    if (bTestMode)
+    {
+        FString TestDate;
+        FDateTime Parsed;
+        Session.TestDate = FDateTime(2026, 9, 23);
+        if (FParse::Value(FCommandLine::Get(), TEXT("OOWTestDate="), TestDate))
+        {
+            if (TestDate.Len() == 10 && FDateTime::ParseIso8601(*(TestDate + TEXT("T00:00:00")), Parsed)) Session.TestDate = Parsed.GetDate();
+            else UE_LOG(LogTemp, Error, TEXT("Invalid OOWTestDate; expected YYYY-MM-DD"));
+        }
+    }
     if (!bTestMode && !Session.bLocationInitialized)
     {
         const TCHAR* Section = TEXT("OutOfWindow.Location");
@@ -193,12 +255,24 @@ void AWindowDirector::BeginPlay()
         Session.bLiveTime = false;
         Session.bAudio = false;
         Session.Wetness = Session.Water = 0;
+        if (FParse::Value(FCommandLine::Get(), TEXT("OOWDiagWallFPS="), DiagnosticWallFPS))
+        {
+            if (!FParse::Param(FCommandLine::Get(), TEXT("OOWDiagHDR"))
+                || !FParse::Param(FCommandLine::Get(), TEXT("OOWTestHoudini64Cloud"))
+                || !FApp::UseFixedTimeStep() || FMath::Abs(FApp::GetFixedDeltaTime() - 0.1) > 1.e-6
+                || !FMath::IsFinite(DiagnosticWallFPS) || DiagnosticWallFPS <= 0 || DiagnosticWallFPS > 15)
+                UE_LOG(LogTemp, Fatal, TEXT("OOWDiagWallFPS requires fixed .1s HDR H64 diagnostic, 0<FPS<=15"));
+        }
         FParse::Value(FCommandLine::Get(), TEXT("OOWTestSeconds="), TestSeconds);
         TestSeconds = FMath::Clamp(TestSeconds, 1.f, 300.f);
         FParse::Value(FCommandLine::Get(), TEXT("OOWCaptureFrames="), CaptureFrames);
         FParse::Value(FCommandLine::Get(), TEXT("OOWCaptureInterval="), CaptureInterval);
         CaptureFrames = FMath::Clamp(CaptureFrames, 1, 240);
-        CaptureInterval = FMath::Clamp(CaptureInterval, .05f, 2.f);
+        if (FParse::Param(FCommandLine::Get(), TEXT("OOWTestDomeSweep"))) CaptureFrames = 10;
+        CaptureInterval = FMath::Clamp(CaptureInterval, .05f, 60.f);
+        FString Sequence;
+        if (FParse::Value(FCommandLine::Get(), TEXT("OOWTestWeatherSequence="), Sequence, false))
+            Sequence.ParseIntoArray(TestWeatherSequence, TEXT(","), true);
     }
     Session.Scene = UGameplayStatics::GetCurrentLevelName(this, true);
     bCollapsed = Session.bCollapsed;
@@ -207,6 +281,23 @@ void AWindowDirector::BeginPlay()
     Water = Session.Water;
     FindSceneActors();
     BindCamera();
+    int32 SkyFace = -1;
+    if (bTestMode) FParse::Value(FCommandLine::Get(), TEXT("OOWTestSkyFace="), SkyFace);
+    if (bTestMode && FParse::Param(FCommandLine::Get(), TEXT("OOWTestDomeSweep"))) SkyFace = 0;
+    if (bTestMode && Camera && SkyFace >= 0 && SkyFace <= 4)
+    {
+        // Five 90-degree cube faces cover the upper hemisphere. Keep the scene yaw
+        // from the original camera, and sample below even the lowest rain-cloud base.
+        Camera->SetActorLocation(FVector(Camera->GetActorLocation().X, Camera->GetActorLocation().Y, 50000.f));
+        Camera->SetActorRotation(SkyFace == 0 ? FRotator(90, 0, 0) : FRotator(0, (SkyFace - 1) * 90, 0));
+        VerticalFov = 90.f;
+        for (TActorIterator<AActor> It(GetWorld()); It; ++It)
+        {
+            TInlineComponentArray<UMeshComponent*> Meshes;
+            It->GetComponents(Meshes);
+            for (UMeshComponent* Mesh : Meshes) Mesh->SetVisibility(false);
+        }
+    }
     if (Camera && !(bTestMode && FParse::Param(FCommandLine::Get(), TEXT("OOWTestNoFrame"))))
     {
         WindowFrame = GetWorld()->SpawnActor<AWindowFrame>();
@@ -270,12 +361,6 @@ void AWindowDirector::BeginPlay()
     if (FParse::Value(FCommandLine::Get(), TEXT("OOWWeather="), StartWeather)) OOWWeather(StartWeather);
     if (FParse::Value(FCommandLine::Get(), TEXT("OOWTestHour="), StartHour)) OOWTime(StartHour);
     if (FParse::Value(FCommandLine::Get(), TEXT("OOWTestWeather="), StartWeather)) OOWWeather(StartWeather);
-    float TestCloudCover;
-    if (bTestMode && FParse::Value(FCommandLine::Get(), TEXT("OOWTestCloudCover="), TestCloudCover) && FMath::IsFinite(TestCloudCover))
-    {
-        Session.CloudCover = FMath::Clamp(TestCloudCover, 0.f, 100.f);
-        Session.Weather = TEXT("real");
-    }
     float TestPrecipitation;
     if (bTestMode && FParse::Value(FCommandLine::Get(), TEXT("OOWTestPrecipitation="), TestPrecipitation) && FMath::IsFinite(TestPrecipitation) && TestPrecipitation >= 0.f)
     {
@@ -287,9 +372,23 @@ void AWindowDirector::BeginPlay()
     if (bTestMode && FParse::Value(FCommandLine::Get(), TEXT("OOWTestWeatherCode="), TestWeatherCode))
     {
         Session.WeatherCode = TestWeatherCode;
+        // Mirror the fetch path: the reported cloud_cover drives the amount,
+        // the code only picks the label/family. Session.Weather must be "real"
+        // or the :1162 amount uses FamilyForCode instead of the cover below.
+        Session.Weather = TEXT("real");
+        Session.CloudCover = WindowWeather::DefaultCloudCoverForCode(TestWeatherCode);
+    }
+    float TestCloudCover;
+    if (bTestMode && FParse::Value(FCommandLine::Get(), TEXT("OOWTestCloudCover="), TestCloudCover) && FMath::IsFinite(TestCloudCover))
+    {
+        Session.CloudCover = FMath::Clamp(TestCloudCover, 0.f, 100.f);
         Session.Weather = TEXT("real");
     }
     if (FParse::Value(FCommandLine::Get(), TEXT("OOWTestQuality="), StartQuality)) OOWQuality(StartQuality);
+    float TestScreenPercentage;
+    if (bTestMode && FParse::Value(FCommandLine::Get(), TEXT("OOWTestScreenPercentage="), TestScreenPercentage))
+        if (IConsoleVariable* Variable = IConsoleManager::Get().FindConsoleVariable(TEXT("r.ScreenPercentage")))
+            Variable->Set(FMath::Clamp(TestScreenPercentage, 50.f, 100.f), ECVF_SetByCode);
     FString ExpectedScene;
     if (FParse::Value(FCommandLine::Get(), TEXT("OOWTestScene="), ExpectedScene) && !Session.Scene.Equals(ExpectedScene, ESearchCase::IgnoreCase))
         UE_LOG(LogTemp, Error, TEXT("OOW test expected scene %s but loaded %s"), *ExpectedScene, *Session.Scene);
@@ -300,9 +399,9 @@ void AWindowDirector::BeginPlay()
         GetWorldTimerManager().SetTimer(Handle, this, &AWindowDirector::OOWAudit, 12.f, false);
     }
     FastLightingUntil = GetWorld()->GetTimeSeconds() + 4;
-    Precipitation = GetWorld()->SpawnActor<AWindowPrecipitation>();
+    if (SkyFace < 0) Precipitation = GetWorld()->SpawnActor<AWindowPrecipitation>();
     if (Precipitation && Camera) Precipitation->SetView(Camera->GetActorLocation(), Camera->GetActorForwardVector());
-    if (Session.Scene == TEXT("Alley") && Camera)
+    if (SkyFace < 0 && Session.Scene == TEXT("Alley") && Camera)
     {
         Birds = GetWorld()->SpawnActor<AWindowBirds>();
         if (Birds) Birds->SetView(Camera->GetActorLocation(), Camera->GetActorForwardVector());
@@ -317,12 +416,41 @@ void AWindowDirector::BeginPlay()
         ScreenshotHandle = FScreenshotRequest::OnScreenshotRequestProcessed().AddWeakLambda(this, [this]
         {
             if (!bCaptureRequested) return;
-            if (++CapturedFrames < CaptureFrames)
+            if (FParse::Param(FCommandLine::Get(), TEXT("OOWTestCloudTransmittance")))
+            {
+                TArray<FString> Files;
+                IFileManager::Get().FindFiles(Files, *(FPaths::ScreenShotDir() / TEXT("VisualizeTexture*.bmp")), true, false);
+                FString Latest;
+                int32 NewFiles = 0;
+                for (const FString& File : Files)
+                    if (!TransmittancePreviousFiles.Contains(File)) { Latest = FPaths::ScreenShotDir() / File; ++NewFiles; }
+                if (NewFiles == 1)
+                    IFileManager::Get().Copy(*FPaths::ChangeExtension(CapturingFramePath, TEXT("transmittance.bmp")), *Latest);
+                else UE_LOG(LogTemp, Error, TEXT("OOW transmittance expected one new bitmap, found %d"), NewFiles);
+                if (GEngine) GEngine->Exec(GetWorld(), TEXT("vis 0"));
+            }
+            const FString MainPath = CapturePath;
+            CapturePath = CapturingFramePath;
+            ++CapturedFrames;
+            OOWAudit();
+            CapturePath = MainPath;
+            if (CapturedFrames < CaptureFrames)
             {
                 bCaptureRequested = false;
+                if (FParse::Param(FCommandLine::Get(), TEXT("OOWTestDomeSweep")) && Camera)
+                {
+                    const int32 Face = CapturedFrames % 5;
+                    Camera->SetActorRotation(Face == 0 ? FRotator(90, 0, 0) : FRotator(0, (Face - 1) * 90, 0));
+                    if (CapturedFrames == 5)
+                    {
+                        if (FParse::Param(FCommandLine::Get(), TEXT("OOWTestEmptyCloudReference"))) bEmptyCloudReference = true;
+                        else if (GEngine) GEngine->Exec(GetWorld(), TEXT("ShowFlag.Cloud 0"));
+                    }
+                }
+                if (TestWeatherSequence.IsValidIndex(CapturedFrames)) OOWWeather(TestWeatherSequence[CapturedFrames]);
                 TestStartedAt = GetWorld()->GetTimeSeconds() - TestSeconds + CaptureInterval;
             }
-            else { OOWAudit(); ExitFrames = 6; }
+            else ExitFrames = 6;
         });
     }
     UpdateAudio();
@@ -406,10 +534,18 @@ void AWindowDirector::FindSceneActors()
             if (Name.StartsWith(TEXT("VerticalFov_"))) VerticalFov = FCString::Atof(*Name.RightChop(12));
         }
     }
+    SceneNorthYaw = SunAzimuth - UE_DOUBLE_PI;
+    if (bSunSweep && Camera)
+    {
+        const FVector Right = Camera->GetActorRightVector();
+        SceneNorthYaw = FMath::Atan2(Right.X, -Right.Y) - 1.5 * UE_DOUBLE_PI;
+    }
     if (Sun)
     {
         Sun->SetMobility(EComponentMobility::Movable);
         Sun->SetAtmosphereSunLight(true);
+        Sun->SetAtmosphereSunLightIndex(0);
+        Sun->bPerPixelAtmosphereTransmittance = !bLegacyLighting;
         Sun->bCastCloudShadows = true;
         Sun->CloudShadowMapResolutionScale = .5f;
         Sun->CloudShadowExtent = 8.f;
@@ -419,32 +555,74 @@ void AWindowDirector::FindSceneActors()
     if (Cloud && Cloud->Material.LoadSynchronous())
     {
         UMaterialInterface* Source = Cloud->Material.Get();
+        // Diagnostic: preserve the native MI's material parameters under the same scene/container.
+        const bool bCleanNativeClouds = bTestMode && (FParse::Param(FCommandLine::Get(), TEXT("OOWTestCleanNativeClouds")) || FParse::Param(FCommandLine::Get(), TEXT("OOWTestHoudini64Cloud")));
+        if (bCleanNativeClouds)
+        {
+            const TCHAR* CleanSourcePath = FParse::Param(FCommandLine::Get(), TEXT("OOWTestHoudini64Cloud"))
+                ? TEXT("/Game/Weather/OOW_Houdini64_Test/MI_StaticCloud64.MI_StaticCloud64")
+                : TEXT("/Engine/EngineSky/VolumetricClouds/m_SimpleVolumetricCloud_Inst.m_SimpleVolumetricCloud_Inst");
+            FString DiagnosticMaterial;
+            if(FParse::Param(FCommandLine::Get(),TEXT("OOWDiagHDR")) && FParse::Value(FCommandLine::Get(),TEXT("OOWDiagCloudMaterial="),DiagnosticMaterial))
+            {
+                if(!DiagnosticMaterial.StartsWith(TEXT("/Game/Weather/OOW_H64_Scattering_Test/")))
+                    UE_LOG(LogTemp,Fatal,TEXT("OOW diagnostic material outside owned scattering test folder"));
+                Source=LoadObject<UMaterialInterface>(nullptr,*DiagnosticMaterial);
+            }
+            else Source = LoadObject<UMaterialInterface>(nullptr, CleanSourcePath);
+            if (!Source) UE_LOG(LogTemp, Fatal, TEXT("OOW clean native cloud material missing"));
+        }
         const bool bUseNativeClouds = FParse::Param(FCommandLine::Get(), TEXT("OOWNativeClouds"))
             || (bTestMode && FParse::Param(FCommandLine::Get(), TEXT("OOWTestNativeClouds")));
-        if (!bUseNativeClouds)
+        if (!bUseNativeClouds && !bCleanNativeClouds)
         {
             const bool bLegacyCells = bTestMode && FParse::Param(FCommandLine::Get(), TEXT("OOWTestLegacyStormCells"));
             const TCHAR* StormPath = bLegacyCells ? TEXT("/Game/Weather/MI_OOW_StormCells_v2.MI_OOW_StormCells_v2")
-                : TEXT("/Game/Weather/MI_OOW_StormCells_v3.MI_OOW_StormCells_v3");
+                : bLegacyClouds ? TEXT("/Game/Weather/MI_OOW_StormCells_v4.MI_OOW_StormCells_v4")
+                : bTestMode && FParse::Param(FCommandLine::Get(), TEXT("OOWTestCloudsV6")) ? TEXT("/Game/Weather/MI_OOW_StormCells_v6.MI_OOW_StormCells_v6")
+                : bTestMode && FParse::Param(FCommandLine::Get(), TEXT("OOWTestCloudsV8")) ? TEXT("/Game/Weather/MI_OOW_WindowCloudsMacro_v8.MI_OOW_WindowCloudsMacro_v8")
+                : TEXT("/Game/Weather/MI_OOW_WindowClouds_v7.MI_OOW_WindowClouds_v7");
             if (UMaterialInterface* StormSource = LoadObject<UMaterialInterface>(nullptr, StormPath))
                 Source = StormSource;
             else UE_LOG(LogTemp, Warning, TEXT("OOW storm cloud material missing; using native clouds"));
         }
         CloudMaterial = UMaterialInstanceDynamic::Create(Source, this);
         Cloud->SetMaterial(CloudMaterial);
+        float DiagnosticMsFactor=0;
+        if(bCleanNativeClouds && FParse::Param(FCommandLine::Get(),TEXT("OOWDiagHDR"))
+           && FParse::Value(FCommandLine::Get(),TEXT("OOWDiagMsContribution="),DiagnosticMsFactor))
+        {
+            FLinearColor Controls;
+            if(!Source->GetVectorParameterValue(FMaterialParameterInfo(TEXT("Multiscatter_Controls")),Controls))
+                UE_LOG(LogTemp,Fatal,TEXT("OOW diagnostic MS controls missing"));
+            Controls.R=FMath::Clamp(DiagnosticMsFactor,0.f,1.f);
+            CloudMaterial->SetVectorParameterValue(TEXT("Multiscatter_Controls"),Controls);
+        }
+
+        Cloud->SetbUsePerSampleAtmosphericLightTransmittance(!bLegacyLighting);
         // The engine preset spans 256 km and starts 5 km up: too distant for
         // these low-angle window views. Keep the native temporally reconstructed clouds.
-        CloudMaterial->SetScalarParameterValue(TEXT("Layout_CloudGlobalScale"), 32.f);
+        if (!bCleanNativeClouds) CloudMaterial->SetScalarParameterValue(TEXT("Layout_CloudGlobalScale"), 32.f);
         // Native wind multiplies total shader time; keep it constant for gentle
         // erosion and integrate weather wind separately so direction changes cannot jump clouds.
-        CloudMaterial->SetVectorParameterValue(TEXT("Layout_WindControls"), FLinearColor(.3f, .2f, .02f, .18f));
-        CloudMaterial->SetVectorParameterValue(TEXT("Storm_LightningColor"), FLinearColor::Black);
-        CloudMaterial->SetVectorParameterValue(TEXT("Storm_AlbedoColor"), FLinearColor(.52f, .55f, .58f, 1.f / 3.f));
-        Cloud->SetTracingStartMaxDistance(80.f);
-        Cloud->SetTracingMaxDistance(25.f);
+        if (!bCleanNativeClouds) CloudMaterial->SetVectorParameterValue(TEXT("Layout_WindControls"), FLinearColor(.3f, .2f, .02f, .18f));
+        if (!bCleanNativeClouds) CloudMaterial->SetVectorParameterValue(TEXT("Storm_LightningColor"), FLinearColor::Black);
+        if (!bCleanNativeClouds) CloudMaterial->SetVectorParameterValue(TEXT("Storm_AlbedoColor"), FLinearColor(.52f, .55f, .58f, 1.f / 3.f));
+        Cloud->SetTracingStartMaxDistance(bLegacyClouds ? 80.f : 500.f);
+        Cloud->SetTracingMaxDistance(bLegacyClouds ? 25.f : 300.f);
         Cloud->SetReflectionViewSampleCountScale(.15f);
         Cloud->SetShadowViewSampleCountScale(.5f);
         Cloud->SetShadowReflectionViewSampleCountScale(.1f);
+    }
+    if (bTestMode && Cloud)
+    {
+        if (FParse::Param(FCommandLine::Get(), TEXT("OOWTestCloudCaptureOff")))
+            Cloud->SetVisibleInRealTimeSkyCaptures(false);
+        if (FParse::Param(FCommandLine::Get(), TEXT("OOWTestCloudCaptureFullSamples")))
+        {
+            Cloud->SetReflectionViewSampleCountScale(1.f);
+            Cloud->SetShadowReflectionViewSampleCountScale(1.f);
+        }
     }
     if (PostProcess)
     {
@@ -572,8 +750,8 @@ void AWindowDirector::MakeInterface()
                                 + SVerticalBox::Slot().AutoHeight().Padding(0, 3, 0, 0)[SNew(STextBlock).Text(FText::FromString(SceneDescriptions[Index])).Font(FCoreStyle::GetDefaultFontStyle(TEXT("Regular"), 6)).ColorAndOpacity(Muted)]]]]];
     }
     TSharedRef<SHorizontalBox> WeatherButtons = SNew(SHorizontalBox);
-    const TCHAR* WeatherKeys[] = { TEXT("real"), TEXT("clear"), TEXT("cloudy"), TEXT("overcast"), TEXT("rain"), TEXT("snow"), TEXT("fog") };
-    const TCHAR* WeatherNames[] = { TEXT("实时"), TEXT("晴"), TEXT("多云"), TEXT("阴"), TEXT("雨"), TEXT("雪"), TEXT("雾") };
+    const TCHAR* WeatherKeys[] = { TEXT("real"), TEXT("clear"), TEXT("few"), TEXT("cloudy"), TEXT("overcast"), TEXT("rain"), TEXT("snow"), TEXT("fog") };
+    const TCHAR* WeatherNames[] = { TEXT("实时"), TEXT("晴"), TEXT("少云"), TEXT("多云"), TEXT("阴"), TEXT("雨"), TEXT("雪"), TEXT("雾") };
     for (int32 Index = 0; Index < UE_ARRAY_COUNT(WeatherKeys); ++Index)
     {
         const FString Key = WeatherKeys[Index], Name = WeatherNames[Index];
@@ -817,7 +995,7 @@ FText AWindowDirector::StatusText() const
 {
     const FDateTime Now = LocalNow();
     const TCHAR* Status = bFetching ? TEXT("正在同步所选位置的天气") : Session.bFallback ? TEXT("离线天气示例 · 非实时") : Session.bFollowIP ? TEXT("实时天空 · IP 近似位置") : TEXT("实时天空 · 手动位置");
-    return FText::FromString(FString::Printf(TEXT("%s\n%s  %.0f°C\n%s · 风 %.0f km/h · %02d:%02d"), Status, *Session.City, Session.Temperature, WindowWeather::LabelForCode(ActiveWeatherCode()), Session.WindSpeed, Now.GetHour(), Now.GetMinute()));
+    return FText::FromString(FString::Printf(TEXT("%s\n%s  %.0f°C\n%s · 风 %.0f km/h · %02d:%02d"), Status, *Session.City, Session.Temperature, DisplayWeatherLabel(), Session.WindSpeed, Now.GetHour(), Now.GetMinute()));
 }
 
 FText AWindowDirector::ClockText() const
@@ -832,7 +1010,11 @@ void AWindowDirector::DesktopButton(FName Action)
     if (DesktopAction) DesktopAction(Action);
 }
 
-FString AWindowDirector::ActualWeather() const { return WindowWeather::FamilyForCode(ActiveWeatherCode()); }
+FString AWindowDirector::ActualWeather() const
+{
+    const int32 Code = ActiveWeatherCode();
+    return Code >= 0 && Code <= 3 ? WindowWeather::CloudMode(RequestedCloudCover()) : WindowWeather::FamilyForCode(Code);
+}
 
 void AWindowDirector::OOWTime(float Hour)
 {
@@ -1003,10 +1185,37 @@ void AWindowDirector::UseOfflineWeather()
     UE_LOG(LogTemp, Warning, TEXT("OutOfWindow uses offline example weather at %s"), *Session.City);
 }
 
+bool AWindowDirector::PaceDiagnosticTick(float DeltaSeconds)
+{
+    if (!bTestMode || DiagnosticWallFPS <= 0) return true;
+    const double Arrival = FPlatformTime::Seconds();
+    const double Period = 1.0 / DiagnosticWallFPS;
+    const double Previous = DiagnosticLastWallStart;
+    const double Deadline = Previous >= 0 ? Previous + Period : Arrival;
+    const double RequestedWait = FMath::Max(0.0, Deadline - Arrival);
+    // Wall-clock pacing only. Never change DeltaSeconds, world time, frame history,
+    // rendering budgets or wait on/suspend the GPU or another application.
+    while (FPlatformTime::Seconds() < Deadline)
+    {
+        if (IsEngineExitRequested()) return false;
+        const double Remaining = Deadline - FPlatformTime::Seconds();
+        if (Remaining <= 0) break;
+        FPlatformProcess::SleepNoStats(static_cast<float>(FMath::Min(0.05, Remaining)));
+    }
+    const double Actual = FPlatformTime::Seconds();
+    DiagnosticLastWallStart = Actual;
+    ++DiagnosticTickCount;
+    UE_LOG(LogTemp, Display, TEXT("OOW_DIAG_PACING tick=%d frame=%llu world=%.9f dt=%.9f period=%.6f requested=%.6f waited=%.6f start=%.9f interval=%.6f"),
+        DiagnosticTickCount, static_cast<unsigned long long>(GFrameCounter), GetWorld()->GetTimeSeconds(), DeltaSeconds,
+        Period, RequestedWait, Actual - Arrival, Actual, Previous >= 0 ? Actual - Previous : 0.0);
+    return true;
+}
+
 void AWindowDirector::Tick(float DeltaSeconds)
 {
     Super::Tick(DeltaSeconds);
     if (bChangingLevel) return;
+    if (!PaceDiagnosticTick(DeltaSeconds)) return;
     BindCamera();
     if (Camera && VerticalFov > 0 && GEngine && GEngine->GameViewport)
     {
@@ -1040,7 +1249,12 @@ void AWindowDirector::Tick(float DeltaSeconds)
     if (Birds)
     {
         const float Bearing = FMath::DegreesToRadians(Session.WindDirection);
-        Birds->SetConditions(Daylight, ActualWeather() == TEXT("clear") || ActualWeather() == TEXT("cloudy"),
+        const FString Weather = ActualWeather();
+        const float Activity = Weather == TEXT("clear") || Weather == TEXT("few") || Weather == TEXT("cloudy") ? 1.f
+            : Weather == TEXT("overcast") ? .45f
+            : Weather == TEXT("fog") ? .2f
+            : Weather == TEXT("rain") || Weather == TEXT("snow") ? .05f : 0.f;
+        Birds->SetConditions(Daylight, Activity,
             FVector(-FMath::Sin(Bearing), FMath::Cos(Bearing), 0) * Session.WindSpeed / 3.6f * 100.f);
     }
     Traffic.Tick(DeltaSeconds, ActualWeather());
@@ -1070,15 +1284,38 @@ void AWindowDirector::Tick(float DeltaSeconds)
         }
         const float Elapsed = Now - TestStartedAt;
         if (!bShadersCompiling && Elapsed > 2) FrameTimes.Add(DeltaSeconds * 1000.f);
-        if (!bCaptureRequested && !bShadersCompiling && Elapsed >= TestSeconds)
+        float DiagnosticCaptureAt=0;
+        const bool bFixedDiagnosticTime=FParse::Param(FCommandLine::Get(),TEXT("OOWDiagHDR"))
+            && FParse::Value(FCommandLine::Get(),TEXT("OOWDiagCaptureAtWorldSeconds="),DiagnosticCaptureAt);
+        const bool bCaptureDue=bFixedDiagnosticTime ? Now >= FMath::Clamp(DiagnosticCaptureAt,1.f,300.f)-.025f : Elapsed >= TestSeconds;
+        if (!bCaptureRequested && !bShadersCompiling && bCaptureDue)
         {
             bCaptureRequested = true;
-            const FString FramePath = CapturedFrames + 1 == CaptureFrames ? CapturePath
+            FString FramePath = CapturedFrames + 1 == CaptureFrames ? CapturePath
                 : FPaths::ChangeExtension(CapturePath, TEXT("")) + FString::Printf(TEXT("-%03d.png"), CapturedFrames);
+            if (FParse::Param(FCommandLine::Get(), TEXT("OOWTestDomeSweep")))
+            {
+                FString Stem = FPaths::GetBaseFilename(CapturePath).LeftChop(2); // remove -0
+                if (CapturedFrames >= 5) Stem = Stem.Replace(TEXT("dome-"), TEXT("reference-"));
+                FramePath = FPaths::Combine(FPaths::GetPath(CapturePath), Stem + FString::Printf(TEXT("-%d.png"), CapturedFrames % 5));
+            }
+            CapturingFramePath = FramePath;
+            if (FParse::Param(FCommandLine::Get(), TEXT("OOWTestCloudTransmittance")) && GEngine)
+            {
+                TransmittancePreviousFiles.Reset();
+                IFileManager::Get().FindFiles(TransmittancePreviousFiles, *(FPaths::ScreenShotDir() / TEXT("VisualizeTexture*.bmp")), true, false);
+                GEngine->Exec(GetWorld(), TEXT("vis VolumetricRenderTarget.Tracing a sat bmp"));
+            }
             FScreenshotRequest::RequestScreenshot(FramePath, FParse::Param(FCommandLine::Get(), TEXT("OOWCaptureUI")), false);
         }
         if (ExitFrames >= 0 && --ExitFrames <= 0) FPlatformMisc::RequestExit(false);
-        if (Elapsed > TestSeconds + 35) { UE_LOG(LogTemp, Error, TEXT("OOW screenshot timeout")); OOWAudit(); FPlatformMisc::RequestExit(false); }
+        if (Elapsed > TestSeconds + 35)
+        {
+            UE_LOG(LogTemp, Error, TEXT("OOW screenshot timeout"));
+            CapturePath = FPaths::ChangeExtension(CapturePath, TEXT("timeout.png"));
+            OOWAudit();
+            FPlatformMisc::RequestExit(false);
+        }
     }
     if (Session.bAudio && NoiseWave && NoiseWave->GetAvailableAudioByteCount() < 22050)
     {
@@ -1095,6 +1332,21 @@ void AWindowDirector::UpdateCloudSampling(float DeltaSeconds)
     FIntPoint RenderSize;
     if (SkySampling && SkySampling->GetMeasurement(VisibleSkyFraction, RenderSize))
         VisibleSkyPixels = VisibleSkyFraction * static_cast<double>(RenderSize.X) * RenderSize.Y;
+
+    int32 DiagnosticViewSamples=0;
+    if (bTestMode && FParse::Param(FCommandLine::Get(),TEXT("OOWDiagHDR")) && FParse::Value(FCommandLine::Get(),TEXT("OOWDiagViewSamples="),DiagnosticViewSamples))
+    {
+        CloudTargetSampleScale=CloudSampleScale=FMath::Clamp(DiagnosticViewSamples,96,768)/UVolumetricCloudComponent::BaseViewRaySampleCount;
+        Cloud->SetViewSampleCountScale(CloudSampleScale);
+        return;
+    }
+    float TestSampleScale;
+    if (bTestMode && FParse::Value(FCommandLine::Get(), TEXT("OOWTestCloudSampleScale="), TestSampleScale))
+    {
+        CloudTargetSampleScale = CloudSampleScale = FMath::Clamp(TestSampleScale, .25f, 3.f);
+        Cloud->SetViewSampleCountScale(CloudSampleScale);
+        return;
+    }
     CloudTargetSampleScale = WindowCloudSampleScale(VisibleSkyPixels, Session.Quality, CloudSampleBudget.GetValueOnGameThread());
     CloudSampleScale = DeltaSeconds > 0 ? FMath::FInterpTo(CloudSampleScale, CloudTargetSampleScale, DeltaSeconds, .6f) : CloudTargetSampleScale;
     if (FMath::Abs(Cloud->ViewSampleCountScale - CloudSampleScale) > .02f)
@@ -1129,23 +1381,23 @@ void AWindowDirector::UpdateFrameShadowLighting()
 
 void AWindowDirector::ApplyLighting(float DeltaSeconds)
 {
-    const FDateTime Date = LocalNow();
-    const double YearDays = FDateTime::IsLeapYear(Date.GetYear()) ? 366. : 365.;
-    const double Gamma = 2 * PI / YearDays * (Date.GetDayOfYear() - 1 + (Session.Hour - 12) / 24.);
-    const double Decl = .006918 - .399912 * FMath::Cos(Gamma) + .070257 * FMath::Sin(Gamma) - .006758 * FMath::Cos(2 * Gamma) + .000907 * FMath::Sin(2 * Gamma) - .002697 * FMath::Cos(3 * Gamma) + .00148 * FMath::Sin(3 * Gamma);
-    const double Equation = 229.18 * (.000075 + .001868 * FMath::Cos(Gamma) - .032077 * FMath::Sin(Gamma) - .014615 * FMath::Cos(2 * Gamma) - .040849 * FMath::Sin(2 * Gamma));
-    SolarMinutes = Session.Hour * 60 + Equation + 4 * Session.Longitude - Session.OffsetSeconds / 60.;
-    const double HourAngle = FMath::DegreesToRadians(SolarMinutes / 4 - 180);
-    const double Latitude = FMath::DegreesToRadians(Session.Latitude);
-    const double Elevation = FMath::Asin(FMath::Clamp(FMath::Sin(Latitude) * FMath::Sin(Decl) + FMath::Cos(Latitude) * FMath::Cos(Decl) * FMath::Cos(HourAngle), -1., 1.));
+    // Manual time and live time use the same local date/time for both luminaries.
+    const FDateTime Date = LocalNow().GetDate() + FTimespan::FromHours(Session.Hour);
+    const auto Solar = WindowAstronomy::SolarPosition(Date, Session.Latitude, Session.Longitude, Session.OffsetSeconds);
+    SolarMinutes = Solar.SolarMinutes;
+    const double Elevation = Solar.ElevationRadians;
     SolarElevation = FMath::RadiansToDegrees(Elevation);
+    const double SceneYaw = SceneNorthYaw;
+    const double RenderAzimuth = Solar.AzimuthRadians + SceneYaw;
     Daylight = Smooth(-.12f, .18f, FMath::Sin(Elevation));
     const FString Weather = ActualWeather();
-    float TargetCloudiness = Session.Weather == TEXT("real") ? Session.CloudCover / 100.f
-        : Weather == TEXT("clear") ? .25f : Weather == TEXT("cloudy") ? .6f : Weather == TEXT("overcast") ? 1.f : .9f;
+    float TargetCloudiness = RequestedCloudCover() / 100.f;
     if (Weather == TEXT("rain") || Weather == TEXT("snow")) TargetCloudiness = FMath::Max(TargetCloudiness, .96f);
     Cloudiness = FMath::FInterpTo(Cloudiness, TargetCloudiness, DeltaSeconds, .4f);
-    const float CloudBlend = Smooth(.25f, .96f, Cloudiness);
+    // Legacy v4 is retained for controlled captures. New weather uses Chinese total
+    // cloud-cover presets; final coverage is verified from images, not this scalar.
+    const float CoverCurve = FMath::Pow(FMath::Clamp(Cloudiness, 0.f, 1.f), FMath::Max(.1f, CloudCoverGamma.GetValueOnGameThread()));
+    const float CloudBlend = bLegacyClouds ? Smooth(.08f, .96f, CoverCurve) : Smooth(.2f, 1.f, Cloudiness);
     const float Glow = FMath::Exp(-FMath::Square(FMath::Sin(Elevation) / .22f));
     const float Elapsed = GetWorld()->GetTimeSeconds();
     if (Sun)
@@ -1160,12 +1412,33 @@ void AWindowDirector::ApplyLighting(float DeltaSeconds)
         {
             Direction = FVector(FMath::Sin(SunAzimuth) * FMath::Cos(Elevation), -FMath::Cos(SunAzimuth) * FMath::Cos(Elevation), FMath::Sin(Elevation));
         }
+        if (!bLegacyLighting)
+            Direction = FVector(FMath::Sin(RenderAzimuth) * FMath::Cos(Elevation), -FMath::Cos(RenderAzimuth) * FMath::Cos(Elevation), FMath::Sin(Elevation));
         Sun->GetOwner()->SetActorRotation(FMath::RInterpTo(Sun->GetOwner()->GetActorRotation(), (-Direction).Rotation(), DeltaSeconds, 3));
         // Directional illumination lets the volume self-shadow instead of
         // receiving only uniform ambient lighting.
-        const float TargetLux = 90000.f * Smooth(-.015f, .08f, FMath::Sin(Elevation)) * FMath::Lerp(.9f, .18f, CloudBlend);
+        // Keep the atmospheric source through twilight. Planet shadow and per-pixel/per-cloud
+        // transmittance handle ground sunset and high-altitude light independently.
+        const float SunFade = bLegacyLighting ? Smooth(-.015f, .08f, FMath::Sin(Elevation)) : Smooth(-18.f, -12.f, SolarElevation);
+        const float TargetLux = 90000.f * SunFade * FMath::Lerp(.9f, .18f, CloudBlend);
         Sun->SetIntensity(FMath::FInterpTo(Sun->Intensity, TargetLux, DeltaSeconds, 2));
-        Sun->SetLightColor(FMath::Lerp(FLinearColor(1.f, .94f, .86f), FLinearColor(1.f, .53f, .26f), Glow * .8f));
+        Sun->SetLightColor(bLegacyLighting ? FMath::Lerp(FLinearColor(1.f, .94f, .86f), FLinearColor(1.f, .53f, .26f), Glow * .8f) : FLinearColor::White);
+    }
+    const auto Lunar = WindowAstronomy::MoonPosition(Date, Session.Latitude, Session.Longitude, Session.OffsetSeconds);
+    MoonElevation = Lunar.ElevationDegrees;
+    MoonIlluminatedFraction = Lunar.IlluminatedFraction;
+    if (Moon)
+    {
+        const FVector Direction = Lunar.Direction.RotateAngleAxis(FMath::RadiansToDegrees(SceneYaw), FVector::UpVector);
+        Moon->SetWorldRotation((-Direction).Rotation());
+        // ponytail: phase^2.5 is a visual brightness approximation, not a lunar photometric ephemeris.
+        const float Lux = FMath::Max(0.f, FullMoonLux.GetValueOnGameThread()) * FMath::Pow(MoonIlluminatedFraction, 2.5f)
+            * Smooth(0.f, .5f, MoonElevation);
+        Moon->SetIntensity(bLegacyLighting || MoonElevation <= 0.f ? 0.f : FMath::FInterpTo(Moon->Intensity, Lux, DeltaSeconds, 2.f));
+        // Forward/translucent/fog rendering selects one directional light.
+        const bool bMoonPrimary = !bLegacyLighting && SolarElevation <= 0.f && Moon->Intensity > 0.f;
+        Moon->SetForwardShadingPriority(bMoonPrimary ? 1 : 0);
+        if (Sun) Sun->SetForwardShadingPriority(bMoonPrimary ? 0 : 1);
     }
     // Overcast diffuse light is several stops below a clear sky; the old .85
     // floor kept rainy days nearly as bright as fair weather.
@@ -1199,45 +1472,124 @@ void AWindowDirector::ApplyLighting(float DeltaSeconds)
     }
     if (CloudMaterial)
     {
-        CloudMaterial->SetScalarParameterValue(TEXT("Layout_CloudGlobalScale"), FMath::Clamp(CloudLayoutScale.GetValueOnGameThread(), 4.f, 64.f));
-        CloudMaterial->SetScalarParameterValue(TEXT("OOW_CellSpacingKm"), FMath::Clamp(StormCellSpacing.GetValueOnGameThread(), 2.f, 12.f));
-        CloudMaterial->SetScalarParameterValue(TEXT("OOW_DetailStrength"), FMath::Clamp(StormDetailStrength.GetValueOnGameThread(), 0.f, 1.f));
-        CloudMaterial->SetScalarParameterValue(TEXT("OOW_DetailScaleKm"), FMath::Clamp(StormDetailScale.GetValueOnGameThread(), .08f, 1.f));
-        CloudMaterial->SetScalarParameterValue(TEXT("OOW_DetailDensityScale"), FMath::Clamp(StormDetailDensity.GetValueOnGameThread(), .1f, 2.f));
-        Cloud->SetShadowViewSampleCountScale(FMath::Clamp(StormShadowSamples.GetValueOnGameThread(), .5f, 2.f));
+        const bool bCleanNativeClouds = bTestMode && (FParse::Param(FCommandLine::Get(), TEXT("OOWTestCleanNativeClouds")) || FParse::Param(FCommandLine::Get(), TEXT("OOWTestHoudini64Cloud")));
+        if (!bCleanNativeClouds) CloudMaterial->SetScalarParameterValue(TEXT("Layout_CloudGlobalScale"), FMath::Clamp(CloudLayoutScale.GetValueOnGameThread(), 4.f, 64.f));
+        if (!bCleanNativeClouds) CloudMaterial->SetScalarParameterValue(TEXT("OOW_CellSpacingKm"), FMath::Clamp(StormCellSpacing.GetValueOnGameThread(), 2.f, 12.f));
+        if (!bCleanNativeClouds) CloudMaterial->SetScalarParameterValue(TEXT("OOW_DetailStrength"), FMath::Clamp(StormDetailStrength.GetValueOnGameThread(), 0.f, 1.f));
+        if (!bCleanNativeClouds) CloudMaterial->SetScalarParameterValue(TEXT("OOW_DetailScaleKm"), FMath::Clamp(StormDetailScale.GetValueOnGameThread(), .08f, 1.f));
+        if (!bCleanNativeClouds) CloudMaterial->SetScalarParameterValue(TEXT("OOW_DetailDensityScale"), FMath::Clamp(StormDetailDensity.GetValueOnGameThread(), .1f, 2.f));
         Cloud->SetShadowTracingDistance(FMath::Clamp(StormShadowDistance.GetValueOnGameThread(), 2.f, 15.f));
-        CloudMaterial->SetVectorParameterValue(TEXT("OOW_StormOffsetKm"), FLinearColor(StormOffsetX.GetValueOnGameThread(), StormOffsetY.GetValueOnGameThread(), 0, 0));
+        if (!bCleanNativeClouds) CloudMaterial->SetVectorParameterValue(TEXT("OOW_StormOffsetKm"), FLinearColor(StormOffsetX.GetValueOnGameThread(), StormOffsetY.GetValueOnGameThread(), 0, 0));
         // Ordinary cloud cover is not a precipitation cloud type.
         Storminess = FMath::FInterpTo(Storminess, Weather == TEXT("rain") || Weather == TEXT("snow") ? CloudBlend * .9f : 0.f, DeltaSeconds, .4f);
-        CloudMaterial->SetScalarParameterValue(TEXT("StormClouds"), Storminess);
+        if (!bCleanNativeClouds) CloudMaterial->SetScalarParameterValue(TEXT("StormClouds"), Storminess);
+        const bool bWindowClouds = !bLegacyClouds && !(bTestMode && FParse::Param(FCommandLine::Get(), TEXT("OOWTestCloudsV6")));
+        const bool bPrecipitationClouds = Weather == TEXT("rain") || Weather == TEXT("snow");
+        const float FairCloudStrength = bWindowClouds && !bPrecipitationClouds ? Smooth(.15f, .25f, Cloudiness) : 0.f;
+        const float ShadowSampleScale = FMath::Clamp(StormShadowSamples.GetValueOnGameThread(), .5f, 2.f);
+        Cloud->SetShadowViewSampleCountScale(bWindowClouds && !bPrecipitationClouds ? FMath::Max(1.f, ShadowSampleScale) : ShadowSampleScale);
+        // Only this authorized C comparison bypasses the production CVar clamp.
+        // Keep reflection/RTC samples and directional ground-cloud-shadow samples untouched.
+        int32 DiagnosticShadowSamples=0;
+        if(bTestMode && FParse::Param(FCommandLine::Get(),TEXT("OOWDiagHDR"))
+           && FParse::Param(FCommandLine::Get(),TEXT("OOWTestHoudini64Cloud"))
+           && FParse::Value(FCommandLine::Get(),TEXT("OOWDiagShadowSamples="),DiagnosticShadowSamples))
+        {
+            if(DiagnosticShadowSamples!=10 && DiagnosticShadowSamples!=80)
+                UE_LOG(LogTemp,Fatal,TEXT("OOW shadow diagnostic permits only the declared 10/80 comparison"));
+            Cloud->SetShadowViewSampleCountScale(static_cast<float>(DiagnosticShadowSamples)/UVolumetricCloudComponent::BaseShadowRaySampleCount);
+        }
+
+        const float OvercastWeight = bWindowClouds && !bPrecipitationClouds ? Smooth(.8f, .95f, Cloudiness) : 0.f;
         const float ScatterWeight = Smooth(.15f, .75f, Storminess);
-        CloudMaterial->SetVectorParameterValue(TEXT("Multiscatter_Controls"), FLinearColor(2.f / 3.f,
-            FMath::Lerp(.25f, FMath::Clamp(StormScatterOcclusion.GetValueOnGameThread(), .1f, .8f), ScatterWeight), .18f, 1.f));
+        // Restrict the dimmer cloud-interior fill to ordinary overcast. Sun,
+        // eye adaptation, atmosphere and the ground SkyLight retain their settings.
+        if (!bCleanNativeClouds) CloudMaterial->SetVectorParameterValue(TEXT("Multiscatter_Controls"), FLinearColor(FMath::Lerp(2.f / 3.f, .4f, OvercastWeight),
+            FMath::Lerp(FMath::Lerp(.25f, FMath::Clamp(StormScatterOcclusion.GetValueOnGameThread(), .1f, .8f), ScatterWeight), .5f, OvercastWeight), .18f, 1.f));
         // Rain lowers and deepens the volume that contains the storm cells.
         // Fair-weather parameters return to the native graph as Storminess reaches 0.
-        Cloud->SetLayerBottomAltitude(FMath::Lerp(2.2f, 1.2f, CloudBlend) - Storminess * .45f);
-        Cloud->SetLayerHeight(FMath::Lerp(2.5f, 3.5f, CloudBlend) + Storminess * 1.6f);
+        float LowBottom = FMath::Lerp(2.2f, 1.2f, CloudBlend) - Storminess * .45f;
+        float LowHeight = FMath::Lerp(2.5f, 3.5f, CloudBlend) + Storminess * 1.6f;
+        const float ProbeAlt = ProbeBottom.GetValueOnGameThread();
+        const float ProbeThick = ProbeHeight.GetValueOnGameThread();
+        if (ProbeAlt >= 0.f) LowBottom = ProbeAlt;
+        if (ProbeThick >= 0.f) LowHeight = FMath::Max(.01f, ProbeThick);
+        // Clear weather contains only the independent absolute 8-10 km band.
+        // Keep primary samples within it rather than spending most in empty air.
+        const bool bHighCloudsOnly = bWindowClouds && !bPrecipitationClouds && FairCloudStrength <= 0.f;
+        Cloud->SetLayerBottomAltitude(bHighCloudsOnly ? 8.f : LowBottom);
+        Cloud->SetLayerHeight(bHighCloudsOnly ? 2.f : bLegacyClouds ? LowHeight : FMath::Max(LowHeight, 10.f - LowBottom));
+        if (!bCleanNativeClouds) CloudMaterial->SetScalarParameterValue(TEXT("OOW_LowBottomKm"), LowBottom);
+        if (!bCleanNativeClouds) CloudMaterial->SetScalarParameterValue(TEXT("OOW_LowHeightKm"), LowHeight);
         // The deck has to stay readable as a deck: the material's
         // (1-coverage) divisor is what draws the shell detail, so a ceiling
         // near 1 clips it to nothing no matter how dense the deck is. .96 was
         // still a flat white sheet; .78 leaves a 22% gap for the towers to
         // silhouette against and gives the divisor room to work.
-        CloudMaterial->SetScalarParameterValue(TEXT("Cloud_GlobalCoverage"), FMath::Min(.78f, FMath::Lerp(-.12f, .55f, CloudBlend) + Storminess * .25f));
-        CloudMaterial->SetScalarParameterValue(TEXT("Cloud_GlobalDensity"), FMath::Lerp(.012f, .03f, CloudBlend) * (1.f + Storminess * 1.6f));
+        float DeckCoverage = FMath::Min(.78f, FMath::Lerp(-.12f, .55f, CloudBlend) + Storminess * .25f);
+        // The old .012 floor held a thin veil across the whole sky even at
+        // fair weather, and the window only sees 2.4% of the sky, so that veil
+        // was the entire clear-sky rendition: a CloudCover-0 capture measured
+        // 5.1 okta. Zeroing the floor (forced-density probe: 0.012 -> 7% blue,
+        // 0.0 -> 99% blue) lets cover, not a constant haze, drive the deck.
+        float DeckDensity = (bLegacyClouds ? FMath::Lerp(0.f, .03f, CloudBlend)
+            : .03f * Smooth(.8f, 1.f, Cloudiness)) * (1.f + Storminess * 1.6f);
+        // Probe overrides come last so they actually win (an earlier probe wrote
+        // the density before this line and was silently overwritten).
+        const float ProbeCoverage = ProbeCover.GetValueOnGameThread();
+        const float ProbeDensity = ProbeDens.GetValueOnGameThread();
+        if (ProbeCoverage >= 0.f) DeckCoverage = ProbeCoverage;
+        if (ProbeDensity >= 0.f) DeckDensity = ProbeDensity;
+        if (!bCleanNativeClouds) CloudMaterial->SetScalarParameterValue(TEXT("Cloud_GlobalCoverage"), DeckCoverage);
+        // v7 ordinary weather has an explicit 3D cumulus field. Density controls
+        // thickness inside its support; coverage controls placement and radius.
+        if (!bCleanNativeClouds) CloudMaterial->SetScalarParameterValue(TEXT("Cloud_GlobalDensity"), bWindowClouds && !bPrecipitationClouds ? 0.f : DeckDensity);
+        if (!bCleanNativeClouds) CloudMaterial->SetScalarParameterValue(TEXT("OOW_FairCloudStrength"), FairCloudStrength);
+        if (!bCleanNativeClouds) CloudMaterial->SetScalarParameterValue(TEXT("OOW_FairCloudCoverage"), FMath::Clamp(Cloudiness, 0.f, 1.f));
+        // Preserve ground cloud shadows as the individual low-cloud masses
+        // become deeper. These extinction values apply inside the cloud only.
+        float FairDensity = FMath::Lerp(.004f, .008f, Smooth(.4f, .7f, Cloudiness));
+        FairDensity = FMath::Lerp(FairDensity, .016f, OvercastWeight);
+        if (bTestMode && ProbeFairDensity.GetValueOnGameThread() >= 0.f)
+            FairDensity = ProbeFairDensity.GetValueOnGameThread();
+        if (!bCleanNativeClouds) CloudMaterial->SetScalarParameterValue(TEXT("OOW_FairCloudDensity"), FairDensity);
+        if (!bCleanNativeClouds) CloudMaterial->SetScalarParameterValue(TEXT("OOW_OvercastWeight"), OvercastWeight);
+        if (!bCleanNativeClouds) CloudMaterial->SetScalarParameterValue(TEXT("OOW_CloudAmbientOcclusion"), 1.f);
+        float SheetDensity = bLegacyClouds ? 0.f : bWindowClouds ? .001f * OvercastWeight : .001f * Smooth(.8f,.9f,Cloudiness);
+        if (bTestMode && ProbeSheetDensity.GetValueOnGameThread() >= 0.f)
+            SheetDensity = ProbeSheetDensity.GetValueOnGameThread();
+        if (!bCleanNativeClouds) CloudMaterial->SetScalarParameterValue(TEXT("OOW_OvercastSheetDensity"), SheetDensity);
+        // Reuse the existing thin wisp shape in an absolute 8-10 km layer.
+        // Clear sky retains high wisps; v7 adds independent ordinary low clouds.
+        const float CirrusStrength = 1.f;
+        // Shape thresholds are distinct from the reported weather amount.
+        const float C = FMath::Clamp(Cloudiness, 0.f, 1.f);
+        const float HighCoverage = C <= .1f ? C * .2f
+            : C <= .4f ? FMath::Lerp(.02f, .10f, (C - .1f) / .3f)
+            : C <= .7f ? FMath::Lerp(.10f, .25f, (C - .4f) / .3f)
+            : FMath::Lerp(.25f, .55f, (C - .7f) / .3f);
+        const float CirrusCoverage = bLegacyClouds ? FMath::Clamp(.40f + Cloudiness * .20f, 0.f, 1.f) : HighCoverage;
+        const float CirrusDensity = bLegacyClouds ? .00016f : bWindowClouds ? .00012f : .00005f;
+        const float pcs = ProbeCirrusStrength.GetValueOnGameThread();
+        const float pcc = ProbeCirrusCoverage.GetValueOnGameThread();
+        const float pcd = ProbeCirrusDensity.GetValueOnGameThread();
+        if (!bCleanNativeClouds) CloudMaterial->SetScalarParameterValue(TEXT("OOW_CirrusStrength"), pcs >= 0.f ? pcs : CirrusStrength);
+        if (!bCleanNativeClouds) CloudMaterial->SetScalarParameterValue(TEXT("OOW_CirrusCoverage"), pcc >= 0.f ? pcc : CirrusCoverage);
+        if (!bCleanNativeClouds) CloudMaterial->SetScalarParameterValue(TEXT("OOW_CirrusDensity"), pcd >= 0.f ? pcd : CirrusDensity);
         // Storm structure, not storm blur. Layout_CloudGlobalScale is pinned at
         // 32 by validate.ps1, so the base lobe is ~8x wider than the window's
         // whole sky patch: everything visible inside one lobe has to come from
         // the mid and high octaves. Prior passes shrank them (.05/.015) and the
         // patch went smooth; Storminess now grows them instead of eating them.
-        CloudMaterial->SetVectorParameterValue(TEXT("Noise_Strength"),
+        if (!bCleanNativeClouds) CloudMaterial->SetVectorParameterValue(TEXT("Noise_Strength"),
             FLinearColor(FMath::Lerp(.8f, .78f, Storminess), FMath::Lerp(.08f, .16f, Storminess),
                 FMath::Lerp(.03f, .09f, Storminess), 2.5f));
-        CloudMaterial->SetVectorParameterValue(TEXT("Storm_AlbedoColor"),
+        if (!bCleanNativeClouds) CloudMaterial->SetVectorParameterValue(TEXT("Storm_AlbedoColor"),
             FMath::Lerp(FLinearColor(.52f, .55f, .58f, 1.f / 3.f), FLinearColor(.24f, .26f, .30f, 1.f / 3.f), Storminess));
         // Dimmed for a leaden deck, but not so far that the lit crowns stop
         // reading against the shadowed base. .48 flattened the whole mass into
         // one value; the base is carried by extinction (density above), not albedo.
-        CloudMaterial->SetVectorParameterValue(TEXT("Cloud_AlbedoColor"),
+        if (!bCleanNativeClouds) CloudMaterial->SetVectorParameterValue(TEXT("Cloud_AlbedoColor"),
             FMath::Lerp(FLinearColor(.98f, .98f, .98f, .5f), FLinearColor(.66f, .70f, .76f, .5f), CloudBlend));
         const float Bearing = FMath::DegreesToRadians(Session.WindDirection);
         const float Speed = FMath::Clamp(static_cast<float>(Session.WindSpeed / 3.6), 0.f, 25.f);
@@ -1248,8 +1600,18 @@ void AWindowDirector::ApplyLighting(float DeltaSeconds)
         const bool bFreezeClouds = bTestMode && FParse::Param(FCommandLine::Get(), TEXT("OOWTestFreezeClouds"));
         const float LayoutMetres = FMath::Clamp(CloudLayoutScale.GetValueOnGameThread(), 4.f, 64.f) * 1000.f;
         if (!bFreezeClouds) CloudDriftUV += CloudWindMetersPerSecond * GetWorld()->GetDeltaSeconds() / LayoutMetres;
-        if (bFreezeClouds) CloudMaterial->SetVectorParameterValue(TEXT("Layout_WindControls"), FLinearColor(0, 0, 0, .18f));
-        CloudMaterial->SetVectorParameterValue(TEXT("Layout_GlobalTexturePlacement"), FLinearColor(CloudDriftUV.X, CloudDriftUV.Y, 0, 0));
+        float CloudAge = 0.f;
+        if (bFreezeClouds && FParse::Value(FCommandLine::Get(), TEXT("OOWTestCloudAgeSeconds="), CloudAge))
+            CloudDriftUV = CloudWindMetersPerSecond * FMath::Max(0.f, CloudAge) / LayoutMetres;
+        if (bEmptyCloudReference)
+        {
+            if (!bCleanNativeClouds) CloudMaterial->SetScalarParameterValue(TEXT("Cloud_GlobalDensity"), 0.f);
+            if (!bCleanNativeClouds) CloudMaterial->SetScalarParameterValue(TEXT("OOW_CirrusStrength"), 0.f);
+            if (!bCleanNativeClouds) CloudMaterial->SetScalarParameterValue(TEXT("OOW_FairCloudStrength"), 0.f);
+            if (!bCleanNativeClouds) CloudMaterial->SetScalarParameterValue(TEXT("OOW_OvercastSheetDensity"), 0.f);
+        }
+        if (bFreezeClouds) if (!bCleanNativeClouds) CloudMaterial->SetVectorParameterValue(TEXT("Layout_WindControls"), FLinearColor(0, 0, 0, .18f));
+        if (!bCleanNativeClouds) CloudMaterial->SetVectorParameterValue(TEXT("Layout_GlobalTexturePlacement"), FLinearColor(CloudDriftUV.X, CloudDriftUV.Y, 0, 0));
     }
     if (PostProcess)
     {
@@ -1359,11 +1721,54 @@ void AWindowDirector::UpdateAudio()
 void AWindowDirector::OOWAudit()
 {
     TSharedRef<FJsonObject> Json = MakeShared<FJsonObject>();
+    if (bTestMode && FParse::Param(FCommandLine::Get(),TEXT("OOWDiagHDR")))
+    {
+        TSharedRef<FJsonObject> D=MakeShared<FJsonObject>();
+        auto Cap=[](const TCHAR* Name,float Fallback){const IConsoleVariable* V=IConsoleManager::Get().FindConsoleVariable(Name);return V?V->GetFloat():Fallback;};
+        if(Cloud)
+        {
+            D->SetNumberField(TEXT("effectiveMainRaySampleMax"),FMath::Min(UVolumetricCloudComponent::BaseViewRaySampleCount*Cloud->ViewSampleCountScale,Cap(TEXT("r.VolumetricCloud.ViewRaySampleMaxCount"),768)));
+            D->SetNumberField(TEXT("effectiveShadowRaySampleMax"),FMath::Min(UVolumetricCloudComponent::BaseShadowRaySampleCount*Cloud->ShadowViewSampleCountScale,Cap(TEXT("r.VolumetricCloud.Shadow.ViewRaySampleMaxCount"),80)));
+            D->SetNumberField(TEXT("cloudFallbackPlanetRadiusKm"),Cloud->PlanetRadius);
+            D->SetNumberField(TEXT("skyLightCloudBottomOcclusion"),Cloud->SkyLightCloudBottomOcclusion);
+        }
+        if(Atmosphere)
+        {
+            D->SetNumberField(TEXT("atmosphereBottomRadiusKm"),Atmosphere->BottomRadius);
+            D->SetNumberField(TEXT("atmosphereTransformMode"),static_cast<int32>(Atmosphere->TransformMode));
+            const FVector P=Atmosphere->GetComponentLocation();
+            D->SetArrayField(TEXT("atmosphereComponentLocationCm"),{MakeShared<FJsonValueNumber>(P.X),MakeShared<FJsonValueNumber>(P.Y),MakeShared<FJsonValueNumber>(P.Z)});
+        }
+        if(Sky)
+        {
+            D->SetBoolField(TEXT("skyLightRealTimeCapture"),Sky->bRealTimeCapture);
+            D->SetNumberField(TEXT("skyLightSourceType"),static_cast<int32>(Sky->SourceType.GetValue()));
+            D->SetNumberField(TEXT("skyLightCubemapResolution"),Sky->CubemapResolution);
+            D->SetBoolField(TEXT("skyLightLowerHemisphereIsBlack"),Sky->bLowerHemisphereIsBlack);
+        }
+        if(Sun)
+        {
+            D->SetBoolField(TEXT("sunCastCloudShadows"),Sun->bCastCloudShadows);
+            D->SetNumberField(TEXT("sunCloudShadowStrength"),Sun->CloudShadowStrength);
+            D->SetNumberField(TEXT("sunCloudShadowExtentKm"),Sun->CloudShadowExtent);
+            D->SetNumberField(TEXT("sunCloudShadowMapResolutionScale"),Sun->CloudShadowMapResolutionScale);
+            D->SetNumberField(TEXT("sunCloudShadowRaySampleCountScale"),Sun->CloudShadowRaySampleCountScale);
+            const FVector L=-Sun->GetForwardVector();
+            D->SetArrayField(TEXT("actualDirectionToSun"),{MakeShared<FJsonValueNumber>(L.X),MakeShared<FJsonValueNumber>(L.Y),MakeShared<FJsonValueNumber>(L.Z)});
+        }
+        Json->SetObjectField(TEXT("opticsDiagnostic"),D);
+    }
+
     Json->SetStringField(TEXT("scene"), Session.Scene);
     Json->SetStringField(TEXT("weatherMode"), Session.Weather);
     Json->SetStringField(TEXT("actualWeather"), ActualWeather());
     Json->SetNumberField(TEXT("weatherCode"), ActiveWeatherCode());
-    Json->SetStringField(TEXT("weatherLabel"), WindowWeather::LabelForCode(ActiveWeatherCode()));
+    Json->SetStringField(TEXT("weatherLabel"), DisplayWeatherLabel());
+    Json->SetNumberField(TEXT("supplierWeatherCode"), Session.WeatherCode);
+    Json->SetStringField(TEXT("supplierWeatherLabel"), WindowWeather::LabelForCode(Session.WeatherCode));
+    Json->SetNumberField(TEXT("requestedCloudCover"), RequestedCloudCover());
+    Json->SetNumberField(TEXT("cloudAmountTenths"), WindowWeather::CloudAmountTenths(RequestedCloudCover()));
+    Json->SetStringField(TEXT("cloudClassificationRule"), TEXT("GB/T35663-2017; nearest tenth, ties upward; continuous boundaries 25/55/85 percent"));
     Json->SetNumberField(TEXT("reportedCloudCover"), Session.CloudCover);
     Json->SetStringField(TEXT("city"), Session.City);
     Json->SetStringField(TEXT("timezone"), Session.Timezone);
@@ -1371,6 +1776,18 @@ void AWindowDirector::OOWAudit()
     Json->SetNumberField(TEXT("hour"), Session.Hour);
     Json->SetNumberField(TEXT("utcOffsetSeconds"), Session.OffsetSeconds);
     Json->SetNumberField(TEXT("solarElevation"), SolarElevation);
+    Json->SetBoolField(TEXT("legacyLighting"), bLegacyLighting);
+    Json->SetBoolField(TEXT("legacyClouds"), bLegacyClouds);
+    Json->SetNumberField(TEXT("sceneNorthYawDegrees"), FMath::RadiansToDegrees(SceneNorthYaw));
+    Json->SetNumberField(TEXT("sunRenderedElevation"), Sun ? FMath::RadiansToDegrees(FMath::Asin(FMath::Clamp(-Sun->GetForwardVector().Z, -1., 1.))) : 0.);
+    Json->SetNumberField(TEXT("moonElevation"), MoonElevation);
+    Json->SetNumberField(TEXT("moonIlluminatedFraction"), MoonIlluminatedFraction);
+    Json->SetNumberField(TEXT("moonLux"), Moon ? Moon->Intensity : 0.f);
+    if (Sun) Json->SetNumberField(TEXT("sunForwardShadingPriority"), Sun->ForwardShadingPriority);
+    if (Moon) Json->SetNumberField(TEXT("moonForwardShadingPriority"), Moon->ForwardShadingPriority);
+    Json->SetBoolField(TEXT("sunPerPixelAtmosphereTransmittance"), Sun && Sun->bPerPixelAtmosphereTransmittance);
+    Json->SetBoolField(TEXT("cloudPerSampleAtmosphereTransmittance"), Cloud && Cloud->bUsePerSampleAtmosphericLightTransmittance);
+    if (Sun) Json->SetArrayField(TEXT("sunSourceColor"), {MakeShared<FJsonValueNumber>(Sun->GetLightColor().R), MakeShared<FJsonValueNumber>(Sun->GetLightColor().G), MakeShared<FJsonValueNumber>(Sun->GetLightColor().B)});
     Json->SetNumberField(TEXT("quality"), Session.Quality);
     Json->SetNumberField(TEXT("wetness"), Wetness);
     Json->SetNumberField(TEXT("water"), Water);
@@ -1471,6 +1888,15 @@ void AWindowDirector::OOWAudit()
     Json->SetNumberField(TEXT("activeBirds"), Birds ? Birds->GetActiveCount() : 0);
     Json->SetNumberField(TEXT("completedBirdFlights"), Birds ? Birds->GetCompletedFlights() : 0);
     Json->SetBoolField(TEXT("testMode"), bTestMode);
+    Json->SetBoolField(TEXT("emptyCloudReference"), bEmptyCloudReference);
+    if (FParse::Param(FCommandLine::Get(), TEXT("OOWTestCloudTransmittance")))
+    {
+        const FString Path = FPaths::ChangeExtension(CapturePath, TEXT("transmittance.bmp"));
+        Json->SetStringField(TEXT("cloudTransmittanceTexture"), TEXT("VolumetricRenderTarget.Tracing.a"));
+        Json->SetBoolField(TEXT("cloudTransmittanceLinearEightBit"), true);
+        Json->SetBoolField(TEXT("cloudTransmittanceExportSaved"), IFileManager::Get().FileSize(*Path) > 0);
+        Json->SetStringField(TEXT("cloudTransmittanceFile"), Path);
+    }
     Json->SetStringField(TEXT("capture"), CapturePath);
     Json->SetBoolField(TEXT("captureSaved"), !CapturePath.IsEmpty() && IFileManager::Get().FileSize(*CapturePath) > 0);
     Json->SetNumberField(TEXT("skyIntensity"), Sky ? Sky->Intensity : 0);
@@ -1501,11 +1927,45 @@ void AWindowDirector::OOWAudit()
     Json->SetNumberField(TEXT("fogDensity"), Fog ? Fog->FogDensity : 0);
     Json->SetNumberField(TEXT("baseFogDensity"), BaseFogDensity);
     Json->SetNumberField(TEXT("cloudiness"), Cloudiness);
+    Json->SetNumberField(TEXT("cloudTracingStartMaxKm"), Cloud ? Cloud->TracingStartMaxDistance : 0);
+    Json->SetNumberField(TEXT("cloudTracingMaxKm"), Cloud ? Cloud->TracingMaxDistance : 0);
+    Json->SetNumberField(TEXT("cloudTracingMode"), Cloud ? static_cast<int32>(Cloud->TracingMaxDistanceMode) : -1);
     Json->SetNumberField(TEXT("cloudLayerBottomKm"), Cloud ? Cloud->LayerBottomAltitude : 0);
     Json->SetNumberField(TEXT("cloudLayerHeightKm"), Cloud ? Cloud->LayerHeight : 0);
     Json->SetNumberField(TEXT("cloudShadowViewSampleScale"), Cloud ? Cloud->ShadowViewSampleCountScale : 0);
     Json->SetNumberField(TEXT("cloudShadowTracingDistanceKm"), Cloud ? Cloud->ShadowTracingDistance : 0);
     Json->SetNumberField(TEXT("cloudViewSampleScale"), Cloud ? Cloud->ViewSampleCountScale : 0);
+    if (bTestMode)
+    {
+        Json->SetBoolField(TEXT("cloudComponentPresent"), Cloud != nullptr);
+        if (Cloud)
+        {
+            Json->SetNumberField(TEXT("cloudReflectionViewSampleScale"), Cloud->ReflectionViewSampleCountScaleValue);
+            Json->SetNumberField(TEXT("cloudShadowReflectionViewSampleScale"), Cloud->ShadowReflectionViewSampleCountScaleValue);
+            Json->SetBoolField(TEXT("cloudVisibleInRealTimeSkyCaptures"), Cloud->bVisibleInRealTimeSkyCaptures);
+        }
+        Json->SetBoolField(TEXT("skyLightComponentPresent"), Sky != nullptr);
+        if (Sky)
+        {
+            Json->SetBoolField(TEXT("skyCloudAmbientOcclusion"), Sky->bCloudAmbientOcclusion);
+            Json->SetNumberField(TEXT("skyCloudAmbientOcclusionStrength"), Sky->CloudAmbientOcclusionStrength);
+            Json->SetNumberField(TEXT("skyCloudAmbientOcclusionExtentKm"), Sky->CloudAmbientOcclusionExtent);
+            Json->SetNumberField(TEXT("skyCloudAmbientOcclusionMapResolutionScale"), Sky->CloudAmbientOcclusionMapResolutionScale);
+            Json->SetNumberField(TEXT("skyCloudAmbientOcclusionApertureScale"), Sky->CloudAmbientOcclusionApertureScale);
+        }
+        Json->SetBoolField(TEXT("sunLightComponentPresent"), Sun != nullptr);
+        if (Sun)
+        {
+            const FLinearColor Scale = Sun->CloudScatteredLuminanceScale;
+            Json->SetArrayField(TEXT("sunCloudScatteredLuminanceScale"), { MakeShared<FJsonValueNumber>(Scale.R), MakeShared<FJsonValueNumber>(Scale.G), MakeShared<FJsonValueNumber>(Scale.B), MakeShared<FJsonValueNumber>(Scale.A) });
+        }
+        Json->SetBoolField(TEXT("moonLightComponentPresent"), Moon != nullptr);
+        if (Moon)
+        {
+            const FLinearColor Scale = Moon->CloudScatteredLuminanceScale;
+            Json->SetArrayField(TEXT("moonCloudScatteredLuminanceScale"), { MakeShared<FJsonValueNumber>(Scale.R), MakeShared<FJsonValueNumber>(Scale.G), MakeShared<FJsonValueNumber>(Scale.B), MakeShared<FJsonValueNumber>(Scale.A) });
+        }
+    }
     Json->SetNumberField(TEXT("visibleSkyFraction"), VisibleSkyFraction);
     Json->SetNumberField(TEXT("visibleSkyPixels"), VisibleSkyPixels);
     Json->SetNumberField(TEXT("cloudTargetSampleScale"), CloudTargetSampleScale);
@@ -1524,21 +1984,170 @@ void AWindowDirector::OOWAudit()
     }
     Json->SetBoolField(TEXT("cloudShadowsEnabled"), Sun && Sun->bCastCloudShadows);
     Json->SetNumberField(TEXT("cloudAnimationSeconds"), GetWorld()->GetTimeSeconds());
+    if (Camera)
+    {
+        const FVector Position = Camera->GetActorLocation();
+        Json->SetArrayField(TEXT("cameraPositionCm"), {MakeShared<FJsonValueNumber>(Position.X), MakeShared<FJsonValueNumber>(Position.Y), MakeShared<FJsonValueNumber>(Position.Z)});
+        Json->SetNumberField(TEXT("cameraHorizontalFov"), Camera->GetCameraComponent()->FieldOfView);
+        const FRotator Rotation = Camera->GetActorRotation();
+        Json->SetArrayField(TEXT("cameraRotationDegrees"), {MakeShared<FJsonValueNumber>(Rotation.Pitch), MakeShared<FJsonValueNumber>(Rotation.Yaw), MakeShared<FJsonValueNumber>(Rotation.Roll)});
+    }
     Json->SetArrayField(TEXT("cloudDriftUV"), { MakeShared<FJsonValueNumber>(CloudDriftUV.X), MakeShared<FJsonValueNumber>(CloudDriftUV.Y) });
     Json->SetNumberField(TEXT("atmosphereMieScale"), Atmosphere ? Atmosphere->MieScatteringScale : 0);
     Json->SetNumberField(TEXT("atmosphereBaseMieScale"), BaseMieScattering);
-    for (const TCHAR* Name : { TEXT("r.VolumetricCloud"), TEXT("r.VolumetricRenderTarget"), TEXT("r.VolumetricRenderTarget.Mode"), TEXT("r.VolumetricCloud.DistanceToSampleMaxCount"), TEXT("r.Fog"), TEXT("r.BloomQuality"), TEXT("r.ExposureOffset"), TEXT("ShowFlag.Cloud") })
+    for (const TCHAR* Name : { TEXT("r.ScreenPercentage"), TEXT("r.VolumetricCloud.StepSizeOnZeroConservativeDensity"), TEXT("r.VolumetricCloud"), TEXT("r.VolumetricRenderTarget"), TEXT("r.VolumetricRenderTarget.Mode"), TEXT("r.VolumetricCloud.DistanceToSampleMaxCount"), TEXT("r.Fog"), TEXT("r.BloomQuality"), TEXT("r.ExposureOffset"), TEXT("ShowFlag.Cloud") })
         if (IConsoleVariable* Variable = IConsoleManager::Get().FindConsoleVariable(Name)) Json->SetNumberField(Name, Variable->GetFloat());
     Json->SetNumberField(TEXT("sunAzimuthRadians"), SunAzimuth);
     Json->SetBoolField(TEXT("sunSweep"), bSunSweep);
     if (CloudMaterial)
     {
         Json->SetStringField(TEXT("cloudMaterial"), CloudMaterial->Parent ? CloudMaterial->Parent->GetPathName() : TEXT(""));
+        if (bTestMode)
+        {
+            Json->SetBoolField(TEXT("cloudCleanNativeMaterialMode"), FParse::Param(FCommandLine::Get(), TEXT("OOWTestCleanNativeClouds")) || FParse::Param(FCommandLine::Get(), TEXT("OOWTestHoudini64Cloud")));
+            Json->SetBoolField(TEXT("cloudComponentBindsAuditedMID"), Cloud && Cloud->Material.Get() == CloudMaterial.Get());
+            Json->SetNumberField(TEXT("cloudMIDScalarOverrideCount"), CloudMaterial->ScalarParameterValues.Num());
+            Json->SetNumberField(TEXT("cloudMIDVectorOverrideCount"), CloudMaterial->VectorParameterValues.Num());
+            Json->SetNumberField(TEXT("cloudMIDTextureOverrideCount"), CloudMaterial->TextureParameterValues.Num());
+            TSharedRef<FJsonObject> FullParameters = MakeShared<FJsonObject>();
+            TSharedRef<FJsonObject> Scalars = MakeShared<FJsonObject>();
+            TSharedRef<FJsonObject> Vectors = MakeShared<FJsonObject>();
+            TSharedRef<FJsonObject> Textures = MakeShared<FJsonObject>();
+            TArray<FMaterialParameterInfo> Infos;
+            TArray<FGuid> Ids;
+            bool bAllMatchParent = CloudMaterial->Parent != nullptr;
+            int32 Compared = 0;
+            int32 GetterFailures = 0;
+            CloudMaterial->GetAllScalarParameterInfo(Infos, Ids);
+            for (const FMaterialParameterInfo& Info : Infos)
+            {
+                float Value = 0, Default = 0;
+                const bool bFound = CloudMaterial->GetScalarParameterValue(Info, Value);
+                const bool bDefaultFound = CloudMaterial->Parent && CloudMaterial->Parent->GetScalarParameterValue(Info, Default);
+                const FString Key = FString::Printf(TEXT("%s|%d|%d"), *Info.Name.ToString(), static_cast<int32>(Info.Association), Info.Index);
+                if (bFound) Scalars->SetNumberField(Key, Value);
+                GetterFailures += !bFound || !bDefaultFound;
+                bAllMatchParent &= bFound && bDefaultFound && Value == Default;
+                ++Compared;
+            }
+            Infos.Reset(); Ids.Reset();
+            CloudMaterial->GetAllVectorParameterInfo(Infos, Ids);
+            for (const FMaterialParameterInfo& Info : Infos)
+            {
+                FLinearColor Value = FLinearColor::Black, Default = FLinearColor::Black;
+                const bool bFound = CloudMaterial->GetVectorParameterValue(Info, Value);
+                const bool bDefaultFound = CloudMaterial->Parent && CloudMaterial->Parent->GetVectorParameterValue(Info, Default);
+                const FString Key = FString::Printf(TEXT("%s|%d|%d"), *Info.Name.ToString(), static_cast<int32>(Info.Association), Info.Index);
+                if (bFound) Vectors->SetArrayField(Key, { MakeShared<FJsonValueNumber>(Value.R), MakeShared<FJsonValueNumber>(Value.G), MakeShared<FJsonValueNumber>(Value.B), MakeShared<FJsonValueNumber>(Value.A) });
+                GetterFailures += !bFound || !bDefaultFound;
+                bAllMatchParent &= bFound && bDefaultFound && Value == Default;
+                ++Compared;
+            }
+            Infos.Reset(); Ids.Reset();
+            CloudMaterial->GetAllTextureParameterInfo(Infos, Ids);
+            for (const FMaterialParameterInfo& Info : Infos)
+            {
+                UTexture* Value = nullptr; UTexture* Default = nullptr;
+                const bool bFound = CloudMaterial->GetTextureParameterValue(Info, Value);
+                const bool bDefaultFound = CloudMaterial->Parent && CloudMaterial->Parent->GetTextureParameterValue(Info, Default);
+                const FString Key = FString::Printf(TEXT("%s|%d|%d"), *Info.Name.ToString(), static_cast<int32>(Info.Association), Info.Index);
+                if (bFound) Textures->SetStringField(Key, Value ? Value->GetPathName() : TEXT(""));
+                GetterFailures += !bFound || !bDefaultFound;
+                bAllMatchParent &= bFound && bDefaultFound && Value == Default;
+                ++Compared;
+            }
+            FullParameters->SetObjectField(TEXT("scalar"), Scalars);
+            FullParameters->SetObjectField(TEXT("vector"), Vectors);
+            FullParameters->SetObjectField(TEXT("texture"), Textures);
+            Json->SetObjectField(TEXT("cloudFullMaterialParameters"), FullParameters);
+            Json->SetNumberField(TEXT("cloudParametersComparedToParent"), Compared);
+            Json->SetNumberField(TEXT("cloudParameterGetterFailures"), GetterFailures);
+            Json->SetNumberField(TEXT("cloudMaterialWorldTimeSeconds"), GetWorld()->GetTimeSeconds());
+            Json->SetBoolField(TEXT("cloudAllParametersEqualParent"), bAllMatchParent && Compared > 0);
+        }
+#if WITH_EDITOR
+        if (bTestMode && FParse::Param(FCommandLine::Get(), TEXT("OOWTestHoudini64VolumeAudit")))
+        {
+            TSharedRef<FJsonObject> VolumeAudit = MakeShared<FJsonObject>();
+            UTexture* BoundTexture = nullptr;
+            const bool bBound = CloudMaterial->GetTextureParameterValue(FMaterialParameterInfo(TEXT("OOW_H64Rho")), BoundTexture);
+            UVolumeTexture* Volume = Cast<UVolumeTexture>(BoundTexture);
+            VolumeAudit->SetBoolField(TEXT("boundVolumeTexture"), bBound && Volume != nullptr);
+            if (Volume)
+            {
+                UTexture* PendingTextures[] = { Volume };
+                FTextureCompilingManager::Get().FinishCompilation(PendingTextures);
+                VolumeAudit->SetStringField(TEXT("asset"), Volume->GetPathName());
+                VolumeAudit->SetBoolField(TEXT("srgb"), Volume->SRGB);
+                VolumeAudit->SetNumberField(TEXT("addressMode"), static_cast<int32>(Volume->AddressMode));
+                VolumeAudit->SetArrayField(TEXT("platformSizeXYZ"), { MakeShared<FJsonValueNumber>(Volume->GetSizeX()), MakeShared<FJsonValueNumber>(Volume->GetSizeY()), MakeShared<FJsonValueNumber>(Volume->GetSizeZ()) });
+                VolumeAudit->SetStringField(TEXT("platformPixelFormat"), GPixelFormats[Volume->GetPixelFormat()].Name);
+                VolumeAudit->SetNumberField(TEXT("platformMipCount"), Volume->GetNumMips());
+                int64 PlatformBytes = 0;
+                if (const FTexturePlatformData* Platform = Volume->GetPlatformData())
+                    for (const FTexture2DMipMap& Mip : Platform->Mips) PlatformBytes += Mip.BulkData.GetBulkDataSize();
+                VolumeAudit->SetNumberField(TEXT("platformBulkBytes"), PlatformBytes);
+                VolumeAudit->SetNumberField(TEXT("sourceFormatEnum"), static_cast<int32>(Volume->Source.GetFormat()));
+                VolumeAudit->SetBoolField(TEXT("sourceG16"), Volume->Source.GetFormat() == TSF_G16);
+                VolumeAudit->SetNumberField(TEXT("sourceBytesPerPixel"), Volume->Source.GetBytesPerPixel());
+                VolumeAudit->SetArrayField(TEXT("sourceSizeXYZ"), { MakeShared<FJsonValueNumber>(Volume->Source.GetSizeX()), MakeShared<FJsonValueNumber>(Volume->Source.GetSizeY()), MakeShared<FJsonValueNumber>(Volume->Source.GetNumSlices()) });
+                VolumeAudit->SetArrayField(TEXT("sourceTileXY"), { MakeShared<FJsonValueNumber>(Volume->Source2DTileSizeX), MakeShared<FJsonValueNumber>(Volume->Source2DTileSizeY) });
+                TArray64<uint8> SourceBytes;
+                const bool bSourceRead = Volume->Source.GetMipData(SourceBytes, 0);
+                const FString SourcePath = FPaths::ChangeExtension(CapturePath, TEXT("volume-source.bin"));
+                const bool bSourceSaved = bSourceRead && FFileHelper::SaveArrayToFile(MakeArrayView(static_cast<const uint8*>(SourceBytes.GetData()), static_cast<int32>(SourceBytes.Num())), *SourcePath);
+                VolumeAudit->SetBoolField(TEXT("sourceExportSaved"), bSourceSaved);
+                VolumeAudit->SetStringField(TEXT("sourceExportPath"), SourcePath);
+                VolumeAudit->SetNumberField(TEXT("sourceExportBytes"), SourceBytes.Num());
+                UMaterialInterface* GPUProbe = LoadObject<UMaterialInterface>(nullptr, TEXT("/Game/Weather/OOW_Houdini64_Test/M_GPU_RhoAudit64.M_GPU_RhoAudit64"));
+                // The audit samples exactly the texture bound to this cloud MID.
+                // A transient instance leaves the existing probe asset untouched.
+                if (GPUProbe)
+                {
+                    UMaterialInstanceDynamic* BoundProbe = UMaterialInstanceDynamic::Create(GPUProbe, this);
+                    BoundProbe->SetTextureParameterValue(TEXT("OOW_H64Rho"), Volume);
+                    GPUProbe = BoundProbe;
+                }
+                VolumeAudit->SetBoolField(TEXT("gpuProbeMaterialFound"), GPUProbe != nullptr);
+                if (GPUProbe)
+                {
+                    UTexture* ProbeTexture = nullptr;
+                    const bool bProbeBound = GPUProbe->GetTextureParameterValue(FMaterialParameterInfo(TEXT("OOW_H64Rho")), ProbeTexture);
+                    VolumeAudit->SetBoolField(TEXT("gpuProbeUsesBoundVolume"), bProbeBound && ProbeTexture == Volume);
+                    if (GShaderCompilingManager) GShaderCompilingManager->FinishAllCompilation();
+                    UTextureRenderTarget2D* Target = NewObject<UTextureRenderTarget2D>(this);
+                    Target->ClearColor = FLinearColor::Black;
+                    Target->InitCustomFormat(512, 512, PF_A32B32G32R32F, true);
+                    Target->UpdateResourceImmediate(true);
+                    UKismetRenderingLibrary::DrawMaterialToRenderTarget(this, Target, GPUProbe);
+                    TArray<FLinearColor> Pixels;
+                    FReadSurfaceDataFlags ReadFlags(RCM_MinMax);
+                    ReadFlags.SetLinearToGamma(false);
+                    const bool bRead = Target->GameThread_GetRenderTargetResource()->ReadLinearColorPixels(Pixels, ReadFlags);
+                    const FString GPUPath = FPaths::ChangeExtension(CapturePath, TEXT("gpu-rho-f32.bin"));
+                    const bool bSaved = bRead && FFileHelper::SaveArrayToFile(MakeArrayView(reinterpret_cast<const uint8*>(Pixels.GetData()), Pixels.Num() * static_cast<int32>(sizeof(FLinearColor))), *GPUPath);
+                    VolumeAudit->SetBoolField(TEXT("gpuSamplesSaved"), bSaved);
+                    VolumeAudit->SetStringField(TEXT("gpuSamplesPath"), GPUPath);
+                    VolumeAudit->SetNumberField(TEXT("gpuPixelCount"), Pixels.Num());
+                    VolumeAudit->SetStringField(TEXT("gpuReadFormat"), TEXT("512x512 RGBA float32 linear; atlas order, no tonemap"));
+                }
+            }
+            Json->SetObjectField(TEXT("houdini64VolumeAudit"), VolumeAudit);
+        }
+#endif
         TSharedRef<FJsonObject> CloudParameters = MakeShared<FJsonObject>();
-        for (const TCHAR* Name : { TEXT("Cloud_GlobalCoverage"), TEXT("Cloud_GlobalDensity"), TEXT("StormClouds"), TEXT("Layout_CloudGlobalScale"), TEXT("OOW_CellSpacingKm"), TEXT("OOW_DetailStrength"), TEXT("OOW_DetailScaleKm"), TEXT("OOW_DetailDensityScale") })
+        for (const TCHAR* Name : { TEXT("Cloud_GlobalCoverage"), TEXT("Cloud_GlobalDensity"), TEXT("StormClouds"), TEXT("Layout_CloudGlobalScale"), TEXT("OOW_CellSpacingKm"), TEXT("OOW_DetailStrength"), TEXT("OOW_DetailScaleKm"), TEXT("OOW_DetailDensityScale"), TEXT("OOW_CirrusStrength"), TEXT("OOW_CirrusCoverage"), TEXT("OOW_CirrusDensity"), TEXT("OOW_CirrusScaleKm"), TEXT("OOW_LowBottomKm"), TEXT("OOW_LowHeightKm"), TEXT("OOW_OvercastSheetDensity"), TEXT("OOW_FairCloudStrength"), TEXT("OOW_FairCloudDensity"), TEXT("OOW_FairCloudCoverage"), TEXT("OOW_OvercastWeight"), TEXT("OOW_CloudAmbientOcclusion") })
         {
             float Value;
             if (CloudMaterial->GetScalarParameterValue(FMaterialParameterInfo(Name), Value)) CloudParameters->SetNumberField(Name, Value);
+        }
+        if (bTestMode)
+        {
+            FLinearColor LightningColor = FLinearColor::Black;
+            const bool bLightningColorFound = CloudMaterial->GetVectorParameterValue(FMaterialParameterInfo(TEXT("Storm_LightningColor")), LightningColor);
+            Json->SetBoolField(TEXT("stormLightningColorParameterFound"), bLightningColorFound);
+            if (bLightningColorFound)
+                CloudParameters->SetArrayField(TEXT("Storm_LightningColor"), { MakeShared<FJsonValueNumber>(LightningColor.R), MakeShared<FJsonValueNumber>(LightningColor.G), MakeShared<FJsonValueNumber>(LightningColor.B), MakeShared<FJsonValueNumber>(LightningColor.A) });
         }
         FLinearColor WindControls;
         if (CloudMaterial->GetVectorParameterValue(FMaterialParameterInfo(TEXT("Layout_WindControls")), WindControls))

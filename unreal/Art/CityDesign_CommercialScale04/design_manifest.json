@@ -1,0 +1,207 @@
+{
+  "method": "Individually designed control sections and direct editable mesh operations; no random generation; not GUI hand modeling.",
+  "reference": {
+    "main": "https://www.zha.com/projects/architecture/galaxy-soho?disclaimer=true",
+    "photographers": [
+      "Hufton + Crow",
+      "Iwan Baan"
+    ],
+    "not_copied_geometry": true
+  },
+  "camera": {
+    "blender_position": [
+      26,
+      -42,
+      37
+    ],
+    "target": [
+      -22,
+      115,
+      19
+    ],
+    "vertical_fov": 54,
+    "aspect": "16:9"
+  },
+  "profile_controls": {
+    "A": [
+      [
+        0.14,
+        1,
+        1,
+        0,
+        0
+      ],
+      [
+        6.14,
+        1,
+        0.995,
+        -0.1,
+        0.2
+      ],
+      [
+        11.64,
+        0.97,
+        0.985,
+        -0.35,
+        0.35
+      ],
+      [
+        17.14,
+        0.92,
+        0.96,
+        -0.7,
+        0.55
+      ],
+      [
+        22.64,
+        0.84,
+        0.89,
+        -1.1,
+        0.8
+      ],
+      [
+        28.14,
+        0.73,
+        0.8,
+        -1.7,
+        1.25
+      ]
+    ],
+    "B": [
+      [
+        0.14,
+        1,
+        1,
+        0,
+        0
+      ],
+      [
+        6.14,
+        1,
+        1,
+        -0.1,
+        0
+      ],
+      [
+        11.64,
+        0.99,
+        0.99,
+        -0.2,
+        -0.15
+      ],
+      [
+        17.14,
+        0.97,
+        0.96,
+        -0.4,
+        -0.3
+      ],
+      [
+        22.64,
+        0.93,
+        0.93,
+        -0.55,
+        -0.45
+      ],
+      [
+        28.14,
+        0.86,
+        0.87,
+        -0.65,
+        -0.65
+      ],
+      [
+        33.64,
+        0.76,
+        0.79,
+        -0.5,
+        -1
+      ]
+    ]
+  },
+  "bridge": {
+    "deck_absolute_z_m": 18.54,
+    "minimum_underdeck_clearance_m": 10.96,
+    "control_points_blender_xy": [
+      [
+        -36.0,
+        23.0
+      ],
+      [
+        -32.400001525878906,
+        23.0
+      ],
+      [
+        -29.5,
+        25.899999618530273
+      ],
+      [
+        -29.5,
+        29.5
+      ],
+      [
+        -29.5,
+        33.099998474121094
+      ],
+      [
+        -33.5,
+        36.5
+      ],
+      [
+        -39.5,
+        36.5
+      ]
+    ]
+  },
+  "scope": "Commercial-specific scale candidate: first floor 6.0m, standard retail 5.5m; broader A/B; bridge at corresponding commercial L2; actual offices unchanged in mass.",
+  "collections": {
+    "Curved_A": 131,
+    "Curved_B": 139,
+    "Curved_Bridge": 34,
+    "Curved_C": 1,
+    "Curved_Site": 6,
+    "Office_Window_Visible": 13
+  },
+  "stage": "Commercial-specific candidate complete; final fixed CPU image and technical reports PASS; user visual review pending.",
+  "commercial_floor_to_floor_m": {
+    "first": 6.0,
+    "standard": 5.5
+  },
+  "commercial_main_roof_above_entry_m": {
+    "A": 28.0,
+    "B": 33.5
+  },
+  "bridge_actual_walking_surface_absolute_m": 18.540000915527344,
+  "office_glb_entire_file_identical_to_v3": false,
+  "office_glb_bin_identical_to_v3": true,
+  "office_mesh_name_changes": [
+    {
+      "old": "Mesh_6.001",
+      "new": "Mesh_6.002"
+    },
+    {
+      "old": "Mesh_7.001",
+      "new": "Mesh_7.002"
+    },
+    {
+      "old": "Mesh_12.001",
+      "new": "Mesh_12.002"
+    }
+  ],
+  "office_glb_sha256": "8cae5cbcdde662a8243b5404afa263bd5fe9ba801d66c125136b7f0d3a7de1bc",
+  "office_glb_bin_sha256": "370755c2054bb2fccd9d2c874fdd1ba51e22174c430f979e4525f59c82f3bff7",
+  "final_preview": {
+    "file": "preview-window.png",
+    "pixels": [
+      2560,
+      1440
+    ],
+    "engine": "Cycles",
+    "device": "CPU",
+    "threads": 1,
+    "samples": 24,
+    "denoised": true
+  },
+  "evidence_file": "commercial_height_evidence.json",
+  "physical_scale_report": "commercial_scale_audit.json"
+}

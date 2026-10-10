@@ -1,0 +1,68 @@
+{
+  "recipe": "window-clouds-macro-v8",
+  "master": "/Game/Weather/M_OOW_WindowCloudsMacro_v8",
+  "instance": "/Game/Weather/MI_OOW_WindowCloudsMacro_v8",
+  "sourceMaster": "/Game/Weather/M_OOW_WindowClouds_v7",
+  "sourceInstance": "/Game/Weather/MI_OOW_WindowClouds_v7",
+  "sourceGeneratorSha256": "edc8874e415b62d2ae77e3908d2db4663e5688490a9bce1807445e1df2d18fe6",
+  "scriptSha256": "03f27af1ba2624b0e36bccab87343fc4a059aabff54a949ea51e88e321fa4d33",
+  "graphGeneratorSha256": "b408514e8011eddbb029753ec82a0f939cdebea796be8aa58324eca086533f50",
+  "updatedOwnedV8": false,
+  "recoveredSavedMasterWithoutInstance": false,
+  "defaults": {
+    "OOW_FairCloudStrength": 0.0,
+    "OOW_FairCloudDensity": 0.0016,
+    "OOW_FairCloudCoverage": 0.4,
+    "OOW_OvercastWeight": 0.0,
+    "OOW_CloudAmbientOcclusion": 1.0
+  },
+  "ownedNodeHashes": {
+    "OOW v8 macro connected-footprint support": "76d5f09d5d9afad472e448bc1fbcb81b6f213b1a2c74f969fd9e4eef325555fa",
+    "OOW v8 macro-gated volume density": "1fca2623dc5eeda00f5fc7a2fe54912a8077eae720a97304f8ee114e0d81a29d",
+    "OOW v7 ordinary-cloud property weight": "1906372c233d01f60b23463afc9cb94fc0effa7cacb784442ee3c266fd163308",
+    "OOW v7 ordinary-cloud single-scattering albedo": "132523df96ca64d4c469d7004afb5b135923f19b5170254da50332adea1ee07a",
+    "OOW v7 ordinary-cloud local sky occlusion": "45c85ab4c6b398dc0d7eec69c344c0871952d0950a00898775888343b67d4cc7",
+    "OOW v7 high patches and anisotropic fibres": "73467bd558d9eb07eacb7ba30489256d7444f954c64252d6bfd3806d65b322a2",
+    "OOW v7 conservative support retaining native GBA": "c2a781cfe3a028570186ea4ebad5f9de5f6ad4d4c36ae5d5f8beb995f2245301"
+  },
+  "graphTopologyChanged": false,
+  "changedSourceHlsl": [
+    "support",
+    "density"
+  ],
+  "macroShape": "connected curved footprint, shared flat base and eccentric crown heightfield",
+  "neighbourCells": 9,
+  "maximumFootprintRadiusInSpacings": 1.18,
+  "noiseReadsRequestedAtDetailZero": 0,
+  "noiseReadsDetailed": 2,
+  "runtimeMacroGate": "oow.StormDetailStrength=0; runtime overwrites instance DetailStrength",
+  "deck": {
+    "bottomH": [
+      0.04,
+      0.08
+    ],
+    "thicknessH": 0.26,
+    "bandIntegral": 0.23,
+    "oldReferenceIntegral": 0.705,
+    "densityNormalization": 3.0652173913043477,
+    "preservesCurrentRound2SpatialColumnOD": false
+  },
+  "highAltitudeKm": [
+    8,
+    10
+  ],
+  "cirrusCodeUnchanged": true,
+  "albedoCodeUnchanged": true,
+  "ambientCodeUnchanged": true,
+  "nativeConservativeGbaPreserved": true,
+  "nativeStormShapeUnchanged": true,
+  "advancedSettingsChanged": false,
+  "actualMultiScatteringApproximationOctaveCount": 2,
+  "actualRayMarchVolumeShadow": true,
+  "compilationVerified": false,
+  "gpuTextureReadsMeasured": false,
+  "performanceMeasured": false,
+  "mapsModified": false,
+  "materialSaved": true,
+  "instanceSaved": true
+}

@@ -1,0 +1,62 @@
+[
+  {
+    "file": "concept-plan.png",
+    "bytes": 123235
+  },
+  {
+    "file": "concept-plan.svg",
+    "bytes": 8862
+  },
+  {
+    "file": "draw_concept_plan.ps1",
+    "bytes": 7821
+  },
+  {
+    "file": "proposal-zh.md",
+    "bytes": 12337
+  },
+  {
+    "file": "protected-before-after.json",
+    "bytes": 2998
+  },
+  {
+    "file": "README.md",
+    "bytes": 1219
+  },
+  {
+    "file": "reference_sources.json",
+    "bytes": 4958
+  },
+  {
+    "file": "study_manifest.json",
+    "bytes": 2696
+  },
+  {
+    "file": "References\\curve_alternatives\\westfield-central-plaza-Barwerd-van-der-Plas.jpg",
+    "bytes": 188011
+  },
+  {
+    "file": "References\\curve_alternatives\\westfield-facade-Bart-van-Hoek.jpg",
+    "bytes": 202025
+  },
+  {
+    "file": "References\\curve_alternatives\\westfield-main-entrance-Ronald-Tilleman.jpg",
+    "bytes": 74557
+  },
+  {
+    "file": "References\\galaxy-soho\\galaxy-soho-hufton-crow-courtyard.jpg",
+    "bytes": 339642
+  },
+  {
+    "file": "References\\galaxy-soho\\galaxy-soho-hufton-crow-secondary.jpg",
+    "bytes": 277180
+  },
+  {
+    "file": "References\\galaxy-soho\\galaxy-soho-iwan-baan-bridges-upward.jpg",
+    "bytes": 115230
+  },
+  {
+    "file": "References\\galaxy-soho\\galaxy-soho-iwan-baan-secondary.jpg",
+    "bytes": 165756
+  }
+]

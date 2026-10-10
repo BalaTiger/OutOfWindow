@@ -1,0 +1,92 @@
+[
+  {
+    "name": "A_L0_Outer_Glass_ChordPanels",
+    "panes": 44,
+    "maximum_front_projection_m": 0.004126734230205986
+  },
+  {
+    "name": "A_L0_Atrium_Glass",
+    "panes": 25,
+    "maximum_front_projection_m": 0.0024397076717995745
+  },
+  {
+    "name": "A_L1_Outer_Glass_ChordPanels",
+    "panes": 50,
+    "maximum_front_projection_m": 0.008166758366898392
+  },
+  {
+    "name": "A_L1_Atrium_Glass",
+    "panes": 25,
+    "maximum_front_projection_m": 0.006718342546580782
+  },
+  {
+    "name": "A_L2_Outer_Glass_ChordPanels",
+    "panes": 50,
+    "maximum_front_projection_m": 0.020926537392166742
+  },
+  {
+    "name": "A_L2_Atrium_Glass",
+    "panes": 25,
+    "maximum_front_projection_m": 0.01586736201442617
+  },
+  {
+    "name": "A_L3_Outer_Glass_ChordPanels",
+    "panes": 50,
+    "maximum_front_projection_m": 3.814697265625e-06
+  },
+  {
+    "name": "A_L3_Atrium_Glass",
+    "panes": 25,
+    "maximum_front_projection_m": 0.016471649440639908
+  },
+  {
+    "name": "B_L0_Outer_Glass_ChordPanels",
+    "panes": 42,
+    "maximum_front_projection_m": 8.529922399520072e-06
+  },
+  {
+    "name": "B_L0_Atrium_Glass",
+    "panes": 24,
+    "maximum_front_projection_m": 5.3947966093944364e-06
+  },
+  {
+    "name": "B_L1_Outer_Glass_ChordPanels",
+    "panes": 48,
+    "maximum_front_projection_m": 1.52587890625e-05
+  },
+  {
+    "name": "B_L1_Atrium_Glass",
+    "panes": 24,
+    "maximum_front_projection_m": 0.0007674204839499934
+  },
+  {
+    "name": "B_L2_Outer_Glass_ChordPanels",
+    "panes": 48,
+    "maximum_front_projection_m": 0.010929109163933297
+  },
+  {
+    "name": "B_L2_Atrium_Glass",
+    "panes": 24,
+    "maximum_front_projection_m": 0.01032077184368877
+  },
+  {
+    "name": "B_L3_Outer_Glass_ChordPanels",
+    "panes": 48,
+    "maximum_front_projection_m": 0.015296658729836515
+  },
+  {
+    "name": "B_L3_Atrium_Glass",
+    "panes": 24,
+    "maximum_front_projection_m": 0.014499472240730506
+  },
+  {
+    "name": "B_L4_Outer_Glass_ChordPanels",
+    "panes": 48,
+    "maximum_front_projection_m": 3.814697265625e-06
+  },
+  {
+    "name": "B_L4_Atrium_Glass",
+    "panes": 24,
+    "maximum_front_projection_m": 0.01343582137377544
+  }
+]

@@ -1,0 +1,36 @@
+{
+  "updated_utc": "2026-10-07T14:43:16.333365+00:00",
+  "state": "RESOURCE_BLOCKED_NO_PREVIEW_LAUNCH",
+  "own_geometry_pid": 56252,
+  "geometry_child_exited": true,
+  "geometry_exit_utc": "2026-10-07T14:07:08.295091+00:00",
+  "geometry_peak_private_commit_gib": 0.5726470947265625,
+  "geometry_peak_working_set_gib": 0.49063873291015625,
+  "geometry_rays_pass": 15,
+  "changed_original_objects_in_independent_copy": [
+    "CityModern_B08_glass",
+    "Office_B08_Visible_Planar_Glass_32mm",
+    "Office_B08_Secondary_Mullions_52mm",
+    "Office_B08_Recessed_Head_Rails_43mm",
+    "Office_B08_Opaque_Spandrel_550mm"
+  ],
+  "unchanged_original_objects": 412,
+  "commercial_and_original_camera_preserved": true,
+  "protected_file_count": 115,
+  "protected_status": "PASS",
+  "preview_A_repaired_exists": false,
+  "preview_B_exists": false,
+  "current_preview_A_low_is_older_black_failure": true,
+  "next_dependency": "Paused resource checkpoint; later explicit main resource window and freshly sufficient capacity are required. Night work prioritizes ToE.",
+  "formal_window_restore_confirmed": true,
+  "current_resource_sample": {
+    "utc": "2026-10-07T14:41:30.857963+00:00",
+    "physical_available_gib": 8.023761749267578,
+    "commit_headroom_gib": 2.2563400268554688,
+    "system_committed_gib": 64.6231803894043,
+    "commit_limit_gib": 66.87952041625977,
+    "process_count": 384
+  },
+  "resource_checkpoint": "resource-blocked-20261007T144130Z.json",
+  "no_new_render_or_blender_started": true
+}

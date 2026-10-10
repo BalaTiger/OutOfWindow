@@ -1,0 +1,197 @@
+{
+  "method": "Individually designed control sections and direct editable mesh operations; no random generation; not GUI hand modeling.",
+  "reference": {
+    "main": "https://www.zha.com/projects/architecture/galaxy-soho?disclaimer=true",
+    "photographers": [
+      "Hufton + Crow",
+      "Iwan Baan"
+    ],
+    "not_copied_geometry": true
+  },
+  "camera": {
+    "blender_position": [
+      26,
+      -42,
+      37
+    ],
+    "target": [
+      -22,
+      115,
+      19
+    ],
+    "vertical_fov": 54,
+    "aspect": "16:9"
+  },
+  "profile_controls": {
+    "A": [
+      [
+        0.14,
+        1,
+        1,
+        0,
+        0
+      ],
+      [
+        6,
+        1,
+        0.99,
+        -0.15,
+        0.3
+      ],
+      [
+        11.6,
+        0.96,
+        0.97,
+        -0.6,
+        0.45
+      ],
+      [
+        16.6,
+        0.88,
+        0.94,
+        -1.15,
+        0.7
+      ],
+      [
+        20.75,
+        0.73,
+        0.8,
+        -1.7,
+        1.25
+      ]
+    ],
+    "B": [
+      [
+        0.14,
+        1,
+        1,
+        0,
+        0
+      ],
+      [
+        6,
+        1,
+        1,
+        -0.1,
+        0
+      ],
+      [
+        11.6,
+        0.99,
+        0.99,
+        -0.2,
+        -0.15
+      ],
+      [
+        16.6,
+        0.96,
+        0.94,
+        -0.6,
+        -0.4
+      ],
+      [
+        21.6,
+        0.87,
+        0.88,
+        -0.7,
+        -0.7
+      ],
+      [
+        26.6,
+        0.76,
+        0.79,
+        -0.5,
+        -1
+      ]
+    ]
+  },
+  "bridge": {
+    "deck_absolute_z_m": 18.5,
+    "minimum_underdeck_clearance_m": 10.16,
+    "control_points_blender_xy": [
+      [
+        -36.0,
+        23.0
+      ],
+      [
+        -32.400001525878906,
+        23.0
+      ],
+      [
+        -29.5,
+        25.899999618530273
+      ],
+      [
+        -29.5,
+        29.5
+      ],
+      [
+        -29.5,
+        33.099998474121094
+      ],
+      [
+        -33.5,
+        36.5
+      ],
+      [
+        -39.5,
+        36.5
+      ]
+    ]
+  },
+  "scope": "A+B complete external design sample; one bridge/court; C skyline placeholder; B07 three-floor facade trial. Not finished city art.",
+  "collections": {
+    "Curved_A": 89,
+    "Curved_B": 117,
+    "Curved_Bridge": 34,
+    "Curved_C": 1,
+    "Curved_Site": 6,
+    "Office_Corner": 155
+  },
+  "stage": "Reviewable local sample saved/exported; four actual CPU previews inspected; no UE integration or deployment.",
+  "technical_audit": {
+    "source_status": "PASS",
+    "glb_status": "PASS",
+    "fbx_roundtrip_status": "PASS",
+    "source_triangles_with_C": 79276,
+    "architecture_triangles": 69708,
+    "office_trial_triangles": 9252
+  },
+  "previews": [
+    {
+      "file": "preview-window.png",
+      "width": 1280,
+      "height": 720,
+      "method": "Cycles CPU, one fixed render thread, 32 samples, denoised",
+      "pixels_inspected": true
+    },
+    {
+      "file": "preview-overall.png",
+      "width": 1200,
+      "height": 800,
+      "method": "Cycles CPU, one fixed render thread, 32 samples, denoised",
+      "pixels_inspected": true
+    },
+    {
+      "file": "preview-courtyard.png",
+      "width": 1200,
+      "height": 800,
+      "method": "Cycles CPU, one fixed render thread, 32 samples, denoised",
+      "pixels_inspected": true
+    },
+    {
+      "file": "preview-office.png",
+      "width": 1200,
+      "height": 850,
+      "method": "Cycles CPU, one fixed render thread, 32 samples, denoised",
+      "pixels_inspected": true
+    }
+  ],
+  "scope_limits": [
+    "C remains an unfenestrated skyline placeholder and is excluded from exports.",
+    "Office corner is a three-floor independent trial, hidden in the default window view.",
+    "Background Blender mesh editing was authorized; this is not GUI hand modeling.",
+    "Source UV/normal checks and export checks do not validate UE runtime or architectural compliance.",
+    "Target 1440p distant detail not signed off by 720p window preview."
+  ]
+}

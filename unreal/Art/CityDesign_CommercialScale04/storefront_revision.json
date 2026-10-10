@@ -1,0 +1,25 @@
+{
+  "new_parts": [
+    "A_MainEntry_Upper_Clerestory_Storefront",
+    "A_MainEntry_Upper_Clerestory_Frame_-1.98",
+    "A_MainEntry_Upper_Clerestory_Frame_0.08",
+    "A_MainEntry_Upper_Clerestory_Frame_2.14",
+    "A_MainEntry_Upper_Clerestory_Frame_4.2",
+    "A_MainEntry_Upper_Clerestory_Frame_6.26",
+    "A_CourtEntry_Upper_Clerestory_Storefront",
+    "A_CourtEntry_Upper_Frame_18.35",
+    "A_CourtEntry_Upper_Frame_20.48",
+    "A_CourtEntry_Upper_Frame_22.6",
+    "B_Entry_Upper_Clerestory_Storefront",
+    "B_Entry_Upper_Clerestory_Frame_-45.4",
+    "B_Entry_Upper_Clerestory_Frame_-43.42",
+    "B_Entry_Upper_Clerestory_Frame_-41.44",
+    "B_Entry_Upper_Clerestory_Frame_-39.46",
+    "B_Entry_Upper_Clerestory_Frame_-37.45"
+  ],
+  "first_floor_to_floor_m": 6.0,
+  "door_height_m": 2.78,
+  "clerestory_top_absolute_m": 12.739999999999998,
+  "net_ceiling_height_claimed": false,
+  "office_massing_changed": false
+}

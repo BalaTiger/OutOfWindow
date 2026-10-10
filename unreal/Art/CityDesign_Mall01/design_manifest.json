@@ -1,0 +1,46 @@
+{
+  "method": "Explicit building designs executed as Blender mesh operations; not GUI hand modeling.",
+  "reference": "city-window-target-v3.png",
+  "coordinates": "Blender metres (gltf x,-gltf z,gltf y); UE cm = (100*x,-100*y,100*z).",
+  "camera": {
+    "blenderMetres": [
+      26,
+      -42,
+      37
+    ],
+    "target": [
+      -22,
+      115,
+      19
+    ],
+    "verticalFov": 54,
+    "aspect": "16:9"
+  },
+  "facadeDesignArea": {
+    "mallUpperEast": {
+      "grossSquareMetres": 844.7999999999997,
+      "glazedSquareMetres": 371.7999999999999,
+      "ratio": 0.4401041666666667
+    },
+    "neighborUpperEast": {
+      "grossSquareMetres": 1156.0,
+      "glazedSquareMetres": 376.0,
+      "ratio": 0.32525951557093424
+    },
+    "note": "Opening rectangles on named principal upper elevations; excludes side/back/roof, entrance and shopfronts; not a whole-building glass percentage."
+  },
+  "collectionObjects": {
+    "Mall_Architecture": 401,
+    "Neighbor_Architecture": 604,
+    "Existing_City_Context": 62,
+    "Licensed_Planting": 14
+  },
+  "scope": "Editable original meshes, standalone blend, CPU review; original City map and build scripts untouched.",
+  "finalMeshValidation": {
+    "triangles": 108288,
+    "status": "PASS",
+    "materialSections": 16,
+    "exportMeshCount": 2,
+    "materialCount": 15
+  }
+}

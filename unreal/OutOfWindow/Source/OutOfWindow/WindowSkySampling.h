@@ -18,6 +18,10 @@ class FWindowSkySampling : public FWorldSceneViewExtension
 public:
     FWindowSkySampling(const FAutoRegister& AutoRegister, UWorld* World);
     virtual ~FWindowSkySampling() override;
+    virtual void SetupView(FSceneViewFamily& InViewFamily, FSceneView& InView) override;
+    virtual void PrePostProcessPass_RenderThread(FRDGBuilder& GraphBuilder, const FSceneView& View,
+        const FPostProcessingInputs& Inputs) override;
+
 
     bool GetMeasurement(float& OutSkyFraction, FIntPoint& OutRenderSize) const;
     // Copies the last sampled sky mask for the capture writer; empty until the first readback.
@@ -32,6 +36,10 @@ private:
     double LastRequestSeconds = -2;
     FIntPoint PendingRenderSize = FIntPoint::ZeroValue;
     mutable FCriticalSection MeasurementLock;
+    FString DiagnosticHDRStem;
+    double DiagnosticHDRWorldSeconds = 0;
+    uint32 DiagnosticHDRFrame = 0;
+    TArray<FName> DiagnosticHDRKeys;
     float SkyFraction = -1;
     FIntPoint RenderSize = FIntPoint::ZeroValue;
     TArray<uint8> SkyMask;

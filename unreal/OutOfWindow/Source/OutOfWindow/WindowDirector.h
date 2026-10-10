@@ -1,4 +1,4 @@
-﻿#pragma once
+#pragma once
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
@@ -75,6 +75,7 @@ private:
 
     UPROPERTY() TObjectPtr<ACameraActor> Camera;
     UPROPERTY() TObjectPtr<UDirectionalLightComponent> Sun;
+    UPROPERTY() TObjectPtr<UDirectionalLightComponent> Moon;
     UPROPERTY() TArray<TObjectPtr<ULightComponent>> NightLights;
     UPROPERTY() TObjectPtr<USkyLightComponent> Sky;
     UPROPERTY() TObjectPtr<USceneCaptureComponentCube> WindowReflectionCapture;
@@ -111,6 +112,7 @@ private:
     FWindowTraffic Traffic;
     FRandomStream Random;
     float SolarElevation = 0;
+    float MoonElevation = 0, MoonIlluminatedFraction = 0;
     float Daylight = 1;
     float Wetness = 0;
     float Water = 0;
@@ -120,6 +122,11 @@ private:
     int32 WindowReflectionCaptureRequests = 0;
     float FastLightingUntil = 0;
     float SolarMinutes = 0;
+    // Only active in an explicitly fixed-step HDR/Houdini diagnostic process.
+    bool PaceDiagnosticTick(float DeltaSeconds);
+    double DiagnosticWallFPS = 0.0;
+    double DiagnosticLastWallStart = -1.0;
+    int32 DiagnosticTickCount = 0;
     float TestSeconds = 12;
     float TestStartedAt = 0;
     float VerticalFov = 0;
@@ -132,14 +139,21 @@ private:
     FVector2D CloudDriftUV = FVector2D::ZeroVector;
     FVector2D CloudWindMetersPerSecond = FVector2D::ZeroVector;
     float SunAzimuth = 0;
+    double SceneNorthYaw = 0;
     FVector2D LastViewportSize = FVector2D::ZeroVector;
     FString CapturePath;
+    FString CapturingFramePath;
+    TArray<FString> TransmittancePreviousFiles;
+    TArray<FString> TestWeatherSequence;
     FDelegateHandle ScreenshotHandle;
     int32 ExitFrames = -1;
     int32 CaptureFrames = 1;
     int32 CapturedFrames = 0;
     float CaptureInterval = .125f;
     bool bTestMode = false;
+    bool bLegacyLighting = false;
+    bool bLegacyClouds = false;
+    bool bEmptyCloudReference = false;
     bool bSunSweep = false;
     bool bCaptureRequested = false;
     bool bCameraBound = false;

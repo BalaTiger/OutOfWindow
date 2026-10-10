@@ -1,0 +1,177 @@
+{
+  "status": "PASS",
+  "method": "Read both actual FBX files into factory-empty Blender 5.0.1 temporary scene; no save/render/UE.",
+  "one_unit_m": 1,
+  "objects": [
+    {
+      "name": "OOW_Curved_A",
+      "triangles": 26432,
+      "world_bounds_blender_m": {
+        "min": [
+          -55.10994338989258,
+          -2.7073917388916016,
+          6.689995765686035
+        ],
+        "max": [
+          -24.0411319732666,
+          28.22832489013672,
+          28.909997940063477
+        ]
+      },
+      "maximum_source_bounds_delta_m": 4.291534423828125e-06,
+      "invalid_corner_normals": 0,
+      "uv": [
+        {
+          "name": "UVMap",
+          "loops": 52544,
+          "complete": true,
+          "finite": true
+        },
+        {
+          "name": "LightmapUV",
+          "loops": 52544,
+          "complete": true,
+          "finite": true
+        }
+      ],
+      "errors": []
+    },
+    {
+      "name": "OOW_Curved_B",
+      "triangles": 37204,
+      "world_bounds_blender_m": {
+        "min": [
+          -68.0599136352539,
+          32.682003021240234,
+          6.68998908996582
+        ],
+        "max": [
+          -28.0400390625,
+          69.08441925048828,
+          34.899993896484375
+        ]
+      },
+      "maximum_source_bounds_delta_m": 1.0967254638671875e-05,
+      "invalid_corner_normals": 0,
+      "uv": [
+        {
+          "name": "UVMap",
+          "loops": 80388,
+          "complete": true,
+          "finite": true
+        },
+        {
+          "name": "LightmapUV",
+          "loops": 80388,
+          "complete": true,
+          "finite": true
+        }
+      ],
+      "errors": []
+    },
+    {
+      "name": "OOW_Curved_Bridge",
+      "triangles": 5712,
+      "world_bounds_blender_m": {
+        "min": [
+          -39.64567947387695,
+          18.7807674407959,
+          17.199995040893555
+        ],
+        "max": [
+          -26.780000686645508,
+          40.71955108642578,
+          23.43999671936035
+        ]
+      },
+      "maximum_source_bounds_delta_m": 5.7220458984375e-06,
+      "invalid_corner_normals": 0,
+      "uv": [
+        {
+          "name": "UVMap",
+          "loops": 11424,
+          "complete": true,
+          "finite": true
+        },
+        {
+          "name": "LightmapUV",
+          "loops": 11424,
+          "complete": true,
+          "finite": true
+        }
+      ],
+      "errors": []
+    },
+    {
+      "name": "OOW_Curved_Court",
+      "triangles": 360,
+      "world_bounds_blender_m": {
+        "min": [
+          -58.349998474121094,
+          5.000000953674316,
+          6.979990005493164
+        ],
+        "max": [
+          -22.0,
+          60.0,
+          7.489996910095215
+        ]
+      },
+      "maximum_source_bounds_delta_m": 1.0013580322265625e-05,
+      "invalid_corner_normals": 0,
+      "uv": [
+        {
+          "name": "UVMap",
+          "loops": 720,
+          "complete": true,
+          "finite": true
+        },
+        {
+          "name": "LightmapUV",
+          "loops": 720,
+          "complete": true,
+          "finite": true
+        }
+      ],
+      "errors": []
+    },
+    {
+      "name": "OOW_Office_Corner_TRIAL",
+      "triangles": 9252,
+      "world_bounds_blender_m": {
+        "min": [
+          22.65999984741211,
+          -9.439995765686035,
+          20.719999313354492
+        ],
+        "max": [
+          32.20000076293945,
+          -4.564994812011719,
+          31.860002517700195
+        ]
+      },
+      "maximum_source_bounds_delta_m": 5.245208740234375e-06,
+      "invalid_corner_normals": 0,
+      "uv": [
+        {
+          "name": "UVMap",
+          "loops": 18504,
+          "complete": true,
+          "finite": true
+        },
+        {
+          "name": "LightmapUV",
+          "loops": 18504,
+          "complete": true,
+          "finite": true
+        }
+      ],
+      "errors": []
+    }
+  ],
+  "errors": [],
+  "limitations": [
+    "Blender round-trip does not validate UE import settings or material conversion.",
+    "UV island overlap, shading quality, self-intersection and collision are not tested."
+  ]
+}

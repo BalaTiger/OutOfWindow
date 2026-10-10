@@ -1,0 +1,321 @@
+{
+  "status": "PASS",
+  "camera_before": {
+    "name": "Composition06_Fixed_Scene_Camera",
+    "matrix_world": [
+      [
+        0.999112069606781,
+        -0.009510732255876064,
+        0.0410437285900116,
+        6.0
+      ],
+      [
+        0.042131245136260986,
+        0.22554002702236176,
+        -0.9733225107192993,
+        -138.0
+      ],
+      [
+        5.882709874782677e-09,
+        0.9741874933242798,
+        0.2257404625415802,
+        70.5
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "type": "PERSP",
+    "lens": 28.27022933959961,
+    "sensor_width": 36.0,
+    "sensor_height": 24.0,
+    "sensor_fit": "VERTICAL",
+    "shift_x": 0.0,
+    "shift_y": 0.0,
+    "clip_start": 0.10000000149011612,
+    "clip_end": 3000.0,
+    "dof_enabled": false,
+    "resolution": [
+      640,
+      360,
+      100
+    ],
+    "pixel_aspect": [
+      1.0,
+      1.0
+    ],
+    "border": false,
+    "crop": false
+  },
+  "camera_after": {
+    "name": "Composition06_Fixed_Scene_Camera",
+    "matrix_world": [
+      [
+        0.999112069606781,
+        -0.009510732255876064,
+        0.0410437285900116,
+        6.0
+      ],
+      [
+        0.042131245136260986,
+        0.22554002702236176,
+        -0.9733225107192993,
+        -138.0
+      ],
+      [
+        5.882709874782677e-09,
+        0.9741874933242798,
+        0.2257404625415802,
+        70.5
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "type": "PERSP",
+    "lens": 28.27022933959961,
+    "sensor_width": 36.0,
+    "sensor_height": 24.0,
+    "sensor_fit": "VERTICAL",
+    "shift_x": 0.0,
+    "shift_y": 0.0,
+    "clip_start": 0.10000000149011612,
+    "clip_end": 3000.0,
+    "dof_enabled": false,
+    "resolution": [
+      640,
+      360,
+      100
+    ],
+    "pixel_aspect": [
+      1.0,
+      1.0
+    ],
+    "border": false,
+    "crop": false
+  },
+  "allowed_changed_objects": [
+    "WB06_Far_Left_Tower",
+    "WB06_Far_Right_Slab",
+    "WB06_left_bounds",
+    "WB06_left_bounds_Inner_Walk",
+    "WB06_left_bounds_Lane_Line",
+    "WB06_left_bounds_Outer_Walk",
+    "WB06_right_bounds",
+    "WB06_right_bounds_Inner_Walk",
+    "WB06_right_bounds_Lane_Line",
+    "WB06_right_bounds_Outer_Walk"
+  ],
+  "actual_changed_objects": [
+    "WB06_Far_Left_Tower",
+    "WB06_Far_Right_Slab",
+    "WB06_left_bounds",
+    "WB06_left_bounds_Inner_Walk",
+    "WB06_left_bounds_Lane_Line",
+    "WB06_left_bounds_Outer_Walk",
+    "WB06_right_bounds",
+    "WB06_right_bounds_Inner_Walk",
+    "WB06_right_bounds_Lane_Line",
+    "WB06_right_bounds_Outer_Walk"
+  ],
+  "unchanged_original_objects": 115,
+  "new_objects": [
+    "Road07_Background_Ground_Continuation",
+    "Road07_Depth_Tree_0_0_Crown",
+    "Road07_Depth_Tree_0_0_Trunk",
+    "Road07_Depth_Tree_0_1_Crown",
+    "Road07_Depth_Tree_0_1_Trunk",
+    "Road07_Depth_Tree_0_2_Crown",
+    "Road07_Depth_Tree_0_2_Trunk",
+    "Road07_Depth_Tree_0_3_Crown",
+    "Road07_Depth_Tree_0_3_Trunk",
+    "Road07_Depth_Tree_1_0_Crown",
+    "Road07_Depth_Tree_1_0_Trunk",
+    "Road07_Depth_Tree_1_1_Crown",
+    "Road07_Depth_Tree_1_1_Trunk",
+    "Road07_Depth_Tree_1_2_Crown",
+    "Road07_Depth_Tree_1_2_Trunk",
+    "Road07_Depth_Tree_1_3_Crown",
+    "Road07_Depth_Tree_1_3_Trunk",
+    "Road07_Equidistant_Lane_Dashes"
+  ],
+  "visibility_rays_before": [
+    {
+      "side": "left",
+      "world_y": 0,
+      "first_hit": "WB06_left_bounds_Lane_Line",
+      "road_first_visible": true
+    },
+    {
+      "side": "left",
+      "world_y": 100,
+      "first_hit": "WB06_Left_Front_Primary_MainVolume",
+      "road_first_visible": false
+    },
+    {
+      "side": "left",
+      "world_y": 200,
+      "first_hit": "WB06_Left_Front_Primary_MainVolume",
+      "road_first_visible": false
+    },
+    {
+      "side": "left",
+      "world_y": 300,
+      "first_hit": "WB06_Left_Front_Primary_FloorBand_11",
+      "road_first_visible": false
+    },
+    {
+      "side": "left",
+      "world_y": 500,
+      "first_hit": "WB06_Left_Front_Primary_MainVolume",
+      "road_first_visible": false
+    },
+    {
+      "side": "left",
+      "world_y": 700,
+      "first_hit": "WB06_Left_Front_Primary_MainVolume",
+      "road_first_visible": false
+    },
+    {
+      "side": "left",
+      "world_y": 890,
+      "first_hit": "WB06_Middle_Rear_Left_MainVolume",
+      "road_first_visible": false
+    },
+    {
+      "side": "right",
+      "world_y": 0,
+      "first_hit": "WB06_right_bounds_Lane_Line",
+      "road_first_visible": true
+    },
+    {
+      "side": "right",
+      "world_y": 100,
+      "first_hit": "WB06_right_bounds_Lane_Line",
+      "road_first_visible": true
+    },
+    {
+      "side": "right",
+      "world_y": 200,
+      "first_hit": "WB06_Right_Back_Secondary_MainVolume",
+      "road_first_visible": false
+    },
+    {
+      "side": "right",
+      "world_y": 300,
+      "first_hit": "WB06_Right_Back_Secondary_FloorBand_08",
+      "road_first_visible": false
+    },
+    {
+      "side": "right",
+      "world_y": 500,
+      "first_hit": "WB06_Right_Back_Secondary_MainVolume",
+      "road_first_visible": false
+    },
+    {
+      "side": "right",
+      "world_y": 700,
+      "first_hit": "WB06_Right_Back_Secondary_MainVolume",
+      "road_first_visible": false
+    },
+    {
+      "side": "right",
+      "world_y": 890,
+      "first_hit": "WB06_Right_Back_Secondary_MainVolume",
+      "road_first_visible": false
+    }
+  ],
+  "visibility_rays_after": [
+    {
+      "side": "left",
+      "world_y": 0,
+      "first_hit": "WB06_left_bounds_Lane_Line",
+      "road_first_visible": true
+    },
+    {
+      "side": "left",
+      "world_y": 100,
+      "first_hit": "WB06_Left_Front_Primary_MainVolume",
+      "road_first_visible": false
+    },
+    {
+      "side": "left",
+      "world_y": 200,
+      "first_hit": "WB06_Left_Front_Primary_MainVolume",
+      "road_first_visible": false
+    },
+    {
+      "side": "left",
+      "world_y": 300,
+      "first_hit": "WB06_Left_Front_Primary_FloorBand_11",
+      "road_first_visible": false
+    },
+    {
+      "side": "left",
+      "world_y": 500,
+      "first_hit": "WB06_Left_Front_Primary_MainVolume",
+      "road_first_visible": false
+    },
+    {
+      "side": "left",
+      "world_y": 700,
+      "first_hit": "WB06_Left_Front_Primary_MainVolume",
+      "road_first_visible": false
+    },
+    {
+      "side": "left",
+      "world_y": 890,
+      "first_hit": "WB06_Middle_Rear_Left_MainVolume",
+      "road_first_visible": false
+    },
+    {
+      "side": "right",
+      "world_y": 0,
+      "first_hit": "WB06_right_bounds_Lane_Line",
+      "road_first_visible": true
+    },
+    {
+      "side": "right",
+      "world_y": 100,
+      "first_hit": "WB06_right_bounds_Lane_Line",
+      "road_first_visible": true
+    },
+    {
+      "side": "right",
+      "world_y": 200,
+      "first_hit": "WB06_Right_Back_Secondary_MainVolume",
+      "road_first_visible": false
+    },
+    {
+      "side": "right",
+      "world_y": 300,
+      "first_hit": "WB06_Right_Back_Secondary_FloorBand_08",
+      "road_first_visible": false
+    },
+    {
+      "side": "right",
+      "world_y": 500,
+      "first_hit": "WB06_Right_Back_Secondary_MainVolume",
+      "road_first_visible": false
+    },
+    {
+      "side": "right",
+      "world_y": 700,
+      "first_hit": "WB06_Right_Back_Secondary_MainVolume",
+      "road_first_visible": false
+    },
+    {
+      "side": "right",
+      "world_y": 890,
+      "first_hit": "WB06_Right_Back_Secondary_MainVolume",
+      "road_first_visible": false
+    }
+  ],
+  "visibility_note": "First-hit probes at selected centerline stations, not full image segmentation. Main foreground building occlusion may remain."
+}

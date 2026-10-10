@@ -1,0 +1,89 @@
+{
+  "status": "COMMERCIAL_PROPORTION_IMPROVED_USER_REVIEW_PENDING",
+  "views": "Only the unchanged Review_Window_UE_VFOV54 camera, no new close-up.",
+  "final_image": "preview-window.png",
+  "final_pixels": [
+    2560,
+    1440
+  ],
+  "actual_draft_measurement_basis": [
+    1280,
+    720
+  ],
+  "screen_measurements": {
+    "A_storey_pitch_px_v3": [
+      56,
+      59
+    ],
+    "A_storey_pitch_px_v4": [
+      75,
+      81
+    ],
+    "A_vision_px_v3": [
+      45,
+      47
+    ],
+    "A_vision_px_v4": [
+      61,
+      66
+    ],
+    "A_band_px_v4": [
+      12,
+      15
+    ],
+    "B_storey_pitch_px_v3": [
+      30,
+      33
+    ],
+    "B_storey_pitch_px_v4": [
+      39,
+      42
+    ],
+    "B_vision_px_v3": [
+      23,
+      25
+    ],
+    "B_vision_px_v4": [
+      32,
+      34
+    ],
+    "B_band_px_v4": [
+      6,
+      8
+    ],
+    "A_B_band_fraction_of_storey_v4": [
+      0.16,
+      0.2
+    ],
+    "bridge_cabin_height_px_v4": [
+      45,
+      48
+    ],
+    "roof_screen_upward_shift_px_A": [
+      70,
+      80
+    ],
+    "roof_screen_upward_shift_px_B": [
+      45,
+      50
+    ]
+  },
+  "meaning": "Approximate actual draft facade pixels; at final resolution each dimension is 2x. Different-depth office pixels are not a physical storey ruler.",
+  "improvements": [
+    "Larger commercial volumes and public retail floor intervals, without adding floors.",
+    "0.89m bands and human fittings remain physical-sized; no new coarse-frame enlargement.",
+    "Bridge cabin unchanged, shifted to commercial L2 with actual walking surface18.54m.",
+    "Upper storefront glass/frames, internal backings/ceiling, terrace and roof services follow the new commercial floors.",
+    "Office GLB BIN geometry/attribute bytes are identical to v3; only mesh-name suffix metadata differs; fixed camera unchanged."
+  ],
+  "remaining_visual_issues": [
+    "Repeated white lines and cool glazing still dominate; functional and material zoning remains weak at this view.",
+    "Tree still covers much of entrance left side.",
+    "Bridge court/entrance depth remains weak, B glazing details remain dense.",
+    "Central office remains pale."
+  ],
+  "visual_accepted": false,
+  "not_ue_verified": true,
+  "final_image_actually_viewed": true,
+  "draft_final_difference": "Final deck top aligned down0.12m; commercial/office masses and camera otherwise unchanged after draft."
+}

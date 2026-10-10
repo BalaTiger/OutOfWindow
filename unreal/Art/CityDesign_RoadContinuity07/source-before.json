@@ -1,0 +1,554 @@
+{
+  "utc": "2026-10-09T09:22:14.231006+00:00",
+  "files": {
+    "unreal/Art/City/modern-city.glb": {
+      "bytes": 16018060,
+      "sha256": "8063f1d17e102bb15b5b16d025bbddcc312a5cadd13f0d362b790d6186b336cc"
+    },
+    "unreal/Art/CityDesign_CommercialScale04/CityDesign_CommercialScale04.blend": {
+      "bytes": 24785982,
+      "sha256": "0981e1a979ec8653ae85f9273c75656f116342dd930a5d0c738fcc8ea4cbc4e7"
+    },
+    "unreal/Art/CityDesign_CommercialScale04/CityDesign_CommercialScale04.blend1": {
+      "bytes": 24818490,
+      "sha256": "2846676be8e62566d06cdb71d066abf8139b79904b099b8b70c55015dc5539a4"
+    },
+    "unreal/Art/CityDesign_CommercialScale04/CityDesign_CommercialScale04_CHECKPOINT_BASE_ONLY.blend": {
+      "bytes": 17361632,
+      "sha256": "f7d42c47522578fab59bdea1305bd2e401ef49e64d58331359378b3cf7d8f9c1"
+    },
+    "unreal/Art/CityDesign_CommercialScale04/CityDesign_CommercialScale04_Commercial.fbx": {
+      "bytes": 6060716,
+      "sha256": "91a4e227378525147c7e9e29c8ebee5ed876323f36184b85803a83b7bb876886"
+    },
+    "unreal/Art/CityDesign_CommercialScale04/CityDesign_CommercialScale04_Commercial.glb": {
+      "bytes": 11293444,
+      "sha256": "47366f3f172f2a8c558b6be881db45ffa0f43d6093d57c9bba3a6bf0b2c51c6e"
+    },
+    "unreal/Art/CityDesign_CommercialScale04/CityDesign_CommercialScale04_OfficeVisible.fbx": {
+      "bytes": 1785740,
+      "sha256": "2d5f880cac4689a404b4597cd591a152a18216d4dfdf36c3bcd2df2abc35f55d"
+    },
+    "unreal/Art/CityDesign_CommercialScale04/CityDesign_CommercialScale04_OfficeVisible.glb": {
+      "bytes": 6012528,
+      "sha256": "8cae5cbcdde662a8243b5404afa263bd5fe9ba801d66c125136b7f0d3a7de1bc"
+    },
+    "unreal/Art/CityDesign_CommercialScale04/CityDesign_CommercialScale04_geometry_checkpoint.blend": {
+      "bytes": 14833410,
+      "sha256": "ff2066a017208099a565dd8e19caa926829d816dadc93c1b07a6bd98e4d589c7"
+    },
+    "unreal/Art/CityDesign_CommercialScale04/PLAN.md": {
+      "bytes": 1050,
+      "sha256": "3d45d37cccc6d1c4260c73e67b2e9b50185055e50da2e02a12cb7e96d56b5826"
+    },
+    "unreal/Art/CityDesign_CommercialScale04/README.md": {
+      "bytes": 7372,
+      "sha256": "3b49032e97c5b46cdd584001602b641b31a4d62f985f98425453006fe162f64d"
+    },
+    "unreal/Art/CityDesign_CommercialScale04/RESUME.md": {
+      "bytes": 1117,
+      "sha256": "b62148a6cb6c8a9c516ae17f813ca7bf696b07f8b859b876c5be3fc23c633589"
+    },
+    "unreal/Art/CityDesign_CommercialScale04/SourceScripts/build_commercial_scale04.py": {
+      "bytes": 26756,
+      "sha256": "be6985b3764cbf0d959049b520ae225af3923f5b4e75a86bafacfce032ed38c3"
+    },
+    "unreal/Art/CityDesign_CommercialScale04/SourceScripts/build_review_commercial_scale04.py": {
+      "bytes": 1142,
+      "sha256": "8bb9b466ddf03c2cdb477fb3116959d36b88522ed6d3052590fafa0d03046247"
+    },
+    "unreal/Art/CityDesign_CommercialScale04/SourceScripts/commercial_scale04_details.py": {
+      "bytes": 10064,
+      "sha256": "fe512a8c9838be1781bb49e68c35df618dde57d0284711fed99767308bd93e3f"
+    },
+    "unreal/Art/CityDesign_CommercialScale04/SourceScripts/commercial_scale04_storefronts.py": {
+      "bytes": 4439,
+      "sha256": "10551143280e63026b6cb6586939279c983e5844995111c99c80d0c133531b4a"
+    },
+    "unreal/Art/CityDesign_CommercialScale04/SourceScripts/export_commercial_scale04.py": {
+      "bytes": 7681,
+      "sha256": "8772b675bbf9dac60ca64cf6ada918742c5294c183d73df833cf1f573b0042ed"
+    },
+    "unreal/Art/CityDesign_CommercialScale04/SourceScripts/finalize_commercial_scale04.py": {
+      "bytes": 2380,
+      "sha256": "ac31afd26c004e58b20b890c3cf23deca34125873a5324c33e05d7698e53df40"
+    },
+    "unreal/Art/CityDesign_CommercialScale04/SourceScripts/new_curved_validation.py": {
+      "bytes": 9453,
+      "sha256": "7cc9373a032b9e91aad132dff59b9491b91ca25847518985c9d45bfb69fdc534"
+    },
+    "unreal/Art/CityDesign_CommercialScale04/SourceScripts/prepare_commercial_scale04.py": {
+      "bytes": 7638,
+      "sha256": "c7ff70c78a9d972a1d17f1c339f70394e872734cb079b462c3fa42fffeed4769"
+    },
+    "unreal/Art/CityDesign_CommercialScale04/SourceScripts/refine_commercial_scale04.py": {
+      "bytes": 11732,
+      "sha256": "5a4809ecf5dab400f1b94534ceaf60f13f22331c1d6e3b7bb58647a16e52366a"
+    },
+    "unreal/Art/CityDesign_CommercialScale04/SourceScripts/render_commercial_scale04.py": {
+      "bytes": 1025,
+      "sha256": "8771e3dfe8480e07ca553dc821e30bda24d81c4e51d290deb5bb18f113b06628"
+    },
+    "unreal/Art/CityDesign_CommercialScale04/SourceScripts/validate_city_sample.py": {
+      "bytes": 16715,
+      "sha256": "e1231f3cb22e85d58afed55795c4895d49ceac485fe3b2df249b0b70be4452ad"
+    },
+    "unreal/Art/CityDesign_CommercialScale04/SourceScripts/verify_commercial_scale04_fbx.py": {
+      "bytes": 3459,
+      "sha256": "53a60b0b1fc34b68f8f93c18ef8ff75e50915fc862d88061052c65fa9fe94173"
+    },
+    "unreal/Art/CityDesign_CommercialScale04/SourceScripts/verify_commercial_scale04_geometry.py": {
+      "bytes": 5606,
+      "sha256": "67b388fe78b1fc0458e3ef546c0ff764aaf7e944a2a9341e345bb66bab46651b"
+    },
+    "unreal/Art/CityDesign_CommercialScale04/SourceScripts/verify_window_scale03_exports.py": {
+      "bytes": 25106,
+      "sha256": "79985b9e994cdd4fd8e8ea1003eb6aa7fbe28afd498c36c200c6621dba97012c"
+    },
+    "unreal/Art/CityDesign_CommercialScale04/SourceScripts/write_commercial_scale04_handoff.py": {
+      "bytes": 17859,
+      "sha256": "11f39accce3104b42bd1d24dd45f75f0ceb44705a61eb42ed61cb57dbaff320f"
+    },
+    "unreal/Art/CityDesign_CommercialScale04/build-review-v4.log": {
+      "bytes": 3416,
+      "sha256": "b2940b4685e721a6627d249f404e8065cec5b1f3ab0104e9d30249b72db88946"
+    },
+    "unreal/Art/CityDesign_CommercialScale04/checkpoint-status.json": {
+      "bytes": 1165,
+      "sha256": "79a956113d7b38c42a23e88f879d01cfdb2ba1027bc612a390b8f95f2a957f9a"
+    },
+    "unreal/Art/CityDesign_CommercialScale04/commercial_height_evidence.json": {
+      "bytes": 3177,
+      "sha256": "d16deb81ec77fdbbbeadbb87043d5909c39b5898f87693e1aeb961addf0ed19d"
+    },
+    "unreal/Art/CityDesign_CommercialScale04/commercial_scale_audit.json": {
+      "bytes": 6937,
+      "sha256": "d5751dcb88b23b20d7233a6624772b1de01e5646b57edf436e12b83353fa29e7"
+    },
+    "unreal/Art/CityDesign_CommercialScale04/design_manifest.json": {
+      "bytes": 3912,
+      "sha256": "669b251193c8b50dcc6a3bc35688cb53758517124ef9b68a0743a1beb99acc48"
+    },
+    "unreal/Art/CityDesign_CommercialScale04/export_audit.json": {
+      "bytes": 169629,
+      "sha256": "6cd3bebef4b32d8bf9cf65e9c21b4084d3366b5edea18320b427c3fc2f167dca"
+    },
+    "unreal/Art/CityDesign_CommercialScale04/export_manifest.json": {
+      "bytes": 20782,
+      "sha256": "c51c1f3ce81769116c2fefe171cbde049bbeb5120387e90666df4f6c5a7f9349"
+    },
+    "unreal/Art/CityDesign_CommercialScale04/fbx_roundtrip_audit.json": {
+      "bytes": 5774,
+      "sha256": "d00ce37cc469ef7925ddf5e3029427ca128c6ea68ec00ed35fa44283b0263816"
+    },
+    "unreal/Art/CityDesign_CommercialScale04/file-index.json": {
+      "bytes": 8124,
+      "sha256": "27e9799a4a55d66fa6c36d9ba139df7ddc8b1c9977e8cb01b715738f75b3281e"
+    },
+    "unreal/Art/CityDesign_CommercialScale04/finalize-v4.log": {
+      "bytes": 2582,
+      "sha256": "c5466211ef6d5fefde8e75f12cf4861fc58fa41e8febb647070af4b739670d5b"
+    },
+    "unreal/Art/CityDesign_CommercialScale04/fixed_window_refinements.json": {
+      "bytes": 1870,
+      "sha256": "a034f01177f76eff04f91d4fce8142d55d6e5de635bdacb43ce1af9f3ae975b4"
+    },
+    "unreal/Art/CityDesign_CommercialScale04/fixed_window_visual_review.json": {
+      "bytes": 2461,
+      "sha256": "305eb1d3675fee31ac4d566b0918973039a4fea64380cb3e6a394f8f75346a47"
+    },
+    "unreal/Art/CityDesign_CommercialScale04/mesh_audit.json": {
+      "bytes": 3726534,
+      "sha256": "e6f6824741a9aa1aa28bca83c33716d92787df84d68bf164a3fc2c3b8a769996"
+    },
+    "unreal/Art/CityDesign_CommercialScale04/office_candidate_changes.json": {
+      "bytes": 1275,
+      "sha256": "db73fdc20f97073cab20491091a3c3911b0b0ce5fbbe72da86b5d858e169b6fa"
+    },
+    "unreal/Art/CityDesign_CommercialScale04/preview-window.png": {
+      "bytes": 5285115,
+      "sha256": "af7d11888f4ef56babea4bdb092967505cbae81e1f1289fcc8259591872f2a89"
+    },
+    "unreal/Art/CityDesign_CommercialScale04/protected-after-v4.json": {
+      "bytes": 21801,
+      "sha256": "89018d4e877e1b7eec71c0d01e34d7c92ddd2650f5b24edc6d39b5dda8f59f2e"
+    },
+    "unreal/Art/CityDesign_CommercialScale04/protected-before-v4.json": {
+      "bytes": 12642,
+      "sha256": "72e565c9a11924fcd60568ff1dfcfa3578e058e24f44e483d20b98fb4a407451"
+    },
+    "unreal/Art/CityDesign_CommercialScale04/storefront_revision.json": {
+      "bytes": 940,
+      "sha256": "da14446a2260e0c5a4722985bc6735af146550f5c65fdeb48c64a16d6699c350"
+    },
+    "unreal/Art/CityDesign_CommercialScale04/window-draft.png": {
+      "bytes": 1450479,
+      "sha256": "bf9e89a7e21d5981a6bd058cf6c714ececd4ae492ab8830aa5bebd4e0882daa4"
+    },
+    "unreal/Art/CityDesign_Composition06/Composition06_ReferenceScene.blend": {
+      "bytes": 357753,
+      "sha256": "6b11348deedc2485c05a0908350ba155beb81bf8602302ea647e5ab6fcde868c"
+    },
+    "unreal/Art/CityDesign_Composition06/attempt.json": {
+      "bytes": 84,
+      "sha256": "51449e9e145b642d7007f83887e433e01a81c5fdf3603dca842e83be9d1445fe"
+    },
+    "unreal/Art/CityDesign_Composition06/blender-cpu.log": {
+      "bytes": 930,
+      "sha256": "20cce24ed38f0872e6650410795d709ba1c33b49a805e3a3c670b1ccca028c96"
+    },
+    "unreal/Art/CityDesign_Composition06/camera-record.json": {
+      "bytes": 1758,
+      "sha256": "10a20efa6cb6e579a024d6a3d3e4d1cc19d330ce84443e45fcecad03424974ad"
+    },
+    "unreal/Art/CityDesign_Composition06/memory-monitor.json": {
+      "bytes": 2463,
+      "sha256": "a1260aa2e5ab450220b3b3ecab427e234c67c2263851375d87ece1866f59ba7d"
+    },
+    "unreal/Art/CityDesign_Composition06/mesh-audit.json": {
+      "bytes": 39701,
+      "sha256": "82bfa3b8a3ba2b93c43e081c269bed0a448919dd9795709aee51c6f7b8853984"
+    },
+    "unreal/Art/CityDesign_Composition06/preview-scene-low.png": {
+      "bytes": 279320,
+      "sha256": "3aa8ebd7776f21bb15f229163655732a2383d0ee1e80618ff8628de5812a0e51"
+    },
+    "unreal/Art/CityDesign_Composition06/render-start.json": {
+      "bytes": 118,
+      "sha256": "83d417087be184c53db83029d5fac6d61e97d72d5281d42d0145c4af474cf320"
+    },
+    "unreal/Art/CityDesign_Composition06/scene06-design.json": {
+      "bytes": 8558,
+      "sha256": "a28ee304ce2b6709f58258a02b3139708c033d187a8328fdc4c27e059c056b38"
+    },
+    "unreal/Art/CityDesign_Composition06/source-after.json": {
+      "bytes": 26273,
+      "sha256": "d2fde5d1cffb6b44001d420f02a6807f929f48b5ccb8152fb2a31847a5e4c9de"
+    },
+    "unreal/Art/CityDesign_Composition06/source-before.json": {
+      "bytes": 26232,
+      "sha256": "4c541db1e586cdd2e4fcdf4bc1e2c012b0b6482f2449c2ab718f240036dbbc5c"
+    },
+    "unreal/Art/CityDesign_Composition06/source-preservation-audit.json": {
+      "bytes": 4687,
+      "sha256": "f45823285388fcaedc0864b19e5d16fb40b660716168d4680c99cefad3fe4907"
+    },
+    "unreal/Art/CityDesign_CurvedDistrict02/CityDesign_CurvedDistrict02.blend": {
+      "bytes": 17361632,
+      "sha256": "f7d42c47522578fab59bdea1305bd2e401ef49e64d58331359378b3cf7d8f9c1"
+    },
+    "unreal/Art/CityDesign_CurvedDistrict02/preview-window.png": {
+      "bytes": 1359427,
+      "sha256": "914ea37f5b0d131a71c81e1a28891d5749505d276bf424cea6ae34778e6c3de7"
+    },
+    "unreal/Art/CityDesign_Mall01/CityDesign_Mall01.blend": {
+      "bytes": 20806184,
+      "sha256": "1040c13879020107c0155031c12aaeb8bfdafefca598cbbb8a0a6573bf8c8db6"
+    },
+    "unreal/Art/CityDesign_Mall01/CityDesign_Mall01_Architecture.fbx": {
+      "bytes": 6533596,
+      "sha256": "968de087730952c7287e2806da58d4782f5815d0c534cf8cf227260da6c0c7d9"
+    },
+    "unreal/Art/CityDesign_Mall01/CityDesign_Mall01_Architecture.glb": {
+      "bytes": 13027980,
+      "sha256": "0c8093dfad665e35c0101980e19115b945b829a50385c014a516b041cb0aa617"
+    },
+    "unreal/Art/CityDesign_Mall01/README.md": {
+      "bytes": 6826,
+      "sha256": "29ae58bdf2975b23d310abd8adf1c1d37411eb393eca3a7c044b8624c13bb9f0"
+    },
+    "unreal/Art/CityDesign_Mall01/preview-close.png": {
+      "bytes": 1287475,
+      "sha256": "1cf9527c896b4d4ae25f486b296a698e12fa7726cab7b1ea520d419cc5636e0c"
+    },
+    "unreal/Art/CityDesign_Mall01/preview-neighbor.png": {
+      "bytes": 1339254,
+      "sha256": "b18c69fbd3460bcf9b9daea32ed812248891e7f7d56a33b28930e5308ffe9afa"
+    },
+    "unreal/Art/CityDesign_Mall01/preview-window.png": {
+      "bytes": 831434,
+      "sha256": "e9f59f49852f2433f7a9609d85d98b3bc59b8be46bd1b23bbbb9dac39fa6cfa3"
+    },
+    "unreal/Art/CityDesign_WindowCamera05/Camera05_A_B08.blend": {
+      "bytes": 25536336,
+      "sha256": "887e08ef32b8046706222138c6b2b0f86f64709c13408fb8b5a582309c47a493"
+    },
+    "unreal/Art/CityDesign_WindowCamera05/preview-A-repaired-low.png": {
+      "bytes": 364559,
+      "sha256": "a330a9702f66dad95120d6579e07aa0bb40a1029c7fb68a443f4186abe88790f"
+    },
+    "unreal/Art/CityDesign_WindowScale03/CityDesign_WindowScale03.blend": {
+      "bytes": 23950679,
+      "sha256": "f50697f968b2cd915912b0df9bcc94ec1567c4a12bd759de7ccb6d990fc8e84b"
+    },
+    "unreal/Art/CityDesign_WindowScale03/CityDesign_WindowScale03.blend1": {
+      "bytes": 23950466,
+      "sha256": "8da0f01909edebcf3495fa402e7a86e7332771fb3c61c6bc6ca79487138be918"
+    },
+    "unreal/Art/CityDesign_WindowScale03/CityDesign_WindowScale03_CHECKPOINT_BASE_ONLY.blend": {
+      "bytes": 17361632,
+      "sha256": "f7d42c47522578fab59bdea1305bd2e401ef49e64d58331359378b3cf7d8f9c1"
+    },
+    "unreal/Art/CityDesign_WindowScale03/CityDesign_WindowScale03_Commercial.fbx": {
+      "bytes": 5540636,
+      "sha256": "6c331d2ddc78214892fddff0fe14402e274959fbd901e2ccdb01555d6eacc3cb"
+    },
+    "unreal/Art/CityDesign_WindowScale03/CityDesign_WindowScale03_Commercial.glb": {
+      "bytes": 10075556,
+      "sha256": "b1cee5cfd6e4f55c1a4e19c69021b7942aecab73712c0d56cf0765268b84d36f"
+    },
+    "unreal/Art/CityDesign_WindowScale03/CityDesign_WindowScale03_OfficeVisible.fbx": {
+      "bytes": 1785724,
+      "sha256": "6ea08a2a70ffe54595108c003f91cad5fae77f40c45e28666c7f84a0717903cf"
+    },
+    "unreal/Art/CityDesign_WindowScale03/CityDesign_WindowScale03_OfficeVisible.glb": {
+      "bytes": 6012528,
+      "sha256": "2d29d676f7472175c52998abaea5a616bbd32ce5e05dbf1b95fb30682cb6fa4a"
+    },
+    "unreal/Art/CityDesign_WindowScale03/CityDesign_WindowScale03_geometry_checkpoint.blend": {
+      "bytes": 14758726,
+      "sha256": "bb941272af5c91fe47dbea2f32c4fcfce22ae6cff8dbc032438349057e9fb363"
+    },
+    "unreal/Art/CityDesign_WindowScale03/PLAN.md": {
+      "bytes": 1215,
+      "sha256": "883e62bfa87ed2b03f5383e7006419983114ad4e5f5bd6dc25985a7689aa94c5"
+    },
+    "unreal/Art/CityDesign_WindowScale03/README.md": {
+      "bytes": 5430,
+      "sha256": "95b1fb12869796b640fae345864507f3895ce5bc8b66a18539128de0bc393f40"
+    },
+    "unreal/Art/CityDesign_WindowScale03/RESUME.md": {
+      "bytes": 1288,
+      "sha256": "9f381b734babd26e2ea8d335e25a591ef67fc0e172d26a8cf3a2911502ad6485"
+    },
+    "unreal/Art/CityDesign_WindowScale03/SourceScripts/build_curved_sample.py": {
+      "bytes": 27072,
+      "sha256": "181ab6fa0d16432574a1ea0cad39b99c60e99b35d1c197e18f6685bb9a9d6051"
+    },
+    "unreal/Art/CityDesign_WindowScale03/SourceScripts/build_window_scale03.py": {
+      "bytes": 26336,
+      "sha256": "df90fe70acad1cfb2412b5aa156aa51c073f4d2a3d7ca7ce1dea5e5b38bc66ca"
+    },
+    "unreal/Art/CityDesign_WindowScale03/SourceScripts/export_window_scale03.py": {
+      "bytes": 7485,
+      "sha256": "14a8d8d266cb610492e3dbedf779c19b35d6431798096011cecd458b29af651a"
+    },
+    "unreal/Art/CityDesign_WindowScale03/SourceScripts/finalize_window_scale03.py": {
+      "bytes": 3246,
+      "sha256": "6db01ee14e2232b4e76f04cb6bf261dc1dafef867d97dcaaded2218a84446b0b"
+    },
+    "unreal/Art/CityDesign_WindowScale03/SourceScripts/new_curved_validation.py": {
+      "bytes": 9453,
+      "sha256": "7cc9373a032b9e91aad132dff59b9491b91ca25847518985c9d45bfb69fdc534"
+    },
+    "unreal/Art/CityDesign_WindowScale03/SourceScripts/prepare_window_scale03.py": {
+      "bytes": 7234,
+      "sha256": "0efeee922b6386e9918b7a4552c8cfe92ea6cb7416fbe06a35950915177fec6a"
+    },
+    "unreal/Art/CityDesign_WindowScale03/SourceScripts/refine_window_scale03.py": {
+      "bytes": 11461,
+      "sha256": "a9ebfd924972ecabe1bfe1702898fa006a652abc5097dc876d4bfffe81ba8e5b"
+    },
+    "unreal/Art/CityDesign_WindowScale03/SourceScripts/render_window_scale03.py": {
+      "bytes": 1343,
+      "sha256": "ee4504f3c1e41629b3b7baf39e7745ed97c8c6b69ee4871bfb4d52a95f46fa95"
+    },
+    "unreal/Art/CityDesign_WindowScale03/SourceScripts/review_export_window_scale03.py": {
+      "bytes": 772,
+      "sha256": "c33eac21de4553632aa3db819151a04d2eb3da25da4555e24a81a38bf2ed0364"
+    },
+    "unreal/Art/CityDesign_WindowScale03/SourceScripts/save_window_render_preset.py": {
+      "bytes": 898,
+      "sha256": "de765a043b4e2b0e631318bec1b2af859ab8cd16acdf2270d5a3999746d17d6e"
+    },
+    "unreal/Art/CityDesign_WindowScale03/SourceScripts/validate_city_sample.py": {
+      "bytes": 16715,
+      "sha256": "e1231f3cb22e85d58afed55795c4895d49ceac485fe3b2df249b0b70be4452ad"
+    },
+    "unreal/Art/CityDesign_WindowScale03/SourceScripts/verify_window_scale03_exports.py": {
+      "bytes": 25106,
+      "sha256": "79985b9e994cdd4fd8e8ea1003eb6aa7fbe28afd498c36c200c6621dba97012c"
+    },
+    "unreal/Art/CityDesign_WindowScale03/SourceScripts/verify_window_scale03_fbx.py": {
+      "bytes": 3391,
+      "sha256": "f6583b8ed6802e07af6ae4e9ccddf9dcb48b8666f1e77746ab4c6da34f0f1fc4"
+    },
+    "unreal/Art/CityDesign_WindowScale03/SourceScripts/window_scale03_details.py": {
+      "bytes": 9922,
+      "sha256": "466a68f0fdbf2cb97dcea78c9a7289a6350a74f4f81ba2744ddb2e63e7e272cc"
+    },
+    "unreal/Art/CityDesign_WindowScale03/SourceScripts/write_window_scale03_handoff.py": {
+      "bytes": 15342,
+      "sha256": "b04e672afcdb1b7d0f46a86404f4a550e84b39e2e20fe0410304f2339e7d1607"
+    },
+    "unreal/Art/CityDesign_WindowScale03/build-v3.log": {
+      "bytes": 811,
+      "sha256": "7bad407d8fd863dced10baf69ebb62ee9b1e922d2bbddfa5f70a6bcfec506193"
+    },
+    "unreal/Art/CityDesign_WindowScale03/checkpoint-status.json": {
+      "bytes": 1372,
+      "sha256": "062ae48b8299464a9649d57f85c482b4b68c58d7f295d4cc35891df9acae27d6"
+    },
+    "unreal/Art/CityDesign_WindowScale03/design_manifest.json": {
+      "bytes": 3319,
+      "sha256": "5e152b676a77e33519470412d1625b61564b0615c82d54b769d1cce1d2dd397d"
+    },
+    "unreal/Art/CityDesign_WindowScale03/diagnose_window_scene.py": {
+      "bytes": 2402,
+      "sha256": "c557b56512c53baa9421f80e2b93e5b4fe7c2a18f6287fea5ead62ea3b56a6eb"
+    },
+    "unreal/Art/CityDesign_WindowScale03/diagnosis.log": {
+      "bytes": 269,
+      "sha256": "0542c178b119b05aa30f1a4c514bca1a171e343cffd6e3f77fcb324f0cc04282"
+    },
+    "unreal/Art/CityDesign_WindowScale03/export-v3.log": {
+      "bytes": 1790,
+      "sha256": "76582246f2ac877e1f430b28762e6f0471e5e0bb8959523e84ca479846210895"
+    },
+    "unreal/Art/CityDesign_WindowScale03/export_audit.json": {
+      "bytes": 163948,
+      "sha256": "a943eedb03b908f6cac8a9611335ddc4c14c8c8f4f668e0f8ede3befff53996f"
+    },
+    "unreal/Art/CityDesign_WindowScale03/export_manifest.json": {
+      "bytes": 19469,
+      "sha256": "4f697f9b8121caaa7371d8b5438c2a191dc2b90576b0d3cc52d2425ab4982e92"
+    },
+    "unreal/Art/CityDesign_WindowScale03/fbx_roundtrip_audit.json": {
+      "bytes": 5784,
+      "sha256": "88206d7e6adf90fec801b8a9dfae620d388a87237f26f737715192fd135f9a43"
+    },
+    "unreal/Art/CityDesign_WindowScale03/file-index.json": {
+      "bytes": 9726,
+      "sha256": "9750d9506ac9dca022d9e5a7a5e14ff0da3a03ad95f2fcbd8dc8ea90245296fd"
+    },
+    "unreal/Art/CityDesign_WindowScale03/finalize-v3.log": {
+      "bytes": 2481,
+      "sha256": "e0714b0c59dddc2f185235406cc205c3fff2c7154b76d44cf07823c79e627072"
+    },
+    "unreal/Art/CityDesign_WindowScale03/fixed-window-diagnosis.json": {
+      "bytes": 295792,
+      "sha256": "cd466eb81cfd0a50afff574cf46f5fcd94bf2efa89ec7fadd6b0b73b6e621984"
+    },
+    "unreal/Art/CityDesign_WindowScale03/fixed_window_refinements.json": {
+      "bytes": 1870,
+      "sha256": "a034f01177f76eff04f91d4fce8142d55d6e5de635bdacb43ce1af9f3ae975b4"
+    },
+    "unreal/Art/CityDesign_WindowScale03/fixed_window_visual_review.json": {
+      "bytes": 2882,
+      "sha256": "f8f6cc6b003501fc95036c8f98972b2f2318c78c565a83d21e845b4a731a84a1"
+    },
+    "unreal/Art/CityDesign_WindowScale03/inspect_original_office_geometry.py": {
+      "bytes": 15003,
+      "sha256": "048babd603893e81fb568c73decc6603ccbaaa088fd41f9492270111fc1ea736"
+    },
+    "unreal/Art/CityDesign_WindowScale03/lettering_cleanup.json": {
+      "bytes": 280,
+      "sha256": "5a105d8469db96d011b846eaee958e6e88106dd5737f22dcb553a3af5b8da405"
+    },
+    "unreal/Art/CityDesign_WindowScale03/mesh_audit.json": {
+      "bytes": 3586498,
+      "sha256": "eaf0679ea547d9caab251264bc6d34f11eee9f54c5c39bf4332e36354e75a28d"
+    },
+    "unreal/Art/CityDesign_WindowScale03/office_candidate_changes.json": {
+      "bytes": 1275,
+      "sha256": "db73fdc20f97073cab20491091a3c3911b0b0ce5fbbe72da86b5d858e169b6fa"
+    },
+    "unreal/Art/CityDesign_WindowScale03/original_office_geometry_audit.json": {
+      "bytes": 182270,
+      "sha256": "5cfad1b0cece252990f16b5c5f10f870d053caba63bcaf0ac8e437f0f972f19e"
+    },
+    "unreal/Art/CityDesign_WindowScale03/original_office_geometry_findings.md": {
+      "bytes": 6278,
+      "sha256": "ec79a55e4db93367ab359c44e7621a0947eaf2d2c677d7ea8d2ee67b35de92c8"
+    },
+    "unreal/Art/CityDesign_WindowScale03/preview-window.png": {
+      "bytes": 5268240,
+      "sha256": "423de0bcc9945f66756e980ea76d95dd08611a0378be81b9701fe8a5514871c7"
+    },
+    "unreal/Art/CityDesign_WindowScale03/protected-after-v3.json": {
+      "bytes": 5163,
+      "sha256": "c49d4f7c82319e233c92a872f33d41cf41798558004ccfe794bf33d3e8f98c63"
+    },
+    "unreal/Art/CityDesign_WindowScale03/protected-before-v3.json": {
+      "bytes": 2751,
+      "sha256": "793fc4b0b52495fd3945b62ea47e036815b4736c9ca76621740924a16e9141c1"
+    },
+    "unreal/Art/CityDesign_WindowScale03/refine-v3.log": {
+      "bytes": 515,
+      "sha256": "752f484e44343ab8a8f6508549e9145e8211b633d88f465cfa973c37405af3eb"
+    },
+    "unreal/Art/CityDesign_WindowScale03/render-draft.log": {
+      "bytes": 660,
+      "sha256": "92f22532029af3f4c7810dde8d4316282866d92524d290f27e11e5c61ca797d5"
+    },
+    "unreal/Art/CityDesign_WindowScale03/review-export-v3.log": {
+      "bytes": 2341,
+      "sha256": "0cf544b4071399a58cb9446ede2270ac230dc3f2a7ad65bab8dda29f3f326880"
+    },
+    "unreal/Art/CityDesign_WindowScale03/save-preset.log": {
+      "bytes": 323,
+      "sha256": "d11f17b395aca3db91ba494e25d4cd5c7d3106be84b088dc9acbd0cad3491d82"
+    },
+    "unreal/Art/CityDesign_WindowScale03/window-draft-initial.png": {
+      "bytes": 1419644,
+      "sha256": "c5a91a46af99fa9286c6d171f511cf86ece3263d0911e31ce61cf6dd31feda9c"
+    },
+    "unreal/Art/CityDesign_WindowScale03/window-draft.png": {
+      "bytes": 1445903,
+      "sha256": "36d19a5bef0de684d871d0d45f173eacb0a6dcdf9e0efd524d9db071d166567b"
+    },
+    "unreal/OutOfWindow/Content/Maps/City.umap": {
+      "bytes": 289901,
+      "sha256": "56cb09f9e2b33ae3181c3f0b7f65852bff9163de14b4c05a83e617fee7484e5f"
+    },
+    "unreal/OutOfWindow/Source/OutOfWindow/OutOfWindow.Build.cs": {
+      "bytes": 942,
+      "sha256": "343babe708ae977a60a6dc5163e7e40cf14f6129a6a424dad39d7046c3c2b91d"
+    },
+    "unreal/OutOfWindow/Source/OutOfWindow/Tests/WindowBirdsTest.cpp": {
+      "bytes": 5299,
+      "sha256": "7eb4cd2d2aa6b4649a0149ce52ad3b904f8f83ddb7b2aa8fda700ccbe6a30a4d"
+    },
+    "unreal/OutOfWindow/Source/OutOfWindow/Tests/WindowWeatherTest.cpp": {
+      "bytes": 6997,
+      "sha256": "83d9ccf2b80f177b1299fe873fb8034a1592bc79305390f433fe99a3bedc73cb"
+    },
+    "unreal/OutOfWindow/Source/OutOfWindow/WindowBirds.cpp": {
+      "bytes": 13609,
+      "sha256": "73f7f4967dfc335e375d62a79a149d9dbd2c5d6b569098b327d741e9f957b4a9"
+    },
+    "unreal/OutOfWindow/Source/OutOfWindow/WindowBirds.h": {
+      "bytes": 3135,
+      "sha256": "b8eef55ca7c54fd2b48a140f68691ce33b9900ad9766b9aae2fc80cf1db8316e"
+    },
+    "unreal/OutOfWindow/Source/OutOfWindow/WindowDirector.cpp": {
+      "bytes": 161280,
+      "sha256": "e27db876847a9bc5c8bd9060549974f2cda4931b07ad79e23893e1d7369b8fa3"
+    },
+    "unreal/OutOfWindow/Source/OutOfWindow/WindowDirector.h": {
+      "bytes": 6326,
+      "sha256": "6ab7d8fb259822bd51adcf23ee1a3adfc023b25a127cee07a0c35157fb382a4f"
+    },
+    "unreal/OutOfWindow/Source/OutOfWindow/WindowSkySampling.cpp": {
+      "bytes": 26342,
+      "sha256": "c998b6faa45f2b54ac0667c035dc6cb4387634135e8959994a2b5acb0fceffc3"
+    },
+    "unreal/OutOfWindow/Source/OutOfWindow/WindowSkySampling.h": {
+      "bytes": 2169,
+      "sha256": "f54281bfb393a13a3d6369555c71494454d8b09f8bb78542e51fa4d1bddd7b16"
+    },
+    "unreal/OutOfWindow/Source/OutOfWindow/WindowWeather.h": {
+      "bytes": 5146,
+      "sha256": "d2fabd3357cdd3951eb8db54a29198bdaed3e9f3db0be3c27b5398c98f5a3b66"
+    },
+    "unreal/Run-Unreal.ps1": {
+      "bytes": 4235,
+      "sha256": "e80e545a7bfc8b5499561c045517637edc0bbcc323bf28c98bcac488f1b7269e"
+    },
+    "unreal/Scripts/build_city_lookdev.py": {
+      "bytes": 30453,
+      "sha256": "2d8d0050fe111db4fa453de780d8f960a921ff241d3094bf662a06be902dd44f"
+    }
+  },
+  "git_status_short": " M unreal/OutOfWindow/Source/OutOfWindow/OutOfWindow.Build.cs\n M unreal/OutOfWindow/Source/OutOfWindow/Tests/WindowBirdsTest.cpp\n M unreal/OutOfWindow/Source/OutOfWindow/Tests/WindowWeatherTest.cpp\n M unreal/OutOfWindow/Source/OutOfWindow/WindowBirds.cpp\n M unreal/OutOfWindow/Source/OutOfWindow/WindowBirds.h\n M unreal/OutOfWindow/Source/OutOfWindow/WindowDirector.cpp\n M unreal/OutOfWindow/Source/OutOfWindow/WindowDirector.h\n M unreal/OutOfWindow/Source/OutOfWindow/WindowSkySampling.cpp\n M unreal/OutOfWindow/Source/OutOfWindow/WindowSkySampling.h\n M unreal/OutOfWindow/Source/OutOfWindow/WindowWeather.h\n M unreal/Run-Unreal.ps1\n?? scripts/__pycache__/\n?? scripts/okta-v0-sweep.ps1\n?? scripts/okta-v0.py\n?? unreal/Art/CityDesign_CommercialScale04/\n?? unreal/Art/CityDesign_Composition06/\n?? unreal/Art/CityDesign_CurvedDistrict02/\n?? unreal/Art/CityDesign_CurvedDistrict02_Study/\n?? unreal/Art/CityDesign_Mall01/\n?? unreal/Art/CityDesign_WindowCamera05/\n?? unreal/Art/CityDesign_WindowScale03/\n?? unreal/Migration/storm-cloud-cirrus-material.json\n?? unreal/Migration/storm-cloud-layers-material.json\n?? unreal/Migration/window-clouds-macro-v8-material.json\n?? unreal/Migration/window-clouds-v7-material.json\n?? unreal/OutOfWindow/Content/Weather/MI_OOW_StormCells_v4.uasset\n?? unreal/OutOfWindow/Content/Weather/MI_OOW_StormCells_v5.uasset\n?? unreal/OutOfWindow/Content/Weather/MI_OOW_StormCells_v6.uasset\n?? unreal/OutOfWindow/Content/Weather/MI_OOW_WindowCloudsMacro_v8.uasset\n?? unreal/OutOfWindow/Content/Weather/MI_OOW_WindowClouds_v7.uasset\n?? unreal/OutOfWindow/Content/Weather/M_OOW_StormCells_v4.uasset\n?? unreal/OutOfWindow/Content/Weather/M_OOW_StormCells_v5.uasset\n?? unreal/OutOfWindow/Content/Weather/M_OOW_StormCells_v6.uasset\n?? unreal/OutOfWindow/Content/Weather/M_OOW_WindowCloudsMacro_v8.uasset\n?? unreal/OutOfWindow/Content/Weather/M_OOW_WindowClouds_v7.uasset\n?? unreal/OutOfWindow/Content/Weather/OOW_H64_Scattering_Test/\n?? unreal/OutOfWindow/Content/Weather/OOW_Houdini64_Test/\n?? unreal/OutOfWindow/Source/OutOfWindow/Tests/WindowAstronomyTest.cpp\n?? unreal/OutOfWindow/Source/OutOfWindow/WindowAstronomy.h\n?? unreal/Scripts/build_storm_cirrus.py\n?? unreal/Scripts/build_storm_layers.py\n?? unreal/Scripts/build_window_clouds.py\n"
+}

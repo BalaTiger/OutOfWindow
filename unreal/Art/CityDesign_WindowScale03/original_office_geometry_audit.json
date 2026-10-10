@@ -1,0 +1,6891 @@
+{
+  "audit_type": "Read-only original city visible office geometry and source parameter audit",
+  "generated_utc": "2026-10-07T08:38:12.128252+00:00",
+  "blender_or_ue_started": false,
+  "original_inputs": [
+    {
+      "path": "C:\\Users\\zhuzi\\Documents\\OutOfWindow\\unreal\\Art\\City\\modern-city.glb",
+      "sha256": "8063f1d17e102bb15b5b16d025bbddcc312a5cadd13f0d362b790d6186b336cc"
+    },
+    {
+      "path": "C:\\Users\\zhuzi\\Documents\\OutOfWindow\\unreal\\Art\\City\\modern-city.json",
+      "sha256": "d90a1595f5313629f12f6aa6f68b8f7b155050b5cb3f75f05660de41457d2230"
+    },
+    {
+      "path": "C:\\Users\\zhuzi\\Documents\\OutOfWindow\\unreal\\Scripts\\prepare_modern_city.mjs",
+      "sha256": "4276d8c5cce26a2075316b749c204af1c45acb8d1c370f4556275235f6bd2c9d"
+    },
+    {
+      "path": "C:\\Users\\zhuzi\\Documents\\OutOfWindow\\unreal\\Scripts\\build_city_lookdev.py",
+      "sha256": "2d8d0050fe111db4fa453de780d8f960a921ff241d3094bf662a06be902dd44f"
+    },
+    {
+      "path": "C:\\Users\\zhuzi\\Documents\\OutOfWindow\\unreal\\Scripts\\batch_city_geometry.py",
+      "sha256": "c022bdf4b71b2e6bdb8593d9dd43b3e4dfff85ac42fb71b73e856647f1eddc36"
+    }
+  ],
+  "units": "Metres from original metadata and glTF specification; all selected GLB node transforms are reported",
+  "glb_generator": "THREE.GLTFExporter r179",
+  "glb_image_count": 0,
+  "glb_texture_count": 0,
+  "source_facade_parameters_m": {
+    "hero_glass_recess_from_nominal_skin": 0.24,
+    "other_glass_recess_from_nominal_skin": 0.105,
+    "hero_backing_face_behind_pane": 0.02,
+    "other_backing_face_behind_pane": 0.015,
+    "normal_hero_mullion_width_depth": [
+      0.06,
+      0.3
+    ],
+    "normal_other_mullion_width_depth": [
+      0.075,
+      0.19
+    ],
+    "hero_corner_mullion_width_depth": [
+      0.17,
+      0.3
+    ],
+    "other_corner_width": 0.25,
+    "alternating_fin_width_depth": [
+      0.18,
+      0.52
+    ],
+    "hero_floor_band_height_inner_outer": [
+      0.11,
+      0.18
+    ],
+    "other_floor_band_height_inner_outer": [
+      0.19,
+      0.27
+    ],
+    "hero_chamfer_max": 0.035,
+    "target_bay_spacing": 2.9,
+    "nominal_tower_floor_spacing": 3.3
+  },
+  "source_material_behavior": {
+    "all_glb_near_glass": "Opaque, no transmission; source consists of zero-thickness planes in front of metal backing boxes",
+    "generic_glb_glass_roughness": 0.18,
+    "generic_glb_hero_metallic": 0.6,
+    "generic_glb_other_glass_metallic": 0.65,
+    "ue_B07_hero_override": {
+      "metallic": 0,
+      "specular": 0.75,
+      "roughness_parameter_default": 0.12,
+      "dry_roughness_formula_range": [
+        0.1025,
+        0.1375
+      ],
+      "fully_wet_formula_range": [
+        0.0875,
+        0.1225
+      ],
+      "pane_waviness_normal_amplitude": 0.0025,
+      "not_saved_material_verification": true
+    },
+    "ue_other_near_glass_roughness_dry_wet_default": [
+      0.18,
+      0.1152
+    ],
+    "color0": "Night emission payload; non-glass vertices black. Generic glTF viewers may multiply COLOR_0 into BaseColor; native UE material builder reads it only for office emission.",
+    "uv1": "Hero pane constant seed; all other geometry x=0. This original UV1 is not a lightmap unwrap."
+  },
+  "build_and_batch_source_behavior": {
+    "selected_B04_B05_B06_B07_B08_explicit_extra_scale": null,
+    "only_skyline_extra_UE_scale": [
+      0.65,
+      0.6,
+      1.5
+    ],
+    "only_skyline_extra_UE_translation_cm": [
+      0,
+      -12000,
+      -345
+    ],
+    "batching": "Copies effective world transforms and asserts each instance matches before source actor removal; source code evidence only",
+    "saved_map_transforms_verified": false
+  },
+  "buildings": [
+    {
+      "building": "B04",
+      "node": "CityModern_B04_terrace",
+      "style": "terrace",
+      "hero": false,
+      "glTF_world_matrix_rows": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds_glTF_m": {
+        "min_m": [
+          -61.150001525878906,
+          6.764999866485596,
+          -162.14999389648438
+        ],
+        "max_m": [
+          -23.049999237060547,
+          75.75499725341797,
+          -127.8499984741211
+        ],
+        "dimensions_m": [
+          38.10000228881836,
+          68.98999738693237,
+          34.29999542236328
+        ]
+      },
+      "bounds_blender_m": {
+        "min_m": [
+          -61.150001525878906,
+          127.8499984741211,
+          6.764999866485596
+        ],
+        "max_m": [
+          -23.049999237060547,
+          162.14999389648438,
+          75.75499725341797
+        ],
+        "dimensions_m": [
+          38.10000228881836,
+          34.29999542236328,
+          68.98999738693237
+        ]
+      },
+      "bounds_UE_m": {
+        "min_m": [
+          -61.150001525878906,
+          -162.14999389648438,
+          6.764999866485596
+        ],
+        "max_m": [
+          -23.049999237060547,
+          -127.8499984741211,
+          75.75499725341797
+        ],
+        "dimensions_m": [
+          38.10000228881836,
+          34.29999542236328,
+          68.98999738693237
+        ]
+      },
+      "height_from_nominal_ground_m": 68.85499725341796,
+      "metadata_height_from_ground_m": 68.855,
+      "source_main_tower_width_depth_height_m": [
+        32,
+        30,
+        67
+      ],
+      "source_nominal_podium_width_depth_m": [
+        36,
+        34
+      ],
+      "floor_segments": [
+        {
+          "part": "podium",
+          "base_glTF_y_m": 6.9,
+          "width_x_m": 36,
+          "depth_glTF_z_m": 34,
+          "floors": 1,
+          "height_m": 5.2,
+          "floor_spacing_m": 5.2,
+          "actual_glb_glazing_row_centres_y_m": [
+            9.5
+          ],
+          "actual_glb_glazing_row_spacings_m": [],
+          "actual_glb_pane_count": 48,
+          "actual_glb_pane_widths_m": [
+            2.71333,
+            2.71335,
+            2.88
+          ],
+          "actual_glb_pane_heights_m": [
+            4.84
+          ]
+        },
+        {
+          "part": "lower_tower",
+          "base_glTF_y_m": 12.1,
+          "width_x_m": 32,
+          "depth_glTF_z_m": 30,
+          "floors": 12,
+          "height_m": 39.599999999999994,
+          "floor_spacing_m": 3.3,
+          "actual_glb_glazing_row_centres_y_m": [
+            13.75,
+            17.05,
+            20.35,
+            23.65,
+            26.95,
+            30.25,
+            33.55,
+            36.85,
+            40.15,
+            43.45,
+            46.75,
+            50.05
+          ],
+          "actual_glb_glazing_row_spacings_m": [
+            3.3,
+            3.3,
+            3.3,
+            3.3,
+            3.3,
+            3.3,
+            3.3,
+            3.3,
+            3.3,
+            3.3,
+            3.3
+          ],
+          "actual_glb_pane_count": 504,
+          "actual_glb_pane_widths_m": [
+            2.78909,
+            2.88
+          ],
+          "actual_glb_pane_heights_m": [
+            2.94
+          ]
+        },
+        {
+          "part": "setback_upper_tower",
+          "base_glTF_y_m": 51.849999999999994,
+          "width_x_m": 24.96,
+          "depth_glTF_z_m": 22.8,
+          "floors": 7,
+          "height_m": 22.050000000000004,
+          "floor_spacing_m": 3.150000000000001,
+          "centre_x_m": -45.08,
+          "centre_glTF_z_m": -146.2,
+          "actual_glb_glazing_row_centres_y_m": [
+            53.425,
+            56.575,
+            59.725,
+            62.875,
+            66.025,
+            69.175,
+            72.325
+          ],
+          "actual_glb_glazing_row_spacings_m": [
+            3.15,
+            3.15,
+            3.15,
+            3.15,
+            3.15,
+            3.15
+          ],
+          "actual_glb_pane_count": 238,
+          "actual_glb_pane_widths_m": [
+            2.65333,
+            2.65334,
+            2.73,
+            2.73001
+          ],
+          "actual_glb_pane_heights_m": [
+            2.79
+          ]
+        }
+      ],
+      "triangles": 4592,
+      "glass_panes": 790,
+      "maximum_glass_normal_axis_thickness_m": 0.0,
+      "glass_pane_groups": [
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 9.5,
+          "pane_width_m": 2.71333,
+          "pane_height_m": 4.84,
+          "count": 8
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 9.5,
+          "pane_width_m": 2.71335,
+          "pane_height_m": 4.84,
+          "count": 4
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 13.75,
+          "pane_width_m": 2.88,
+          "pane_height_m": 2.94,
+          "count": 10
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 17.05,
+          "pane_width_m": 2.88,
+          "pane_height_m": 2.94,
+          "count": 10
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 20.35,
+          "pane_width_m": 2.88,
+          "pane_height_m": 2.94,
+          "count": 10
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 23.65,
+          "pane_width_m": 2.88,
+          "pane_height_m": 2.94,
+          "count": 10
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 26.95,
+          "pane_width_m": 2.88,
+          "pane_height_m": 2.94,
+          "count": 10
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 30.25,
+          "pane_width_m": 2.88,
+          "pane_height_m": 2.94,
+          "count": 10
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 33.55,
+          "pane_width_m": 2.88,
+          "pane_height_m": 2.94,
+          "count": 10
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 36.85,
+          "pane_width_m": 2.88,
+          "pane_height_m": 2.94,
+          "count": 10
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 40.15,
+          "pane_width_m": 2.88,
+          "pane_height_m": 2.94,
+          "count": 10
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 43.45,
+          "pane_width_m": 2.88,
+          "pane_height_m": 2.94,
+          "count": 10
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 46.75,
+          "pane_width_m": 2.88,
+          "pane_height_m": 2.94,
+          "count": 10
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 50.05,
+          "pane_width_m": 2.88,
+          "pane_height_m": 2.94,
+          "count": 10
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 53.425,
+          "pane_width_m": 2.73,
+          "pane_height_m": 2.79,
+          "count": 7
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 53.425,
+          "pane_width_m": 2.73001,
+          "pane_height_m": 2.79,
+          "count": 1
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 56.575,
+          "pane_width_m": 2.73,
+          "pane_height_m": 2.79,
+          "count": 7
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 56.575,
+          "pane_width_m": 2.73001,
+          "pane_height_m": 2.79,
+          "count": 1
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 59.725,
+          "pane_width_m": 2.73,
+          "pane_height_m": 2.79,
+          "count": 7
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 59.725,
+          "pane_width_m": 2.73001,
+          "pane_height_m": 2.79,
+          "count": 1
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 62.875,
+          "pane_width_m": 2.73,
+          "pane_height_m": 2.79,
+          "count": 7
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 62.875,
+          "pane_width_m": 2.73001,
+          "pane_height_m": 2.79,
+          "count": 1
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 66.025,
+          "pane_width_m": 2.73,
+          "pane_height_m": 2.79,
+          "count": 7
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 66.025,
+          "pane_width_m": 2.73001,
+          "pane_height_m": 2.79,
+          "count": 1
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 69.175,
+          "pane_width_m": 2.73,
+          "pane_height_m": 2.79,
+          "count": 7
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 69.175,
+          "pane_width_m": 2.73001,
+          "pane_height_m": 2.79,
+          "count": 1
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 72.325,
+          "pane_width_m": 2.73,
+          "pane_height_m": 2.79,
+          "count": 7
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 72.325,
+          "pane_width_m": 2.73001,
+          "pane_height_m": 2.79,
+          "count": 1
+        },
+        {
+          "glTF_face_normal_axis": "+Z",
+          "centre_y_m": 9.5,
+          "pane_width_m": 2.88,
+          "pane_height_m": 4.84,
+          "count": 12
+        },
+        {
+          "glTF_face_normal_axis": "+Z",
+          "centre_y_m": 13.75,
+          "pane_width_m": 2.78909,
+          "pane_height_m": 2.94,
+          "count": 11
+        },
+        {
+          "glTF_face_normal_axis": "+Z",
+          "centre_y_m": 17.05,
+          "pane_width_m": 2.78909,
+          "pane_height_m": 2.94,
+          "count": 11
+        },
+        {
+          "glTF_face_normal_axis": "+Z",
+          "centre_y_m": 20.35,
+          "pane_width_m": 2.78909,
+          "pane_height_m": 2.94,
+          "count": 11
+        },
+        {
+          "glTF_face_normal_axis": "+Z",
+          "centre_y_m": 23.65,
+          "pane_width_m": 2.78909,
+          "pane_height_m": 2.94,
+          "count": 11
+        },
+        {
+          "glTF_face_normal_axis": "+Z",
+          "centre_y_m": 26.95,
+          "pane_width_m": 2.78909,
+          "pane_height_m": 2.94,
+          "count": 11
+        },
+        {
+          "glTF_face_normal_axis": "+Z",
+          "centre_y_m": 30.25,
+          "pane_width_m": 2.78909,
+          "pane_height_m": 2.94,
+          "count": 11
+        },
+        {
+          "glTF_face_normal_axis": "+Z",
+          "centre_y_m": 33.55,
+          "pane_width_m": 2.78909,
+          "pane_height_m": 2.94,
+          "count": 11
+        },
+        {
+          "glTF_face_normal_axis": "+Z",
+          "centre_y_m": 36.85,
+          "pane_width_m": 2.78909,
+          "pane_height_m": 2.94,
+          "count": 11
+        },
+        {
+          "glTF_face_normal_axis": "+Z",
+          "centre_y_m": 40.15,
+          "pane_width_m": 2.78909,
+          "pane_height_m": 2.94,
+          "count": 11
+        },
+        {
+          "glTF_face_normal_axis": "+Z",
+          "centre_y_m": 43.45,
+          "pane_width_m": 2.78909,
+          "pane_height_m": 2.94,
+          "count": 11
+        },
+        {
+          "glTF_face_normal_axis": "+Z",
+          "centre_y_m": 46.75,
+          "pane_width_m": 2.78909,
+          "pane_height_m": 2.94,
+          "count": 11
+        },
+        {
+          "glTF_face_normal_axis": "+Z",
+          "centre_y_m": 50.05,
+          "pane_width_m": 2.78909,
+          "pane_height_m": 2.94,
+          "count": 11
+        },
+        {
+          "glTF_face_normal_axis": "+Z",
+          "centre_y_m": 53.425,
+          "pane_width_m": 2.65333,
+          "pane_height_m": 2.79,
+          "count": 5
+        },
+        {
+          "glTF_face_normal_axis": "+Z",
+          "centre_y_m": 53.425,
+          "pane_width_m": 2.65334,
+          "pane_height_m": 2.79,
+          "count": 4
+        },
+        {
+          "glTF_face_normal_axis": "+Z",
+          "centre_y_m": 56.575,
+          "pane_width_m": 2.65333,
+          "pane_height_m": 2.79,
+          "count": 5
+        },
+        {
+          "glTF_face_normal_axis": "+Z",
+          "centre_y_m": 56.575,
+          "pane_width_m": 2.65334,
+          "pane_height_m": 2.79,
+          "count": 4
+        },
+        {
+          "glTF_face_normal_axis": "+Z",
+          "centre_y_m": 59.725,
+          "pane_width_m": 2.65333,
+          "pane_height_m": 2.79,
+          "count": 5
+        },
+        {
+          "glTF_face_normal_axis": "+Z",
+          "centre_y_m": 59.725,
+          "pane_width_m": 2.65334,
+          "pane_height_m": 2.79,
+          "count": 4
+        },
+        {
+          "glTF_face_normal_axis": "+Z",
+          "centre_y_m": 62.875,
+          "pane_width_m": 2.65333,
+          "pane_height_m": 2.79,
+          "count": 5
+        },
+        {
+          "glTF_face_normal_axis": "+Z",
+          "centre_y_m": 62.875,
+          "pane_width_m": 2.65334,
+          "pane_height_m": 2.79,
+          "count": 4
+        },
+        {
+          "glTF_face_normal_axis": "+Z",
+          "centre_y_m": 66.025,
+          "pane_width_m": 2.65333,
+          "pane_height_m": 2.79,
+          "count": 5
+        },
+        {
+          "glTF_face_normal_axis": "+Z",
+          "centre_y_m": 66.025,
+          "pane_width_m": 2.65334,
+          "pane_height_m": 2.79,
+          "count": 4
+        },
+        {
+          "glTF_face_normal_axis": "+Z",
+          "centre_y_m": 69.175,
+          "pane_width_m": 2.65333,
+          "pane_height_m": 2.79,
+          "count": 5
+        },
+        {
+          "glTF_face_normal_axis": "+Z",
+          "centre_y_m": 69.175,
+          "pane_width_m": 2.65334,
+          "pane_height_m": 2.79,
+          "count": 4
+        },
+        {
+          "glTF_face_normal_axis": "+Z",
+          "centre_y_m": 72.325,
+          "pane_width_m": 2.65333,
+          "pane_height_m": 2.79,
+          "count": 5
+        },
+        {
+          "glTF_face_normal_axis": "+Z",
+          "centre_y_m": 72.325,
+          "pane_width_m": 2.65334,
+          "pane_height_m": 2.79,
+          "count": 4
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 9.5,
+          "pane_width_m": 2.71333,
+          "pane_height_m": 4.84,
+          "count": 8
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 9.5,
+          "pane_width_m": 2.71335,
+          "pane_height_m": 4.84,
+          "count": 4
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 13.75,
+          "pane_width_m": 2.88,
+          "pane_height_m": 2.94,
+          "count": 10
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 17.05,
+          "pane_width_m": 2.88,
+          "pane_height_m": 2.94,
+          "count": 10
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 20.35,
+          "pane_width_m": 2.88,
+          "pane_height_m": 2.94,
+          "count": 10
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 23.65,
+          "pane_width_m": 2.88,
+          "pane_height_m": 2.94,
+          "count": 10
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 26.95,
+          "pane_width_m": 2.88,
+          "pane_height_m": 2.94,
+          "count": 10
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 30.25,
+          "pane_width_m": 2.88,
+          "pane_height_m": 2.94,
+          "count": 10
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 33.55,
+          "pane_width_m": 2.88,
+          "pane_height_m": 2.94,
+          "count": 10
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 36.85,
+          "pane_width_m": 2.88,
+          "pane_height_m": 2.94,
+          "count": 10
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 40.15,
+          "pane_width_m": 2.88,
+          "pane_height_m": 2.94,
+          "count": 10
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 43.45,
+          "pane_width_m": 2.88,
+          "pane_height_m": 2.94,
+          "count": 10
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 46.75,
+          "pane_width_m": 2.88,
+          "pane_height_m": 2.94,
+          "count": 10
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 50.05,
+          "pane_width_m": 2.88,
+          "pane_height_m": 2.94,
+          "count": 10
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 53.425,
+          "pane_width_m": 2.73,
+          "pane_height_m": 2.79,
+          "count": 7
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 53.425,
+          "pane_width_m": 2.73001,
+          "pane_height_m": 2.79,
+          "count": 1
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 56.575,
+          "pane_width_m": 2.73,
+          "pane_height_m": 2.79,
+          "count": 7
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 56.575,
+          "pane_width_m": 2.73001,
+          "pane_height_m": 2.79,
+          "count": 1
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 59.725,
+          "pane_width_m": 2.73,
+          "pane_height_m": 2.79,
+          "count": 7
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 59.725,
+          "pane_width_m": 2.73001,
+          "pane_height_m": 2.79,
+          "count": 1
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 62.875,
+          "pane_width_m": 2.73,
+          "pane_height_m": 2.79,
+          "count": 7
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 62.875,
+          "pane_width_m": 2.73001,
+          "pane_height_m": 2.79,
+          "count": 1
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 66.025,
+          "pane_width_m": 2.73,
+          "pane_height_m": 2.79,
+          "count": 7
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 66.025,
+          "pane_width_m": 2.73001,
+          "pane_height_m": 2.79,
+          "count": 1
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 69.175,
+          "pane_width_m": 2.73,
+          "pane_height_m": 2.79,
+          "count": 7
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 69.175,
+          "pane_width_m": 2.73001,
+          "pane_height_m": 2.79,
+          "count": 1
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 72.325,
+          "pane_width_m": 2.73,
+          "pane_height_m": 2.79,
+          "count": 7
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 72.325,
+          "pane_width_m": 2.73001,
+          "pane_height_m": 2.79,
+          "count": 1
+        },
+        {
+          "glTF_face_normal_axis": "-Z",
+          "centre_y_m": 9.5,
+          "pane_width_m": 2.88,
+          "pane_height_m": 4.84,
+          "count": 12
+        },
+        {
+          "glTF_face_normal_axis": "-Z",
+          "centre_y_m": 13.75,
+          "pane_width_m": 2.78909,
+          "pane_height_m": 2.94,
+          "count": 11
+        },
+        {
+          "glTF_face_normal_axis": "-Z",
+          "centre_y_m": 17.05,
+          "pane_width_m": 2.78909,
+          "pane_height_m": 2.94,
+          "count": 11
+        },
+        {
+          "glTF_face_normal_axis": "-Z",
+          "centre_y_m": 20.35,
+          "pane_width_m": 2.78909,
+          "pane_height_m": 2.94,
+          "count": 11
+        },
+        {
+          "glTF_face_normal_axis": "-Z",
+          "centre_y_m": 23.65,
+          "pane_width_m": 2.78909,
+          "pane_height_m": 2.94,
+          "count": 11
+        },
+        {
+          "glTF_face_normal_axis": "-Z",
+          "centre_y_m": 26.95,
+          "pane_width_m": 2.78909,
+          "pane_height_m": 2.94,
+          "count": 11
+        },
+        {
+          "glTF_face_normal_axis": "-Z",
+          "centre_y_m": 30.25,
+          "pane_width_m": 2.78909,
+          "pane_height_m": 2.94,
+          "count": 11
+        },
+        {
+          "glTF_face_normal_axis": "-Z",
+          "centre_y_m": 33.55,
+          "pane_width_m": 2.78909,
+          "pane_height_m": 2.94,
+          "count": 11
+        },
+        {
+          "glTF_face_normal_axis": "-Z",
+          "centre_y_m": 36.85,
+          "pane_width_m": 2.78909,
+          "pane_height_m": 2.94,
+          "count": 11
+        },
+        {
+          "glTF_face_normal_axis": "-Z",
+          "centre_y_m": 40.15,
+          "pane_width_m": 2.78909,
+          "pane_height_m": 2.94,
+          "count": 11
+        },
+        {
+          "glTF_face_normal_axis": "-Z",
+          "centre_y_m": 43.45,
+          "pane_width_m": 2.78909,
+          "pane_height_m": 2.94,
+          "count": 11
+        },
+        {
+          "glTF_face_normal_axis": "-Z",
+          "centre_y_m": 46.75,
+          "pane_width_m": 2.78909,
+          "pane_height_m": 2.94,
+          "count": 11
+        },
+        {
+          "glTF_face_normal_axis": "-Z",
+          "centre_y_m": 50.05,
+          "pane_width_m": 2.78909,
+          "pane_height_m": 2.94,
+          "count": 11
+        },
+        {
+          "glTF_face_normal_axis": "-Z",
+          "centre_y_m": 53.425,
+          "pane_width_m": 2.65333,
+          "pane_height_m": 2.79,
+          "count": 5
+        },
+        {
+          "glTF_face_normal_axis": "-Z",
+          "centre_y_m": 53.425,
+          "pane_width_m": 2.65334,
+          "pane_height_m": 2.79,
+          "count": 4
+        },
+        {
+          "glTF_face_normal_axis": "-Z",
+          "centre_y_m": 56.575,
+          "pane_width_m": 2.65333,
+          "pane_height_m": 2.79,
+          "count": 5
+        },
+        {
+          "glTF_face_normal_axis": "-Z",
+          "centre_y_m": 56.575,
+          "pane_width_m": 2.65334,
+          "pane_height_m": 2.79,
+          "count": 4
+        },
+        {
+          "glTF_face_normal_axis": "-Z",
+          "centre_y_m": 59.725,
+          "pane_width_m": 2.65333,
+          "pane_height_m": 2.79,
+          "count": 5
+        },
+        {
+          "glTF_face_normal_axis": "-Z",
+          "centre_y_m": 59.725,
+          "pane_width_m": 2.65334,
+          "pane_height_m": 2.79,
+          "count": 4
+        },
+        {
+          "glTF_face_normal_axis": "-Z",
+          "centre_y_m": 62.875,
+          "pane_width_m": 2.65333,
+          "pane_height_m": 2.79,
+          "count": 5
+        },
+        {
+          "glTF_face_normal_axis": "-Z",
+          "centre_y_m": 62.875,
+          "pane_width_m": 2.65334,
+          "pane_height_m": 2.79,
+          "count": 4
+        },
+        {
+          "glTF_face_normal_axis": "-Z",
+          "centre_y_m": 66.025,
+          "pane_width_m": 2.65333,
+          "pane_height_m": 2.79,
+          "count": 5
+        },
+        {
+          "glTF_face_normal_axis": "-Z",
+          "centre_y_m": 66.025,
+          "pane_width_m": 2.65334,
+          "pane_height_m": 2.79,
+          "count": 4
+        },
+        {
+          "glTF_face_normal_axis": "-Z",
+          "centre_y_m": 69.175,
+          "pane_width_m": 2.65333,
+          "pane_height_m": 2.79,
+          "count": 5
+        },
+        {
+          "glTF_face_normal_axis": "-Z",
+          "centre_y_m": 69.175,
+          "pane_width_m": 2.65334,
+          "pane_height_m": 2.79,
+          "count": 4
+        },
+        {
+          "glTF_face_normal_axis": "-Z",
+          "centre_y_m": 72.325,
+          "pane_width_m": 2.65333,
+          "pane_height_m": 2.79,
+          "count": 5
+        },
+        {
+          "glTF_face_normal_axis": "-Z",
+          "centre_y_m": 72.325,
+          "pane_width_m": 2.65334,
+          "pane_height_m": 2.79,
+          "count": 4
+        }
+      ],
+      "recovered_opaque_module_count": 248,
+      "upright_module_dimension_groups": [
+        {
+          "material": "CityModern_Metal",
+          "dimensions_x_height_depth_m": [
+            0.075,
+            5.2,
+            0.19
+          ],
+          "count": 22
+        },
+        {
+          "material": "CityModern_Metal",
+          "dimensions_x_height_depth_m": [
+            0.075,
+            39.6,
+            0.19
+          ],
+          "count": 20
+        },
+        {
+          "material": "CityModern_Metal",
+          "dimensions_x_height_depth_m": [
+            0.19,
+            39.6,
+            0.07501
+          ],
+          "count": 18
+        },
+        {
+          "material": "CityModern_Metal",
+          "dimensions_x_height_depth_m": [
+            0.075,
+            22.05,
+            0.19
+          ],
+          "count": 16
+        },
+        {
+          "material": "CityModern_Metal",
+          "dimensions_x_height_depth_m": [
+            0.19,
+            5.2,
+            0.075
+          ],
+          "count": 16
+        },
+        {
+          "material": "CityModern_Metal",
+          "dimensions_x_height_depth_m": [
+            0.19,
+            22.05,
+            0.075
+          ],
+          "count": 10
+        },
+        {
+          "material": "CityModern_Limestone",
+          "dimensions_x_height_depth_m": [
+            0.46,
+            22.05,
+            0.08501
+          ],
+          "count": 9
+        },
+        {
+          "material": "CityModern_Limestone",
+          "dimensions_x_height_depth_m": [
+            0.46,
+            22.05,
+            0.08499
+          ],
+          "count": 7
+        },
+        {
+          "material": "CityModern_Metal",
+          "dimensions_x_height_depth_m": [
+            0.19,
+            5.2,
+            0.07501
+          ],
+          "count": 6
+        },
+        {
+          "material": "CityModern_Metal",
+          "dimensions_x_height_depth_m": [
+            0.19,
+            5.2,
+            0.25
+          ],
+          "count": 4
+        },
+        {
+          "material": "CityModern_Metal",
+          "dimensions_x_height_depth_m": [
+            0.19,
+            22.05,
+            0.07501
+          ],
+          "count": 4
+        },
+        {
+          "material": "CityModern_Metal",
+          "dimensions_x_height_depth_m": [
+            0.19,
+            22.05,
+            0.25
+          ],
+          "count": 4
+        },
+        {
+          "material": "CityModern_Metal",
+          "dimensions_x_height_depth_m": [
+            0.19,
+            39.6,
+            0.25
+          ],
+          "count": 4
+        },
+        {
+          "material": "CityModern_Metal",
+          "dimensions_x_height_depth_m": [
+            0.25,
+            5.2,
+            0.19
+          ],
+          "count": 4
+        },
+        {
+          "material": "CityModern_Metal",
+          "dimensions_x_height_depth_m": [
+            0.25,
+            22.05,
+            0.19
+          ],
+          "count": 4
+        },
+        {
+          "material": "CityModern_Metal",
+          "dimensions_x_height_depth_m": [
+            0.25,
+            39.6,
+            0.19
+          ],
+          "count": 4
+        },
+        {
+          "material": "CityModern_Metal",
+          "dimensions_x_height_depth_m": [
+            0.16,
+            3.4,
+            0.16
+          ],
+          "count": 2
+        }
+      ],
+      "horizontal_slab_module_dimension_groups": [
+        {
+          "material": "CityModern_Limestone",
+          "dimensions_x_height_depth_m": [
+            32.0,
+            0.19,
+            30.0
+          ],
+          "count": 11
+        },
+        {
+          "material": "CityModern_Metal",
+          "dimensions_x_height_depth_m": [
+            24.96,
+            0.19,
+            22.8
+          ],
+          "count": 5
+        },
+        {
+          "material": "CityModern_Limestone",
+          "dimensions_x_height_depth_m": [
+            32.0,
+            0.27,
+            30.0
+          ],
+          "count": 2
+        },
+        {
+          "material": "CityModern_Metal",
+          "dimensions_x_height_depth_m": [
+            24.96,
+            0.27,
+            22.8
+          ],
+          "count": 2
+        },
+        {
+          "material": "CityModern_Metal",
+          "dimensions_x_height_depth_m": [
+            36.0,
+            0.27,
+            34.0
+          ],
+          "count": 2
+        },
+        {
+          "material": "CityModern_Limestone",
+          "dimensions_x_height_depth_m": [
+            24.96,
+            0.23,
+            22.8
+          ],
+          "count": 1
+        },
+        {
+          "material": "CityModern_Limestone",
+          "dimensions_x_height_depth_m": [
+            32.3,
+            0.3,
+            30.29999
+          ],
+          "count": 1
+        },
+        {
+          "material": "CityModern_Limestone",
+          "dimensions_x_height_depth_m": [
+            36.3,
+            0.45,
+            34.3
+          ],
+          "count": 1
+        },
+        {
+          "material": "CityModern_Metal",
+          "dimensions_x_height_depth_m": [
+            24.96,
+            0.18999,
+            22.8
+          ],
+          "count": 1
+        }
+      ],
+      "opaque_backing_box_dimension_groups": [
+        {
+          "material": "CityModern_Metal",
+          "dimensions_x_height_depth_m": [
+            24.72,
+            22.05,
+            22.56
+          ],
+          "count": 1
+        },
+        {
+          "material": "CityModern_Metal",
+          "dimensions_x_height_depth_m": [
+            31.76,
+            39.6,
+            29.76001
+          ],
+          "count": 1
+        },
+        {
+          "material": "CityModern_Metal",
+          "dimensions_x_height_depth_m": [
+            35.76,
+            5.2,
+            33.76001
+          ],
+          "count": 1
+        }
+      ],
+      "non_glass_color0_nonzero_indexed_vertices": 0,
+      "materials": [
+        {
+          "name": "CityModern_Limestone",
+          "indexed_triangles": 468,
+          "bounds_glTF_m": {
+            "min_m": [
+              -61.150001525878906,
+              11.96500015258789,
+              -162.14999389648438
+            ],
+            "max_m": [
+              -24.850000381469727,
+              74.57499694824219,
+              -127.8499984741211
+            ],
+            "dimensions_m": [
+              36.30000114440918,
+              62.6099967956543,
+              34.29999542236328
+            ]
+          },
+          "pbr": {
+            "baseColorFactor": [
+              0.55201140150344,
+              0.5028864580233624,
+              0.3967552307153359,
+              1
+            ],
+            "metallicFactor": 0,
+            "roughnessFactor": 0.77
+          },
+          "alpha_mode": "OPAQUE",
+          "has_transmission_extension": false,
+          "color0_present": true,
+          "color0_indexed_range": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "name": "CityModern_PaleStone",
+          "indexed_triangles": 36,
+          "bounds_glTF_m": {
+            "min_m": [
+              -48.154998779296875,
+              74.12999725341797,
+              -143.1959991455078
+            ],
+            "max_m": [
+              -42.005001068115234,
+              74.83000183105469,
+              -140.99600219726562
+            ],
+            "dimensions_m": [
+              6.149997711181641,
+              0.7000045776367188,
+              2.1999969482421875
+            ]
+          },
+          "pbr": {
+            "baseColorFactor": [
+              0.5972017883558645,
+              0.6307571363387763,
+              0.6038273388475408,
+              1
+            ],
+            "metallicFactor": 0,
+            "roughnessFactor": 0.68
+          },
+          "alpha_mode": "OPAQUE",
+          "has_transmission_extension": false,
+          "color0_present": true,
+          "color0_indexed_range": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "name": "CityModern_Metal",
+          "indexed_triangles": 2244,
+          "bounds_glTF_m": {
+            "min_m": [
+              -61.125,
+              6.764999866485596,
+              -162.125
+            ],
+            "max_m": [
+              -23.049999237060547,
+              74.9000015258789,
+              -127.875
+            ],
+            "dimensions_m": [
+              38.07500076293945,
+              68.13500165939331,
+              34.25
+            ]
+          },
+          "pbr": {
+            "baseColorFactor": [
+              0.02121901037134225,
+              0.033104766565152086,
+              0.04231141061442144,
+              1
+            ],
+            "metallicFactor": 0.78,
+            "roughnessFactor": 0.36
+          },
+          "alpha_mode": "OPAQUE",
+          "has_transmission_extension": false,
+          "color0_present": true,
+          "color0_indexed_range": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "name": "CityModern_Glass_Day_Blue",
+          "indexed_triangles": 1308,
+          "bounds_glTF_m": {
+            "min_m": [
+              -60.939998626708984,
+              7.079999923706055,
+              -161.94000244140625
+            ],
+            "max_m": [
+              -25.059999465942383,
+              73.72000122070312,
+              -128.05999755859375
+            ],
+            "dimensions_m": [
+              35.8799991607666,
+              66.64000129699707,
+              33.8800048828125
+            ]
+          },
+          "pbr": {
+            "baseColorFactor": [
+              0.08437621153575764,
+              0.14412847084818123,
+              0.17788841597328695,
+              1
+            ],
+            "metallicFactor": 0.65,
+            "roughnessFactor": 0.18
+          },
+          "alpha_mode": "OPAQUE",
+          "has_transmission_extension": false,
+          "color0_present": true,
+          "color0_indexed_range": [
+            0.025666864588856697,
+            0.560757040977478
+          ]
+        },
+        {
+          "name": "CityModern_Glass_Day_Silver",
+          "indexed_triangles": 168,
+          "bounds_glTF_m": {
+            "min_m": [
+              -60.89500045776367,
+              7.079999923706055,
+              -161.89500427246094
+            ],
+            "max_m": [
+              -25.104999542236328,
+              73.72000122070312,
+              -130.05999755859375
+            ],
+            "dimensions_m": [
+              35.790000915527344,
+              66.64000129699707,
+              31.835006713867188
+            ]
+          },
+          "pbr": {
+            "baseColorFactor": [
+              0.07036009568874305,
+              0.12213877222015301,
+              0.15292615198613213,
+              1
+            ],
+            "metallicFactor": 0.65,
+            "roughnessFactor": 0.18
+          },
+          "alpha_mode": "OPAQUE",
+          "has_transmission_extension": false,
+          "color0_present": true,
+          "color0_indexed_range": [
+            0.028120653703808784,
+            0.5377417206764221
+          ]
+        },
+        {
+          "name": "Glass_Lit_CityModern_Warm",
+          "indexed_triangles": 104,
+          "bounds_glTF_m": {
+            "min_m": [
+              -58.939998626708984,
+              7.079999923706055,
+              -161.89500427246094
+            ],
+            "max_m": [
+              -27.059999465942383,
+              73.72000122070312,
+              -128.10499572753906
+            ],
+            "dimensions_m": [
+              31.8799991607666,
+              66.64000129699707,
+              33.790008544921875
+            ]
+          },
+          "pbr": {
+            "baseColorFactor": [
+              0.08437621153575764,
+              0.14412847084818123,
+              0.17788841597328695,
+              1
+            ],
+            "metallicFactor": 0.65,
+            "roughnessFactor": 0.18
+          },
+          "alpha_mode": "OPAQUE",
+          "has_transmission_extension": false,
+          "color0_present": true,
+          "color0_indexed_range": [
+            0.025666864588856697,
+            0.560757040977478
+          ]
+        },
+        {
+          "name": "CityModern_Roof",
+          "indexed_triangles": 192,
+          "bounds_glTF_m": {
+            "min_m": [
+              -48.82400131225586,
+              74.00499725341797,
+              -151.89999389648438
+            ],
+            "max_m": [
+              -41.33599853515625,
+              75.75499725341797,
+              -141.16600036621094
+            ],
+            "dimensions_m": [
+              7.488002777099609,
+              1.75,
+              10.733993530273438
+            ]
+          },
+          "pbr": {
+            "baseColorFactor": [
+              0.09989872823822872,
+              0.12477181755144427,
+              0.13286832154414627,
+              1
+            ],
+            "metallicFactor": 0.12,
+            "roughnessFactor": 0.82
+          },
+          "alpha_mode": "OPAQUE",
+          "has_transmission_extension": false,
+          "color0_present": true,
+          "color0_indexed_range": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "name": "CityModern_RoofPlanting",
+          "indexed_triangles": 72,
+          "bounds_glTF_m": {
+            "min_m": [
+              -28.59000015258789,
+              52.45000076293945,
+              -155.27999877929688
+            ],
+            "max_m": [
+              -27.709999084472656,
+              52.935001373291016,
+              -135.9199981689453
+            ],
+            "dimensions_m": [
+              0.8800010681152344,
+              0.4850006103515625,
+              19.360000610351562
+            ]
+          },
+          "pbr": {
+            "baseColorFactor": [
+              0.07036009568874305,
+              0.12477181755144427,
+              0.06847816983662762,
+              1
+            ],
+            "metallicFactor": 0,
+            "roughnessFactor": 0.96
+          },
+          "alpha_mode": "OPAQUE",
+          "has_transmission_extension": false,
+          "color0_present": true,
+          "color0_indexed_range": [
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "building": "B05",
+      "node": "CityModern_B05_fins",
+      "style": "fins",
+      "hero": false,
+      "glTF_world_matrix_rows": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds_glTF_m": {
+        "min_m": [
+          -50.150001525878906,
+          6.764999866485596,
+          -214.64999389648438
+        ],
+        "max_m": [
+          -20.049999237060547,
+          84.75499725341797,
+          -179.35000610351562
+        ],
+        "dimensions_m": [
+          30.10000228881836,
+          77.98999738693237,
+          35.29998779296875
+        ]
+      },
+      "bounds_blender_m": {
+        "min_m": [
+          -50.150001525878906,
+          179.35000610351562,
+          6.764999866485596
+        ],
+        "max_m": [
+          -20.049999237060547,
+          214.64999389648438,
+          84.75499725341797
+        ],
+        "dimensions_m": [
+          30.10000228881836,
+          35.29998779296875,
+          77.98999738693237
+        ]
+      },
+      "bounds_UE_m": {
+        "min_m": [
+          -50.150001525878906,
+          -214.64999389648438,
+          6.764999866485596
+        ],
+        "max_m": [
+          -20.049999237060547,
+          -179.35000610351562,
+          84.75499725341797
+        ],
+        "dimensions_m": [
+          30.10000228881836,
+          35.29998779296875,
+          77.98999738693237
+        ]
+      },
+      "height_from_nominal_ground_m": 77.85499725341796,
+      "metadata_height_from_ground_m": 77.855,
+      "source_main_tower_width_depth_height_m": [
+        24,
+        31,
+        76
+      ],
+      "source_nominal_podium_width_depth_m": [
+        28,
+        35
+      ],
+      "floor_segments": [
+        {
+          "part": "podium",
+          "base_glTF_y_m": 6.9,
+          "width_x_m": 28,
+          "depth_glTF_z_m": 35,
+          "floors": 1,
+          "height_m": 5.2,
+          "floor_spacing_m": 5.2,
+          "actual_glb_glazing_row_centres_y_m": [
+            9.5
+          ],
+          "actual_glb_glazing_row_spacings_m": [],
+          "actual_glb_pane_count": 44,
+          "actual_glb_pane_widths_m": [
+            2.68,
+            2.79666,
+            2.79668
+          ],
+          "actual_glb_pane_heights_m": [
+            4.84
+          ]
+        },
+        {
+          "part": "tower",
+          "base_glTF_y_m": 12.1,
+          "width_x_m": 24,
+          "depth_glTF_z_m": 31,
+          "floors": 21,
+          "height_m": 70.8,
+          "floor_spacing_m": 3.3714285714285714,
+          "actual_glb_glazing_row_centres_y_m": [
+            13.78571,
+            17.15714,
+            20.52857,
+            23.9,
+            27.27143,
+            30.64286,
+            34.01429,
+            37.38572,
+            40.75714,
+            44.12857,
+            47.5,
+            50.87143,
+            54.24286,
+            57.61428,
+            60.98571,
+            64.35714,
+            67.72857,
+            71.1,
+            74.47143,
+            77.84286,
+            81.21429
+          ],
+          "actual_glb_glazing_row_spacings_m": [
+            3.37143,
+            3.37143,
+            3.37143,
+            3.37143,
+            3.37143,
+            3.37143,
+            3.37143,
+            3.37142,
+            3.37143,
+            3.37143,
+            3.37143,
+            3.37143,
+            3.37142,
+            3.37143,
+            3.37143,
+            3.37143,
+            3.37143,
+            3.37143,
+            3.37143,
+            3.37143
+          ],
+          "actual_glb_pane_count": 798,
+          "actual_glb_pane_widths_m": [
+            2.69818,
+            2.88
+          ],
+          "actual_glb_pane_heights_m": [
+            3.01143
+          ]
+        }
+      ],
+      "triangles": 3448,
+      "glass_panes": 842,
+      "maximum_glass_normal_axis_thickness_m": 0.0,
+      "glass_pane_groups": [
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 9.5,
+          "pane_width_m": 2.79666,
+          "pane_height_m": 4.84,
+          "count": 4
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 9.5,
+          "pane_width_m": 2.79668,
+          "pane_height_m": 4.84,
+          "count": 8
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 13.78571,
+          "pane_width_m": 2.69818,
+          "pane_height_m": 3.01143,
+          "count": 11
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 17.15714,
+          "pane_width_m": 2.69818,
+          "pane_height_m": 3.01143,
+          "count": 11
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 20.52857,
+          "pane_width_m": 2.69818,
+          "pane_height_m": 3.01143,
+          "count": 11
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 23.9,
+          "pane_width_m": 2.69818,
+          "pane_height_m": 3.01143,
+          "count": 11
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 27.27143,
+          "pane_width_m": 2.69818,
+          "pane_height_m": 3.01143,
+          "count": 11
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 30.64286,
+          "pane_width_m": 2.69818,
+          "pane_height_m": 3.01143,
+          "count": 11
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 34.01429,
+          "pane_width_m": 2.69818,
+          "pane_height_m": 3.01143,
+          "count": 11
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 37.38572,
+          "pane_width_m": 2.69818,
+          "pane_height_m": 3.01143,
+          "count": 11
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 40.75714,
+          "pane_width_m": 2.69818,
+          "pane_height_m": 3.01143,
+          "count": 11
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 44.12857,
+          "pane_width_m": 2.69818,
+          "pane_height_m": 3.01143,
+          "count": 11
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 47.5,
+          "pane_width_m": 2.69818,
+          "pane_height_m": 3.01143,
+          "count": 11
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 50.87143,
+          "pane_width_m": 2.69818,
+          "pane_height_m": 3.01143,
+          "count": 11
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 54.24286,
+          "pane_width_m": 2.69818,
+          "pane_height_m": 3.01143,
+          "count": 11
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 57.61428,
+          "pane_width_m": 2.69818,
+          "pane_height_m": 3.01143,
+          "count": 11
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 60.98571,
+          "pane_width_m": 2.69818,
+          "pane_height_m": 3.01143,
+          "count": 11
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 64.35714,
+          "pane_width_m": 2.69818,
+          "pane_height_m": 3.01143,
+          "count": 11
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 67.72857,
+          "pane_width_m": 2.69818,
+          "pane_height_m": 3.01143,
+          "count": 11
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 71.1,
+          "pane_width_m": 2.69818,
+          "pane_height_m": 3.01143,
+          "count": 11
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 74.47143,
+          "pane_width_m": 2.69818,
+          "pane_height_m": 3.01143,
+          "count": 11
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 77.84286,
+          "pane_width_m": 2.69818,
+          "pane_height_m": 3.01143,
+          "count": 11
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 81.21429,
+          "pane_width_m": 2.69818,
+          "pane_height_m": 3.01143,
+          "count": 11
+        },
+        {
+          "glTF_face_normal_axis": "+Z",
+          "centre_y_m": 9.5,
+          "pane_width_m": 2.68,
+          "pane_height_m": 4.84,
+          "count": 10
+        },
+        {
+          "glTF_face_normal_axis": "+Z",
+          "centre_y_m": 13.78571,
+          "pane_width_m": 2.88,
+          "pane_height_m": 3.01143,
+          "count": 8
+        },
+        {
+          "glTF_face_normal_axis": "+Z",
+          "centre_y_m": 17.15714,
+          "pane_width_m": 2.88,
+          "pane_height_m": 3.01143,
+          "count": 8
+        },
+        {
+          "glTF_face_normal_axis": "+Z",
+          "centre_y_m": 20.52857,
+          "pane_width_m": 2.88,
+          "pane_height_m": 3.01143,
+          "count": 8
+        },
+        {
+          "glTF_face_normal_axis": "+Z",
+          "centre_y_m": 23.9,
+          "pane_width_m": 2.88,
+          "pane_height_m": 3.01143,
+          "count": 8
+        },
+        {
+          "glTF_face_normal_axis": "+Z",
+          "centre_y_m": 27.27143,
+          "pane_width_m": 2.88,
+          "pane_height_m": 3.01143,
+          "count": 8
+        },
+        {
+          "glTF_face_normal_axis": "+Z",
+          "centre_y_m": 30.64286,
+          "pane_width_m": 2.88,
+          "pane_height_m": 3.01143,
+          "count": 8
+        },
+        {
+          "glTF_face_normal_axis": "+Z",
+          "centre_y_m": 34.01429,
+          "pane_width_m": 2.88,
+          "pane_height_m": 3.01143,
+          "count": 8
+        },
+        {
+          "glTF_face_normal_axis": "+Z",
+          "centre_y_m": 37.38572,
+          "pane_width_m": 2.88,
+          "pane_height_m": 3.01143,
+          "count": 8
+        },
+        {
+          "glTF_face_normal_axis": "+Z",
+          "centre_y_m": 40.75714,
+          "pane_width_m": 2.88,
+          "pane_height_m": 3.01143,
+          "count": 8
+        },
+        {
+          "glTF_face_normal_axis": "+Z",
+          "centre_y_m": 44.12857,
+          "pane_width_m": 2.88,
+          "pane_height_m": 3.01143,
+          "count": 8
+        },
+        {
+          "glTF_face_normal_axis": "+Z",
+          "centre_y_m": 47.5,
+          "pane_width_m": 2.88,
+          "pane_height_m": 3.01143,
+          "count": 8
+        },
+        {
+          "glTF_face_normal_axis": "+Z",
+          "centre_y_m": 50.87143,
+          "pane_width_m": 2.88,
+          "pane_height_m": 3.01143,
+          "count": 8
+        },
+        {
+          "glTF_face_normal_axis": "+Z",
+          "centre_y_m": 54.24286,
+          "pane_width_m": 2.88,
+          "pane_height_m": 3.01143,
+          "count": 8
+        },
+        {
+          "glTF_face_normal_axis": "+Z",
+          "centre_y_m": 57.61428,
+          "pane_width_m": 2.88,
+          "pane_height_m": 3.01143,
+          "count": 8
+        },
+        {
+          "glTF_face_normal_axis": "+Z",
+          "centre_y_m": 60.98571,
+          "pane_width_m": 2.88,
+          "pane_height_m": 3.01143,
+          "count": 8
+        },
+        {
+          "glTF_face_normal_axis": "+Z",
+          "centre_y_m": 64.35714,
+          "pane_width_m": 2.88,
+          "pane_height_m": 3.01143,
+          "count": 8
+        },
+        {
+          "glTF_face_normal_axis": "+Z",
+          "centre_y_m": 67.72857,
+          "pane_width_m": 2.88,
+          "pane_height_m": 3.01143,
+          "count": 8
+        },
+        {
+          "glTF_face_normal_axis": "+Z",
+          "centre_y_m": 71.1,
+          "pane_width_m": 2.88,
+          "pane_height_m": 3.01143,
+          "count": 8
+        },
+        {
+          "glTF_face_normal_axis": "+Z",
+          "centre_y_m": 74.47143,
+          "pane_width_m": 2.88,
+          "pane_height_m": 3.01143,
+          "count": 8
+        },
+        {
+          "glTF_face_normal_axis": "+Z",
+          "centre_y_m": 77.84286,
+          "pane_width_m": 2.88,
+          "pane_height_m": 3.01143,
+          "count": 8
+        },
+        {
+          "glTF_face_normal_axis": "+Z",
+          "centre_y_m": 81.21429,
+          "pane_width_m": 2.88,
+          "pane_height_m": 3.01143,
+          "count": 8
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 9.5,
+          "pane_width_m": 2.79666,
+          "pane_height_m": 4.84,
+          "count": 4
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 9.5,
+          "pane_width_m": 2.79668,
+          "pane_height_m": 4.84,
+          "count": 8
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 13.78571,
+          "pane_width_m": 2.69818,
+          "pane_height_m": 3.01143,
+          "count": 11
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 17.15714,
+          "pane_width_m": 2.69818,
+          "pane_height_m": 3.01143,
+          "count": 11
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 20.52857,
+          "pane_width_m": 2.69818,
+          "pane_height_m": 3.01143,
+          "count": 11
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 23.9,
+          "pane_width_m": 2.69818,
+          "pane_height_m": 3.01143,
+          "count": 11
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 27.27143,
+          "pane_width_m": 2.69818,
+          "pane_height_m": 3.01143,
+          "count": 11
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 30.64286,
+          "pane_width_m": 2.69818,
+          "pane_height_m": 3.01143,
+          "count": 11
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 34.01429,
+          "pane_width_m": 2.69818,
+          "pane_height_m": 3.01143,
+          "count": 11
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 37.38572,
+          "pane_width_m": 2.69818,
+          "pane_height_m": 3.01143,
+          "count": 11
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 40.75714,
+          "pane_width_m": 2.69818,
+          "pane_height_m": 3.01143,
+          "count": 11
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 44.12857,
+          "pane_width_m": 2.69818,
+          "pane_height_m": 3.01143,
+          "count": 11
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 47.5,
+          "pane_width_m": 2.69818,
+          "pane_height_m": 3.01143,
+          "count": 11
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 50.87143,
+          "pane_width_m": 2.69818,
+          "pane_height_m": 3.01143,
+          "count": 11
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 54.24286,
+          "pane_width_m": 2.69818,
+          "pane_height_m": 3.01143,
+          "count": 11
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 57.61428,
+          "pane_width_m": 2.69818,
+          "pane_height_m": 3.01143,
+          "count": 11
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 60.98571,
+          "pane_width_m": 2.69818,
+          "pane_height_m": 3.01143,
+          "count": 11
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 64.35714,
+          "pane_width_m": 2.69818,
+          "pane_height_m": 3.01143,
+          "count": 11
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 67.72857,
+          "pane_width_m": 2.69818,
+          "pane_height_m": 3.01143,
+          "count": 11
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 71.1,
+          "pane_width_m": 2.69818,
+          "pane_height_m": 3.01143,
+          "count": 11
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 74.47143,
+          "pane_width_m": 2.69818,
+          "pane_height_m": 3.01143,
+          "count": 11
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 77.84286,
+          "pane_width_m": 2.69818,
+          "pane_height_m": 3.01143,
+          "count": 11
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 81.21429,
+          "pane_width_m": 2.69818,
+          "pane_height_m": 3.01143,
+          "count": 11
+        },
+        {
+          "glTF_face_normal_axis": "-Z",
+          "centre_y_m": 9.5,
+          "pane_width_m": 2.68,
+          "pane_height_m": 4.84,
+          "count": 10
+        },
+        {
+          "glTF_face_normal_axis": "-Z",
+          "centre_y_m": 13.78571,
+          "pane_width_m": 2.88,
+          "pane_height_m": 3.01143,
+          "count": 8
+        },
+        {
+          "glTF_face_normal_axis": "-Z",
+          "centre_y_m": 17.15714,
+          "pane_width_m": 2.88,
+          "pane_height_m": 3.01143,
+          "count": 8
+        },
+        {
+          "glTF_face_normal_axis": "-Z",
+          "centre_y_m": 20.52857,
+          "pane_width_m": 2.88,
+          "pane_height_m": 3.01143,
+          "count": 8
+        },
+        {
+          "glTF_face_normal_axis": "-Z",
+          "centre_y_m": 23.9,
+          "pane_width_m": 2.88,
+          "pane_height_m": 3.01143,
+          "count": 8
+        },
+        {
+          "glTF_face_normal_axis": "-Z",
+          "centre_y_m": 27.27143,
+          "pane_width_m": 2.88,
+          "pane_height_m": 3.01143,
+          "count": 8
+        },
+        {
+          "glTF_face_normal_axis": "-Z",
+          "centre_y_m": 30.64286,
+          "pane_width_m": 2.88,
+          "pane_height_m": 3.01143,
+          "count": 8
+        },
+        {
+          "glTF_face_normal_axis": "-Z",
+          "centre_y_m": 34.01429,
+          "pane_width_m": 2.88,
+          "pane_height_m": 3.01143,
+          "count": 8
+        },
+        {
+          "glTF_face_normal_axis": "-Z",
+          "centre_y_m": 37.38572,
+          "pane_width_m": 2.88,
+          "pane_height_m": 3.01143,
+          "count": 8
+        },
+        {
+          "glTF_face_normal_axis": "-Z",
+          "centre_y_m": 40.75714,
+          "pane_width_m": 2.88,
+          "pane_height_m": 3.01143,
+          "count": 8
+        },
+        {
+          "glTF_face_normal_axis": "-Z",
+          "centre_y_m": 44.12857,
+          "pane_width_m": 2.88,
+          "pane_height_m": 3.01143,
+          "count": 8
+        },
+        {
+          "glTF_face_normal_axis": "-Z",
+          "centre_y_m": 47.5,
+          "pane_width_m": 2.88,
+          "pane_height_m": 3.01143,
+          "count": 8
+        },
+        {
+          "glTF_face_normal_axis": "-Z",
+          "centre_y_m": 50.87143,
+          "pane_width_m": 2.88,
+          "pane_height_m": 3.01143,
+          "count": 8
+        },
+        {
+          "glTF_face_normal_axis": "-Z",
+          "centre_y_m": 54.24286,
+          "pane_width_m": 2.88,
+          "pane_height_m": 3.01143,
+          "count": 8
+        },
+        {
+          "glTF_face_normal_axis": "-Z",
+          "centre_y_m": 57.61428,
+          "pane_width_m": 2.88,
+          "pane_height_m": 3.01143,
+          "count": 8
+        },
+        {
+          "glTF_face_normal_axis": "-Z",
+          "centre_y_m": 60.98571,
+          "pane_width_m": 2.88,
+          "pane_height_m": 3.01143,
+          "count": 8
+        },
+        {
+          "glTF_face_normal_axis": "-Z",
+          "centre_y_m": 64.35714,
+          "pane_width_m": 2.88,
+          "pane_height_m": 3.01143,
+          "count": 8
+        },
+        {
+          "glTF_face_normal_axis": "-Z",
+          "centre_y_m": 67.72857,
+          "pane_width_m": 2.88,
+          "pane_height_m": 3.01143,
+          "count": 8
+        },
+        {
+          "glTF_face_normal_axis": "-Z",
+          "centre_y_m": 71.1,
+          "pane_width_m": 2.88,
+          "pane_height_m": 3.01143,
+          "count": 8
+        },
+        {
+          "glTF_face_normal_axis": "-Z",
+          "centre_y_m": 74.47143,
+          "pane_width_m": 2.88,
+          "pane_height_m": 3.01143,
+          "count": 8
+        },
+        {
+          "glTF_face_normal_axis": "-Z",
+          "centre_y_m": 77.84286,
+          "pane_width_m": 2.88,
+          "pane_height_m": 3.01143,
+          "count": 8
+        },
+        {
+          "glTF_face_normal_axis": "-Z",
+          "centre_y_m": 81.21429,
+          "pane_width_m": 2.88,
+          "pane_height_m": 3.01143,
+          "count": 8
+        }
+      ],
+      "recovered_opaque_module_count": 144,
+      "upright_module_dimension_groups": [
+        {
+          "material": "CityModern_Metal",
+          "dimensions_x_height_depth_m": [
+            0.075,
+            5.2,
+            0.19
+          ],
+          "count": 18
+        },
+        {
+          "material": "CityModern_Metal",
+          "dimensions_x_height_depth_m": [
+            0.19,
+            5.2,
+            0.075
+          ],
+          "count": 16
+        },
+        {
+          "material": "CityModern_Metal",
+          "dimensions_x_height_depth_m": [
+            0.075,
+            70.8,
+            0.19
+          ],
+          "count": 8
+        },
+        {
+          "material": "CityModern_Metal",
+          "dimensions_x_height_depth_m": [
+            0.19,
+            70.8,
+            0.075
+          ],
+          "count": 8
+        },
+        {
+          "material": "CityModern_Limestone",
+          "dimensions_x_height_depth_m": [
+            0.18,
+            70.8,
+            0.52
+          ],
+          "count": 6
+        },
+        {
+          "material": "CityModern_Limestone",
+          "dimensions_x_height_depth_m": [
+            0.52,
+            70.8,
+            0.18001
+          ],
+          "count": 6
+        },
+        {
+          "material": "CityModern_Metal",
+          "dimensions_x_height_depth_m": [
+            0.19,
+            5.2,
+            0.07501
+          ],
+          "count": 6
+        },
+        {
+          "material": "CityModern_Limestone",
+          "dimensions_x_height_depth_m": [
+            0.25,
+            70.8,
+            0.52
+          ],
+          "count": 4
+        },
+        {
+          "material": "CityModern_Limestone",
+          "dimensions_x_height_depth_m": [
+            0.52,
+            70.8,
+            0.17999
+          ],
+          "count": 4
+        },
+        {
+          "material": "CityModern_Metal",
+          "dimensions_x_height_depth_m": [
+            0.19,
+            5.2,
+            0.25
+          ],
+          "count": 4
+        },
+        {
+          "material": "CityModern_Metal",
+          "dimensions_x_height_depth_m": [
+            0.25,
+            5.2,
+            0.19
+          ],
+          "count": 4
+        },
+        {
+          "material": "CityModern_Limestone",
+          "dimensions_x_height_depth_m": [
+            0.52,
+            70.8,
+            0.25
+          ],
+          "count": 2
+        },
+        {
+          "material": "CityModern_Metal",
+          "dimensions_x_height_depth_m": [
+            0.16,
+            3.4,
+            0.16
+          ],
+          "count": 2
+        },
+        {
+          "material": "CityModern_Metal",
+          "dimensions_x_height_depth_m": [
+            0.19,
+            70.8,
+            0.07501
+          ],
+          "count": 2
+        },
+        {
+          "material": "CityModern_Metal",
+          "dimensions_x_height_depth_m": [
+            0.19,
+            70.8,
+            0.25
+          ],
+          "count": 2
+        }
+      ],
+      "horizontal_slab_module_dimension_groups": [
+        {
+          "material": "CityModern_Limestone",
+          "dimensions_x_height_depth_m": [
+            24.0,
+            0.19,
+            31.0
+          ],
+          "count": 19
+        },
+        {
+          "material": "CityModern_Limestone",
+          "dimensions_x_height_depth_m": [
+            24.0,
+            0.27,
+            31.0
+          ],
+          "count": 2
+        },
+        {
+          "material": "CityModern_Metal",
+          "dimensions_x_height_depth_m": [
+            28.0,
+            0.27,
+            35.0
+          ],
+          "count": 2
+        },
+        {
+          "material": "CityModern_Limestone",
+          "dimensions_x_height_depth_m": [
+            24.0,
+            0.18999,
+            31.0
+          ],
+          "count": 1
+        },
+        {
+          "material": "CityModern_Limestone",
+          "dimensions_x_height_depth_m": [
+            24.0,
+            0.23,
+            31.0
+          ],
+          "count": 1
+        },
+        {
+          "material": "CityModern_Limestone",
+          "dimensions_x_height_depth_m": [
+            28.3,
+            0.45,
+            35.29999
+          ],
+          "count": 1
+        }
+      ],
+      "opaque_backing_box_dimension_groups": [
+        {
+          "material": "CityModern_Metal",
+          "dimensions_x_height_depth_m": [
+            23.76,
+            70.8,
+            30.76001
+          ],
+          "count": 1
+        },
+        {
+          "material": "CityModern_Metal",
+          "dimensions_x_height_depth_m": [
+            27.76,
+            5.2,
+            34.76001
+          ],
+          "count": 1
+        }
+      ],
+      "non_glass_color0_nonzero_indexed_vertices": 0,
+      "materials": [
+        {
+          "name": "CityModern_Limestone",
+          "indexed_triangles": 600,
+          "bounds_glTF_m": {
+            "min_m": [
+              -50.150001525878906,
+              11.96500015258789,
+              -214.64999389648438
+            ],
+            "max_m": [
+              -21.850000381469727,
+              83.57499694824219,
+              -179.35000610351562
+            ],
+            "dimensions_m": [
+              28.30000114440918,
+              71.6099967956543,
+              35.29998779296875
+            ]
+          },
+          "pbr": {
+            "baseColorFactor": [
+              0.55201140150344,
+              0.5028864580233624,
+              0.3967552307153359,
+              1
+            ],
+            "metallicFactor": 0,
+            "roughnessFactor": 0.77
+          },
+          "alpha_mode": "OPAQUE",
+          "has_transmission_extension": false,
+          "color0_present": true,
+          "color0_indexed_range": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "name": "CityModern_PaleStone",
+          "indexed_triangles": 36,
+          "bounds_glTF_m": {
+            "min_m": [
+              -39.07500076293945,
+              83.12999725341797,
+              -192.52000427246094
+            ],
+            "max_m": [
+              -32.92499923706055,
+              83.83000183105469,
+              -190.32000732421875
+            ],
+            "dimensions_m": [
+              6.150001525878906,
+              0.7000045776367188,
+              2.1999969482421875
+            ]
+          },
+          "pbr": {
+            "baseColorFactor": [
+              0.5972017883558645,
+              0.6307571363387763,
+              0.6038273388475408,
+              1
+            ],
+            "metallicFactor": 0,
+            "roughnessFactor": 0.68
+          },
+          "alpha_mode": "OPAQUE",
+          "has_transmission_extension": false,
+          "color0_present": true,
+          "color0_indexed_range": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "name": "CityModern_Metal",
+          "indexed_triangles": 936,
+          "bounds_glTF_m": {
+            "min_m": [
+              -50.125,
+              6.764999866485596,
+              -214.625
+            ],
+            "max_m": [
+              -20.049999237060547,
+              83.9000015258789,
+              -179.375
+            ],
+            "dimensions_m": [
+              30.075000762939453,
+              77.13500165939331,
+              35.25
+            ]
+          },
+          "pbr": {
+            "baseColorFactor": [
+              0.02121901037134225,
+              0.033104766565152086,
+              0.04231141061442144,
+              1
+            ],
+            "metallicFactor": 0.78,
+            "roughnessFactor": 0.36
+          },
+          "alpha_mode": "OPAQUE",
+          "has_transmission_extension": false,
+          "color0_present": true,
+          "color0_indexed_range": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "name": "CityModern_Glass_Day_Blue",
+          "indexed_triangles": 1398,
+          "bounds_glTF_m": {
+            "min_m": [
+              -49.939998626708984,
+              7.079999923706055,
+              -214.44000244140625
+            ],
+            "max_m": [
+              -22.059999465942383,
+              82.72000122070312,
+              -179.55999755859375
+            ],
+            "dimensions_m": [
+              27.8799991607666,
+              75.64000129699707,
+              34.8800048828125
+            ]
+          },
+          "pbr": {
+            "baseColorFactor": [
+              0.08437621153575764,
+              0.14412847084818123,
+              0.17788841597328695,
+              1
+            ],
+            "metallicFactor": 0.65,
+            "roughnessFactor": 0.18
+          },
+          "alpha_mode": "OPAQUE",
+          "has_transmission_extension": false,
+          "color0_present": true,
+          "color0_indexed_range": [
+            0.02678879164159298,
+            0.6465986967086792
+          ]
+        },
+        {
+          "name": "CityModern_Glass_Day_Silver",
+          "indexed_triangles": 172,
+          "bounds_glTF_m": {
+            "min_m": [
+              -47.939998626708984,
+              7.079999923706055,
+              -214.39500427246094
+            ],
+            "max_m": [
+              -22.104999542236328,
+              82.72000122070312,
+              -179.55999755859375
+            ],
+            "dimensions_m": [
+              25.834999084472656,
+              75.64000129699707,
+              34.83500671386719
+            ]
+          },
+          "pbr": {
+            "baseColorFactor": [
+              0.07036009568874305,
+              0.12213877222015301,
+              0.15292615198613213,
+              1
+            ],
+            "metallicFactor": 0.65,
+            "roughnessFactor": 0.18
+          },
+          "alpha_mode": "OPAQUE",
+          "has_transmission_extension": false,
+          "color0_present": true,
+          "color0_indexed_range": [
+            0.02678879164159298,
+            0.6465986967086792
+          ]
+        },
+        {
+          "name": "Glass_Lit_CityModern_Warm",
+          "indexed_triangles": 114,
+          "bounds_glTF_m": {
+            "min_m": [
+              -49.89500045776367,
+              7.079999923706055,
+              -212.44000244140625
+            ],
+            "max_m": [
+              -24.059999465942383,
+              82.72000122070312,
+              -179.60499572753906
+            ],
+            "dimensions_m": [
+              25.83500099182129,
+              75.64000129699707,
+              32.83500671386719
+            ]
+          },
+          "pbr": {
+            "baseColorFactor": [
+              0.08437621153575764,
+              0.14412847084818123,
+              0.17788841597328695,
+              1
+            ],
+            "metallicFactor": 0.65,
+            "roughnessFactor": 0.18
+          },
+          "alpha_mode": "OPAQUE",
+          "has_transmission_extension": false,
+          "color0_present": true,
+          "color0_indexed_range": [
+            0.02678879164159298,
+            0.6318590641021729
+          ]
+        },
+        {
+          "name": "CityModern_Roof",
+          "indexed_triangles": 192,
+          "bounds_glTF_m": {
+            "min_m": [
+              -39.599998474121094,
+              83.00499725341797,
+              -204.75
+            ],
+            "max_m": [
+              -32.400001525878906,
+              84.75499725341797,
+              -190.49000549316406
+            ],
+            "dimensions_m": [
+              7.1999969482421875,
+              1.75,
+              14.259994506835938
+            ]
+          },
+          "pbr": {
+            "baseColorFactor": [
+              0.09989872823822872,
+              0.12477181755144427,
+              0.13286832154414627,
+              1
+            ],
+            "metallicFactor": 0.12,
+            "roughnessFactor": 0.82
+          },
+          "alpha_mode": "OPAQUE",
+          "has_transmission_extension": false,
+          "color0_present": true,
+          "color0_indexed_range": [
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "building": "B06",
+      "node": "CityModern_B06_glass",
+      "style": "glass",
+      "hero": false,
+      "glTF_world_matrix_rows": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds_glTF_m": {
+        "min_m": [
+          -56.650001525878906,
+          6.764999866485596,
+          -269.1499938964844
+        ],
+        "max_m": [
+          -21.549999237060547,
+          96.75499725341797,
+          -230.85000610351562
+        ],
+        "dimensions_m": [
+          35.10000228881836,
+          89.98999738693237,
+          38.29998779296875
+        ]
+      },
+      "bounds_blender_m": {
+        "min_m": [
+          -56.650001525878906,
+          230.85000610351562,
+          6.764999866485596
+        ],
+        "max_m": [
+          -21.549999237060547,
+          269.1499938964844,
+          96.75499725341797
+        ],
+        "dimensions_m": [
+          35.10000228881836,
+          38.29998779296875,
+          89.98999738693237
+        ]
+      },
+      "bounds_UE_m": {
+        "min_m": [
+          -56.650001525878906,
+          -269.1499938964844,
+          6.764999866485596
+        ],
+        "max_m": [
+          -21.549999237060547,
+          -230.85000610351562,
+          96.75499725341797
+        ],
+        "dimensions_m": [
+          35.10000228881836,
+          38.29998779296875,
+          89.98999738693237
+        ]
+      },
+      "height_from_nominal_ground_m": 89.85499725341796,
+      "metadata_height_from_ground_m": 89.855,
+      "source_main_tower_width_depth_height_m": [
+        29,
+        34,
+        88
+      ],
+      "source_nominal_podium_width_depth_m": [
+        33,
+        38
+      ],
+      "floor_segments": [
+        {
+          "part": "podium",
+          "base_glTF_y_m": 6.9,
+          "width_x_m": 33,
+          "depth_glTF_z_m": 38,
+          "floors": 1,
+          "height_m": 5.2,
+          "floor_spacing_m": 5.2,
+          "actual_glb_glazing_row_centres_y_m": [
+            9.5
+          ],
+          "actual_glb_glazing_row_spacings_m": [],
+          "actual_glb_pane_count": 48,
+          "actual_glb_pane_widths_m": [
+            2.80307,
+            2.80309,
+            2.8031,
+            2.88
+          ],
+          "actual_glb_pane_heights_m": [
+            4.84
+          ]
+        },
+        {
+          "part": "tower",
+          "base_glTF_y_m": 12.1,
+          "width_x_m": 29,
+          "depth_glTF_z_m": 34,
+          "floors": 25,
+          "height_m": 82.8,
+          "floor_spacing_m": 3.312,
+          "actual_glb_glazing_row_centres_y_m": [
+            13.756,
+            17.068,
+            20.38,
+            23.692,
+            27.004,
+            30.316,
+            33.628,
+            36.94,
+            40.252,
+            43.564,
+            46.876,
+            50.188,
+            53.5,
+            56.812,
+            60.124,
+            63.436,
+            66.748,
+            70.06,
+            73.372,
+            76.684,
+            79.996,
+            83.308,
+            86.62,
+            89.932,
+            93.244
+          ],
+          "actual_glb_glazing_row_spacings_m": [
+            3.312,
+            3.312,
+            3.312,
+            3.312,
+            3.312,
+            3.312,
+            3.312,
+            3.312,
+            3.312,
+            3.312,
+            3.312,
+            3.312,
+            3.312,
+            3.312,
+            3.312,
+            3.312,
+            3.312,
+            3.312,
+            3.312,
+            3.312,
+            3.312,
+            3.312,
+            3.312,
+            3.312
+          ],
+          "actual_glb_pane_count": 1100,
+          "actual_glb_pane_widths_m": [
+            2.71332,
+            2.71333,
+            2.71335,
+            2.78
+          ],
+          "actual_glb_pane_heights_m": [
+            2.952
+          ]
+        }
+      ],
+      "triangles": 4252,
+      "glass_panes": 1148,
+      "maximum_glass_normal_axis_thickness_m": 0.0,
+      "glass_pane_groups": [
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 9.5,
+          "pane_width_m": 2.80307,
+          "pane_height_m": 4.84,
+          "count": 9
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 9.5,
+          "pane_width_m": 2.80309,
+          "pane_height_m": 4.84,
+          "count": 3
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 9.5,
+          "pane_width_m": 2.8031,
+          "pane_height_m": 4.84,
+          "count": 1
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 13.756,
+          "pane_width_m": 2.71332,
+          "pane_height_m": 2.952,
+          "count": 1
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 13.756,
+          "pane_width_m": 2.71333,
+          "pane_height_m": 2.952,
+          "count": 6
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 13.756,
+          "pane_width_m": 2.71335,
+          "pane_height_m": 2.952,
+          "count": 5
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 17.068,
+          "pane_width_m": 2.71332,
+          "pane_height_m": 2.952,
+          "count": 1
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 17.068,
+          "pane_width_m": 2.71333,
+          "pane_height_m": 2.952,
+          "count": 6
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 17.068,
+          "pane_width_m": 2.71335,
+          "pane_height_m": 2.952,
+          "count": 5
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 20.38,
+          "pane_width_m": 2.71332,
+          "pane_height_m": 2.952,
+          "count": 1
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 20.38,
+          "pane_width_m": 2.71333,
+          "pane_height_m": 2.952,
+          "count": 6
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 20.38,
+          "pane_width_m": 2.71335,
+          "pane_height_m": 2.952,
+          "count": 5
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 23.692,
+          "pane_width_m": 2.71332,
+          "pane_height_m": 2.952,
+          "count": 1
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 23.692,
+          "pane_width_m": 2.71333,
+          "pane_height_m": 2.952,
+          "count": 6
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 23.692,
+          "pane_width_m": 2.71335,
+          "pane_height_m": 2.952,
+          "count": 5
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 27.004,
+          "pane_width_m": 2.71332,
+          "pane_height_m": 2.952,
+          "count": 1
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 27.004,
+          "pane_width_m": 2.71333,
+          "pane_height_m": 2.952,
+          "count": 6
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 27.004,
+          "pane_width_m": 2.71335,
+          "pane_height_m": 2.952,
+          "count": 5
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 30.316,
+          "pane_width_m": 2.71332,
+          "pane_height_m": 2.952,
+          "count": 1
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 30.316,
+          "pane_width_m": 2.71333,
+          "pane_height_m": 2.952,
+          "count": 6
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 30.316,
+          "pane_width_m": 2.71335,
+          "pane_height_m": 2.952,
+          "count": 5
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 33.628,
+          "pane_width_m": 2.71332,
+          "pane_height_m": 2.952,
+          "count": 1
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 33.628,
+          "pane_width_m": 2.71333,
+          "pane_height_m": 2.952,
+          "count": 6
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 33.628,
+          "pane_width_m": 2.71335,
+          "pane_height_m": 2.952,
+          "count": 5
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 36.94,
+          "pane_width_m": 2.71332,
+          "pane_height_m": 2.952,
+          "count": 1
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 36.94,
+          "pane_width_m": 2.71333,
+          "pane_height_m": 2.952,
+          "count": 6
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 36.94,
+          "pane_width_m": 2.71335,
+          "pane_height_m": 2.952,
+          "count": 5
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 40.252,
+          "pane_width_m": 2.71332,
+          "pane_height_m": 2.952,
+          "count": 1
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 40.252,
+          "pane_width_m": 2.71333,
+          "pane_height_m": 2.952,
+          "count": 6
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 40.252,
+          "pane_width_m": 2.71335,
+          "pane_height_m": 2.952,
+          "count": 5
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 43.564,
+          "pane_width_m": 2.71332,
+          "pane_height_m": 2.952,
+          "count": 1
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 43.564,
+          "pane_width_m": 2.71333,
+          "pane_height_m": 2.952,
+          "count": 6
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 43.564,
+          "pane_width_m": 2.71335,
+          "pane_height_m": 2.952,
+          "count": 5
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 46.876,
+          "pane_width_m": 2.71332,
+          "pane_height_m": 2.952,
+          "count": 1
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 46.876,
+          "pane_width_m": 2.71333,
+          "pane_height_m": 2.952,
+          "count": 6
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 46.876,
+          "pane_width_m": 2.71335,
+          "pane_height_m": 2.952,
+          "count": 5
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 50.188,
+          "pane_width_m": 2.71332,
+          "pane_height_m": 2.952,
+          "count": 1
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 50.188,
+          "pane_width_m": 2.71333,
+          "pane_height_m": 2.952,
+          "count": 6
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 50.188,
+          "pane_width_m": 2.71335,
+          "pane_height_m": 2.952,
+          "count": 5
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 53.5,
+          "pane_width_m": 2.71332,
+          "pane_height_m": 2.952,
+          "count": 1
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 53.5,
+          "pane_width_m": 2.71333,
+          "pane_height_m": 2.952,
+          "count": 6
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 53.5,
+          "pane_width_m": 2.71335,
+          "pane_height_m": 2.952,
+          "count": 5
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 56.812,
+          "pane_width_m": 2.71332,
+          "pane_height_m": 2.952,
+          "count": 1
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 56.812,
+          "pane_width_m": 2.71333,
+          "pane_height_m": 2.952,
+          "count": 6
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 56.812,
+          "pane_width_m": 2.71335,
+          "pane_height_m": 2.952,
+          "count": 5
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 60.124,
+          "pane_width_m": 2.71332,
+          "pane_height_m": 2.952,
+          "count": 1
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 60.124,
+          "pane_width_m": 2.71333,
+          "pane_height_m": 2.952,
+          "count": 6
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 60.124,
+          "pane_width_m": 2.71335,
+          "pane_height_m": 2.952,
+          "count": 5
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 63.436,
+          "pane_width_m": 2.71332,
+          "pane_height_m": 2.952,
+          "count": 1
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 63.436,
+          "pane_width_m": 2.71333,
+          "pane_height_m": 2.952,
+          "count": 6
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 63.436,
+          "pane_width_m": 2.71335,
+          "pane_height_m": 2.952,
+          "count": 5
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 66.748,
+          "pane_width_m": 2.71332,
+          "pane_height_m": 2.952,
+          "count": 1
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 66.748,
+          "pane_width_m": 2.71333,
+          "pane_height_m": 2.952,
+          "count": 6
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 66.748,
+          "pane_width_m": 2.71335,
+          "pane_height_m": 2.952,
+          "count": 5
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 70.06,
+          "pane_width_m": 2.71332,
+          "pane_height_m": 2.952,
+          "count": 1
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 70.06,
+          "pane_width_m": 2.71333,
+          "pane_height_m": 2.952,
+          "count": 6
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 70.06,
+          "pane_width_m": 2.71335,
+          "pane_height_m": 2.952,
+          "count": 5
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 73.372,
+          "pane_width_m": 2.71332,
+          "pane_height_m": 2.952,
+          "count": 1
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 73.372,
+          "pane_width_m": 2.71333,
+          "pane_height_m": 2.952,
+          "count": 6
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 73.372,
+          "pane_width_m": 2.71335,
+          "pane_height_m": 2.952,
+          "count": 5
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 76.684,
+          "pane_width_m": 2.71332,
+          "pane_height_m": 2.952,
+          "count": 1
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 76.684,
+          "pane_width_m": 2.71333,
+          "pane_height_m": 2.952,
+          "count": 6
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 76.684,
+          "pane_width_m": 2.71335,
+          "pane_height_m": 2.952,
+          "count": 5
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 79.996,
+          "pane_width_m": 2.71332,
+          "pane_height_m": 2.952,
+          "count": 1
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 79.996,
+          "pane_width_m": 2.71333,
+          "pane_height_m": 2.952,
+          "count": 6
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 79.996,
+          "pane_width_m": 2.71335,
+          "pane_height_m": 2.952,
+          "count": 5
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 83.308,
+          "pane_width_m": 2.71332,
+          "pane_height_m": 2.952,
+          "count": 1
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 83.308,
+          "pane_width_m": 2.71333,
+          "pane_height_m": 2.952,
+          "count": 6
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 83.308,
+          "pane_width_m": 2.71335,
+          "pane_height_m": 2.952,
+          "count": 5
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 86.62,
+          "pane_width_m": 2.71332,
+          "pane_height_m": 2.952,
+          "count": 1
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 86.62,
+          "pane_width_m": 2.71333,
+          "pane_height_m": 2.952,
+          "count": 6
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 86.62,
+          "pane_width_m": 2.71335,
+          "pane_height_m": 2.952,
+          "count": 5
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 89.932,
+          "pane_width_m": 2.71332,
+          "pane_height_m": 2.952,
+          "count": 1
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 89.932,
+          "pane_width_m": 2.71333,
+          "pane_height_m": 2.952,
+          "count": 6
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 89.932,
+          "pane_width_m": 2.71335,
+          "pane_height_m": 2.952,
+          "count": 5
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 93.244,
+          "pane_width_m": 2.71332,
+          "pane_height_m": 2.952,
+          "count": 1
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 93.244,
+          "pane_width_m": 2.71333,
+          "pane_height_m": 2.952,
+          "count": 6
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 93.244,
+          "pane_width_m": 2.71335,
+          "pane_height_m": 2.952,
+          "count": 5
+        },
+        {
+          "glTF_face_normal_axis": "+Z",
+          "centre_y_m": 9.5,
+          "pane_width_m": 2.88,
+          "pane_height_m": 4.84,
+          "count": 11
+        },
+        {
+          "glTF_face_normal_axis": "+Z",
+          "centre_y_m": 13.756,
+          "pane_width_m": 2.78,
+          "pane_height_m": 2.952,
+          "count": 10
+        },
+        {
+          "glTF_face_normal_axis": "+Z",
+          "centre_y_m": 17.068,
+          "pane_width_m": 2.78,
+          "pane_height_m": 2.952,
+          "count": 10
+        },
+        {
+          "glTF_face_normal_axis": "+Z",
+          "centre_y_m": 20.38,
+          "pane_width_m": 2.78,
+          "pane_height_m": 2.952,
+          "count": 10
+        },
+        {
+          "glTF_face_normal_axis": "+Z",
+          "centre_y_m": 23.692,
+          "pane_width_m": 2.78,
+          "pane_height_m": 2.952,
+          "count": 10
+        },
+        {
+          "glTF_face_normal_axis": "+Z",
+          "centre_y_m": 27.004,
+          "pane_width_m": 2.78,
+          "pane_height_m": 2.952,
+          "count": 10
+        },
+        {
+          "glTF_face_normal_axis": "+Z",
+          "centre_y_m": 30.316,
+          "pane_width_m": 2.78,
+          "pane_height_m": 2.952,
+          "count": 10
+        },
+        {
+          "glTF_face_normal_axis": "+Z",
+          "centre_y_m": 33.628,
+          "pane_width_m": 2.78,
+          "pane_height_m": 2.952,
+          "count": 10
+        },
+        {
+          "glTF_face_normal_axis": "+Z",
+          "centre_y_m": 36.94,
+          "pane_width_m": 2.78,
+          "pane_height_m": 2.952,
+          "count": 10
+        },
+        {
+          "glTF_face_normal_axis": "+Z",
+          "centre_y_m": 40.252,
+          "pane_width_m": 2.78,
+          "pane_height_m": 2.952,
+          "count": 10
+        },
+        {
+          "glTF_face_normal_axis": "+Z",
+          "centre_y_m": 43.564,
+          "pane_width_m": 2.78,
+          "pane_height_m": 2.952,
+          "count": 10
+        },
+        {
+          "glTF_face_normal_axis": "+Z",
+          "centre_y_m": 46.876,
+          "pane_width_m": 2.78,
+          "pane_height_m": 2.952,
+          "count": 10
+        },
+        {
+          "glTF_face_normal_axis": "+Z",
+          "centre_y_m": 50.188,
+          "pane_width_m": 2.78,
+          "pane_height_m": 2.952,
+          "count": 10
+        },
+        {
+          "glTF_face_normal_axis": "+Z",
+          "centre_y_m": 53.5,
+          "pane_width_m": 2.78,
+          "pane_height_m": 2.952,
+          "count": 10
+        },
+        {
+          "glTF_face_normal_axis": "+Z",
+          "centre_y_m": 56.812,
+          "pane_width_m": 2.78,
+          "pane_height_m": 2.952,
+          "count": 10
+        },
+        {
+          "glTF_face_normal_axis": "+Z",
+          "centre_y_m": 60.124,
+          "pane_width_m": 2.78,
+          "pane_height_m": 2.952,
+          "count": 10
+        },
+        {
+          "glTF_face_normal_axis": "+Z",
+          "centre_y_m": 63.436,
+          "pane_width_m": 2.78,
+          "pane_height_m": 2.952,
+          "count": 10
+        },
+        {
+          "glTF_face_normal_axis": "+Z",
+          "centre_y_m": 66.748,
+          "pane_width_m": 2.78,
+          "pane_height_m": 2.952,
+          "count": 10
+        },
+        {
+          "glTF_face_normal_axis": "+Z",
+          "centre_y_m": 70.06,
+          "pane_width_m": 2.78,
+          "pane_height_m": 2.952,
+          "count": 10
+        },
+        {
+          "glTF_face_normal_axis": "+Z",
+          "centre_y_m": 73.372,
+          "pane_width_m": 2.78,
+          "pane_height_m": 2.952,
+          "count": 10
+        },
+        {
+          "glTF_face_normal_axis": "+Z",
+          "centre_y_m": 76.684,
+          "pane_width_m": 2.78,
+          "pane_height_m": 2.952,
+          "count": 10
+        },
+        {
+          "glTF_face_normal_axis": "+Z",
+          "centre_y_m": 79.996,
+          "pane_width_m": 2.78,
+          "pane_height_m": 2.952,
+          "count": 10
+        },
+        {
+          "glTF_face_normal_axis": "+Z",
+          "centre_y_m": 83.308,
+          "pane_width_m": 2.78,
+          "pane_height_m": 2.952,
+          "count": 10
+        },
+        {
+          "glTF_face_normal_axis": "+Z",
+          "centre_y_m": 86.62,
+          "pane_width_m": 2.78,
+          "pane_height_m": 2.952,
+          "count": 10
+        },
+        {
+          "glTF_face_normal_axis": "+Z",
+          "centre_y_m": 89.932,
+          "pane_width_m": 2.78,
+          "pane_height_m": 2.952,
+          "count": 10
+        },
+        {
+          "glTF_face_normal_axis": "+Z",
+          "centre_y_m": 93.244,
+          "pane_width_m": 2.78,
+          "pane_height_m": 2.952,
+          "count": 10
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 9.5,
+          "pane_width_m": 2.80307,
+          "pane_height_m": 4.84,
+          "count": 9
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 9.5,
+          "pane_width_m": 2.80309,
+          "pane_height_m": 4.84,
+          "count": 3
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 9.5,
+          "pane_width_m": 2.8031,
+          "pane_height_m": 4.84,
+          "count": 1
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 13.756,
+          "pane_width_m": 2.71332,
+          "pane_height_m": 2.952,
+          "count": 1
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 13.756,
+          "pane_width_m": 2.71333,
+          "pane_height_m": 2.952,
+          "count": 6
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 13.756,
+          "pane_width_m": 2.71335,
+          "pane_height_m": 2.952,
+          "count": 5
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 17.068,
+          "pane_width_m": 2.71332,
+          "pane_height_m": 2.952,
+          "count": 1
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 17.068,
+          "pane_width_m": 2.71333,
+          "pane_height_m": 2.952,
+          "count": 6
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 17.068,
+          "pane_width_m": 2.71335,
+          "pane_height_m": 2.952,
+          "count": 5
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 20.38,
+          "pane_width_m": 2.71332,
+          "pane_height_m": 2.952,
+          "count": 1
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 20.38,
+          "pane_width_m": 2.71333,
+          "pane_height_m": 2.952,
+          "count": 6
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 20.38,
+          "pane_width_m": 2.71335,
+          "pane_height_m": 2.952,
+          "count": 5
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 23.692,
+          "pane_width_m": 2.71332,
+          "pane_height_m": 2.952,
+          "count": 1
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 23.692,
+          "pane_width_m": 2.71333,
+          "pane_height_m": 2.952,
+          "count": 6
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 23.692,
+          "pane_width_m": 2.71335,
+          "pane_height_m": 2.952,
+          "count": 5
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 27.004,
+          "pane_width_m": 2.71332,
+          "pane_height_m": 2.952,
+          "count": 1
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 27.004,
+          "pane_width_m": 2.71333,
+          "pane_height_m": 2.952,
+          "count": 6
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 27.004,
+          "pane_width_m": 2.71335,
+          "pane_height_m": 2.952,
+          "count": 5
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 30.316,
+          "pane_width_m": 2.71332,
+          "pane_height_m": 2.952,
+          "count": 1
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 30.316,
+          "pane_width_m": 2.71333,
+          "pane_height_m": 2.952,
+          "count": 6
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 30.316,
+          "pane_width_m": 2.71335,
+          "pane_height_m": 2.952,
+          "count": 5
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 33.628,
+          "pane_width_m": 2.71332,
+          "pane_height_m": 2.952,
+          "count": 1
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 33.628,
+          "pane_width_m": 2.71333,
+          "pane_height_m": 2.952,
+          "count": 6
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 33.628,
+          "pane_width_m": 2.71335,
+          "pane_height_m": 2.952,
+          "count": 5
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 36.94,
+          "pane_width_m": 2.71332,
+          "pane_height_m": 2.952,
+          "count": 1
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 36.94,
+          "pane_width_m": 2.71333,
+          "pane_height_m": 2.952,
+          "count": 6
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 36.94,
+          "pane_width_m": 2.71335,
+          "pane_height_m": 2.952,
+          "count": 5
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 40.252,
+          "pane_width_m": 2.71332,
+          "pane_height_m": 2.952,
+          "count": 1
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 40.252,
+          "pane_width_m": 2.71333,
+          "pane_height_m": 2.952,
+          "count": 6
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 40.252,
+          "pane_width_m": 2.71335,
+          "pane_height_m": 2.952,
+          "count": 5
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 43.564,
+          "pane_width_m": 2.71332,
+          "pane_height_m": 2.952,
+          "count": 1
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 43.564,
+          "pane_width_m": 2.71333,
+          "pane_height_m": 2.952,
+          "count": 6
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 43.564,
+          "pane_width_m": 2.71335,
+          "pane_height_m": 2.952,
+          "count": 5
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 46.876,
+          "pane_width_m": 2.71332,
+          "pane_height_m": 2.952,
+          "count": 1
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 46.876,
+          "pane_width_m": 2.71333,
+          "pane_height_m": 2.952,
+          "count": 6
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 46.876,
+          "pane_width_m": 2.71335,
+          "pane_height_m": 2.952,
+          "count": 5
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 50.188,
+          "pane_width_m": 2.71332,
+          "pane_height_m": 2.952,
+          "count": 1
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 50.188,
+          "pane_width_m": 2.71333,
+          "pane_height_m": 2.952,
+          "count": 6
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 50.188,
+          "pane_width_m": 2.71335,
+          "pane_height_m": 2.952,
+          "count": 5
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 53.5,
+          "pane_width_m": 2.71332,
+          "pane_height_m": 2.952,
+          "count": 1
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 53.5,
+          "pane_width_m": 2.71333,
+          "pane_height_m": 2.952,
+          "count": 6
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 53.5,
+          "pane_width_m": 2.71335,
+          "pane_height_m": 2.952,
+          "count": 5
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 56.812,
+          "pane_width_m": 2.71332,
+          "pane_height_m": 2.952,
+          "count": 1
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 56.812,
+          "pane_width_m": 2.71333,
+          "pane_height_m": 2.952,
+          "count": 6
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 56.812,
+          "pane_width_m": 2.71335,
+          "pane_height_m": 2.952,
+          "count": 5
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 60.124,
+          "pane_width_m": 2.71332,
+          "pane_height_m": 2.952,
+          "count": 1
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 60.124,
+          "pane_width_m": 2.71333,
+          "pane_height_m": 2.952,
+          "count": 6
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 60.124,
+          "pane_width_m": 2.71335,
+          "pane_height_m": 2.952,
+          "count": 5
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 63.436,
+          "pane_width_m": 2.71332,
+          "pane_height_m": 2.952,
+          "count": 1
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 63.436,
+          "pane_width_m": 2.71333,
+          "pane_height_m": 2.952,
+          "count": 6
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 63.436,
+          "pane_width_m": 2.71335,
+          "pane_height_m": 2.952,
+          "count": 5
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 66.748,
+          "pane_width_m": 2.71332,
+          "pane_height_m": 2.952,
+          "count": 1
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 66.748,
+          "pane_width_m": 2.71333,
+          "pane_height_m": 2.952,
+          "count": 6
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 66.748,
+          "pane_width_m": 2.71335,
+          "pane_height_m": 2.952,
+          "count": 5
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 70.06,
+          "pane_width_m": 2.71332,
+          "pane_height_m": 2.952,
+          "count": 1
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 70.06,
+          "pane_width_m": 2.71333,
+          "pane_height_m": 2.952,
+          "count": 6
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 70.06,
+          "pane_width_m": 2.71335,
+          "pane_height_m": 2.952,
+          "count": 5
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 73.372,
+          "pane_width_m": 2.71332,
+          "pane_height_m": 2.952,
+          "count": 1
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 73.372,
+          "pane_width_m": 2.71333,
+          "pane_height_m": 2.952,
+          "count": 6
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 73.372,
+          "pane_width_m": 2.71335,
+          "pane_height_m": 2.952,
+          "count": 5
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 76.684,
+          "pane_width_m": 2.71332,
+          "pane_height_m": 2.952,
+          "count": 1
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 76.684,
+          "pane_width_m": 2.71333,
+          "pane_height_m": 2.952,
+          "count": 6
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 76.684,
+          "pane_width_m": 2.71335,
+          "pane_height_m": 2.952,
+          "count": 5
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 79.996,
+          "pane_width_m": 2.71332,
+          "pane_height_m": 2.952,
+          "count": 1
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 79.996,
+          "pane_width_m": 2.71333,
+          "pane_height_m": 2.952,
+          "count": 6
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 79.996,
+          "pane_width_m": 2.71335,
+          "pane_height_m": 2.952,
+          "count": 5
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 83.308,
+          "pane_width_m": 2.71332,
+          "pane_height_m": 2.952,
+          "count": 1
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 83.308,
+          "pane_width_m": 2.71333,
+          "pane_height_m": 2.952,
+          "count": 6
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 83.308,
+          "pane_width_m": 2.71335,
+          "pane_height_m": 2.952,
+          "count": 5
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 86.62,
+          "pane_width_m": 2.71332,
+          "pane_height_m": 2.952,
+          "count": 1
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 86.62,
+          "pane_width_m": 2.71333,
+          "pane_height_m": 2.952,
+          "count": 6
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 86.62,
+          "pane_width_m": 2.71335,
+          "pane_height_m": 2.952,
+          "count": 5
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 89.932,
+          "pane_width_m": 2.71332,
+          "pane_height_m": 2.952,
+          "count": 1
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 89.932,
+          "pane_width_m": 2.71333,
+          "pane_height_m": 2.952,
+          "count": 6
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 89.932,
+          "pane_width_m": 2.71335,
+          "pane_height_m": 2.952,
+          "count": 5
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 93.244,
+          "pane_width_m": 2.71332,
+          "pane_height_m": 2.952,
+          "count": 1
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 93.244,
+          "pane_width_m": 2.71333,
+          "pane_height_m": 2.952,
+          "count": 6
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 93.244,
+          "pane_width_m": 2.71335,
+          "pane_height_m": 2.952,
+          "count": 5
+        },
+        {
+          "glTF_face_normal_axis": "-Z",
+          "centre_y_m": 9.5,
+          "pane_width_m": 2.88,
+          "pane_height_m": 4.84,
+          "count": 11
+        },
+        {
+          "glTF_face_normal_axis": "-Z",
+          "centre_y_m": 13.756,
+          "pane_width_m": 2.78,
+          "pane_height_m": 2.952,
+          "count": 10
+        },
+        {
+          "glTF_face_normal_axis": "-Z",
+          "centre_y_m": 17.068,
+          "pane_width_m": 2.78,
+          "pane_height_m": 2.952,
+          "count": 10
+        },
+        {
+          "glTF_face_normal_axis": "-Z",
+          "centre_y_m": 20.38,
+          "pane_width_m": 2.78,
+          "pane_height_m": 2.952,
+          "count": 10
+        },
+        {
+          "glTF_face_normal_axis": "-Z",
+          "centre_y_m": 23.692,
+          "pane_width_m": 2.78,
+          "pane_height_m": 2.952,
+          "count": 10
+        },
+        {
+          "glTF_face_normal_axis": "-Z",
+          "centre_y_m": 27.004,
+          "pane_width_m": 2.78,
+          "pane_height_m": 2.952,
+          "count": 10
+        },
+        {
+          "glTF_face_normal_axis": "-Z",
+          "centre_y_m": 30.316,
+          "pane_width_m": 2.78,
+          "pane_height_m": 2.952,
+          "count": 10
+        },
+        {
+          "glTF_face_normal_axis": "-Z",
+          "centre_y_m": 33.628,
+          "pane_width_m": 2.78,
+          "pane_height_m": 2.952,
+          "count": 10
+        },
+        {
+          "glTF_face_normal_axis": "-Z",
+          "centre_y_m": 36.94,
+          "pane_width_m": 2.78,
+          "pane_height_m": 2.952,
+          "count": 10
+        },
+        {
+          "glTF_face_normal_axis": "-Z",
+          "centre_y_m": 40.252,
+          "pane_width_m": 2.78,
+          "pane_height_m": 2.952,
+          "count": 10
+        },
+        {
+          "glTF_face_normal_axis": "-Z",
+          "centre_y_m": 43.564,
+          "pane_width_m": 2.78,
+          "pane_height_m": 2.952,
+          "count": 10
+        },
+        {
+          "glTF_face_normal_axis": "-Z",
+          "centre_y_m": 46.876,
+          "pane_width_m": 2.78,
+          "pane_height_m": 2.952,
+          "count": 10
+        },
+        {
+          "glTF_face_normal_axis": "-Z",
+          "centre_y_m": 50.188,
+          "pane_width_m": 2.78,
+          "pane_height_m": 2.952,
+          "count": 10
+        },
+        {
+          "glTF_face_normal_axis": "-Z",
+          "centre_y_m": 53.5,
+          "pane_width_m": 2.78,
+          "pane_height_m": 2.952,
+          "count": 10
+        },
+        {
+          "glTF_face_normal_axis": "-Z",
+          "centre_y_m": 56.812,
+          "pane_width_m": 2.78,
+          "pane_height_m": 2.952,
+          "count": 10
+        },
+        {
+          "glTF_face_normal_axis": "-Z",
+          "centre_y_m": 60.124,
+          "pane_width_m": 2.78,
+          "pane_height_m": 2.952,
+          "count": 10
+        },
+        {
+          "glTF_face_normal_axis": "-Z",
+          "centre_y_m": 63.436,
+          "pane_width_m": 2.78,
+          "pane_height_m": 2.952,
+          "count": 10
+        },
+        {
+          "glTF_face_normal_axis": "-Z",
+          "centre_y_m": 66.748,
+          "pane_width_m": 2.78,
+          "pane_height_m": 2.952,
+          "count": 10
+        },
+        {
+          "glTF_face_normal_axis": "-Z",
+          "centre_y_m": 70.06,
+          "pane_width_m": 2.78,
+          "pane_height_m": 2.952,
+          "count": 10
+        },
+        {
+          "glTF_face_normal_axis": "-Z",
+          "centre_y_m": 73.372,
+          "pane_width_m": 2.78,
+          "pane_height_m": 2.952,
+          "count": 10
+        },
+        {
+          "glTF_face_normal_axis": "-Z",
+          "centre_y_m": 76.684,
+          "pane_width_m": 2.78,
+          "pane_height_m": 2.952,
+          "count": 10
+        },
+        {
+          "glTF_face_normal_axis": "-Z",
+          "centre_y_m": 79.996,
+          "pane_width_m": 2.78,
+          "pane_height_m": 2.952,
+          "count": 10
+        },
+        {
+          "glTF_face_normal_axis": "-Z",
+          "centre_y_m": 83.308,
+          "pane_width_m": 2.78,
+          "pane_height_m": 2.952,
+          "count": 10
+        },
+        {
+          "glTF_face_normal_axis": "-Z",
+          "centre_y_m": 86.62,
+          "pane_width_m": 2.78,
+          "pane_height_m": 2.952,
+          "count": 10
+        },
+        {
+          "glTF_face_normal_axis": "-Z",
+          "centre_y_m": 89.932,
+          "pane_width_m": 2.78,
+          "pane_height_m": 2.952,
+          "count": 10
+        },
+        {
+          "glTF_face_normal_axis": "-Z",
+          "centre_y_m": 93.244,
+          "pane_width_m": 2.78,
+          "pane_height_m": 2.952,
+          "count": 10
+        }
+      ],
+      "recovered_opaque_module_count": 160,
+      "upright_module_dimension_groups": [
+        {
+          "material": "CityModern_Metal",
+          "dimensions_x_height_depth_m": [
+            0.075,
+            5.2,
+            0.19
+          ],
+          "count": 20
+        },
+        {
+          "material": "CityModern_Metal",
+          "dimensions_x_height_depth_m": [
+            0.075,
+            82.8,
+            0.19
+          ],
+          "count": 18
+        },
+        {
+          "material": "CityModern_Metal",
+          "dimensions_x_height_depth_m": [
+            0.19,
+            5.2,
+            0.075
+          ],
+          "count": 14
+        },
+        {
+          "material": "CityModern_Metal",
+          "dimensions_x_height_depth_m": [
+            0.19,
+            82.8,
+            0.075
+          ],
+          "count": 12
+        },
+        {
+          "material": "CityModern_Metal",
+          "dimensions_x_height_depth_m": [
+            0.19,
+            5.2,
+            0.07501
+          ],
+          "count": 6
+        },
+        {
+          "material": "CityModern_Metal",
+          "dimensions_x_height_depth_m": [
+            0.19,
+            82.8,
+            0.07501
+          ],
+          "count": 6
+        },
+        {
+          "material": "CityModern_Metal",
+          "dimensions_x_height_depth_m": [
+            0.19,
+            5.2,
+            0.07498
+          ],
+          "count": 4
+        },
+        {
+          "material": "CityModern_Metal",
+          "dimensions_x_height_depth_m": [
+            0.19,
+            5.2,
+            0.25
+          ],
+          "count": 4
+        },
+        {
+          "material": "CityModern_Metal",
+          "dimensions_x_height_depth_m": [
+            0.19,
+            82.8,
+            0.07498
+          ],
+          "count": 4
+        },
+        {
+          "material": "CityModern_Metal",
+          "dimensions_x_height_depth_m": [
+            0.19,
+            82.8,
+            0.25
+          ],
+          "count": 4
+        },
+        {
+          "material": "CityModern_Metal",
+          "dimensions_x_height_depth_m": [
+            0.25,
+            5.2,
+            0.19
+          ],
+          "count": 4
+        },
+        {
+          "material": "CityModern_Metal",
+          "dimensions_x_height_depth_m": [
+            0.25,
+            82.8,
+            0.19
+          ],
+          "count": 4
+        },
+        {
+          "material": "CityModern_Metal",
+          "dimensions_x_height_depth_m": [
+            0.16,
+            3.4,
+            0.16
+          ],
+          "count": 2
+        },
+        {
+          "material": "CityModern_PaleStone",
+          "dimensions_x_height_depth_m": [
+            0.36,
+            82.8,
+            0.64999
+          ],
+          "count": 1
+        },
+        {
+          "material": "CityModern_PaleStone",
+          "dimensions_x_height_depth_m": [
+            0.65,
+            82.8,
+            0.36
+          ],
+          "count": 1
+        }
+      ],
+      "horizontal_slab_module_dimension_groups": [
+        {
+          "material": "CityModern_Metal",
+          "dimensions_x_height_depth_m": [
+            29.0,
+            0.19,
+            34.0
+          ],
+          "count": 20
+        },
+        {
+          "material": "CityModern_Metal",
+          "dimensions_x_height_depth_m": [
+            29.0,
+            0.18999,
+            34.0
+          ],
+          "count": 4
+        },
+        {
+          "material": "CityModern_Metal",
+          "dimensions_x_height_depth_m": [
+            29.0,
+            0.27,
+            34.0
+          ],
+          "count": 2
+        },
+        {
+          "material": "CityModern_Metal",
+          "dimensions_x_height_depth_m": [
+            33.0,
+            0.27,
+            38.0
+          ],
+          "count": 2
+        },
+        {
+          "material": "CityModern_PaleStone",
+          "dimensions_x_height_depth_m": [
+            29.0,
+            0.23,
+            34.0
+          ],
+          "count": 1
+        },
+        {
+          "material": "CityModern_PaleStone",
+          "dimensions_x_height_depth_m": [
+            33.3,
+            0.45,
+            38.29999
+          ],
+          "count": 1
+        }
+      ],
+      "opaque_backing_box_dimension_groups": [
+        {
+          "material": "CityModern_Metal",
+          "dimensions_x_height_depth_m": [
+            28.76,
+            82.8,
+            33.76001
+          ],
+          "count": 1
+        },
+        {
+          "material": "CityModern_Metal",
+          "dimensions_x_height_depth_m": [
+            32.76,
+            5.2,
+            37.76001
+          ],
+          "count": 1
+        }
+      ],
+      "non_glass_color0_nonzero_indexed_vertices": 0,
+      "materials": [
+        {
+          "name": "CityModern_PaleStone",
+          "indexed_triangles": 132,
+          "bounds_glTF_m": {
+            "min_m": [
+              -56.650001525878906,
+              11.975000381469727,
+              -269.1499938964844
+            ],
+            "max_m": [
+              -23.350000381469727,
+              95.83000183105469,
+              -230.85000610351562
+            ],
+            "dimensions_m": [
+              33.30000114440918,
+              83.85500144958496,
+              38.29998779296875
+            ]
+          },
+          "pbr": {
+            "baseColorFactor": [
+              0.5972017883558645,
+              0.6307571363387763,
+              0.6038273388475408,
+              1
+            ],
+            "metallicFactor": 0,
+            "roughnessFactor": 0.68
+          },
+          "alpha_mode": "OPAQUE",
+          "has_transmission_extension": false,
+          "color0_present": true,
+          "color0_indexed_range": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "name": "CityModern_Metal",
+          "indexed_triangles": 1632,
+          "bounds_glTF_m": {
+            "min_m": [
+              -56.625,
+              6.764999866485596,
+              -269.125
+            ],
+            "max_m": [
+              -21.549999237060547,
+              95.9000015258789,
+              -230.875
+            ],
+            "dimensions_m": [
+              35.07500076293945,
+              89.13500165939331,
+              38.25
+            ]
+          },
+          "pbr": {
+            "baseColorFactor": [
+              0.02121901037134225,
+              0.033104766565152086,
+              0.04231141061442144,
+              1
+            ],
+            "metallicFactor": 0.78,
+            "roughnessFactor": 0.36
+          },
+          "alpha_mode": "OPAQUE",
+          "has_transmission_extension": false,
+          "color0_present": true,
+          "color0_indexed_range": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "name": "CityModern_Glass_Day_Blue",
+          "indexed_triangles": 1894,
+          "bounds_glTF_m": {
+            "min_m": [
+              -56.439998626708984,
+              7.079999923706055,
+              -268.8949890136719
+            ],
+            "max_m": [
+              -23.559999465942383,
+              94.72000122070312,
+              -231.05999755859375
+            ],
+            "dimensions_m": [
+              32.8799991607666,
+              87.64000129699707,
+              37.834991455078125
+            ]
+          },
+          "pbr": {
+            "baseColorFactor": [
+              0.08437621153575764,
+              0.14412847084818123,
+              0.17788841597328695,
+              1
+            ],
+            "metallicFactor": 0.65,
+            "roughnessFactor": 0.18
+          },
+          "alpha_mode": "OPAQUE",
+          "has_transmission_extension": false,
+          "color0_present": true,
+          "color0_indexed_range": [
+            0.026529373601078987,
+            0.6829234957695007
+          ]
+        },
+        {
+          "name": "CityModern_Glass_Day_Silver",
+          "indexed_triangles": 244,
+          "bounds_glTF_m": {
+            "min_m": [
+              -56.39500045776367,
+              7.079999923706055,
+              -268.94000244140625
+            ],
+            "max_m": [
+              -23.604999542236328,
+              94.72000122070312,
+              -231.10499572753906
+            ],
+            "dimensions_m": [
+              32.790000915527344,
+              87.64000129699707,
+              37.83500671386719
+            ]
+          },
+          "pbr": {
+            "baseColorFactor": [
+              0.07036009568874305,
+              0.12213877222015301,
+              0.15292615198613213,
+              1
+            ],
+            "metallicFactor": 0.65,
+            "roughnessFactor": 0.18
+          },
+          "alpha_mode": "OPAQUE",
+          "has_transmission_extension": false,
+          "color0_present": true,
+          "color0_indexed_range": [
+            0.026529373601078987,
+            0.6829234957695007
+          ]
+        },
+        {
+          "name": "Glass_Lit_CityModern_Warm",
+          "indexed_triangles": 158,
+          "bounds_glTF_m": {
+            "min_m": [
+              -56.439998626708984,
+              7.079999923706055,
+              -268.8949890136719
+            ],
+            "max_m": [
+              -23.604999542236328,
+              94.72000122070312,
+              -231.05999755859375
+            ],
+            "dimensions_m": [
+              32.834999084472656,
+              87.64000129699707,
+              37.834991455078125
+            ]
+          },
+          "pbr": {
+            "baseColorFactor": [
+              0.08437621153575764,
+              0.14412847084818123,
+              0.17788841597328695,
+              1
+            ],
+            "metallicFactor": 0.65,
+            "roughnessFactor": 0.18
+          },
+          "alpha_mode": "OPAQUE",
+          "has_transmission_extension": false,
+          "color0_present": true,
+          "color0_indexed_range": [
+            0.026529373601078987,
+            0.6829234957695007
+          ]
+        },
+        {
+          "name": "CityModern_Roof",
+          "indexed_triangles": 192,
+          "bounds_glTF_m": {
+            "min_m": [
+              -44.349998474121094,
+              95.00499725341797,
+              -258.5
+            ],
+            "max_m": [
+              -35.650001525878906,
+              96.75499725341797,
+              -242.9499969482422
+            ],
+            "dimensions_m": [
+              8.699996948242188,
+              1.75,
+              15.550003051757812
+            ]
+          },
+          "pbr": {
+            "baseColorFactor": [
+              0.09989872823822872,
+              0.12477181755144427,
+              0.13286832154414627,
+              1
+            ],
+            "metallicFactor": 0.12,
+            "roughnessFactor": 0.82
+          },
+          "alpha_mode": "OPAQUE",
+          "has_transmission_extension": false,
+          "color0_present": true,
+          "color0_indexed_range": [
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "building": "B07",
+      "node": "CityModern_B07_terrace",
+      "style": "terrace",
+      "hero": true,
+      "glTF_world_matrix_rows": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds_glTF_m": {
+        "min_m": [
+          21.049999237060547,
+          6.809999942779541,
+          -25.149999618530273
+        ],
+        "max_m": [
+          53.150001525878906,
+          41.755001068115234,
+          9.149999618530273
+        ],
+        "dimensions_m": [
+          32.10000228881836,
+          34.94500112533569,
+          34.29999923706055
+        ]
+      },
+      "bounds_blender_m": {
+        "min_m": [
+          21.049999237060547,
+          -9.149999618530273,
+          6.809999942779541
+        ],
+        "max_m": [
+          53.150001525878906,
+          25.149999618530273,
+          41.755001068115234
+        ],
+        "dimensions_m": [
+          32.10000228881836,
+          34.29999923706055,
+          34.94500112533569
+        ]
+      },
+      "bounds_UE_m": {
+        "min_m": [
+          21.049999237060547,
+          -25.149999618530273,
+          6.809999942779541
+        ],
+        "max_m": [
+          53.150001525878906,
+          9.149999618530273,
+          41.755001068115234
+        ],
+        "dimensions_m": [
+          32.10000228881836,
+          34.29999923706055,
+          34.94500112533569
+        ]
+      },
+      "height_from_nominal_ground_m": 34.855001068115236,
+      "metadata_height_from_ground_m": 34.855,
+      "source_main_tower_width_depth_height_m": [
+        26,
+        30,
+        33
+      ],
+      "source_nominal_podium_width_depth_m": [
+        30,
+        34
+      ],
+      "floor_segments": [
+        {
+          "part": "podium",
+          "base_glTF_y_m": 6.9,
+          "width_x_m": 30,
+          "depth_glTF_z_m": 34,
+          "floors": 1,
+          "height_m": 5.2,
+          "floor_spacing_m": 5.2,
+          "actual_glb_glazing_row_centres_y_m": [
+            9.5
+          ],
+          "actual_glb_glazing_row_spacings_m": [],
+          "actual_glb_pane_count": 44,
+          "actual_glb_pane_widths_m": [
+            2.73333,
+            2.9
+          ],
+          "actual_glb_pane_heights_m": [
+            4.92
+          ]
+        },
+        {
+          "part": "lower_tower",
+          "base_glTF_y_m": 12.1,
+          "width_x_m": 26,
+          "depth_glTF_z_m": 30,
+          "floors": 5,
+          "height_m": 16.5,
+          "floor_spacing_m": 3.3,
+          "actual_glb_glazing_row_centres_y_m": [
+            13.75,
+            17.05,
+            20.35,
+            23.65,
+            26.95
+          ],
+          "actual_glb_glazing_row_spacings_m": [
+            3.3,
+            3.3,
+            3.3,
+            3.3
+          ],
+          "actual_glb_pane_count": 190,
+          "actual_glb_pane_widths_m": [
+            2.78889,
+            2.9
+          ],
+          "actual_glb_pane_heights_m": [
+            3.02
+          ]
+        },
+        {
+          "part": "setback_upper_tower",
+          "base_glTF_y_m": 28.75,
+          "width_x_m": 20.28,
+          "depth_glTF_z_m": 22.8,
+          "floors": 3,
+          "height_m": 11.15,
+          "floor_spacing_m": 3.716666666666667,
+          "centre_x_m": 39.69,
+          "centre_glTF_z_m": -9.2,
+          "actual_glb_glazing_row_centres_y_m": [
+            30.60833,
+            34.325,
+            38.04167
+          ],
+          "actual_glb_glazing_row_spacings_m": [
+            3.71667,
+            3.71667
+          ],
+          "actual_glb_pane_count": 90,
+          "actual_glb_pane_widths_m": [
+            2.75,
+            2.79714
+          ],
+          "actual_glb_pane_heights_m": [
+            3.43666,
+            3.43667
+          ]
+        }
+      ],
+      "triangles": 4544,
+      "glass_panes": 324,
+      "maximum_glass_normal_axis_thickness_m": 0.0,
+      "glass_pane_groups": [
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 9.5,
+          "pane_width_m": 2.73333,
+          "pane_height_m": 4.92,
+          "count": 12
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 13.75,
+          "pane_width_m": 2.9,
+          "pane_height_m": 3.02,
+          "count": 10
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 17.05,
+          "pane_width_m": 2.9,
+          "pane_height_m": 3.02,
+          "count": 10
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 20.35,
+          "pane_width_m": 2.9,
+          "pane_height_m": 3.02,
+          "count": 10
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 23.65,
+          "pane_width_m": 2.9,
+          "pane_height_m": 3.02,
+          "count": 10
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 26.95,
+          "pane_width_m": 2.9,
+          "pane_height_m": 3.02,
+          "count": 10
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 30.60833,
+          "pane_width_m": 2.75,
+          "pane_height_m": 3.43667,
+          "count": 8
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 34.325,
+          "pane_width_m": 2.75,
+          "pane_height_m": 3.43667,
+          "count": 8
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 38.04167,
+          "pane_width_m": 2.75,
+          "pane_height_m": 3.43666,
+          "count": 8
+        },
+        {
+          "glTF_face_normal_axis": "+Z",
+          "centre_y_m": 9.5,
+          "pane_width_m": 2.9,
+          "pane_height_m": 4.92,
+          "count": 10
+        },
+        {
+          "glTF_face_normal_axis": "+Z",
+          "centre_y_m": 13.75,
+          "pane_width_m": 2.78889,
+          "pane_height_m": 3.02,
+          "count": 9
+        },
+        {
+          "glTF_face_normal_axis": "+Z",
+          "centre_y_m": 17.05,
+          "pane_width_m": 2.78889,
+          "pane_height_m": 3.02,
+          "count": 9
+        },
+        {
+          "glTF_face_normal_axis": "+Z",
+          "centre_y_m": 20.35,
+          "pane_width_m": 2.78889,
+          "pane_height_m": 3.02,
+          "count": 9
+        },
+        {
+          "glTF_face_normal_axis": "+Z",
+          "centre_y_m": 23.65,
+          "pane_width_m": 2.78889,
+          "pane_height_m": 3.02,
+          "count": 9
+        },
+        {
+          "glTF_face_normal_axis": "+Z",
+          "centre_y_m": 26.95,
+          "pane_width_m": 2.78889,
+          "pane_height_m": 3.02,
+          "count": 9
+        },
+        {
+          "glTF_face_normal_axis": "+Z",
+          "centre_y_m": 30.60833,
+          "pane_width_m": 2.79714,
+          "pane_height_m": 3.43667,
+          "count": 7
+        },
+        {
+          "glTF_face_normal_axis": "+Z",
+          "centre_y_m": 34.325,
+          "pane_width_m": 2.79714,
+          "pane_height_m": 3.43667,
+          "count": 7
+        },
+        {
+          "glTF_face_normal_axis": "+Z",
+          "centre_y_m": 38.04167,
+          "pane_width_m": 2.79714,
+          "pane_height_m": 3.43666,
+          "count": 7
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 9.5,
+          "pane_width_m": 2.73333,
+          "pane_height_m": 4.92,
+          "count": 12
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 13.75,
+          "pane_width_m": 2.9,
+          "pane_height_m": 3.02,
+          "count": 10
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 17.05,
+          "pane_width_m": 2.9,
+          "pane_height_m": 3.02,
+          "count": 10
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 20.35,
+          "pane_width_m": 2.9,
+          "pane_height_m": 3.02,
+          "count": 10
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 23.65,
+          "pane_width_m": 2.9,
+          "pane_height_m": 3.02,
+          "count": 10
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 26.95,
+          "pane_width_m": 2.9,
+          "pane_height_m": 3.02,
+          "count": 10
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 30.60833,
+          "pane_width_m": 2.75,
+          "pane_height_m": 3.43667,
+          "count": 8
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 34.325,
+          "pane_width_m": 2.75,
+          "pane_height_m": 3.43667,
+          "count": 8
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 38.04167,
+          "pane_width_m": 2.75,
+          "pane_height_m": 3.43666,
+          "count": 8
+        },
+        {
+          "glTF_face_normal_axis": "-Z",
+          "centre_y_m": 9.5,
+          "pane_width_m": 2.9,
+          "pane_height_m": 4.92,
+          "count": 10
+        },
+        {
+          "glTF_face_normal_axis": "-Z",
+          "centre_y_m": 13.75,
+          "pane_width_m": 2.78889,
+          "pane_height_m": 3.02,
+          "count": 9
+        },
+        {
+          "glTF_face_normal_axis": "-Z",
+          "centre_y_m": 17.05,
+          "pane_width_m": 2.78889,
+          "pane_height_m": 3.02,
+          "count": 9
+        },
+        {
+          "glTF_face_normal_axis": "-Z",
+          "centre_y_m": 20.35,
+          "pane_width_m": 2.78889,
+          "pane_height_m": 3.02,
+          "count": 9
+        },
+        {
+          "glTF_face_normal_axis": "-Z",
+          "centre_y_m": 23.65,
+          "pane_width_m": 2.78889,
+          "pane_height_m": 3.02,
+          "count": 9
+        },
+        {
+          "glTF_face_normal_axis": "-Z",
+          "centre_y_m": 26.95,
+          "pane_width_m": 2.78889,
+          "pane_height_m": 3.02,
+          "count": 9
+        },
+        {
+          "glTF_face_normal_axis": "-Z",
+          "centre_y_m": 30.60833,
+          "pane_width_m": 2.79714,
+          "pane_height_m": 3.43667,
+          "count": 7
+        },
+        {
+          "glTF_face_normal_axis": "-Z",
+          "centre_y_m": 34.325,
+          "pane_width_m": 2.79714,
+          "pane_height_m": 3.43667,
+          "count": 7
+        },
+        {
+          "glTF_face_normal_axis": "-Z",
+          "centre_y_m": 38.04167,
+          "pane_width_m": 2.79714,
+          "pane_height_m": 3.43666,
+          "count": 7
+        }
+      ],
+      "recovered_opaque_module_count": 255,
+      "upright_module_dimension_groups": [
+        {
+          "material": "CityModern_Metal",
+          "dimensions_x_height_depth_m": [
+            0.3,
+            5.2,
+            0.06
+          ],
+          "count": 22
+        },
+        {
+          "material": "CityModern_Metal",
+          "dimensions_x_height_depth_m": [
+            0.06,
+            5.2,
+            0.3
+          ],
+          "count": 18
+        },
+        {
+          "material": "CityModern_Metal",
+          "dimensions_x_height_depth_m": [
+            0.3,
+            16.5,
+            0.06
+          ],
+          "count": 18
+        },
+        {
+          "material": "CityModern_Metal",
+          "dimensions_x_height_depth_m": [
+            0.06,
+            16.5,
+            0.3
+          ],
+          "count": 16
+        },
+        {
+          "material": "CityModern_PaleStone",
+          "dimensions_x_height_depth_m": [
+            0.34,
+            11.15,
+            0.055
+          ],
+          "count": 16
+        },
+        {
+          "material": "CityModern_Metal",
+          "dimensions_x_height_depth_m": [
+            0.3,
+            11.15,
+            0.06
+          ],
+          "count": 14
+        },
+        {
+          "material": "CityModern_Metal",
+          "dimensions_x_height_depth_m": [
+            0.06,
+            11.15,
+            0.3
+          ],
+          "count": 12
+        },
+        {
+          "material": "CityModern_Metal",
+          "dimensions_x_height_depth_m": [
+            0.17,
+            5.2,
+            0.3
+          ],
+          "count": 4
+        },
+        {
+          "material": "CityModern_Metal",
+          "dimensions_x_height_depth_m": [
+            0.17,
+            11.15,
+            0.3
+          ],
+          "count": 4
+        },
+        {
+          "material": "CityModern_Metal",
+          "dimensions_x_height_depth_m": [
+            0.17,
+            16.5,
+            0.3
+          ],
+          "count": 4
+        },
+        {
+          "material": "CityModern_Metal",
+          "dimensions_x_height_depth_m": [
+            0.3,
+            5.2,
+            0.17
+          ],
+          "count": 4
+        },
+        {
+          "material": "CityModern_Metal",
+          "dimensions_x_height_depth_m": [
+            0.3,
+            11.15,
+            0.17
+          ],
+          "count": 4
+        },
+        {
+          "material": "CityModern_Metal",
+          "dimensions_x_height_depth_m": [
+            0.3,
+            16.5,
+            0.17
+          ],
+          "count": 4
+        },
+        {
+          "material": "CityModern_Metal",
+          "dimensions_x_height_depth_m": [
+            0.16,
+            3.4,
+            0.16
+          ],
+          "count": 2
+        }
+      ],
+      "horizontal_slab_module_dimension_groups": [
+        {
+          "material": "CityModern_PaleStone",
+          "dimensions_x_height_depth_m": [
+            26.0,
+            0.11,
+            30.0
+          ],
+          "count": 4
+        },
+        {
+          "material": "CityModern_Metal",
+          "dimensions_x_height_depth_m": [
+            20.28,
+            0.11,
+            22.8
+          ],
+          "count": 2
+        },
+        {
+          "material": "CityModern_Metal",
+          "dimensions_x_height_depth_m": [
+            20.28,
+            0.18,
+            22.8
+          ],
+          "count": 2
+        },
+        {
+          "material": "CityModern_Metal",
+          "dimensions_x_height_depth_m": [
+            30.0,
+            0.18,
+            34.0
+          ],
+          "count": 2
+        },
+        {
+          "material": "CityModern_PaleStone",
+          "dimensions_x_height_depth_m": [
+            26.0,
+            0.18,
+            30.0
+          ],
+          "count": 2
+        },
+        {
+          "material": "CityModern_PaleStone",
+          "dimensions_x_height_depth_m": [
+            20.28,
+            0.23,
+            22.8
+          ],
+          "count": 1
+        },
+        {
+          "material": "CityModern_PaleStone",
+          "dimensions_x_height_depth_m": [
+            26.3,
+            0.2,
+            30.3
+          ],
+          "count": 1
+        },
+        {
+          "material": "CityModern_PaleStone",
+          "dimensions_x_height_depth_m": [
+            30.3,
+            0.26,
+            34.3
+          ],
+          "count": 1
+        },
+        {
+          "material": "CityModern_Roof",
+          "dimensions_x_height_depth_m": [
+            25.9,
+            0.028,
+            29.9
+          ],
+          "count": 1
+        }
+      ],
+      "opaque_backing_box_dimension_groups": [
+        {
+          "material": "CityModern_Metal",
+          "dimensions_x_height_depth_m": [
+            19.76,
+            11.15,
+            22.28
+          ],
+          "count": 1
+        },
+        {
+          "material": "CityModern_Metal",
+          "dimensions_x_height_depth_m": [
+            25.48,
+            16.5,
+            29.48
+          ],
+          "count": 1
+        },
+        {
+          "material": "CityModern_Metal",
+          "dimensions_x_height_depth_m": [
+            29.48,
+            5.2,
+            33.48
+          ],
+          "count": 1
+        }
+      ],
+      "non_glass_color0_nonzero_indexed_vertices": 0,
+      "materials": [
+        {
+          "name": "CityModern_PaleStone",
+          "indexed_triangles": 596,
+          "bounds_glTF_m": {
+            "min_m": [
+              22.850000381469727,
+              12.010000228881836,
+              -25.149999618530273
+            ],
+            "max_m": [
+              53.150001525878906,
+              40.83000183105469,
+              9.149999618530273
+            ],
+            "dimensions_m": [
+              30.30000114440918,
+              28.82000160217285,
+              34.29999923706055
+            ]
+          },
+          "pbr": {
+            "baseColorFactor": [
+              0.5972017883558645,
+              0.6307571363387763,
+              0.6038273388475408,
+              1
+            ],
+            "metallicFactor": 0,
+            "roughnessFactor": 0.68
+          },
+          "alpha_mode": "OPAQUE",
+          "has_transmission_extension": false,
+          "color0_present": true,
+          "color0_indexed_range": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "name": "CityModern_Metal",
+          "indexed_triangles": 2628,
+          "bounds_glTF_m": {
+            "min_m": [
+              21.049999237060547,
+              6.809999942779541,
+              -25.110000610351562
+            ],
+            "max_m": [
+              53.11000061035156,
+              40.900001525878906,
+              9.109999656677246
+            ],
+            "dimensions_m": [
+              32.060001373291016,
+              34.090001583099365,
+              34.22000026702881
+            ]
+          },
+          "pbr": {
+            "baseColorFactor": [
+              0.02121901037134225,
+              0.033104766565152086,
+              0.04231141061442144,
+              1
+            ],
+            "metallicFactor": 0.78,
+            "roughnessFactor": 0.36
+          },
+          "alpha_mode": "OPAQUE",
+          "has_transmission_extension": false,
+          "color0_present": true,
+          "color0_indexed_range": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "name": "CityModern_Roof",
+          "indexed_triangles": 312,
+          "bounds_glTF_m": {
+            "min_m": [
+              25.049999237060547,
+              28.70599937438965,
+              -22.950000762939453
+            ],
+            "max_m": [
+              50.95000076293945,
+              41.755001068115234,
+              6.949999809265137
+            ],
+            "dimensions_m": [
+              25.900001525878906,
+              13.049001693725586,
+              29.90000057220459
+            ]
+          },
+          "pbr": {
+            "baseColorFactor": [
+              0.09989872823822872,
+              0.12477181755144427,
+              0.13286832154414627,
+              1
+            ],
+            "metallicFactor": 0.12,
+            "roughnessFactor": 0.82
+          },
+          "alpha_mode": "OPAQUE",
+          "has_transmission_extension": false,
+          "color0_present": true,
+          "color0_indexed_range": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "name": "CityModern_RoofPlanting",
+          "indexed_triangles": 360,
+          "bounds_glTF_m": {
+            "min_m": [
+              25.596298217773438,
+              29.225587844848633,
+              -18.248403549194336
+            ],
+            "max_m": [
+              26.805156707763672,
+              30.008750915527344,
+              0.9777814149856567
+            ],
+            "dimensions_m": [
+              1.2088584899902344,
+              0.7831630706787109,
+              19.226184964179993
+            ]
+          },
+          "pbr": {
+            "baseColorFactor": [
+              0.07036009568874305,
+              0.12477181755144427,
+              0.06847816983662762,
+              1
+            ],
+            "metallicFactor": 0,
+            "roughnessFactor": 0.96
+          },
+          "alpha_mode": "OPAQUE",
+          "has_transmission_extension": false,
+          "color0_present": true,
+          "color0_indexed_range": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "name": "CityModern_Hero_Glass",
+          "indexed_triangles": 648,
+          "bounds_glTF_m": {
+            "min_m": [
+              23.049999237060547,
+              7.039999961853027,
+              -24.950000762939453
+            ],
+            "max_m": [
+              52.95000076293945,
+              39.7599983215332,
+              8.949999809265137
+            ],
+            "dimensions_m": [
+              29.900001525878906,
+              32.719998359680176,
+              33.90000057220459
+            ]
+          },
+          "pbr": {
+            "baseColorFactor": [
+              0.08437621153575764,
+              0.14412847084818123,
+              0.17788841597328695,
+              1
+            ],
+            "metallicFactor": 0.6,
+            "roughnessFactor": 0.18
+          },
+          "alpha_mode": "OPAQUE",
+          "has_transmission_extension": false,
+          "color0_present": true,
+          "color0_indexed_range": [
+            0.027769673615694046,
+            0.5608047842979431
+          ]
+        }
+      ]
+    },
+    {
+      "building": "B08",
+      "node": "CityModern_B08_glass",
+      "style": "glass",
+      "hero": false,
+      "glTF_world_matrix_rows": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "bounds_glTF_m": {
+        "min_m": [
+          23.049999237060547,
+          6.764999866485596,
+          -69.6500015258789
+        ],
+        "max_m": [
+          55.150001525878906,
+          56.755001068115234,
+          -34.349998474121094
+        ],
+        "dimensions_m": [
+          32.10000228881836,
+          49.99000120162964,
+          35.30000305175781
+        ]
+      },
+      "bounds_blender_m": {
+        "min_m": [
+          23.049999237060547,
+          34.349998474121094,
+          6.764999866485596
+        ],
+        "max_m": [
+          55.150001525878906,
+          69.6500015258789,
+          56.755001068115234
+        ],
+        "dimensions_m": [
+          32.10000228881836,
+          35.30000305175781,
+          49.99000120162964
+        ]
+      },
+      "bounds_UE_m": {
+        "min_m": [
+          23.049999237060547,
+          -69.6500015258789,
+          6.764999866485596
+        ],
+        "max_m": [
+          55.150001525878906,
+          -34.349998474121094,
+          56.755001068115234
+        ],
+        "dimensions_m": [
+          32.10000228881836,
+          35.30000305175781,
+          49.99000120162964
+        ]
+      },
+      "height_from_nominal_ground_m": 49.855001068115236,
+      "metadata_height_from_ground_m": 49.855,
+      "source_main_tower_width_depth_height_m": [
+        26,
+        31,
+        48
+      ],
+      "source_nominal_podium_width_depth_m": [
+        30,
+        35
+      ],
+      "floor_segments": [
+        {
+          "part": "podium",
+          "base_glTF_y_m": 6.9,
+          "width_x_m": 30,
+          "depth_glTF_z_m": 35,
+          "floors": 1,
+          "height_m": 5.2,
+          "floor_spacing_m": 5.2,
+          "actual_glb_glazing_row_centres_y_m": [
+            9.5
+          ],
+          "actual_glb_glazing_row_spacings_m": [],
+          "actual_glb_pane_count": 44,
+          "actual_glb_pane_widths_m": [
+            2.79667,
+            2.88
+          ],
+          "actual_glb_pane_heights_m": [
+            4.84
+          ]
+        },
+        {
+          "part": "tower",
+          "base_glTF_y_m": 12.1,
+          "width_x_m": 26,
+          "depth_glTF_z_m": 31,
+          "floors": 13,
+          "height_m": 42.8,
+          "floor_spacing_m": 3.292307692307692,
+          "actual_glb_glazing_row_centres_y_m": [
+            13.74615,
+            17.03846,
+            20.33077,
+            23.62308,
+            26.91538,
+            30.20769,
+            33.5,
+            36.79231,
+            40.08462,
+            43.37692,
+            46.66923,
+            49.96154,
+            53.25385
+          ],
+          "actual_glb_glazing_row_spacings_m": [
+            3.29231,
+            3.29231,
+            3.29231,
+            3.2923,
+            3.29231,
+            3.29231,
+            3.29231,
+            3.29231,
+            3.2923,
+            3.29231,
+            3.29231,
+            3.29231
+          ],
+          "actual_glb_pane_count": 520,
+          "actual_glb_pane_widths_m": [
+            2.69818,
+            2.76889
+          ],
+          "actual_glb_pane_heights_m": [
+            2.9323,
+            2.93231
+          ]
+        }
+      ],
+      "triangles": 2844,
+      "glass_panes": 564,
+      "maximum_glass_normal_axis_thickness_m": 0.0,
+      "glass_pane_groups": [
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 9.5,
+          "pane_width_m": 2.79667,
+          "pane_height_m": 4.84,
+          "count": 12
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 13.74615,
+          "pane_width_m": 2.69818,
+          "pane_height_m": 2.93231,
+          "count": 11
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 17.03846,
+          "pane_width_m": 2.69818,
+          "pane_height_m": 2.93231,
+          "count": 11
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 20.33077,
+          "pane_width_m": 2.69818,
+          "pane_height_m": 2.93231,
+          "count": 11
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 23.62308,
+          "pane_width_m": 2.69818,
+          "pane_height_m": 2.93231,
+          "count": 11
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 26.91538,
+          "pane_width_m": 2.69818,
+          "pane_height_m": 2.93231,
+          "count": 11
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 30.20769,
+          "pane_width_m": 2.69818,
+          "pane_height_m": 2.93231,
+          "count": 11
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 33.5,
+          "pane_width_m": 2.69818,
+          "pane_height_m": 2.9323,
+          "count": 11
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 36.79231,
+          "pane_width_m": 2.69818,
+          "pane_height_m": 2.93231,
+          "count": 11
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 40.08462,
+          "pane_width_m": 2.69818,
+          "pane_height_m": 2.93231,
+          "count": 11
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 43.37692,
+          "pane_width_m": 2.69818,
+          "pane_height_m": 2.93231,
+          "count": 11
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 46.66923,
+          "pane_width_m": 2.69818,
+          "pane_height_m": 2.93231,
+          "count": 11
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 49.96154,
+          "pane_width_m": 2.69818,
+          "pane_height_m": 2.93231,
+          "count": 11
+        },
+        {
+          "glTF_face_normal_axis": "+X",
+          "centre_y_m": 53.25385,
+          "pane_width_m": 2.69818,
+          "pane_height_m": 2.93231,
+          "count": 11
+        },
+        {
+          "glTF_face_normal_axis": "+Z",
+          "centre_y_m": 9.5,
+          "pane_width_m": 2.88,
+          "pane_height_m": 4.84,
+          "count": 10
+        },
+        {
+          "glTF_face_normal_axis": "+Z",
+          "centre_y_m": 13.74615,
+          "pane_width_m": 2.76889,
+          "pane_height_m": 2.93231,
+          "count": 9
+        },
+        {
+          "glTF_face_normal_axis": "+Z",
+          "centre_y_m": 17.03846,
+          "pane_width_m": 2.76889,
+          "pane_height_m": 2.93231,
+          "count": 9
+        },
+        {
+          "glTF_face_normal_axis": "+Z",
+          "centre_y_m": 20.33077,
+          "pane_width_m": 2.76889,
+          "pane_height_m": 2.93231,
+          "count": 9
+        },
+        {
+          "glTF_face_normal_axis": "+Z",
+          "centre_y_m": 23.62308,
+          "pane_width_m": 2.76889,
+          "pane_height_m": 2.93231,
+          "count": 9
+        },
+        {
+          "glTF_face_normal_axis": "+Z",
+          "centre_y_m": 26.91538,
+          "pane_width_m": 2.76889,
+          "pane_height_m": 2.93231,
+          "count": 9
+        },
+        {
+          "glTF_face_normal_axis": "+Z",
+          "centre_y_m": 30.20769,
+          "pane_width_m": 2.76889,
+          "pane_height_m": 2.93231,
+          "count": 9
+        },
+        {
+          "glTF_face_normal_axis": "+Z",
+          "centre_y_m": 33.5,
+          "pane_width_m": 2.76889,
+          "pane_height_m": 2.9323,
+          "count": 9
+        },
+        {
+          "glTF_face_normal_axis": "+Z",
+          "centre_y_m": 36.79231,
+          "pane_width_m": 2.76889,
+          "pane_height_m": 2.93231,
+          "count": 9
+        },
+        {
+          "glTF_face_normal_axis": "+Z",
+          "centre_y_m": 40.08462,
+          "pane_width_m": 2.76889,
+          "pane_height_m": 2.93231,
+          "count": 9
+        },
+        {
+          "glTF_face_normal_axis": "+Z",
+          "centre_y_m": 43.37692,
+          "pane_width_m": 2.76889,
+          "pane_height_m": 2.93231,
+          "count": 9
+        },
+        {
+          "glTF_face_normal_axis": "+Z",
+          "centre_y_m": 46.66923,
+          "pane_width_m": 2.76889,
+          "pane_height_m": 2.93231,
+          "count": 9
+        },
+        {
+          "glTF_face_normal_axis": "+Z",
+          "centre_y_m": 49.96154,
+          "pane_width_m": 2.76889,
+          "pane_height_m": 2.93231,
+          "count": 9
+        },
+        {
+          "glTF_face_normal_axis": "+Z",
+          "centre_y_m": 53.25385,
+          "pane_width_m": 2.76889,
+          "pane_height_m": 2.93231,
+          "count": 9
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 9.5,
+          "pane_width_m": 2.79667,
+          "pane_height_m": 4.84,
+          "count": 12
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 13.74615,
+          "pane_width_m": 2.69818,
+          "pane_height_m": 2.93231,
+          "count": 11
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 17.03846,
+          "pane_width_m": 2.69818,
+          "pane_height_m": 2.93231,
+          "count": 11
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 20.33077,
+          "pane_width_m": 2.69818,
+          "pane_height_m": 2.93231,
+          "count": 11
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 23.62308,
+          "pane_width_m": 2.69818,
+          "pane_height_m": 2.93231,
+          "count": 11
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 26.91538,
+          "pane_width_m": 2.69818,
+          "pane_height_m": 2.93231,
+          "count": 11
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 30.20769,
+          "pane_width_m": 2.69818,
+          "pane_height_m": 2.93231,
+          "count": 11
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 33.5,
+          "pane_width_m": 2.69818,
+          "pane_height_m": 2.9323,
+          "count": 11
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 36.79231,
+          "pane_width_m": 2.69818,
+          "pane_height_m": 2.93231,
+          "count": 11
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 40.08462,
+          "pane_width_m": 2.69818,
+          "pane_height_m": 2.93231,
+          "count": 11
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 43.37692,
+          "pane_width_m": 2.69818,
+          "pane_height_m": 2.93231,
+          "count": 11
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 46.66923,
+          "pane_width_m": 2.69818,
+          "pane_height_m": 2.93231,
+          "count": 11
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 49.96154,
+          "pane_width_m": 2.69818,
+          "pane_height_m": 2.93231,
+          "count": 11
+        },
+        {
+          "glTF_face_normal_axis": "-X",
+          "centre_y_m": 53.25385,
+          "pane_width_m": 2.69818,
+          "pane_height_m": 2.93231,
+          "count": 11
+        },
+        {
+          "glTF_face_normal_axis": "-Z",
+          "centre_y_m": 9.5,
+          "pane_width_m": 2.88,
+          "pane_height_m": 4.84,
+          "count": 10
+        },
+        {
+          "glTF_face_normal_axis": "-Z",
+          "centre_y_m": 13.74615,
+          "pane_width_m": 2.76889,
+          "pane_height_m": 2.93231,
+          "count": 9
+        },
+        {
+          "glTF_face_normal_axis": "-Z",
+          "centre_y_m": 17.03846,
+          "pane_width_m": 2.76889,
+          "pane_height_m": 2.93231,
+          "count": 9
+        },
+        {
+          "glTF_face_normal_axis": "-Z",
+          "centre_y_m": 20.33077,
+          "pane_width_m": 2.76889,
+          "pane_height_m": 2.93231,
+          "count": 9
+        },
+        {
+          "glTF_face_normal_axis": "-Z",
+          "centre_y_m": 23.62308,
+          "pane_width_m": 2.76889,
+          "pane_height_m": 2.93231,
+          "count": 9
+        },
+        {
+          "glTF_face_normal_axis": "-Z",
+          "centre_y_m": 26.91538,
+          "pane_width_m": 2.76889,
+          "pane_height_m": 2.93231,
+          "count": 9
+        },
+        {
+          "glTF_face_normal_axis": "-Z",
+          "centre_y_m": 30.20769,
+          "pane_width_m": 2.76889,
+          "pane_height_m": 2.93231,
+          "count": 9
+        },
+        {
+          "glTF_face_normal_axis": "-Z",
+          "centre_y_m": 33.5,
+          "pane_width_m": 2.76889,
+          "pane_height_m": 2.9323,
+          "count": 9
+        },
+        {
+          "glTF_face_normal_axis": "-Z",
+          "centre_y_m": 36.79231,
+          "pane_width_m": 2.76889,
+          "pane_height_m": 2.93231,
+          "count": 9
+        },
+        {
+          "glTF_face_normal_axis": "-Z",
+          "centre_y_m": 40.08462,
+          "pane_width_m": 2.76889,
+          "pane_height_m": 2.93231,
+          "count": 9
+        },
+        {
+          "glTF_face_normal_axis": "-Z",
+          "centre_y_m": 43.37692,
+          "pane_width_m": 2.76889,
+          "pane_height_m": 2.93231,
+          "count": 9
+        },
+        {
+          "glTF_face_normal_axis": "-Z",
+          "centre_y_m": 46.66923,
+          "pane_width_m": 2.76889,
+          "pane_height_m": 2.93231,
+          "count": 9
+        },
+        {
+          "glTF_face_normal_axis": "-Z",
+          "centre_y_m": 49.96154,
+          "pane_width_m": 2.76889,
+          "pane_height_m": 2.93231,
+          "count": 9
+        },
+        {
+          "glTF_face_normal_axis": "-Z",
+          "centre_y_m": 53.25385,
+          "pane_width_m": 2.76889,
+          "pane_height_m": 2.93231,
+          "count": 9
+        }
+      ],
+      "recovered_opaque_module_count": 140,
+      "upright_module_dimension_groups": [
+        {
+          "material": "CityModern_Metal",
+          "dimensions_x_height_depth_m": [
+            0.19,
+            5.2,
+            0.075
+          ],
+          "count": 22
+        },
+        {
+          "material": "CityModern_Metal",
+          "dimensions_x_height_depth_m": [
+            0.19,
+            42.8,
+            0.075
+          ],
+          "count": 20
+        },
+        {
+          "material": "CityModern_Metal",
+          "dimensions_x_height_depth_m": [
+            0.075,
+            5.2,
+            0.19
+          ],
+          "count": 18
+        },
+        {
+          "material": "CityModern_Metal",
+          "dimensions_x_height_depth_m": [
+            0.075,
+            42.8,
+            0.19
+          ],
+          "count": 16
+        },
+        {
+          "material": "CityModern_Metal",
+          "dimensions_x_height_depth_m": [
+            0.19,
+            5.2,
+            0.25
+          ],
+          "count": 4
+        },
+        {
+          "material": "CityModern_Metal",
+          "dimensions_x_height_depth_m": [
+            0.19,
+            42.8,
+            0.25
+          ],
+          "count": 4
+        },
+        {
+          "material": "CityModern_Metal",
+          "dimensions_x_height_depth_m": [
+            0.25,
+            5.2,
+            0.19
+          ],
+          "count": 4
+        },
+        {
+          "material": "CityModern_Metal",
+          "dimensions_x_height_depth_m": [
+            0.25,
+            42.8,
+            0.19
+          ],
+          "count": 4
+        },
+        {
+          "material": "CityModern_Metal",
+          "dimensions_x_height_depth_m": [
+            0.16,
+            3.4,
+            0.16
+          ],
+          "count": 2
+        },
+        {
+          "material": "CityModern_PaleStone",
+          "dimensions_x_height_depth_m": [
+            0.36,
+            42.8,
+            0.65
+          ],
+          "count": 1
+        },
+        {
+          "material": "CityModern_PaleStone",
+          "dimensions_x_height_depth_m": [
+            0.65,
+            42.8,
+            0.36
+          ],
+          "count": 1
+        }
+      ],
+      "horizontal_slab_module_dimension_groups": [
+        {
+          "material": "CityModern_Metal",
+          "dimensions_x_height_depth_m": [
+            26.0,
+            0.19,
+            31.0
+          ],
+          "count": 12
+        },
+        {
+          "material": "CityModern_Metal",
+          "dimensions_x_height_depth_m": [
+            26.0,
+            0.27,
+            31.0
+          ],
+          "count": 2
+        },
+        {
+          "material": "CityModern_Metal",
+          "dimensions_x_height_depth_m": [
+            30.0,
+            0.27,
+            35.0
+          ],
+          "count": 2
+        },
+        {
+          "material": "CityModern_PaleStone",
+          "dimensions_x_height_depth_m": [
+            26.0,
+            0.23,
+            31.0
+          ],
+          "count": 1
+        },
+        {
+          "material": "CityModern_PaleStone",
+          "dimensions_x_height_depth_m": [
+            30.3,
+            0.45,
+            35.3
+          ],
+          "count": 1
+        }
+      ],
+      "opaque_backing_box_dimension_groups": [
+        {
+          "material": "CityModern_Metal",
+          "dimensions_x_height_depth_m": [
+            25.76,
+            42.8,
+            30.76
+          ],
+          "count": 1
+        },
+        {
+          "material": "CityModern_Metal",
+          "dimensions_x_height_depth_m": [
+            29.76,
+            5.2,
+            34.75999
+          ],
+          "count": 1
+        }
+      ],
+      "non_glass_color0_nonzero_indexed_vertices": 0,
+      "materials": [
+        {
+          "name": "CityModern_PaleStone",
+          "indexed_triangles": 132,
+          "bounds_glTF_m": {
+            "min_m": [
+              24.850000381469727,
+              11.975000381469727,
+              -69.6500015258789
+            ],
+            "max_m": [
+              55.150001525878906,
+              55.83000183105469,
+              -34.349998474121094
+            ],
+            "dimensions_m": [
+              30.30000114440918,
+              43.85500144958496,
+              35.30000305175781
+            ]
+          },
+          "pbr": {
+            "baseColorFactor": [
+              0.5972017883558645,
+              0.6307571363387763,
+              0.6038273388475408,
+              1
+            ],
+            "metallicFactor": 0,
+            "roughnessFactor": 0.68
+          },
+          "alpha_mode": "OPAQUE",
+          "has_transmission_extension": false,
+          "color0_present": true,
+          "color0_indexed_range": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "name": "CityModern_Metal",
+          "indexed_triangles": 1392,
+          "bounds_glTF_m": {
+            "min_m": [
+              23.049999237060547,
+              6.764999866485596,
+              -69.625
+            ],
+            "max_m": [
+              55.125,
+              55.900001525878906,
+              -34.375
+            ],
+            "dimensions_m": [
+              32.07500076293945,
+              49.13500165939331,
+              35.25
+            ]
+          },
+          "pbr": {
+            "baseColorFactor": [
+              0.02121901037134225,
+              0.033104766565152086,
+              0.04231141061442144,
+              1
+            ],
+            "metallicFactor": 0.78,
+            "roughnessFactor": 0.36
+          },
+          "alpha_mode": "OPAQUE",
+          "has_transmission_extension": false,
+          "color0_present": true,
+          "color0_indexed_range": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "name": "CityModern_Glass_Day_Blue",
+          "indexed_triangles": 938,
+          "bounds_glTF_m": {
+            "min_m": [
+              25.059999465942383,
+              7.079999923706055,
+              -69.44000244140625
+            ],
+            "max_m": [
+              54.939998626708984,
+              54.720001220703125,
+              -34.560001373291016
+            ],
+            "dimensions_m": [
+              29.8799991607666,
+              47.64000129699707,
+              34.880001068115234
+            ]
+          },
+          "pbr": {
+            "baseColorFactor": [
+              0.08437621153575764,
+              0.14412847084818123,
+              0.17788841597328695,
+              1
+            ],
+            "metallicFactor": 0.65,
+            "roughnessFactor": 0.18
+          },
+          "alpha_mode": "OPAQUE",
+          "has_transmission_extension": false,
+          "color0_present": true,
+          "color0_indexed_range": [
+            0.025474879890680313,
+            0.6847836375236511
+          ]
+        },
+        {
+          "name": "CityModern_Glass_Day_Silver",
+          "indexed_triangles": 116,
+          "bounds_glTF_m": {
+            "min_m": [
+              25.059999465942383,
+              7.079999923706055,
+              -69.3949966430664
+            ],
+            "max_m": [
+              52.939998626708984,
+              54.720001220703125,
+              -34.60499954223633
+            ],
+            "dimensions_m": [
+              27.8799991607666,
+              47.64000129699707,
+              34.78999710083008
+            ]
+          },
+          "pbr": {
+            "baseColorFactor": [
+              0.07036009568874305,
+              0.12213877222015301,
+              0.15292615198613213,
+              1
+            ],
+            "metallicFactor": 0.65,
+            "roughnessFactor": 0.18
+          },
+          "alpha_mode": "OPAQUE",
+          "has_transmission_extension": false,
+          "color0_present": true,
+          "color0_indexed_range": [
+            0.025474879890680313,
+            0.6628614068031311
+          ]
+        },
+        {
+          "name": "Glass_Lit_CityModern_Warm",
+          "indexed_triangles": 74,
+          "bounds_glTF_m": {
+            "min_m": [
+              25.104999542236328,
+              7.079999923706055,
+              -67.44000244140625
+            ],
+            "max_m": [
+              52.939998626708984,
+              54.720001220703125,
+              -34.60499954223633
+            ],
+            "dimensions_m": [
+              27.834999084472656,
+              47.64000129699707,
+              32.83500289916992
+            ]
+          },
+          "pbr": {
+            "baseColorFactor": [
+              0.08437621153575764,
+              0.14412847084818123,
+              0.17788841597328695,
+              1
+            ],
+            "metallicFactor": 0.65,
+            "roughnessFactor": 0.18
+          },
+          "alpha_mode": "OPAQUE",
+          "has_transmission_extension": false,
+          "color0_present": true,
+          "color0_indexed_range": [
+            0.02816202864050865,
+            0.6128586530685425
+          ]
+        },
+        {
+          "name": "CityModern_Roof",
+          "indexed_triangles": 192,
+          "bounds_glTF_m": {
+            "min_m": [
+              36.099998474121094,
+              55.005001068115234,
+              -59.75
+            ],
+            "max_m": [
+              43.900001525878906,
+              56.755001068115234,
+              -45.4900016784668
+            ],
+            "dimensions_m": [
+              7.8000030517578125,
+              1.75,
+              14.259998321533203
+            ]
+          },
+          "pbr": {
+            "baseColorFactor": [
+              0.09989872823822872,
+              0.12477181755144427,
+              0.13286832154414627,
+              1
+            ],
+            "metallicFactor": 0.12,
+            "roughnessFactor": 0.82
+          },
+          "alpha_mode": "OPAQUE",
+          "has_transmission_extension": false,
+          "color0_present": true,
+          "color0_indexed_range": [
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "No current UE level, serialized actor transform, material instance, Nanite result, or packaged scene is inspected.",
+    "Source formulas are cross-checked with original GLB glazing and reconstructed opaque-module dimensions; current project runtime overrides may differ.",
+    "Opaque modules are recovered by coordinate welding at 0.00001m and shared triangle edges. Touching/coincident modules may merge; these are approximate component statistics, not original part identities.",
+    "Glass panes are recovered as consecutive six-index groups, matching the original source authoring and its exported checks.",
+    "Dimensions establish the original metre-scale geometry, not successful visual perception of scale in the fixed window camera.",
+    "No visible-pixel coverage, occlusion, photographic comparison, material appearance, UV overlap or mesh self-intersection test is performed.",
+    "Triangle counts are bookkeeping; they do not establish modeling quality or final completion."
+  ]
+}

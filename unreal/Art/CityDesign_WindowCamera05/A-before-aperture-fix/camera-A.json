@@ -1,0 +1,120 @@
+{
+  "id": "A",
+  "host": "CityModern_B08_glass",
+  "file": "Camera05_A_B08.blend",
+  "eye": [
+    27.5,
+    49.0,
+    53.2076923077
+  ],
+  "target": [
+    -52.0,
+    21.0,
+    26.5
+  ],
+  "vfov": 52.0,
+  "floor": 51.6076923077,
+  "ceiling": 54.9,
+  "west": 26.0,
+  "south": 36.5,
+  "window_y": [
+    46.7,
+    53.1
+  ],
+  "room_xmax": 32.5,
+  "corner": false,
+  "floor_basis": "B08 tower base12.1 +12*(42.8/13); top facade segment, authored local FF, not a pre-existing interior slab",
+  "eye_UE_cm": [
+    2750.0,
+    -4900.0,
+    5320.76923077
+  ],
+  "target_UE_cm": [
+    -5200.0,
+    -2100.0,
+    2650.0
+  ],
+  "height_above_ground_m": 46.3076923077,
+  "standing_eye_above_authored_FF_m": 1.5999988849269542,
+  "downward_pitch_deg": 17.58169852445045,
+  "horizontal_fov_deg": 81.8558194680877,
+  "lens_mm": 24.60364532470703,
+  "lens_shift_xy": [
+    0.0,
+    0.0
+  ],
+  "roll_deg": 0.0,
+  "aspect": "16:9",
+  "full_sensor_no_crop": true,
+  "preview_budget": {
+    "width": 640,
+    "height": 360,
+    "samples": 8,
+    "threads": 2,
+    "engine": "CYCLES",
+    "device": "CPU",
+    "one_candidate_only": true
+  },
+  "host_local_core_aperture_box_m": [
+    24.5,
+    32.65,
+    46.7,
+    53.1,
+    51.8276923077,
+    54.72
+  ],
+  "west_glazing_thickness_m": 0.012,
+  "window_sill_above_FF_m": 0.22,
+  "window_head_below_ceiling_m": 0.18,
+  "host_contains_eye_in_authored_room": true,
+  "central_ray_first_surface": {
+    "hit": true,
+    "object": "Office_B08_Visible_Planar_Glass_32mm",
+    "point_m": [
+      27.136999130249023,
+      48.87215042114258,
+      53.08574295043945
+    ]
+  },
+  "projected_commercial_bounds": {
+    "Curved_A": {
+      "min_normalized": [
+        0.1884162575006485,
+        0.08056649565696716
+      ],
+      "max_normalized": [
+        0.558042049407959,
+        0.6392140984535217
+      ],
+      "min_depth_m": 62.956207275390625
+    },
+    "Curved_B": {
+      "min_normalized": [
+        0.5328157544136047,
+        -0.06474148482084274
+      ],
+      "max_normalized": [
+        0.9757397174835205,
+        0.6881721019744873
+      ],
+      "min_depth_m": 50.81812286376953
+    },
+    "Curved_Bridge": {
+      "min_normalized": [
+        0.42112302780151367,
+        0.22275803983211517
+      ],
+      "max_normalized": [
+        0.6067426204681396,
+        0.4055931270122528
+      ],
+      "min_depth_m": 61.50468826293945
+    }
+  },
+  "original_objects_changed_in_copy": [
+    "CityModern_B08_glass"
+  ],
+  "original_object_count_checked": 417,
+  "commercial_and_other_original_objects_match_fingerprints": true,
+  "original_camera_data_unchanged": true
+}

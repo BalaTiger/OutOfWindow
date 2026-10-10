@@ -1,0 +1,112 @@
+{
+  "status": "Direction research for review; no new architecture modeled or rendered.",
+  "existing_assets_status": "Mall01 and existing glass office buildings are foundations, not approved finished art.",
+  "date": "2026-10-07",
+  "coordinate_basis": "UE metres; Blender=(UE x,-UE y,UE z)",
+  "camera": {
+    "position": [
+      26,
+      42,
+      37
+    ],
+    "target": [
+      -22,
+      -115,
+      19
+    ],
+    "vertical_fov_degrees": 54,
+    "aspect": "16:9"
+  },
+  "study_envelope": {
+    "min": [
+      -68,
+      -110
+    ],
+    "max": [
+      -22,
+      10
+    ],
+    "bounding_rectangle_m2": 5520,
+    "note": "Envelope of prior sample coordinates, not a surveyed cadastral boundary; no final footprint or GFA validation."
+  },
+  "volumes": [
+    {
+      "name": "A",
+      "bounds_xy": [
+        [
+          -53,
+          -26
+        ],
+        [
+          -25,
+          2
+        ]
+      ],
+      "height_above_base_m": 22,
+      "roof_z_m": 28.9,
+      "window_visibility_adjustment": "Far street-facing corner recedes approximately 5–7 m to open the bridge view."
+    },
+    {
+      "name": "B",
+      "bounds_xy": [
+        [
+          -67,
+          -68
+        ],
+        [
+          -29,
+          -34
+        ]
+      ],
+      "height_above_base_m": 28,
+      "roof_z_m": 34.9
+    },
+    {
+      "name": "C",
+      "bounds_xy": [
+        [
+          -52,
+          -106
+        ],
+        [
+          -24,
+          -76
+        ]
+      ],
+      "height_above_base_m": 36,
+      "roof_z_m": 42.9
+    }
+  ],
+  "bridge": {
+    "connects": "A/B only, same side of main road",
+    "proposed_width_m": [
+      5,
+      6
+    ],
+    "proposed_clearance_above_pavement_m": 8,
+    "proposed_deck_above_pavement_m": 9.5,
+    "span_note": "Approximately 12–18m depending on actual curved landing locations; 8m gap is not the structural span.",
+    "visibility": "Conservative box ray check identified occlusion by A; actual mesh rendering still required."
+  },
+  "next_sample": {
+    "complete": [
+      "A",
+      "B",
+      "one_bridge",
+      "one_entry_court",
+      "one_terrace",
+      "B07_corner_facade_patch"
+    ],
+    "blockout_only": [
+      "C"
+    ],
+    "excluded": [
+      "whole_city",
+      "complete_office_tower",
+      "full_mall_interiors"
+    ]
+  },
+  "validation_gate": "Actual fixed-view and street/facade close CPU renders with stable lighting/exposure; count/UV audits do not qualify as finished appearance.",
+  "protected": "Old Mall01, original City, WindowDirector, cloud/weather assets, shared scripts and deployment left unchanged.",
+  "execution": "No UE, Blender process, GPU render, deploy, commit/push or Library upload during this study."
+}

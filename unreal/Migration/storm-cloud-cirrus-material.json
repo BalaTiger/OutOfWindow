@@ -1,0 +1,19 @@
+{
+  "recipe": "storm-cirrus-v4",
+  "master": "/Game/Weather/M_OOW_StormCells_v4.M_OOW_StormCells_v4",
+  "instance": "/Game/Weather/MI_OOW_StormCells_v4.MI_OOW_StormCells_v4",
+  "sourceMaster": "/Game/Weather/M_OOW_StormCells_v3.M_OOW_StormCells_v3",
+  "sourceInstance": "/Game/Weather/MI_OOW_StormCells_v3.MI_OOW_StormCells_v3",
+  "codeSha256": "774fc7f6c3637d5f21ff76b4d24fafb750767beca267867000767ee1c89926a5",
+  "shapeCodeSha256": "ab9070bc8e5e18ad34af36d88085a900fceea52be493a881042ccfa1e73e165b",
+  "defaults": {
+    "CirrusStrength": 1.0,
+    "CirrusCoverage": 0.5,
+    "CirrusDensity": 0.004,
+    "CirrusScaleKm": 6.0
+  },
+  "changes": "Adds a thin high cirrus band to SubsurfaceColor after the storm blend; deck graph unchanged.",
+  "zeroStrength": "CirrusStrength=0 makes the added term 0 (v3 output).",
+  "compilationVerified": false,
+  "mapsModified": false
+}

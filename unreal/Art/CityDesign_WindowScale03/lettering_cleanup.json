@@ -1,0 +1,7 @@
+{
+  "object": "A_MainEntry_ORBIT",
+  "faces_removed": 1,
+  "threshold_square_metres": 1e-09,
+  "method": "Apply font transform, use double-precision cross-product on stored coordinates to remove only collapsed bevel faces, repack dual UV.",
+  "review_view_unchanged": true
+}

@@ -1,0 +1,181 @@
+{
+  "state": "RESOURCE_BLOCKED_NO_PREVIEW_LAUNCH",
+  "updated_utc": "2026-10-07T14:43:16.833464+00:00",
+  "files": [
+    {
+      "relative_path": "A-before-aperture-fix/camera-A.json",
+      "bytes": 2717,
+      "sha256": "e87599d7ef34bbd2bf4a6e668b07e9ebed7e5f95dffc48521f4679395333e691"
+    },
+    {
+      "relative_path": "A-before-aperture-fix/Camera05_A_B08.blend",
+      "bytes": 25493622,
+      "sha256": "f22e8705db41e38c6d89854f837870674f942efa2b50a244d35f2092f24de881"
+    },
+    {
+      "relative_path": "A-before-aperture-fix/geometry-lock-A.json",
+      "bytes": 85030,
+      "sha256": "fec6b40bd871d316aabf5bcc89bbcc1dfa541c57de32fec4865d833d61e5e165"
+    },
+    {
+      "relative_path": "aperture-ray-audit-A.json",
+      "bytes": 5010,
+      "sha256": "0c9c575d0360b6d29d15a74541f6dd75f633e0112f687ff66359babf93999609"
+    },
+    {
+      "relative_path": "camera-A-geometry-error-1.log",
+      "bytes": 1185,
+      "sha256": "852ea6ac9fd5ac3f36a544edef507b21f996bdfec6b0062bb076000dd8c00920"
+    },
+    {
+      "relative_path": "camera-A-geometry-fix.log",
+      "bytes": 780,
+      "sha256": "606164e8edde0788c4d68107c680955c272b2717f13158e0c4a98af26f3209ef"
+    },
+    {
+      "relative_path": "camera-A-low.log",
+      "bytes": 947,
+      "sha256": "683549c098e4a1e92b2a4cf2d6065c45a98ac52e2ddd0503ec3ed4b18e8d12db"
+    },
+    {
+      "relative_path": "camera-A-setup-error-1.log",
+      "bytes": 1147,
+      "sha256": "15870b6f40c1739456ecd77058b3cd2736cd5cb4250f32509514e18b036d4cc4"
+    },
+    {
+      "relative_path": "camera-A-setup-error.log",
+      "bytes": 1584,
+      "sha256": "3cfff69c0aa5cccffc7ea86f8d836d7f99eb3a904062bfb304cee77a8b9fb701"
+    },
+    {
+      "relative_path": "camera-A.json",
+      "bytes": 2875,
+      "sha256": "d75d84040214e8ca8bf02483e0dad3dd8095716feae13edba0dcd6ef062951e6"
+    },
+    {
+      "relative_path": "camera-design-plan.json",
+      "bytes": 3204,
+      "sha256": "5840121b2c4c5f09edb2716a4b1fb54a4d6be7d68003fd9b46a28b7fff15ee2c"
+    },
+    {
+      "relative_path": "camera05-source-scene.json",
+      "bytes": 191024,
+      "sha256": "b0cba1f2d54cd18c093a84f1642669d65ff73641ea74f777b61c0489b0c9952a"
+    },
+    {
+      "relative_path": "Camera05_A_B08.blend",
+      "bytes": 25536336,
+      "sha256": "887e08ef32b8046706222138c6b2b0f86f64709c13408fb8b5a582309c47a493"
+    },
+    {
+      "relative_path": "Camera05_A_B08.blend1",
+      "bytes": 25493622,
+      "sha256": "f22e8705db41e38c6d89854f837870674f942efa2b50a244d35f2092f24de881"
+    },
+    {
+      "relative_path": "coordination-status.json",
+      "bytes": 1537,
+      "sha256": "2b31cc7913307c309677d5532935b994d9e0910d149624d7ff561c2339e927da"
+    },
+    {
+      "relative_path": "geometry-lock-A.json",
+      "bytes": 85388,
+      "sha256": "58ed8e2fa34e709f71b044f297b39e5d0b16a413682fa8293fad9d3cd6c68db2"
+    },
+    {
+      "relative_path": "memory-geometry-A-B08-fix.json",
+      "bytes": 6417,
+      "sha256": "eb9bde31bf25629bf4f286d89dfa5b0258d90904522a3e0d9402547eb64f188b"
+    },
+    {
+      "relative_path": "memory-geometry-A-setup-error-1.json",
+      "bytes": 4835,
+      "sha256": "3bff52c624cc6c2d177361e91d5c940584be2cc63602ec8170f7927f3fa2c583"
+    },
+    {
+      "relative_path": "memory-monitor-A-setup-error-1.json",
+      "bytes": 4860,
+      "sha256": "e63fe063510fca942b9384c3363ed2c553845ef5540996125514630e3adbfc9d"
+    },
+    {
+      "relative_path": "memory-monitor-A-setup-error.json",
+      "bytes": 2766,
+      "sha256": "97223bddfec062a3018a10738596558c2fc371f51c305df48f77c587173751b9"
+    },
+    {
+      "relative_path": "memory-monitor-A.json",
+      "bytes": 6383,
+      "sha256": "69172ef15d174623b39123e7ca7c34d8e72109cfa6898e1fbdcc1ede5d7092ac"
+    },
+    {
+      "relative_path": "PLAN.md",
+      "bytes": 1299,
+      "sha256": "9cd6fecf8ece86be9d962c4204621f837b382222a7fecc39a1c53bf7a9bdd075"
+    },
+    {
+      "relative_path": "preview-A-low.png",
+      "bytes": 69139,
+      "sha256": "ff0e2d424a4c28e2cab8d515e902afdfc891f35256ff30d1a4d3acec18a9144c"
+    },
+    {
+      "relative_path": "protected-before.json",
+      "bytes": 24879,
+      "sha256": "d88cc6fbfbf53d8a0e1a24ce20584929aca9609c44356d383f1a10b6f9ec5e50"
+    },
+    {
+      "relative_path": "protected-checkpoint.json",
+      "bytes": 132,
+      "sha256": "efc79f9878d4b8c420084fb6a80d8184ebae9d18fb2e6b762ff9f57b63a648a0"
+    },
+    {
+      "relative_path": "README.md",
+      "bytes": 3382,
+      "sha256": "d431619fd1ca100aa4d9ec9608f0bb423b65dfe9370be0457408a9e0699a5bba"
+    },
+    {
+      "relative_path": "resource-blocked-20261007T144130Z.json",
+      "bytes": 1257,
+      "sha256": "307c7bd21788ac0afebd6f7b2fe163ff7c9f19c18f8331bfd684b3ff9ee0a702"
+    },
+    {
+      "relative_path": "RESUME.md",
+      "bytes": 3382,
+      "sha256": "d431619fd1ca100aa4d9ec9608f0bb423b65dfe9370be0457408a9e0699a5bba"
+    },
+    {
+      "relative_path": "SourceScripts/build_camera05.py",
+      "bytes": 14387,
+      "sha256": "ca319aceae5111cf31180ad7211e5fd3709241b56951f6308363477661a3a35e"
+    },
+    {
+      "relative_path": "SourceScripts/checkpoint_camera05_pause.py",
+      "bytes": 6345,
+      "sha256": "8d0249087bfce58fad3e7ec31c167eafa543f78220662936880da00ed9a0695d"
+    },
+    {
+      "relative_path": "SourceScripts/inspect_camera05_scene.py",
+      "bytes": 1239,
+      "sha256": "15892c040a4f87d266ffc424cfc1b9a5502402a66f60af294ac510f54e46c7ea"
+    },
+    {
+      "relative_path": "SourceScripts/prepare_camera05.py",
+      "bytes": 2418,
+      "sha256": "8cc3d0c7db10f2a9d8dc6219f2a124961ad81710841432b21cf60f6b69a6b9c2"
+    },
+    {
+      "relative_path": "SourceScripts/render_camera05_low.py",
+      "bytes": 1345,
+      "sha256": "82ab66bf077c8020868cdb2b0bf0f4056151fa7d1e944f9c84d033d077097f0a"
+    },
+    {
+      "relative_path": "SourceScripts/run_camera05_budget.py",
+      "bytes": 8900,
+      "sha256": "1c38037d6fa557d6f0cc34348ad4a2d71720323373a923b70d90b6128c52f666"
+    },
+    {
+      "relative_path": "worktree-before.txt",
+      "bytes": 2259,
+      "sha256": "09314e6bb6d072d2ec31a143c2928ecead8a78fb1464314f1c0b6649be4acdc4"
+    }
+  ]
+}

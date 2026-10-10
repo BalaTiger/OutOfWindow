@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="1040" viewBox="0 0 1400 1040"><rect width="1400" height="1040" fill="#f7f8fa"/>
+<text x='60' y='66' font-family='Microsoft YaHei,Segoe UI,sans-serif' font-size='32' fill='#243d4e'>三座曲面商业体量：组织方向草图</text>
+<text x='62' y='104' font-family='Microsoft YaHei,Segoe UI,sans-serif' font-size='20' fill='#667e8b'>概念平面；未建模，非建筑渲染。位置为UE米，曲线为示意。</text>
+<rect x='60' y='148' width='670' height='846' fill='#ffffff' stroke='#d4dce3'/>
+<rect x='760' y='148' width='580' height='260' fill='#ffffff' stroke='#d4dce3'/>
+<rect x='760' y='428' width='580' height='218' fill='#ffffff' stroke='#d4dce3'/>
+<rect x='760' y='666' width='580' height='250' fill='#ffffff' stroke='#d4dce3'/>
+<rect x='350' y='174' width='180' height='670' fill='#e7edf1' stroke='#e7edf1'/>
+<line x1='440' y1='180' x2='440' y2='838' stroke='#ffffff' stroke-width='3' stroke-dasharray='7 5'/>
+<text x='386' y='287' font-family='Microsoft YaHei,Segoe UI,sans-serif' font-size='19' fill='#748b99'>现有主路</text>
+<text x='378' y='311' font-family='Microsoft YaHei,Segoe UI,sans-serif' font-size='14' fill='#748b99'>保持相机 / 道路</text>
+<rect x='555' y='615' width='150' height='170' fill='#eef1f4' stroke='#d4dce3'/>
+<text x='590' y='688' font-family='Microsoft YaHei,Segoe UI,sans-serif' font-size='23' fill='#708695'>B07</text>
+<text x='568' y='718' font-family='Microsoft YaHei,Segoe UI,sans-serif' font-size='17' fill='#708695'>办公楼基础</text>
+<text x='568' y='744' font-family='Microsoft YaHei,Segoe UI,sans-serif' font-size='15' fill='#708695'>先做转角试片</text>
+<line x1='100' y1='190' x2='330' y2='190' stroke='#ac7765' stroke-width='2' stroke-dasharray='7 5'/>
+<line x1='330' y1='190' x2='330' y2='790' stroke='#ac7765' stroke-width='2' stroke-dasharray='7 5'/>
+<line x1='330' y1='790' x2='100' y2='790' stroke='#ac7765' stroke-width='2' stroke-dasharray='7 5'/>
+<line x1='100' y1='790' x2='100' y2='190' stroke='#ac7765' stroke-width='2' stroke-dasharray='7 5'/>
+<text x='92' y='180' font-family='Microsoft YaHei,Segoe UI,sans-serif' font-size='17' fill='#996451'>研究包络 46×120m</text>
+<path d='M 175 680 C 175 625 215 610 245 610 C 270 610 280 615 280 625 C 285 645 315 670 315 715 C 315 750 265 750 225 745 C 190 740 175 715 175 680 Z' fill='#ead6b4' stroke='#304f5f' stroke-width='2' stroke-linejoin='round'/>
+<path d='M 105 480 C 105 430 145 400 195 400 C 245 400 295 440 295 485 C 295 530 260 570 220 570 C 190 570 105 555 105 480 Z' fill='#bfd9d5' stroke='#304f5f' stroke-width='2' stroke-linejoin='round'/>
+<path d='M 180 280 C 180 235 225 210 265 210 C 305 210 320 250 320 285 C 320 335 300 360 245 360 C 200 360 180 325 180 280 Z' fill='#e1e7ee' stroke='#304f5f' stroke-width='2' stroke-linejoin='round'/>
+<path d='M 175 485 C 175 465 190 455 205 460 C 230 465 240 495 220 510 C 200 525 175 510 175 485 Z' fill='#ffffff' stroke='#789e98' stroke-width='1' stroke-linejoin='round'/>
+<text x='187' y='502' font-family='Microsoft YaHei,Segoe UI,sans-serif' font-size='13' fill='#5b8278'>天窗</text>
+<text x='222' y='701' font-family='Microsoft YaHei,Segoe UI,sans-serif' font-size='26' fill='#243d4e'>A</text>
+<text x='212' y='729' font-family='Microsoft YaHei,Segoe UI,sans-serif' font-size='19' fill='#243d4e'>22m</text>
+<text x='178' y='491' font-family='Microsoft YaHei,Segoe UI,sans-serif' font-size='26' fill='#243d4e'>B</text>
+<text x='157' y='552' font-family='Microsoft YaHei,Segoe UI,sans-serif' font-size='19' fill='#243d4e'>28m</text>
+<text x='237' y='296' font-family='Microsoft YaHei,Segoe UI,sans-serif' font-size='26' fill='#708695'>C</text>
+<text x='207' y='324' font-family='Microsoft YaHei,Segoe UI,sans-serif' font-size='16' fill='#708695'>36m 占位</text>
+<path d='M 270 620 C 310 605 305 580 240 565' fill='none' stroke='#d9ae73' stroke-width='29' stroke-linejoin='round'/>
+<path d='M 270 620 C 310 605 305 580 240 565' fill='none' stroke='#fff4df' stroke-width='17' stroke-linejoin='round'/>
+<line x1='304' y1='590' x2='365' y2='572' stroke='#b57539' stroke-width='2' />
+<text x='368' y='563' font-family='Microsoft YaHei,Segoe UI,sans-serif' font-size='17' fill='#996451'>桥向街侧偏出</text>
+<line x1='280' y1='625' x2='164' y2='602' stroke='#be6455' stroke-width='2' />
+<text x='91' y='584' font-family='Microsoft YaHei,Segoe UI,sans-serif' font-size='17' fill='#b15347'>A 退角</text>
+<text x='91' y='606' font-family='Microsoft YaHei,Segoe UI,sans-serif' font-size='16' fill='#b15347'>约5–7m</text>
+<text x='295' y='659' font-family='Microsoft YaHei,Segoe UI,sans-serif' font-size='17' fill='#547b67'>入口庭院</text>
+<text x='102' y='391' font-family='Microsoft YaHei,Segoe UI,sans-serif' font-size='16' fill='#667e8b'>体量间约8m留白</text>
+<line x1='570' y1='950' x2='292' y2='603' stroke='#b67578' stroke-width='1' stroke-dasharray='7 5'/>
+<line x1='570' y1='950' x2='314' y2='725' stroke='#b67578' stroke-width='1' stroke-dasharray='7 5'/>
+<rect x='565' y='945' width='10' height='10' fill='#a55a63' stroke='#a55a63'/>
+<text x='407' y='980' font-family='Microsoft YaHei,Segoe UI,sans-serif' font-size='17' fill='#965b64'>固定相机 (26,42,37)</text>
+<line x1='104' y1='850' x2='204' y2='850' stroke='#304f5f' stroke-width='3' />
+<line x1='104' y1='844' x2='104' y2='856' stroke='#304f5f' stroke-width='2' />
+<line x1='204' y1='844' x2='204' y2='856' stroke='#304f5f' stroke-width='2' />
+<text x='132' y='877' font-family='Microsoft YaHei,Segoe UI,sans-serif' font-size='16' fill='#243d4e'>20m</text>
+<text x='94' y='917' font-family='Microsoft YaHei,Segoe UI,sans-serif' font-size='17' fill='#667e8b'>包络是设计范围，不是地籍红线。</text>
+<text x='94' y='943' font-family='Microsoft YaHei,Segoe UI,sans-serif' font-size='15' fill='#667e8b'>虚线视线只提示风险，须由模型实渲复核。</text>
+<text x='787' y='195' font-family='Microsoft YaHei,Segoe UI,sans-serif' font-size='24' fill='#243d4e'>一组可见商圈街区</text>
+<text x='787' y='236' font-family='Microsoft YaHei,Segoe UI,sans-serif' font-size='19' fill='#243d4e'>A：近端低，入口抬起，远端收角。</text>
+<text x='787' y='272' font-family='Microsoft YaHei,Segoe UI,sans-serif' font-size='19' fill='#243d4e'>B：主力商业楼板，局部中庭与退台。</text>
+<text x='787' y='308' font-family='Microsoft YaHei,Segoe UI,sans-serif' font-size='19' fill='#243d4e'>C：后端较高，第一轮仅轮廓占位。</text>
+<text x='787' y='344' font-family='Microsoft YaHei,Segoe UI,sans-serif' font-size='19' fill='#243d4e'>22 / 28 / 36m 均为基底以上最高点。</text>
+<text x='787' y='379' font-family='Microsoft YaHei,Segoe UI,sans-serif' font-size='17' fill='#667e8b'>原案例规模不缩小照搬，三座不是圆柱复制。</text>
+<text x='787' y='476' font-family='Microsoft YaHei,Segoe UI,sans-serif' font-size='24' fill='#243d4e'>连续性来自空间与曲率</text>
+<text x='787' y='517' font-family='Microsoft YaHei,Segoe UI,sans-serif' font-size='19' fill='#243d4e'>桥与楼层相切，入口/围带/退台共同组织。</text>
+<text x='787' y='553' font-family='Microsoft YaHei,Segoe UI,sans-serif' font-size='19' fill='#243d4e'>桥宽5–6m；初始桥下净空约8m。</text>
+<text x='787' y='589' font-family='Microsoft YaHei,Segoe UI,sans-serif' font-size='19' fill='#243d4e'>实际桥跨可能12–18m，落点仍需设计。</text>
+<text x='787' y='624' font-family='Microsoft YaHei,Segoe UI,sans-serif' font-size='18' fill='#243d4e'>少数主围带；玻璃、百叶、实体面有分区。</text>
+<text x='787' y='714' font-family='Microsoft YaHei,Segoe UI,sans-serif' font-size='24' fill='#243d4e'>下一最小样板</text>
+<text x='787' y='755' font-family='Microsoft YaHei,Segoe UI,sans-serif' font-size='19' fill='#243d4e'>A+B完整外部、一个桥、一个入口庭院。</text>
+<text x='787' y='791' font-family='Microsoft YaHei,Segoe UI,sans-serif' font-size='19' fill='#243d4e'>B07：3层转角幕墙试片，约9×10.8m。</text>
+<text x='787' y='826' font-family='Microsoft YaHei,Segoe UI,sans-serif' font-size='18' fill='#243d4e'>固定窗景＋桥下街景＋侧光幕墙真实CPU图。</text>
+<text x='787' y='862' font-family='Microsoft YaHei,Segoe UI,sans-serif' font-size='18' fill='#243d4e'>评价厚度、反射和空隙，不用面数代替成品。</text>
+<text x='787' y='898' font-family='Microsoft YaHei,Segoe UI,sans-serif' font-size='17' fill='#667e8b'>旧Mall01保留；本轮无新模型/UE/GPU。</text>
+<text x='65' y='1022' font-family='Microsoft YaHei,Segoe UI,sans-serif' font-size='15' fill='#667e8b'>参考：Galaxy SOHO / ZHA；Westfield Mall of the Netherlands / MVSA。详见proposal-zh.md与原图来源。</text>
+</svg>

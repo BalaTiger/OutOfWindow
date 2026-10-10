@@ -1,0 +1,231 @@
+{
+  "status": "PREPARED_ONE_CANDIDATE_CPU_RELEASE_AUTHORIZED",
+  "reference_id": "n79504",
+  "reference_confirmed_by_user": true,
+  "reference_url": "https://media-prod.zha.com/zhweb-prod-media/media/dxrb5gjv/01499_cp_hc_nov12_n79504.jpg?w=1920",
+  "stage": "composition_whitebox_with_reused_existing_context",
+  "source_blend": "C:\\Users\\zhuzi\\Documents\\OutOfWindow\\unreal\\Art\\CityDesign_RoadContinuity07\\RoadContinuity07_Camera06Locked.blend",
+  "reuse_source_blend": "C:\\Users\\zhuzi\\Documents\\OutOfWindow\\unreal\\Art\\CityDesign_CommercialScale04\\CityDesign_CommercialScale04.blend",
+  "output_directory": "C:\\Users\\zhuzi\\Documents\\OutOfWindow\\unreal\\Art\\CityDesign_Perspective08",
+  "output_blend_name": "Perspective08_MallRoadSkyline.blend",
+  "output_preview_name": "preview-perspective08-low.png",
+  "camera_locked": true,
+  "camera_expected": {
+    "name": "Composition06_Fixed_Scene_Camera",
+    "eye_m": [
+      6,
+      -138,
+      70.5
+    ],
+    "type": "PERSP",
+    "lens_mm": 28.27022933959961,
+    "sensor_width_mm": 36,
+    "sensor_height_mm": 24,
+    "sensor_fit": "VERTICAL",
+    "shift_x": 0,
+    "shift_y": 0,
+    "vfov_deg": 46,
+    "resolution": [
+      640,
+      360
+    ],
+    "pixel_aspect": [
+      1,
+      1
+    ]
+  },
+  "commercial_group_translation_m": [
+    0,
+    -18,
+    0
+  ],
+  "commercial_collection_names": [
+    "WB06_Left_Front_Primary",
+    "WB06_Right_Back_Secondary",
+    "WB06_Middle_Rear_Left",
+    "WB06_Middle_Rear_Right",
+    "Court_And_Connections",
+    "Commercial_Entry_Proxy"
+  ],
+  "commercial_site_object_names": [
+    "WB06_Left_Entrance_Plaza",
+    "WB06_Right_Public_Platform",
+    "WB06_Foreground_Landscape_Island",
+    "WB06_Landscape_Main_Path",
+    "WB06_Landscape_Cross_Path",
+    "WB06_Central_Court_Walk"
+  ],
+  "main_body_object_names": [
+    "WB06_Left_Front_Primary_MainVolume",
+    "WB06_Right_Back_Secondary_MainVolume",
+    "WB06_Middle_Rear_Left_MainVolume",
+    "WB06_Middle_Rear_Right_MainVolume"
+  ],
+  "context_translation_only": {
+    "WB06_Context_Left_Office": [
+      -6,
+      0,
+      0
+    ]
+  },
+  "replace_road_objects": [
+    "WB06_left_bounds",
+    "WB06_left_bounds_Outer_Walk",
+    "WB06_left_bounds_Inner_Walk",
+    "WB06_left_bounds_Lane_Line",
+    "WB06_right_bounds",
+    "WB06_right_bounds_Outer_Walk",
+    "WB06_right_bounds_Inner_Walk",
+    "WB06_right_bounds_Lane_Line",
+    "Road07_Equidistant_Lane_Dashes",
+    "Road07_Depth_Tree_0_0_Trunk",
+    "Road07_Depth_Tree_0_0_Crown",
+    "Road07_Depth_Tree_0_1_Trunk",
+    "Road07_Depth_Tree_0_1_Crown",
+    "Road07_Depth_Tree_0_2_Trunk",
+    "Road07_Depth_Tree_0_2_Crown",
+    "Road07_Depth_Tree_0_3_Trunk",
+    "Road07_Depth_Tree_0_3_Crown",
+    "Road07_Depth_Tree_1_0_Trunk",
+    "Road07_Depth_Tree_1_0_Crown",
+    "Road07_Depth_Tree_1_1_Trunk",
+    "Road07_Depth_Tree_1_1_Crown",
+    "Road07_Depth_Tree_1_2_Trunk",
+    "Road07_Depth_Tree_1_2_Crown",
+    "Road07_Depth_Tree_1_3_Trunk",
+    "Road07_Depth_Tree_1_3_Crown"
+  ],
+  "roads": [
+    {
+      "side": "left",
+      "path_xy_m": [
+        [
+          -253.946,
+          -90
+        ],
+        [
+          -64,
+          20
+        ],
+        [
+          -64,
+          900
+        ]
+      ],
+      "width_m": 24
+    },
+    {
+      "side": "right",
+      "path_xy_m": [
+        [
+          112.365,
+          -90
+        ],
+        [
+          86.5,
+          -15
+        ],
+        [
+          86.5,
+          900
+        ]
+      ],
+      "width_m": 21
+    }
+  ],
+  "lane_dash_world_y_stations": [
+    0,
+    100,
+    200,
+    300
+  ],
+  "tree_world_y_stations": [
+    -30,
+    90,
+    210,
+    330
+  ],
+  "reuse_towers": [
+    {
+      "name": "CityModern_B15_glass",
+      "target_center_xy_m": [
+        -245,
+        430
+      ],
+      "source_bounds_m": [
+        -92.6500015258789,
+        -53.54999923706055,
+        190.35000610351562,
+        229.64999389648438,
+        6.764999866485596,
+        108.75499725341797
+      ],
+      "source_collection": "Existing_City_Context",
+      "source_triangles": 4848,
+      "transform_policy": "translate only; preserve world scale, orientation, mesh, UV, color and material data"
+    },
+    {
+      "name": "CityModern_B06_glass",
+      "target_center_xy_m": [
+        178,
+        340
+      ],
+      "source_bounds_m": [
+        -56.650001525878906,
+        -21.549999237060547,
+        230.85000610351562,
+        269.1499938964844,
+        6.764999866485596,
+        96.75499725341797
+      ],
+      "source_collection": "Existing_City_Context",
+      "source_triangles": 4252,
+      "transform_policy": "translate only; preserve world scale, orientation, mesh, UV, color and material data"
+    },
+    {
+      "name": "CityModern_B10_glass",
+      "target_center_xy_m": [
+        280,
+        460
+      ],
+      "source_bounds_m": [
+        23.549999237060547,
+        62.650001525878906,
+        131.85000610351562,
+        170.14999389648438,
+        6.764999866485596,
+        78.75499725341797
+      ],
+      "source_collection": "Existing_City_Context",
+      "source_triangles": 3912,
+      "transform_policy": "translate only; preserve world scale, orientation, mesh, UV, color and material data"
+    }
+  ],
+  "roof_crown_edit": "None in this candidate; native-height background towers break the overly level overall skyline while preserving main crown anchors.",
+  "preview": {
+    "threads": 2,
+    "resolution": [
+      640,
+      360
+    ],
+    "samples": 8,
+    "device": "CPU",
+    "one_preview": true
+  },
+  "authorization": "Parent 2026-10-09: CPU slot released 09:48:23 UTC; next single low-CPU composition preview authorized, no matrix.",
+  "modeling_method": "Explicit authored positions and road paths with Blender Python assistance; reuses existing tower meshes. No random city generation, external model call or claim of manual GUI modeling.",
+  "protected_anchors": [
+    "left front dominant / right smaller farther",
+    "four-body relative grouping",
+    "central court and bridge negative space",
+    "main roof-crown heights",
+    "fixed camera, lens, pitch, roll and field of view",
+    "original City/assets/window frame/cloud materials/shared build scripts/deployment"
+  ],
+  "no_simulated_frame_sill_room": true,
+  "known_limits": [
+    "Mathematical projections ignore occlusion.",
+    "Existing tower glazing has zero thickness; original UV1 is seed data, not a lightmap unwrap.",
+    "Commercial volumes remain composition proxies; facade completion and expanded tower detailing are outside this candidate."
+  ]
+}

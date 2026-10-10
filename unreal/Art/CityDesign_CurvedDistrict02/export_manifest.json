@@ -1,0 +1,88 @@
+{
+  "architecture_file": "CityDesign_CurvedDistrict02_Architecture.glb",
+  "office_file": "CityDesign_CurvedDistrict02_OfficeCorner_TRIAL.glb",
+  "included_architecture": [
+    "Curved_A",
+    "Curved_B",
+    "Curved_Bridge",
+    "Curved_Site"
+  ],
+  "excluded": [
+    "Curved_C",
+    "Existing_City_Context",
+    "Licensed_Planting",
+    "Lighting",
+    "Cameras"
+  ],
+  "proxy_meshes": [
+    {
+      "name": "OOW_Curved_A",
+      "vertices": 14624,
+      "polygons": 13056,
+      "materials": [
+        "Curve_07_Floor_Limestone",
+        "Curve_01_Satin_Aluminium_Pearl",
+        "Curve_04_Retail_Glass",
+        "Curve_03_Graphite_Frames",
+        "Curve_05_Courtyard_Glass",
+        "Curve_09_Roof_Grey",
+        "Curve_14_Cladding_Panel_Joints",
+        "Curve_02_Soffit_Warm_Pale",
+        "Curve_10_Cafe_Wood",
+        "Curve_06_Interior_Shadow",
+        "Curve_11_Planter_Soil",
+        "Curve_12_Planting_Green"
+      ]
+    },
+    {
+      "name": "OOW_Curved_B",
+      "vertices": 20316,
+      "polygons": 21592,
+      "materials": [
+        "Curve_07_Floor_Limestone",
+        "Curve_01_Satin_Aluminium_Pearl",
+        "Curve_04_Retail_Glass",
+        "Curve_03_Graphite_Frames",
+        "Curve_05_Courtyard_Glass",
+        "Curve_09_Roof_Grey",
+        "Curve_14_Cladding_Panel_Joints",
+        "Curve_02_Soffit_Warm_Pale",
+        "Curve_06_Interior_Shadow",
+        "Curve_10_Cafe_Wood",
+        "Curve_13_Interior_Warm"
+      ]
+    },
+    {
+      "name": "OOW_Curved_Bridge",
+      "vertices": 3016,
+      "polygons": 2856,
+      "materials": [
+        "Curve_01_Satin_Aluminium_Pearl",
+        "Curve_04_Retail_Glass",
+        "Curve_03_Graphite_Frames"
+      ]
+    },
+    {
+      "name": "OOW_Curved_Court",
+      "vertices": 192,
+      "polygons": 180,
+      "materials": [
+        "Curve_08_Court_Paving",
+        "Curve_07_Floor_Limestone"
+      ]
+    },
+    {
+      "name": "OOW_Office_Corner_TRIAL",
+      "vertices": 4936,
+      "polygons": 4626,
+      "materials": [
+        "Office_03_Silver_Aluminium",
+        "Office_02_Opaque_Spandrel_Glass",
+        "Office_04_Interior_Quiet",
+        "Office_01_Vision_Glass",
+        "Office_05_Interior_Blinds"
+      ]
+    }
+  ],
+  "uv1": "Repacked independently per whole exported object; overlap not independently proven."
+}

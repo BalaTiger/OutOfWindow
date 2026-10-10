@@ -1,0 +1,41 @@
+{
+  "updated_utc": "2026-10-07T11:05:25.766242+00:00",
+  "state": "LOCAL_COMMERCIAL_HEIGHT_CANDIDATE_COMPLETE_USER_REVIEW_PENDING",
+  "main_blend": "CityDesign_CommercialScale04.blend",
+  "preview": "preview-window.png",
+  "preview_pixels": [
+    2560,
+    1440
+  ],
+  "commercial_floor_to_floor_m": {
+    "first": 6.0,
+    "standard": 5.5
+  },
+  "main_roof_above_entry_m": {
+    "A": 28.0,
+    "B": 33.5
+  },
+  "bridge_actual_walking_surface_absolute_m": 18.540000915527344,
+  "office_glb_entire_file_identical_to_v3": false,
+  "office_glb_bin_identical_to_v3": true,
+  "office_glb_metadata_name_changes": [
+    {
+      "old": "Mesh_6.001",
+      "new": "Mesh_6.002"
+    },
+    {
+      "old": "Mesh_7.001",
+      "new": "Mesh_7.002"
+    },
+    {
+      "old": "Mesh_12.001",
+      "new": "Mesh_12.002"
+    }
+  ],
+  "office_glb_sha256": "8cae5cbcdde662a8243b5404afa263bd5fe9ba801d66c125136b7f0d3a7de1bc",
+  "technical_reports": "Source, actual scale, GLB bytes and FBX readback all PASS",
+  "protected_files_status": "PASS",
+  "protected_file_count": 70,
+  "visual_accepted": false,
+  "no_ue_gpu_deployment_git_commit": true
+}

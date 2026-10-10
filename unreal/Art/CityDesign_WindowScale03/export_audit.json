@@ -1,0 +1,4840 @@
+{
+  "schema_version": 2,
+  "audit_type": "Independent WindowScale03 GLB byte/JSON audit using Python standard library",
+  "generated_utc": "2026-10-07T10:13:33.578226+00:00",
+  "status": "PASS",
+  "technical_status_only": true,
+  "inputs_read_only": true,
+  "files": [
+    {
+      "scope": "A+B+Bridge+Court, excluding C and context",
+      "path": "C:\\Users\\zhuzi\\Documents\\OutOfWindow\\unreal\\Art\\CityDesign_WindowScale03\\CityDesign_WindowScale03_Commercial.glb",
+      "expected_mesh_count": 4,
+      "errors": [],
+      "bytes": 10075556,
+      "sha256": "b1cee5cfd6e4f55c1a4e19c69021b7942aecab73712c0d56cf0765268b84d36f",
+      "gltf_version": "2.0",
+      "generator": "Khronos glTF Blender I/O v5.0.21",
+      "scope_exclusions": {
+        "forbidden_names": [],
+        "cameras": 0,
+        "camera_nodes": 0,
+        "punctual_lights": 0,
+        "light_nodes": 0
+      },
+      "counts": {
+        "nodes": 4,
+        "meshes": 4,
+        "reachable_mesh_nodes": 4,
+        "primitive_sections": 34,
+        "materials": 20,
+        "images": 0,
+        "textures": 0,
+        "triangles": 151988
+      },
+      "material_names": [
+        "Curve_07_Floor_Limestone.001",
+        "Curve_01_Satin_Aluminium_Pearl.001",
+        "Curve_02_Soffit_Warm_Pale.001",
+        "Curve_04_Retail_Glass.001",
+        "Curve_03_Graphite_Frames.001",
+        "Curve_05_Courtyard_Glass.001",
+        "Curve_09_Roof_Grey.001",
+        "Curve_14_Cladding_Panel_Joints.001",
+        "Curve_10_Cafe_Wood.001",
+        "Curve_06_Interior_Shadow.001",
+        "Curve_11_Planter_Soil.001",
+        "Curve_12_Planting_Green.001",
+        "View_Entry_Warm_Stone",
+        "View_Entry_Clear_Glass",
+        "View_Entry_Interior_Panel",
+        "View_Office_Recessed_Head",
+        "View_Retail_Service_Stone_60mm",
+        "View_Retail_Restaurant_Bronze_45mm",
+        "Curve_13_Interior_Warm.001",
+        "Curve_08_Court_Paving.001"
+      ],
+      "meshes": [
+        {
+          "node_index": 0,
+          "node": "OOW_Curved_A",
+          "mesh_index": 0,
+          "mesh": "A_L0_FloorPlate_OpenAtrium_Mesh.001",
+          "world_matrix_rows": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "world_transform_determinant": 1.0,
+          "primitives": [
+            {
+              "attributes": {
+                "POSITION": {
+                  "accessor": 0,
+                  "count": 17504,
+                  "type": "VEC3",
+                  "component_type": 5126,
+                  "finite": true
+                },
+                "NORMAL": {
+                  "accessor": 1,
+                  "count": 17504,
+                  "type": "VEC3",
+                  "component_type": 5126,
+                  "finite": true,
+                  "nonunit_or_nonfinite_count": 0
+                },
+                "TEXCOORD_0": {
+                  "accessor": 2,
+                  "count": 17504,
+                  "type": "VEC2",
+                  "component_type": 5126,
+                  "finite": true,
+                  "outside_unit_square_vertices": 17504,
+                  "overlap_checked": false
+                },
+                "TEXCOORD_1": {
+                  "accessor": 3,
+                  "count": 17504,
+                  "type": "VEC2",
+                  "component_type": 5126,
+                  "finite": true,
+                  "outside_unit_square_vertices": 0,
+                  "overlap_checked": false
+                }
+              },
+              "material": 0,
+              "vertices": 17504,
+              "indices_present": true,
+              "indices": 34884,
+              "out_of_bounds_indices": 0,
+              "triangles": 11628,
+              "world_positions_finite": true,
+              "zero_or_nonfinite_area_triangles": 0,
+              "minimum_triangle_area_m2": 0.00033033259194342117,
+              "gltf_world_bounds_m": {
+                "min_m": [
+                  -56.30999755859375,
+                  6.760000228881836,
+                  -27.249374389648438
+                ],
+                "max_m": [
+                  -24.279844284057617,
+                  28.149999618530273,
+                  8.641406059265137
+                ],
+                "dimensions_m": [
+                  32.03015327453613,
+                  21.389999389648438,
+                  35.890780448913574
+                ]
+              }
+            },
+            {
+              "attributes": {
+                "POSITION": {
+                  "accessor": 5,
+                  "count": 14200,
+                  "type": "VEC3",
+                  "component_type": 5126,
+                  "finite": true
+                },
+                "NORMAL": {
+                  "accessor": 6,
+                  "count": 14200,
+                  "type": "VEC3",
+                  "component_type": 5126,
+                  "finite": true,
+                  "nonunit_or_nonfinite_count": 0
+                },
+                "TEXCOORD_0": {
+                  "accessor": 7,
+                  "count": 14200,
+                  "type": "VEC2",
+                  "component_type": 5126,
+                  "finite": true,
+                  "outside_unit_square_vertices": 14200,
+                  "overlap_checked": false
+                },
+                "TEXCOORD_1": {
+                  "accessor": 8,
+                  "count": 14200,
+                  "type": "VEC2",
+                  "component_type": 5126,
+                  "finite": true,
+                  "outside_unit_square_vertices": 0,
+                  "overlap_checked": false
+                }
+              },
+              "material": 1,
+              "vertices": 14200,
+              "indices_present": true,
+              "indices": 41292,
+              "out_of_bounds_indices": 0,
+              "triangles": 13764,
+              "world_positions_finite": true,
+              "zero_or_nonfinite_area_triangles": 0,
+              "minimum_triangle_area_m2": 7.45972727375661e-05,
+              "gltf_world_bounds_m": {
+                "min_m": [
+                  -56.73899459838867,
+                  6.849999904632568,
+                  -27.639373779296875
+                ],
+                "max_m": [
+                  -23.350000381469727,
+                  29.100000381469727,
+                  9.167892456054688
+                ],
+                "dimensions_m": [
+                  33.388994216918945,
+                  22.250000476837158,
+                  36.80726623535156
+                ]
+              }
+            },
+            {
+              "attributes": {
+                "POSITION": {
+                  "accessor": 10,
+                  "count": 8478,
+                  "type": "VEC3",
+                  "component_type": 5126,
+                  "finite": true
+                },
+                "NORMAL": {
+                  "accessor": 11,
+                  "count": 8478,
+                  "type": "VEC3",
+                  "component_type": 5126,
+                  "finite": true,
+                  "nonunit_or_nonfinite_count": 0
+                },
+                "TEXCOORD_0": {
+                  "accessor": 12,
+                  "count": 8478,
+                  "type": "VEC2",
+                  "component_type": 5126,
+                  "finite": true,
+                  "outside_unit_square_vertices": 8478,
+                  "overlap_checked": false
+                },
+                "TEXCOORD_1": {
+                  "accessor": 13,
+                  "count": 8478,
+                  "type": "VEC2",
+                  "component_type": 5126,
+                  "finite": true,
+                  "outside_unit_square_vertices": 0,
+                  "overlap_checked": false
+                }
+              },
+              "material": 2,
+              "vertices": 8478,
+              "indices_present": true,
+              "indices": 23568,
+              "out_of_bounds_indices": 0,
+              "triangles": 7856,
+              "world_positions_finite": true,
+              "zero_or_nonfinite_area_triangles": 0,
+              "minimum_triangle_area_m2": 0.006217008676685509,
+              "gltf_world_bounds_m": {
+                "min_m": [
+                  -56.58499526977539,
+                  6.849999904632568,
+                  -27.499374389648438
+                ],
+                "max_m": [
+                  -24.004867553710938,
+                  28.860000610351562,
+                  8.978897094726562
+                ],
+                "dimensions_m": [
+                  32.58012771606445,
+                  22.010000705718994,
+                  36.478271484375
+                ]
+              }
+            },
+            {
+              "attributes": {
+                "POSITION": {
+                  "accessor": 15,
+                  "count": 8904,
+                  "type": "VEC3",
+                  "component_type": 5126,
+                  "finite": true
+                },
+                "NORMAL": {
+                  "accessor": 16,
+                  "count": 8904,
+                  "type": "VEC3",
+                  "component_type": 5126,
+                  "finite": true,
+                  "nonunit_or_nonfinite_count": 0
+                },
+                "TEXCOORD_0": {
+                  "accessor": 17,
+                  "count": 8904,
+                  "type": "VEC2",
+                  "component_type": 5126,
+                  "finite": true,
+                  "outside_unit_square_vertices": 8904,
+                  "overlap_checked": false
+                },
+                "TEXCOORD_1": {
+                  "accessor": 18,
+                  "count": 8904,
+                  "type": "VEC2",
+                  "component_type": 5126,
+                  "finite": true,
+                  "outside_unit_square_vertices": 0,
+                  "overlap_checked": false
+                }
+              },
+              "material": 3,
+              "vertices": 8904,
+              "indices_present": true,
+              "indices": 13356,
+              "out_of_bounds_indices": 0,
+              "triangles": 4452,
+              "world_positions_finite": true,
+              "zero_or_nonfinite_area_triangles": 0,
+              "minimum_triangle_area_m2": 0.00878840358564048,
+              "gltf_world_bounds_m": {
+                "min_m": [
+                  -55.87391662597656,
+                  7.070000171661377,
+                  -26.867477416992188
+                ],
+                "max_m": [
+                  -24.910377502441406,
+                  27.8700008392334,
+                  8.071907043457031
+                ],
+                "dimensions_m": [
+                  30.963539123535156,
+                  20.80000066757202,
+                  34.93938446044922
+                ]
+              }
+            },
+            {
+              "attributes": {
+                "POSITION": {
+                  "accessor": 20,
+                  "count": 37176,
+                  "type": "VEC3",
+                  "component_type": 5126,
+                  "finite": true
+                },
+                "NORMAL": {
+                  "accessor": 21,
+                  "count": 37176,
+                  "type": "VEC3",
+                  "component_type": 5126,
+                  "finite": true,
+                  "nonunit_or_nonfinite_count": 0
+                },
+                "TEXCOORD_0": {
+                  "accessor": 22,
+                  "count": 37176,
+                  "type": "VEC2",
+                  "component_type": 5126,
+                  "finite": true,
+                  "outside_unit_square_vertices": 37176,
+                  "overlap_checked": false
+                },
+                "TEXCOORD_1": {
+                  "accessor": 23,
+                  "count": 37176,
+                  "type": "VEC2",
+                  "component_type": 5126,
+                  "finite": true,
+                  "outside_unit_square_vertices": 0,
+                  "overlap_checked": false
+                }
+              },
+              "material": 4,
+              "vertices": 37176,
+              "indices_present": true,
+              "indices": 64404,
+              "out_of_bounds_indices": 0,
+              "triangles": 21468,
+              "world_positions_finite": true,
+              "zero_or_nonfinite_area_triangles": 0,
+              "minimum_triangle_area_m2": 1.1278135173929973e-05,
+              "gltf_world_bounds_m": {
+                "min_m": [
+                  -56.2061653137207,
+                  7.039999961853027,
+                  -27.169225692749023
+                ],
+                "max_m": [
+                  -24.57634925842285,
+                  28.950000762939453,
+                  8.478414535522461
+                ],
+                "dimensions_m": [
+                  31.62981605529785,
+                  21.910000801086426,
+                  35.647640228271484
+                ]
+              }
+            },
+            {
+              "attributes": {
+                "POSITION": {
+                  "accessor": 25,
+                  "count": 7200,
+                  "type": "VEC3",
+                  "component_type": 5126,
+                  "finite": true
+                },
+                "NORMAL": {
+                  "accessor": 26,
+                  "count": 7200,
+                  "type": "VEC3",
+                  "component_type": 5126,
+                  "finite": true,
+                  "nonunit_or_nonfinite_count": 0
+                },
+                "TEXCOORD_0": {
+                  "accessor": 27,
+                  "count": 7200,
+                  "type": "VEC2",
+                  "component_type": 5126,
+                  "finite": true,
+                  "outside_unit_square_vertices": 7200,
+                  "overlap_checked": false
+                },
+                "TEXCOORD_1": {
+                  "accessor": 28,
+                  "count": 7200,
+                  "type": "VEC2",
+                  "component_type": 5126,
+                  "finite": true,
+                  "outside_unit_square_vertices": 0,
+                  "overlap_checked": false
+                }
+              },
+              "material": 5,
+              "vertices": 7200,
+              "indices_present": true,
+              "indices": 10800,
+              "out_of_bounds_indices": 0,
+              "triangles": 3600,
+              "world_positions_finite": true,
+              "zero_or_nonfinite_area_triangles": 0,
+              "minimum_triangle_area_m2": 0.002050583903459578,
+              "gltf_world_bounds_m": {
+                "min_m": [
+                  -46.66578674316406,
+                  7.337610721588135,
+                  -13.321024894714355
+                ],
+                "max_m": [
+                  -37.95574951171875,
+                  27.884193420410156,
+                  -1.716125249862671
+                ],
+                "dimensions_m": [
+                  8.710037231445312,
+                  20.54658269882202,
+                  11.604899644851685
+                ]
+              }
+            },
+            {
+              "attributes": {
+                "POSITION": {
+                  "accessor": 30,
+                  "count": 2914,
+                  "type": "VEC3",
+                  "component_type": 5126,
+                  "finite": true
+                },
+                "NORMAL": {
+                  "accessor": 31,
+                  "count": 2914,
+                  "type": "VEC3",
+                  "component_type": 5126,
+                  "finite": true,
+                  "nonunit_or_nonfinite_count": 0
+                },
+                "TEXCOORD_0": {
+                  "accessor": 32,
+                  "count": 2914,
+                  "type": "VEC2",
+                  "component_type": 5126,
+                  "finite": true,
+                  "outside_unit_square_vertices": 2914,
+                  "overlap_checked": false
+                },
+                "TEXCOORD_1": {
+                  "accessor": 33,
+                  "count": 2914,
+                  "type": "VEC2",
+                  "component_type": 5126,
+                  "finite": true,
+                  "outside_unit_square_vertices": 0,
+                  "overlap_checked": false
+                }
+              },
+              "material": 6,
+              "vertices": 2914,
+              "indices_present": true,
+              "indices": 5760,
+              "out_of_bounds_indices": 0,
+              "triangles": 1920,
+              "world_positions_finite": true,
+              "zero_or_nonfinite_area_triangles": 0,
+              "minimum_triangle_area_m2": 0.0006891699304907962,
+              "gltf_world_bounds_m": {
+                "min_m": [
+                  -53.25200271606445,
+                  28.155000686645508,
+                  -24.75
+                ],
+                "max_m": [
+                  -31.270238876342773,
+                  28.209999084472656,
+                  2.4356508255004883
+                ],
+                "dimensions_m": [
+                  21.98176383972168,
+                  0.05499839782714844,
+                  27.18565082550049
+                ]
+              }
+            },
+            {
+              "attributes": {
+                "POSITION": {
+                  "accessor": 35,
+                  "count": 4320,
+                  "type": "VEC3",
+                  "component_type": 5126,
+                  "finite": true
+                },
+                "NORMAL": {
+                  "accessor": 36,
+                  "count": 4320,
+                  "type": "VEC3",
+                  "component_type": 5126,
+                  "finite": true,
+                  "nonunit_or_nonfinite_count": 0
+                },
+                "TEXCOORD_0": {
+                  "accessor": 37,
+                  "count": 4320,
+                  "type": "VEC2",
+                  "component_type": 5126,
+                  "finite": true,
+                  "outside_unit_square_vertices": 4320,
+                  "overlap_checked": false
+                },
+                "TEXCOORD_1": {
+                  "accessor": 38,
+                  "count": 4320,
+                  "type": "VEC2",
+                  "component_type": 5126,
+                  "finite": true,
+                  "outside_unit_square_vertices": 0,
+                  "overlap_checked": false
+                }
+              },
+              "material": 7,
+              "vertices": 4320,
+              "indices_present": true,
+              "indices": 6480,
+              "out_of_bounds_indices": 0,
+              "triangles": 2160,
+              "world_positions_finite": true,
+              "zero_or_nonfinite_area_triangles": 0,
+              "minimum_triangle_area_m2": 0.00042337854392826557,
+              "gltf_world_bounds_m": {
+                "min_m": [
+                  -56.76441192626953,
+                  6.940000057220459,
+                  -27.596431732177734
+                ],
+                "max_m": [
+                  -23.923093795776367,
+                  28.719999313354492,
+                  9.155080795288086
+                ],
+                "dimensions_m": [
+                  32.841318130493164,
+                  21.779999256134033,
+                  36.75151252746582
+                ]
+              }
+            },
+            {
+              "attributes": {
+                "POSITION": {
+                  "accessor": 40,
+                  "count": 648,
+                  "type": "VEC3",
+                  "component_type": 5126,
+                  "finite": true
+                },
+                "NORMAL": {
+                  "accessor": 41,
+                  "count": 648,
+                  "type": "VEC3",
+                  "component_type": 5126,
+                  "finite": true,
+                  "nonunit_or_nonfinite_count": 0
+                },
+                "TEXCOORD_0": {
+                  "accessor": 42,
+                  "count": 648,
+                  "type": "VEC2",
+                  "component_type": 5126,
+                  "finite": true,
+                  "outside_unit_square_vertices": 648,
+                  "overlap_checked": false
+                },
+                "TEXCOORD_1": {
+                  "accessor": 43,
+                  "count": 648,
+                  "type": "VEC2",
+                  "component_type": 5126,
+                  "finite": true,
+                  "outside_unit_square_vertices": 0,
+                  "overlap_checked": false
+                }
+              },
+              "material": 8,
+              "vertices": 648,
+              "indices_present": true,
+              "indices": 972,
+              "out_of_bounds_indices": 0,
+              "triangles": 324,
+              "world_positions_finite": true,
+              "zero_or_nonfinite_area_triangles": 0,
+              "minimum_triangle_area_m2": 0.00014390042305115666,
+              "gltf_world_bounds_m": {
+                "min_m": [
+                  -46.849998474121094,
+                  7.039999961853027,
+                  -22.200000762939453
+                ],
+                "max_m": [
+                  -26.19999885559082,
+                  24.450000762939453,
+                  5.085000038146973
+                ],
+                "dimensions_m": [
+                  20.649999618530273,
+                  17.410000801086426,
+                  27.285000801086426
+                ]
+              }
+            },
+            {
+              "attributes": {
+                "POSITION": {
+                  "accessor": 45,
+                  "count": 24,
+                  "type": "VEC3",
+                  "component_type": 5126,
+                  "finite": true
+                },
+                "NORMAL": {
+                  "accessor": 46,
+                  "count": 24,
+                  "type": "VEC3",
+                  "component_type": 5126,
+                  "finite": true,
+                  "nonunit_or_nonfinite_count": 0
+                },
+                "TEXCOORD_0": {
+                  "accessor": 47,
+                  "count": 24,
+                  "type": "VEC2",
+                  "component_type": 5126,
+                  "finite": true,
+                  "outside_unit_square_vertices": 24,
+                  "overlap_checked": false
+                },
+                "TEXCOORD_1": {
+                  "accessor": 48,
+                  "count": 24,
+                  "type": "VEC2",
+                  "component_type": 5126,
+                  "finite": true,
+                  "outside_unit_square_vertices": 0,
+                  "overlap_checked": false
+                }
+              },
+              "material": 9,
+              "vertices": 24,
+              "indices_present": true,
+              "indices": 36,
+              "out_of_bounds_indices": 0,
+              "triangles": 12,
+              "world_positions_finite": true,
+              "zero_or_nonfinite_area_triangles": 0,
+              "minimum_triangle_area_m2": 0.429002338409191,
+              "gltf_world_bounds_m": {
+                "min_m": [
+                  -41.02000045776367,
+                  7.039999961853027,
+                  -22.700000762939453
+                ],
+                "max_m": [
+                  -40.79999923706055,
+                  10.9399995803833,
+                  -18.299999237060547
+                ],
+                "dimensions_m": [
+                  0.220001220703125,
+                  3.8999996185302734,
+                  4.400001525878906
+                ]
+              }
+            },
+            {
+              "attributes": {
+                "POSITION": {
+                  "accessor": 50,
+                  "count": 24,
+                  "type": "VEC3",
+                  "component_type": 5126,
+                  "finite": true
+                },
+                "NORMAL": {
+                  "accessor": 51,
+                  "count": 24,
+                  "type": "VEC3",
+                  "component_type": 5126,
+                  "finite": true,
+                  "nonunit_or_nonfinite_count": 0
+                },
+                "TEXCOORD_0": {
+                  "accessor": 52,
+                  "count": 24,
+                  "type": "VEC2",
+                  "component_type": 5126,
+                  "finite": true,
+                  "outside_unit_square_vertices": 24,
+                  "overlap_checked": false
+                },
+                "TEXCOORD_1": {
+                  "accessor": 53,
+                  "count": 24,
+                  "type": "VEC2",
+                  "component_type": 5126,
+                  "finite": true,
+                  "outside_unit_square_vertices": 0,
+                  "overlap_checked": false
+                }
+              },
+              "material": 10,
+              "vertices": 24,
+              "indices_present": true,
+              "indices": 36,
+              "out_of_bounds_indices": 0,
+              "triangles": 12,
+              "world_positions_finite": true,
+              "zero_or_nonfinite_area_triangles": 0,
+              "minimum_triangle_area_m2": 0.015119635467272019,
+              "gltf_world_bounds_m": {
+                "min_m": [
+                  -41.5150032043457,
+                  24.6200008392334,
+                  4.342499732971191
+                ],
+                "max_m": [
+                  -38.21500015258789,
+                  24.65999984741211,
+                  5.0985002517700195
+                ],
+                "dimensions_m": [
+                  3.3000030517578125,
+                  0.03999900817871094,
+                  0.7560005187988281
+                ]
+              }
+            },
+            {
+              "attributes": {
+                "POSITION": {
+                  "accessor": 54,
+                  "count": 864,
+                  "type": "VEC3",
+                  "component_type": 5126,
+                  "finite": true
+                },
+                "NORMAL": {
+                  "accessor": 55,
+                  "count": 864,
+                  "type": "VEC3",
+                  "component_type": 5126,
+                  "finite": true,
+                  "nonunit_or_nonfinite_count": 0
+                },
+                "TEXCOORD_0": {
+                  "accessor": 56,
+                  "count": 864,
+                  "type": "VEC2",
+                  "component_type": 5126,
+                  "finite": true,
+                  "outside_unit_square_vertices": 864,
+                  "overlap_checked": false
+                },
+                "TEXCOORD_1": {
+                  "accessor": 57,
+                  "count": 864,
+                  "type": "VEC2",
+                  "component_type": 5126,
+                  "finite": true,
+                  "outside_unit_square_vertices": 0,
+                  "overlap_checked": false
+                }
+              },
+              "material": 11,
+              "vertices": 864,
+              "indices_present": true,
+              "indices": 1296,
+              "out_of_bounds_indices": 0,
+              "triangles": 432,
+              "world_positions_finite": true,
+              "zero_or_nonfinite_area_triangles": 0,
+              "minimum_triangle_area_m2": 0.0018225490953227563,
+              "gltf_world_bounds_m": {
+                "min_m": [
+                  -41.361000061035156,
+                  24.65999984741211,
+                  4.4639997482299805
+                ],
+                "max_m": [
+                  -38.25899887084961,
+                  25.030000686645508,
+                  4.882500171661377
+                ],
+                "dimensions_m": [
+                  3.102001190185547,
+                  0.37000083923339844,
+                  0.4185004234313965
+                ]
+              }
+            },
+            {
+              "attributes": {
+                "POSITION": {
+                  "accessor": 59,
+                  "count": 432,
+                  "type": "VEC3",
+                  "component_type": 5126,
+                  "finite": true
+                },
+                "NORMAL": {
+                  "accessor": 60,
+                  "count": 432,
+                  "type": "VEC3",
+                  "component_type": 5126,
+                  "finite": true,
+                  "nonunit_or_nonfinite_count": 0
+                },
+                "TEXCOORD_0": {
+                  "accessor": 61,
+                  "count": 432,
+                  "type": "VEC2",
+                  "component_type": 5126,
+                  "finite": true,
+                  "outside_unit_square_vertices": 432,
+                  "overlap_checked": false
+                },
+                "TEXCOORD_1": {
+                  "accessor": 62,
+                  "count": 432,
+                  "type": "VEC2",
+                  "component_type": 5126,
+                  "finite": true,
+                  "outside_unit_square_vertices": 0,
+                  "overlap_checked": false
+                }
+              },
+              "material": 12,
+              "vertices": 432,
+              "indices_present": true,
+              "indices": 648,
+              "out_of_bounds_indices": 0,
+              "triangles": 216,
+              "world_positions_finite": true,
+              "zero_or_nonfinite_area_triangles": 0,
+              "minimum_triangle_area_m2": 4.552784815836637e-05,
+              "gltf_world_bounds_m": {
+                "min_m": [
+                  -29.0,
+                  7.039999961853027,
+                  -6.679999828338623
+                ],
+                "max_m": [
+                  -23.549999237060547,
+                  11.0,
+                  2.450000047683716
+                ],
+                "dimensions_m": [
+                  5.450000762939453,
+                  3.9600000381469727,
+                  9.129999876022339
+                ]
+              }
+            },
+            {
+              "attributes": {
+                "POSITION": {
+                  "accessor": 64,
+                  "count": 192,
+                  "type": "VEC3",
+                  "component_type": 5126,
+                  "finite": true
+                },
+                "NORMAL": {
+                  "accessor": 65,
+                  "count": 192,
+                  "type": "VEC3",
+                  "component_type": 5126,
+                  "finite": true,
+                  "nonunit_or_nonfinite_count": 0
+                },
+                "TEXCOORD_0": {
+                  "accessor": 66,
+                  "count": 192,
+                  "type": "VEC2",
+                  "component_type": 5126,
+                  "finite": true,
+                  "outside_unit_square_vertices": 192,
+                  "overlap_checked": false
+                },
+                "TEXCOORD_1": {
+                  "accessor": 67,
+                  "count": 192,
+                  "type": "VEC2",
+                  "component_type": 5126,
+                  "finite": true,
+                  "outside_unit_square_vertices": 0,
+                  "overlap_checked": false
+                }
+              },
+              "material": 13,
+              "vertices": 192,
+              "indices_present": true,
+              "indices": 288,
+              "out_of_bounds_indices": 0,
+              "triangles": 96,
+              "world_positions_finite": true,
+              "zero_or_nonfinite_area_triangles": 0,
+              "minimum_triangle_area_m2": 0.019125041008010157,
+              "gltf_world_bounds_m": {
+                "min_m": [
+                  -25.69999885559082,
+                  7.059999942779541,
+                  -6.199999809265137
+                ],
+                "max_m": [
+                  -25.654998779296875,
+                  10.760000228881836,
+                  1.9249999523162842
+                ],
+                "dimensions_m": [
+                  0.04500007629394531,
+                  3.700000286102295,
+                  8.124999761581421
+                ]
+              }
+            },
+            {
+              "attributes": {
+                "POSITION": {
+                  "accessor": 69,
+                  "count": 24,
+                  "type": "VEC3",
+                  "component_type": 5126,
+                  "finite": true
+                },
+                "NORMAL": {
+                  "accessor": 70,
+                  "count": 24,
+                  "type": "VEC3",
+                  "component_type": 5126,
+                  "finite": true,
+                  "nonunit_or_nonfinite_count": 0
+                },
+                "TEXCOORD_0": {
+                  "accessor": 71,
+                  "count": 24,
+                  "type": "VEC2",
+                  "component_type": 5126,
+                  "finite": true,
+                  "outside_unit_square_vertices": 24,
+                  "overlap_checked": false
+                },
+                "TEXCOORD_1": {
+                  "accessor": 72,
+                  "count": 24,
+                  "type": "VEC2",
+                  "component_type": 5126,
+                  "finite": true,
+                  "outside_unit_square_vertices": 0,
+                  "overlap_checked": false
+                }
+              },
+              "material": 14,
+              "vertices": 24,
+              "indices_present": true,
+              "indices": 36,
+              "out_of_bounds_indices": 0,
+              "triangles": 12,
+              "world_positions_finite": true,
+              "zero_or_nonfinite_area_triangles": 0,
+              "minimum_triangle_area_m2": 0.3699978637696404,
+              "gltf_world_bounds_m": {
+                "min_m": [
+                  -27.599998474121094,
+                  7.039999961853027,
+                  -6.300000190734863
+                ],
+                "max_m": [
+                  -27.399999618530273,
+                  10.739999771118164,
+                  2.0
+                ],
+                "dimensions_m": [
+                  0.1999988555908203,
+                  3.6999998092651367,
+                  8.300000190734863
+                ]
+              }
+            },
+            {
+              "attributes": {
+                "POSITION": {
+                  "accessor": 73,
+                  "count": 3743,
+                  "type": "VEC3",
+                  "component_type": 5126,
+                  "finite": true
+                },
+                "NORMAL": {
+                  "accessor": 74,
+                  "count": 3743,
+                  "type": "VEC3",
+                  "component_type": 5126,
+                  "finite": true,
+                  "nonunit_or_nonfinite_count": 0
+                },
+                "TEXCOORD_0": {
+                  "accessor": 75,
+                  "count": 3743,
+                  "type": "VEC2",
+                  "component_type": 5126,
+                  "finite": true,
+                  "outside_unit_square_vertices": 0,
+                  "overlap_checked": false
+                },
+                "TEXCOORD_1": {
+                  "accessor": 76,
+                  "count": 3743,
+                  "type": "VEC2",
+                  "component_type": 5126,
+                  "finite": true,
+                  "outside_unit_square_vertices": 0,
+                  "overlap_checked": false
+                }
+              },
+              "material": 15,
+              "vertices": 3743,
+              "indices_present": true,
+              "indices": 11064,
+              "out_of_bounds_indices": 0,
+              "triangles": 3688,
+              "world_positions_finite": true,
+              "zero_or_nonfinite_area_triangles": 0,
+              "minimum_triangle_area_m2": 1.67267962629189e-06,
+              "gltf_world_bounds_m": {
+                "min_m": [
+                  -23.33300018310547,
+                  10.38979434967041,
+                  -6.376999855041504
+                ],
+                "max_m": [
+                  -23.297000885009766,
+                  10.955804824829102,
+                  -4.1453938484191895
+                ],
+                "dimensions_m": [
+                  0.035999298095703125,
+                  0.5660104751586914,
+                  2.2316060066223145
+                ]
+              }
+            },
+            {
+              "attributes": {
+                "POSITION": {
+                  "accessor": 78,
+                  "count": 168,
+                  "type": "VEC3",
+                  "component_type": 5126,
+                  "finite": true
+                },
+                "NORMAL": {
+                  "accessor": 79,
+                  "count": 168,
+                  "type": "VEC3",
+                  "component_type": 5126,
+                  "finite": true,
+                  "nonunit_or_nonfinite_count": 0
+                },
+                "TEXCOORD_0": {
+                  "accessor": 80,
+                  "count": 168,
+                  "type": "VEC2",
+                  "component_type": 5126,
+                  "finite": true,
+                  "outside_unit_square_vertices": 168,
+                  "overlap_checked": false
+                },
+                "TEXCOORD_1": {
+                  "accessor": 81,
+                  "count": 168,
+                  "type": "VEC2",
+                  "component_type": 5126,
+                  "finite": true,
+                  "outside_unit_square_vertices": 0,
+                  "overlap_checked": false
+                }
+              },
+              "material": 16,
+              "vertices": 168,
+              "indices_present": true,
+              "indices": 252,
+              "out_of_bounds_indices": 0,
+              "triangles": 84,
+              "world_positions_finite": true,
+              "zero_or_nonfinite_area_triangles": 0,
+              "minimum_triangle_area_m2": 0.038610277864692455,
+              "gltf_world_bounds_m": {
+                "min_m": [
+                  -32.052982330322266,
+                  7.340000152587891,
+                  -15.969197273254395
+                ],
+                "max_m": [
+                  -26.23636817932129,
+                  11.270721435546875,
+                  -7.006985664367676
+                ],
+                "dimensions_m": [
+                  5.816614151000977,
+                  3.9307212829589844,
+                  8.962211608886719
+                ]
+              }
+            },
+            {
+              "attributes": {
+                "POSITION": {
+                  "accessor": 83,
+                  "count": 216,
+                  "type": "VEC3",
+                  "component_type": 5126,
+                  "finite": true
+                },
+                "NORMAL": {
+                  "accessor": 84,
+                  "count": 216,
+                  "type": "VEC3",
+                  "component_type": 5126,
+                  "finite": true,
+                  "nonunit_or_nonfinite_count": 0
+                },
+                "TEXCOORD_0": {
+                  "accessor": 85,
+                  "count": 216,
+                  "type": "VEC2",
+                  "component_type": 5126,
+                  "finite": true,
+                  "outside_unit_square_vertices": 216,
+                  "overlap_checked": false
+                },
+                "TEXCOORD_1": {
+                  "accessor": 86,
+                  "count": 216,
+                  "type": "VEC2",
+                  "component_type": 5126,
+                  "finite": true,
+                  "outside_unit_square_vertices": 0,
+                  "overlap_checked": false
+                }
+              },
+              "material": 17,
+              "vertices": 216,
+              "indices_present": true,
+              "indices": 324,
+              "out_of_bounds_indices": 0,
+              "triangles": 108,
+              "world_positions_finite": true,
+              "zero_or_nonfinite_area_triangles": 0,
+              "minimum_triangle_area_m2": 0.028283782801718456,
+              "gltf_world_bounds_m": {
+                "min_m": [
+                  -32.3616943359375,
+                  15.991661071777344,
+                  -14.026562690734863
+                ],
+                "max_m": [
+                  -27.193809509277344,
+                  23.720600128173828,
+                  -7.536330223083496
+                ],
+                "dimensions_m": [
+                  5.167884826660156,
+                  7.728939056396484,
+                  6.490232467651367
+                ]
+              }
+            }
+          ],
+          "triangles": 71832
+        },
+        {
+          "node_index": 1,
+          "node": "OOW_Curved_B",
+          "mesh_index": 1,
+          "mesh": "B_L0_FloorPlate_OpenAtrium_Mesh.001",
+          "world_matrix_rows": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "world_transform_determinant": 1.0,
+          "primitives": [
+            {
+              "attributes": {
+                "POSITION": {
+                  "accessor": 88,
+                  "count": 16128,
+                  "type": "VEC3",
+                  "component_type": 5126,
+                  "finite": true
+                },
+                "NORMAL": {
+                  "accessor": 89,
+                  "count": 16128,
+                  "type": "VEC3",
+                  "component_type": 5126,
+                  "finite": true,
+                  "nonunit_or_nonfinite_count": 0
+                },
+                "TEXCOORD_0": {
+                  "accessor": 90,
+                  "count": 16128,
+                  "type": "VEC2",
+                  "component_type": 5126,
+                  "finite": true,
+                  "outside_unit_square_vertices": 16128,
+                  "overlap_checked": false
+                },
+                "TEXCOORD_1": {
+                  "accessor": 91,
+                  "count": 16128,
+                  "type": "VEC2",
+                  "component_type": 5126,
+                  "finite": true,
+                  "outside_unit_square_vertices": 0,
+                  "overlap_checked": false
+                }
+              },
+              "material": 0,
+              "vertices": 16128,
+              "indices_present": true,
+              "indices": 32256,
+              "out_of_bounds_indices": 0,
+              "triangles": 10752,
+              "world_positions_finite": true,
+              "zero_or_nonfinite_area_triangles": 0,
+              "minimum_triangle_area_m2": 0.01759942456323165,
+              "gltf_world_bounds_m": {
+                "min_m": [
+                  -67.0999984741211,
+                  6.760000228881836,
+                  -75.0617446899414
+                ],
+                "max_m": [
+                  -29.0,
+                  33.099998474121094,
+                  -33.827877044677734
+                ],
+                "dimensions_m": [
+                  38.099998474121094,
+                  26.339998245239258,
+                  41.23386764526367
+                ]
+              }
+            },
+            {
+              "attributes": {
+                "POSITION": {
+                  "accessor": 93,
+                  "count": 12836,
+                  "type": "VEC3",
+                  "component_type": 5126,
+                  "finite": true
+                },
+                "NORMAL": {
+                  "accessor": 94,
+                  "count": 12836,
+                  "type": "VEC3",
+                  "component_type": 5126,
+                  "finite": true,
+                  "nonunit_or_nonfinite_count": 0
+                },
+                "TEXCOORD_0": {
+                  "accessor": 95,
+                  "count": 12836,
+                  "type": "VEC2",
+                  "component_type": 5126,
+                  "finite": true,
+                  "outside_unit_square_vertices": 12836,
+                  "overlap_checked": false
+                },
+                "TEXCOORD_1": {
+                  "accessor": 96,
+                  "count": 12836,
+                  "type": "VEC2",
+                  "component_type": 5126,
+                  "finite": true,
+                  "outside_unit_square_vertices": 0,
+                  "overlap_checked": false
+                }
+              },
+              "material": 1,
+              "vertices": 12836,
+              "indices_present": true,
+              "indices": 37512,
+              "out_of_bounds_indices": 0,
+              "triangles": 12504,
+              "world_positions_finite": true,
+              "zero_or_nonfinite_area_triangles": 0,
+              "minimum_triangle_area_m2": 0.0002820461465062608,
+              "gltf_world_bounds_m": {
+                "min_m": [
+                  -67.489990234375,
+                  6.849999904632568,
+                  -75.5687484741211
+                ],
+                "max_m": [
+                  -28.610004425048828,
+                  34.5,
+                  -32.75
+                ],
+                "dimensions_m": [
+                  38.87998580932617,
+                  27.65000009536743,
+                  42.818748474121094
+                ]
+              }
+            },
+            {
+              "attributes": {
+                "POSITION": {
+                  "accessor": 98,
+                  "count": 9164,
+                  "type": "VEC3",
+                  "component_type": 5126,
+                  "finite": true
+                },
+                "NORMAL": {
+                  "accessor": 99,
+                  "count": 9164,
+                  "type": "VEC3",
+                  "component_type": 5126,
+                  "finite": true,
+                  "nonunit_or_nonfinite_count": 0
+                },
+                "TEXCOORD_0": {
+                  "accessor": 100,
+                  "count": 9164,
+                  "type": "VEC2",
+                  "component_type": 5126,
+                  "finite": true,
+                  "outside_unit_square_vertices": 9164,
+                  "overlap_checked": false
+                },
+                "TEXCOORD_1": {
+                  "accessor": 101,
+                  "count": 9164,
+                  "type": "VEC2",
+                  "component_type": 5126,
+                  "finite": true,
+                  "outside_unit_square_vertices": 0,
+                  "overlap_checked": false
+                }
+              },
+              "material": 2,
+              "vertices": 9164,
+              "indices_present": true,
+              "indices": 24876,
+              "out_of_bounds_indices": 0,
+              "triangles": 8292,
+              "world_positions_finite": true,
+              "zero_or_nonfinite_area_triangles": 0,
+              "minimum_triangle_area_m2": 0.0041866302490234375,
+              "gltf_world_bounds_m": {
+                "min_m": [
+                  -67.34999084472656,
+                  6.849999904632568,
+                  -75.38674926757812
+                ],
+                "max_m": [
+                  -28.750001907348633,
+                  33.810001373291016,
+                  -33.577884674072266
+                ],
+                "dimensions_m": [
+                  38.59998893737793,
+                  26.960001468658447,
+                  41.80886459350586
+                ]
+              }
+            },
+            {
+              "attributes": {
+                "POSITION": {
+                  "accessor": 103,
+                  "count": 13632,
+                  "type": "VEC3",
+                  "component_type": 5126,
+                  "finite": true
+                },
+                "NORMAL": {
+                  "accessor": 104,
+                  "count": 13632,
+                  "type": "VEC3",
+                  "component_type": 5126,
+                  "finite": true,
+                  "nonunit_or_nonfinite_count": 0
+                },
+                "TEXCOORD_0": {
+                  "accessor": 105,
+                  "count": 13632,
+                  "type": "VEC2",
+                  "component_type": 5126,
+                  "finite": true,
+                  "outside_unit_square_vertices": 13632,
+                  "overlap_checked": false
+                },
+                "TEXCOORD_1": {
+                  "accessor": 106,
+                  "count": 13632,
+                  "type": "VEC2",
+                  "component_type": 5126,
+                  "finite": true,
+                  "outside_unit_square_vertices": 0,
+                  "overlap_checked": false
+                }
+              },
+              "material": 3,
+              "vertices": 13632,
+              "indices_present": true,
+              "indices": 20448,
+              "out_of_bounds_indices": 0,
+              "triangles": 6816,
+              "world_positions_finite": true,
+              "zero_or_nonfinite_area_triangles": 0,
+              "minimum_triangle_area_m2": 0.013867909270629752,
+              "gltf_world_bounds_m": {
+                "min_m": [
+                  -66.69795227050781,
+                  7.070000171661377,
+                  -74.55799102783203
+                ],
+                "max_m": [
+                  -29.399951934814453,
+                  32.81999969482422,
+                  -34.21105194091797
+                ],
+                "dimensions_m": [
+                  37.29800033569336,
+                  25.749999523162842,
+                  40.34693908691406
+                ]
+              }
+            },
+            {
+              "attributes": {
+                "POSITION": {
+                  "accessor": 108,
+                  "count": 45923,
+                  "type": "VEC3",
+                  "component_type": 5126,
+                  "finite": true
+                },
+                "NORMAL": {
+                  "accessor": 109,
+                  "count": 45923,
+                  "type": "VEC3",
+                  "component_type": 5126,
+                  "finite": true,
+                  "nonunit_or_nonfinite_count": 0
+                },
+                "TEXCOORD_0": {
+                  "accessor": 110,
+                  "count": 45923,
+                  "type": "VEC2",
+                  "component_type": 5126,
+                  "finite": true,
+                  "outside_unit_square_vertices": 38544,
+                  "overlap_checked": false
+                },
+                "TEXCOORD_1": {
+                  "accessor": 111,
+                  "count": 45923,
+                  "type": "VEC2",
+                  "component_type": 5126,
+                  "finite": true,
+                  "outside_unit_square_vertices": 0,
+                  "overlap_checked": false
+                }
+              },
+              "material": 4,
+              "vertices": 45923,
+              "indices_present": true,
+              "indices": 85740,
+              "out_of_bounds_indices": 0,
+              "triangles": 28580,
+              "world_positions_finite": true,
+              "zero_or_nonfinite_area_triangles": 0,
+              "minimum_triangle_area_m2": 1.7183265499793414e-06,
+              "gltf_world_bounds_m": {
+                "min_m": [
+                  -66.99942016601562,
+                  7.039999961853027,
+                  -74.94910430908203
+                ],
+                "max_m": [
+                  -29.098731994628906,
+                  34.25,
+                  -32.68199920654297
+                ],
+                "dimensions_m": [
+                  37.90068817138672,
+                  27.210000038146973,
+                  42.26710510253906
+                ]
+              }
+            },
+            {
+              "attributes": {
+                "POSITION": {
+                  "accessor": 113,
+                  "count": 6912,
+                  "type": "VEC3",
+                  "component_type": 5126,
+                  "finite": true
+                },
+                "NORMAL": {
+                  "accessor": 114,
+                  "count": 6912,
+                  "type": "VEC3",
+                  "component_type": 5126,
+                  "finite": true,
+                  "nonunit_or_nonfinite_count": 0
+                },
+                "TEXCOORD_0": {
+                  "accessor": 115,
+                  "count": 6912,
+                  "type": "VEC2",
+                  "component_type": 5126,
+                  "finite": true,
+                  "outside_unit_square_vertices": 6912,
+                  "overlap_checked": false
+                },
+                "TEXCOORD_1": {
+                  "accessor": 116,
+                  "count": 6912,
+                  "type": "VEC2",
+                  "component_type": 5126,
+                  "finite": true,
+                  "outside_unit_square_vertices": 0,
+                  "overlap_checked": false
+                }
+              },
+              "material": 5,
+              "vertices": 6912,
+              "indices_present": true,
+              "indices": 10368,
+              "out_of_bounds_indices": 0,
+              "triangles": 3456,
+              "world_positions_finite": true,
+              "zero_or_nonfinite_area_triangles": 0,
+              "minimum_triangle_area_m2": 0.011828790585306025,
+              "gltf_world_bounds_m": {
+                "min_m": [
+                  -55.50392150878906,
+                  7.339107513427734,
+                  -63.034217834472656
+                ],
+                "max_m": [
+                  -42.707733154296875,
+                  32.83226776123047,
+                  -43.035789489746094
+                ],
+                "dimensions_m": [
+                  12.796188354492188,
+                  25.493160247802734,
+                  19.998428344726562
+                ]
+              }
+            },
+            {
+              "attributes": {
+                "POSITION": {
+                  "accessor": 118,
+                  "count": 2304,
+                  "type": "VEC3",
+                  "component_type": 5126,
+                  "finite": true
+                },
+                "NORMAL": {
+                  "accessor": 119,
+                  "count": 2304,
+                  "type": "VEC3",
+                  "component_type": 5126,
+                  "finite": true,
+                  "nonunit_or_nonfinite_count": 0
+                },
+                "TEXCOORD_0": {
+                  "accessor": 120,
+                  "count": 2304,
+                  "type": "VEC2",
+                  "component_type": 5126,
+                  "finite": true,
+                  "outside_unit_square_vertices": 2304,
+                  "overlap_checked": false
+                },
+                "TEXCOORD_1": {
+                  "accessor": 121,
+                  "count": 2304,
+                  "type": "VEC2",
+                  "component_type": 5126,
+                  "finite": true,
+                  "outside_unit_square_vertices": 0,
+                  "overlap_checked": false
+                }
+              },
+              "material": 6,
+              "vertices": 2304,
+              "indices_present": true,
+              "indices": 4608,
+              "out_of_bounds_indices": 0,
+              "triangles": 1536,
+              "world_positions_finite": true,
+              "zero_or_nonfinite_area_triangles": 0,
+              "minimum_triangle_area_m2": 0.003551230123273522,
+              "gltf_world_bounds_m": {
+                "min_m": [
+                  -62.34001159667969,
+                  33.10499954223633,
+                  -68.3067855834961
+                ],
+                "max_m": [
+                  -34.659996032714844,
+                  33.15999984741211,
+                  -37.034000396728516
+                ],
+                "dimensions_m": [
+                  27.680015563964844,
+                  0.05500030517578125,
+                  31.272785186767578
+                ]
+              }
+            },
+            {
+              "attributes": {
+                "POSITION": {
+                  "accessor": 123,
+                  "count": 4032,
+                  "type": "VEC3",
+                  "component_type": 5126,
+                  "finite": true
+                },
+                "NORMAL": {
+                  "accessor": 124,
+                  "count": 4032,
+                  "type": "VEC3",
+                  "component_type": 5126,
+                  "finite": true,
+                  "nonunit_or_nonfinite_count": 0
+                },
+                "TEXCOORD_0": {
+                  "accessor": 125,
+                  "count": 4032,
+                  "type": "VEC2",
+                  "component_type": 5126,
+                  "finite": true,
+                  "outside_unit_square_vertices": 4032,
+                  "overlap_checked": false
+                },
+                "TEXCOORD_1": {
+                  "accessor": 126,
+                  "count": 4032,
+                  "type": "VEC2",
+                  "component_type": 5126,
+                  "finite": true,
+                  "outside_unit_square_vertices": 0,
+                  "overlap_checked": false
+                }
+              },
+              "material": 7,
+              "vertices": 4032,
+              "indices_present": true,
+              "indices": 6048,
+              "out_of_bounds_indices": 0,
+              "triangles": 2016,
+              "world_positions_finite": true,
+              "zero_or_nonfinite_area_triangles": 0,
+              "minimum_triangle_area_m2": 0.000384899991331622,
+              "gltf_world_bounds_m": {
+                "min_m": [
+                  -67.49520111083984,
+                  6.940000057220459,
+                  -75.51466369628906
+                ],
+                "max_m": [
+                  -28.594554901123047,
+                  33.66999816894531,
+                  -33.4272575378418
+                ],
+                "dimensions_m": [
+                  38.9006462097168,
+                  26.729998111724854,
+                  42.087406158447266
+                ]
+              }
+            },
+            {
+              "attributes": {
+                "POSITION": {
+                  "accessor": 128,
+                  "count": 24,
+                  "type": "VEC3",
+                  "component_type": 5126,
+                  "finite": true
+                },
+                "NORMAL": {
+                  "accessor": 129,
+                  "count": 24,
+                  "type": "VEC3",
+                  "component_type": 5126,
+                  "finite": true,
+                  "nonunit_or_nonfinite_count": 0
+                },
+                "TEXCOORD_0": {
+                  "accessor": 130,
+                  "count": 24,
+                  "type": "VEC2",
+                  "component_type": 5126,
+                  "finite": true,
+                  "outside_unit_square_vertices": 24,
+                  "overlap_checked": false
+                },
+                "TEXCOORD_1": {
+                  "accessor": 131,
+                  "count": 24,
+                  "type": "VEC2",
+                  "component_type": 5126,
+                  "finite": true,
+                  "outside_unit_square_vertices": 0,
+                  "overlap_checked": false
+                }
+              },
+              "material": 9,
+              "vertices": 24,
+              "indices_present": true,
+              "indices": 36,
+              "out_of_bounds_indices": 0,
+              "triangles": 12,
+              "world_positions_finite": true,
+              "zero_or_nonfinite_area_triangles": 0,
+              "minimum_triangle_area_m2": 0.4874999523162842,
+              "gltf_world_bounds_m": {
+                "min_m": [
+                  -45.5,
+                  7.039999961853027,
+                  -43.04999923706055
+                ],
+                "max_m": [
+                  -37.5,
+                  10.9399995803833,
+                  -42.79999923706055
+                ],
+                "dimensions_m": [
+                  8.0,
+                  3.8999996185302734,
+                  0.25
+                ]
+              }
+            },
+            {
+              "attributes": {
+                "POSITION": {
+                  "accessor": 132,
+                  "count": 216,
+                  "type": "VEC3",
+                  "component_type": 5126,
+                  "finite": true
+                },
+                "NORMAL": {
+                  "accessor": 133,
+                  "count": 216,
+                  "type": "VEC3",
+                  "component_type": 5126,
+                  "finite": true,
+                  "nonunit_or_nonfinite_count": 0
+                },
+                "TEXCOORD_0": {
+                  "accessor": 134,
+                  "count": 216,
+                  "type": "VEC2",
+                  "component_type": 5126,
+                  "finite": true,
+                  "outside_unit_square_vertices": 216,
+                  "overlap_checked": false
+                },
+                "TEXCOORD_1": {
+                  "accessor": 135,
+                  "count": 216,
+                  "type": "VEC2",
+                  "component_type": 5126,
+                  "finite": true,
+                  "outside_unit_square_vertices": 0,
+                  "overlap_checked": false
+                }
+              },
+              "material": 8,
+              "vertices": 216,
+              "indices_present": true,
+              "indices": 324,
+              "out_of_bounds_indices": 0,
+              "triangles": 108,
+              "world_positions_finite": true,
+              "zero_or_nonfinite_area_triangles": 0,
+              "minimum_triangle_area_m2": 0.00020719727972929772,
+              "gltf_world_bounds_m": {
+                "min_m": [
+                  -44.599998474121094,
+                  7.039999961853027,
+                  -41.25
+                ],
+                "max_m": [
+                  -38.599998474121094,
+                  8.140000343322754,
+                  -40.400001525878906
+                ],
+                "dimensions_m": [
+                  6.0,
+                  1.1000003814697266,
+                  0.8499984741210938
+                ]
+              }
+            },
+            {
+              "attributes": {
+                "POSITION": {
+                  "accessor": 137,
+                  "count": 24,
+                  "type": "VEC3",
+                  "component_type": 5126,
+                  "finite": true
+                },
+                "NORMAL": {
+                  "accessor": 138,
+                  "count": 24,
+                  "type": "VEC3",
+                  "component_type": 5126,
+                  "finite": true,
+                  "nonunit_or_nonfinite_count": 0
+                },
+                "TEXCOORD_0": {
+                  "accessor": 139,
+                  "count": 24,
+                  "type": "VEC2",
+                  "component_type": 5126,
+                  "finite": true,
+                  "outside_unit_square_vertices": 24,
+                  "overlap_checked": false
+                },
+                "TEXCOORD_1": {
+                  "accessor": 140,
+                  "count": 24,
+                  "type": "VEC2",
+                  "component_type": 5126,
+                  "finite": true,
+                  "outside_unit_square_vertices": 0,
+                  "overlap_checked": false
+                }
+              },
+              "material": 18,
+              "vertices": 24,
+              "indices_present": true,
+              "indices": 36,
+              "out_of_bounds_indices": 0,
+              "triangles": 12,
+              "world_positions_finite": true,
+              "zero_or_nonfinite_area_triangles": 0,
+              "minimum_triangle_area_m2": 0.1380010337834392,
+              "gltf_world_bounds_m": {
+                "min_m": [
+                  -45.0,
+                  10.9399995803833,
+                  -42.400001525878906
+                ],
+                "max_m": [
+                  -38.0,
+                  11.0,
+                  -37.79999923706055
+                ],
+                "dimensions_m": [
+                  7.0,
+                  0.06000041961669922,
+                  4.600002288818359
+                ]
+              }
+            }
+          ],
+          "triangles": 74084
+        },
+        {
+          "node_index": 2,
+          "node": "OOW_Curved_Bridge",
+          "mesh_index": 2,
+          "mesh": "Bridge_Closed_Arched_Soffit_and_Deck_Mesh.001",
+          "world_matrix_rows": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "world_transform_determinant": 1.0,
+          "primitives": [
+            {
+              "attributes": {
+                "POSITION": {
+                  "accessor": 141,
+                  "count": 2496,
+                  "type": "VEC3",
+                  "component_type": 5126,
+                  "finite": true
+                },
+                "NORMAL": {
+                  "accessor": 142,
+                  "count": 2496,
+                  "type": "VEC3",
+                  "component_type": 5126,
+                  "finite": true,
+                  "nonunit_or_nonfinite_count": 0
+                },
+                "TEXCOORD_0": {
+                  "accessor": 143,
+                  "count": 2496,
+                  "type": "VEC2",
+                  "component_type": 5126,
+                  "finite": true,
+                  "outside_unit_square_vertices": 2496,
+                  "overlap_checked": false
+                },
+                "TEXCOORD_1": {
+                  "accessor": 144,
+                  "count": 2496,
+                  "type": "VEC2",
+                  "component_type": 5126,
+                  "finite": true,
+                  "outside_unit_square_vertices": 0,
+                  "overlap_checked": false
+                }
+              },
+              "material": 1,
+              "vertices": 2496,
+              "indices_present": true,
+              "indices": 6984,
+              "out_of_bounds_indices": 0,
+              "triangles": 2328,
+              "world_positions_finite": true,
+              "zero_or_nonfinite_area_triangles": 0,
+              "minimum_triangle_area_m2": 0.03705143577072016,
+              "gltf_world_bounds_m": {
+                "min_m": [
+                  -39.55897521972656,
+                  15.15999984741211,
+                  -39.619789123535156
+                ],
+                "max_m": [
+                  -27.280000686645508,
+                  19.649999618530273,
+                  -19.880388259887695
+                ],
+                "dimensions_m": [
+                  12.278974533081055,
+                  4.489999771118164,
+                  19.73940086364746
+                ]
+              }
+            },
+            {
+              "attributes": {
+                "POSITION": {
+                  "accessor": 146,
+                  "count": 1152,
+                  "type": "VEC3",
+                  "component_type": 5126,
+                  "finite": true
+                },
+                "NORMAL": {
+                  "accessor": 147,
+                  "count": 1152,
+                  "type": "VEC3",
+                  "component_type": 5126,
+                  "finite": true,
+                  "nonunit_or_nonfinite_count": 0
+                },
+                "TEXCOORD_0": {
+                  "accessor": 148,
+                  "count": 1152,
+                  "type": "VEC2",
+                  "component_type": 5126,
+                  "finite": true,
+                  "outside_unit_square_vertices": 1152,
+                  "overlap_checked": false
+                },
+                "TEXCOORD_1": {
+                  "accessor": 149,
+                  "count": 1152,
+                  "type": "VEC2",
+                  "component_type": 5126,
+                  "finite": true,
+                  "outside_unit_square_vertices": 0,
+                  "overlap_checked": false
+                }
+              },
+              "material": 3,
+              "vertices": 1152,
+              "indices_present": true,
+              "indices": 1728,
+              "out_of_bounds_indices": 0,
+              "triangles": 576,
+              "world_positions_finite": true,
+              "zero_or_nonfinite_area_triangles": 0,
+              "minimum_triangle_area_m2": 0.01270839821336267,
+              "gltf_world_bounds_m": {
+                "min_m": [
+                  -39.564117431640625,
+                  16.350000381469727,
+                  -39.22398376464844
+                ],
+                "max_m": [
+                  -27.67998695373535,
+                  19.209999084472656,
+                  -20.272600173950195
+                ],
+                "dimensions_m": [
+                  11.884130477905273,
+                  2.8599987030029297,
+                  18.951383590698242
+                ]
+              }
+            },
+            {
+              "attributes": {
+                "POSITION": {
+                  "accessor": 151,
+                  "count": 5616,
+                  "type": "VEC3",
+                  "component_type": 5126,
+                  "finite": true
+                },
+                "NORMAL": {
+                  "accessor": 152,
+                  "count": 5616,
+                  "type": "VEC3",
+                  "component_type": 5126,
+                  "finite": true,
+                  "nonunit_or_nonfinite_count": 0
+                },
+                "TEXCOORD_0": {
+                  "accessor": 153,
+                  "count": 5616,
+                  "type": "VEC2",
+                  "component_type": 5126,
+                  "finite": true,
+                  "outside_unit_square_vertices": 5616,
+                  "overlap_checked": false
+                },
+                "TEXCOORD_1": {
+                  "accessor": 154,
+                  "count": 5616,
+                  "type": "VEC2",
+                  "component_type": 5126,
+                  "finite": true,
+                  "outside_unit_square_vertices": 0,
+                  "overlap_checked": false
+                }
+              },
+              "material": 4,
+              "vertices": 5616,
+              "indices_present": true,
+              "indices": 8424,
+              "out_of_bounds_indices": 0,
+              "triangles": 2808,
+              "world_positions_finite": true,
+              "zero_or_nonfinite_area_triangles": 0,
+              "minimum_triangle_area_m2": 1.863629388060443e-05,
+              "gltf_world_bounds_m": {
+                "min_m": [
+                  -39.59397506713867,
+                  16.350000381469727,
+                  -39.293983459472656
+                ],
+                "max_m": [
+                  -27.644987106323242,
+                  19.229999542236328,
+                  -20.202600479125977
+                ],
+                "dimensions_m": [
+                  11.94898796081543,
+                  2.8799991607666016,
+                  19.09138298034668
+                ]
+              }
+            }
+          ],
+          "triangles": 5712
+        },
+        {
+          "node_index": 3,
+          "node": "OOW_Curved_Court",
+          "mesh_index": 3,
+          "mesh": "Court_Pavement_Threshold_Mesh.001",
+          "world_matrix_rows": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "world_transform_determinant": 1.0,
+          "primitives": [
+            {
+              "attributes": {
+                "POSITION": {
+                  "accessor": 156,
+                  "count": 72,
+                  "type": "VEC3",
+                  "component_type": 5126,
+                  "finite": true
+                },
+                "NORMAL": {
+                  "accessor": 157,
+                  "count": 72,
+                  "type": "VEC3",
+                  "component_type": 5126,
+                  "finite": true,
+                  "nonunit_or_nonfinite_count": 0
+                },
+                "TEXCOORD_0": {
+                  "accessor": 158,
+                  "count": 72,
+                  "type": "VEC2",
+                  "component_type": 5126,
+                  "finite": true,
+                  "outside_unit_square_vertices": 72,
+                  "overlap_checked": false
+                },
+                "TEXCOORD_1": {
+                  "accessor": 159,
+                  "count": 72,
+                  "type": "VEC2",
+                  "component_type": 5126,
+                  "finite": true,
+                  "outside_unit_square_vertices": 0,
+                  "overlap_checked": false
+                }
+              },
+              "material": 19,
+              "vertices": 72,
+              "indices_present": true,
+              "indices": 108,
+              "out_of_bounds_indices": 0,
+              "triangles": 36,
+              "world_positions_finite": true,
+              "zero_or_nonfinite_area_triangles": 0,
+              "minimum_triangle_area_m2": 0.23999977111816406,
+              "gltf_world_bounds_m": {
+                "min_m": [
+                  -55.0,
+                  6.980000019073486,
+                  -60.0
+                ],
+                "max_m": [
+                  -22.0,
+                  7.039999961853027,
+                  -5.0
+                ],
+                "dimensions_m": [
+                  33.0,
+                  0.059999942779541016,
+                  55.0
+                ]
+              }
+            },
+            {
+              "attributes": {
+                "POSITION": {
+                  "accessor": 161,
+                  "count": 648,
+                  "type": "VEC3",
+                  "component_type": 5126,
+                  "finite": true
+                },
+                "NORMAL": {
+                  "accessor": 162,
+                  "count": 648,
+                  "type": "VEC3",
+                  "component_type": 5126,
+                  "finite": true,
+                  "nonunit_or_nonfinite_count": 0
+                },
+                "TEXCOORD_0": {
+                  "accessor": 163,
+                  "count": 648,
+                  "type": "VEC2",
+                  "component_type": 5126,
+                  "finite": true,
+                  "outside_unit_square_vertices": 648,
+                  "overlap_checked": false
+                },
+                "TEXCOORD_1": {
+                  "accessor": 164,
+                  "count": 648,
+                  "type": "VEC2",
+                  "component_type": 5126,
+                  "finite": true,
+                  "outside_unit_square_vertices": 0,
+                  "overlap_checked": false
+                }
+              },
+              "material": 0,
+              "vertices": 648,
+              "indices_present": true,
+              "indices": 972,
+              "out_of_bounds_indices": 0,
+              "triangles": 324,
+              "world_positions_finite": true,
+              "zero_or_nonfinite_area_triangles": 0,
+              "minimum_triangle_area_m2": 0.0006965243399563996,
+              "gltf_world_bounds_m": {
+                "min_m": [
+                  -58.349998474121094,
+                  7.039999961853027,
+                  -36.36000061035156
+                ],
+                "max_m": [
+                  -24.350000381469727,
+                  7.489999771118164,
+                  -18.639999389648438
+                ],
+                "dimensions_m": [
+                  33.99999809265137,
+                  0.4499998092651367,
+                  17.720001220703125
+                ]
+              }
+            }
+          ],
+          "triangles": 360
+        }
+      ],
+      "gltf_world_bounds_m": {
+        "min_m": [
+          -67.49520111083984,
+          6.760000228881836,
+          -75.5687484741211
+        ],
+        "max_m": [
+          -22.0,
+          34.5,
+          9.167892456054688
+        ],
+        "dimensions_m": [
+          45.495201110839844,
+          27.739999771118164,
+          84.73664093017578
+        ]
+      },
+      "blender_world_bounds_m": {
+        "min_m": [
+          -67.49520111083984,
+          -9.167892456054688,
+          6.760000228881836
+        ],
+        "max_m": [
+          -22.0,
+          75.5687484741211,
+          34.5
+        ],
+        "dimensions_m": [
+          45.495201110839844,
+          84.73664093017578,
+          27.739999771118164
+        ]
+      },
+      "ue_world_bounds_m": {
+        "min_m": [
+          -67.49520111083984,
+          -75.5687484741211,
+          6.760000228881836
+        ],
+        "max_m": [
+          -22.0,
+          9.167892456054688,
+          34.5
+        ],
+        "dimensions_m": [
+          45.495201110839844,
+          84.73664093017578,
+          27.739999771118164
+        ]
+      },
+      "status": "PASS",
+      "name_check": {
+        "expected_mesh_node_names": [
+          "OOW_Curved_A",
+          "OOW_Curved_B",
+          "OOW_Curved_Bridge",
+          "OOW_Curved_Court"
+        ],
+        "actual_mesh_node_names": [
+          "OOW_Curved_A",
+          "OOW_Curved_B",
+          "OOW_Curved_Bridge",
+          "OOW_Curved_Court"
+        ],
+        "exact_match": true,
+        "mesh_datablock_names": [
+          "A_L0_FloorPlate_OpenAtrium_Mesh.001",
+          "B_L0_FloorPlate_OpenAtrium_Mesh.001",
+          "Bridge_Closed_Arched_Soffit_and_Deck_Mesh.001",
+          "Court_Pavement_Threshold_Mesh.001"
+        ]
+      },
+      "uv1_unit_square_check": {
+        "outside_vertices": 0,
+        "tolerance": 1e-06,
+        "overlap_checked": false,
+        "blender_uv_layer_names_available_in_gltf": false
+      },
+      "color0_check": {
+        "required_absent": false,
+        "primitive_count": 0,
+        "primitives": []
+      }
+    },
+    {
+      "scope": "Three actual whole office buildings B07/B08/B13 with visible facade improvements",
+      "path": "C:\\Users\\zhuzi\\Documents\\OutOfWindow\\unreal\\Art\\CityDesign_WindowScale03\\CityDesign_WindowScale03_OfficeVisible.glb",
+      "expected_mesh_count": 3,
+      "errors": [],
+      "bytes": 6012528,
+      "sha256": "2d29d676f7472175c52998abaea5a616bbd32ce5e05dbf1b95fb30682cb6fa4a",
+      "gltf_version": "2.0",
+      "generator": "Khronos glTF Blender I/O v5.0.21",
+      "scope_exclusions": {
+        "forbidden_names": [],
+        "cameras": 0,
+        "camera_nodes": 0,
+        "punctual_lights": 0,
+        "light_nodes": 0
+      },
+      "counts": {
+        "nodes": 3,
+        "meshes": 3,
+        "reachable_mesh_nodes": 3,
+        "primitive_sections": 34,
+        "materials": 14,
+        "images": 0,
+        "textures": 0,
+        "triangles": 65218
+      },
+      "material_names": [
+        "CityModern_PaleStone",
+        "CityModern_Metal",
+        "CityModern_Roof",
+        "CityModern_RoofPlanting",
+        "CityModern_Hero_Glass",
+        "View_Office_Glass_0",
+        "View_Office_Glass_1",
+        "View_Office_Glass_2",
+        "View_Office_Secondary_Aluminium",
+        "View_Office_Recessed_Head",
+        "View_Office_Opaque_Spandrel_550mm",
+        "CityModern_Glass_Day_Blue",
+        "CityModern_Glass_Day_Silver",
+        "Glass_Lit_CityModern_Warm"
+      ],
+      "meshes": [
+        {
+          "node_index": 0,
+          "node": "OOW_View_Office_B07",
+          "mesh_index": 0,
+          "mesh": "Mesh_6.001",
+          "world_matrix_rows": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "world_transform_determinant": 1.0,
+          "primitives": [
+            {
+              "attributes": {
+                "POSITION": {
+                  "accessor": 0,
+                  "count": 1788,
+                  "type": "VEC3",
+                  "component_type": 5126,
+                  "finite": true
+                },
+                "NORMAL": {
+                  "accessor": 1,
+                  "count": 1788,
+                  "type": "VEC3",
+                  "component_type": 5126,
+                  "finite": true,
+                  "nonunit_or_nonfinite_count": 0
+                },
+                "TEXCOORD_0": {
+                  "accessor": 2,
+                  "count": 1788,
+                  "type": "VEC2",
+                  "component_type": 5126,
+                  "finite": true,
+                  "outside_unit_square_vertices": 828,
+                  "overlap_checked": false
+                },
+                "TEXCOORD_1": {
+                  "accessor": 3,
+                  "count": 1788,
+                  "type": "VEC2",
+                  "component_type": 5126,
+                  "finite": true,
+                  "outside_unit_square_vertices": 0,
+                  "overlap_checked": false
+                }
+              },
+              "material": 0,
+              "vertices": 1788,
+              "indices_present": true,
+              "indices": 1788,
+              "out_of_bounds_indices": 0,
+              "triangles": 596,
+              "world_positions_finite": true,
+              "zero_or_nonfinite_area_triangles": 0,
+              "minimum_triangle_area_m2": 0.0009506516071606732,
+              "gltf_world_bounds_m": {
+                "min_m": [
+                  22.850000381469727,
+                  12.010000228881836,
+                  -25.149999618530273
+                ],
+                "max_m": [
+                  53.150001525878906,
+                  40.83000183105469,
+                  9.149999618530273
+                ],
+                "dimensions_m": [
+                  30.30000114440918,
+                  28.82000160217285,
+                  34.29999923706055
+                ]
+              }
+            },
+            {
+              "attributes": {
+                "POSITION": {
+                  "accessor": 5,
+                  "count": 7884,
+                  "type": "VEC3",
+                  "component_type": 5126,
+                  "finite": true
+                },
+                "NORMAL": {
+                  "accessor": 6,
+                  "count": 7884,
+                  "type": "VEC3",
+                  "component_type": 5126,
+                  "finite": true,
+                  "nonunit_or_nonfinite_count": 0
+                },
+                "TEXCOORD_0": {
+                  "accessor": 7,
+                  "count": 7884,
+                  "type": "VEC2",
+                  "component_type": 5126,
+                  "finite": true,
+                  "outside_unit_square_vertices": 2124,
+                  "overlap_checked": false
+                },
+                "TEXCOORD_1": {
+                  "accessor": 8,
+                  "count": 7884,
+                  "type": "VEC2",
+                  "component_type": 5126,
+                  "finite": true,
+                  "outside_unit_square_vertices": 0,
+                  "overlap_checked": false
+                }
+              },
+              "material": 1,
+              "vertices": 7884,
+              "indices_present": true,
+              "indices": 7884,
+              "out_of_bounds_indices": 0,
+              "triangles": 2628,
+              "world_positions_finite": true,
+              "zero_or_nonfinite_area_triangles": 0,
+              "minimum_triangle_area_m2": 0.0009506268821586368,
+              "gltf_world_bounds_m": {
+                "min_m": [
+                  21.049999237060547,
+                  6.809999942779541,
+                  -25.110000610351562
+                ],
+                "max_m": [
+                  53.11000061035156,
+                  40.900001525878906,
+                  9.109999656677246
+                ],
+                "dimensions_m": [
+                  32.060001373291016,
+                  34.090001583099365,
+                  34.22000026702881
+                ]
+              }
+            },
+            {
+              "attributes": {
+                "POSITION": {
+                  "accessor": 10,
+                  "count": 936,
+                  "type": "VEC3",
+                  "component_type": 5126,
+                  "finite": true
+                },
+                "NORMAL": {
+                  "accessor": 11,
+                  "count": 936,
+                  "type": "VEC3",
+                  "component_type": 5126,
+                  "finite": true,
+                  "nonunit_or_nonfinite_count": 0
+                },
+                "TEXCOORD_0": {
+                  "accessor": 12,
+                  "count": 936,
+                  "type": "VEC2",
+                  "component_type": 5126,
+                  "finite": true,
+                  "outside_unit_square_vertices": 0,
+                  "overlap_checked": false
+                },
+                "TEXCOORD_1": {
+                  "accessor": 13,
+                  "count": 936,
+                  "type": "VEC2",
+                  "component_type": 5126,
+                  "finite": true,
+                  "outside_unit_square_vertices": 0,
+                  "overlap_checked": false
+                }
+              },
+              "material": 2,
+              "vertices": 936,
+              "indices_present": true,
+              "indices": 936,
+              "out_of_bounds_indices": 0,
+              "triangles": 312,
+              "world_positions_finite": true,
+              "zero_or_nonfinite_area_triangles": 0,
+              "minimum_triangle_area_m2": 0.0019999198921141215,
+              "gltf_world_bounds_m": {
+                "min_m": [
+                  25.049999237060547,
+                  28.70599937438965,
+                  -22.950000762939453
+                ],
+                "max_m": [
+                  50.95000076293945,
+                  41.755001068115234,
+                  6.949999809265137
+                ],
+                "dimensions_m": [
+                  25.900001525878906,
+                  13.049001693725586,
+                  29.90000057220459
+                ]
+              }
+            },
+            {
+              "attributes": {
+                "POSITION": {
+                  "accessor": 15,
+                  "count": 1080,
+                  "type": "VEC3",
+                  "component_type": 5126,
+                  "finite": true
+                },
+                "NORMAL": {
+                  "accessor": 16,
+                  "count": 1080,
+                  "type": "VEC3",
+                  "component_type": 5126,
+                  "finite": true,
+                  "nonunit_or_nonfinite_count": 0
+                },
+                "TEXCOORD_0": {
+                  "accessor": 17,
+                  "count": 1080,
+                  "type": "VEC2",
+                  "component_type": 5126,
+                  "finite": true,
+                  "outside_unit_square_vertices": 36,
+                  "overlap_checked": false
+                },
+                "TEXCOORD_1": {
+                  "accessor": 18,
+                  "count": 1080,
+                  "type": "VEC2",
+                  "component_type": 5126,
+                  "finite": true,
+                  "outside_unit_square_vertices": 0,
+                  "overlap_checked": false
+                }
+              },
+              "material": 3,
+              "vertices": 1080,
+              "indices_present": true,
+              "indices": 1080,
+              "out_of_bounds_indices": 0,
+              "triangles": 360,
+              "world_positions_finite": true,
+              "zero_or_nonfinite_area_triangles": 0,
+              "minimum_triangle_area_m2": 0.03228090035055287,
+              "gltf_world_bounds_m": {
+                "min_m": [
+                  25.596298217773438,
+                  29.225587844848633,
+                  -18.248403549194336
+                ],
+                "max_m": [
+                  26.805156707763672,
+                  30.008750915527344,
+                  0.9777814149856567
+                ],
+                "dimensions_m": [
+                  1.2088584899902344,
+                  0.7831630706787109,
+                  19.226184964179993
+                ]
+              }
+            },
+            {
+              "attributes": {
+                "POSITION": {
+                  "accessor": 20,
+                  "count": 1344,
+                  "type": "VEC3",
+                  "component_type": 5126,
+                  "finite": true
+                },
+                "NORMAL": {
+                  "accessor": 21,
+                  "count": 1344,
+                  "type": "VEC3",
+                  "component_type": 5126,
+                  "finite": true,
+                  "nonunit_or_nonfinite_count": 0
+                },
+                "TEXCOORD_0": {
+                  "accessor": 22,
+                  "count": 1344,
+                  "type": "VEC2",
+                  "component_type": 5126,
+                  "finite": true,
+                  "outside_unit_square_vertices": 0,
+                  "overlap_checked": false
+                },
+                "TEXCOORD_1": {
+                  "accessor": 23,
+                  "count": 1344,
+                  "type": "VEC2",
+                  "component_type": 5126,
+                  "finite": true,
+                  "outside_unit_square_vertices": 0,
+                  "overlap_checked": false
+                }
+              },
+              "material": 4,
+              "vertices": 1344,
+              "indices_present": true,
+              "indices": 1344,
+              "out_of_bounds_indices": 0,
+              "triangles": 448,
+              "world_positions_finite": true,
+              "zero_or_nonfinite_area_triangles": 0,
+              "minimum_triangle_area_m2": 4.211217384763586,
+              "gltf_world_bounds_m": {
+                "min_m": [
+                  23.049999237060547,
+                  7.039999961853027,
+                  -24.950000762939453
+                ],
+                "max_m": [
+                  52.95000076293945,
+                  39.7599983215332,
+                  8.949999809265137
+                ],
+                "dimensions_m": [
+                  29.900001525878906,
+                  32.719998359680176,
+                  33.90000057220459
+                ]
+              }
+            },
+            {
+              "attributes": {
+                "POSITION": {
+                  "accessor": 25,
+                  "count": 1776,
+                  "type": "VEC3",
+                  "component_type": 5126,
+                  "finite": true
+                },
+                "NORMAL": {
+                  "accessor": 26,
+                  "count": 1776,
+                  "type": "VEC3",
+                  "component_type": 5126,
+                  "finite": true,
+                  "nonunit_or_nonfinite_count": 0
+                },
+                "TEXCOORD_0": {
+                  "accessor": 27,
+                  "count": 1776,
+                  "type": "VEC2",
+                  "component_type": 5126,
+                  "finite": true,
+                  "outside_unit_square_vertices": 1776,
+                  "overlap_checked": false
+                },
+                "TEXCOORD_1": {
+                  "accessor": 28,
+                  "count": 1776,
+                  "type": "VEC2",
+                  "component_type": 5126,
+                  "finite": true,
+                  "outside_unit_square_vertices": 0,
+                  "overlap_checked": false
+                }
+              },
+              "material": 5,
+              "vertices": 1776,
+              "indices_present": true,
+              "indices": 2664,
+              "out_of_bounds_indices": 0,
+              "triangles": 888,
+              "world_positions_finite": true,
+              "zero_or_nonfinite_area_triangles": 0,
+              "minimum_triangle_area_m2": 0.021911116181399848,
+              "gltf_world_bounds_m": {
+                "min_m": [
+                  23.049999237060547,
+                  7.590000152587891,
+                  6.728000164031982
+                ],
+                "max_m": [
+                  52.95000076293945,
+                  21.860000610351562,
+                  8.760000228881836
+                ],
+                "dimensions_m": [
+                  29.900001525878906,
+                  14.270000457763672,
+                  2.0320000648498535
+                ]
+              }
+            },
+            {
+              "attributes": {
+                "POSITION": {
+                  "accessor": 30,
+                  "count": 1584,
+                  "type": "VEC3",
+                  "component_type": 5126,
+                  "finite": true
+                },
+                "NORMAL": {
+                  "accessor": 31,
+                  "count": 1584,
+                  "type": "VEC3",
+                  "component_type": 5126,
+                  "finite": true,
+                  "nonunit_or_nonfinite_count": 0
+                },
+                "TEXCOORD_0": {
+                  "accessor": 32,
+                  "count": 1584,
+                  "type": "VEC2",
+                  "component_type": 5126,
+                  "finite": true,
+                  "outside_unit_square_vertices": 1584,
+                  "overlap_checked": false
+                },
+                "TEXCOORD_1": {
+                  "accessor": 33,
+                  "count": 1584,
+                  "type": "VEC2",
+                  "component_type": 5126,
+                  "finite": true,
+                  "outside_unit_square_vertices": 0,
+                  "overlap_checked": false
+                }
+              },
+              "material": 6,
+              "vertices": 1584,
+              "indices_present": true,
+              "indices": 2376,
+              "out_of_bounds_indices": 0,
+              "triangles": 792,
+              "world_positions_finite": true,
+              "zero_or_nonfinite_area_triangles": 0,
+              "minimum_triangle_area_m2": 0.021599720382710075,
+              "gltf_world_bounds_m": {
+                "min_m": [
+                  25.049999237060547,
+                  22.689998626708984,
+                  -20.549999237060547
+                ],
+                "max_m": [
+                  50.95000076293945,
+                  32.32666778564453,
+                  6.760000228881836
+                ],
+                "dimensions_m": [
+                  25.900001525878906,
+                  9.636669158935547,
+                  27.309999465942383
+                ]
+              }
+            },
+            {
+              "attributes": {
+                "POSITION": {
+                  "accessor": 35,
+                  "count": 1440,
+                  "type": "VEC3",
+                  "component_type": 5126,
+                  "finite": true
+                },
+                "NORMAL": {
+                  "accessor": 36,
+                  "count": 1440,
+                  "type": "VEC3",
+                  "component_type": 5126,
+                  "finite": true,
+                  "nonunit_or_nonfinite_count": 0
+                },
+                "TEXCOORD_0": {
+                  "accessor": 37,
+                  "count": 1440,
+                  "type": "VEC2",
+                  "component_type": 5126,
+                  "finite": true,
+                  "outside_unit_square_vertices": 1440,
+                  "overlap_checked": false
+                },
+                "TEXCOORD_1": {
+                  "accessor": 38,
+                  "count": 1440,
+                  "type": "VEC2",
+                  "component_type": 5126,
+                  "finite": true,
+                  "outside_unit_square_vertices": 0,
+                  "overlap_checked": false
+                }
+              },
+              "material": 7,
+              "vertices": 1440,
+              "indices_present": true,
+              "indices": 2160,
+              "out_of_bounds_indices": 0,
+              "triangles": 720,
+              "world_positions_finite": true,
+              "zero_or_nonfinite_area_triangles": 0,
+              "minimum_triangle_area_m2": 0.021599720382710075,
+              "gltf_world_bounds_m": {
+                "min_m": [
+                  29.600000381469727,
+                  33.15666580200195,
+                  -20.549999237060547
+                ],
+                "max_m": [
+                  49.779998779296875,
+                  39.7599983215332,
+                  2.1500000953674316
+                ],
+                "dimensions_m": [
+                  20.17999839782715,
+                  6.60333251953125,
+                  22.69999933242798
+                ]
+              }
+            },
+            {
+              "attributes": {
+                "POSITION": {
+                  "accessor": 40,
+                  "count": 2832,
+                  "type": "VEC3",
+                  "component_type": 5126,
+                  "finite": true
+                },
+                "NORMAL": {
+                  "accessor": 41,
+                  "count": 2832,
+                  "type": "VEC3",
+                  "component_type": 5126,
+                  "finite": true,
+                  "nonunit_or_nonfinite_count": 0
+                },
+                "TEXCOORD_0": {
+                  "accessor": 42,
+                  "count": 2832,
+                  "type": "VEC2",
+                  "component_type": 5126,
+                  "finite": true,
+                  "outside_unit_square_vertices": 2832,
+                  "overlap_checked": false
+                },
+                "TEXCOORD_1": {
+                  "accessor": 43,
+                  "count": 2832,
+                  "type": "VEC2",
+                  "component_type": 5126,
+                  "finite": true,
+                  "outside_unit_square_vertices": 0,
+                  "overlap_checked": false
+                }
+              },
+              "material": 8,
+              "vertices": 2832,
+              "indices_present": true,
+              "indices": 4248,
+              "out_of_bounds_indices": 0,
+              "triangles": 1416,
+              "world_positions_finite": true,
+              "zero_or_nonfinite_area_triangles": 0,
+              "minimum_triangle_area_m2": 5.179840729152081e-05,
+              "gltf_world_bounds_m": {
+                "min_m": [
+                  24.474000930786133,
+                  7.039999961853027,
+                  -19.200998306274414
+                ],
+                "max_m": [
+                  51.5260009765625,
+                  39.900001525878906,
+                  9.039999961853027
+                ],
+                "dimensions_m": [
+                  27.052000045776367,
+                  32.86000156402588,
+                  28.24099826812744
+                ]
+              }
+            },
+            {
+              "attributes": {
+                "POSITION": {
+                  "accessor": 45,
+                  "count": 2400,
+                  "type": "VEC3",
+                  "component_type": 5126,
+                  "finite": true
+                },
+                "NORMAL": {
+                  "accessor": 46,
+                  "count": 2400,
+                  "type": "VEC3",
+                  "component_type": 5126,
+                  "finite": true,
+                  "nonunit_or_nonfinite_count": 0
+                },
+                "TEXCOORD_0": {
+                  "accessor": 47,
+                  "count": 2400,
+                  "type": "VEC2",
+                  "component_type": 5126,
+                  "finite": true,
+                  "outside_unit_square_vertices": 2400,
+                  "overlap_checked": false
+                },
+                "TEXCOORD_1": {
+                  "accessor": 48,
+                  "count": 2400,
+                  "type": "VEC2",
+                  "component_type": 5126,
+                  "finite": true,
+                  "outside_unit_square_vertices": 0,
+                  "overlap_checked": false
+                }
+              },
+              "material": 9,
+              "vertices": 2400,
+              "indices_present": true,
+              "indices": 3600,
+              "out_of_bounds_indices": 0,
+              "triangles": 1200,
+              "world_positions_finite": true,
+              "zero_or_nonfinite_area_triangles": 0,
+              "minimum_triangle_area_m2": 0.0012899665453005582,
+              "gltf_world_bounds_m": {
+                "min_m": [
+                  23.049999237060547,
+                  11.329999923706055,
+                  -20.549999237060547
+                ],
+                "max_m": [
+                  52.95000076293945,
+                  39.172996520996094,
+                  8.815000534057617
+                ],
+                "dimensions_m": [
+                  29.900001525878906,
+                  27.84299659729004,
+                  29.364999771118164
+                ]
+              }
+            },
+            {
+              "attributes": {
+                "POSITION": {
+                  "accessor": 50,
+                  "count": 4800,
+                  "type": "VEC3",
+                  "component_type": 5126,
+                  "finite": true
+                },
+                "NORMAL": {
+                  "accessor": 51,
+                  "count": 4800,
+                  "type": "VEC3",
+                  "component_type": 5126,
+                  "finite": true,
+                  "nonunit_or_nonfinite_count": 0
+                },
+                "TEXCOORD_0": {
+                  "accessor": 52,
+                  "count": 4800,
+                  "type": "VEC2",
+                  "component_type": 5126,
+                  "finite": true,
+                  "outside_unit_square_vertices": 4800,
+                  "overlap_checked": false
+                },
+                "TEXCOORD_1": {
+                  "accessor": 53,
+                  "count": 4800,
+                  "type": "VEC2",
+                  "component_type": 5126,
+                  "finite": true,
+                  "outside_unit_square_vertices": 0,
+                  "overlap_checked": false
+                }
+              },
+              "material": 10,
+              "vertices": 4800,
+              "indices_present": true,
+              "indices": 7200,
+              "out_of_bounds_indices": 0,
+              "triangles": 2400,
+              "world_positions_finite": true,
+              "zero_or_nonfinite_area_triangles": 0,
+              "minimum_triangle_area_m2": 0.008799874496617122,
+              "gltf_world_bounds_m": {
+                "min_m": [
+                  23.049999237060547,
+                  7.039999961853027,
+                  -20.549999237060547
+                ],
+                "max_m": [
+                  52.95000076293945,
+                  36.87333297729492,
+                  8.760000228881836
+                ],
+                "dimensions_m": [
+                  29.900001525878906,
+                  29.833333015441895,
+                  29.309999465942383
+                ]
+              }
+            }
+          ],
+          "triangles": 11760
+        },
+        {
+          "node_index": 1,
+          "node": "OOW_View_Office_B08",
+          "mesh_index": 1,
+          "mesh": "Mesh_7.001",
+          "world_matrix_rows": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "world_transform_determinant": 1.0,
+          "primitives": [
+            {
+              "attributes": {
+                "POSITION": {
+                  "accessor": 55,
+                  "count": 396,
+                  "type": "VEC3",
+                  "component_type": 5126,
+                  "finite": true
+                },
+                "NORMAL": {
+                  "accessor": 56,
+                  "count": 396,
+                  "type": "VEC3",
+                  "component_type": 5126,
+                  "finite": true,
+                  "nonunit_or_nonfinite_count": 0
+                },
+                "TEXCOORD_0": {
+                  "accessor": 57,
+                  "count": 396,
+                  "type": "VEC2",
+                  "component_type": 5126,
+                  "finite": true,
+                  "outside_unit_square_vertices": 0,
+                  "overlap_checked": false
+                },
+                "TEXCOORD_1": {
+                  "accessor": 58,
+                  "count": 396,
+                  "type": "VEC2",
+                  "component_type": 5126,
+                  "finite": true,
+                  "outside_unit_square_vertices": 0,
+                  "overlap_checked": false
+                }
+              },
+              "material": 0,
+              "vertices": 396,
+              "indices_present": true,
+              "indices": 396,
+              "out_of_bounds_indices": 0,
+              "triangles": 132,
+              "world_positions_finite": true,
+              "zero_or_nonfinite_area_triangles": 0,
+              "minimum_triangle_area_m2": 0.06499916076427326,
+              "gltf_world_bounds_m": {
+                "min_m": [
+                  24.850000381469727,
+                  11.975000381469727,
+                  -69.6500015258789
+                ],
+                "max_m": [
+                  55.150001525878906,
+                  55.83000183105469,
+                  -34.349998474121094
+                ],
+                "dimensions_m": [
+                  30.30000114440918,
+                  43.85500144958496,
+                  35.30000305175781
+                ]
+              }
+            },
+            {
+              "attributes": {
+                "POSITION": {
+                  "accessor": 60,
+                  "count": 4176,
+                  "type": "VEC3",
+                  "component_type": 5126,
+                  "finite": true
+                },
+                "NORMAL": {
+                  "accessor": 61,
+                  "count": 4176,
+                  "type": "VEC3",
+                  "component_type": 5126,
+                  "finite": true,
+                  "nonunit_or_nonfinite_count": 0
+                },
+                "TEXCOORD_0": {
+                  "accessor": 62,
+                  "count": 4176,
+                  "type": "VEC2",
+                  "component_type": 5126,
+                  "finite": true,
+                  "outside_unit_square_vertices": 0,
+                  "overlap_checked": false
+                },
+                "TEXCOORD_1": {
+                  "accessor": 63,
+                  "count": 4176,
+                  "type": "VEC2",
+                  "component_type": 5126,
+                  "finite": true,
+                  "outside_unit_square_vertices": 0,
+                  "overlap_checked": false
+                }
+              },
+              "material": 1,
+              "vertices": 4176,
+              "indices_present": true,
+              "indices": 4176,
+              "out_of_bounds_indices": 0,
+              "triangles": 1392,
+              "world_positions_finite": true,
+              "zero_or_nonfinite_area_triangles": 0,
+              "minimum_triangle_area_m2": 0.007124658586690202,
+              "gltf_world_bounds_m": {
+                "min_m": [
+                  23.049999237060547,
+                  6.764999866485596,
+                  -69.625
+                ],
+                "max_m": [
+                  55.125,
+                  55.900001525878906,
+                  -34.375
+                ],
+                "dimensions_m": [
+                  32.07500076293945,
+                  49.13500165939331,
+                  35.25
+                ]
+              }
+            },
+            {
+              "attributes": {
+                "POSITION": {
+                  "accessor": 65,
+                  "count": 1482,
+                  "type": "VEC3",
+                  "component_type": 5126,
+                  "finite": true
+                },
+                "NORMAL": {
+                  "accessor": 66,
+                  "count": 1482,
+                  "type": "VEC3",
+                  "component_type": 5126,
+                  "finite": true,
+                  "nonunit_or_nonfinite_count": 0
+                },
+                "TEXCOORD_0": {
+                  "accessor": 67,
+                  "count": 1482,
+                  "type": "VEC2",
+                  "component_type": 5126,
+                  "finite": true,
+                  "outside_unit_square_vertices": 0,
+                  "overlap_checked": false
+                },
+                "TEXCOORD_1": {
+                  "accessor": 68,
+                  "count": 1482,
+                  "type": "VEC2",
+                  "component_type": 5126,
+                  "finite": true,
+                  "outside_unit_square_vertices": 0,
+                  "overlap_checked": false
+                }
+              },
+              "material": 11,
+              "vertices": 1482,
+              "indices_present": true,
+              "indices": 1482,
+              "out_of_bounds_indices": 0,
+              "triangles": 494,
+              "world_positions_finite": true,
+              "zero_or_nonfinite_area_triangles": 0,
+              "minimum_triangle_area_m2": 3.9559442086610943,
+              "gltf_world_bounds_m": {
+                "min_m": [
+                  25.059999465942383,
+                  7.079999923706055,
+                  -69.44000244140625
+                ],
+                "max_m": [
+                  54.939998626708984,
+                  54.720001220703125,
+                  -34.560001373291016
+                ],
+                "dimensions_m": [
+                  29.8799991607666,
+                  47.64000129699707,
+                  34.880001068115234
+                ]
+              }
+            },
+            {
+              "attributes": {
+                "POSITION": {
+                  "accessor": 70,
+                  "count": 162,
+                  "type": "VEC3",
+                  "component_type": 5126,
+                  "finite": true
+                },
+                "NORMAL": {
+                  "accessor": 71,
+                  "count": 162,
+                  "type": "VEC3",
+                  "component_type": 5126,
+                  "finite": true,
+                  "nonunit_or_nonfinite_count": 0
+                },
+                "TEXCOORD_0": {
+                  "accessor": 72,
+                  "count": 162,
+                  "type": "VEC2",
+                  "component_type": 5126,
+                  "finite": true,
+                  "outside_unit_square_vertices": 0,
+                  "overlap_checked": false
+                },
+                "TEXCOORD_1": {
+                  "accessor": 73,
+                  "count": 162,
+                  "type": "VEC2",
+                  "component_type": 5126,
+                  "finite": true,
+                  "outside_unit_square_vertices": 0,
+                  "overlap_checked": false
+                }
+              },
+              "material": 12,
+              "vertices": 162,
+              "indices_present": true,
+              "indices": 162,
+              "out_of_bounds_indices": 0,
+              "triangles": 54,
+              "world_positions_finite": true,
+              "zero_or_nonfinite_area_triangles": 0,
+              "minimum_triangle_area_m2": 3.9559467818471603,
+              "gltf_world_bounds_m": {
+                "min_m": [
+                  27.059999465942383,
+                  7.079999923706055,
+                  -69.3949966430664
+                ],
+                "max_m": [
+                  52.939998626708984,
+                  51.42769241333008,
+                  -36.560001373291016
+                ],
+                "dimensions_m": [
+                  25.8799991607666,
+                  44.34769248962402,
+                  32.83499526977539
+                ]
+              }
+            },
+            {
+              "attributes": {
+                "POSITION": {
+                  "accessor": 75,
+                  "count": 120,
+                  "type": "VEC3",
+                  "component_type": 5126,
+                  "finite": true
+                },
+                "NORMAL": {
+                  "accessor": 76,
+                  "count": 120,
+                  "type": "VEC3",
+                  "component_type": 5126,
+                  "finite": true,
+                  "nonunit_or_nonfinite_count": 0
+                },
+                "TEXCOORD_0": {
+                  "accessor": 77,
+                  "count": 120,
+                  "type": "VEC2",
+                  "component_type": 5126,
+                  "finite": true,
+                  "outside_unit_square_vertices": 0,
+                  "overlap_checked": false
+                },
+                "TEXCOORD_1": {
+                  "accessor": 78,
+                  "count": 120,
+                  "type": "VEC2",
+                  "component_type": 5126,
+                  "finite": true,
+                  "outside_unit_square_vertices": 0,
+                  "overlap_checked": false
+                }
+              },
+              "material": 13,
+              "vertices": 120,
+              "indices_present": true,
+              "indices": 120,
+              "out_of_bounds_indices": 0,
+              "triangles": 40,
+              "world_positions_finite": true,
+              "zero_or_nonfinite_area_triangles": 0,
+              "minimum_triangle_area_m2": 3.9559442086610943,
+              "gltf_world_bounds_m": {
+                "min_m": [
+                  25.104999542236328,
+                  7.079999923706055,
+                  -67.44000244140625
+                ],
+                "max_m": [
+                  52.939998626708984,
+                  54.720001220703125,
+                  -36.560001373291016
+                ],
+                "dimensions_m": [
+                  27.834999084472656,
+                  47.64000129699707,
+                  30.880001068115234
+                ]
+              }
+            },
+            {
+              "attributes": {
+                "POSITION": {
+                  "accessor": 80,
+                  "count": 576,
+                  "type": "VEC3",
+                  "component_type": 5126,
+                  "finite": true
+                },
+                "NORMAL": {
+                  "accessor": 81,
+                  "count": 576,
+                  "type": "VEC3",
+                  "component_type": 5126,
+                  "finite": true,
+                  "nonunit_or_nonfinite_count": 0
+                },
+                "TEXCOORD_0": {
+                  "accessor": 82,
+                  "count": 576,
+                  "type": "VEC2",
+                  "component_type": 5126,
+                  "finite": true,
+                  "outside_unit_square_vertices": 0,
+                  "overlap_checked": false
+                },
+                "TEXCOORD_1": {
+                  "accessor": 83,
+                  "count": 576,
+                  "type": "VEC2",
+                  "component_type": 5126,
+                  "finite": true,
+                  "outside_unit_square_vertices": 0,
+                  "overlap_checked": false
+                }
+              },
+              "material": 2,
+              "vertices": 576,
+              "indices_present": true,
+              "indices": 576,
+              "out_of_bounds_indices": 0,
+              "triangles": 192,
+              "world_positions_finite": true,
+              "zero_or_nonfinite_area_triangles": 0,
+              "minimum_triangle_area_m2": 0.0019999198921141215,
+              "gltf_world_bounds_m": {
+                "min_m": [
+                  36.099998474121094,
+                  55.005001068115234,
+                  -59.75
+                ],
+                "max_m": [
+                  43.900001525878906,
+                  56.755001068115234,
+                  -45.4900016784668
+                ],
+                "dimensions_m": [
+                  7.8000030517578125,
+                  1.75,
+                  14.259998321533203
+                ]
+              }
+            },
+            {
+              "attributes": {
+                "POSITION": {
+                  "accessor": 85,
+                  "count": 3360,
+                  "type": "VEC3",
+                  "component_type": 5126,
+                  "finite": true
+                },
+                "NORMAL": {
+                  "accessor": 86,
+                  "count": 3360,
+                  "type": "VEC3",
+                  "component_type": 5126,
+                  "finite": true,
+                  "nonunit_or_nonfinite_count": 0
+                },
+                "TEXCOORD_0": {
+                  "accessor": 87,
+                  "count": 3360,
+                  "type": "VEC2",
+                  "component_type": 5126,
+                  "finite": true,
+                  "outside_unit_square_vertices": 3360,
+                  "overlap_checked": false
+                },
+                "TEXCOORD_1": {
+                  "accessor": 88,
+                  "count": 3360,
+                  "type": "VEC2",
+                  "component_type": 5126,
+                  "finite": true,
+                  "outside_unit_square_vertices": 0,
+                  "overlap_checked": false
+                }
+              },
+              "material": 5,
+              "vertices": 3360,
+              "indices_present": true,
+              "indices": 5040,
+              "out_of_bounds_indices": 0,
+              "triangles": 1680,
+              "world_positions_finite": true,
+              "zero_or_nonfinite_area_triangles": 0,
+              "minimum_triangle_area_m2": 0.021185152050748002,
+              "gltf_world_bounds_m": {
+                "min_m": [
+                  25.059999465942383,
+                  7.630000114440918,
+                  -67.44000244140625
+                ],
+                "max_m": [
+                  54.939998626708984,
+                  21.79692268371582,
+                  -34.60499954223633
+                ],
+                "dimensions_m": [
+                  29.8799991607666,
+                  14.166922569274902,
+                  32.83500289916992
+                ]
+              }
+            },
+            {
+              "attributes": {
+                "POSITION": {
+                  "accessor": 90,
+                  "count": 2880,
+                  "type": "VEC3",
+                  "component_type": 5126,
+                  "finite": true
+                },
+                "NORMAL": {
+                  "accessor": 91,
+                  "count": 2880,
+                  "type": "VEC3",
+                  "component_type": 5126,
+                  "finite": true,
+                  "nonunit_or_nonfinite_count": 0
+                },
+                "TEXCOORD_0": {
+                  "accessor": 92,
+                  "count": 2880,
+                  "type": "VEC2",
+                  "component_type": 5126,
+                  "finite": true,
+                  "outside_unit_square_vertices": 2880,
+                  "overlap_checked": false
+                },
+                "TEXCOORD_1": {
+                  "accessor": 93,
+                  "count": 2880,
+                  "type": "VEC2",
+                  "component_type": 5126,
+                  "finite": true,
+                  "outside_unit_square_vertices": 0,
+                  "overlap_checked": false
+                }
+              },
+              "material": 6,
+              "vertices": 2880,
+              "indices_present": true,
+              "indices": 4320,
+              "out_of_bounds_indices": 0,
+              "triangles": 1440,
+              "world_positions_finite": true,
+              "zero_or_nonfinite_area_triangles": 0,
+              "minimum_triangle_area_m2": 0.021185152050748002,
+              "gltf_world_bounds_m": {
+                "min_m": [
+                  27.059999465942383,
+                  22.70692253112793,
+                  -67.44000244140625
+                ],
+                "max_m": [
+                  52.939998626708984,
+                  31.673845291137695,
+                  -36.560001373291016
+                ],
+                "dimensions_m": [
+                  25.8799991607666,
+                  8.966922760009766,
+                  30.880001068115234
+                ]
+              }
+            },
+            {
+              "attributes": {
+                "POSITION": {
+                  "accessor": 95,
+                  "count": 6720,
+                  "type": "VEC3",
+                  "component_type": 5126,
+                  "finite": true
+                },
+                "NORMAL": {
+                  "accessor": 96,
+                  "count": 6720,
+                  "type": "VEC3",
+                  "component_type": 5126,
+                  "finite": true,
+                  "nonunit_or_nonfinite_count": 0
+                },
+                "TEXCOORD_0": {
+                  "accessor": 97,
+                  "count": 6720,
+                  "type": "VEC2",
+                  "component_type": 5126,
+                  "finite": true,
+                  "outside_unit_square_vertices": 6720,
+                  "overlap_checked": false
+                },
+                "TEXCOORD_1": {
+                  "accessor": 98,
+                  "count": 6720,
+                  "type": "VEC2",
+                  "component_type": 5126,
+                  "finite": true,
+                  "outside_unit_square_vertices": 0,
+                  "overlap_checked": false
+                }
+              },
+              "material": 7,
+              "vertices": 6720,
+              "indices_present": true,
+              "indices": 10080,
+              "out_of_bounds_indices": 0,
+              "triangles": 3360,
+              "world_positions_finite": true,
+              "zero_or_nonfinite_area_triangles": 0,
+              "minimum_triangle_area_m2": 0.021185152050748002,
+              "gltf_world_bounds_m": {
+                "min_m": [
+                  27.059999465942383,
+                  32.58384704589844,
+                  -67.44000244140625
+                ],
+                "max_m": [
+                  52.939998626708984,
+                  54.720001220703125,
+                  -36.560001373291016
+                ],
+                "dimensions_m": [
+                  25.8799991607666,
+                  22.136154174804688,
+                  30.880001068115234
+                ]
+              }
+            },
+            {
+              "attributes": {
+                "POSITION": {
+                  "accessor": 100,
+                  "count": 6696,
+                  "type": "VEC3",
+                  "component_type": 5126,
+                  "finite": true
+                },
+                "NORMAL": {
+                  "accessor": 101,
+                  "count": 6696,
+                  "type": "VEC3",
+                  "component_type": 5126,
+                  "finite": true,
+                  "nonunit_or_nonfinite_count": 0
+                },
+                "TEXCOORD_0": {
+                  "accessor": 102,
+                  "count": 6696,
+                  "type": "VEC2",
+                  "component_type": 5126,
+                  "finite": true,
+                  "outside_unit_square_vertices": 6696,
+                  "overlap_checked": false
+                },
+                "TEXCOORD_1": {
+                  "accessor": 103,
+                  "count": 6696,
+                  "type": "VEC2",
+                  "component_type": 5126,
+                  "finite": true,
+                  "outside_unit_square_vertices": 0,
+                  "overlap_checked": false
+                }
+              },
+              "material": 8,
+              "vertices": 6696,
+              "indices_present": true,
+              "indices": 10044,
+              "out_of_bounds_indices": 0,
+              "triangles": 3348,
+              "world_positions_finite": true,
+              "zero_or_nonfinite_area_triangles": 0,
+              "minimum_triangle_area_m2": 5.179305915180995e-05,
+              "gltf_world_bounds_m": {
+                "min_m": [
+                  26.474000930786133,
+                  7.079999923706055,
+                  -66.11691284179688
+                ],
+                "max_m": [
+                  53.5260009765625,
+                  54.900001525878906,
+                  -34.45000076293945
+                ],
+                "dimensions_m": [
+                  27.052000045776367,
+                  47.82000160217285,
+                  31.666912078857422
+                ]
+              }
+            },
+            {
+              "attributes": {
+                "POSITION": {
+                  "accessor": 105,
+                  "count": 6480,
+                  "type": "VEC3",
+                  "component_type": 5126,
+                  "finite": true
+                },
+                "NORMAL": {
+                  "accessor": 106,
+                  "count": 6480,
+                  "type": "VEC3",
+                  "component_type": 5126,
+                  "finite": true,
+                  "nonunit_or_nonfinite_count": 0
+                },
+                "TEXCOORD_0": {
+                  "accessor": 107,
+                  "count": 6480,
+                  "type": "VEC2",
+                  "component_type": 5126,
+                  "finite": true,
+                  "outside_unit_square_vertices": 6480,
+                  "overlap_checked": false
+                },
+                "TEXCOORD_1": {
+                  "accessor": 108,
+                  "count": 6480,
+                  "type": "VEC2",
+                  "component_type": 5126,
+                  "finite": true,
+                  "outside_unit_square_vertices": 0,
+                  "overlap_checked": false
+                }
+              },
+              "material": 9,
+              "vertices": 6480,
+              "indices_present": true,
+              "indices": 9720,
+              "out_of_bounds_indices": 0,
+              "triangles": 3240,
+              "world_positions_finite": true,
+              "zero_or_nonfinite_area_triangles": 0,
+              "minimum_triangle_area_m2": 0.0012899665453005582,
+              "gltf_world_bounds_m": {
+                "min_m": [
+                  25.059999465942383,
+                  11.289999961853027,
+                  -67.44000244140625
+                ],
+                "max_m": [
+                  54.939998626708984,
+                  54.132999420166016,
+                  -34.54999923706055
+                ],
+                "dimensions_m": [
+                  29.8799991607666,
+                  42.84299945831299,
+                  32.8900032043457
+                ]
+              }
+            },
+            {
+              "attributes": {
+                "POSITION": {
+                  "accessor": 110,
+                  "count": 12960,
+                  "type": "VEC3",
+                  "component_type": 5126,
+                  "finite": true
+                },
+                "NORMAL": {
+                  "accessor": 111,
+                  "count": 12960,
+                  "type": "VEC3",
+                  "component_type": 5126,
+                  "finite": true,
+                  "nonunit_or_nonfinite_count": 0
+                },
+                "TEXCOORD_0": {
+                  "accessor": 112,
+                  "count": 12960,
+                  "type": "VEC2",
+                  "component_type": 5126,
+                  "finite": true,
+                  "outside_unit_square_vertices": 12960,
+                  "overlap_checked": false
+                },
+                "TEXCOORD_1": {
+                  "accessor": 113,
+                  "count": 12960,
+                  "type": "VEC2",
+                  "component_type": 5126,
+                  "finite": true,
+                  "outside_unit_square_vertices": 0,
+                  "overlap_checked": false
+                }
+              },
+              "material": 10,
+              "vertices": 12960,
+              "indices_present": true,
+              "indices": 19440,
+              "out_of_bounds_indices": 0,
+              "triangles": 6480,
+              "world_positions_finite": true,
+              "zero_or_nonfinite_area_triangles": 0,
+              "minimum_triangle_area_m2": 0.008799874496617122,
+              "gltf_world_bounds_m": {
+                "min_m": [
+                  25.059999465942383,
+                  7.079999923706055,
+                  -67.44000244140625
+                ],
+                "max_m": [
+                  54.939998626708984,
+                  52.33769226074219,
+                  -34.60499954223633
+                ],
+                "dimensions_m": [
+                  29.8799991607666,
+                  45.25769233703613,
+                  32.83500289916992
+                ]
+              }
+            }
+          ],
+          "triangles": 21852
+        },
+        {
+          "node_index": 2,
+          "node": "OOW_View_Office_B13",
+          "mesh_index": 2,
+          "mesh": "Mesh_12.001",
+          "world_matrix_rows": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "world_transform_determinant": 1.0,
+          "primitives": [
+            {
+              "attributes": {
+                "POSITION": {
+                  "accessor": 115,
+                  "count": 396,
+                  "type": "VEC3",
+                  "component_type": 5126,
+                  "finite": true
+                },
+                "NORMAL": {
+                  "accessor": 116,
+                  "count": 396,
+                  "type": "VEC3",
+                  "component_type": 5126,
+                  "finite": true,
+                  "nonunit_or_nonfinite_count": 0
+                },
+                "TEXCOORD_0": {
+                  "accessor": 117,
+                  "count": 396,
+                  "type": "VEC2",
+                  "component_type": 5126,
+                  "finite": true,
+                  "outside_unit_square_vertices": 0,
+                  "overlap_checked": false
+                },
+                "TEXCOORD_1": {
+                  "accessor": 118,
+                  "count": 396,
+                  "type": "VEC2",
+                  "component_type": 5126,
+                  "finite": true,
+                  "outside_unit_square_vertices": 0,
+                  "overlap_checked": false
+                }
+              },
+              "material": 0,
+              "vertices": 396,
+              "indices_present": true,
+              "indices": 396,
+              "out_of_bounds_indices": 0,
+              "triangles": 132,
+              "world_positions_finite": true,
+              "zero_or_nonfinite_area_triangles": 0,
+              "minimum_triangle_area_m2": 0.06499839783646166,
+              "gltf_world_bounds_m": {
+                "min_m": [
+                  -87.1500015258789,
+                  11.975000381469727,
+                  -105.1500015258789
+                ],
+                "max_m": [
+                  -56.849998474121094,
+                  71.83000183105469,
+                  -66.8499984741211
+                ],
+                "dimensions_m": [
+                  30.300003051757812,
+                  59.85500144958496,
+                  38.30000305175781
+                ]
+              }
+            },
+            {
+              "attributes": {
+                "POSITION": {
+                  "accessor": 119,
+                  "count": 4500,
+                  "type": "VEC3",
+                  "component_type": 5126,
+                  "finite": true
+                },
+                "NORMAL": {
+                  "accessor": 120,
+                  "count": 4500,
+                  "type": "VEC3",
+                  "component_type": 5126,
+                  "finite": true,
+                  "nonunit_or_nonfinite_count": 0
+                },
+                "TEXCOORD_0": {
+                  "accessor": 121,
+                  "count": 4500,
+                  "type": "VEC2",
+                  "component_type": 5126,
+                  "finite": true,
+                  "outside_unit_square_vertices": 0,
+                  "overlap_checked": false
+                },
+                "TEXCOORD_1": {
+                  "accessor": 122,
+                  "count": 4500,
+                  "type": "VEC2",
+                  "component_type": 5126,
+                  "finite": true,
+                  "outside_unit_square_vertices": 0,
+                  "overlap_checked": false
+                }
+              },
+              "material": 1,
+              "vertices": 4500,
+              "indices_present": true,
+              "indices": 4500,
+              "out_of_bounds_indices": 0,
+              "triangles": 1500,
+              "world_positions_finite": true,
+              "zero_or_nonfinite_area_triangles": 0,
+              "minimum_triangle_area_m2": 0.007124801632016897,
+              "gltf_world_bounds_m": {
+                "min_m": [
+                  -87.125,
+                  6.764999866485596,
+                  -105.125
+                ],
+                "max_m": [
+                  -55.04999923706055,
+                  71.9000015258789,
+                  -66.875
+                ],
+                "dimensions_m": [
+                  32.07500076293945,
+                  65.13500165939331,
+                  38.25
+                ]
+              }
+            },
+            {
+              "attributes": {
+                "POSITION": {
+                  "accessor": 124,
+                  "count": 1986,
+                  "type": "VEC3",
+                  "component_type": 5126,
+                  "finite": true
+                },
+                "NORMAL": {
+                  "accessor": 125,
+                  "count": 1986,
+                  "type": "VEC3",
+                  "component_type": 5126,
+                  "finite": true,
+                  "nonunit_or_nonfinite_count": 0
+                },
+                "TEXCOORD_0": {
+                  "accessor": 126,
+                  "count": 1986,
+                  "type": "VEC2",
+                  "component_type": 5126,
+                  "finite": true,
+                  "outside_unit_square_vertices": 0,
+                  "overlap_checked": false
+                },
+                "TEXCOORD_1": {
+                  "accessor": 127,
+                  "count": 1986,
+                  "type": "VEC2",
+                  "component_type": 5126,
+                  "finite": true,
+                  "outside_unit_square_vertices": 0,
+                  "overlap_checked": false
+                }
+              },
+              "material": 11,
+              "vertices": 1986,
+              "indices_present": true,
+              "indices": 1986,
+              "out_of_bounds_indices": 0,
+              "triangles": 662,
+              "world_positions_finite": true,
+              "zero_or_nonfinite_area_triangles": 0,
+              "minimum_triangle_area_m2": 3.9433711337624118,
+              "gltf_world_bounds_m": {
+                "min_m": [
+                  -86.8949966430664,
+                  7.079999923706055,
+                  -104.94000244140625
+                ],
+                "max_m": [
+                  -57.060001373291016,
+                  70.72000122070312,
+                  -69.05999755859375
+                ],
+                "dimensions_m": [
+                  29.83499526977539,
+                  63.64000129699707,
+                  35.8800048828125
+                ]
+              }
+            },
+            {
+              "attributes": {
+                "POSITION": {
+                  "accessor": 129,
+                  "count": 264,
+                  "type": "VEC3",
+                  "component_type": 5126,
+                  "finite": true
+                },
+                "NORMAL": {
+                  "accessor": 130,
+                  "count": 264,
+                  "type": "VEC3",
+                  "component_type": 5126,
+                  "finite": true,
+                  "nonunit_or_nonfinite_count": 0
+                },
+                "TEXCOORD_0": {
+                  "accessor": 131,
+                  "count": 264,
+                  "type": "VEC2",
+                  "component_type": 5126,
+                  "finite": true,
+                  "outside_unit_square_vertices": 0,
+                  "overlap_checked": false
+                },
+                "TEXCOORD_1": {
+                  "accessor": 132,
+                  "count": 264,
+                  "type": "VEC2",
+                  "component_type": 5126,
+                  "finite": true,
+                  "outside_unit_square_vertices": 0,
+                  "overlap_checked": false
+                }
+              },
+              "material": 12,
+              "vertices": 264,
+              "indices_present": true,
+              "indices": 264,
+              "out_of_bounds_indices": 0,
+              "triangles": 88,
+              "world_positions_finite": true,
+              "zero_or_nonfinite_area_triangles": 0,
+              "minimum_triangle_area_m2": 3.9433763090346474,
+              "gltf_world_bounds_m": {
+                "min_m": [
+                  -86.94000244140625,
+                  7.079999923706055,
+                  -104.8949966430664
+                ],
+                "max_m": [
+                  -59.060001373291016,
+                  70.72000122070312,
+                  -67.05999755859375
+                ],
+                "dimensions_m": [
+                  27.880001068115234,
+                  63.64000129699707,
+                  37.834999084472656
+                ]
+              }
+            },
+            {
+              "attributes": {
+                "POSITION": {
+                  "accessor": 134,
+                  "count": 156,
+                  "type": "VEC3",
+                  "component_type": 5126,
+                  "finite": true
+                },
+                "NORMAL": {
+                  "accessor": 135,
+                  "count": 156,
+                  "type": "VEC3",
+                  "component_type": 5126,
+                  "finite": true,
+                  "nonunit_or_nonfinite_count": 0
+                },
+                "TEXCOORD_0": {
+                  "accessor": 136,
+                  "count": 156,
+                  "type": "VEC2",
+                  "component_type": 5126,
+                  "finite": true,
+                  "outside_unit_square_vertices": 0,
+                  "overlap_checked": false
+                },
+                "TEXCOORD_1": {
+                  "accessor": 137,
+                  "count": 156,
+                  "type": "VEC2",
+                  "component_type": 5126,
+                  "finite": true,
+                  "outside_unit_square_vertices": 0,
+                  "overlap_checked": false
+                }
+              },
+              "material": 13,
+              "vertices": 156,
+              "indices_present": true,
+              "indices": 156,
+              "out_of_bounds_indices": 0,
+              "triangles": 52,
+              "world_positions_finite": true,
+              "zero_or_nonfinite_area_triangles": 0,
+              "minimum_triangle_area_m2": 3.9433711337624118,
+              "gltf_world_bounds_m": {
+                "min_m": [
+                  -84.94000244140625,
+                  7.079999923706055,
+                  -104.8949966430664
+                ],
+                "max_m": [
+                  -59.060001373291016,
+                  70.72000122070312,
+                  -69.05999755859375
+                ],
+                "dimensions_m": [
+                  25.880001068115234,
+                  63.64000129699707,
+                  35.834999084472656
+                ]
+              }
+            },
+            {
+              "attributes": {
+                "POSITION": {
+                  "accessor": 139,
+                  "count": 576,
+                  "type": "VEC3",
+                  "component_type": 5126,
+                  "finite": true
+                },
+                "NORMAL": {
+                  "accessor": 140,
+                  "count": 576,
+                  "type": "VEC3",
+                  "component_type": 5126,
+                  "finite": true,
+                  "nonunit_or_nonfinite_count": 0
+                },
+                "TEXCOORD_0": {
+                  "accessor": 141,
+                  "count": 576,
+                  "type": "VEC2",
+                  "component_type": 5126,
+                  "finite": true,
+                  "outside_unit_square_vertices": 0,
+                  "overlap_checked": false
+                },
+                "TEXCOORD_1": {
+                  "accessor": 142,
+                  "count": 576,
+                  "type": "VEC2",
+                  "component_type": 5126,
+                  "finite": true,
+                  "outside_unit_square_vertices": 0,
+                  "overlap_checked": false
+                }
+              },
+              "material": 2,
+              "vertices": 576,
+              "indices_present": true,
+              "indices": 576,
+              "out_of_bounds_indices": 0,
+              "triangles": 192,
+              "world_positions_finite": true,
+              "zero_or_nonfinite_area_triangles": 0,
+              "minimum_triangle_area_m2": 0.001999862666707486,
+              "gltf_world_bounds_m": {
+                "min_m": [
+                  -75.9000015258789,
+                  71.00499725341797,
+                  -94.5
+                ],
+                "max_m": [
+                  -68.0999984741211,
+                  72.75499725341797,
+                  -78.94999694824219
+                ],
+                "dimensions_m": [
+                  7.8000030517578125,
+                  1.75,
+                  15.550003051757812
+                ]
+              }
+            },
+            {
+              "attributes": {
+                "POSITION": {
+                  "accessor": 143,
+                  "count": 10032,
+                  "type": "VEC3",
+                  "component_type": 5126,
+                  "finite": true
+                },
+                "NORMAL": {
+                  "accessor": 144,
+                  "count": 10032,
+                  "type": "VEC3",
+                  "component_type": 5126,
+                  "finite": true,
+                  "nonunit_or_nonfinite_count": 0
+                },
+                "TEXCOORD_0": {
+                  "accessor": 145,
+                  "count": 10032,
+                  "type": "VEC2",
+                  "component_type": 5126,
+                  "finite": true,
+                  "outside_unit_square_vertices": 10032,
+                  "overlap_checked": false
+                },
+                "TEXCOORD_1": {
+                  "accessor": 146,
+                  "count": 10032,
+                  "type": "VEC2",
+                  "component_type": 5126,
+                  "finite": true,
+                  "outside_unit_square_vertices": 0,
+                  "overlap_checked": false
+                }
+              },
+              "material": 5,
+              "vertices": 10032,
+              "indices_present": true,
+              "indices": 15048,
+              "out_of_bounds_indices": 0,
+              "triangles": 5016,
+              "world_positions_finite": true,
+              "zero_or_nonfinite_area_triangles": 0,
+              "minimum_triangle_area_m2": 0.021307636285200715,
+              "gltf_world_bounds_m": {
+                "min_m": [
+                  -73.38444519042969,
+                  7.630000114440918,
+                  -104.94000244140625
+                ],
+                "max_m": [
+                  -57.060001373291016,
+                  70.72000122070312,
+                  -67.1050033569336
+                ],
+                "dimensions_m": [
+                  16.324443817138672,
+                  63.09000110626221,
+                  37.834999084472656
+                ]
+              }
+            },
+            {
+              "attributes": {
+                "POSITION": {
+                  "accessor": 148,
+                  "count": 9216,
+                  "type": "VEC3",
+                  "component_type": 5126,
+                  "finite": true
+                },
+                "NORMAL": {
+                  "accessor": 149,
+                  "count": 9216,
+                  "type": "VEC3",
+                  "component_type": 5126,
+                  "finite": true,
+                  "nonunit_or_nonfinite_count": 0
+                },
+                "TEXCOORD_0": {
+                  "accessor": 150,
+                  "count": 9216,
+                  "type": "VEC2",
+                  "component_type": 5126,
+                  "finite": true,
+                  "outside_unit_square_vertices": 9216,
+                  "overlap_checked": false
+                },
+                "TEXCOORD_1": {
+                  "accessor": 151,
+                  "count": 9216,
+                  "type": "VEC2",
+                  "component_type": 5126,
+                  "finite": true,
+                  "outside_unit_square_vertices": 0,
+                  "overlap_checked": false
+                }
+              },
+              "material": 6,
+              "vertices": 9216,
+              "indices_present": true,
+              "indices": 13824,
+              "out_of_bounds_indices": 0,
+              "triangles": 4608,
+              "world_positions_finite": true,
+              "zero_or_nonfinite_area_triangles": 0,
+              "minimum_triangle_area_m2": 0.021307636285200715,
+              "gltf_world_bounds_m": {
+                "min_m": [
+                  -86.94000244140625,
+                  7.630000114440918,
+                  -87.40153503417969
+                ],
+                "max_m": [
+                  -57.10499954223633,
+                  70.72000122070312,
+                  -67.05999755859375
+                ],
+                "dimensions_m": [
+                  29.835002899169922,
+                  63.09000110626221,
+                  20.341537475585938
+                ]
+              }
+            },
+            {
+              "attributes": {
+                "POSITION": {
+                  "accessor": 153,
+                  "count": 9840,
+                  "type": "VEC3",
+                  "component_type": 5126,
+                  "finite": true
+                },
+                "NORMAL": {
+                  "accessor": 154,
+                  "count": 9840,
+                  "type": "VEC3",
+                  "component_type": 5126,
+                  "finite": true,
+                  "nonunit_or_nonfinite_count": 0
+                },
+                "TEXCOORD_0": {
+                  "accessor": 155,
+                  "count": 9840,
+                  "type": "VEC2",
+                  "component_type": 5126,
+                  "finite": true,
+                  "outside_unit_square_vertices": 9840,
+                  "overlap_checked": false
+                },
+                "TEXCOORD_1": {
+                  "accessor": 156,
+                  "count": 9840,
+                  "type": "VEC2",
+                  "component_type": 5126,
+                  "finite": true,
+                  "outside_unit_square_vertices": 0,
+                  "overlap_checked": false
+                }
+              },
+              "material": 8,
+              "vertices": 9840,
+              "indices_present": true,
+              "indices": 14760,
+              "out_of_bounds_indices": 0,
+              "triangles": 4920,
+              "world_positions_finite": true,
+              "zero_or_nonfinite_area_triangles": 0,
+              "minimum_triangle_area_m2": 5.1786919393340785e-05,
+              "gltf_world_bounds_m": {
+                "min_m": [
+                  -85.5260009765625,
+                  7.079999923706055,
+                  -103.56446075439453
+                ],
+                "max_m": [
+                  -56.95000076293945,
+                  70.9000015258789,
+                  -66.95000457763672
+                ],
+                "dimensions_m": [
+                  28.576000213623047,
+                  63.82000160217285,
+                  36.61445617675781
+                ]
+              }
+            },
+            {
+              "attributes": {
+                "POSITION": {
+                  "accessor": 158,
+                  "count": 9624,
+                  "type": "VEC3",
+                  "component_type": 5126,
+                  "finite": true
+                },
+                "NORMAL": {
+                  "accessor": 159,
+                  "count": 9624,
+                  "type": "VEC3",
+                  "component_type": 5126,
+                  "finite": true,
+                  "nonunit_or_nonfinite_count": 0
+                },
+                "TEXCOORD_0": {
+                  "accessor": 160,
+                  "count": 9624,
+                  "type": "VEC2",
+                  "component_type": 5126,
+                  "finite": true,
+                  "outside_unit_square_vertices": 9624,
+                  "overlap_checked": false
+                },
+                "TEXCOORD_1": {
+                  "accessor": 161,
+                  "count": 9624,
+                  "type": "VEC2",
+                  "component_type": 5126,
+                  "finite": true,
+                  "outside_unit_square_vertices": 0,
+                  "overlap_checked": false
+                }
+              },
+              "material": 9,
+              "vertices": 9624,
+              "indices_present": true,
+              "indices": 14436,
+              "out_of_bounds_indices": 0,
+              "triangles": 4812,
+              "world_positions_finite": true,
+              "zero_or_nonfinite_area_triangles": 0,
+              "minimum_triangle_area_m2": 0.0012899255380034447,
+              "gltf_world_bounds_m": {
+                "min_m": [
+                  -86.94000244140625,
+                  11.289999961853027,
+                  -104.94000244140625
+                ],
+                "max_m": [
+                  -57.04999923706055,
+                  70.13300323486328,
+                  -67.05000305175781
+                ],
+                "dimensions_m": [
+                  29.890003204345703,
+                  58.843003273010254,
+                  37.88999938964844
+                ]
+              }
+            },
+            {
+              "attributes": {
+                "POSITION": {
+                  "accessor": 163,
+                  "count": 19248,
+                  "type": "VEC3",
+                  "component_type": 5126,
+                  "finite": true
+                },
+                "NORMAL": {
+                  "accessor": 164,
+                  "count": 19248,
+                  "type": "VEC3",
+                  "component_type": 5126,
+                  "finite": true,
+                  "nonunit_or_nonfinite_count": 0
+                },
+                "TEXCOORD_0": {
+                  "accessor": 165,
+                  "count": 19248,
+                  "type": "VEC2",
+                  "component_type": 5126,
+                  "finite": true,
+                  "outside_unit_square_vertices": 19248,
+                  "overlap_checked": false
+                },
+                "TEXCOORD_1": {
+                  "accessor": 166,
+                  "count": 19248,
+                  "type": "VEC2",
+                  "component_type": 5126,
+                  "finite": true,
+                  "outside_unit_square_vertices": 0,
+                  "overlap_checked": false
+                }
+              },
+              "material": 10,
+              "vertices": 19248,
+              "indices_present": true,
+              "indices": 28872,
+              "out_of_bounds_indices": 0,
+              "triangles": 9624,
+              "world_positions_finite": true,
+              "zero_or_nonfinite_area_triangles": 0,
+              "minimum_triangle_area_m2": 0.008799349976470694,
+              "gltf_world_bounds_m": {
+                "min_m": [
+                  -86.94000244140625,
+                  7.079999923706055,
+                  -104.94000244140625
+                ],
+                "max_m": [
+                  -57.060001373291016,
+                  68.36333465576172,
+                  -67.05999755859375
+                ],
+                "dimensions_m": [
+                  29.880001068115234,
+                  61.283334732055664,
+                  37.8800048828125
+                ]
+              }
+            }
+          ],
+          "triangles": 31606
+        }
+      ],
+      "gltf_world_bounds_m": {
+        "min_m": [
+          -87.1500015258789,
+          6.764999866485596,
+          -105.1500015258789
+        ],
+        "max_m": [
+          55.150001525878906,
+          72.75499725341797,
+          9.149999618530273
+        ],
+        "dimensions_m": [
+          142.3000030517578,
+          65.98999738693237,
+          114.30000114440918
+        ]
+      },
+      "blender_world_bounds_m": {
+        "min_m": [
+          -87.1500015258789,
+          -9.149999618530273,
+          6.764999866485596
+        ],
+        "max_m": [
+          55.150001525878906,
+          105.1500015258789,
+          72.75499725341797
+        ],
+        "dimensions_m": [
+          142.3000030517578,
+          114.30000114440918,
+          65.98999738693237
+        ]
+      },
+      "ue_world_bounds_m": {
+        "min_m": [
+          -87.1500015258789,
+          -105.1500015258789,
+          6.764999866485596
+        ],
+        "max_m": [
+          55.150001525878906,
+          9.149999618530273,
+          72.75499725341797
+        ],
+        "dimensions_m": [
+          142.3000030517578,
+          114.30000114440918,
+          65.98999738693237
+        ]
+      },
+      "status": "PASS",
+      "name_check": {
+        "expected_mesh_node_names": [
+          "OOW_View_Office_B07",
+          "OOW_View_Office_B08",
+          "OOW_View_Office_B13"
+        ],
+        "actual_mesh_node_names": [
+          "OOW_View_Office_B07",
+          "OOW_View_Office_B08",
+          "OOW_View_Office_B13"
+        ],
+        "exact_match": true,
+        "mesh_datablock_names": [
+          "Mesh_6.001",
+          "Mesh_7.001",
+          "Mesh_12.001"
+        ]
+      },
+      "uv1_unit_square_check": {
+        "outside_vertices": 0,
+        "tolerance": 1e-06,
+        "overlap_checked": false,
+        "blender_uv_layer_names_available_in_gltf": false
+      },
+      "color0_check": {
+        "required_absent": true,
+        "primitive_count": 0,
+        "primitives": []
+      }
+    }
+  ],
+  "expected_scope": {
+    "commercial_objects_and_meshes": 4,
+    "office_objects_and_meshes": 3,
+    "office_geometry": "Whole B07/B08/B13 exports include improved visible facade and original nonvisible source geometry",
+    "excluded": [
+      "Other city/context geometry",
+      "C placeholder",
+      "Cameras",
+      "Punctual lights",
+      "Separate office corner trial"
+    ]
+  },
+  "tolerances": {
+    "zero_triangle_area_m2": 1e-12,
+    "stored_normal_length": 0.001
+  },
+  "units_and_axes": {
+    "gltf": "glTF 2.0 positions are metres, right-handed +Y up; transformed world bounds are reported",
+    "blender_bounds_conversion": "(glTF x, -glTF z, glTF y)",
+    "ue_bounds_conversion": "(glTF x, glTF z, glTF y), metres; multiply by 100 for UE centimetres",
+    "intended_physical_scale_verified": false
+  },
+  "limitations": [
+    "No Blender, UE, render, model edit or export operation is performed.",
+    "Expected node names, distinct mesh counts and camera/light fields verify the serialized scope; renamed or disguised extra geometry inside a valid named mesh cannot be detected automatically.",
+    "Office buildings intentionally retain their original nonvisible source geometry; those faces are included in counts and bounds rather than treated as forbidden context.",
+    "UV0/UV1 mean glTF TEXCOORD_0/TEXCOORD_1. GLB does not retain Blender layer names, so it cannot prove the layers were called UVMap/LightmapUV.",
+    "Finite UV data and UV1 inside the unit square do not prove lightmap readiness, island separation or texel density. UV overlaps are not tested.",
+    "Self-intersections, duplicate/coplanar surfaces, watertightness, facade engineering and new glass thickness are not tested; source-mesh checks handle glass thickness separately.",
+    "Stored unit normals do not establish smooth curve reflections, intended split-normal shading or material fidelity.",
+    "COLOR_0 absence in OfficeVisible confirms the export cleanup only; it does not prove correct saved UE materials or night emission behavior.",
+    "Metre units and valid triangles do not prove intended real-world dimensions or fixed-window visual quality. Technical PASS is not final art approval."
+  ]
+}

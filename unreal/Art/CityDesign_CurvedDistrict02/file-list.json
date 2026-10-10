@@ -1,0 +1,241 @@
+{
+  "directory": "C:\\Users\\zhuzi\\Documents\\OutOfWindow\\unreal\\Art\\CityDesign_CurvedDistrict02",
+  "generated_utc": "2026-10-07T08:19:20.182218+00:00",
+  "files": [
+    {
+      "relative_path": "bridge_curve_check.json",
+      "bytes": 1963,
+      "sha256": "e521917d29c2fcb50b2a265cff809ac864a5f3c0fd6c42787c91ada3d3d5db17"
+    },
+    {
+      "relative_path": "build-refined.log",
+      "bytes": 567,
+      "sha256": "3bccbed4f4984ebc787b4fe2cddd25ca45cf937c7f38a0b2e4bfb09055e64f7a"
+    },
+    {
+      "relative_path": "build-spatial.log",
+      "bytes": 567,
+      "sha256": "ff16a427f47993f0a5dd16ad750c0836e84fb25468e4de7363310c840a3e93d7"
+    },
+    {
+      "relative_path": "build_curved_sample.py",
+      "bytes": 27072,
+      "sha256": "181ab6fa0d16432574a1ea0cad39b99c60e99b35d1c197e18f6685bb9a9d6051"
+    },
+    {
+      "relative_path": "CityDesign_CurvedDistrict02.blend",
+      "bytes": 17361632,
+      "sha256": "f7d42c47522578fab59bdea1305bd2e401ef49e64d58331359378b3cf7d8f9c1"
+    },
+    {
+      "relative_path": "CityDesign_CurvedDistrict02.blend1",
+      "bytes": 17393265,
+      "sha256": "7eb101ae67a8032ba68aff0394ce5908da0b602f0829cbf78d890e1abe4f8bfe"
+    },
+    {
+      "relative_path": "CityDesign_CurvedDistrict02_Architecture.fbx",
+      "bytes": 2569708,
+      "sha256": "fa2c4fc7a3a29b8435164e15dc6db069385972f0a8324a02a50a9953b5a47474"
+    },
+    {
+      "relative_path": "CityDesign_CurvedDistrict02_Architecture.glb",
+      "bytes": 4666412,
+      "sha256": "215597b2339db2296f874b25a528e98ba4e27534bf2f7e16c44d52d56ac401d7"
+    },
+    {
+      "relative_path": "CityDesign_CurvedDistrict02_OfficeCorner_TRIAL.fbx",
+      "bytes": 226588,
+      "sha256": "d6f0c74f340dddbf899c32fe7685e9c5404b8f1ec191f16c8ba9a509e051f659"
+    },
+    {
+      "relative_path": "CityDesign_CurvedDistrict02_OfficeCorner_TRIAL.glb",
+      "bytes": 801716,
+      "sha256": "5ddd5b919a1276a336d89688dea1e2dbf2c138ed5b54479cb06fa9f8245f4a21"
+    },
+    {
+      "relative_path": "complete_curved_deliverables.py",
+      "bytes": 3887,
+      "sha256": "d055111fefcbd8ae2362ff9f2ed9c3f16f25a16a477fe34137e11f5f1439b2ff"
+    },
+    {
+      "relative_path": "design_manifest.json",
+      "bytes": 4121,
+      "sha256": "c71d280892b31964e2ce9cc00dbeea18348716790831c59a96bc4f6d12505153"
+    },
+    {
+      "relative_path": "export.log",
+      "bytes": 1648,
+      "sha256": "3fddef67533c3adf20fd1cc21dfdd80d1b478c29a049e17398a07448b15a1bc7"
+    },
+    {
+      "relative_path": "export_audit.json",
+      "bytes": 82580,
+      "sha256": "fc9782d4fd0dbc9459aabbb898f3fcc13a29523dbaeedbb743a9eef000b9a2c5"
+    },
+    {
+      "relative_path": "export_curved_sample.py",
+      "bytes": 3721,
+      "sha256": "3a53a37bf2c6edd60858358982f12a7d2146399d8da9455188b7f7046d944c0c"
+    },
+    {
+      "relative_path": "export_manifest.json",
+      "bytes": 2380,
+      "sha256": "207668a678dda1ba1a077912075a08ee16591e70f7121aeabff7461040056502"
+    },
+    {
+      "relative_path": "fbx-roundtrip.log",
+      "bytes": 141,
+      "sha256": "ad60c1f827ce7b986f10418bf3744392b8418efc42ee57f85fcab10e491442d2"
+    },
+    {
+      "relative_path": "fbx_roundtrip_audit.json",
+      "bytes": 4242,
+      "sha256": "921cefc1c119c97459421636a16ebb50e3edf60e0b834179eb064db4d2a63330"
+    },
+    {
+      "relative_path": "finalize-assets.log",
+      "bytes": 1868,
+      "sha256": "741ac47ee733e30046e78aa2b6952c806024e7281037e77cbfb6447449942a7d"
+    },
+    {
+      "relative_path": "finish_curved_sample.py",
+      "bytes": 1106,
+      "sha256": "0d91426bf9d9a792700b879daefa30af4b357ec05668aa52269f56e26703cb72"
+    },
+    {
+      "relative_path": "glass_planarity_correction.json",
+      "bytes": 2239,
+      "sha256": "4f5396d5240d5d604285890bff34297476fbf176a52e08b3ae0d7f65a7b03301"
+    },
+    {
+      "relative_path": "mesh-audit.log",
+      "bytes": 483,
+      "sha256": "72b7a4cc5cab49d261959984de3697a4e1f3b39f08a7ef00bc13cf436680b753"
+    },
+    {
+      "relative_path": "mesh_audit.json",
+      "bytes": 1709247,
+      "sha256": "33df6ecf5aaea9652a4c420e214f103a14cd3a47b0d7a664a500860817d7f5a2"
+    },
+    {
+      "relative_path": "new_curved_validation.py",
+      "bytes": 9453,
+      "sha256": "7cc9373a032b9e91aad132dff59b9491b91ca25847518985c9d45bfb69fdc534"
+    },
+    {
+      "relative_path": "PLAN.json",
+      "bytes": 811,
+      "sha256": "56d63bc420b1f8a6a3cbdbc57b4186b328683060cb974aa03b2a5d145040f32a"
+    },
+    {
+      "relative_path": "preview-courtyard.png",
+      "bytes": 1385360,
+      "sha256": "f4e6b43e1151fce5a466da3916c16905cdd747918483c8d1578cf2629ca61a90"
+    },
+    {
+      "relative_path": "preview-office.png",
+      "bytes": 1238050,
+      "sha256": "8d98f6e8c61bf32b85de3acc3753718218b0626584c601a6438c537cca70ca2b"
+    },
+    {
+      "relative_path": "preview-overall.png",
+      "bytes": 1373010,
+      "sha256": "d3fd19277f2b32ba8f0efc568b0da9013038e95d31f3657a67a04746a44f79eb"
+    },
+    {
+      "relative_path": "preview-window.png",
+      "bytes": 1359427,
+      "sha256": "914ea37f5b0d131a71c81e1a28891d5749505d276bf424cea6ae34778e6c3de7"
+    },
+    {
+      "relative_path": "protected-baseline.json",
+      "bytes": 1832,
+      "sha256": "30e6ea2b22a52f55b6466736679be3250479bc97652b823f31cc04e4de256301"
+    },
+    {
+      "relative_path": "protected-input-checks.json",
+      "bytes": 3399,
+      "sha256": "8db8b6b224c718fc0c84a7d787b3a7c17c28c7881a81d342e690adc5f62e6485"
+    },
+    {
+      "relative_path": "README.md",
+      "bytes": 7604,
+      "sha256": "674d7f0413e831c8a52d4a576beb8a7f5bed7444b35a11cff2eed8cc83470bf9"
+    },
+    {
+      "relative_path": "reference_index.json",
+      "bytes": 2092,
+      "sha256": "b3964a5a3ba67a240ab75f74f7f4ff1816f797304aeb9768b9be5f894d482a1c"
+    },
+    {
+      "relative_path": "refine-shading.log",
+      "bytes": 530,
+      "sha256": "f3eee5431b897529a0499e7487a2aa1c0b3bfe92f2c8ef645781d201454dce45"
+    },
+    {
+      "relative_path": "refine_bridge_shading.py",
+      "bytes": 789,
+      "sha256": "bb941f6b9eff84a9c8b56ee89ff6d846b012fad49b97d2ba3ba435c893b36d31"
+    },
+    {
+      "relative_path": "refine_glass_planarity.py",
+      "bytes": 2294,
+      "sha256": "544ef4b672635feffca509e6fa7343756d40edf27185c7ce33e63718a3706a79"
+    },
+    {
+      "relative_path": "relationship-courtyard.png",
+      "bytes": 991255,
+      "sha256": "39b4a468d863e523c8edd4a414d9c0de376dce85517952a3d9a851af5e6fce09"
+    },
+    {
+      "relative_path": "relationship-v1-courtyard.png",
+      "bytes": 1023438,
+      "sha256": "2a0da2d94805114d15b51e9a9ccc9cab10b4de465330e441975eb67dd50e0222"
+    },
+    {
+      "relative_path": "relationship-v1-window.png",
+      "bytes": 816762,
+      "sha256": "b07e0022b6e6286f189a761c491e4f444393d504380bc40bb397e0d55acbbc68"
+    },
+    {
+      "relative_path": "relationship-window.png",
+      "bytes": 801685,
+      "sha256": "cb65715803ad5a890a5b6fdf103414dd1fca2095766fe4b484a98708add28ede"
+    },
+    {
+      "relative_path": "render-final.log",
+      "bytes": 1149,
+      "sha256": "fed7429ab17a99cb0efb59f3e8b4b88a214c851afc89583d69ccf6ecf2edb17b"
+    },
+    {
+      "relative_path": "render-relationship-refined.log",
+      "bytes": 749,
+      "sha256": "75a2fe9b3ecdf3548054154445b4e2549685f2a99fea3ee0d59df02095ead412"
+    },
+    {
+      "relative_path": "render-relationship.log",
+      "bytes": 749,
+      "sha256": "723f90213577b68a95a1c6360dab426d2b9a69c7ba90858cc466f91441c74653"
+    },
+    {
+      "relative_path": "render_curved_sample.py",
+      "bytes": 1644,
+      "sha256": "ccff41b57496789302f796e8972abdd306a3d1e39c37af78bbe6254fca4d826f"
+    },
+    {
+      "relative_path": "validate_city_sample.py",
+      "bytes": 16715,
+      "sha256": "e1231f3cb22e85d58afed55795c4895d49ceac485fe3b2df249b0b70be4452ad"
+    },
+    {
+      "relative_path": "verify_curved_exports.py",
+      "bytes": 20936,
+      "sha256": "d64281653eea2940c2b5b173404a25e554d9ca845976c12578782d6aca7d555f"
+    },
+    {
+      "relative_path": "verify_curved_fbx.py",
+      "bytes": 3176,
+      "sha256": "9b9deeff68ce4fdea9c2acce2f1c2d40c7b5fcdeb4fe2091fd678a243e89e6ec"
+    }
+  ]
+}

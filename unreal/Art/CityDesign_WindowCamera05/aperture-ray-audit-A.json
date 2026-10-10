@@ -1,0 +1,167 @@
+{
+  "status": "PASS",
+  "method": "15 physical aperture sample rays; first hit must be new clear glass, subsequent visible opaque surface must not be host detail",
+  "render_performed": false,
+  "rays": [
+    {
+      "target_on_glazing_m": [
+        26.031999588012695,
+        47.559200286865234,
+        52.39858627319336
+      ],
+      "first_surface": "Window05_A_West_Glass",
+      "first_renderable_after_closed_glass": "A_L2_Outer_Mullions",
+      "local_host_not_blocking": true
+    },
+    {
+      "target_on_glazing_m": [
+        26.031999588012695,
+        47.559200286865234,
+        53.27384567260742
+      ],
+      "first_surface": "Window05_A_West_Glass",
+      "first_renderable_after_closed_glass": null,
+      "local_host_not_blocking": true
+    },
+    {
+      "target_on_glazing_m": [
+        26.031999588012695,
+        47.559200286865234,
+        54.14910888671875
+      ],
+      "first_surface": "Window05_A_West_Glass",
+      "first_renderable_after_closed_glass": null,
+      "local_host_not_blocking": true
+    },
+    {
+      "target_on_glazing_m": [
+        26.031999588012695,
+        48.667999267578125,
+        52.39858627319336
+      ],
+      "first_surface": "Window05_A_West_Glass",
+      "first_renderable_after_closed_glass": "Bridge_Side0_Segmented_Glass",
+      "local_host_not_blocking": true
+    },
+    {
+      "target_on_glazing_m": [
+        26.031999588012695,
+        48.667999267578125,
+        53.27384567260742
+      ],
+      "first_surface": "Window05_A_West_Glass",
+      "first_renderable_after_closed_glass": null,
+      "local_host_not_blocking": true
+    },
+    {
+      "target_on_glazing_m": [
+        26.031999588012695,
+        48.667999267578125,
+        54.14910888671875
+      ],
+      "first_surface": "Window05_A_West_Glass",
+      "first_renderable_after_closed_glass": null,
+      "local_host_not_blocking": true
+    },
+    {
+      "target_on_glazing_m": [
+        26.031999588012695,
+        49.900001525878906,
+        52.39858627319336
+      ],
+      "first_surface": "Window05_A_West_Glass",
+      "first_renderable_after_closed_glass": "C_NOT_FINISHED_Curved_Massing_Only",
+      "local_host_not_blocking": true
+    },
+    {
+      "target_on_glazing_m": [
+        26.031999588012695,
+        49.900001525878906,
+        53.27384567260742
+      ],
+      "first_surface": "Window05_A_West_Glass",
+      "first_renderable_after_closed_glass": "Office_B13_Visible_Planar_Glass_32mm",
+      "local_host_not_blocking": true
+    },
+    {
+      "target_on_glazing_m": [
+        26.031999588012695,
+        49.900001525878906,
+        54.14910888671875
+      ],
+      "first_surface": "Window05_A_West_Glass",
+      "first_renderable_after_closed_glass": null,
+      "local_host_not_blocking": true
+    },
+    {
+      "target_on_glazing_m": [
+        26.031999588012695,
+        51.13199996948242,
+        52.39858627319336
+      ],
+      "first_surface": "Window05_A_West_Glass",
+      "first_renderable_after_closed_glass": "CityModern_B04_terrace",
+      "local_host_not_blocking": true
+    },
+    {
+      "target_on_glazing_m": [
+        26.031999588012695,
+        51.13199996948242,
+        53.27384567260742
+      ],
+      "first_surface": "Window05_A_West_Glass",
+      "first_renderable_after_closed_glass": "CityModern_B04_terrace",
+      "local_host_not_blocking": true
+    },
+    {
+      "target_on_glazing_m": [
+        26.031999588012695,
+        51.13199996948242,
+        54.14910888671875
+      ],
+      "first_surface": "Window05_A_West_Glass",
+      "first_renderable_after_closed_glass": null,
+      "local_host_not_blocking": true
+    },
+    {
+      "target_on_glazing_m": [
+        26.031999588012695,
+        52.24079895019531,
+        52.39858627319336
+      ],
+      "first_surface": "Window05_A_West_Glass",
+      "first_renderable_after_closed_glass": "CityModern_B05_fins",
+      "local_host_not_blocking": true
+    },
+    {
+      "target_on_glazing_m": [
+        26.031999588012695,
+        52.24079895019531,
+        53.27384567260742
+      ],
+      "first_surface": "Window05_A_West_Glass",
+      "first_renderable_after_closed_glass": "CityModern_B05_fins",
+      "local_host_not_blocking": true
+    },
+    {
+      "target_on_glazing_m": [
+        26.031999588012695,
+        52.24079895019531,
+        54.14910888671875
+      ],
+      "first_surface": "Window05_A_West_Glass",
+      "first_renderable_after_closed_glass": "CityModern_Skyline07_setback",
+      "local_host_not_blocking": true
+    }
+  ],
+  "allowed_local_host_parts": [
+    "CityModern_B08_glass",
+    "Office_B08_Visible_Planar_Glass_32mm",
+    "Office_B08_Secondary_Mullions_52mm",
+    "Office_B08_Recessed_Head_Rails_43mm",
+    "Office_B08_Opaque_Spandrel_550mm"
+  ],
+  "limitations": [
+    "Geometric line of sight only; no radiance/sky/ground composition or appearance approval."
+  ]
+}

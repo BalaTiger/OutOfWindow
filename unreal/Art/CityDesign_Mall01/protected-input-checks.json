@@ -1,0 +1,26 @@
+[
+  {
+    "path": "C:\\Users\\zhuzi\\Documents\\OutOfWindow\\unreal\\OutOfWindow\\Content\\Maps\\City.umap",
+    "before": "56CB09F9E2B33AE3181C3F0B7F65852BFF9163DE14B4C05A83E617FEE7484E5F",
+    "after": "56CB09F9E2B33AE3181C3F0B7F65852BFF9163DE14B4C05A83E617FEE7484E5F",
+    "unchanged": true
+  },
+  {
+    "path": "C:\\Users\\zhuzi\\Documents\\OutOfWindow\\unreal\\Art\\City\\modern-city.glb",
+    "before": "8063F1D17E102BB15B5B16D025BBDDCC312A5CADD13F0D362B790D6186B336CC",
+    "after": "8063F1D17E102BB15B5B16D025BBDDCC312A5CADD13F0D362B790D6186B336CC",
+    "unchanged": true
+  },
+  {
+    "path": "C:\\Users\\zhuzi\\Documents\\OutOfWindow\\unreal\\Scripts\\build_city_lookdev.py",
+    "before": "2D8D0050FE111DB4FA453DE780D8F960A921FF241D3094BF662A06BE902DD44F",
+    "after": "2D8D0050FE111DB4FA453DE780D8F960A921FF241D3094BF662A06BE902DD44F",
+    "unchanged": true
+  },
+  {
+    "path": "C:\\Users\\zhuzi\\Documents\\OutOfWindow\\unreal\\Run-Unreal.ps1",
+    "before": "E80E545A7BFC8B5499561C045517637EDC0BBCC323BF28C98BCAC488F1B7269E",
+    "after": "E80E545A7BFC8B5499561C045517637EDC0BBCC323BF28C98BCAC488F1B7269E",
+    "unchanged": true
+  }
+]

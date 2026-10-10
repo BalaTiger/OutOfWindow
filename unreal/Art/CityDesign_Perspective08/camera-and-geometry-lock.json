@@ -1,0 +1,1028 @@
+{
+  "status": "PASS",
+  "camera_before": {
+    "name": "Composition06_Fixed_Scene_Camera",
+    "matrix_world": [
+      [
+        0.999112069606781,
+        -0.009510732255876064,
+        0.0410437285900116,
+        6.0
+      ],
+      [
+        0.042131245136260986,
+        0.22554002702236176,
+        -0.9733225107192993,
+        -138.0
+      ],
+      [
+        5.882709874782677e-09,
+        0.9741874933242798,
+        0.2257404625415802,
+        70.5
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "type": "PERSP",
+    "lens": 28.27022933959961,
+    "sensor_width": 36.0,
+    "sensor_height": 24.0,
+    "sensor_fit": "VERTICAL",
+    "shift_x": 0.0,
+    "shift_y": 0.0,
+    "clip_start": 0.10000000149011612,
+    "clip_end": 3000.0,
+    "dof_enabled": false,
+    "resolution": [
+      640,
+      360,
+      100
+    ],
+    "pixel_aspect": [
+      1.0,
+      1.0
+    ],
+    "border": false,
+    "crop": false
+  },
+  "camera_after": {
+    "name": "Composition06_Fixed_Scene_Camera",
+    "matrix_world": [
+      [
+        0.999112069606781,
+        -0.009510732255876064,
+        0.0410437285900116,
+        6.0
+      ],
+      [
+        0.042131245136260986,
+        0.22554002702236176,
+        -0.9733225107192993,
+        -138.0
+      ],
+      [
+        5.882709874782677e-09,
+        0.9741874933242798,
+        0.2257404625415802,
+        70.5
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "type": "PERSP",
+    "lens": 28.27022933959961,
+    "sensor_width": 36.0,
+    "sensor_height": 24.0,
+    "sensor_fit": "VERTICAL",
+    "shift_x": 0.0,
+    "shift_y": 0.0,
+    "clip_start": 0.10000000149011612,
+    "clip_end": 3000.0,
+    "dof_enabled": false,
+    "resolution": [
+      640,
+      360,
+      100
+    ],
+    "pixel_aspect": [
+      1.0,
+      1.0
+    ],
+    "border": false,
+    "crop": false
+  },
+  "translated_original_objects": {
+    "WB06_Left_Front_Primary_FloorBand_11": [
+      0,
+      -18,
+      0
+    ],
+    "WB06_Middle_Rear_Right_FloorBand_12": [
+      0,
+      -18,
+      0
+    ],
+    "WB06_Rear_Right_Connection": [
+      0,
+      -18,
+      0
+    ],
+    "WB06_Middle_Rear_Left_FloorBand_05": [
+      0,
+      -18,
+      0
+    ],
+    "WB06_Right_Back_Secondary_FloorBand_12": [
+      0,
+      -18,
+      0
+    ],
+    "WB06_Middle_Rear_Right_FloorBand_11": [
+      0,
+      -18,
+      0
+    ],
+    "WB06_Middle_Rear_Right_FloorBand_14": [
+      0,
+      -18,
+      0
+    ],
+    "WB06_Left_Front_Primary_FloorBand_06": [
+      0,
+      -18,
+      0
+    ],
+    "WB06_Middle_Rear_Left_FloorBand_03": [
+      0,
+      -18,
+      0
+    ],
+    "WB06_Right_Back_Secondary_FloorBand_05": [
+      0,
+      -18,
+      0
+    ],
+    "WB06_Middle_Rear_Left_FloorBand_12": [
+      0,
+      -18,
+      0
+    ],
+    "WB06_Middle_Rear_Left_FloorBand_11": [
+      0,
+      -18,
+      0
+    ],
+    "WB06_Landscape_Cross_Path": [
+      0,
+      -18,
+      0
+    ],
+    "WB06_Middle_Rear_Left_DistinctRoofCrown": [
+      0,
+      -18,
+      0
+    ],
+    "WB06_Rear_Left_Connection_TopEdge": [
+      0,
+      -18,
+      0
+    ],
+    "WB06_Middle_Rear_Left_FloorBand_08": [
+      0,
+      -18,
+      0
+    ],
+    "WB06_Right_Back_Secondary_FloorBand_04": [
+      0,
+      -18,
+      0
+    ],
+    "WB06_Right_Back_Secondary_MainVolume": [
+      0,
+      -18,
+      0
+    ],
+    "WB06_Right_Back_Secondary_FloorBand_00": [
+      0,
+      -18,
+      0
+    ],
+    "WB06_Middle_Rear_Right_FloorBand_04": [
+      0,
+      -18,
+      0
+    ],
+    "WB06_Right_Back_Secondary_FloorBand_08": [
+      0,
+      -18,
+      0
+    ],
+    "WB06_Right_Back_Secondary_FloorBand_13": [
+      0,
+      -18,
+      0
+    ],
+    "WB06_Left_Front_Primary_FloorBand_07": [
+      0,
+      -18,
+      0
+    ],
+    "WB06_Middle_Rear_Right_FloorBand_09": [
+      0,
+      -18,
+      0
+    ],
+    "WB06_Left_Front_Primary_FloorBand_13": [
+      0,
+      -18,
+      0
+    ],
+    "WB06_Middle_Rear_Right_DistinctRoofCrown": [
+      0,
+      -18,
+      0
+    ],
+    "WB06_Court_Lower_Bridge_WalkingDeck": [
+      0,
+      -18,
+      0
+    ],
+    "WB06_Left_Front_Primary_FloorBand_04": [
+      0,
+      -18,
+      0
+    ],
+    "WB06_Middle_Rear_Right_FloorBand_06": [
+      0,
+      -18,
+      0
+    ],
+    "WB06_Court_Lower_Bridge": [
+      0,
+      -18,
+      0
+    ],
+    "WB06_Middle_Rear_Left_FloorBand_13": [
+      0,
+      -18,
+      0
+    ],
+    "WB06_Middle_Rear_Left_FloorBand_14": [
+      0,
+      -18,
+      0
+    ],
+    "WB06_Left_Front_Primary_FloorBand_00": [
+      0,
+      -18,
+      0
+    ],
+    "WB06_Left_Front_Primary_FloorBand_15": [
+      0,
+      -18,
+      0
+    ],
+    "WB06_Rear_Left_Connection_WalkingDeck": [
+      0,
+      -18,
+      0
+    ],
+    "WB06_Right_Back_Secondary_FloorBand_10": [
+      0,
+      -18,
+      0
+    ],
+    "WB06_Entry_Column_-34": [
+      0,
+      -18,
+      0
+    ],
+    "WB06_Middle_Rear_Right_FloorBand_08": [
+      0,
+      -18,
+      0
+    ],
+    "WB06_Right_Back_Secondary_FloorBand_03": [
+      0,
+      -18,
+      0
+    ],
+    "WB06_Right_Public_Platform": [
+      0,
+      -18,
+      0
+    ],
+    "WB06_Right_Back_Secondary_DistinctRoofCrown": [
+      0,
+      -18,
+      0
+    ],
+    "WB06_Rear_Left_Connection": [
+      0,
+      -18,
+      0
+    ],
+    "WB06_Right_Back_Secondary_FloorBand_01": [
+      0,
+      -18,
+      0
+    ],
+    "WB06_Foreground_Landscape_Island": [
+      0,
+      -18,
+      0
+    ],
+    "WB06_Left_Front_Primary_FloorBand_05": [
+      0,
+      -18,
+      0
+    ],
+    "WB06_Middle_Rear_Right_FloorBand_10": [
+      0,
+      -18,
+      0
+    ],
+    "WB06_Commercial_Entry_Recess": [
+      0,
+      -18,
+      0
+    ],
+    "WB06_Middle_Rear_Right_FloorBand_02": [
+      0,
+      -18,
+      0
+    ],
+    "WB06_Right_Back_Secondary_FloorBand_02": [
+      0,
+      -18,
+      0
+    ],
+    "WB06_Middle_Rear_Left_FloorBand_00": [
+      0,
+      -18,
+      0
+    ],
+    "WB06_Left_Front_Primary_FloorBand_09": [
+      0,
+      -18,
+      0
+    ],
+    "WB06_Commercial_Entry_Canopy": [
+      0,
+      -18,
+      0
+    ],
+    "WB06_Left_Front_Primary_FloorBand_03": [
+      0,
+      -18,
+      0
+    ],
+    "WB06_Court_Upper_Bridge": [
+      0,
+      -18,
+      0
+    ],
+    "WB06_Right_Back_Secondary_FloorBand_07": [
+      0,
+      -18,
+      0
+    ],
+    "WB06_Middle_Rear_Right_FloorBand_01": [
+      0,
+      -18,
+      0
+    ],
+    "WB06_Middle_Rear_Left_FloorBand_06": [
+      0,
+      -18,
+      0
+    ],
+    "WB06_Left_Front_Primary_FloorBand_02": [
+      0,
+      -18,
+      0
+    ],
+    "WB06_Right_Back_Secondary_FloorBand_09": [
+      0,
+      -18,
+      0
+    ],
+    "WB06_Rear_Right_Connection_TopEdge": [
+      0,
+      -18,
+      0
+    ],
+    "WB06_Left_Front_Primary_FloorBand_01": [
+      0,
+      -18,
+      0
+    ],
+    "WB06_Middle_Rear_Left_FloorBand_10": [
+      0,
+      -18,
+      0
+    ],
+    "WB06_Rear_Right_Connection_WalkingDeck": [
+      0,
+      -18,
+      0
+    ],
+    "WB06_Left_Front_Primary_DistinctRoofCrown": [
+      0,
+      -18,
+      0
+    ],
+    "WB06_Entry_Column_-14": [
+      0,
+      -18,
+      0
+    ],
+    "WB06_Middle_Rear_Right_FloorBand_03": [
+      0,
+      -18,
+      0
+    ],
+    "WB06_Middle_Rear_Left_MainVolume": [
+      0,
+      -18,
+      0
+    ],
+    "WB06_Left_Front_Primary_FloorBand_14": [
+      0,
+      -18,
+      0
+    ],
+    "WB06_Middle_Rear_Right_MainVolume": [
+      0,
+      -18,
+      0
+    ],
+    "WB06_Middle_Rear_Left_FloorBand_09": [
+      0,
+      -18,
+      0
+    ],
+    "WB06_Middle_Rear_Right_FloorBand_00": [
+      0,
+      -18,
+      0
+    ],
+    "WB06_Right_Back_Secondary_FloorBand_14": [
+      0,
+      -18,
+      0
+    ],
+    "WB06_Middle_Rear_Left_FloorBand_01": [
+      0,
+      -18,
+      0
+    ],
+    "WB06_Left_Front_Primary_FloorBand_12": [
+      0,
+      -18,
+      0
+    ],
+    "WB06_Court_Upper_Bridge_WalkingDeck": [
+      0,
+      -18,
+      0
+    ],
+    "WB06_Right_Back_Secondary_FloorBand_06": [
+      0,
+      -18,
+      0
+    ],
+    "WB06_Middle_Rear_Left_FloorBand_04": [
+      0,
+      -18,
+      0
+    ],
+    "WB06_Middle_Rear_Left_FloorBand_02": [
+      0,
+      -18,
+      0
+    ],
+    "WB06_Court_Upper_Bridge_TopEdge": [
+      0,
+      -18,
+      0
+    ],
+    "WB06_Court_Lower_Bridge_TopEdge": [
+      0,
+      -18,
+      0
+    ],
+    "WB06_Middle_Rear_Right_FloorBand_07": [
+      0,
+      -18,
+      0
+    ],
+    "WB06_Middle_Rear_Right_FloorBand_05": [
+      0,
+      -18,
+      0
+    ],
+    "WB06_Left_Entrance_Plaza": [
+      0,
+      -18,
+      0
+    ],
+    "WB06_Right_Back_Secondary_FloorBand_15": [
+      0,
+      -18,
+      0
+    ],
+    "WB06_Left_Front_Primary_FloorBand_08": [
+      0,
+      -18,
+      0
+    ],
+    "WB06_Left_Front_Primary_FloorBand_10": [
+      0,
+      -18,
+      0
+    ],
+    "WB06_Landscape_Main_Path": [
+      0,
+      -18,
+      0
+    ],
+    "WB06_Right_Back_Secondary_FloorBand_11": [
+      0,
+      -18,
+      0
+    ],
+    "WB06_Left_Front_Primary_MainVolume": [
+      0,
+      -18,
+      0
+    ],
+    "WB06_Central_Court_Walk": [
+      0,
+      -18,
+      0
+    ],
+    "WB06_Middle_Rear_Right_FloorBand_13": [
+      0,
+      -18,
+      0
+    ],
+    "WB06_Middle_Rear_Left_FloorBand_07": [
+      0,
+      -18,
+      0
+    ],
+    "WB06_Context_Left_Office": [
+      -6,
+      0,
+      0
+    ]
+  },
+  "removed_original_road_objects": [
+    "Road07_Depth_Tree_0_0_Crown",
+    "Road07_Depth_Tree_0_0_Trunk",
+    "Road07_Depth_Tree_0_1_Crown",
+    "Road07_Depth_Tree_0_1_Trunk",
+    "Road07_Depth_Tree_0_2_Crown",
+    "Road07_Depth_Tree_0_2_Trunk",
+    "Road07_Depth_Tree_0_3_Crown",
+    "Road07_Depth_Tree_0_3_Trunk",
+    "Road07_Depth_Tree_1_0_Crown",
+    "Road07_Depth_Tree_1_0_Trunk",
+    "Road07_Depth_Tree_1_1_Crown",
+    "Road07_Depth_Tree_1_1_Trunk",
+    "Road07_Depth_Tree_1_2_Crown",
+    "Road07_Depth_Tree_1_2_Trunk",
+    "Road07_Depth_Tree_1_3_Crown",
+    "Road07_Depth_Tree_1_3_Trunk",
+    "Road07_Equidistant_Lane_Dashes",
+    "WB06_left_bounds",
+    "WB06_left_bounds_Inner_Walk",
+    "WB06_left_bounds_Lane_Line",
+    "WB06_left_bounds_Outer_Walk",
+    "WB06_right_bounds",
+    "WB06_right_bounds_Inner_Walk",
+    "WB06_right_bounds_Lane_Line",
+    "WB06_right_bounds_Outer_Walk"
+  ],
+  "actual_changed_original_objects": [
+    "WB06_Central_Court_Walk",
+    "WB06_Commercial_Entry_Canopy",
+    "WB06_Commercial_Entry_Recess",
+    "WB06_Context_Left_Office",
+    "WB06_Court_Lower_Bridge",
+    "WB06_Court_Lower_Bridge_TopEdge",
+    "WB06_Court_Lower_Bridge_WalkingDeck",
+    "WB06_Court_Upper_Bridge",
+    "WB06_Court_Upper_Bridge_TopEdge",
+    "WB06_Court_Upper_Bridge_WalkingDeck",
+    "WB06_Entry_Column_-14",
+    "WB06_Entry_Column_-34",
+    "WB06_Foreground_Landscape_Island",
+    "WB06_Landscape_Cross_Path",
+    "WB06_Landscape_Main_Path",
+    "WB06_Left_Entrance_Plaza",
+    "WB06_Left_Front_Primary_DistinctRoofCrown",
+    "WB06_Left_Front_Primary_FloorBand_00",
+    "WB06_Left_Front_Primary_FloorBand_01",
+    "WB06_Left_Front_Primary_FloorBand_02",
+    "WB06_Left_Front_Primary_FloorBand_03",
+    "WB06_Left_Front_Primary_FloorBand_04",
+    "WB06_Left_Front_Primary_FloorBand_05",
+    "WB06_Left_Front_Primary_FloorBand_06",
+    "WB06_Left_Front_Primary_FloorBand_07",
+    "WB06_Left_Front_Primary_FloorBand_08",
+    "WB06_Left_Front_Primary_FloorBand_09",
+    "WB06_Left_Front_Primary_FloorBand_10",
+    "WB06_Left_Front_Primary_FloorBand_11",
+    "WB06_Left_Front_Primary_FloorBand_12",
+    "WB06_Left_Front_Primary_FloorBand_13",
+    "WB06_Left_Front_Primary_FloorBand_14",
+    "WB06_Left_Front_Primary_FloorBand_15",
+    "WB06_Left_Front_Primary_MainVolume",
+    "WB06_Middle_Rear_Left_DistinctRoofCrown",
+    "WB06_Middle_Rear_Left_FloorBand_00",
+    "WB06_Middle_Rear_Left_FloorBand_01",
+    "WB06_Middle_Rear_Left_FloorBand_02",
+    "WB06_Middle_Rear_Left_FloorBand_03",
+    "WB06_Middle_Rear_Left_FloorBand_04",
+    "WB06_Middle_Rear_Left_FloorBand_05",
+    "WB06_Middle_Rear_Left_FloorBand_06",
+    "WB06_Middle_Rear_Left_FloorBand_07",
+    "WB06_Middle_Rear_Left_FloorBand_08",
+    "WB06_Middle_Rear_Left_FloorBand_09",
+    "WB06_Middle_Rear_Left_FloorBand_10",
+    "WB06_Middle_Rear_Left_FloorBand_11",
+    "WB06_Middle_Rear_Left_FloorBand_12",
+    "WB06_Middle_Rear_Left_FloorBand_13",
+    "WB06_Middle_Rear_Left_FloorBand_14",
+    "WB06_Middle_Rear_Left_MainVolume",
+    "WB06_Middle_Rear_Right_DistinctRoofCrown",
+    "WB06_Middle_Rear_Right_FloorBand_00",
+    "WB06_Middle_Rear_Right_FloorBand_01",
+    "WB06_Middle_Rear_Right_FloorBand_02",
+    "WB06_Middle_Rear_Right_FloorBand_03",
+    "WB06_Middle_Rear_Right_FloorBand_04",
+    "WB06_Middle_Rear_Right_FloorBand_05",
+    "WB06_Middle_Rear_Right_FloorBand_06",
+    "WB06_Middle_Rear_Right_FloorBand_07",
+    "WB06_Middle_Rear_Right_FloorBand_08",
+    "WB06_Middle_Rear_Right_FloorBand_09",
+    "WB06_Middle_Rear_Right_FloorBand_10",
+    "WB06_Middle_Rear_Right_FloorBand_11",
+    "WB06_Middle_Rear_Right_FloorBand_12",
+    "WB06_Middle_Rear_Right_FloorBand_13",
+    "WB06_Middle_Rear_Right_FloorBand_14",
+    "WB06_Middle_Rear_Right_MainVolume",
+    "WB06_Rear_Left_Connection",
+    "WB06_Rear_Left_Connection_TopEdge",
+    "WB06_Rear_Left_Connection_WalkingDeck",
+    "WB06_Rear_Right_Connection",
+    "WB06_Rear_Right_Connection_TopEdge",
+    "WB06_Rear_Right_Connection_WalkingDeck",
+    "WB06_Right_Back_Secondary_DistinctRoofCrown",
+    "WB06_Right_Back_Secondary_FloorBand_00",
+    "WB06_Right_Back_Secondary_FloorBand_01",
+    "WB06_Right_Back_Secondary_FloorBand_02",
+    "WB06_Right_Back_Secondary_FloorBand_03",
+    "WB06_Right_Back_Secondary_FloorBand_04",
+    "WB06_Right_Back_Secondary_FloorBand_05",
+    "WB06_Right_Back_Secondary_FloorBand_06",
+    "WB06_Right_Back_Secondary_FloorBand_07",
+    "WB06_Right_Back_Secondary_FloorBand_08",
+    "WB06_Right_Back_Secondary_FloorBand_09",
+    "WB06_Right_Back_Secondary_FloorBand_10",
+    "WB06_Right_Back_Secondary_FloorBand_11",
+    "WB06_Right_Back_Secondary_FloorBand_12",
+    "WB06_Right_Back_Secondary_FloorBand_13",
+    "WB06_Right_Back_Secondary_FloorBand_14",
+    "WB06_Right_Back_Secondary_FloorBand_15",
+    "WB06_Right_Back_Secondary_MainVolume",
+    "WB06_Right_Public_Platform"
+  ],
+  "new_authored_objects": [
+    "P08_Left_Road",
+    "P08_Left_Road_Depth_Tree_0_Crown",
+    "P08_Left_Road_Depth_Tree_0_Trunk",
+    "P08_Left_Road_Depth_Tree_1_Crown",
+    "P08_Left_Road_Depth_Tree_1_Trunk",
+    "P08_Left_Road_Depth_Tree_2_Crown",
+    "P08_Left_Road_Depth_Tree_2_Trunk",
+    "P08_Left_Road_Depth_Tree_3_Crown",
+    "P08_Left_Road_Depth_Tree_3_Trunk",
+    "P08_Left_Road_Direction_Aligned_Dashes",
+    "P08_Left_Road_Median_Line",
+    "P08_Left_Road_Walk_-1",
+    "P08_Left_Road_Walk_1",
+    "P08_Right_Road",
+    "P08_Right_Road_Depth_Tree_0_Crown",
+    "P08_Right_Road_Depth_Tree_0_Trunk",
+    "P08_Right_Road_Depth_Tree_1_Crown",
+    "P08_Right_Road_Depth_Tree_1_Trunk",
+    "P08_Right_Road_Depth_Tree_2_Crown",
+    "P08_Right_Road_Depth_Tree_2_Trunk",
+    "P08_Right_Road_Depth_Tree_3_Crown",
+    "P08_Right_Road_Depth_Tree_3_Trunk",
+    "P08_Right_Road_Direction_Aligned_Dashes",
+    "P08_Right_Road_Median_Line",
+    "P08_Right_Road_Walk_-1",
+    "P08_Right_Road_Walk_1"
+  ],
+  "reused_towers": [
+    {
+      "name": "CityModern_B15_glass",
+      "mesh_datablock": "Mesh_14",
+      "material_slots": [
+        "CityModern_PaleStone",
+        "CityModern_Metal",
+        "CityModern_Glass_Day_Blue",
+        "CityModern_Glass_Day_Silver",
+        "Glass_Lit_CityModern_Warm",
+        "CityModern_Roof"
+      ],
+      "material_shader_digests": [
+        "af2218adac44abc362cd5cc53f940b8b579e2c1276590554b35a64b49d1152d9",
+        "4825ee8f0c93c7b2f1e24d6c32be5593d718a314064991ea65a547b201d2ee43",
+        "b4cfc9a1177d3778f362e47d8c05c1eebaede390ce1d7254d5477ee59b909130",
+        "a3de3d955984e309f6a80f0b1d98d0fd776dbf8c268147bdd66140f42bba909d",
+        "25f3cf07d888b1b503c206f6aff9d0965c20d8075fb8595cd63391787381ec02",
+        "3b558022da353bdb8363700e968beff34056d25a2a92d43ab466ab4af380ab38"
+      ],
+      "source_parent_name": "OriginalModernCity",
+      "copy_parent_detached_world_preserved": true,
+      "source_bounds_m": [
+        -92.6500015258789,
+        -53.54999923706055,
+        190.35000610351562,
+        229.64999389648438,
+        6.764999866485596,
+        108.75499725341797
+      ],
+      "height_m": 101.98999738693237,
+      "translation_m": [
+        -171.89999389648438,
+        220.0,
+        0.13500013947486877
+      ],
+      "matrix_before": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "matrix_after": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          -171.89999389648438
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          220.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.13500013947486877
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "linear_matrix_error": 0.0,
+      "mesh_material_uv_color_digest_before": "e96fa80da4224ebd13eb5d1d637acbb96b4a671794586f5a8f77ece8a6de4a3a",
+      "mesh_material_uv_color_digest_after": "e96fa80da4224ebd13eb5d1d637acbb96b4a671794586f5a8f77ece8a6de4a3a",
+      "geometry_preserved": true,
+      "limitation": "Existing split-vertex office asset with zero-thickness glass; not a completed tower or final material validation."
+    },
+    {
+      "name": "CityModern_B06_glass",
+      "mesh_datablock": "Mesh_5",
+      "material_slots": [
+        "CityModern_PaleStone",
+        "CityModern_Metal",
+        "CityModern_Glass_Day_Blue",
+        "CityModern_Glass_Day_Silver",
+        "Glass_Lit_CityModern_Warm",
+        "CityModern_Roof"
+      ],
+      "material_shader_digests": [
+        "af2218adac44abc362cd5cc53f940b8b579e2c1276590554b35a64b49d1152d9",
+        "4825ee8f0c93c7b2f1e24d6c32be5593d718a314064991ea65a547b201d2ee43",
+        "b4cfc9a1177d3778f362e47d8c05c1eebaede390ce1d7254d5477ee59b909130",
+        "a3de3d955984e309f6a80f0b1d98d0fd776dbf8c268147bdd66140f42bba909d",
+        "25f3cf07d888b1b503c206f6aff9d0965c20d8075fb8595cd63391787381ec02",
+        "3b558022da353bdb8363700e968beff34056d25a2a92d43ab466ab4af380ab38"
+      ],
+      "source_parent_name": "OriginalModernCity",
+      "copy_parent_detached_world_preserved": true,
+      "source_bounds_m": [
+        -56.650001525878906,
+        -21.549999237060547,
+        230.85000610351562,
+        269.1499938964844,
+        6.764999866485596,
+        96.75499725341797
+      ],
+      "height_m": 89.98999738693237,
+      "translation_m": [
+        217.10000610351562,
+        90.0,
+        0.13500013947486877
+      ],
+      "matrix_before": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "matrix_after": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          217.10000610351562
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          90.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.13500013947486877
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "linear_matrix_error": 0.0,
+      "mesh_material_uv_color_digest_before": "ee5a10954ff18899a03c19610b89c8b30d6de81d0a7d406283f6a1497a64a063",
+      "mesh_material_uv_color_digest_after": "ee5a10954ff18899a03c19610b89c8b30d6de81d0a7d406283f6a1497a64a063",
+      "geometry_preserved": true,
+      "limitation": "Existing split-vertex office asset with zero-thickness glass; not a completed tower or final material validation."
+    },
+    {
+      "name": "CityModern_B10_glass",
+      "mesh_datablock": "Mesh_9",
+      "material_slots": [
+        "CityModern_PaleStone",
+        "CityModern_Metal",
+        "CityModern_Glass_Day_Blue",
+        "CityModern_Glass_Day_Silver",
+        "Glass_Lit_CityModern_Warm",
+        "CityModern_Roof"
+      ],
+      "material_shader_digests": [
+        "af2218adac44abc362cd5cc53f940b8b579e2c1276590554b35a64b49d1152d9",
+        "4825ee8f0c93c7b2f1e24d6c32be5593d718a314064991ea65a547b201d2ee43",
+        "b4cfc9a1177d3778f362e47d8c05c1eebaede390ce1d7254d5477ee59b909130",
+        "a3de3d955984e309f6a80f0b1d98d0fd776dbf8c268147bdd66140f42bba909d",
+        "25f3cf07d888b1b503c206f6aff9d0965c20d8075fb8595cd63391787381ec02",
+        "3b558022da353bdb8363700e968beff34056d25a2a92d43ab466ab4af380ab38"
+      ],
+      "source_parent_name": "OriginalModernCity",
+      "copy_parent_detached_world_preserved": true,
+      "source_bounds_m": [
+        23.549999237060547,
+        62.650001525878906,
+        131.85000610351562,
+        170.14999389648438,
+        6.764999866485596,
+        78.75499725341797
+      ],
+      "height_m": 71.98999738693237,
+      "translation_m": [
+        236.89999389648438,
+        309.0,
+        0.13500013947486877
+      ],
+      "matrix_before": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "matrix_after": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          236.89999389648438
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          309.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.13500013947486877
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "linear_matrix_error": 0.0,
+      "mesh_material_uv_color_digest_before": "0b288826bba9af75b7caf0b6d24927f1bb85b72dbbde1d80140645a6d17a1b62",
+      "mesh_material_uv_color_digest_after": "0b288826bba9af75b7caf0b6d24927f1bb85b72dbbde1d80140645a6d17a1b62",
+      "geometry_preserved": true,
+      "limitation": "Existing split-vertex office asset with zero-thickness glass; not a completed tower or final material validation."
+    }
+  ],
+  "main_body_bbox_ignoring_occlusion": {
+    "WB06_Left_Front_Primary_MainVolume": [
+      0.23331670463085175,
+      0.2601768374443054,
+      0.5023386478424072,
+      0.9327428489923477
+    ],
+    "WB06_Right_Back_Secondary_MainVolume": [
+      0.5461460947990417,
+      0.25942498445510864,
+      0.7191749811172485,
+      0.6460154056549072
+    ],
+    "WB06_Middle_Rear_Left_MainVolume": [
+      0.44983232021331787,
+      0.27502596378326416,
+      0.5548633337020874,
+      0.5702809393405914
+    ],
+    "WB06_Middle_Rear_Right_MainVolume": [
+      0.5272030830383301,
+      0.26550471782684326,
+      0.6172531247138977,
+      0.5297473669052124
+    ]
+  },
+  "unchanged_original_objects": 25
+}

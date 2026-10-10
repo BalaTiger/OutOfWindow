@@ -1,0 +1,109 @@
+{
+  "recipe": "window-clouds-v7",
+  "master": "/Game/Weather/M_OOW_WindowClouds_v7",
+  "instance": "/Game/Weather/MI_OOW_WindowClouds_v7",
+  "sourceMaster": "/Game/Weather/M_OOW_StormCells_v6",
+  "scriptSha256": "edc8874e415b62d2ae77e3908d2db4663e5688490a9bce1807445e1df2d18fe6",
+  "graphGeneratorSha256": "b408514e8011eddbb029753ec82a0f939cdebea796be8aa58324eca086533f50",
+  "updatedOwnedV7": true,
+  "recoveredSavedMasterWithoutInstance": false,
+  "defaults": {
+    "OOW_FairCloudStrength": 0.0,
+    "OOW_FairCloudDensity": 0.0016,
+    "OOW_FairCloudCoverage": 0.4,
+    "OOW_OvercastWeight": 0.0,
+    "OOW_CloudAmbientOcclusion": 1.0
+  },
+  "instanceScalarValues": {
+    "OOW_FairCloudStrength": 0.0,
+    "OOW_FairCloudDensity": 0.0015999999595806003,
+    "OOW_FairCloudCoverage": 0.4000000059604645,
+    "OOW_OvercastWeight": 0.0,
+    "OOW_CloudAmbientOcclusion": 1.0
+  },
+  "highAltitudeKm": [
+    8,
+    10
+  ],
+  "lowLayer": "Absolute low altitude from preserved OOW_LowBottomKm and OOW_LowHeightKm",
+  "lowCells": {
+    "maxNeighbourCells": 9,
+    "analyticLobesPerCell": 3,
+    "volumeNoiseSamples": 2,
+    "radiusKmAtLayout32": [
+      1.25,
+      2.15
+    ],
+    "spacingKmAtDefault4": [
+      3.36,
+      4.0
+    ],
+    "variableTopFraction": [
+      0.72,
+      1.0
+    ]
+  },
+  "lowDensity": {
+    "mode": "3D inward scallops, warped edge nicks and porous interior",
+    "volumeNoiseSamples": 2,
+    "minimumDetailScaleKm": 0.55,
+    "defaultTextureCyclesPerKmAtLayout32": [
+      0.4727272727272727,
+      1.8181818181818181
+    ],
+    "detailWarpTextureMaxPerAxis": 0.09,
+    "densityContrastReference": 0.35,
+    "densityContrastGain": 1.8,
+    "structuredInteriorRange": [
+      0.04,
+      1.52
+    ],
+    "supportExpanded": false,
+    "meanColumnOpticalDepthPreserved": false
+  },
+  "highPatches": {
+    "maxNeighbourCells": 9,
+    "volumeNoiseSamples": 2,
+    "fixedWorldAxes": true,
+    "longShortAxisRatio": "approximately 8:1; varies per patch",
+    "noiseLongShortAxisRatio": 6.25,
+    "normalizedAltitudeSupport": [
+      0.3,
+      0.66
+    ],
+    "effectiveAltitudeSupportKm": [
+      8.6,
+      9.32
+    ],
+    "oldHeightBandIntegral": 0.8425,
+    "heightBandIntegral": 0.3,
+    "heightDensityNormalization": 2.8083333333333336
+  },
+  "overcast": {
+    "continuousSheet": true,
+    "spatialDensityModulation": true,
+    "cloudAmbientOcclusion": [
+      0.18,
+      0.8
+    ]
+  },
+  "actualMultiScatteringApproximationOctaveCount": 2,
+  "actualRayMarchVolumeShadow": true,
+  "advancedSettingsChanged": false,
+  "nativeConservativeGbaPreserved": true,
+  "ambientOcclusionConnected": "MaterialExpressionLinearInterpolate_5",
+  "extinctionConnected": "MaterialExpressionCustom_7",
+  "ownedNodeHashes": {
+    "OOW v7 fair-cloud analytic support": "2bf447fc865fd00d1f26a36a8d21ea8b8a3a5b3001d1c736e5840dd43b8c8af3",
+    "OOW v7 fair-cloud porous volume density": "5d02783d9df91e339b870f1b2dd741aa81cea8ab2bac78f810f38e21378e82b1",
+    "OOW v7 ordinary-cloud property weight": "1906372c233d01f60b23463afc9cb94fc0effa7cacb784442ee3c266fd163308",
+    "OOW v7 ordinary-cloud single-scattering albedo": "132523df96ca64d4c469d7004afb5b135923f19b5170254da50332adea1ee07a",
+    "OOW v7 ordinary-cloud local sky occlusion": "45c85ab4c6b398dc0d7eec69c344c0871952d0950a00898775888343b67d4cc7",
+    "OOW v7 high patches and anisotropic fibres": "73467bd558d9eb07eacb7ba30489256d7444f954c64252d6bfd3806d65b322a2",
+    "OOW v7 conservative support retaining native GBA": "c2a781cfe3a028570186ea4ebad5f9de5f6ad4d4c36ae5d5f8beb995f2245301"
+  },
+  "compilationVerified": false,
+  "mapsModified": false,
+  "materialSaved": true,
+  "instanceSaved": true
+}

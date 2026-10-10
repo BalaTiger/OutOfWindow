@@ -1,0 +1,264 @@
+{
+  "status": "PASS",
+  "scope": "Commercial-specific physical dimensions, unchanged office bounds and human details; fixed-camera mathematical pitch.",
+  "floors": {
+    "A": {
+      "absolute_FF_m": [
+        7.039999961853027,
+        13.039999961853027,
+        18.540000915527344,
+        24.040000915527344,
+        29.540000915527344,
+        35.040000915527344
+      ],
+      "floor_to_floor_m": [
+        6.0,
+        5.500000953674316,
+        5.5,
+        5.5,
+        5.5
+      ],
+      "main_roof_above_entry_PAVE_m": 28.000000915527345,
+      "previous_main_roof_above_entry_PAVE_m": 21.11,
+      "roof_height_growth_ratio": 1.3263856426114327,
+      "service_top_above_entry_PAVE_m": 28.950001678466798
+    },
+    "B": {
+      "absolute_FF_m": [
+        7.039999961853027,
+        13.039999961853027,
+        18.540000915527344,
+        24.040000915527344,
+        29.540000915527344,
+        35.040000915527344,
+        40.540000915527344
+      ],
+      "floor_to_floor_m": [
+        6.0,
+        5.500000953674316,
+        5.5,
+        5.5,
+        5.5,
+        5.5
+      ],
+      "main_roof_above_entry_PAVE_m": 33.500000915527345,
+      "previous_main_roof_above_entry_PAVE_m": 26.060000000000002,
+      "roof_height_growth_ratio": 1.285495046643413,
+      "service_top_above_entry_PAVE_m": 34.899998626708985
+    }
+  },
+  "ordinary_band_heights_m": {
+    "A": [
+      0.8899998664855957,
+      0.8899993896484375,
+      0.8899993896484375,
+      0.8899993896484375,
+      0.8899993896484375,
+      0.8900032043457031
+    ],
+    "B": [
+      0.8899998664855957,
+      0.8899993896484375,
+      0.8899993896484375,
+      0.8899993896484375,
+      0.8899993896484375,
+      0.8900032043457031,
+      0.8900032043457031
+    ]
+  },
+  "main_entry_doors": [
+    {
+      "name": "A_MainEntry_Door0",
+      "head_above_FF_m": 2.7799996948242187,
+      "panel_height_m": 2.7599997520446777
+    },
+    {
+      "name": "A_MainEntry_Door1",
+      "head_above_FF_m": 2.7799996948242187,
+      "panel_height_m": 2.7599997520446777
+    },
+    {
+      "name": "A_MainEntry_Door2",
+      "head_above_FF_m": 2.7799996948242187,
+      "panel_height_m": 2.7599997520446777
+    },
+    {
+      "name": "A_MainEntry_Door3",
+      "head_above_FF_m": 2.7799996948242187,
+      "panel_height_m": 2.7599997520446777
+    }
+  ],
+  "offices_vs_v3": [
+    {
+      "name": "OOW_View_Office_B07",
+      "world_bounds_m": {
+        "min": [
+          21.049999237060547,
+          -9.149999618530273,
+          6.809999942779541
+        ],
+        "max": [
+          53.150001525878906,
+          25.149999618530273,
+          41.755001068115234
+        ]
+      },
+      "maximum_bounds_delta_from_v3_m": 0.0,
+      "triangles": 11760
+    },
+    {
+      "name": "OOW_View_Office_B08",
+      "world_bounds_m": {
+        "min": [
+          23.049999237060547,
+          34.349998474121094,
+          6.764999866485596
+        ],
+        "max": [
+          55.150001525878906,
+          69.6500015258789,
+          56.755001068115234
+        ]
+      },
+      "maximum_bounds_delta_from_v3_m": 0.0,
+      "triangles": 21852
+    },
+    {
+      "name": "OOW_View_Office_B13",
+      "world_bounds_m": {
+        "min": [
+          -87.1500015258789,
+          66.8499984741211,
+          6.764999866485596
+        ],
+        "max": [
+          -55.04999923706055,
+          105.1500015258789,
+          72.75499725341797
+        ]
+      },
+      "maximum_bounds_delta_from_v3_m": 0.0,
+      "triangles": 31606
+    }
+  ],
+  "bridge": {
+    "deck_reference_absolute_m": 18.54,
+    "actual_walking_surface_absolute_m": 18.540000915527344,
+    "underdeck_clearance_above_pavement_m": 10.96,
+    "upper_roof_top_over_deck_m": 3.95,
+    "same_level": "A_L2 and B_L2"
+  },
+  "camera": {
+    "name": "Review_Window_UE_VFOV54",
+    "position": [
+      26.0,
+      -42.0,
+      37.0
+    ],
+    "VFOV_deg": 53.99999865052266,
+    "fixed": true
+  },
+  "fixed_camera_pitch_comparison": {
+    "A": {
+      "same_world_xy_probe": [
+        -26,
+        5
+      ],
+      "resolution": [
+        2560,
+        1440
+      ],
+      "v3": {
+        "screen_FF_y_px": [
+          1240.4873156547546,
+          1143.3215260505676,
+          1052.5531482696533,
+          960.4531717300415,
+          866.9920492172241,
+          772.1393966674805
+        ],
+        "floor_pitch_px": [
+          97.16578960418701,
+          90.7683777809143,
+          92.09997653961182,
+          93.46112251281738,
+          94.85265254974365
+        ]
+      },
+      "v4": {
+        "screen_FF_y_px": [
+          1240.4873156547546,
+          1110.88383436203,
+          989.6712684631348,
+          866.084475517273,
+          740.052924156189,
+          611.5034008026123
+        ],
+        "floor_pitch_px": [
+          129.6034812927246,
+          121.21256589889526,
+          123.58679294586182,
+          126.03155136108398,
+          128.54952335357666
+        ]
+      },
+      "meaning": "Analytical fixed-camera projection at same XY, not an occlusion-aware facade pixel mask; actual image reviewed separately."
+    },
+    "B": {
+      "same_world_xy_probe": [
+        -30,
+        44
+      ],
+      "resolution": [
+        2560,
+        1440
+      ],
+      "v3": {
+        "screen_FF_y_px": [
+          985.5295085906982,
+          923.9777040481567,
+          866.8063545227051,
+          806.3239574432373,
+          745.2645635604858,
+          683.6199760437012,
+          621.3817405700684
+        ],
+        "floor_pitch_px": [
+          61.551804542541504,
+          57.17134952545166,
+          60.48239707946777,
+          61.059393882751465,
+          61.64458751678467,
+          62.23823547363281
+        ]
+      },
+      "v4": {
+        "screen_FF_y_px": [
+          985.5295085906982,
+          903.5102605819702,
+          827.3839330673218,
+          750.3398609161377,
+          672.361307144165,
+          593.4311485290527,
+          513.5318756103516
+        ],
+        "floor_pitch_px": [
+          82.01924800872803,
+          76.12632751464844,
+          77.04407215118408,
+          77.97855377197266,
+          78.9301586151123,
+          79.89927291870117
+        ]
+      },
+      "meaning": "Analytical fixed-camera projection at same XY, not an occlusion-aware facade pixel mask; actual image reviewed separately."
+    }
+  },
+  "errors": [],
+  "limitations": [
+    "Layer height is floor-to-floor, not a promised finished ceiling clear height.",
+    "Matching office bounds/count does not prove byte-identical mesh ordering.",
+    "This does not validate construction, load paths, accessibility or UE placement.",
+    "Projected floor pitch is not image segmentation or visual approval."
+  ]
+}

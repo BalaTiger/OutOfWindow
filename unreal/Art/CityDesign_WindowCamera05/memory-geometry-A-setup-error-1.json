@@ -1,0 +1,130 @@
+{
+  "candidate": "A",
+  "geometry_only_no_render": true,
+  "limits": {
+    "own_process_private_budget_gib": 1.0,
+    "minimum_physical_available_gib": 4.0,
+    "minimum_commit_headroom_gib": 6.0,
+    "required_start_physical_gib": 5.0,
+    "required_start_commit_headroom_gib": 7.0
+  },
+  "baseline": {
+    "utc": "2026-10-07T14:03:18.125651+00:00",
+    "physical_available_gib": 10.960029602050781,
+    "commit_headroom_gib": 9.840774536132812,
+    "system_committed_gib": 57.04381561279297,
+    "commit_limit_gib": 66.88459014892578,
+    "process_count": 384
+  },
+  "samples": [
+    {
+      "utc": "2026-10-07T14:03:18.130270+00:00",
+      "physical_available_gib": 10.958564758300781,
+      "commit_headroom_gib": 9.826141357421875,
+      "system_committed_gib": 57.058448791503906,
+      "commit_limit_gib": 66.88459014892578,
+      "process_count": 385,
+      "private_gib": 0.014995574951171875,
+      "working_set_gib": 0.001911163330078125,
+      "working_set_peak_gib": 0.001911163330078125,
+      "pagefile_peak_gib": 0.014995574951171875,
+      "elapsed_seconds": 0.0
+    },
+    {
+      "utc": "2026-10-07T14:03:20.131264+00:00",
+      "physical_available_gib": 10.6339111328125,
+      "commit_headroom_gib": 9.435516357421875,
+      "system_committed_gib": 57.449073791503906,
+      "commit_limit_gib": 66.88459014892578,
+      "process_count": 386,
+      "private_gib": 0.4075965881347656,
+      "working_set_gib": 0.32659149169921875,
+      "working_set_peak_gib": 0.32659149169921875,
+      "pagefile_peak_gib": 0.4075965881347656,
+      "elapsed_seconds": 2.0
+    },
+    {
+      "utc": "2026-10-07T14:03:22.132145+00:00",
+      "physical_available_gib": 10.5845947265625,
+      "commit_headroom_gib": 9.387809753417969,
+      "system_committed_gib": 57.49678039550781,
+      "commit_limit_gib": 66.88459014892578,
+      "process_count": 386,
+      "private_gib": 0.4215431213378906,
+      "working_set_gib": 0.3410148620605469,
+      "working_set_peak_gib": 0.3410148620605469,
+      "pagefile_peak_gib": 0.4234962463378906,
+      "elapsed_seconds": 4.0
+    },
+    {
+      "utc": "2026-10-07T14:03:24.132952+00:00",
+      "physical_available_gib": 10.493751525878906,
+      "commit_headroom_gib": 9.291885375976562,
+      "system_committed_gib": 57.59270477294922,
+      "commit_limit_gib": 66.88459014892578,
+      "process_count": 386,
+      "private_gib": 0.5198822021484375,
+      "working_set_gib": 0.4384002685546875,
+      "working_set_peak_gib": 0.4384002685546875,
+      "pagefile_peak_gib": 0.5198822021484375,
+      "elapsed_seconds": 6.0
+    },
+    {
+      "utc": "2026-10-07T14:03:26.134045+00:00",
+      "physical_available_gib": 10.488479614257812,
+      "commit_headroom_gib": 9.2987060546875,
+      "system_committed_gib": 57.58588409423828,
+      "commit_limit_gib": 66.88459014892578,
+      "process_count": 386,
+      "private_gib": 0.5315093994140625,
+      "working_set_gib": 0.4479217529296875,
+      "working_set_peak_gib": 0.4571037292480469,
+      "pagefile_peak_gib": 0.5492973327636719,
+      "elapsed_seconds": 8.0
+    },
+    {
+      "utc": "2026-10-07T14:03:28.135189+00:00",
+      "physical_available_gib": 10.512493133544922,
+      "commit_headroom_gib": 9.342845916748047,
+      "system_committed_gib": 57.541744232177734,
+      "commit_limit_gib": 66.88459014892578,
+      "process_count": 386,
+      "private_gib": 0.48998260498046875,
+      "working_set_gib": 0.41298675537109375,
+      "working_set_peak_gib": 0.489837646484375,
+      "pagefile_peak_gib": 0.574310302734375,
+      "elapsed_seconds": 10.0
+    },
+    {
+      "utc": "2026-10-07T14:03:30.136172+00:00",
+      "physical_available_gib": 10.453380584716797,
+      "commit_headroom_gib": 9.263847351074219,
+      "system_committed_gib": 57.62074279785156,
+      "commit_limit_gib": 66.88459014892578,
+      "process_count": 391,
+      "private_gib": 0.49414825439453125,
+      "working_set_gib": 0.4196929931640625,
+      "working_set_peak_gib": 0.489837646484375,
+      "pagefile_peak_gib": 0.574310302734375,
+      "elapsed_seconds": 12.0
+    }
+  ],
+  "status": "BLENDER_FAILED",
+  "no_gpu_ue_parallel_process_started": true,
+  "pid": 22472,
+  "exit_code": 11,
+  "elapsed_seconds": 14.0,
+  "after": {
+    "utc": "2026-10-07T14:03:32.137194+00:00",
+    "physical_available_gib": 10.932479858398438,
+    "commit_headroom_gib": 9.849601745605469,
+    "system_committed_gib": 57.03498840332031,
+    "commit_limit_gib": 66.88459014892578,
+    "process_count": 384
+  },
+  "peak_private_gib": 0.5315093994140625,
+  "peak_working_set_gib": 0.489837646484375,
+  "minimum_physical_available_gib": 10.453380584716797,
+  "minimum_commit_headroom_gib": 9.263847351074219,
+  "monitor_period_seconds": 2
+}

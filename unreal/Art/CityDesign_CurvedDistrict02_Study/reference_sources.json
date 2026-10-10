@@ -1,0 +1,100 @@
+{
+  "research_date": "2026-10-07",
+  "local_images_root": "References",
+  "selected_built_references": [
+    {
+      "name": "Galaxy SOHO",
+      "designer": "ZHA",
+      "official_page": "https://www.zha.com/projects/architecture/galaxy-soho?disclaimer=true",
+      "completion": "2012",
+      "images": [
+        {
+          "file": "galaxy-soho/galaxy-soho-hufton-crow-courtyard.jpg",
+          "url": "https://media-prod.zha.com/zhweb-prod-media/media/dxrb5gjv/01499_cp_hc_nov12_n79504.jpg?w=1920",
+          "credit": "Hufton + Crow",
+          "identity_evidence": "Official project page explicitly labels Photograph by Hufton + Crow",
+          "type": "built_project_photograph",
+          "pixels_inspected": true
+        },
+        {
+          "file": "galaxy-soho/galaxy-soho-hufton-crow-secondary.jpg",
+          "url": "https://media-prod.zha.com/zhweb-prod-media/media/neobyjy4/01499_cp_hc_nov12_n77109.jpg?w=1600",
+          "credit": "Hufton + Crow",
+          "identity_evidence": "Official project page explicitly labels Photograph by Hufton + Crow",
+          "type": "built_project_photograph",
+          "pixels_inspected": true
+        },
+        {
+          "file": "galaxy-soho/galaxy-soho-iwan-baan-secondary.jpg",
+          "url": "https://media-prod.zha.com/zhweb-prod-media/media/ckjkyof0/01499_cp_ib_oct12_n76875.jpg?w=1600",
+          "credit": "Iwan Baan",
+          "identity_evidence": "Official project page explicitly labels Photograph by Iwan Baan; inspected by reference agent",
+          "type": "built_project_photograph",
+          "pixels_inspected": true
+        },
+        {
+          "file": "galaxy-soho/galaxy-soho-iwan-baan-bridges-upward.jpg",
+          "url": "https://media-prod.zha.com/zhweb-prod-media/media/ucpdmd5y/01499_cp_ib_oct12_n76883.jpg?w=1920",
+          "credit": "Iwan Baan",
+          "identity_evidence": "Official project page explicitly labels Photograph by Iwan Baan",
+          "type": "built_project_photograph",
+          "pixels_inspected": true
+        }
+      ]
+    },
+    {
+      "name": "Westfield Mall of the Netherlands",
+      "designer": "MVSA Architects",
+      "official_page": "https://mvsa-architects.com/en/projects/westfield-mall-of-the-netherlands/",
+      "completion": "2021",
+      "images": [
+        {
+          "file": "curve_alternatives/westfield-main-entrance-Ronald-Tilleman.jpg",
+          "url": "https://mvsa-architects.com/media/images/_Ronald_Tilleman_20211024-0222_sma.2e16d0ba.fill-898x540.jpg",
+          "credit": "Ronald Tilleman (attributed from official filename; no separate caption found)",
+          "identity_evidence": "Official gallery filename contains photographer name and 20211024",
+          "type": "2021_project_photograph",
+          "pixels_inspected": true
+        },
+        {
+          "file": "curve_alternatives/westfield-facade-Bart-van-Hoek.jpg",
+          "url": "https://mvsa-architects.com/media/images/04.1_MalloftheNetherlands-20200507-29fotoBvan.width-1160.jpg",
+          "credit": "Bart van Hoek",
+          "identity_evidence": "Official page caption Facade ©Bart van Hoek; filename 20200507",
+          "type": "2020_built_facade_photograph_before_overall_completion",
+          "pixels_inspected": true
+        },
+        {
+          "file": "curve_alternatives/westfield-central-plaza-Barwerd-van-der-Plas.jpg",
+          "url": "https://mvsa-architects.com/media/images/Barwerd_van_der_Plas__2021_P1A0864.width-1160.jpg",
+          "credit": "Barwerd van der Plas",
+          "identity_evidence": "Official page caption Central Plaza ©Barwerd van der Plas; filename 2021",
+          "type": "2021_project_photograph",
+          "pixels_inspected": true
+        }
+      ]
+    }
+  ],
+  "not_selected": [
+    {
+      "name": "Nanjing Zendai Himalayas Center",
+      "designer": "MAD",
+      "page": "https://www.i-mad.com/articles/nanjing-zendai-himalayas-center-construction-progress",
+      "reason": "Official 2018 construction photos inspected by agent; no verified official final completion photographs obtained. Not used as a completed-case reference."
+    }
+  ],
+  "office_design_supplement": {
+    "page": "https://rshp.com/projects/office/the-leadenhall-building/",
+    "scope": "Design text on legible facade components and recessed public ground floor; no claim to have inspected RSHP gallery photograph",
+    "source_not_copied_as_geometry": true
+  },
+  "local_baselines": {
+    "target": "unreal/Art/City/city-window-target-v3.png",
+    "target_type": "generated_art_direction",
+    "sample": "unreal/Art/CityDesign_Mall01/preview-window.png",
+    "sample_type": "actual_Blender_CPU_render_foundation_only",
+    "pixels_inspected": true
+  },
+  "images_use": "Local design research only; not uploaded in this task, not used as texture assets; retain original photographers' copyright.",
+  "derivative_diagram": "concept-plan.svg and .png are original schematic planning diagrams, not model renders."
+}

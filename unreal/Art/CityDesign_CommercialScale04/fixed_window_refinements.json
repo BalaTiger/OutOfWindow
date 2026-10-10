@@ -1,0 +1,64 @@
+{
+  "basis": "Only window-draft.png actual 1280x720 pixels; no new close-up review.",
+  "entrance": "Existing width unchanged. Shorter north reveal, doors 1.70m forward, ORBIT mark shifted within existing fascia; trees unchanged.",
+  "changed_entrance_parts": [
+    "A_MainEntry_North_Stone_Reveal",
+    "A_MainEntry_Door0",
+    "A_MainEntry_Stile0",
+    "A_MainEntry_Transom0",
+    "A_MainEntry_Handle0",
+    "A_MainEntry_Door1",
+    "A_MainEntry_Stile1",
+    "A_MainEntry_Transom1",
+    "A_MainEntry_Handle1",
+    "A_MainEntry_Door2",
+    "A_MainEntry_Stile2",
+    "A_MainEntry_Transom2",
+    "A_MainEntry_Handle2",
+    "A_MainEntry_Door3",
+    "A_MainEntry_Stile3",
+    "A_MainEntry_Transom3",
+    "A_MainEntry_Handle3",
+    "A_MainEntry_Transom_Rail",
+    "A_MainEntry_Interior_Warm_Back",
+    "A_MainEntry_Interior_Display",
+    "A_MainEntry_ORBIT"
+  ],
+  "opaque_commercial_bays": [
+    {
+      "name": "A_L0_Designed_Opaque_Service_Bays",
+      "panels": 7,
+      "thickness_m": 0.06
+    },
+    {
+      "name": "A_L2_Designed_Opaque_Service_Bays",
+      "panels": 5,
+      "thickness_m": 0.045
+    },
+    {
+      "name": "A_L3_Designed_Opaque_Service_Bays",
+      "panels": 4,
+      "thickness_m": 0.045
+    }
+  ],
+  "office_spandrels": [
+    {
+      "building": "B07",
+      "opaque_panels": 200,
+      "spandrel_height_m": 0.55
+    },
+    {
+      "building": "B08",
+      "opaque_panels": 540,
+      "spandrel_height_m": 0.55
+    },
+    {
+      "building": "B13",
+      "opaque_panels": 802,
+      "spandrel_height_m": 0.55
+    }
+  ],
+  "color_path": "COLOR_0 mistake stays corrected; contrast from material reflectance and physical opaque spandrels.",
+  "camera_or_original_asset_changes": false,
+  "method": "Explicit editable mesh operations through background Blender; not GUI hand modeling."
+}

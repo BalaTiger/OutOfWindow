@@ -1,0 +1,88 @@
+{
+  "choice": "First commercial floor 6.0m; standard floors 5.5m, measured floor-to-floor. Not an office-derived common grid.",
+  "sources": [
+    {
+      "title": "RBS designers: Zhuhai large-chassis twin-tower commercial podium",
+      "url": "https://pdf.hanspub.org/hjce20170600000_33611064.pdf",
+      "location": "PDF p2, engineering overview",
+      "commercial_floor_to_floor_m": [
+        6.0,
+        5.5,
+        5.75,
+        5.5,
+        5.5
+      ],
+      "commercial_roof_m": 28.25,
+      "same_project_office_floor_to_floor_m": 4.2,
+      "same_project_apartment_floor_to_floor_m": 3.3,
+      "use": "Primary engineering evidence for selected 6.0/5.5m sample. Not a compulsory design rule."
+    },
+    {
+      "title": "Marrickville Metro architectural report, NSW planning archive",
+      "url": "https://dpeeplanningsitbackdata.blob.core.windows.net/pdfmapsdata/assets/55243/Architectural%2520Report%2520Part%25203.pdf",
+      "retail_floor_to_floor_m": 5.4,
+      "use": "Independent commercial scale cross-check; parameters belong to that project."
+    },
+    {
+      "title": "SOHO official Galaxy C B01 shop delivery listing",
+      "url": "https://www.sohochinaoffice.com/room/70915?lang=zch",
+      "published_standard_height_m": 5.4,
+      "use": "Official commercial-unit example, basement only; cannot imply all Galaxy floors share this value."
+    },
+    {
+      "title": "ZHA Galaxy SOHO project",
+      "url": "https://www.zha.com/projects/architecture/galaxy-soho",
+      "fact": "Lower three levels retail/entertainment; offices above; top restaurants and cafes. No dimensional floor-height schedule on this page."
+    },
+    {
+      "title": "Published section credited to ZHA",
+      "url": "https://www.metalocus.es/sites/default/files/styles/mopis_news_carousel_item_desktop/public/metalocus_zahahadid_beijing_37.jpg?itok=mIKr4ibk",
+      "actual_pixels_viewed": [
+        1530,
+        1100
+      ],
+      "use": "Lower commercial intervals exceed office intervals; bridge matches floor slabs. No readable dimension scale; never used to derive exact metres."
+    }
+  ],
+  "old_v3_actual_above_PAVE_m": {
+    "A": {
+      "first": 4.51,
+      "standard": [
+        4.15
+      ],
+      "main_roof": 21.11,
+      "service_top": 22.06
+    },
+    "B": {
+      "first": 4.51,
+      "standard": [
+        4.15,
+        4.35
+      ],
+      "main_roof": 26.06,
+      "service_top": 27.46
+    },
+    "office_standard": [
+      3.3,
+      3.7167,
+      3.2923,
+      3.2667
+    ]
+  },
+  "new_design_above_PAVE_m": {
+    "A": {
+      "first": 6.0,
+      "standard": 5.5,
+      "occupied_floors": 5,
+      "main_roof": 28.0
+    },
+    "B": {
+      "first": 6.0,
+      "standard": 5.5,
+      "occupied_floors": 6,
+      "main_roof": 33.5
+    }
+  },
+  "physical_small_details": "Door panels2.78m, handles, frame sections, band0.89m, guardrails and furniture retain physical dimensions; no uniform XYZ scaling.",
+  "scope": "Broaden two finite mall footprints west/near/rear only; retain road-side interfaces and fixed camera. No whole-city growth, UE or deployment."
+}

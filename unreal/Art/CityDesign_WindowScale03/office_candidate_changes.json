@@ -1,0 +1,45 @@
+{
+  "actual_office_surfaces": [
+    {
+      "building": "B07",
+      "source_mesh": "CityModern_B07_terrace",
+      "original_visible_panes_replaced": 100,
+      "new_closed_half_panes": 200,
+      "mullion_width_m": 0.052,
+      "glass_thickness_m": 0.032
+    },
+    {
+      "building": "B08",
+      "source_mesh": "CityModern_B08_glass",
+      "original_visible_panes_replaced": 270,
+      "new_closed_half_panes": 540,
+      "mullion_width_m": 0.052,
+      "glass_thickness_m": 0.032
+    },
+    {
+      "building": "B13",
+      "source_mesh": "CityModern_B13_glass",
+      "original_visible_panes_replaced": 401,
+      "new_closed_half_panes": 802,
+      "mullion_width_m": 0.052,
+      "glass_thickness_m": 0.032
+    }
+  ],
+  "candidate_preview_materials_adapted": [
+    "CityModern_Context_Asphalt",
+    "CityModern_Glass_Day_Blue",
+    "CityModern_Glass_Day_Silver",
+    "CityModern_Hero_Glass",
+    "CityModern_LED",
+    "CityModern_Limestone",
+    "CityModern_Metal",
+    "CityModern_PaleStone",
+    "CityModern_Roof",
+    "CityModern_RoofPlanting",
+    "CityModern_Skyline_Glass_Blue",
+    "CityModern_Skyline_Glass_Grey",
+    "CityModern_Skyline_Spandrel",
+    "Glass_Lit_CityModern_Warm"
+  ],
+  "not_ue_verified": true
+}

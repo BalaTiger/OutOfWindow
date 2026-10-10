@@ -1,0 +1,73 @@
+{
+  "reference": "https://media-prod.zha.com/zhweb-prod-media/media/dxrb5gjv/01499_cp_hc_nov12_n79504.jpg?w=1920",
+  "reference_confirmed": true,
+  "stage": "explicit_composition_whitebox_not_final_architecture",
+  "camera": {
+    "eye_m": [
+      6,
+      -138,
+      70.5
+    ],
+    "target_m": [
+      -1,
+      28,
+      32
+    ],
+    "vfov_deg": 46,
+    "aspect": [
+      16,
+      9
+    ]
+  },
+  "lens_mm": 28.27022933959961,
+  "pitch_deg": 13.04642343981419,
+  "aspect": "16:9",
+  "crop": false,
+  "roll": 0,
+  "no_simulated_frame_sill_room": true,
+  "ground_z_m": 6.9,
+  "eye_above_ground_m": 63.6,
+  "source_assets_loaded": false,
+  "main_volumes": [
+    {
+      "name": "WB06_Left_Front_Primary_MainVolume",
+      "body_height_m": 60,
+      "body_bbox_ignoring_occlusion_xyxy": [
+        0.27095553278923035,
+        0.2562793493270874,
+        0.5055279731750488,
+        0.8350006341934204
+      ]
+    },
+    {
+      "name": "WB06_Right_Back_Secondary_MainVolume",
+      "body_height_m": 58,
+      "body_bbox_ignoring_occlusion_xyxy": [
+        0.5447903871536255,
+        0.25692248344421387,
+        0.7036774158477783,
+        0.6095095574855804
+      ]
+    },
+    {
+      "name": "WB06_Middle_Rear_Left_MainVolume",
+      "body_height_m": 54,
+      "body_bbox_ignoring_occlusion_xyxy": [
+        0.4551960825920105,
+        0.2717864513397217,
+        0.55306476354599,
+        0.5453880727291107
+      ]
+    },
+    {
+      "name": "WB06_Middle_Rear_Right_MainVolume",
+      "body_height_m": 55,
+      "body_bbox_ignoring_occlusion_xyxy": [
+        0.5272924900054932,
+        0.263164758682251,
+        0.6117385029792786,
+        0.5102194845676422
+      ]
+    }
+  ]
+}

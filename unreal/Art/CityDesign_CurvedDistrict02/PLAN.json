@@ -1,0 +1,20 @@
+{
+  "task": "Independent A+B commercial architecture review sample",
+  "completed": [
+    "Inspect built Galaxy photographs and fixed-window pixels",
+    "Author A/B editable geometry, one bridge/court, C blockout and separate office trial",
+    "Correct bridge sweep curvature and shading; make 648 glass panels planar",
+    "Save separate architecture/office GLB and FBX packages",
+    "Inspect four actual CPU previews and validate source/export geometry",
+    "Verify 11 protected files; preserve previous samples and worktree edits"
+  ],
+  "next_requires_main_thread_coordination": [
+    "UE import and map trial",
+    "GPU render or desktop application launch"
+  ],
+  "not_performed": [
+    "City/WindowDirector/cloud/shared-build edits",
+    "deployment",
+    "git commit/push"
+  ]
+}
