@@ -1,0 +1,65 @@
+[
+  {
+    "mode": "original",
+    "sampledWindowRays": 6331,
+    "metalBlockedRays": 1089,
+    "metalBlockedFraction": 0.17201074079924183,
+    "zones": {
+      "left": {
+        "eligible": 2047,
+        "blocked": 407
+      },
+      "middle": {
+        "eligible": 2361,
+        "blocked": 267
+      },
+      "right": {
+        "eligible": 1923,
+        "blocked": 415
+      }
+    },
+    "definition": "960x540 pixel grid step2, x240..460/y145..285; actual front glazing hit at z24.3..66.66, exclude first-hit slabs; frame hit before/within0.2m behind glass. Geometry visibility metric, not rendered light contribution."
+  },
+  {
+    "mode": "moderate",
+    "sampledWindowRays": 6333,
+    "metalBlockedRays": 624,
+    "metalBlockedFraction": 0.098531501657982,
+    "zones": {
+      "left": {
+        "eligible": 2048,
+        "blocked": 233
+      },
+      "middle": {
+        "eligible": 2361,
+        "blocked": 154
+      },
+      "right": {
+        "eligible": 1924,
+        "blocked": 237
+      }
+    },
+    "definition": "960x540 pixel grid step2, x240..460/y145..285; actual front glazing hit at z24.3..66.66, exclude first-hit slabs; frame hit before/within0.2m behind glass. Geometry visibility metric, not rendered light contribution."
+  },
+  {
+    "mode": "strong",
+    "sampledWindowRays": 6333,
+    "metalBlockedRays": 324,
+    "metalBlockedFraction": 0.05116058739933681,
+    "zones": {
+      "left": {
+        "eligible": 2048,
+        "blocked": 118
+      },
+      "middle": {
+        "eligible": 2361,
+        "blocked": 76
+      },
+      "right": {
+        "eligible": 1924,
+        "blocked": 130
+      }
+    },
+    "definition": "960x540 pixel grid step2, x240..460/y145..285; actual front glazing hit at z24.3..66.66, exclude first-hit slabs; frame hit before/within0.2m behind glass. Geometry visibility metric, not rendered light contribution."
+  }
+]

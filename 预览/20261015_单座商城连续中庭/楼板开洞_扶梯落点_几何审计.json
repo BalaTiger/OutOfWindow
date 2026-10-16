@@ -1,0 +1,2812 @@
+{
+  "sourceSHA256": "d648d10d075bddc1a390e79ebcc396bf0ea07c33820bfa5689e116c71c25e1d7",
+  "candidateSHA256": "c00725de79be6828e03eb2150b350eaddf426f91e5ccd008b87a2e3f1f08deae",
+  "changedOriginals": [
+    "C29_CC0_InteriorBench_arm_rest_01_L0",
+    "C29_CC0_InteriorBench_arm_rest_02_L0",
+    "C29_CC0_InteriorBench_back_support_l_L0",
+    "C29_CC0_InteriorBench_back_support_r_L0",
+    "C29_CC0_InteriorBench_crossbar_L0",
+    "C29_CC0_InteriorBench_legs_double_L0",
+    "C29_CC0_InteriorBench_legs_single_L0",
+    "C29_CC0_InteriorBench_seat_back_L0",
+    "C29_CC0_InteriorBench_seat_L0",
+    "C29_InteriorBack_0_0",
+    "C29_InteriorBack_0_1",
+    "C29_InteriorBack_0_10",
+    "C29_InteriorBack_0_11",
+    "C29_InteriorBack_0_12",
+    "C29_InteriorBack_0_2",
+    "C29_InteriorBack_0_3",
+    "C29_InteriorBack_0_4",
+    "C29_InteriorBack_0_5",
+    "C29_InteriorBack_0_6",
+    "C29_InteriorBack_0_7",
+    "C29_InteriorBack_0_8",
+    "C29_InteriorBack_0_9",
+    "C29_InteriorCeiling_0_0",
+    "C29_InteriorCeiling_0_1",
+    "C29_InteriorCeiling_0_10",
+    "C29_InteriorCeiling_0_11",
+    "C29_InteriorCeiling_0_12",
+    "C29_InteriorCeiling_0_2",
+    "C29_InteriorCeiling_0_3",
+    "C29_InteriorCeiling_0_4",
+    "C29_InteriorCeiling_0_5",
+    "C29_InteriorCeiling_0_6",
+    "C29_InteriorCeiling_0_7",
+    "C29_InteriorCeiling_0_8",
+    "C29_InteriorCeiling_0_9",
+    "C29_InteriorCeiling_1_0",
+    "C29_InteriorCeiling_1_1",
+    "C29_InteriorCeiling_1_10",
+    "C29_InteriorCeiling_1_11",
+    "C29_InteriorCeiling_1_12",
+    "C29_InteriorCeiling_1_2",
+    "C29_InteriorCeiling_1_3",
+    "C29_InteriorCeiling_1_4",
+    "C29_InteriorCeiling_1_5",
+    "C29_InteriorCeiling_1_6",
+    "C29_InteriorCeiling_1_7",
+    "C29_InteriorCeiling_1_8",
+    "C29_InteriorCeiling_1_9",
+    "C29_InteriorCeiling_2_0",
+    "C29_InteriorCeiling_2_1",
+    "C29_InteriorCeiling_2_10",
+    "C29_InteriorCeiling_2_11",
+    "C29_InteriorCeiling_2_12",
+    "C29_InteriorCeiling_2_2",
+    "C29_InteriorCeiling_2_3",
+    "C29_InteriorCeiling_2_4",
+    "C29_InteriorCeiling_2_5",
+    "C29_InteriorCeiling_2_6",
+    "C29_InteriorCeiling_2_7",
+    "C29_InteriorCeiling_2_8",
+    "C29_InteriorCeiling_2_9",
+    "C29_InteriorFloor_0_0",
+    "C29_InteriorFloor_0_1",
+    "C29_InteriorFloor_0_10",
+    "C29_InteriorFloor_0_11",
+    "C29_InteriorFloor_0_12",
+    "C29_InteriorFloor_0_2",
+    "C29_InteriorFloor_0_3",
+    "C29_InteriorFloor_0_4",
+    "C29_InteriorFloor_0_5",
+    "C29_InteriorFloor_0_6",
+    "C29_InteriorFloor_0_7",
+    "C29_InteriorFloor_0_8",
+    "C29_InteriorFloor_0_9",
+    "C29_InteriorFloor_1_0",
+    "C29_InteriorFloor_1_1",
+    "C29_InteriorFloor_1_10",
+    "C29_InteriorFloor_1_11",
+    "C29_InteriorFloor_1_12",
+    "C29_InteriorFloor_1_2",
+    "C29_InteriorFloor_1_3",
+    "C29_InteriorFloor_1_4",
+    "C29_InteriorFloor_1_5",
+    "C29_InteriorFloor_1_6",
+    "C29_InteriorFloor_1_7",
+    "C29_InteriorFloor_1_8",
+    "C29_InteriorFloor_1_9",
+    "C29_InteriorFloor_2_0",
+    "C29_InteriorFloor_2_1",
+    "C29_InteriorFloor_2_10",
+    "C29_InteriorFloor_2_11",
+    "C29_InteriorFloor_2_12",
+    "C29_InteriorFloor_2_2",
+    "C29_InteriorFloor_2_3",
+    "C29_InteriorFloor_2_4",
+    "C29_InteriorFloor_2_5",
+    "C29_InteriorFloor_2_6",
+    "C29_InteriorFloor_2_7",
+    "C29_InteriorFloor_2_8",
+    "C29_InteriorFloor_2_9",
+    "C29_InteriorLocal_0_0",
+    "C29_InteriorLocal_0_0_Panel",
+    "C29_InteriorLocal_0_1",
+    "C29_InteriorLocal_0_1_Panel",
+    "C29_LowRetailDisplay_0_1",
+    "C29_LowRetailDisplay_0_5",
+    "C29_LowRetailDisplay_0_9",
+    "C31_Cafe_BackBar",
+    "C31_Cafe_BackBarShelf",
+    "C31_Cafe_BackBarShelf.001",
+    "C31_Cafe_BackBarShelf.002",
+    "C31_Cafe_BackWall",
+    "C31_Cafe_CC0_Banquette_0_C29_CC0_InteriorBench_arm_rest_01_L0",
+    "C31_Cafe_CC0_Banquette_0_C29_CC0_InteriorBench_arm_rest_02_L0",
+    "C31_Cafe_CC0_Banquette_0_C29_CC0_InteriorBench_back_support_l_L0",
+    "C31_Cafe_CC0_Banquette_0_C29_CC0_InteriorBench_back_support_r_L0",
+    "C31_Cafe_CC0_Banquette_0_C29_CC0_InteriorBench_crossbar_L0",
+    "C31_Cafe_CC0_Banquette_0_C29_CC0_InteriorBench_legs_double_L0",
+    "C31_Cafe_CC0_Banquette_0_C29_CC0_InteriorBench_legs_single_L0",
+    "C31_Cafe_CC0_Banquette_0_C29_CC0_InteriorBench_seat_back_L0",
+    "C31_Cafe_CC0_Banquette_0_C29_CC0_InteriorBench_seat_L0",
+    "C31_Cafe_CC0_Banquette_1_C29_CC0_InteriorBench_arm_rest_01_L0",
+    "C31_Cafe_CC0_Banquette_1_C29_CC0_InteriorBench_arm_rest_02_L0",
+    "C31_Cafe_CC0_Banquette_1_C29_CC0_InteriorBench_back_support_l_L0",
+    "C31_Cafe_CC0_Banquette_1_C29_CC0_InteriorBench_back_support_r_L0",
+    "C31_Cafe_CC0_Banquette_1_C29_CC0_InteriorBench_crossbar_L0",
+    "C31_Cafe_CC0_Banquette_1_C29_CC0_InteriorBench_legs_double_L0",
+    "C31_Cafe_CC0_Banquette_1_C29_CC0_InteriorBench_legs_single_L0",
+    "C31_Cafe_CC0_Banquette_1_C29_CC0_InteriorBench_seat_back_L0",
+    "C31_Cafe_CC0_Banquette_1_C29_CC0_InteriorBench_seat_L0",
+    "C31_Cafe_ChairBack",
+    "C31_Cafe_ChairBack.001",
+    "C31_Cafe_ChairBack.002",
+    "C31_Cafe_ChairBack.003",
+    "C31_Cafe_ChairLeg",
+    "C31_Cafe_ChairLeg.001",
+    "C31_Cafe_ChairLeg.002",
+    "C31_Cafe_ChairLeg.003",
+    "C31_Cafe_ChairLeg.004",
+    "C31_Cafe_ChairLeg.005",
+    "C31_Cafe_ChairLeg.006",
+    "C31_Cafe_ChairLeg.007",
+    "C31_Cafe_ChairLeg.008",
+    "C31_Cafe_ChairLeg.009",
+    "C31_Cafe_ChairLeg.010",
+    "C31_Cafe_ChairLeg.011",
+    "C31_Cafe_ChairLeg.012",
+    "C31_Cafe_ChairLeg.013",
+    "C31_Cafe_ChairLeg.014",
+    "C31_Cafe_ChairLeg.015",
+    "C31_Cafe_ChairSeat",
+    "C31_Cafe_ChairSeat.001",
+    "C31_Cafe_ChairSeat.002",
+    "C31_Cafe_ChairSeat.003",
+    "C31_Cafe_CounterTask",
+    "C31_Cafe_CounterTop",
+    "C31_Cafe_DiningPool",
+    "C31_Cafe_ServiceCounter",
+    "C31_Cafe_ServicePartition",
+    "C31_Cafe_TableFoot",
+    "C31_Cafe_TableFoot.001",
+    "C31_Cafe_TableStem",
+    "C31_Cafe_TableStem.001",
+    "C31_Cafe_TableTop",
+    "C31_Cafe_TableTop.001",
+    "C31_Retail_DisplayIsland",
+    "C31_Retail_DisplayIslandCap",
+    "C31_Retail_DisplayShelf",
+    "C31_Retail_DisplayShelf.001",
+    "C31_Retail_DisplayShelf.002",
+    "C31_Retail_DisplayShelf.003",
+    "C31_Retail_DisplayShelf.004",
+    "C31_Retail_DisplayShelf.005",
+    "C31_Retail_DisplayShelf.006",
+    "C31_Retail_DisplayShelf.007",
+    "C31_Retail_FixtureBack",
+    "C31_Retail_FixtureBack.001",
+    "C31_Retail_FixtureJamb",
+    "C31_Retail_FixtureJamb.001",
+    "C31_Retail_FixtureJamb.002",
+    "C31_Retail_FixtureJamb.003",
+    "C31_Retail_FloorExtension",
+    "C31_Retail_IslandPool",
+    "C31_Retail_LeftDisplay",
+    "C31_Retail_LeftReturn",
+    "C31_Retail_ProductPackage",
+    "C31_Retail_ProductPackage.001",
+    "C31_Retail_ProductPackage.002",
+    "C31_Retail_ProductPackage.003",
+    "C31_Retail_ProductPackage.004",
+    "C31_Retail_ProductPackage.005",
+    "C31_Retail_ProductPackage.006",
+    "C31_Retail_ProductPackage.007",
+    "C31_Retail_ProductPackage.008",
+    "C31_Retail_ProductPackage.009",
+    "C31_Retail_ProductPackage.010",
+    "C31_Retail_ProductPackage.011",
+    "C31_Retail_ProductPackage.012",
+    "C31_Retail_ProductPackage.013",
+    "C31_Retail_ProductPackage.014",
+    "C31_Retail_ProductPackage.015",
+    "C31_Retail_ProductPackage.016",
+    "C31_Retail_ProductPackage.017",
+    "C31_Retail_RearWall",
+    "C31_Retail_StockroomPartition",
+    "C31_Retail_TallEndcap",
+    "C32_WB06_Left_Front_Primary_Fixtures",
+    "C32_WB06_Left_Front_Primary_Furniture",
+    "C32_WB06_Left_Front_Primary_Interior",
+    "C32_WB06_Left_Front_Primary_L0_Tenant0",
+    "C32_WB06_Left_Front_Primary_L0_Tenant2",
+    "C32_WB06_Left_Front_Primary_L0_Tenant3",
+    "C32_WB06_Left_Front_Primary_L0_Tenant4",
+    "C32_WB06_Left_Front_Primary_L0_Tenant5",
+    "C32_WB06_Left_Front_Primary_L10_Tenant1",
+    "C32_WB06_Left_Front_Primary_L10_Tenant2",
+    "C32_WB06_Left_Front_Primary_L10_Tenant3",
+    "C32_WB06_Left_Front_Primary_L10_Tenant4",
+    "C32_WB06_Left_Front_Primary_L10_Tenant6",
+    "C32_WB06_Left_Front_Primary_L10_Tenant7",
+    "C32_WB06_Left_Front_Primary_L11_Tenant0",
+    "C32_WB06_Left_Front_Primary_L11_Tenant10",
+    "C32_WB06_Left_Front_Primary_L11_Tenant12",
+    "C32_WB06_Left_Front_Primary_L11_Tenant13",
+    "C32_WB06_Left_Front_Primary_L11_Tenant2",
+    "C32_WB06_Left_Front_Primary_L11_Tenant3",
+    "C32_WB06_Left_Front_Primary_L11_Tenant4",
+    "C32_WB06_Left_Front_Primary_L11_Tenant5",
+    "C32_WB06_Left_Front_Primary_L11_Tenant7",
+    "C32_WB06_Left_Front_Primary_L11_Tenant8",
+    "C32_WB06_Left_Front_Primary_L11_Tenant9",
+    "C32_WB06_Left_Front_Primary_L12_Tenant1",
+    "C32_WB06_Left_Front_Primary_L12_Tenant2",
+    "C32_WB06_Left_Front_Primary_L12_Tenant3",
+    "C32_WB06_Left_Front_Primary_L12_Tenant4",
+    "C32_WB06_Left_Front_Primary_L12_Tenant6",
+    "C32_WB06_Left_Front_Primary_L12_Tenant7",
+    "C32_WB06_Left_Front_Primary_L12_Tenant8",
+    "C32_WB06_Left_Front_Primary_L12_Tenant9",
+    "C32_WB06_Left_Front_Primary_L13_Tenant0",
+    "C32_WB06_Left_Front_Primary_L13_Tenant1",
+    "C32_WB06_Left_Front_Primary_L13_Tenant2",
+    "C32_WB06_Left_Front_Primary_L13_Tenant3",
+    "C32_WB06_Left_Front_Primary_L13_Tenant5",
+    "C32_WB06_Left_Front_Primary_L13_Tenant6",
+    "C32_WB06_Left_Front_Primary_L13_Tenant7",
+    "C32_WB06_Left_Front_Primary_L14_Tenant1",
+    "C32_WB06_Left_Front_Primary_L14_Tenant2",
+    "C32_WB06_Left_Front_Primary_L14_Tenant3",
+    "C32_WB06_Left_Front_Primary_L14_Tenant4",
+    "C32_WB06_Left_Front_Primary_L14_Tenant6",
+    "C32_WB06_Left_Front_Primary_L14_Tenant7",
+    "C32_WB06_Left_Front_Primary_L14_Tenant8",
+    "C32_WB06_Left_Front_Primary_L14_Tenant9",
+    "C32_WB06_Left_Front_Primary_L15_Tenant0",
+    "C32_WB06_Left_Front_Primary_L15_Tenant1",
+    "C32_WB06_Left_Front_Primary_L15_Tenant10",
+    "C32_WB06_Left_Front_Primary_L15_Tenant11",
+    "C32_WB06_Left_Front_Primary_L15_Tenant13",
+    "C32_WB06_Left_Front_Primary_L15_Tenant14",
+    "C32_WB06_Left_Front_Primary_L15_Tenant3",
+    "C32_WB06_Left_Front_Primary_L15_Tenant4",
+    "C32_WB06_Left_Front_Primary_L15_Tenant5",
+    "C32_WB06_Left_Front_Primary_L15_Tenant6",
+    "C32_WB06_Left_Front_Primary_L15_Tenant8",
+    "C32_WB06_Left_Front_Primary_L15_Tenant9",
+    "C32_WB06_Left_Front_Primary_L1_Tenant0",
+    "C32_WB06_Left_Front_Primary_L1_Tenant1",
+    "C32_WB06_Left_Front_Primary_L1_Tenant2",
+    "C32_WB06_Left_Front_Primary_L1_Tenant4",
+    "C32_WB06_Left_Front_Primary_L1_Tenant5",
+    "C32_WB06_Left_Front_Primary_L1_Tenant6",
+    "C32_WB06_Left_Front_Primary_L1_Tenant7",
+    "C32_WB06_Left_Front_Primary_L2_Tenant0",
+    "C32_WB06_Left_Front_Primary_L2_Tenant1",
+    "C32_WB06_Left_Front_Primary_L2_Tenant3",
+    "C32_WB06_Left_Front_Primary_L2_Tenant4",
+    "C32_WB06_Left_Front_Primary_L2_Tenant5",
+    "C32_WB06_Left_Front_Primary_L2_Tenant6",
+    "C32_WB06_Left_Front_Primary_L3_Tenant0",
+    "C32_WB06_Left_Front_Primary_L3_Tenant1",
+    "C32_WB06_Left_Front_Primary_L3_Tenant10",
+    "C32_WB06_Left_Front_Primary_L3_Tenant11",
+    "C32_WB06_Left_Front_Primary_L3_Tenant13",
+    "C32_WB06_Left_Front_Primary_L3_Tenant3",
+    "C32_WB06_Left_Front_Primary_L3_Tenant4",
+    "C32_WB06_Left_Front_Primary_L3_Tenant5",
+    "C32_WB06_Left_Front_Primary_L3_Tenant6",
+    "C32_WB06_Left_Front_Primary_L3_Tenant8",
+    "C32_WB06_Left_Front_Primary_L3_Tenant9",
+    "C32_WB06_Left_Front_Primary_L4_Tenant0",
+    "C32_WB06_Left_Front_Primary_L4_Tenant1",
+    "C32_WB06_Left_Front_Primary_L4_Tenant2",
+    "C32_WB06_Left_Front_Primary_L4_Tenant3",
+    "C32_WB06_Left_Front_Primary_L4_Tenant5",
+    "C32_WB06_Left_Front_Primary_L4_Tenant6",
+    "C32_WB06_Left_Front_Primary_L4_Tenant7",
+    "C32_WB06_Left_Front_Primary_L5_Tenant0",
+    "C32_WB06_Left_Front_Primary_L5_Tenant1",
+    "C32_WB06_Left_Front_Primary_L5_Tenant3",
+    "C32_WB06_Left_Front_Primary_L5_Tenant4",
+    "C32_WB06_Left_Front_Primary_L5_Tenant5",
+    "C32_WB06_Left_Front_Primary_L5_Tenant6",
+    "C32_WB06_Left_Front_Primary_L5_Tenant8",
+    "C32_WB06_Left_Front_Primary_L5_Tenant9",
+    "C32_WB06_Left_Front_Primary_L6_Tenant0",
+    "C32_WB06_Left_Front_Primary_L6_Tenant10",
+    "C32_WB06_Left_Front_Primary_L6_Tenant12",
+    "C32_WB06_Left_Front_Primary_L6_Tenant13",
+    "C32_WB06_Left_Front_Primary_L6_Tenant2",
+    "C32_WB06_Left_Front_Primary_L6_Tenant3",
+    "C32_WB06_Left_Front_Primary_L6_Tenant4",
+    "C32_WB06_Left_Front_Primary_L6_Tenant5",
+    "C32_WB06_Left_Front_Primary_L6_Tenant7",
+    "C32_WB06_Left_Front_Primary_L6_Tenant8",
+    "C32_WB06_Left_Front_Primary_L6_Tenant9",
+    "C32_WB06_Left_Front_Primary_L7_Tenant1",
+    "C32_WB06_Left_Front_Primary_L7_Tenant2",
+    "C32_WB06_Left_Front_Primary_L7_Tenant3",
+    "C32_WB06_Left_Front_Primary_L7_Tenant4",
+    "C32_WB06_Left_Front_Primary_L7_Tenant6",
+    "C32_WB06_Left_Front_Primary_L7_Tenant7",
+    "C32_WB06_Left_Front_Primary_L8_Tenant0",
+    "C32_WB06_Left_Front_Primary_L8_Tenant1",
+    "C32_WB06_Left_Front_Primary_L8_Tenant2",
+    "C32_WB06_Left_Front_Primary_L8_Tenant4",
+    "C32_WB06_Left_Front_Primary_L8_Tenant5",
+    "C32_WB06_Left_Front_Primary_L8_Tenant6",
+    "C32_WB06_Left_Front_Primary_L8_Tenant7",
+    "C32_WB06_Left_Front_Primary_L8_Tenant9",
+    "C32_WB06_Left_Front_Primary_L9_Tenant1",
+    "C32_WB06_Left_Front_Primary_L9_Tenant11",
+    "C32_WB06_Left_Front_Primary_L9_Tenant12",
+    "C32_WB06_Left_Front_Primary_L9_Tenant13",
+    "C32_WB06_Left_Front_Primary_L9_Tenant2",
+    "C32_WB06_Left_Front_Primary_L9_Tenant3",
+    "C32_WB06_Left_Front_Primary_L9_Tenant4",
+    "C32_WB06_Left_Front_Primary_L9_Tenant6",
+    "C32_WB06_Left_Front_Primary_L9_Tenant7",
+    "C32_WB06_Left_Front_Primary_L9_Tenant8",
+    "C32_WB06_Left_Front_Primary_L9_Tenant9",
+    "WB06_Left_Front_Primary_DistinctRoofCrown",
+    "WB06_Left_Front_Primary_FloorBand_00",
+    "WB06_Left_Front_Primary_FloorBand_01",
+    "WB06_Left_Front_Primary_FloorBand_02",
+    "WB06_Left_Front_Primary_FloorBand_03",
+    "WB06_Left_Front_Primary_FloorBand_04",
+    "WB06_Left_Front_Primary_FloorBand_05",
+    "WB06_Left_Front_Primary_FloorBand_06",
+    "WB06_Left_Front_Primary_FloorBand_07",
+    "WB06_Left_Front_Primary_FloorBand_08",
+    "WB06_Left_Front_Primary_FloorBand_09",
+    "WB06_Left_Front_Primary_FloorBand_10",
+    "WB06_Left_Front_Primary_FloorBand_11",
+    "WB06_Left_Front_Primary_FloorBand_12",
+    "WB06_Left_Front_Primary_FloorBand_13",
+    "WB06_Left_Front_Primary_FloorBand_14",
+    "WB06_Left_Front_Primary_FloorBand_15",
+    "WB06_Left_Front_Primary_MainVolume"
+  ],
+  "hiddenOldInteriors": [
+    "C29_CC0_InteriorBench_arm_rest_01_L0",
+    "C29_CC0_InteriorBench_arm_rest_02_L0",
+    "C29_CC0_InteriorBench_back_support_l_L0",
+    "C29_CC0_InteriorBench_back_support_r_L0",
+    "C29_CC0_InteriorBench_crossbar_L0",
+    "C29_CC0_InteriorBench_legs_double_L0",
+    "C29_CC0_InteriorBench_legs_single_L0",
+    "C29_CC0_InteriorBench_seat_back_L0",
+    "C29_CC0_InteriorBench_seat_L0",
+    "C29_InteriorBack_0_0",
+    "C29_InteriorBack_0_1",
+    "C29_InteriorBack_0_10",
+    "C29_InteriorBack_0_11",
+    "C29_InteriorBack_0_12",
+    "C29_InteriorBack_0_2",
+    "C29_InteriorBack_0_3",
+    "C29_InteriorBack_0_4",
+    "C29_InteriorBack_0_5",
+    "C29_InteriorBack_0_6",
+    "C29_InteriorBack_0_7",
+    "C29_InteriorBack_0_8",
+    "C29_InteriorBack_0_9",
+    "C29_InteriorCeiling_0_0",
+    "C29_InteriorCeiling_0_1",
+    "C29_InteriorCeiling_0_10",
+    "C29_InteriorCeiling_0_11",
+    "C29_InteriorCeiling_0_12",
+    "C29_InteriorCeiling_0_2",
+    "C29_InteriorCeiling_0_3",
+    "C29_InteriorCeiling_0_4",
+    "C29_InteriorCeiling_0_5",
+    "C29_InteriorCeiling_0_6",
+    "C29_InteriorCeiling_0_7",
+    "C29_InteriorCeiling_0_8",
+    "C29_InteriorCeiling_0_9",
+    "C29_InteriorCeiling_1_0",
+    "C29_InteriorCeiling_1_1",
+    "C29_InteriorCeiling_1_10",
+    "C29_InteriorCeiling_1_11",
+    "C29_InteriorCeiling_1_12",
+    "C29_InteriorCeiling_1_2",
+    "C29_InteriorCeiling_1_3",
+    "C29_InteriorCeiling_1_4",
+    "C29_InteriorCeiling_1_5",
+    "C29_InteriorCeiling_1_6",
+    "C29_InteriorCeiling_1_7",
+    "C29_InteriorCeiling_1_8",
+    "C29_InteriorCeiling_1_9",
+    "C29_InteriorCeiling_2_0",
+    "C29_InteriorCeiling_2_1",
+    "C29_InteriorCeiling_2_10",
+    "C29_InteriorCeiling_2_11",
+    "C29_InteriorCeiling_2_12",
+    "C29_InteriorCeiling_2_2",
+    "C29_InteriorCeiling_2_3",
+    "C29_InteriorCeiling_2_4",
+    "C29_InteriorCeiling_2_5",
+    "C29_InteriorCeiling_2_6",
+    "C29_InteriorCeiling_2_7",
+    "C29_InteriorCeiling_2_8",
+    "C29_InteriorCeiling_2_9",
+    "C29_InteriorFloor_0_0",
+    "C29_InteriorFloor_0_1",
+    "C29_InteriorFloor_0_10",
+    "C29_InteriorFloor_0_11",
+    "C29_InteriorFloor_0_12",
+    "C29_InteriorFloor_0_2",
+    "C29_InteriorFloor_0_3",
+    "C29_InteriorFloor_0_4",
+    "C29_InteriorFloor_0_5",
+    "C29_InteriorFloor_0_6",
+    "C29_InteriorFloor_0_7",
+    "C29_InteriorFloor_0_8",
+    "C29_InteriorFloor_0_9",
+    "C29_InteriorFloor_1_0",
+    "C29_InteriorFloor_1_1",
+    "C29_InteriorFloor_1_10",
+    "C29_InteriorFloor_1_11",
+    "C29_InteriorFloor_1_12",
+    "C29_InteriorFloor_1_2",
+    "C29_InteriorFloor_1_3",
+    "C29_InteriorFloor_1_4",
+    "C29_InteriorFloor_1_5",
+    "C29_InteriorFloor_1_6",
+    "C29_InteriorFloor_1_7",
+    "C29_InteriorFloor_1_8",
+    "C29_InteriorFloor_1_9",
+    "C29_InteriorFloor_2_0",
+    "C29_InteriorFloor_2_1",
+    "C29_InteriorFloor_2_10",
+    "C29_InteriorFloor_2_11",
+    "C29_InteriorFloor_2_12",
+    "C29_InteriorFloor_2_2",
+    "C29_InteriorFloor_2_3",
+    "C29_InteriorFloor_2_4",
+    "C29_InteriorFloor_2_5",
+    "C29_InteriorFloor_2_6",
+    "C29_InteriorFloor_2_7",
+    "C29_InteriorFloor_2_8",
+    "C29_InteriorFloor_2_9",
+    "C29_InteriorLocal_0_0",
+    "C29_InteriorLocal_0_0_Panel",
+    "C29_InteriorLocal_0_1",
+    "C29_InteriorLocal_0_1_Panel",
+    "C29_LowRetailDisplay_0_1",
+    "C29_LowRetailDisplay_0_5",
+    "C29_LowRetailDisplay_0_9",
+    "C31_Cafe_BackBar",
+    "C31_Cafe_BackBarShelf",
+    "C31_Cafe_BackBarShelf.001",
+    "C31_Cafe_BackBarShelf.002",
+    "C31_Cafe_BackWall",
+    "C31_Cafe_CC0_Banquette_0_C29_CC0_InteriorBench_arm_rest_01_L0",
+    "C31_Cafe_CC0_Banquette_0_C29_CC0_InteriorBench_arm_rest_02_L0",
+    "C31_Cafe_CC0_Banquette_0_C29_CC0_InteriorBench_back_support_l_L0",
+    "C31_Cafe_CC0_Banquette_0_C29_CC0_InteriorBench_back_support_r_L0",
+    "C31_Cafe_CC0_Banquette_0_C29_CC0_InteriorBench_crossbar_L0",
+    "C31_Cafe_CC0_Banquette_0_C29_CC0_InteriorBench_legs_double_L0",
+    "C31_Cafe_CC0_Banquette_0_C29_CC0_InteriorBench_legs_single_L0",
+    "C31_Cafe_CC0_Banquette_0_C29_CC0_InteriorBench_seat_back_L0",
+    "C31_Cafe_CC0_Banquette_0_C29_CC0_InteriorBench_seat_L0",
+    "C31_Cafe_CC0_Banquette_1_C29_CC0_InteriorBench_arm_rest_01_L0",
+    "C31_Cafe_CC0_Banquette_1_C29_CC0_InteriorBench_arm_rest_02_L0",
+    "C31_Cafe_CC0_Banquette_1_C29_CC0_InteriorBench_back_support_l_L0",
+    "C31_Cafe_CC0_Banquette_1_C29_CC0_InteriorBench_back_support_r_L0",
+    "C31_Cafe_CC0_Banquette_1_C29_CC0_InteriorBench_crossbar_L0",
+    "C31_Cafe_CC0_Banquette_1_C29_CC0_InteriorBench_legs_double_L0",
+    "C31_Cafe_CC0_Banquette_1_C29_CC0_InteriorBench_legs_single_L0",
+    "C31_Cafe_CC0_Banquette_1_C29_CC0_InteriorBench_seat_back_L0",
+    "C31_Cafe_CC0_Banquette_1_C29_CC0_InteriorBench_seat_L0",
+    "C31_Cafe_ChairBack",
+    "C31_Cafe_ChairBack.001",
+    "C31_Cafe_ChairBack.002",
+    "C31_Cafe_ChairBack.003",
+    "C31_Cafe_ChairLeg",
+    "C31_Cafe_ChairLeg.001",
+    "C31_Cafe_ChairLeg.002",
+    "C31_Cafe_ChairLeg.003",
+    "C31_Cafe_ChairLeg.004",
+    "C31_Cafe_ChairLeg.005",
+    "C31_Cafe_ChairLeg.006",
+    "C31_Cafe_ChairLeg.007",
+    "C31_Cafe_ChairLeg.008",
+    "C31_Cafe_ChairLeg.009",
+    "C31_Cafe_ChairLeg.010",
+    "C31_Cafe_ChairLeg.011",
+    "C31_Cafe_ChairLeg.012",
+    "C31_Cafe_ChairLeg.013",
+    "C31_Cafe_ChairLeg.014",
+    "C31_Cafe_ChairLeg.015",
+    "C31_Cafe_ChairSeat",
+    "C31_Cafe_ChairSeat.001",
+    "C31_Cafe_ChairSeat.002",
+    "C31_Cafe_ChairSeat.003",
+    "C31_Cafe_CounterTask",
+    "C31_Cafe_CounterTop",
+    "C31_Cafe_DiningPool",
+    "C31_Cafe_ServiceCounter",
+    "C31_Cafe_ServicePartition",
+    "C31_Cafe_TableFoot",
+    "C31_Cafe_TableFoot.001",
+    "C31_Cafe_TableStem",
+    "C31_Cafe_TableStem.001",
+    "C31_Cafe_TableTop",
+    "C31_Cafe_TableTop.001",
+    "C31_Retail_DisplayIsland",
+    "C31_Retail_DisplayIslandCap",
+    "C31_Retail_DisplayShelf",
+    "C31_Retail_DisplayShelf.001",
+    "C31_Retail_DisplayShelf.002",
+    "C31_Retail_DisplayShelf.003",
+    "C31_Retail_DisplayShelf.004",
+    "C31_Retail_DisplayShelf.005",
+    "C31_Retail_DisplayShelf.006",
+    "C31_Retail_DisplayShelf.007",
+    "C31_Retail_FixtureBack",
+    "C31_Retail_FixtureBack.001",
+    "C31_Retail_FixtureJamb",
+    "C31_Retail_FixtureJamb.001",
+    "C31_Retail_FixtureJamb.002",
+    "C31_Retail_FixtureJamb.003",
+    "C31_Retail_FloorExtension",
+    "C31_Retail_IslandPool",
+    "C31_Retail_LeftDisplay",
+    "C31_Retail_LeftReturn",
+    "C31_Retail_ProductPackage",
+    "C31_Retail_ProductPackage.001",
+    "C31_Retail_ProductPackage.002",
+    "C31_Retail_ProductPackage.003",
+    "C31_Retail_ProductPackage.004",
+    "C31_Retail_ProductPackage.005",
+    "C31_Retail_ProductPackage.006",
+    "C31_Retail_ProductPackage.007",
+    "C31_Retail_ProductPackage.008",
+    "C31_Retail_ProductPackage.009",
+    "C31_Retail_ProductPackage.010",
+    "C31_Retail_ProductPackage.011",
+    "C31_Retail_ProductPackage.012",
+    "C31_Retail_ProductPackage.013",
+    "C31_Retail_ProductPackage.014",
+    "C31_Retail_ProductPackage.015",
+    "C31_Retail_ProductPackage.016",
+    "C31_Retail_ProductPackage.017",
+    "C31_Retail_RearWall",
+    "C31_Retail_StockroomPartition",
+    "C31_Retail_TallEndcap",
+    "C32_WB06_Left_Front_Primary_Fixtures",
+    "C32_WB06_Left_Front_Primary_Furniture",
+    "C32_WB06_Left_Front_Primary_Interior",
+    "C32_WB06_Left_Front_Primary_L0_Tenant0",
+    "C32_WB06_Left_Front_Primary_L0_Tenant2",
+    "C32_WB06_Left_Front_Primary_L0_Tenant3",
+    "C32_WB06_Left_Front_Primary_L0_Tenant4",
+    "C32_WB06_Left_Front_Primary_L0_Tenant5",
+    "C32_WB06_Left_Front_Primary_L10_Tenant1",
+    "C32_WB06_Left_Front_Primary_L10_Tenant2",
+    "C32_WB06_Left_Front_Primary_L10_Tenant3",
+    "C32_WB06_Left_Front_Primary_L10_Tenant4",
+    "C32_WB06_Left_Front_Primary_L10_Tenant6",
+    "C32_WB06_Left_Front_Primary_L10_Tenant7",
+    "C32_WB06_Left_Front_Primary_L11_Tenant0",
+    "C32_WB06_Left_Front_Primary_L11_Tenant10",
+    "C32_WB06_Left_Front_Primary_L11_Tenant12",
+    "C32_WB06_Left_Front_Primary_L11_Tenant13",
+    "C32_WB06_Left_Front_Primary_L11_Tenant2",
+    "C32_WB06_Left_Front_Primary_L11_Tenant3",
+    "C32_WB06_Left_Front_Primary_L11_Tenant4",
+    "C32_WB06_Left_Front_Primary_L11_Tenant5",
+    "C32_WB06_Left_Front_Primary_L11_Tenant7",
+    "C32_WB06_Left_Front_Primary_L11_Tenant8",
+    "C32_WB06_Left_Front_Primary_L11_Tenant9",
+    "C32_WB06_Left_Front_Primary_L12_Tenant1",
+    "C32_WB06_Left_Front_Primary_L12_Tenant2",
+    "C32_WB06_Left_Front_Primary_L12_Tenant3",
+    "C32_WB06_Left_Front_Primary_L12_Tenant4",
+    "C32_WB06_Left_Front_Primary_L12_Tenant6",
+    "C32_WB06_Left_Front_Primary_L12_Tenant7",
+    "C32_WB06_Left_Front_Primary_L12_Tenant8",
+    "C32_WB06_Left_Front_Primary_L12_Tenant9",
+    "C32_WB06_Left_Front_Primary_L13_Tenant0",
+    "C32_WB06_Left_Front_Primary_L13_Tenant1",
+    "C32_WB06_Left_Front_Primary_L13_Tenant2",
+    "C32_WB06_Left_Front_Primary_L13_Tenant3",
+    "C32_WB06_Left_Front_Primary_L13_Tenant5",
+    "C32_WB06_Left_Front_Primary_L13_Tenant6",
+    "C32_WB06_Left_Front_Primary_L13_Tenant7",
+    "C32_WB06_Left_Front_Primary_L14_Tenant1",
+    "C32_WB06_Left_Front_Primary_L14_Tenant2",
+    "C32_WB06_Left_Front_Primary_L14_Tenant3",
+    "C32_WB06_Left_Front_Primary_L14_Tenant4",
+    "C32_WB06_Left_Front_Primary_L14_Tenant6",
+    "C32_WB06_Left_Front_Primary_L14_Tenant7",
+    "C32_WB06_Left_Front_Primary_L14_Tenant8",
+    "C32_WB06_Left_Front_Primary_L14_Tenant9",
+    "C32_WB06_Left_Front_Primary_L15_Tenant0",
+    "C32_WB06_Left_Front_Primary_L15_Tenant1",
+    "C32_WB06_Left_Front_Primary_L15_Tenant10",
+    "C32_WB06_Left_Front_Primary_L15_Tenant11",
+    "C32_WB06_Left_Front_Primary_L15_Tenant13",
+    "C32_WB06_Left_Front_Primary_L15_Tenant14",
+    "C32_WB06_Left_Front_Primary_L15_Tenant3",
+    "C32_WB06_Left_Front_Primary_L15_Tenant4",
+    "C32_WB06_Left_Front_Primary_L15_Tenant5",
+    "C32_WB06_Left_Front_Primary_L15_Tenant6",
+    "C32_WB06_Left_Front_Primary_L15_Tenant8",
+    "C32_WB06_Left_Front_Primary_L15_Tenant9",
+    "C32_WB06_Left_Front_Primary_L1_Tenant0",
+    "C32_WB06_Left_Front_Primary_L1_Tenant1",
+    "C32_WB06_Left_Front_Primary_L1_Tenant2",
+    "C32_WB06_Left_Front_Primary_L1_Tenant4",
+    "C32_WB06_Left_Front_Primary_L1_Tenant5",
+    "C32_WB06_Left_Front_Primary_L1_Tenant6",
+    "C32_WB06_Left_Front_Primary_L1_Tenant7",
+    "C32_WB06_Left_Front_Primary_L2_Tenant0",
+    "C32_WB06_Left_Front_Primary_L2_Tenant1",
+    "C32_WB06_Left_Front_Primary_L2_Tenant3",
+    "C32_WB06_Left_Front_Primary_L2_Tenant4",
+    "C32_WB06_Left_Front_Primary_L2_Tenant5",
+    "C32_WB06_Left_Front_Primary_L2_Tenant6",
+    "C32_WB06_Left_Front_Primary_L3_Tenant0",
+    "C32_WB06_Left_Front_Primary_L3_Tenant1",
+    "C32_WB06_Left_Front_Primary_L3_Tenant10",
+    "C32_WB06_Left_Front_Primary_L3_Tenant11",
+    "C32_WB06_Left_Front_Primary_L3_Tenant13",
+    "C32_WB06_Left_Front_Primary_L3_Tenant3",
+    "C32_WB06_Left_Front_Primary_L3_Tenant4",
+    "C32_WB06_Left_Front_Primary_L3_Tenant5",
+    "C32_WB06_Left_Front_Primary_L3_Tenant6",
+    "C32_WB06_Left_Front_Primary_L3_Tenant8",
+    "C32_WB06_Left_Front_Primary_L3_Tenant9",
+    "C32_WB06_Left_Front_Primary_L4_Tenant0",
+    "C32_WB06_Left_Front_Primary_L4_Tenant1",
+    "C32_WB06_Left_Front_Primary_L4_Tenant2",
+    "C32_WB06_Left_Front_Primary_L4_Tenant3",
+    "C32_WB06_Left_Front_Primary_L4_Tenant5",
+    "C32_WB06_Left_Front_Primary_L4_Tenant6",
+    "C32_WB06_Left_Front_Primary_L4_Tenant7",
+    "C32_WB06_Left_Front_Primary_L5_Tenant0",
+    "C32_WB06_Left_Front_Primary_L5_Tenant1",
+    "C32_WB06_Left_Front_Primary_L5_Tenant3",
+    "C32_WB06_Left_Front_Primary_L5_Tenant4",
+    "C32_WB06_Left_Front_Primary_L5_Tenant5",
+    "C32_WB06_Left_Front_Primary_L5_Tenant6",
+    "C32_WB06_Left_Front_Primary_L5_Tenant8",
+    "C32_WB06_Left_Front_Primary_L5_Tenant9",
+    "C32_WB06_Left_Front_Primary_L6_Tenant0",
+    "C32_WB06_Left_Front_Primary_L6_Tenant10",
+    "C32_WB06_Left_Front_Primary_L6_Tenant12",
+    "C32_WB06_Left_Front_Primary_L6_Tenant13",
+    "C32_WB06_Left_Front_Primary_L6_Tenant2",
+    "C32_WB06_Left_Front_Primary_L6_Tenant3",
+    "C32_WB06_Left_Front_Primary_L6_Tenant4",
+    "C32_WB06_Left_Front_Primary_L6_Tenant5",
+    "C32_WB06_Left_Front_Primary_L6_Tenant7",
+    "C32_WB06_Left_Front_Primary_L6_Tenant8",
+    "C32_WB06_Left_Front_Primary_L6_Tenant9",
+    "C32_WB06_Left_Front_Primary_L7_Tenant1",
+    "C32_WB06_Left_Front_Primary_L7_Tenant2",
+    "C32_WB06_Left_Front_Primary_L7_Tenant3",
+    "C32_WB06_Left_Front_Primary_L7_Tenant4",
+    "C32_WB06_Left_Front_Primary_L7_Tenant6",
+    "C32_WB06_Left_Front_Primary_L7_Tenant7",
+    "C32_WB06_Left_Front_Primary_L8_Tenant0",
+    "C32_WB06_Left_Front_Primary_L8_Tenant1",
+    "C32_WB06_Left_Front_Primary_L8_Tenant2",
+    "C32_WB06_Left_Front_Primary_L8_Tenant4",
+    "C32_WB06_Left_Front_Primary_L8_Tenant5",
+    "C32_WB06_Left_Front_Primary_L8_Tenant6",
+    "C32_WB06_Left_Front_Primary_L8_Tenant7",
+    "C32_WB06_Left_Front_Primary_L8_Tenant9",
+    "C32_WB06_Left_Front_Primary_L9_Tenant1",
+    "C32_WB06_Left_Front_Primary_L9_Tenant11",
+    "C32_WB06_Left_Front_Primary_L9_Tenant12",
+    "C32_WB06_Left_Front_Primary_L9_Tenant13",
+    "C32_WB06_Left_Front_Primary_L9_Tenant2",
+    "C32_WB06_Left_Front_Primary_L9_Tenant3",
+    "C32_WB06_Left_Front_Primary_L9_Tenant4",
+    "C32_WB06_Left_Front_Primary_L9_Tenant6",
+    "C32_WB06_Left_Front_Primary_L9_Tenant7",
+    "C32_WB06_Left_Front_Primary_L9_Tenant8",
+    "C32_WB06_Left_Front_Primary_L9_Tenant9"
+  ],
+  "allOtherSourceObjectsExact": true,
+  "glassFacadeAndLondonExact": true,
+  "slabs": [
+    {
+      "name": "WB06_Left_Front_Primary_FloorBand_00",
+      "z": [
+        13.0600004196167,
+        13.5
+      ],
+      "hole": [
+        -24,
+        -29.513422393798827,
+        11.0,
+        13.513422393798827
+      ]
+    },
+    {
+      "name": "WB06_Left_Front_Primary_FloorBand_01",
+      "z": [
+        16.65999984741211,
+        17.100000381469727
+      ],
+      "hole": [
+        -24,
+        -29.703161936832423,
+        10.762979658857336,
+        13.83860213177109
+      ]
+    },
+    {
+      "name": "WB06_Left_Front_Primary_FloorBand_02",
+      "z": [
+        20.260000228881836,
+        20.700000762939453
+      ],
+      "hole": [
+        -24,
+        -29.812922536994925,
+        10.52595931771467,
+        14.083802926872258
+      ]
+    },
+    {
+      "name": "WB06_Left_Front_Primary_FloorBand_03",
+      "z": [
+        23.860000610351562,
+        24.299999237060547
+      ],
+      "hole": [
+        -24,
+        -29.829335623598347,
+        10.28893910214989,
+        14.235656136655555
+      ]
+    },
+    {
+      "name": "WB06_Left_Front_Primary_FloorBand_04",
+      "z": [
+        27.459999084472656,
+        27.899999618530273
+      ],
+      "hole": [
+        -24,
+        -29.751739274908314,
+        10.051918761007224,
+        14.293499982904184
+      ]
+    },
+    {
+      "name": "WB06_Left_Front_Primary_FloorBand_05",
+      "z": [
+        31.059999465942383,
+        31.5
+      ],
+      "hole": [
+        -24,
+        -29.581207364084488,
+        9.81489841986456,
+        14.258408267019025
+      ]
+    },
+    {
+      "name": "WB06_Left_Front_Primary_FloorBand_06",
+      "z": [
+        34.65999984741211,
+        35.099998474121094
+      ],
+      "hole": [
+        -24,
+        -29.311485730839276,
+        9.577878204299777,
+        14.12412675695369
+      ]
+    },
+    {
+      "name": "WB06_Left_Front_Primary_FloorBand_07",
+      "z": [
+        38.2599983215332,
+        38.70000076293945
+      ],
+      "hole": [
+        -24,
+        -28.954270129350903,
+        9.340857737579231,
+        13.902351422162768
+      ]
+    },
+    {
+      "name": "WB06_Left_Front_Primary_FloorBand_08",
+      "z": [
+        41.86000061035156,
+        42.29999923706055
+      ],
+      "hole": [
+        -24,
+        -28.49440300355198,
+        9.103837522014448,
+        13.577924419543722
+      ]
+    },
+    {
+      "name": "WB06_Left_Front_Primary_FloorBand_09",
+      "z": [
+        45.459999084472656,
+        45.900001525878906
+      ],
+      "hole": [
+        -24,
+        -27.950637261682743,
+        8.866817055293902,
+        13.169598944371941
+      ]
+    },
+    {
+      "name": "WB06_Left_Front_Primary_FloorBand_10",
+      "z": [
+        49.060001373291016,
+        49.5
+      ],
+      "hole": [
+        -24,
+        -27.32077196693851,
+        8.629796839729119,
+        12.675173772807582
+      ]
+    },
+    {
+      "name": "WB06_Left_Front_Primary_FloorBand_11",
+      "z": [
+        52.65999984741211,
+        53.099998474121094
+      ],
+      "hole": [
+        -24,
+        -26.606041102125914,
+        8.392776624164338,
+        12.095883031174864
+      ]
+    },
+    {
+      "name": "WB06_Left_Front_Primary_FloorBand_12",
+      "z": [
+        56.2599983215332,
+        56.70000076293945
+      ],
+      "hole": [
+        -24,
+        -25.826357315212732,
+        8.15575615744379,
+        11.45163951095914
+      ]
+    },
+    {
+      "name": "WB06_Left_Front_Primary_FloorBand_13",
+      "z": [
+        59.86000061035156,
+        60.29999923706055
+      ],
+      "hole": [
+        -24,
+        -24.97142297444799,
+        7.918735941879008,
+        10.732145293374272
+      ]
+    },
+    {
+      "name": "WB06_Left_Front_Primary_FloorBand_14",
+      "z": [
+        63.459999084472656,
+        63.900001525878906
+      ],
+      "hole": [
+        -24,
+        -24.08354292898989,
+        7.6817154751584615,
+        9.979705514613624
+      ]
+    },
+    {
+      "name": "WB06_Left_Front_Primary_FloorBand_15",
+      "z": [
+        66.66000366210938,
+        67.0999984741211
+      ],
+      "hole": [
+        -24,
+        -23.27117576599121,
+        7.5,
+        9.27117576599121
+      ]
+    }
+  ],
+  "floors": [
+    7.2,
+    13.5,
+    17.100000381469727,
+    20.700000762939453,
+    24.299999237060547,
+    27.899999618530273,
+    31.5,
+    35.099998474121094,
+    38.70000076293945,
+    42.29999923706055,
+    45.900001525878906,
+    49.5,
+    53.099998474121094,
+    56.70000076293945,
+    60.29999923706055,
+    63.900001525878906,
+    67.0999984741211
+  ],
+  "escalators": [
+    {
+      "fromFloor": 1,
+      "toFloor": 2,
+      "lane": "up",
+      "riseM": 6.3,
+      "inclinationDeg": 30,
+      "inclinedHorizontalRunM": 10.911920087683928,
+      "horizontalEndRunM": 1.5,
+      "totalPlanLengthM": 13.911920087683928,
+      "widthM": 1.36,
+      "clearStepWidthM": 1.0,
+      "stepCount": 35,
+      "riserM": 0.18,
+      "ends": [
+        {
+          "floor": 1,
+          "xyz": [
+            -30.95595932006836,
+            -32.86342239379883,
+            7.199999809265137
+          ],
+          "ringEdgeX": -34.65663718578283,
+          "overlapM": 0.25,
+          "bridgeLengthM": 4.0506778657144675
+        },
+        {
+          "floor": 2,
+          "xyz": [
+            -17.04404067993164,
+            -32.86342239379883,
+            13.5
+          ],
+          "ringEdgeX": -13.34336281421717,
+          "overlapM": 0.25,
+          "bridgeLengthM": 4.050677865714471
+        }
+      ]
+    },
+    {
+      "fromFloor": 1,
+      "toFloor": 2,
+      "lane": "down",
+      "riseM": 6.3,
+      "inclinationDeg": 30,
+      "inclinedHorizontalRunM": 10.911920087683928,
+      "horizontalEndRunM": 1.5,
+      "totalPlanLengthM": 13.911920087683928,
+      "widthM": 1.36,
+      "clearStepWidthM": 1.0,
+      "stepCount": 35,
+      "riserM": 0.18,
+      "ends": [
+        {
+          "floor": 1,
+          "xyz": [
+            -30.95595932006836,
+            -30.963422775268555,
+            7.199999809265137
+          ],
+          "ringEdgeX": -34.93649272494375,
+          "overlapM": 0.25,
+          "bridgeLengthM": 4.330533404875387
+        },
+        {
+          "floor": 2,
+          "xyz": [
+            -17.04404067993164,
+            -30.963422775268555,
+            13.5
+          ],
+          "ringEdgeX": -13.063507275056256,
+          "overlapM": 0.25,
+          "bridgeLengthM": 4.330533404875384
+        }
+      ]
+    },
+    {
+      "fromFloor": 2,
+      "toFloor": 3,
+      "lane": "up",
+      "riseM": 3.6000003814697266,
+      "inclinationDeg": 30,
+      "inclinedHorizontalRunM": 6.235383567972907,
+      "horizontalEndRunM": 1.5,
+      "totalPlanLengthM": 9.235383567972907,
+      "widthM": 1.36,
+      "clearStepWidthM": 1.0,
+      "stepCount": 21,
+      "riserM": 0.1714285895937965,
+      "ends": [
+        {
+          "floor": 2,
+          "xyz": [
+            -19.382308959960938,
+            -28.158292770385742,
+            13.5
+          ],
+          "ringEdgeX": -13.055448528343124,
+          "overlapM": 0.25,
+          "bridgeLengthM": 6.676860431617813
+        },
+        {
+          "floor": 3,
+          "xyz": [
+            -28.617691040039062,
+            -28.158292770385742,
+            17.100000381469727
+          ],
+          "ringEdgeX": -34.69570348624741,
+          "overlapM": 0.25,
+          "bridgeLengthM": 6.428012446208347
+        }
+      ]
+    },
+    {
+      "fromFloor": 2,
+      "toFloor": 3,
+      "lane": "down",
+      "riseM": 3.6000003814697266,
+      "inclinationDeg": 30,
+      "inclinedHorizontalRunM": 6.235383567972907,
+      "horizontalEndRunM": 1.5,
+      "totalPlanLengthM": 9.235383567972907,
+      "widthM": 1.36,
+      "clearStepWidthM": 1.0,
+      "stepCount": 21,
+      "riserM": 0.1714285895937965,
+      "ends": [
+        {
+          "floor": 2,
+          "xyz": [
+            -19.382308959960938,
+            -26.258291244506836,
+            13.5
+          ],
+          "ringEdgeX": -13.32389947677286,
+          "overlapM": 0.25,
+          "bridgeLengthM": 6.408409483188077
+        },
+        {
+          "floor": 3,
+          "xyz": [
+            -28.617691040039062,
+            -26.258291244506836,
+            17.100000381469727
+          ],
+          "ringEdgeX": -34.424171670735774,
+          "overlapM": 0.25,
+          "bridgeLengthM": 6.156480630696711
+        }
+      ]
+    },
+    {
+      "fromFloor": 3,
+      "toFloor": 4,
+      "lane": "up",
+      "riseM": 3.6000003814697266,
+      "inclinationDeg": 30,
+      "inclinedHorizontalRunM": 6.235383567972907,
+      "horizontalEndRunM": 1.5,
+      "totalPlanLengthM": 9.235383567972907,
+      "widthM": 1.36,
+      "clearStepWidthM": 1.0,
+      "stepCount": 21,
+      "riserM": 0.1714285895937965,
+      "ends": [
+        {
+          "floor": 3,
+          "xyz": [
+            -28.617691040039062,
+            -33.1080436706543,
+            17.100000381469727
+          ],
+          "ringEdgeX": -34.43211612320177,
+          "overlapM": 0.25,
+          "bridgeLengthM": 6.16442508316271
+        },
+        {
+          "floor": 4,
+          "xyz": [
+            -19.382308959960938,
+            -33.1080436706543,
+            20.700000762939453
+          ],
+          "ringEdgeX": -13.766188967645403,
+          "overlapM": 0.25,
+          "bridgeLengthM": 5.966119992315534
+        }
+      ]
+    },
+    {
+      "fromFloor": 3,
+      "toFloor": 4,
+      "lane": "down",
+      "riseM": 3.6000003814697266,
+      "inclinationDeg": 30,
+      "inclinedHorizontalRunM": 6.235383567972907,
+      "horizontalEndRunM": 1.5,
+      "totalPlanLengthM": 9.235383567972907,
+      "widthM": 1.36,
+      "clearStepWidthM": 1.0,
+      "stepCount": 21,
+      "riserM": 0.1714285895937965,
+      "ends": [
+        {
+          "floor": 3,
+          "xyz": [
+            -28.617691040039062,
+            -31.20804214477539,
+            17.100000381469727
+          ],
+          "ringEdgeX": -34.699151596606825,
+          "overlapM": 0.25,
+          "bridgeLengthM": 6.431460556567762
+        },
+        {
+          "floor": 4,
+          "xyz": [
+            -19.382308959960938,
+            -31.20804214477539,
+            20.700000762939453
+          ],
+          "ringEdgeX": -13.52581138786586,
+          "overlapM": 0.25,
+          "bridgeLengthM": 6.206497572095078
+        }
+      ]
+    },
+    {
+      "fromFloor": 4,
+      "toFloor": 5,
+      "lane": "up",
+      "riseM": 3.5999984741210938,
+      "inclinationDeg": 30,
+      "inclinedHorizontalRunM": 6.235380264348167,
+      "horizontalEndRunM": 1.5,
+      "totalPlanLengthM": 9.235380264348166,
+      "widthM": 1.36,
+      "clearStepWidthM": 1.0,
+      "stepCount": 20,
+      "riserM": 0.1799999237060547,
+      "ends": [
+        {
+          "floor": 4,
+          "xyz": [
+            -19.382308959960938,
+            -28.371129989624023,
+            20.700000762939453
+          ],
+          "ringEdgeX": -13.529342610699983,
+          "overlapM": 0.25,
+          "bridgeLengthM": 6.202966349260954
+        },
+        {
+          "floor": 5,
+          "xyz": [
+            -28.617691040039062,
+            -28.371129989624023,
+            24.299999237060547
+          ],
+          "ringEdgeX": -34.234817899742595,
+          "overlapM": 0.25,
+          "bridgeLengthM": 5.967126859703532
+        }
+      ]
+    },
+    {
+      "fromFloor": 4,
+      "toFloor": 5,
+      "lane": "down",
+      "riseM": 3.5999984741210938,
+      "inclinationDeg": 30,
+      "inclinedHorizontalRunM": 6.235380264348167,
+      "horizontalEndRunM": 1.5,
+      "totalPlanLengthM": 9.235380264348166,
+      "widthM": 1.36,
+      "clearStepWidthM": 1.0,
+      "stepCount": 20,
+      "riserM": 0.1799999237060547,
+      "ends": [
+        {
+          "floor": 4,
+          "xyz": [
+            -19.382308959960938,
+            -26.471128463745117,
+            20.700000762939453
+          ],
+          "ringEdgeX": -13.774646321279622,
+          "overlapM": 0.25,
+          "bridgeLengthM": 5.957662638681315
+        },
+        {
+          "floor": 5,
+          "xyz": [
+            -28.617691040039062,
+            -26.471128463745117,
+            24.299999237060547
+          ],
+          "ringEdgeX": -33.99855514941719,
+          "overlapM": 0.25,
+          "bridgeLengthM": 5.73086410937813
+        }
+      ]
+    },
+    {
+      "fromFloor": 5,
+      "toFloor": 6,
+      "lane": "up",
+      "riseM": 3.6000003814697266,
+      "inclinationDeg": 30,
+      "inclinedHorizontalRunM": 6.235383567972907,
+      "horizontalEndRunM": 1.5,
+      "totalPlanLengthM": 9.235383567972907,
+      "widthM": 1.36,
+      "clearStepWidthM": 1.0,
+      "stepCount": 21,
+      "riserM": 0.1714285895937965,
+      "ends": [
+        {
+          "floor": 5,
+          "xyz": [
+            -28.617691040039062,
+            -33.14053726196289,
+            24.299999237060547
+          ],
+          "ringEdgeX": -34.006741116358285,
+          "overlapM": 0.25,
+          "bridgeLengthM": 5.739050076319222
+        },
+        {
+          "floor": 6,
+          "xyz": [
+            -19.382308959960938,
+            -33.14053726196289,
+            27.899999618530273
+          ],
+          "ringEdgeX": -14.234676469553536,
+          "overlapM": 0.25,
+          "bridgeLengthM": 5.497632490407401
+        }
+      ]
+    },
+    {
+      "fromFloor": 5,
+      "toFloor": 6,
+      "lane": "down",
+      "riseM": 3.6000003814697266,
+      "inclinationDeg": 30,
+      "inclinedHorizontalRunM": 6.235383567972907,
+      "horizontalEndRunM": 1.5,
+      "totalPlanLengthM": 9.235383567972907,
+      "widthM": 1.36,
+      "clearStepWidthM": 1.0,
+      "stepCount": 21,
+      "riserM": 0.1714285895937965,
+      "ends": [
+        {
+          "floor": 5,
+          "xyz": [
+            -28.617691040039062,
+            -31.240537643432617,
+            24.299999237060547
+          ],
+          "ringEdgeX": -34.238259313574716,
+          "overlapM": 0.25,
+          "bridgeLengthM": 5.970568273535653
+        },
+        {
+          "floor": 6,
+          "xyz": [
+            -19.382308959960938,
+            -31.240537643432617,
+            27.899999618530273
+          ],
+          "ringEdgeX": -14.002757172672036,
+          "overlapM": 0.25,
+          "bridgeLengthM": 5.7295517872889015
+        }
+      ]
+    },
+    {
+      "fromFloor": 6,
+      "toFloor": 7,
+      "lane": "up",
+      "riseM": 3.6000003814697266,
+      "inclinationDeg": 30,
+      "inclinedHorizontalRunM": 6.235383567972907,
+      "horizontalEndRunM": 1.5,
+      "totalPlanLengthM": 9.235383567972907,
+      "widthM": 1.36,
+      "clearStepWidthM": 1.0,
+      "stepCount": 21,
+      "riserM": 0.1714285895937965,
+      "ends": [
+        {
+          "floor": 6,
+          "xyz": [
+            -19.382308959960938,
+            -28.216472625732422,
+            27.899999618530273
+          ],
+          "ringEdgeX": -14.006233566578173,
+          "overlapM": 0.25,
+          "bridgeLengthM": 5.726075393382764
+        },
+        {
+          "floor": 7,
+          "xyz": [
+            -28.617691040039062,
+            -28.216472625732422,
+            31.5
+          ],
+          "ringEdgeX": -33.7698366883298,
+          "overlapM": 0.25,
+          "bridgeLengthM": 5.502145648290734
+        }
+      ]
+    },
+    {
+      "fromFloor": 6,
+      "toFloor": 7,
+      "lane": "down",
+      "riseM": 3.6000003814697266,
+      "inclinationDeg": 30,
+      "inclinedHorizontalRunM": 6.235383567972907,
+      "horizontalEndRunM": 1.5,
+      "totalPlanLengthM": 9.235383567972907,
+      "widthM": 1.36,
+      "clearStepWidthM": 1.0,
+      "stepCount": 21,
+      "riserM": 0.1714285895937965,
+      "ends": [
+        {
+          "floor": 6,
+          "xyz": [
+            -19.382308959960938,
+            -26.31647300720215,
+            27.899999618530273
+          ],
+          "ringEdgeX": -14.24270947079685,
+          "overlapM": 0.25,
+          "bridgeLengthM": 5.489599489164087
+        },
+        {
+          "floor": 7,
+          "xyz": [
+            -28.617691040039062,
+            -26.31647300720215,
+            31.5
+          ],
+          "ringEdgeX": -33.554152937867336,
+          "overlapM": 0.25,
+          "bridgeLengthM": 5.286461897828273
+        }
+      ]
+    },
+    {
+      "fromFloor": 7,
+      "toFloor": 8,
+      "lane": "up",
+      "riseM": 3.5999984741210938,
+      "inclinationDeg": 30,
+      "inclinedHorizontalRunM": 6.235380264348167,
+      "horizontalEndRunM": 1.5,
+      "totalPlanLengthM": 9.235380264348166,
+      "widthM": 1.36,
+      "clearStepWidthM": 1.0,
+      "stepCount": 20,
+      "riserM": 0.1799999237060547,
+      "ends": [
+        {
+          "floor": 7,
+          "xyz": [
+            -28.617691040039062,
+            -32.79634475708008,
+            31.5
+          ],
+          "ringEdgeX": -33.56211874012354,
+          "overlapM": 0.25,
+          "bridgeLengthM": 5.294427700084475
+        },
+        {
+          "floor": 8,
+          "xyz": [
+            -19.382308959960938,
+            -32.79634475708008,
+            35.099998474121094
+          ],
+          "ringEdgeX": -14.718231561197529,
+          "overlapM": 0.25,
+          "bridgeLengthM": 5.014077398763408
+        }
+      ]
+    },
+    {
+      "fromFloor": 7,
+      "toFloor": 8,
+      "lane": "down",
+      "riseM": 3.5999984741210938,
+      "inclinationDeg": 30,
+      "inclinedHorizontalRunM": 6.235380264348167,
+      "horizontalEndRunM": 1.5,
+      "totalPlanLengthM": 9.235380264348166,
+      "widthM": 1.36,
+      "clearStepWidthM": 1.0,
+      "stepCount": 20,
+      "riserM": 0.1799999237060547,
+      "ends": [
+        {
+          "floor": 7,
+          "xyz": [
+            -28.617691040039062,
+            -30.896347045898438,
+            31.5
+          ],
+          "ringEdgeX": -33.773059178030884,
+          "overlapM": 0.25,
+          "bridgeLengthM": 5.505368137991821
+        },
+        {
+          "floor": 8,
+          "xyz": [
+            -19.382308959960938,
+            -30.896347045898438,
+            35.099998474121094
+          ],
+          "ringEdgeX": -14.482610168944072,
+          "overlapM": 0.25,
+          "bridgeLengthM": 5.249698791016865
+        }
+      ]
+    },
+    {
+      "fromFloor": 8,
+      "toFloor": 9,
+      "lane": "up",
+      "riseM": 3.6000022888183594,
+      "inclinationDeg": 30,
+      "inclinedHorizontalRunM": 6.235386871597647,
+      "horizontalEndRunM": 1.5,
+      "totalPlanLengthM": 9.235386871597647,
+      "widthM": 1.36,
+      "clearStepWidthM": 1.0,
+      "stepCount": 21,
+      "riserM": 0.17142868041992188,
+      "ends": [
+        {
+          "floor": 8,
+          "xyz": [
+            -19.382307052612305,
+            -27.682878494262695,
+            35.099998474121094
+          ],
+          "ringEdgeX": -14.486006947553872,
+          "overlapM": 0.25,
+          "bridgeLengthM": 5.246300105058433
+        },
+        {
+          "floor": 9,
+          "xyz": [
+            -28.617692947387695,
+            -27.682878494262695,
+            38.70000076293945
+          ],
+          "ringEdgeX": -33.30171508731734,
+          "overlapM": 0.25,
+          "bridgeLengthM": 5.034022139929645
+        }
+      ]
+    },
+    {
+      "fromFloor": 8,
+      "toFloor": 9,
+      "lane": "down",
+      "riseM": 3.6000022888183594,
+      "inclinationDeg": 30,
+      "inclinedHorizontalRunM": 6.235386871597647,
+      "horizontalEndRunM": 1.5,
+      "totalPlanLengthM": 9.235386871597647,
+      "widthM": 1.36,
+      "clearStepWidthM": 1.0,
+      "stepCount": 21,
+      "riserM": 0.17142868041992188,
+      "ends": [
+        {
+          "floor": 8,
+          "xyz": [
+            -19.382307052612305,
+            -25.782878875732422,
+            35.099998474121094
+          ],
+          "ringEdgeX": -14.725835061703911,
+          "overlapM": 0.25,
+          "bridgeLengthM": 5.006471990908393
+        },
+        {
+          "floor": 9,
+          "xyz": [
+            -28.617692947387695,
+            -25.782878875732422,
+            38.70000076293945
+          ],
+          "ringEdgeX": -33.0945694883182,
+          "overlapM": 0.25,
+          "bridgeLengthM": 4.826876540930504
+        }
+      ]
+    },
+    {
+      "fromFloor": 9,
+      "toFloor": 10,
+      "lane": "up",
+      "riseM": 3.5999984741210938,
+      "inclinationDeg": 30,
+      "inclinedHorizontalRunM": 6.235380264348167,
+      "horizontalEndRunM": 1.5,
+      "totalPlanLengthM": 9.235380264348166,
+      "widthM": 1.36,
+      "clearStepWidthM": 1.0,
+      "stepCount": 20,
+      "riserM": 0.1799999237060547,
+      "ends": [
+        {
+          "floor": 9,
+          "xyz": [
+            -28.617691040039062,
+            -32.074337005615234,
+            38.70000076293945
+          ],
+          "ringEdgeX": -33.10258037100559,
+          "overlapM": 0.25,
+          "bridgeLengthM": 4.834889330966524
+        },
+        {
+          "floor": 10,
+          "xyz": [
+            -19.382308959960938,
+            -32.074337005615234,
+            42.29999923706055
+          ],
+          "ringEdgeX": -15.218291575082029,
+          "overlapM": 0.25,
+          "bridgeLengthM": 4.514017384878908
+        }
+      ]
+    },
+    {
+      "fromFloor": 9,
+      "toFloor": 10,
+      "lane": "down",
+      "riseM": 3.5999984741210938,
+      "inclinationDeg": 30,
+      "inclinedHorizontalRunM": 6.235380264348167,
+      "horizontalEndRunM": 1.5,
+      "totalPlanLengthM": 9.235380264348166,
+      "widthM": 1.36,
+      "clearStepWidthM": 1.0,
+      "stepCount": 20,
+      "riserM": 0.1799999237060547,
+      "ends": [
+        {
+          "floor": 9,
+          "xyz": [
+            -28.617691040039062,
+            -30.17433738708496,
+            38.70000076293945
+          ],
+          "ringEdgeX": -33.304817650452165,
+          "overlapM": 0.25,
+          "bridgeLengthM": 5.037126610413102
+        },
+        {
+          "floor": 10,
+          "xyz": [
+            -19.382308959960938,
+            -30.17433738708496,
+            42.29999923706055
+          ],
+          "ringEdgeX": -14.966111815616667,
+          "overlapM": 0.25,
+          "bridgeLengthM": 4.76619714434427
+        }
+      ]
+    },
+    {
+      "fromFloor": 10,
+      "toFloor": 11,
+      "lane": "up",
+      "riseM": 3.6000022888183594,
+      "inclinationDeg": 30,
+      "inclinedHorizontalRunM": 6.235386871597647,
+      "horizontalEndRunM": 1.5,
+      "totalPlanLengthM": 9.235386871597647,
+      "widthM": 1.36,
+      "clearStepWidthM": 1.0,
+      "stepCount": 21,
+      "riserM": 0.17142868041992188,
+      "ends": [
+        {
+          "floor": 10,
+          "xyz": [
+            -19.382307052612305,
+            -26.772520065307617,
+            42.29999923706055
+          ],
+          "ringEdgeX": -14.96966320723545,
+          "overlapM": 0.25,
+          "bridgeLengthM": 4.762643845376854
+        },
+        {
+          "floor": 11,
+          "xyz": [
+            -28.617692947387695,
+            -26.772520065307617,
+            45.900001525878906
+          ],
+          "ringEdgeX": -32.83126693407872,
+          "overlapM": 0.25,
+          "bridgeLengthM": 4.563573986691024
+        }
+      ]
+    },
+    {
+      "fromFloor": 10,
+      "toFloor": 11,
+      "lane": "down",
+      "riseM": 3.6000022888183594,
+      "inclinationDeg": 30,
+      "inclinedHorizontalRunM": 6.235386871597647,
+      "horizontalEndRunM": 1.5,
+      "totalPlanLengthM": 9.235386871597647,
+      "widthM": 1.36,
+      "clearStepWidthM": 1.0,
+      "stepCount": 21,
+      "riserM": 0.17142868041992188,
+      "ends": [
+        {
+          "floor": 10,
+          "xyz": [
+            -19.382307052612305,
+            -24.872520446777344,
+            42.29999923706055
+          ],
+          "ringEdgeX": -15.226027841209184,
+          "overlapM": 0.25,
+          "bridgeLengthM": 4.50627921140312
+        },
+        {
+          "floor": 11,
+          "xyz": [
+            -28.617692947387695,
+            -24.872520446777344,
+            45.900001525878906
+          ],
+          "ringEdgeX": -32.62122203037327,
+          "overlapM": 0.25,
+          "bridgeLengthM": 4.353529082985572
+        }
+      ]
+    },
+    {
+      "fromFloor": 11,
+      "toFloor": 12,
+      "lane": "up",
+      "riseM": 3.5999984741210938,
+      "inclinationDeg": 30,
+      "inclinedHorizontalRunM": 6.235380264348167,
+      "horizontalEndRunM": 1.5,
+      "totalPlanLengthM": 9.235380264348166,
+      "widthM": 1.36,
+      "clearStepWidthM": 1.0,
+      "stepCount": 20,
+      "riserM": 0.1799999237060547,
+      "ends": [
+        {
+          "floor": 11,
+          "xyz": [
+            -28.617691040039062,
+            -30.98570442199707,
+            45.900001525878906
+          ],
+          "ringEdgeX": -32.628138043538165,
+          "overlapM": 0.25,
+          "bridgeLengthM": 4.360447003499102
+        },
+        {
+          "floor": 12,
+          "xyz": [
+            -19.382308959960938,
+            -30.98570442199707,
+            49.5
+          ],
+          "ringEdgeX": -15.738815971295946,
+          "overlapM": 0.25,
+          "bridgeLengthM": 3.993492988664992
+        }
+      ]
+    },
+    {
+      "fromFloor": 11,
+      "toFloor": 12,
+      "lane": "down",
+      "riseM": 3.5999984741210938,
+      "inclinationDeg": 30,
+      "inclinedHorizontalRunM": 6.235380264348167,
+      "horizontalEndRunM": 1.5,
+      "totalPlanLengthM": 9.235380264348166,
+      "widthM": 1.36,
+      "clearStepWidthM": 1.0,
+      "stepCount": 20,
+      "riserM": 0.1799999237060547,
+      "ends": [
+        {
+          "floor": 11,
+          "xyz": [
+            -28.617691040039062,
+            -29.085704803466797,
+            45.900001525878906
+          ],
+          "ringEdgeX": -32.83382231549129,
+          "overlapM": 0.25,
+          "bridgeLengthM": 4.566131275452227
+        },
+        {
+          "floor": 12,
+          "xyz": [
+            -19.382308959960938,
+            -29.085704803466797,
+            49.5
+          ],
+          "ringEdgeX": -15.454272875833317,
+          "overlapM": 0.25,
+          "bridgeLengthM": 4.278036084127621
+        }
+      ]
+    },
+    {
+      "fromFloor": 12,
+      "toFloor": 13,
+      "lane": "up",
+      "riseM": 3.5999984741210938,
+      "inclinationDeg": 30,
+      "inclinedHorizontalRunM": 6.235380264348167,
+      "horizontalEndRunM": 1.5,
+      "totalPlanLengthM": 9.235380264348166,
+      "widthM": 1.36,
+      "clearStepWidthM": 1.0,
+      "stepCount": 20,
+      "riserM": 0.1799999237060547,
+      "ends": [
+        {
+          "floor": 12,
+          "xyz": [
+            -19.382308959960938,
+            -25.51340675354004,
+            49.5
+          ],
+          "ringEdgeX": -15.45838501697093,
+          "overlapM": 0.25,
+          "bridgeLengthM": 4.273923942990008
+        },
+        {
+          "floor": 13,
+          "xyz": [
+            -28.617691040039062,
+            -25.51340675354004,
+            53.099998474121094
+          ],
+          "ringEdgeX": -32.3584651769474,
+          "overlapM": 0.25,
+          "bridgeLengthM": 4.090774136908335
+        }
+      ]
+    },
+    {
+      "fromFloor": 12,
+      "toFloor": 13,
+      "lane": "down",
+      "riseM": 3.5999984741210938,
+      "inclinationDeg": 30,
+      "inclinedHorizontalRunM": 6.235380264348167,
+      "horizontalEndRunM": 1.5,
+      "totalPlanLengthM": 9.235380264348166,
+      "widthM": 1.36,
+      "clearStepWidthM": 1.0,
+      "stepCount": 20,
+      "riserM": 0.1799999237060547,
+      "ends": [
+        {
+          "floor": 12,
+          "xyz": [
+            -19.382308959960938,
+            -23.613407135009766,
+            49.5
+          ],
+          "ringEdgeX": -15.747597220643277,
+          "overlapM": 0.25,
+          "bridgeLengthM": 3.9847117393176608
+        },
+        {
+          "floor": 13,
+          "xyz": [
+            -28.617691040039062,
+            -23.613407135009766,
+            53.099998474121094
+          ],
+          "ringEdgeX": -32.13185396951905,
+          "overlapM": 0.25,
+          "bridgeLengthM": 3.864162929479987
+        }
+      ]
+    },
+    {
+      "fromFloor": 13,
+      "toFloor": 14,
+      "lane": "up",
+      "riseM": 3.6000022888183594,
+      "inclinationDeg": 30,
+      "inclinedHorizontalRunM": 6.235386871597647,
+      "horizontalEndRunM": 1.5,
+      "totalPlanLengthM": 9.235386871597647,
+      "widthM": 1.36,
+      "clearStepWidthM": 1.0,
+      "stepCount": 21,
+      "riserM": 0.17142868041992188,
+      "ends": [
+        {
+          "floor": 13,
+          "xyz": [
+            -28.617692947387695,
+            -29.566198348999023,
+            53.099998474121094
+          ],
+          "ringEdgeX": -32.13757472419579,
+          "overlapM": 0.25,
+          "bridgeLengthM": 3.8698817768080915
+        },
+        {
+          "floor": 14,
+          "xyz": [
+            -19.382307052612305,
+            -29.566198348999023,
+            56.70000076293945
+          ],
+          "ringEdgeX": -16.29141901429887,
+          "overlapM": 0.25,
+          "bridgeLengthM": 3.440888038313434
+        }
+      ]
+    },
+    {
+      "fromFloor": 13,
+      "toFloor": 14,
+      "lane": "down",
+      "riseM": 3.6000022888183594,
+      "inclinationDeg": 30,
+      "inclinedHorizontalRunM": 6.235386871597647,
+      "horizontalEndRunM": 1.5,
+      "totalPlanLengthM": 9.235386871597647,
+      "widthM": 1.36,
+      "clearStepWidthM": 1.0,
+      "stepCount": 21,
+      "riserM": 0.17142868041992188,
+      "ends": [
+        {
+          "floor": 13,
+          "xyz": [
+            -28.617692947387695,
+            -27.66619873046875,
+            53.099998474121094
+          ],
+          "ringEdgeX": -32.36047842943341,
+          "overlapM": 0.25,
+          "bridgeLengthM": 4.092785482045711
+        },
+        {
+          "floor": 14,
+          "xyz": [
+            -19.382307052612305,
+            -27.66619873046875,
+            56.70000076293945
+          ],
+          "ringEdgeX": -15.950191158496533,
+          "overlapM": 0.25,
+          "bridgeLengthM": 3.7821158941157713
+        }
+      ]
+    },
+    {
+      "fromFloor": 14,
+      "toFloor": 15,
+      "lane": "up",
+      "riseM": 3.5999984741210938,
+      "inclinationDeg": 30,
+      "inclinedHorizontalRunM": 6.235380264348167,
+      "horizontalEndRunM": 1.5,
+      "totalPlanLengthM": 9.235380264348166,
+      "widthM": 1.36,
+      "clearStepWidthM": 1.0,
+      "stepCount": 20,
+      "riserM": 0.1799999237060547,
+      "ends": [
+        {
+          "floor": 14,
+          "xyz": [
+            -19.382308959960938,
+            -23.948890686035156,
+            56.70000076293945
+          ],
+          "ringEdgeX": -15.954598785706583,
+          "overlapM": 0.25,
+          "bridgeLengthM": 3.7777101742543544
+        },
+        {
+          "floor": 15,
+          "xyz": [
+            -28.617691040039062,
+            -23.948890686035156,
+            60.29999923706055
+          ],
+          "ringEdgeX": -31.88271158113324,
+          "overlapM": 0.25,
+          "bridgeLengthM": 3.6150205410941774
+        }
+      ]
+    },
+    {
+      "fromFloor": 14,
+      "toFloor": 15,
+      "lane": "down",
+      "riseM": 3.5999984741210938,
+      "inclinationDeg": 30,
+      "inclinedHorizontalRunM": 6.235380264348167,
+      "horizontalEndRunM": 1.5,
+      "totalPlanLengthM": 9.235380264348166,
+      "widthM": 1.36,
+      "clearStepWidthM": 1.0,
+      "stepCount": 20,
+      "riserM": 0.1799999237060547,
+      "ends": [
+        {
+          "floor": 14,
+          "xyz": [
+            -19.382308959960938,
+            -22.048891067504883,
+            56.70000076293945
+          ],
+          "ringEdgeX": -16.300729946595467,
+          "overlapM": 0.25,
+          "bridgeLengthM": 3.43157901336547
+        },
+        {
+          "floor": 15,
+          "xyz": [
+            -28.617691040039062,
+            -22.048891067504883,
+            60.29999923706055
+          ],
+          "ringEdgeX": -31.619470516898012,
+          "overlapM": 0.25,
+          "bridgeLengthM": 3.3517794768589497
+        }
+      ]
+    },
+    {
+      "fromFloor": 15,
+      "toFloor": 16,
+      "lane": "up",
+      "riseM": 3.6000022888183594,
+      "inclinationDeg": 30,
+      "inclinedHorizontalRunM": 6.235386871597647,
+      "horizontalEndRunM": 1.5,
+      "totalPlanLengthM": 9.235386871597647,
+      "widthM": 1.36,
+      "clearStepWidthM": 1.0,
+      "stepCount": 21,
+      "riserM": 0.17142868041992188,
+      "ends": [
+        {
+          "floor": 15,
+          "xyz": [
+            -28.617692947387695,
+            -27.877483367919922,
+            60.29999923706055
+          ],
+          "ringEdgeX": -31.622899920856508,
+          "overlapM": 0.25,
+          "bridgeLengthM": 3.3552069734688126
+        },
+        {
+          "floor": 16,
+          "xyz": [
+            -19.382307052612305,
+            -27.877483367919922,
+            63.900001525878906
+          ],
+          "ringEdgeX": -16.895039497835118,
+          "overlapM": 0.25,
+          "bridgeLengthM": 2.837267554777187
+        }
+      ]
+    },
+    {
+      "fromFloor": 15,
+      "toFloor": 16,
+      "lane": "down",
+      "riseM": 3.6000022888183594,
+      "inclinationDeg": 30,
+      "inclinedHorizontalRunM": 6.235386871597647,
+      "horizontalEndRunM": 1.5,
+      "totalPlanLengthM": 9.235386871597647,
+      "widthM": 1.36,
+      "clearStepWidthM": 1.0,
+      "stepCount": 21,
+      "riserM": 0.17142868041992188,
+      "ends": [
+        {
+          "floor": 15,
+          "xyz": [
+            -28.617692947387695,
+            -25.97748374938965,
+            60.29999923706055
+          ],
+          "ringEdgeX": -31.88386547244824,
+          "overlapM": 0.25,
+          "bridgeLengthM": 3.6161725250605437
+        },
+        {
+          "floor": 16,
+          "xyz": [
+            -19.382307052612305,
+            -25.97748374938965,
+            63.900001525878906
+          ],
+          "ringEdgeX": -16.45788584014729,
+          "overlapM": 0.25,
+          "bridgeLengthM": 3.2744212124650134
+        }
+      ]
+    },
+    {
+      "fromFloor": 16,
+      "toFloor": 17,
+      "lane": "up",
+      "riseM": 3.1999969482421875,
+      "inclinationDeg": 30,
+      "inclinedHorizontalRunM": 5.5425572984208245,
+      "horizontalEndRunM": 1.5,
+      "totalPlanLengthM": 8.542557298420824,
+      "widthM": 1.36,
+      "clearStepWidthM": 1.0,
+      "stepCount": 18,
+      "riserM": 0.1777776082356771,
+      "ends": [
+        {
+          "floor": 16,
+          "xyz": [
+            -19.728721618652344,
+            -22.227359771728516,
+            63.900001525878906
+          ],
+          "ringEdgeX": -16.45232635614973,
+          "overlapM": 0.25,
+          "bridgeLengthM": 3.6263952625026143
+        },
+        {
+          "floor": 17,
+          "xyz": [
+            -28.271278381347656,
+            -22.227359771728516,
+            67.0999984741211
+          ],
+          "ringEdgeX": -31.452313797122542,
+          "overlapM": 0.25,
+          "bridgeLengthM": 3.531035415774886
+        }
+      ]
+    },
+    {
+      "fromFloor": 16,
+      "toFloor": 17,
+      "lane": "down",
+      "riseM": 3.1999969482421875,
+      "inclinationDeg": 30,
+      "inclinedHorizontalRunM": 5.5425572984208245,
+      "horizontalEndRunM": 1.5,
+      "totalPlanLengthM": 8.542557298420824,
+      "widthM": 1.36,
+      "clearStepWidthM": 1.0,
+      "stepCount": 18,
+      "riserM": 0.1777776082356771,
+      "ends": [
+        {
+          "floor": 16,
+          "xyz": [
+            -19.728721618652344,
+            -20.327360153198242,
+            63.900001525878906
+          ],
+          "ringEdgeX": -16.883163458706964,
+          "overlapM": 0.25,
+          "bridgeLengthM": 3.19555815994538
+        },
+        {
+          "floor": 17,
+          "xyz": [
+            -28.271278381347656,
+            -20.327360153198242,
+            67.0999984741211
+          ],
+          "ringEdgeX": -31.111877958068135,
+          "overlapM": 0.25,
+          "bridgeLengthM": 3.1905995767204787
+        }
+      ]
+    }
+  ],
+  "shopPlans": [
+    {
+      "floor": 1,
+      "z": 7.2,
+      "shops": [
+        {
+          "x": -31,
+          "frontY": -10.8,
+          "depthM": 3.45,
+          "type": "retail"
+        },
+        {
+          "x": -24,
+          "frontY": -10.8,
+          "depthM": 3.45,
+          "type": "retail"
+        },
+        {
+          "x": -17,
+          "frontY": -10.8,
+          "depthM": 3.45,
+          "type": "retail"
+        }
+      ],
+      "atrium": [
+        -24,
+        -29.513422393798827,
+        11.0,
+        13.513422393798827
+      ],
+      "publicSpace": "continuous side and rear public galleries, facade-adjacent multi-storey void, shops recessed behind rear promenade"
+    },
+    {
+      "floor": 2,
+      "z": 13.5,
+      "shops": [
+        {
+          "x": -31,
+          "frontY": -10.8,
+          "depthM": 3.45,
+          "type": "cafe"
+        },
+        {
+          "x": -24,
+          "frontY": -10.8,
+          "depthM": 3.45,
+          "type": "cafe"
+        },
+        {
+          "x": -17,
+          "frontY": -10.8,
+          "depthM": 3.45,
+          "type": "cafe"
+        }
+      ],
+      "atrium": [
+        -24,
+        -29.513422393798827,
+        11.0,
+        13.513422393798827
+      ],
+      "publicSpace": "continuous side and rear public galleries, facade-adjacent multi-storey void, shops recessed behind rear promenade"
+    },
+    {
+      "floor": 3,
+      "z": 17.100000381469727,
+      "shops": [
+        {
+          "x": -31,
+          "frontY": -10.8,
+          "depthM": 3.45,
+          "type": "books"
+        },
+        {
+          "x": -24,
+          "frontY": -10.8,
+          "depthM": 3.45,
+          "type": "books"
+        },
+        {
+          "x": -17,
+          "frontY": -10.8,
+          "depthM": 3.45,
+          "type": "books"
+        }
+      ],
+      "atrium": [
+        -24,
+        -29.703161936832423,
+        10.762979658857336,
+        13.83860213177109
+      ],
+      "publicSpace": "continuous side and rear public galleries, facade-adjacent multi-storey void, shops recessed behind rear promenade"
+    },
+    {
+      "floor": 4,
+      "z": 20.700000762939453,
+      "shops": [
+        {
+          "x": -31,
+          "frontY": -10.8,
+          "depthM": 3.45,
+          "type": "retail"
+        },
+        {
+          "x": -24,
+          "frontY": -10.8,
+          "depthM": 3.45,
+          "type": "retail"
+        },
+        {
+          "x": -17,
+          "frontY": -10.8,
+          "depthM": 3.45,
+          "type": "retail"
+        }
+      ],
+      "atrium": [
+        -24,
+        -29.812922536994925,
+        10.52595931771467,
+        14.083802926872258
+      ],
+      "publicSpace": "continuous side and rear public galleries, facade-adjacent multi-storey void, shops recessed behind rear promenade"
+    },
+    {
+      "floor": 5,
+      "z": 24.299999237060547,
+      "shops": [
+        {
+          "x": -31,
+          "frontY": -10.8,
+          "depthM": 3.45,
+          "type": "dining"
+        },
+        {
+          "x": -24,
+          "frontY": -10.8,
+          "depthM": 3.45,
+          "type": "dining"
+        },
+        {
+          "x": -17,
+          "frontY": -10.8,
+          "depthM": 3.45,
+          "type": "dining"
+        }
+      ],
+      "atrium": [
+        -24,
+        -29.829335623598347,
+        10.28893910214989,
+        14.235656136655555
+      ],
+      "publicSpace": "continuous side and rear public galleries, facade-adjacent multi-storey void, shops recessed behind rear promenade"
+    },
+    {
+      "floor": 6,
+      "z": 27.899999618530273,
+      "shops": [
+        {
+          "x": -31,
+          "frontY": -10.8,
+          "depthM": 3.45,
+          "type": "gallery"
+        },
+        {
+          "x": -24,
+          "frontY": -10.8,
+          "depthM": 3.45,
+          "type": "gallery"
+        },
+        {
+          "x": -17,
+          "frontY": -10.8,
+          "depthM": 3.45,
+          "type": "gallery"
+        }
+      ],
+      "atrium": [
+        -24,
+        -29.751739274908314,
+        10.051918761007224,
+        14.293499982904184
+      ],
+      "publicSpace": "continuous side and rear public galleries, facade-adjacent multi-storey void, shops recessed behind rear promenade"
+    },
+    {
+      "floor": 7,
+      "z": 31.5,
+      "shops": [
+        {
+          "x": -31,
+          "frontY": -10.8,
+          "depthM": 3.45,
+          "type": "retail"
+        },
+        {
+          "x": -24,
+          "frontY": -10.8,
+          "depthM": 3.45,
+          "type": "retail"
+        },
+        {
+          "x": -17,
+          "frontY": -10.8,
+          "depthM": 3.45,
+          "type": "retail"
+        }
+      ],
+      "atrium": [
+        -24,
+        -29.581207364084488,
+        9.81489841986456,
+        14.258408267019025
+      ],
+      "publicSpace": "continuous side and rear public galleries, facade-adjacent multi-storey void, shops recessed behind rear promenade"
+    },
+    {
+      "floor": 8,
+      "z": 35.099998474121094,
+      "shops": [
+        {
+          "x": -31,
+          "frontY": -10.8,
+          "depthM": 3.45,
+          "type": "craft"
+        },
+        {
+          "x": -24,
+          "frontY": -10.8,
+          "depthM": 3.45,
+          "type": "craft"
+        },
+        {
+          "x": -17,
+          "frontY": -10.8,
+          "depthM": 3.45,
+          "type": "craft"
+        }
+      ],
+      "atrium": [
+        -24,
+        -29.311485730839276,
+        9.577878204299777,
+        14.12412675695369
+      ],
+      "publicSpace": "continuous side and rear public galleries, facade-adjacent multi-storey void, shops recessed behind rear promenade"
+    },
+    {
+      "floor": 9,
+      "z": 38.70000076293945,
+      "shops": [
+        {
+          "x": -31,
+          "frontY": -10.8,
+          "depthM": 3.45,
+          "type": "cafe"
+        },
+        {
+          "x": -24,
+          "frontY": -10.8,
+          "depthM": 3.45,
+          "type": "cafe"
+        },
+        {
+          "x": -17,
+          "frontY": -10.8,
+          "depthM": 3.45,
+          "type": "cafe"
+        }
+      ],
+      "atrium": [
+        -24,
+        -28.954270129350903,
+        9.340857737579231,
+        13.902351422162768
+      ],
+      "publicSpace": "continuous side and rear public galleries, facade-adjacent multi-storey void, shops recessed behind rear promenade"
+    },
+    {
+      "floor": 10,
+      "z": 42.29999923706055,
+      "shops": [
+        {
+          "x": -31,
+          "frontY": -10.8,
+          "depthM": 3.45,
+          "type": "retail"
+        },
+        {
+          "x": -24,
+          "frontY": -10.8,
+          "depthM": 3.45,
+          "type": "retail"
+        },
+        {
+          "x": -17,
+          "frontY": -10.8,
+          "depthM": 3.45,
+          "type": "retail"
+        }
+      ],
+      "atrium": [
+        -24,
+        -28.49440300355198,
+        9.103837522014448,
+        13.577924419543722
+      ],
+      "publicSpace": "continuous side and rear public galleries, facade-adjacent multi-storey void, shops recessed behind rear promenade"
+    },
+    {
+      "floor": 11,
+      "z": 45.900001525878906,
+      "shops": [
+        {
+          "x": -31,
+          "frontY": -10.8,
+          "depthM": 3.45,
+          "type": "books"
+        },
+        {
+          "x": -24,
+          "frontY": -10.8,
+          "depthM": 3.45,
+          "type": "books"
+        },
+        {
+          "x": -17,
+          "frontY": -10.8,
+          "depthM": 3.45,
+          "type": "books"
+        }
+      ],
+      "atrium": [
+        -24,
+        -27.950637261682743,
+        8.866817055293902,
+        13.169598944371941
+      ],
+      "publicSpace": "continuous side and rear public galleries, facade-adjacent multi-storey void, shops recessed behind rear promenade"
+    },
+    {
+      "floor": 12,
+      "z": 49.5,
+      "shops": [
+        {
+          "x": -31,
+          "frontY": -10.8,
+          "depthM": 3.45,
+          "type": "dining"
+        },
+        {
+          "x": -24,
+          "frontY": -10.8,
+          "depthM": 3.45,
+          "type": "dining"
+        },
+        {
+          "x": -17,
+          "frontY": -10.8,
+          "depthM": 3.45,
+          "type": "dining"
+        }
+      ],
+      "atrium": [
+        -24,
+        -27.32077196693851,
+        8.629796839729119,
+        12.675173772807582
+      ],
+      "publicSpace": "continuous side and rear public galleries, facade-adjacent multi-storey void, shops recessed behind rear promenade"
+    },
+    {
+      "floor": 13,
+      "z": 53.099998474121094,
+      "shops": [
+        {
+          "x": -31,
+          "frontY": -10.8,
+          "depthM": 3.45,
+          "type": "gallery"
+        },
+        {
+          "x": -24,
+          "frontY": -10.8,
+          "depthM": 3.45,
+          "type": "gallery"
+        },
+        {
+          "x": -17,
+          "frontY": -10.8,
+          "depthM": 3.45,
+          "type": "gallery"
+        }
+      ],
+      "atrium": [
+        -24,
+        -26.606041102125914,
+        8.392776624164338,
+        12.095883031174864
+      ],
+      "publicSpace": "continuous side and rear public galleries, facade-adjacent multi-storey void, shops recessed behind rear promenade"
+    },
+    {
+      "floor": 14,
+      "z": 56.70000076293945,
+      "shops": [
+        {
+          "x": -31,
+          "frontY": -10.8,
+          "depthM": 3.45,
+          "type": "retail"
+        },
+        {
+          "x": -24,
+          "frontY": -10.8,
+          "depthM": 3.45,
+          "type": "retail"
+        },
+        {
+          "x": -17,
+          "frontY": -10.8,
+          "depthM": 3.45,
+          "type": "retail"
+        }
+      ],
+      "atrium": [
+        -24,
+        -25.826357315212732,
+        8.15575615744379,
+        11.45163951095914
+      ],
+      "publicSpace": "continuous side and rear public galleries, facade-adjacent multi-storey void, shops recessed behind rear promenade"
+    },
+    {
+      "floor": 15,
+      "z": 60.29999923706055,
+      "shops": [
+        {
+          "x": -31,
+          "frontY": -10.8,
+          "depthM": 3.45,
+          "type": "cafe"
+        },
+        {
+          "x": -24,
+          "frontY": -10.8,
+          "depthM": 3.45,
+          "type": "cafe"
+        },
+        {
+          "x": -17,
+          "frontY": -10.8,
+          "depthM": 3.45,
+          "type": "cafe"
+        }
+      ],
+      "atrium": [
+        -24,
+        -24.97142297444799,
+        7.918735941879008,
+        10.732145293374272
+      ],
+      "publicSpace": "continuous side and rear public galleries, facade-adjacent multi-storey void, shops recessed behind rear promenade"
+    },
+    {
+      "floor": 16,
+      "z": 63.900001525878906,
+      "shops": [
+        {
+          "x": -31,
+          "frontY": -10.8,
+          "depthM": 3.45,
+          "type": "dining"
+        },
+        {
+          "x": -24,
+          "frontY": -10.8,
+          "depthM": 3.45,
+          "type": "dining"
+        },
+        {
+          "x": -17,
+          "frontY": -10.8,
+          "depthM": 3.45,
+          "type": "dining"
+        }
+      ],
+      "atrium": [
+        -24,
+        -24.08354292898989,
+        7.6817154751584615,
+        9.979705514613624
+      ],
+      "publicSpace": "continuous side and rear public galleries, facade-adjacent multi-storey void, shops recessed behind rear promenade"
+    }
+  ],
+  "newMeshTriangles": 67944,
+  "meshStats": [
+    {
+      "object": "C33_Atrium_Slab_Reveals",
+      "triangles": 1536
+    },
+    {
+      "object": "C33_Ground_Lobby",
+      "triangles": 62
+    },
+    {
+      "object": "C33_Atrium_Skylight",
+      "triangles": 46
+    },
+    {
+      "object": "C33_Escalator_Assemblies",
+      "triangles": 30312
+    },
+    {
+      "object": "C33_Escalator_Glass",
+      "triangles": 384
+    },
+    {
+      "object": "C33_Gallery_Landing_Decks",
+      "triangles": 768
+    },
+    {
+      "object": "C33_Atrium_Guards",
+      "triangles": 20808
+    },
+    {
+      "object": "C33_Atrium_Guard_Glass",
+      "triangles": 8316
+    },
+    {
+      "object": "C33_Recessed_Shops",
+      "triangles": 4032
+    },
+    {
+      "object": "C33_Recessed_Shopfronts",
+      "triangles": 96
+    },
+    {
+      "object": "C33_Shop_Fittings",
+      "triangles": 1584
+    }
+  ],
+  "referenceSources": [
+    "https://www.benoy.com/projects/iconsiam",
+    "https://www.zha.com/projects/architecture/galaxy-soho?disclaimer=true",
+    "https://www.otis.com/en/us/products-services/products/escalators-and-moving-walks"
+  ],
+  "notes": [
+    "Single primary tower only; other three towers remain City32 and are not approved mall prototypes",
+    "Real through-floor atrium openings and connected escalator landing decks, not display ramps",
+    "Skylight inside existing crown footprint; outer roof silhouette retained",
+    "Escalator visual construction uses source-checked 30 degree inclination; not a manufacturing/compliance drawing",
+    "No reference photo used as texture; custom geometry with inherited permitted materials",
+    "Fixed view actual render required before acceptance"
+  ],
+  "slabOpeningChecks": [
+    {
+      "slab": "WB06_Left_Front_Primary_FloorBand_00",
+      "commonVerticalAtriumPointClear": true,
+      "thicknessM": 0.4399995803833008
+    },
+    {
+      "slab": "WB06_Left_Front_Primary_FloorBand_01",
+      "commonVerticalAtriumPointClear": true,
+      "thicknessM": 0.4400005340576172
+    },
+    {
+      "slab": "WB06_Left_Front_Primary_FloorBand_02",
+      "commonVerticalAtriumPointClear": true,
+      "thicknessM": 0.4400005340576172
+    },
+    {
+      "slab": "WB06_Left_Front_Primary_FloorBand_03",
+      "commonVerticalAtriumPointClear": true,
+      "thicknessM": 0.4399986267089844
+    },
+    {
+      "slab": "WB06_Left_Front_Primary_FloorBand_04",
+      "commonVerticalAtriumPointClear": true,
+      "thicknessM": 0.4400005340576172
+    },
+    {
+      "slab": "WB06_Left_Front_Primary_FloorBand_05",
+      "commonVerticalAtriumPointClear": true,
+      "thicknessM": 0.4400005340576172
+    },
+    {
+      "slab": "WB06_Left_Front_Primary_FloorBand_06",
+      "commonVerticalAtriumPointClear": true,
+      "thicknessM": 0.4399986267089844
+    },
+    {
+      "slab": "WB06_Left_Front_Primary_FloorBand_07",
+      "commonVerticalAtriumPointClear": true,
+      "thicknessM": 0.44000244140625
+    },
+    {
+      "slab": "WB06_Left_Front_Primary_FloorBand_08",
+      "commonVerticalAtriumPointClear": true,
+      "thicknessM": 0.4399986267089844
+    },
+    {
+      "slab": "WB06_Left_Front_Primary_FloorBand_09",
+      "commonVerticalAtriumPointClear": true,
+      "thicknessM": 0.44000244140625
+    },
+    {
+      "slab": "WB06_Left_Front_Primary_FloorBand_10",
+      "commonVerticalAtriumPointClear": true,
+      "thicknessM": 0.4399986267089844
+    },
+    {
+      "slab": "WB06_Left_Front_Primary_FloorBand_11",
+      "commonVerticalAtriumPointClear": true,
+      "thicknessM": 0.4399986267089844
+    },
+    {
+      "slab": "WB06_Left_Front_Primary_FloorBand_12",
+      "commonVerticalAtriumPointClear": true,
+      "thicknessM": 0.44000244140625
+    },
+    {
+      "slab": "WB06_Left_Front_Primary_FloorBand_13",
+      "commonVerticalAtriumPointClear": true,
+      "thicknessM": 0.4399986267089844
+    },
+    {
+      "slab": "WB06_Left_Front_Primary_FloorBand_14",
+      "commonVerticalAtriumPointClear": true,
+      "thicknessM": 0.44000244140625
+    },
+    {
+      "slab": "WB06_Left_Front_Primary_FloorBand_15",
+      "commonVerticalAtriumPointClear": true,
+      "thicknessM": 0.43999481201171875
+    }
+  ],
+  "maxOriginalSlabBoundsDifferenceM": 3.814697265625e-06,
+  "maxEscalatorEndpointFloorErrorM": 1.9073486345888568e-07,
+  "sceneVisibleBaseTriangles": 1313457,
+  "sceneVisibleEvaluatedTriangles": 1363425,
+  "newCollectionLightCount": 80,
+  "scope": "one primary tower: actual openings, side/rear circulation, paired stair banks and rear retail; other towers remain City32",
+  "geometryVerifiedSourceSHA256": "cf0c2770ef541f12f450bd5dc50982fb18b1c47a30b845f3f8246558ff1c4ed8",
+  "finalLocalRefinement": {
+    "geometryUnchanged": true,
+    "brushedSteelRoughness": 0.5,
+    "brushedSteelMetallic": 0.55,
+    "galleryLightsCount": 48,
+    "galleryLightWattsEach": 320,
+    "globalCameraEnvironmentExposureUnchanged": true
+  }
+}

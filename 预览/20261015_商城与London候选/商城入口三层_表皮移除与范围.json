@@ -1,0 +1,33 @@
+{
+  "sourceSHA256": "db34f3c79b9ee5f33c67d0a546778289e3e7c8b412e5c4d923538a3e182f9f5a",
+  "candidateSHA256": "8ff67b6b66d0c798ce66b58890d8491fdd3f28b77d06812ebcfe6421141fdd7d",
+  "changedOriginals": [
+    "WB06_Commercial_Entry_Recess",
+    "WB06_Left_Front_Primary_MainVolume"
+  ],
+  "sampleArcLength": 18.350539827562006,
+  "bayCount": 13,
+  "levels": [
+    [
+      7.2,
+      13.06
+    ],
+    [
+      13.5,
+      16.66
+    ],
+    [
+      17.1,
+      20.26
+    ]
+  ],
+  "newObjects": 440,
+  "newBaseTriangles": 2802,
+  "maxGlassQuadNonPlanarityM": 0.03370289760641754,
+  "glassRetreatM": 0.38,
+  "notes": [
+    "Triangulated glass approximation may show diagonal reflection if too coarse; verify actual pixels",
+    "No full interior furniture claim; low display cases only",
+    "Original layer band geometry and camera lighting unchanged"
+  ]
+}

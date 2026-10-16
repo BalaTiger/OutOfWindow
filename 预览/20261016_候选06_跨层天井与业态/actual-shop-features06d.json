@@ -1,0 +1,973 @@
+[
+  {
+    "id": "F05-T01",
+    "category": "design",
+    "brand": "AERONEST",
+    "actualMeshFacesByFeature": {
+      "C37_Gallery_Plinths": 6,
+      "C37_Ceramics": 36,
+      "C37_Books": 150
+    }
+  },
+  {
+    "id": "F05-T02",
+    "category": "home",
+    "brand": "LUMEN HOME",
+    "actualMeshFacesByFeature": {
+      "C37_Sofa_Base": 6,
+      "C37_Sofa_Back": 6,
+      "C37_Sofa_Cushions": 18,
+      "C37_Sofa_Arms": 12,
+      "C37_Low_Table": 6,
+      "C37_Low_Table_Legs": 12,
+      "C37_Dining_Tops": 12,
+      "C37_Dining_Bases": 12,
+      "C37_Seating": 48
+    }
+  },
+  {
+    "id": "F05-T04",
+    "category": "design",
+    "brand": "FORM STUDIO",
+    "actualMeshFacesByFeature": {
+      "C37_Gallery_Plinths": 18,
+      "C37_Ceramics": 108,
+      "C37_Books": 210,
+      "C37_Workshop_Benches": 6,
+      "C37_Workshop_Legs": 12,
+      "C37_Bookcase": 6,
+      "C37_Book_Shelves": 30
+    }
+  },
+  {
+    "id": "F05-T05",
+    "category": "home",
+    "brand": "LINEN ROOM",
+    "actualMeshFacesByFeature": {
+      "C37_Sofa_Base": 6,
+      "C37_Sofa_Back": 6,
+      "C37_Sofa_Cushions": 18,
+      "C37_Sofa_Arms": 12,
+      "C37_Low_Table": 6,
+      "C37_Low_Table_Legs": 12,
+      "C37_Dining_Tops": 12,
+      "C37_Dining_Bases": 12,
+      "C37_Seating": 48
+    }
+  },
+  {
+    "id": "F05-T06",
+    "category": "craft",
+    "brand": "FOLD WORKS",
+    "actualMeshFacesByFeature": {
+      "C37_Gallery_Plinths": 18,
+      "C37_Ceramics": 108,
+      "C37_Books": 210,
+      "C37_Workshop_Benches": 6,
+      "C37_Workshop_Legs": 12,
+      "C37_Bookcase": 6,
+      "C37_Book_Shelves": 30
+    }
+  },
+  {
+    "id": "F05-T07",
+    "category": "design",
+    "brand": "TERA OBJECTS",
+    "actualMeshFacesByFeature": {
+      "C37_Gallery_Plinths": 18,
+      "C37_Ceramics": 108,
+      "C37_Books": 210,
+      "C37_Workshop_Benches": 6,
+      "C37_Workshop_Legs": 12,
+      "C37_Bookcase": 6,
+      "C37_Book_Shelves": 30
+    }
+  },
+  {
+    "id": "F05-T08",
+    "category": "tea",
+    "brand": "HEYU TEA",
+    "actualMeshFacesByFeature": {
+      "C37_Sofa_Base": 6,
+      "C37_Sofa_Back": 6,
+      "C37_Sofa_Cushions": 18,
+      "C37_Sofa_Arms": 12,
+      "C37_Low_Table": 6,
+      "C37_Low_Table_Legs": 12,
+      "C37_Tea_Low_Tables": 12,
+      "C37_Tea_Table_Legs": 24,
+      "C37_Tea_Cushions": 24,
+      "C37_Service_Counters": 6,
+      "C37_Service_Countertops": 6,
+      "C37_Service_Equipment": 6,
+      "C37_Kitchen_Return": 6,
+      "C37_Pendant_Shades": 18,
+      "C37_Pendant_Stems": 6
+    }
+  },
+  {
+    "id": "F05-T09",
+    "category": "home",
+    "brand": "OAK AND FORM",
+    "actualMeshFacesByFeature": {
+      "C37_Sofa_Base": 6,
+      "C37_Sofa_Back": 6,
+      "C37_Sofa_Cushions": 18,
+      "C37_Sofa_Arms": 12,
+      "C37_Low_Table": 6,
+      "C37_Low_Table_Legs": 12,
+      "C37_Dining_Tops": 12,
+      "C37_Dining_Bases": 12,
+      "C37_Seating": 48
+    }
+  },
+  {
+    "id": "F06-T01",
+    "category": "fashion",
+    "brand": "THREADBAY",
+    "actualMeshFacesByFeature": {
+      "C37_Service_Counters": 6,
+      "C37_Service_Countertops": 6,
+      "C37_Service_Equipment": 6,
+      "C37_Clothing_Rails": 120,
+      "C37_Garments": 144,
+      "C37_Hangers": 144,
+      "C37_Hanger_Hooks": 144,
+      "C37_Mannequin_Platform": 18,
+      "C37_Mannequin_Body": 18,
+      "C37_Mannequin_Head": 18,
+      "C37_Mannequin_Neck": 18,
+      "C37_Mannequin_Legs": 36
+    }
+  },
+  {
+    "id": "F06-T04",
+    "category": "lifestyle",
+    "brand": "TONE GOODS",
+    "actualMeshFacesByFeature": {
+      "C37_Service_Counters": 6,
+      "C37_Service_Countertops": 6,
+      "C37_Service_Equipment": 6,
+      "C37_Kitchen_Return": 6,
+      "C37_Clothing_Rails": 90,
+      "C37_Garments": 108,
+      "C37_Hangers": 108,
+      "C37_Hanger_Hooks": 108,
+      "C37_Mannequin_Platform": 18,
+      "C37_Mannequin_Body": 18,
+      "C37_Mannequin_Head": 18,
+      "C37_Mannequin_Neck": 18,
+      "C37_Mannequin_Legs": 36
+    }
+  },
+  {
+    "id": "F06-T05",
+    "category": "sport",
+    "brand": "NORTHPACE",
+    "actualMeshFacesByFeature": {
+      "C37_Service_Counters": 6,
+      "C37_Service_Countertops": 6,
+      "C37_Service_Equipment": 6,
+      "C37_Kitchen_Return": 6,
+      "C37_Clothing_Rails": 120,
+      "C37_Garments": 144,
+      "C37_Hangers": 144,
+      "C37_Hanger_Hooks": 144,
+      "C37_Mannequin_Platform": 18,
+      "C37_Mannequin_Body": 18,
+      "C37_Mannequin_Head": 18,
+      "C37_Mannequin_Neck": 18,
+      "C37_Mannequin_Legs": 36
+    }
+  },
+  {
+    "id": "F06-T06",
+    "category": "fashion",
+    "brand": "MORROW DENIM",
+    "actualMeshFacesByFeature": {
+      "C37_Service_Counters": 6,
+      "C37_Service_Countertops": 6,
+      "C37_Service_Equipment": 6,
+      "C37_Kitchen_Return": 6,
+      "C37_Clothing_Rails": 30,
+      "C37_Garments": 36,
+      "C37_Hangers": 36,
+      "C37_Hanger_Hooks": 36,
+      "C37_Mannequin_Platform": 18,
+      "C37_Mannequin_Body": 18,
+      "C37_Mannequin_Head": 18,
+      "C37_Mannequin_Neck": 18,
+      "C37_Mannequin_Legs": 36
+    }
+  },
+  {
+    "id": "F06-T07",
+    "category": "tea",
+    "brand": "LEAF TEA",
+    "actualMeshFacesByFeature": {
+      "C37_Sofa_Base": 6,
+      "C37_Sofa_Back": 6,
+      "C37_Sofa_Cushions": 18,
+      "C37_Sofa_Arms": 12,
+      "C37_Low_Table": 6,
+      "C37_Low_Table_Legs": 12,
+      "C37_Tea_Low_Tables": 12,
+      "C37_Tea_Table_Legs": 24,
+      "C37_Tea_Cushions": 24,
+      "C37_Service_Counters": 6,
+      "C37_Service_Countertops": 6,
+      "C37_Service_Equipment": 6,
+      "C37_Pendant_Shades": 18,
+      "C37_Pendant_Stems": 6
+    }
+  },
+  {
+    "id": "F06-T08",
+    "category": "lifestyle",
+    "brand": "RILL OBJECTS",
+    "actualMeshFacesByFeature": {
+      "C37_Service_Counters": 6,
+      "C37_Service_Countertops": 6,
+      "C37_Service_Equipment": 6,
+      "C37_Kitchen_Return": 6,
+      "C37_Clothing_Rails": 90,
+      "C37_Garments": 108,
+      "C37_Hangers": 108,
+      "C37_Hanger_Hooks": 108,
+      "C37_Mannequin_Platform": 18,
+      "C37_Mannequin_Body": 18,
+      "C37_Mannequin_Head": 18,
+      "C37_Mannequin_Neck": 18,
+      "C37_Mannequin_Legs": 36
+    }
+  },
+  {
+    "id": "F07-T01",
+    "category": "books",
+    "brand": "ZHEWAN BOOKS",
+    "actualMeshFacesByFeature": {
+      "C37_Books": 630,
+      "C37_Dining_Tops": 12,
+      "C37_Dining_Bases": 12,
+      "C37_Seating": 48,
+      "C37_Bookcase": 18,
+      "C37_Book_Shelves": 90,
+      "C37_Reading_Light_Housings": 6
+    }
+  },
+  {
+    "id": "F07-T03",
+    "category": "books",
+    "brand": "FOLIO READING",
+    "actualMeshFacesByFeature": {
+      "C37_Books": 630,
+      "C37_Dining_Tops": 12,
+      "C37_Dining_Bases": 12,
+      "C37_Seating": 48,
+      "C37_Bookcase": 18,
+      "C37_Book_Shelves": 90,
+      "C37_Reading_Light_Housings": 6
+    }
+  },
+  {
+    "id": "F07-T04",
+    "category": "gallery",
+    "brand": "PAPER GALLERY",
+    "actualMeshFacesByFeature": {
+      "C37_Gallery_Plinths": 18,
+      "C37_Folded_Sculpture": 6,
+      "C37_Gallery_Walls": 12,
+      "C37_Artwork_Frames": 24,
+      "C37_Original_Abstract_Art": 72,
+      "C37_Gallery_Tracks": 6,
+      "C37_Gallery_Spot_Housings": 54
+    }
+  },
+  {
+    "id": "F07-T05",
+    "category": "craft",
+    "brand": "MINT MAKERS",
+    "actualMeshFacesByFeature": {
+      "C37_Gallery_Plinths": 12,
+      "C37_Ceramics": 72,
+      "C37_Books": 210,
+      "C37_Workshop_Benches": 6,
+      "C37_Workshop_Legs": 12,
+      "C37_Bookcase": 6,
+      "C37_Book_Shelves": 30
+    }
+  },
+  {
+    "id": "F07-T06",
+    "category": "tea",
+    "brand": "INK TEA",
+    "actualMeshFacesByFeature": {
+      "C37_Sofa_Base": 6,
+      "C37_Sofa_Back": 6,
+      "C37_Sofa_Cushions": 18,
+      "C37_Sofa_Arms": 12,
+      "C37_Low_Table": 6,
+      "C37_Low_Table_Legs": 12,
+      "C37_Tea_Low_Tables": 12,
+      "C37_Tea_Table_Legs": 24,
+      "C37_Tea_Cushions": 24,
+      "C37_Service_Counters": 6,
+      "C37_Service_Countertops": 6,
+      "C37_Service_Equipment": 6,
+      "C37_Kitchen_Return": 6,
+      "C37_Pendant_Shades": 18,
+      "C37_Pendant_Stems": 6
+    }
+  },
+  {
+    "id": "F07-T07",
+    "category": "books",
+    "brand": "BIND BOOKS",
+    "actualMeshFacesByFeature": {
+      "C37_Books": 630,
+      "C37_Dining_Tops": 12,
+      "C37_Dining_Bases": 12,
+      "C37_Seating": 48,
+      "C37_Bookcase": 18,
+      "C37_Book_Shelves": 90,
+      "C37_Reading_Light_Housings": 6
+    }
+  },
+  {
+    "id": "F08-T01",
+    "category": "gallery",
+    "brand": "ARC GALLERY",
+    "actualMeshFacesByFeature": {
+      "C37_Gallery_Plinths": 18,
+      "C37_Folded_Sculpture": 6,
+      "C37_Gallery_Walls": 12,
+      "C37_Artwork_Frames": 24,
+      "C37_Original_Abstract_Art": 72,
+      "C37_Gallery_Tracks": 6,
+      "C37_Gallery_Spot_Housings": 54
+    }
+  },
+  {
+    "id": "F08-T01B",
+    "category": "gallery",
+    "brand": "LIGHT ARCHIVE",
+    "actualMeshFacesByFeature": {
+      "C37_Gallery_Plinths": 6,
+      "C37_Folded_Sculpture": 2,
+      "C37_Artwork_Frames": 6,
+      "C37_Original_Abstract_Art": 36,
+      "C37_Gallery_Tracks": 6,
+      "C37_Gallery_Spot_Housings": 54
+    }
+  },
+  {
+    "id": "F08-T03",
+    "category": "design",
+    "brand": "MATERIAL LAB",
+    "actualMeshFacesByFeature": {
+      "C37_Gallery_Plinths": 18,
+      "C37_Ceramics": 108,
+      "C37_Books": 210,
+      "C37_Workshop_Benches": 6,
+      "C37_Workshop_Legs": 12,
+      "C37_Bookcase": 6,
+      "C37_Book_Shelves": 30
+    }
+  },
+  {
+    "id": "F08-T04",
+    "category": "gallery",
+    "brand": "FRAME STUDIO",
+    "actualMeshFacesByFeature": {
+      "C37_Gallery_Plinths": 18,
+      "C37_Folded_Sculpture": 6,
+      "C37_Gallery_Walls": 12,
+      "C37_Artwork_Frames": 24,
+      "C37_Original_Abstract_Art": 72,
+      "C37_Gallery_Tracks": 6,
+      "C37_Gallery_Spot_Housings": 54
+    }
+  },
+  {
+    "id": "F08-T05",
+    "category": "tea",
+    "brand": "HEYU ATELIER",
+    "actualMeshFacesByFeature": {
+      "C37_Sofa_Base": 6,
+      "C37_Sofa_Back": 6,
+      "C37_Sofa_Cushions": 18,
+      "C37_Sofa_Arms": 12,
+      "C37_Low_Table": 6,
+      "C37_Low_Table_Legs": 12,
+      "C37_Tea_Low_Tables": 12,
+      "C37_Tea_Table_Legs": 24,
+      "C37_Tea_Cushions": 24,
+      "C37_Service_Counters": 6,
+      "C37_Service_Countertops": 6,
+      "C37_Service_Equipment": 6,
+      "C37_Kitchen_Return": 6,
+      "C37_Pendant_Shades": 18,
+      "C37_Pendant_Stems": 6
+    }
+  },
+  {
+    "id": "F08-T06",
+    "category": "culture",
+    "brand": "COMMON STAGE",
+    "actualMeshFacesByFeature": {
+      "C37_Gallery_Plinths": 18,
+      "C37_Folded_Sculpture": 6,
+      "C37_Gallery_Walls": 12,
+      "C37_Artwork_Frames": 24,
+      "C37_Original_Abstract_Art": 72,
+      "C37_Gallery_Tracks": 6,
+      "C37_Gallery_Spot_Housings": 54
+    }
+  },
+  {
+    "id": "F09-T01",
+    "category": "family",
+    "brand": "SMALL WORLD",
+    "actualMeshFacesByFeature": {
+      "C37_Seating": 96,
+      "C37_Child_Tables": 24,
+      "C37_Child_Table_Legs": 48,
+      "C37_Soft_Play": 72,
+      "C37_Family_Cubbies": 6
+    }
+  },
+  {
+    "id": "F09-T03",
+    "category": "lifestyle",
+    "brand": "PAPER TIDE",
+    "actualMeshFacesByFeature": {
+      "C37_Service_Counters": 6,
+      "C37_Service_Countertops": 6,
+      "C37_Service_Equipment": 6,
+      "C37_Kitchen_Return": 6,
+      "C37_Clothing_Rails": 90,
+      "C37_Garments": 108,
+      "C37_Hangers": 108,
+      "C37_Hanger_Hooks": 108,
+      "C37_Mannequin_Platform": 18,
+      "C37_Mannequin_Body": 18,
+      "C37_Mannequin_Head": 18,
+      "C37_Mannequin_Neck": 18,
+      "C37_Mannequin_Legs": 36
+    }
+  },
+  {
+    "id": "F09-T04",
+    "category": "family",
+    "brand": "LITTLE FORUM",
+    "actualMeshFacesByFeature": {
+      "C37_Seating": 96,
+      "C37_Child_Tables": 24,
+      "C37_Child_Table_Legs": 48,
+      "C37_Soft_Play": 72,
+      "C37_Family_Cubbies": 6
+    }
+  },
+  {
+    "id": "F09-T05",
+    "category": "tea",
+    "brand": "FAMILY TEA",
+    "actualMeshFacesByFeature": {
+      "C37_Sofa_Base": 6,
+      "C37_Sofa_Back": 6,
+      "C37_Sofa_Cushions": 18,
+      "C37_Sofa_Arms": 12,
+      "C37_Low_Table": 6,
+      "C37_Low_Table_Legs": 12,
+      "C37_Tea_Low_Tables": 6,
+      "C37_Tea_Table_Legs": 12,
+      "C37_Tea_Cushions": 12,
+      "C37_Service_Counters": 6,
+      "C37_Service_Countertops": 6,
+      "C37_Service_Equipment": 6,
+      "C37_Kitchen_Return": 6,
+      "C37_Pendant_Shades": 18,
+      "C37_Pendant_Stems": 6
+    }
+  },
+  {
+    "id": "F09-T06",
+    "category": "design",
+    "brand": "PLAY FORM",
+    "actualMeshFacesByFeature": {
+      "C37_Gallery_Plinths": 18,
+      "C37_Ceramics": 108,
+      "C37_Books": 210,
+      "C37_Workshop_Benches": 6,
+      "C37_Workshop_Legs": 12,
+      "C37_Bookcase": 6,
+      "C37_Book_Shelves": 30
+    }
+  },
+  {
+    "id": "F10-T01",
+    "category": "dining",
+    "brand": "CEDAR TABLE",
+    "actualMeshFacesByFeature": {
+      "C37_Dining_Tops": 42,
+      "C37_Dining_Bases": 42,
+      "C37_Seating": 264,
+      "C37_Service_Counters": 6,
+      "C37_Service_Countertops": 6,
+      "C37_Service_Equipment": 6,
+      "C37_Kitchen_Return": 6,
+      "C37_Pendant_Shades": 18,
+      "C37_Pendant_Stems": 6,
+      "C37_Kitchen_Back_Cabinets": 6,
+      "C37_Kitchen_Canopies": 6,
+      "C37_Kitchen_Ducts": 6
+    }
+  },
+  {
+    "id": "F10-T03",
+    "category": "dining",
+    "brand": "BROTH HOUSE",
+    "actualMeshFacesByFeature": {
+      "C37_Dining_Tops": 42,
+      "C37_Dining_Bases": 42,
+      "C37_Seating": 264,
+      "C37_Service_Counters": 6,
+      "C37_Service_Countertops": 6,
+      "C37_Service_Equipment": 6,
+      "C37_Pendant_Shades": 18,
+      "C37_Pendant_Stems": 6,
+      "C37_Kitchen_Back_Cabinets": 6
+    }
+  },
+  {
+    "id": "F10-T04",
+    "category": "cafe",
+    "brand": "WINDOW CAFE",
+    "actualMeshFacesByFeature": {
+      "C37_Dining_Tops": 24,
+      "C37_Dining_Bases": 24,
+      "C37_Seating": 96,
+      "C37_Service_Counters": 6,
+      "C37_Service_Countertops": 6,
+      "C37_Service_Equipment": 6,
+      "C37_Pendant_Shades": 18,
+      "C37_Pendant_Stems": 6,
+      "C37_Coffee_Equipment_Feet": 12,
+      "C37_Coffee_Equipment": 36,
+      "C37_Cafe_Bar_Stools": 36
+    }
+  },
+  {
+    "id": "F10-T05",
+    "category": "tea",
+    "brand": "MIZU TEA",
+    "actualMeshFacesByFeature": {
+      "C37_Sofa_Base": 6,
+      "C37_Sofa_Back": 6,
+      "C37_Sofa_Cushions": 18,
+      "C37_Sofa_Arms": 12,
+      "C37_Low_Table": 6,
+      "C37_Low_Table_Legs": 12,
+      "C37_Tea_Low_Tables": 12,
+      "C37_Tea_Table_Legs": 24,
+      "C37_Tea_Cushions": 24,
+      "C37_Service_Counters": 6,
+      "C37_Service_Countertops": 6,
+      "C37_Service_Equipment": 6,
+      "C37_Kitchen_Return": 6,
+      "C37_Pendant_Shades": 18,
+      "C37_Pendant_Stems": 6
+    }
+  },
+  {
+    "id": "F11-T01",
+    "category": "dining",
+    "brand": "ARCQUAY DINING",
+    "actualMeshFacesByFeature": {
+      "C37_Dining_Tops": 42,
+      "C37_Dining_Bases": 42,
+      "C37_Seating": 264,
+      "C37_Service_Counters": 6,
+      "C37_Service_Countertops": 6,
+      "C37_Service_Equipment": 6,
+      "C37_Kitchen_Return": 6,
+      "C37_Pendant_Shades": 18,
+      "C37_Pendant_Stems": 6,
+      "C37_Kitchen_Back_Cabinets": 6,
+      "C37_Kitchen_Canopies": 6,
+      "C37_Kitchen_Ducts": 6
+    }
+  },
+  {
+    "id": "F11-T02",
+    "category": "dining",
+    "brand": "EMBER ROOM",
+    "actualMeshFacesByFeature": {
+      "C37_Dining_Tops": 24,
+      "C37_Dining_Bases": 24,
+      "C37_Seating": 144,
+      "C37_Service_Counters": 6,
+      "C37_Service_Countertops": 6,
+      "C37_Service_Equipment": 6,
+      "C37_Kitchen_Return": 6,
+      "C37_Pendant_Shades": 18,
+      "C37_Pendant_Stems": 6,
+      "C37_Kitchen_Back_Cabinets": 6,
+      "C37_Kitchen_Canopies": 6,
+      "C37_Kitchen_Ducts": 6
+    }
+  },
+  {
+    "id": "F11-T03",
+    "category": "dining",
+    "brand": "LONG TABLE",
+    "actualMeshFacesByFeature": {
+      "C37_Dining_Tops": 42,
+      "C37_Dining_Bases": 42,
+      "C37_Seating": 264,
+      "C37_Service_Counters": 6,
+      "C37_Service_Countertops": 6,
+      "C37_Service_Equipment": 6,
+      "C37_Kitchen_Return": 6,
+      "C37_Pendant_Shades": 18,
+      "C37_Pendant_Stems": 6,
+      "C37_Kitchen_Back_Cabinets": 6,
+      "C37_Kitchen_Canopies": 6,
+      "C37_Kitchen_Ducts": 6
+    }
+  },
+  {
+    "id": "F11-T04",
+    "category": "cafe",
+    "brand": "SORA CAFE",
+    "actualMeshFacesByFeature": {
+      "C37_Dining_Tops": 6,
+      "C37_Dining_Bases": 6,
+      "C37_Seating": 24,
+      "C37_Service_Counters": 6,
+      "C37_Service_Countertops": 6,
+      "C37_Service_Equipment": 6,
+      "C37_Pendant_Shades": 18,
+      "C37_Pendant_Stems": 6,
+      "C37_Coffee_Equipment_Feet": 12,
+      "C37_Coffee_Equipment": 36,
+      "C37_Cafe_Bar_Stools": 36
+    }
+  },
+  {
+    "id": "F11-T05",
+    "category": "tea",
+    "brand": "HEYU DINING",
+    "actualMeshFacesByFeature": {
+      "C37_Sofa_Base": 6,
+      "C37_Sofa_Back": 6,
+      "C37_Sofa_Cushions": 18,
+      "C37_Sofa_Arms": 12,
+      "C37_Low_Table": 6,
+      "C37_Low_Table_Legs": 12,
+      "C37_Tea_Low_Tables": 12,
+      "C37_Tea_Table_Legs": 24,
+      "C37_Tea_Cushions": 24,
+      "C37_Service_Counters": 6,
+      "C37_Service_Countertops": 6,
+      "C37_Service_Equipment": 6,
+      "C37_Kitchen_Return": 6,
+      "C37_Pendant_Shades": 18,
+      "C37_Pendant_Stems": 6
+    }
+  },
+  {
+    "id": "F12-T01",
+    "category": "gallery",
+    "brand": "FORM ARCHIVE",
+    "actualMeshFacesByFeature": {
+      "C37_Gallery_Plinths": 18,
+      "C37_Folded_Sculpture": 6,
+      "C37_Gallery_Walls": 12,
+      "C37_Artwork_Frames": 24,
+      "C37_Original_Abstract_Art": 72,
+      "C37_Gallery_Tracks": 6,
+      "C37_Gallery_Spot_Housings": 54
+    }
+  },
+  {
+    "id": "F12-T02",
+    "category": "craft",
+    "brand": "CLAY WORKS",
+    "actualMeshFacesByFeature": {
+      "C37_Gallery_Plinths": 18,
+      "C37_Ceramics": 108,
+      "C37_Books": 210,
+      "C37_Workshop_Benches": 6,
+      "C37_Workshop_Legs": 12,
+      "C37_Bookcase": 6,
+      "C37_Book_Shelves": 30
+    }
+  },
+  {
+    "id": "F12-T03",
+    "category": "gallery",
+    "brand": "LIGHT ROOM",
+    "actualMeshFacesByFeature": {
+      "C37_Gallery_Plinths": 18,
+      "C37_Folded_Sculpture": 6,
+      "C37_Gallery_Walls": 12,
+      "C37_Artwork_Frames": 24,
+      "C37_Original_Abstract_Art": 72,
+      "C37_Gallery_Tracks": 6,
+      "C37_Gallery_Spot_Housings": 54
+    }
+  },
+  {
+    "id": "F12-T04",
+    "category": "design",
+    "brand": "OBJECT LAB",
+    "actualMeshFacesByFeature": {
+      "C37_Gallery_Plinths": 18,
+      "C37_Ceramics": 108,
+      "C37_Books": 210,
+      "C37_Workshop_Benches": 6,
+      "C37_Workshop_Legs": 12,
+      "C37_Bookcase": 6,
+      "C37_Book_Shelves": 30
+    }
+  },
+  {
+    "id": "F13-T01",
+    "category": "dining",
+    "brand": "SKY TABLE",
+    "actualMeshFacesByFeature": {
+      "C37_Dining_Tops": 42,
+      "C37_Dining_Bases": 42,
+      "C37_Seating": 264,
+      "C37_Service_Counters": 6,
+      "C37_Service_Countertops": 6,
+      "C37_Service_Equipment": 6,
+      "C37_Kitchen_Return": 6,
+      "C37_Pendant_Shades": 18,
+      "C37_Pendant_Stems": 6,
+      "C37_Kitchen_Back_Cabinets": 6,
+      "C37_Kitchen_Canopies": 6,
+      "C37_Kitchen_Ducts": 6
+    }
+  },
+  {
+    "id": "F13-T02",
+    "category": "dining",
+    "brand": "COVE DINING",
+    "actualMeshFacesByFeature": {
+      "C37_Dining_Tops": 42,
+      "C37_Dining_Bases": 42,
+      "C37_Seating": 252,
+      "C37_Service_Counters": 6,
+      "C37_Service_Countertops": 6,
+      "C37_Service_Equipment": 6,
+      "C37_Kitchen_Return": 6,
+      "C37_Pendant_Shades": 18,
+      "C37_Pendant_Stems": 6,
+      "C37_Kitchen_Canopies": 6,
+      "C37_Kitchen_Ducts": 6
+    }
+  },
+  {
+    "id": "F13-T03",
+    "category": "books",
+    "brand": "FOLIO SKY",
+    "actualMeshFacesByFeature": {
+      "C37_Books": 630,
+      "C37_Dining_Tops": 6,
+      "C37_Dining_Bases": 6,
+      "C37_Seating": 24,
+      "C37_Bookcase": 18,
+      "C37_Book_Shelves": 90,
+      "C37_Reading_Light_Housings": 6
+    }
+  },
+  {
+    "id": "F13-T04",
+    "category": "cafe",
+    "brand": "WINDOW ROAST",
+    "actualMeshFacesByFeature": {
+      "C37_Dining_Tops": 24,
+      "C37_Dining_Bases": 24,
+      "C37_Seating": 96,
+      "C37_Service_Counters": 6,
+      "C37_Service_Countertops": 6,
+      "C37_Service_Equipment": 6,
+      "C37_Pendant_Shades": 18,
+      "C37_Pendant_Stems": 6,
+      "C37_Coffee_Equipment_Feet": 12,
+      "C37_Coffee_Equipment": 36,
+      "C37_Cafe_Bar_Stools": 36
+    }
+  },
+  {
+    "id": "F14-T01",
+    "category": "gallery",
+    "brand": "QUIET GALLERY",
+    "actualMeshFacesByFeature": {
+      "C37_Gallery_Plinths": 18,
+      "C37_Folded_Sculpture": 6,
+      "C37_Gallery_Walls": 12,
+      "C37_Artwork_Frames": 24,
+      "C37_Original_Abstract_Art": 72,
+      "C37_Gallery_Tracks": 6,
+      "C37_Gallery_Spot_Housings": 54
+    }
+  },
+  {
+    "id": "F14-T02",
+    "category": "tea",
+    "brand": "CERAMIC TEA",
+    "actualMeshFacesByFeature": {
+      "C37_Sofa_Base": 6,
+      "C37_Sofa_Back": 6,
+      "C37_Sofa_Cushions": 18,
+      "C37_Sofa_Arms": 12,
+      "C37_Low_Table": 6,
+      "C37_Low_Table_Legs": 12,
+      "C37_Tea_Low_Tables": 12,
+      "C37_Tea_Table_Legs": 24,
+      "C37_Tea_Cushions": 24,
+      "C37_Service_Counters": 6,
+      "C37_Service_Countertops": 6,
+      "C37_Service_Equipment": 6,
+      "C37_Kitchen_Return": 6,
+      "C37_Pendant_Shades": 18,
+      "C37_Pendant_Stems": 6
+    }
+  },
+  {
+    "id": "F14-T03",
+    "category": "gallery",
+    "brand": "PAPER ROOM",
+    "actualMeshFacesByFeature": {
+      "C37_Gallery_Plinths": 18,
+      "C37_Folded_Sculpture": 6,
+      "C37_Gallery_Walls": 12,
+      "C37_Artwork_Frames": 24,
+      "C37_Original_Abstract_Art": 72,
+      "C37_Gallery_Tracks": 6,
+      "C37_Gallery_Spot_Housings": 54
+    }
+  },
+  {
+    "id": "F15-T01",
+    "category": "dining",
+    "brand": "EMBER SALON",
+    "actualMeshFacesByFeature": {
+      "C37_Dining_Tops": 24,
+      "C37_Dining_Bases": 24,
+      "C37_Seating": 144,
+      "C37_Service_Counters": 6,
+      "C37_Service_Countertops": 6,
+      "C37_Service_Equipment": 6,
+      "C37_Pendant_Shades": 18,
+      "C37_Pendant_Stems": 6,
+      "C37_Kitchen_Back_Cabinets": 6
+    }
+  },
+  {
+    "id": "F15-T02",
+    "category": "dining",
+    "brand": "CLOUD TABLE",
+    "actualMeshFacesByFeature": {
+      "C37_Dining_Tops": 42,
+      "C37_Dining_Bases": 42,
+      "C37_Seating": 264,
+      "C37_Service_Counters": 6,
+      "C37_Service_Countertops": 6,
+      "C37_Service_Equipment": 6,
+      "C37_Kitchen_Return": 6,
+      "C37_Pendant_Shades": 18,
+      "C37_Pendant_Stems": 6,
+      "C37_Kitchen_Back_Cabinets": 6,
+      "C37_Kitchen_Canopies": 6,
+      "C37_Kitchen_Ducts": 6
+    }
+  },
+  {
+    "id": "F15-T03",
+    "category": "cafe",
+    "brand": "SORA ROAST",
+    "actualMeshFacesByFeature": {
+      "C37_Dining_Tops": 24,
+      "C37_Dining_Bases": 24,
+      "C37_Seating": 96,
+      "C37_Service_Counters": 6,
+      "C37_Service_Countertops": 6,
+      "C37_Service_Equipment": 6,
+      "C37_Pendant_Shades": 18,
+      "C37_Pendant_Stems": 6,
+      "C37_Coffee_Equipment_Feet": 12,
+      "C37_Coffee_Equipment": 36,
+      "C37_Cafe_Bar_Stools": 36
+    }
+  },
+  {
+    "id": "F16-T01",
+    "category": "tea",
+    "brand": "SKY TEA",
+    "actualMeshFacesByFeature": {
+      "C37_Sofa_Base": 6,
+      "C37_Sofa_Back": 6,
+      "C37_Sofa_Cushions": 18,
+      "C37_Sofa_Arms": 12,
+      "C37_Low_Table": 6,
+      "C37_Low_Table_Legs": 12,
+      "C37_Tea_Low_Tables": 6,
+      "C37_Tea_Table_Legs": 12,
+      "C37_Tea_Cushions": 12,
+      "C37_Service_Counters": 6,
+      "C37_Service_Countertops": 6,
+      "C37_Service_Equipment": 6,
+      "C37_Kitchen_Return": 6,
+      "C37_Pendant_Shades": 18,
+      "C37_Pendant_Stems": 6
+    }
+  },
+  {
+    "id": "F16-T01B",
+    "category": "tea",
+    "brand": "HEYU VIEW",
+    "actualMeshFacesByFeature": {
+      "C37_Sofa_Base": 6,
+      "C37_Sofa_Back": 6,
+      "C37_Sofa_Cushions": 18,
+      "C37_Sofa_Arms": 12,
+      "C37_Low_Table": 6,
+      "C37_Low_Table_Legs": 12,
+      "C37_Tea_Low_Tables": 12,
+      "C37_Tea_Table_Legs": 24,
+      "C37_Tea_Cushions": 24,
+      "C37_Service_Counters": 6,
+      "C37_Service_Countertops": 6,
+      "C37_Service_Equipment": 6,
+      "C37_Kitchen_Return": 6,
+      "C37_Pendant_Shades": 18,
+      "C37_Pendant_Stems": 6
+    }
+  },
+  {
+    "id": "F16-T02",
+    "category": "lounge",
+    "brand": "SKY COMMON",
+    "actualMeshFacesByFeature": {
+      "C37_Sofa_Base": 6,
+      "C37_Sofa_Back": 6,
+      "C37_Sofa_Cushions": 18,
+      "C37_Sofa_Arms": 12,
+      "C37_Low_Table": 6,
+      "C37_Low_Table_Legs": 12,
+      "C37_Tea_Low_Tables": 12,
+      "C37_Tea_Table_Legs": 24,
+      "C37_Tea_Cushions": 24,
+      "C37_Service_Counters": 6,
+      "C37_Service_Countertops": 6,
+      "C37_Service_Equipment": 6,
+      "C37_Kitchen_Return": 6,
+      "C37_Pendant_Shades": 18,
+      "C37_Pendant_Stems": 6
+    }
+  }
+]

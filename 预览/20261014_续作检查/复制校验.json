@@ -1,0 +1,23 @@
+{
+  "hostname": "DESKTOP-9RQJ5OB",
+  "workingDirectory": "C:\\Users\\zhuzi\\Documents\\OutOfWindow",
+  "utc": "2026-10-14T08:08:25.4831267Z",
+  "files": [
+    {
+      "source": "C:\\Users\\zhuzi\\Documents\\OutOfWindow\\.runtime\\resume-20261014\\city-candidate\\preview-city25-fixed-window.png",
+      "destination": "C:\\Users\\zhuzi\\Documents\\OutOfWindow\\预览\\20261014_续作检查\\preview-city25-fixed-window.png",
+      "bytes": 717406,
+      "sha256": "19DE2AC42F61239355691544C57FD98011B9E696B4B3155AF3D65C8EE11F3CD9",
+      "readable": true,
+      "copyExact": true
+    },
+    {
+      "source": "C:\\Users\\zhuzi\\Documents\\OutOfWindow\\.runtime\\resume-20261014\\cloud-candidate\\candidate02-reference-comparison.png",
+      "destination": "C:\\Users\\zhuzi\\Documents\\OutOfWindow\\预览\\20261014_续作检查\\candidate02-reference-comparison.png",
+      "bytes": 73048,
+      "sha256": "FB6EC2B06C68C050B1C72F89EE6A303E1DE8555B51D5632B67888D9020991D5B",
+      "readable": true,
+      "copyExact": true
+    }
+  ]
+}

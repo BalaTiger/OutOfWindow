@@ -1,0 +1,3616 @@
+{
+  "sourceSHA256": "d648d10d075bddc1a390e79ebcc396bf0ea07c33820bfa5689e116c71c25e1d7",
+  "candidateSHA256": "52efaaba7ebb6639a751eaecbc5c2300a5226f3c28261eb19292461cdfca174e",
+  "changedOriginals": [
+    "C29_CC0_InteriorBench_arm_rest_01_L0",
+    "C29_CC0_InteriorBench_arm_rest_02_L0",
+    "C29_CC0_InteriorBench_back_support_l_L0",
+    "C29_CC0_InteriorBench_back_support_r_L0",
+    "C29_CC0_InteriorBench_crossbar_L0",
+    "C29_CC0_InteriorBench_legs_double_L0",
+    "C29_CC0_InteriorBench_legs_single_L0",
+    "C29_CC0_InteriorBench_seat_back_L0",
+    "C29_CC0_InteriorBench_seat_L0",
+    "C29_InteriorBack_0_0",
+    "C29_InteriorBack_0_1",
+    "C29_InteriorBack_0_10",
+    "C29_InteriorBack_0_11",
+    "C29_InteriorBack_0_12",
+    "C29_InteriorBack_0_2",
+    "C29_InteriorBack_0_3",
+    "C29_InteriorBack_0_4",
+    "C29_InteriorBack_0_5",
+    "C29_InteriorBack_0_6",
+    "C29_InteriorBack_0_7",
+    "C29_InteriorBack_0_8",
+    "C29_InteriorBack_0_9",
+    "C29_InteriorCeiling_0_0",
+    "C29_InteriorCeiling_0_1",
+    "C29_InteriorCeiling_0_10",
+    "C29_InteriorCeiling_0_11",
+    "C29_InteriorCeiling_0_12",
+    "C29_InteriorCeiling_0_2",
+    "C29_InteriorCeiling_0_3",
+    "C29_InteriorCeiling_0_4",
+    "C29_InteriorCeiling_0_5",
+    "C29_InteriorCeiling_0_6",
+    "C29_InteriorCeiling_0_7",
+    "C29_InteriorCeiling_0_8",
+    "C29_InteriorCeiling_0_9",
+    "C29_InteriorCeiling_1_0",
+    "C29_InteriorCeiling_1_1",
+    "C29_InteriorCeiling_1_10",
+    "C29_InteriorCeiling_1_11",
+    "C29_InteriorCeiling_1_12",
+    "C29_InteriorCeiling_1_2",
+    "C29_InteriorCeiling_1_3",
+    "C29_InteriorCeiling_1_4",
+    "C29_InteriorCeiling_1_5",
+    "C29_InteriorCeiling_1_6",
+    "C29_InteriorCeiling_1_7",
+    "C29_InteriorCeiling_1_8",
+    "C29_InteriorCeiling_1_9",
+    "C29_InteriorCeiling_2_0",
+    "C29_InteriorCeiling_2_1",
+    "C29_InteriorCeiling_2_10",
+    "C29_InteriorCeiling_2_11",
+    "C29_InteriorCeiling_2_12",
+    "C29_InteriorCeiling_2_2",
+    "C29_InteriorCeiling_2_3",
+    "C29_InteriorCeiling_2_4",
+    "C29_InteriorCeiling_2_5",
+    "C29_InteriorCeiling_2_6",
+    "C29_InteriorCeiling_2_7",
+    "C29_InteriorCeiling_2_8",
+    "C29_InteriorCeiling_2_9",
+    "C29_InteriorFloor_0_0",
+    "C29_InteriorFloor_0_1",
+    "C29_InteriorFloor_0_10",
+    "C29_InteriorFloor_0_11",
+    "C29_InteriorFloor_0_12",
+    "C29_InteriorFloor_0_2",
+    "C29_InteriorFloor_0_3",
+    "C29_InteriorFloor_0_4",
+    "C29_InteriorFloor_0_5",
+    "C29_InteriorFloor_0_6",
+    "C29_InteriorFloor_0_7",
+    "C29_InteriorFloor_0_8",
+    "C29_InteriorFloor_0_9",
+    "C29_InteriorFloor_1_0",
+    "C29_InteriorFloor_1_1",
+    "C29_InteriorFloor_1_10",
+    "C29_InteriorFloor_1_11",
+    "C29_InteriorFloor_1_12",
+    "C29_InteriorFloor_1_2",
+    "C29_InteriorFloor_1_3",
+    "C29_InteriorFloor_1_4",
+    "C29_InteriorFloor_1_5",
+    "C29_InteriorFloor_1_6",
+    "C29_InteriorFloor_1_7",
+    "C29_InteriorFloor_1_8",
+    "C29_InteriorFloor_1_9",
+    "C29_InteriorFloor_2_0",
+    "C29_InteriorFloor_2_1",
+    "C29_InteriorFloor_2_10",
+    "C29_InteriorFloor_2_11",
+    "C29_InteriorFloor_2_12",
+    "C29_InteriorFloor_2_2",
+    "C29_InteriorFloor_2_3",
+    "C29_InteriorFloor_2_4",
+    "C29_InteriorFloor_2_5",
+    "C29_InteriorFloor_2_6",
+    "C29_InteriorFloor_2_7",
+    "C29_InteriorFloor_2_8",
+    "C29_InteriorFloor_2_9",
+    "C29_InteriorLocal_0_0",
+    "C29_InteriorLocal_0_0_Panel",
+    "C29_InteriorLocal_0_1",
+    "C29_InteriorLocal_0_1_Panel",
+    "C29_LowRetailDisplay_0_1",
+    "C29_LowRetailDisplay_0_5",
+    "C29_LowRetailDisplay_0_9",
+    "C31_Cafe_BackBar",
+    "C31_Cafe_BackBarShelf",
+    "C31_Cafe_BackBarShelf.001",
+    "C31_Cafe_BackBarShelf.002",
+    "C31_Cafe_BackWall",
+    "C31_Cafe_CC0_Banquette_0_C29_CC0_InteriorBench_arm_rest_01_L0",
+    "C31_Cafe_CC0_Banquette_0_C29_CC0_InteriorBench_arm_rest_02_L0",
+    "C31_Cafe_CC0_Banquette_0_C29_CC0_InteriorBench_back_support_l_L0",
+    "C31_Cafe_CC0_Banquette_0_C29_CC0_InteriorBench_back_support_r_L0",
+    "C31_Cafe_CC0_Banquette_0_C29_CC0_InteriorBench_crossbar_L0",
+    "C31_Cafe_CC0_Banquette_0_C29_CC0_InteriorBench_legs_double_L0",
+    "C31_Cafe_CC0_Banquette_0_C29_CC0_InteriorBench_legs_single_L0",
+    "C31_Cafe_CC0_Banquette_0_C29_CC0_InteriorBench_seat_back_L0",
+    "C31_Cafe_CC0_Banquette_0_C29_CC0_InteriorBench_seat_L0",
+    "C31_Cafe_CC0_Banquette_1_C29_CC0_InteriorBench_arm_rest_01_L0",
+    "C31_Cafe_CC0_Banquette_1_C29_CC0_InteriorBench_arm_rest_02_L0",
+    "C31_Cafe_CC0_Banquette_1_C29_CC0_InteriorBench_back_support_l_L0",
+    "C31_Cafe_CC0_Banquette_1_C29_CC0_InteriorBench_back_support_r_L0",
+    "C31_Cafe_CC0_Banquette_1_C29_CC0_InteriorBench_crossbar_L0",
+    "C31_Cafe_CC0_Banquette_1_C29_CC0_InteriorBench_legs_double_L0",
+    "C31_Cafe_CC0_Banquette_1_C29_CC0_InteriorBench_legs_single_L0",
+    "C31_Cafe_CC0_Banquette_1_C29_CC0_InteriorBench_seat_back_L0",
+    "C31_Cafe_CC0_Banquette_1_C29_CC0_InteriorBench_seat_L0",
+    "C31_Cafe_ChairBack",
+    "C31_Cafe_ChairBack.001",
+    "C31_Cafe_ChairBack.002",
+    "C31_Cafe_ChairBack.003",
+    "C31_Cafe_ChairLeg",
+    "C31_Cafe_ChairLeg.001",
+    "C31_Cafe_ChairLeg.002",
+    "C31_Cafe_ChairLeg.003",
+    "C31_Cafe_ChairLeg.004",
+    "C31_Cafe_ChairLeg.005",
+    "C31_Cafe_ChairLeg.006",
+    "C31_Cafe_ChairLeg.007",
+    "C31_Cafe_ChairLeg.008",
+    "C31_Cafe_ChairLeg.009",
+    "C31_Cafe_ChairLeg.010",
+    "C31_Cafe_ChairLeg.011",
+    "C31_Cafe_ChairLeg.012",
+    "C31_Cafe_ChairLeg.013",
+    "C31_Cafe_ChairLeg.014",
+    "C31_Cafe_ChairLeg.015",
+    "C31_Cafe_ChairSeat",
+    "C31_Cafe_ChairSeat.001",
+    "C31_Cafe_ChairSeat.002",
+    "C31_Cafe_ChairSeat.003",
+    "C31_Cafe_CounterTask",
+    "C31_Cafe_CounterTop",
+    "C31_Cafe_DiningPool",
+    "C31_Cafe_ServiceCounter",
+    "C31_Cafe_ServicePartition",
+    "C31_Cafe_TableFoot",
+    "C31_Cafe_TableFoot.001",
+    "C31_Cafe_TableStem",
+    "C31_Cafe_TableStem.001",
+    "C31_Cafe_TableTop",
+    "C31_Cafe_TableTop.001",
+    "C31_Retail_DisplayIsland",
+    "C31_Retail_DisplayIslandCap",
+    "C31_Retail_DisplayShelf",
+    "C31_Retail_DisplayShelf.001",
+    "C31_Retail_DisplayShelf.002",
+    "C31_Retail_DisplayShelf.003",
+    "C31_Retail_DisplayShelf.004",
+    "C31_Retail_DisplayShelf.005",
+    "C31_Retail_DisplayShelf.006",
+    "C31_Retail_DisplayShelf.007",
+    "C31_Retail_FixtureBack",
+    "C31_Retail_FixtureBack.001",
+    "C31_Retail_FixtureJamb",
+    "C31_Retail_FixtureJamb.001",
+    "C31_Retail_FixtureJamb.002",
+    "C31_Retail_FixtureJamb.003",
+    "C31_Retail_FloorExtension",
+    "C31_Retail_IslandPool",
+    "C31_Retail_LeftDisplay",
+    "C31_Retail_LeftReturn",
+    "C31_Retail_ProductPackage",
+    "C31_Retail_ProductPackage.001",
+    "C31_Retail_ProductPackage.002",
+    "C31_Retail_ProductPackage.003",
+    "C31_Retail_ProductPackage.004",
+    "C31_Retail_ProductPackage.005",
+    "C31_Retail_ProductPackage.006",
+    "C31_Retail_ProductPackage.007",
+    "C31_Retail_ProductPackage.008",
+    "C31_Retail_ProductPackage.009",
+    "C31_Retail_ProductPackage.010",
+    "C31_Retail_ProductPackage.011",
+    "C31_Retail_ProductPackage.012",
+    "C31_Retail_ProductPackage.013",
+    "C31_Retail_ProductPackage.014",
+    "C31_Retail_ProductPackage.015",
+    "C31_Retail_ProductPackage.016",
+    "C31_Retail_ProductPackage.017",
+    "C31_Retail_RearWall",
+    "C31_Retail_StockroomPartition",
+    "C31_Retail_TallEndcap",
+    "C32_WB06_Left_Front_Primary_Fixtures",
+    "C32_WB06_Left_Front_Primary_Furniture",
+    "C32_WB06_Left_Front_Primary_Interior",
+    "C32_WB06_Left_Front_Primary_L0_Tenant0",
+    "C32_WB06_Left_Front_Primary_L0_Tenant2",
+    "C32_WB06_Left_Front_Primary_L0_Tenant3",
+    "C32_WB06_Left_Front_Primary_L0_Tenant4",
+    "C32_WB06_Left_Front_Primary_L0_Tenant5",
+    "C32_WB06_Left_Front_Primary_L10_Tenant1",
+    "C32_WB06_Left_Front_Primary_L10_Tenant2",
+    "C32_WB06_Left_Front_Primary_L10_Tenant3",
+    "C32_WB06_Left_Front_Primary_L10_Tenant4",
+    "C32_WB06_Left_Front_Primary_L10_Tenant6",
+    "C32_WB06_Left_Front_Primary_L10_Tenant7",
+    "C32_WB06_Left_Front_Primary_L11_Tenant0",
+    "C32_WB06_Left_Front_Primary_L11_Tenant10",
+    "C32_WB06_Left_Front_Primary_L11_Tenant12",
+    "C32_WB06_Left_Front_Primary_L11_Tenant13",
+    "C32_WB06_Left_Front_Primary_L11_Tenant2",
+    "C32_WB06_Left_Front_Primary_L11_Tenant3",
+    "C32_WB06_Left_Front_Primary_L11_Tenant4",
+    "C32_WB06_Left_Front_Primary_L11_Tenant5",
+    "C32_WB06_Left_Front_Primary_L11_Tenant7",
+    "C32_WB06_Left_Front_Primary_L11_Tenant8",
+    "C32_WB06_Left_Front_Primary_L11_Tenant9",
+    "C32_WB06_Left_Front_Primary_L12_Tenant1",
+    "C32_WB06_Left_Front_Primary_L12_Tenant2",
+    "C32_WB06_Left_Front_Primary_L12_Tenant3",
+    "C32_WB06_Left_Front_Primary_L12_Tenant4",
+    "C32_WB06_Left_Front_Primary_L12_Tenant6",
+    "C32_WB06_Left_Front_Primary_L12_Tenant7",
+    "C32_WB06_Left_Front_Primary_L12_Tenant8",
+    "C32_WB06_Left_Front_Primary_L12_Tenant9",
+    "C32_WB06_Left_Front_Primary_L13_Tenant0",
+    "C32_WB06_Left_Front_Primary_L13_Tenant1",
+    "C32_WB06_Left_Front_Primary_L13_Tenant2",
+    "C32_WB06_Left_Front_Primary_L13_Tenant3",
+    "C32_WB06_Left_Front_Primary_L13_Tenant5",
+    "C32_WB06_Left_Front_Primary_L13_Tenant6",
+    "C32_WB06_Left_Front_Primary_L13_Tenant7",
+    "C32_WB06_Left_Front_Primary_L14_Tenant1",
+    "C32_WB06_Left_Front_Primary_L14_Tenant2",
+    "C32_WB06_Left_Front_Primary_L14_Tenant3",
+    "C32_WB06_Left_Front_Primary_L14_Tenant4",
+    "C32_WB06_Left_Front_Primary_L14_Tenant6",
+    "C32_WB06_Left_Front_Primary_L14_Tenant7",
+    "C32_WB06_Left_Front_Primary_L14_Tenant8",
+    "C32_WB06_Left_Front_Primary_L14_Tenant9",
+    "C32_WB06_Left_Front_Primary_L15_Tenant0",
+    "C32_WB06_Left_Front_Primary_L15_Tenant1",
+    "C32_WB06_Left_Front_Primary_L15_Tenant10",
+    "C32_WB06_Left_Front_Primary_L15_Tenant11",
+    "C32_WB06_Left_Front_Primary_L15_Tenant13",
+    "C32_WB06_Left_Front_Primary_L15_Tenant14",
+    "C32_WB06_Left_Front_Primary_L15_Tenant3",
+    "C32_WB06_Left_Front_Primary_L15_Tenant4",
+    "C32_WB06_Left_Front_Primary_L15_Tenant5",
+    "C32_WB06_Left_Front_Primary_L15_Tenant6",
+    "C32_WB06_Left_Front_Primary_L15_Tenant8",
+    "C32_WB06_Left_Front_Primary_L15_Tenant9",
+    "C32_WB06_Left_Front_Primary_L1_Tenant0",
+    "C32_WB06_Left_Front_Primary_L1_Tenant1",
+    "C32_WB06_Left_Front_Primary_L1_Tenant2",
+    "C32_WB06_Left_Front_Primary_L1_Tenant4",
+    "C32_WB06_Left_Front_Primary_L1_Tenant5",
+    "C32_WB06_Left_Front_Primary_L1_Tenant6",
+    "C32_WB06_Left_Front_Primary_L1_Tenant7",
+    "C32_WB06_Left_Front_Primary_L2_Tenant0",
+    "C32_WB06_Left_Front_Primary_L2_Tenant1",
+    "C32_WB06_Left_Front_Primary_L2_Tenant3",
+    "C32_WB06_Left_Front_Primary_L2_Tenant4",
+    "C32_WB06_Left_Front_Primary_L2_Tenant5",
+    "C32_WB06_Left_Front_Primary_L2_Tenant6",
+    "C32_WB06_Left_Front_Primary_L3_Tenant0",
+    "C32_WB06_Left_Front_Primary_L3_Tenant1",
+    "C32_WB06_Left_Front_Primary_L3_Tenant10",
+    "C32_WB06_Left_Front_Primary_L3_Tenant11",
+    "C32_WB06_Left_Front_Primary_L3_Tenant13",
+    "C32_WB06_Left_Front_Primary_L3_Tenant3",
+    "C32_WB06_Left_Front_Primary_L3_Tenant4",
+    "C32_WB06_Left_Front_Primary_L3_Tenant5",
+    "C32_WB06_Left_Front_Primary_L3_Tenant6",
+    "C32_WB06_Left_Front_Primary_L3_Tenant8",
+    "C32_WB06_Left_Front_Primary_L3_Tenant9",
+    "C32_WB06_Left_Front_Primary_L4_Tenant0",
+    "C32_WB06_Left_Front_Primary_L4_Tenant1",
+    "C32_WB06_Left_Front_Primary_L4_Tenant2",
+    "C32_WB06_Left_Front_Primary_L4_Tenant3",
+    "C32_WB06_Left_Front_Primary_L4_Tenant5",
+    "C32_WB06_Left_Front_Primary_L4_Tenant6",
+    "C32_WB06_Left_Front_Primary_L4_Tenant7",
+    "C32_WB06_Left_Front_Primary_L5_Tenant0",
+    "C32_WB06_Left_Front_Primary_L5_Tenant1",
+    "C32_WB06_Left_Front_Primary_L5_Tenant3",
+    "C32_WB06_Left_Front_Primary_L5_Tenant4",
+    "C32_WB06_Left_Front_Primary_L5_Tenant5",
+    "C32_WB06_Left_Front_Primary_L5_Tenant6",
+    "C32_WB06_Left_Front_Primary_L5_Tenant8",
+    "C32_WB06_Left_Front_Primary_L5_Tenant9",
+    "C32_WB06_Left_Front_Primary_L6_Tenant0",
+    "C32_WB06_Left_Front_Primary_L6_Tenant10",
+    "C32_WB06_Left_Front_Primary_L6_Tenant12",
+    "C32_WB06_Left_Front_Primary_L6_Tenant13",
+    "C32_WB06_Left_Front_Primary_L6_Tenant2",
+    "C32_WB06_Left_Front_Primary_L6_Tenant3",
+    "C32_WB06_Left_Front_Primary_L6_Tenant4",
+    "C32_WB06_Left_Front_Primary_L6_Tenant5",
+    "C32_WB06_Left_Front_Primary_L6_Tenant7",
+    "C32_WB06_Left_Front_Primary_L6_Tenant8",
+    "C32_WB06_Left_Front_Primary_L6_Tenant9",
+    "C32_WB06_Left_Front_Primary_L7_Tenant1",
+    "C32_WB06_Left_Front_Primary_L7_Tenant2",
+    "C32_WB06_Left_Front_Primary_L7_Tenant3",
+    "C32_WB06_Left_Front_Primary_L7_Tenant4",
+    "C32_WB06_Left_Front_Primary_L7_Tenant6",
+    "C32_WB06_Left_Front_Primary_L7_Tenant7",
+    "C32_WB06_Left_Front_Primary_L8_Tenant0",
+    "C32_WB06_Left_Front_Primary_L8_Tenant1",
+    "C32_WB06_Left_Front_Primary_L8_Tenant2",
+    "C32_WB06_Left_Front_Primary_L8_Tenant4",
+    "C32_WB06_Left_Front_Primary_L8_Tenant5",
+    "C32_WB06_Left_Front_Primary_L8_Tenant6",
+    "C32_WB06_Left_Front_Primary_L8_Tenant7",
+    "C32_WB06_Left_Front_Primary_L8_Tenant9",
+    "C32_WB06_Left_Front_Primary_L9_Tenant1",
+    "C32_WB06_Left_Front_Primary_L9_Tenant11",
+    "C32_WB06_Left_Front_Primary_L9_Tenant12",
+    "C32_WB06_Left_Front_Primary_L9_Tenant13",
+    "C32_WB06_Left_Front_Primary_L9_Tenant2",
+    "C32_WB06_Left_Front_Primary_L9_Tenant3",
+    "C32_WB06_Left_Front_Primary_L9_Tenant4",
+    "C32_WB06_Left_Front_Primary_L9_Tenant6",
+    "C32_WB06_Left_Front_Primary_L9_Tenant7",
+    "C32_WB06_Left_Front_Primary_L9_Tenant8",
+    "C32_WB06_Left_Front_Primary_L9_Tenant9",
+    "WB06_Court_Lower_Bridge",
+    "WB06_Left_Front_Primary_FloorBand_00",
+    "WB06_Left_Front_Primary_FloorBand_01",
+    "WB06_Left_Front_Primary_FloorBand_02",
+    "WB06_Left_Front_Primary_FloorBand_03",
+    "WB06_Left_Front_Primary_MainVolume"
+  ],
+  "hiddenOldInteriors": [
+    "C29_CC0_InteriorBench_arm_rest_01_L0",
+    "C29_CC0_InteriorBench_arm_rest_02_L0",
+    "C29_CC0_InteriorBench_back_support_l_L0",
+    "C29_CC0_InteriorBench_back_support_r_L0",
+    "C29_CC0_InteriorBench_crossbar_L0",
+    "C29_CC0_InteriorBench_legs_double_L0",
+    "C29_CC0_InteriorBench_legs_single_L0",
+    "C29_CC0_InteriorBench_seat_back_L0",
+    "C29_CC0_InteriorBench_seat_L0",
+    "C29_InteriorBack_0_0",
+    "C29_InteriorBack_0_1",
+    "C29_InteriorBack_0_10",
+    "C29_InteriorBack_0_11",
+    "C29_InteriorBack_0_12",
+    "C29_InteriorBack_0_2",
+    "C29_InteriorBack_0_3",
+    "C29_InteriorBack_0_4",
+    "C29_InteriorBack_0_5",
+    "C29_InteriorBack_0_6",
+    "C29_InteriorBack_0_7",
+    "C29_InteriorBack_0_8",
+    "C29_InteriorBack_0_9",
+    "C29_InteriorCeiling_0_0",
+    "C29_InteriorCeiling_0_1",
+    "C29_InteriorCeiling_0_10",
+    "C29_InteriorCeiling_0_11",
+    "C29_InteriorCeiling_0_12",
+    "C29_InteriorCeiling_0_2",
+    "C29_InteriorCeiling_0_3",
+    "C29_InteriorCeiling_0_4",
+    "C29_InteriorCeiling_0_5",
+    "C29_InteriorCeiling_0_6",
+    "C29_InteriorCeiling_0_7",
+    "C29_InteriorCeiling_0_8",
+    "C29_InteriorCeiling_0_9",
+    "C29_InteriorCeiling_1_0",
+    "C29_InteriorCeiling_1_1",
+    "C29_InteriorCeiling_1_10",
+    "C29_InteriorCeiling_1_11",
+    "C29_InteriorCeiling_1_12",
+    "C29_InteriorCeiling_1_2",
+    "C29_InteriorCeiling_1_3",
+    "C29_InteriorCeiling_1_4",
+    "C29_InteriorCeiling_1_5",
+    "C29_InteriorCeiling_1_6",
+    "C29_InteriorCeiling_1_7",
+    "C29_InteriorCeiling_1_8",
+    "C29_InteriorCeiling_1_9",
+    "C29_InteriorCeiling_2_0",
+    "C29_InteriorCeiling_2_1",
+    "C29_InteriorCeiling_2_10",
+    "C29_InteriorCeiling_2_11",
+    "C29_InteriorCeiling_2_12",
+    "C29_InteriorCeiling_2_2",
+    "C29_InteriorCeiling_2_3",
+    "C29_InteriorCeiling_2_4",
+    "C29_InteriorCeiling_2_5",
+    "C29_InteriorCeiling_2_6",
+    "C29_InteriorCeiling_2_7",
+    "C29_InteriorCeiling_2_8",
+    "C29_InteriorCeiling_2_9",
+    "C29_InteriorFloor_0_0",
+    "C29_InteriorFloor_0_1",
+    "C29_InteriorFloor_0_10",
+    "C29_InteriorFloor_0_11",
+    "C29_InteriorFloor_0_12",
+    "C29_InteriorFloor_0_2",
+    "C29_InteriorFloor_0_3",
+    "C29_InteriorFloor_0_4",
+    "C29_InteriorFloor_0_5",
+    "C29_InteriorFloor_0_6",
+    "C29_InteriorFloor_0_7",
+    "C29_InteriorFloor_0_8",
+    "C29_InteriorFloor_0_9",
+    "C29_InteriorFloor_1_0",
+    "C29_InteriorFloor_1_1",
+    "C29_InteriorFloor_1_10",
+    "C29_InteriorFloor_1_11",
+    "C29_InteriorFloor_1_12",
+    "C29_InteriorFloor_1_2",
+    "C29_InteriorFloor_1_3",
+    "C29_InteriorFloor_1_4",
+    "C29_InteriorFloor_1_5",
+    "C29_InteriorFloor_1_6",
+    "C29_InteriorFloor_1_7",
+    "C29_InteriorFloor_1_8",
+    "C29_InteriorFloor_1_9",
+    "C29_InteriorFloor_2_0",
+    "C29_InteriorFloor_2_1",
+    "C29_InteriorFloor_2_10",
+    "C29_InteriorFloor_2_11",
+    "C29_InteriorFloor_2_12",
+    "C29_InteriorFloor_2_2",
+    "C29_InteriorFloor_2_3",
+    "C29_InteriorFloor_2_4",
+    "C29_InteriorFloor_2_5",
+    "C29_InteriorFloor_2_6",
+    "C29_InteriorFloor_2_7",
+    "C29_InteriorFloor_2_8",
+    "C29_InteriorFloor_2_9",
+    "C29_InteriorLocal_0_0",
+    "C29_InteriorLocal_0_0_Panel",
+    "C29_InteriorLocal_0_1",
+    "C29_InteriorLocal_0_1_Panel",
+    "C29_LowRetailDisplay_0_1",
+    "C29_LowRetailDisplay_0_5",
+    "C29_LowRetailDisplay_0_9",
+    "C31_Cafe_BackBar",
+    "C31_Cafe_BackBarShelf",
+    "C31_Cafe_BackBarShelf.001",
+    "C31_Cafe_BackBarShelf.002",
+    "C31_Cafe_BackWall",
+    "C31_Cafe_CC0_Banquette_0_C29_CC0_InteriorBench_arm_rest_01_L0",
+    "C31_Cafe_CC0_Banquette_0_C29_CC0_InteriorBench_arm_rest_02_L0",
+    "C31_Cafe_CC0_Banquette_0_C29_CC0_InteriorBench_back_support_l_L0",
+    "C31_Cafe_CC0_Banquette_0_C29_CC0_InteriorBench_back_support_r_L0",
+    "C31_Cafe_CC0_Banquette_0_C29_CC0_InteriorBench_crossbar_L0",
+    "C31_Cafe_CC0_Banquette_0_C29_CC0_InteriorBench_legs_double_L0",
+    "C31_Cafe_CC0_Banquette_0_C29_CC0_InteriorBench_legs_single_L0",
+    "C31_Cafe_CC0_Banquette_0_C29_CC0_InteriorBench_seat_back_L0",
+    "C31_Cafe_CC0_Banquette_0_C29_CC0_InteriorBench_seat_L0",
+    "C31_Cafe_CC0_Banquette_1_C29_CC0_InteriorBench_arm_rest_01_L0",
+    "C31_Cafe_CC0_Banquette_1_C29_CC0_InteriorBench_arm_rest_02_L0",
+    "C31_Cafe_CC0_Banquette_1_C29_CC0_InteriorBench_back_support_l_L0",
+    "C31_Cafe_CC0_Banquette_1_C29_CC0_InteriorBench_back_support_r_L0",
+    "C31_Cafe_CC0_Banquette_1_C29_CC0_InteriorBench_crossbar_L0",
+    "C31_Cafe_CC0_Banquette_1_C29_CC0_InteriorBench_legs_double_L0",
+    "C31_Cafe_CC0_Banquette_1_C29_CC0_InteriorBench_legs_single_L0",
+    "C31_Cafe_CC0_Banquette_1_C29_CC0_InteriorBench_seat_back_L0",
+    "C31_Cafe_CC0_Banquette_1_C29_CC0_InteriorBench_seat_L0",
+    "C31_Cafe_ChairBack",
+    "C31_Cafe_ChairBack.001",
+    "C31_Cafe_ChairBack.002",
+    "C31_Cafe_ChairBack.003",
+    "C31_Cafe_ChairLeg",
+    "C31_Cafe_ChairLeg.001",
+    "C31_Cafe_ChairLeg.002",
+    "C31_Cafe_ChairLeg.003",
+    "C31_Cafe_ChairLeg.004",
+    "C31_Cafe_ChairLeg.005",
+    "C31_Cafe_ChairLeg.006",
+    "C31_Cafe_ChairLeg.007",
+    "C31_Cafe_ChairLeg.008",
+    "C31_Cafe_ChairLeg.009",
+    "C31_Cafe_ChairLeg.010",
+    "C31_Cafe_ChairLeg.011",
+    "C31_Cafe_ChairLeg.012",
+    "C31_Cafe_ChairLeg.013",
+    "C31_Cafe_ChairLeg.014",
+    "C31_Cafe_ChairLeg.015",
+    "C31_Cafe_ChairSeat",
+    "C31_Cafe_ChairSeat.001",
+    "C31_Cafe_ChairSeat.002",
+    "C31_Cafe_ChairSeat.003",
+    "C31_Cafe_CounterTask",
+    "C31_Cafe_CounterTop",
+    "C31_Cafe_DiningPool",
+    "C31_Cafe_ServiceCounter",
+    "C31_Cafe_ServicePartition",
+    "C31_Cafe_TableFoot",
+    "C31_Cafe_TableFoot.001",
+    "C31_Cafe_TableStem",
+    "C31_Cafe_TableStem.001",
+    "C31_Cafe_TableTop",
+    "C31_Cafe_TableTop.001",
+    "C31_Retail_DisplayIsland",
+    "C31_Retail_DisplayIslandCap",
+    "C31_Retail_DisplayShelf",
+    "C31_Retail_DisplayShelf.001",
+    "C31_Retail_DisplayShelf.002",
+    "C31_Retail_DisplayShelf.003",
+    "C31_Retail_DisplayShelf.004",
+    "C31_Retail_DisplayShelf.005",
+    "C31_Retail_DisplayShelf.006",
+    "C31_Retail_DisplayShelf.007",
+    "C31_Retail_FixtureBack",
+    "C31_Retail_FixtureBack.001",
+    "C31_Retail_FixtureJamb",
+    "C31_Retail_FixtureJamb.001",
+    "C31_Retail_FixtureJamb.002",
+    "C31_Retail_FixtureJamb.003",
+    "C31_Retail_FloorExtension",
+    "C31_Retail_IslandPool",
+    "C31_Retail_LeftDisplay",
+    "C31_Retail_LeftReturn",
+    "C31_Retail_ProductPackage",
+    "C31_Retail_ProductPackage.001",
+    "C31_Retail_ProductPackage.002",
+    "C31_Retail_ProductPackage.003",
+    "C31_Retail_ProductPackage.004",
+    "C31_Retail_ProductPackage.005",
+    "C31_Retail_ProductPackage.006",
+    "C31_Retail_ProductPackage.007",
+    "C31_Retail_ProductPackage.008",
+    "C31_Retail_ProductPackage.009",
+    "C31_Retail_ProductPackage.010",
+    "C31_Retail_ProductPackage.011",
+    "C31_Retail_ProductPackage.012",
+    "C31_Retail_ProductPackage.013",
+    "C31_Retail_ProductPackage.014",
+    "C31_Retail_ProductPackage.015",
+    "C31_Retail_ProductPackage.016",
+    "C31_Retail_ProductPackage.017",
+    "C31_Retail_RearWall",
+    "C31_Retail_StockroomPartition",
+    "C31_Retail_TallEndcap",
+    "C32_WB06_Left_Front_Primary_Fixtures",
+    "C32_WB06_Left_Front_Primary_Furniture",
+    "C32_WB06_Left_Front_Primary_Interior",
+    "C32_WB06_Left_Front_Primary_L0_Tenant0",
+    "C32_WB06_Left_Front_Primary_L0_Tenant2",
+    "C32_WB06_Left_Front_Primary_L0_Tenant3",
+    "C32_WB06_Left_Front_Primary_L0_Tenant4",
+    "C32_WB06_Left_Front_Primary_L0_Tenant5",
+    "C32_WB06_Left_Front_Primary_L10_Tenant1",
+    "C32_WB06_Left_Front_Primary_L10_Tenant2",
+    "C32_WB06_Left_Front_Primary_L10_Tenant3",
+    "C32_WB06_Left_Front_Primary_L10_Tenant4",
+    "C32_WB06_Left_Front_Primary_L10_Tenant6",
+    "C32_WB06_Left_Front_Primary_L10_Tenant7",
+    "C32_WB06_Left_Front_Primary_L11_Tenant0",
+    "C32_WB06_Left_Front_Primary_L11_Tenant10",
+    "C32_WB06_Left_Front_Primary_L11_Tenant12",
+    "C32_WB06_Left_Front_Primary_L11_Tenant13",
+    "C32_WB06_Left_Front_Primary_L11_Tenant2",
+    "C32_WB06_Left_Front_Primary_L11_Tenant3",
+    "C32_WB06_Left_Front_Primary_L11_Tenant4",
+    "C32_WB06_Left_Front_Primary_L11_Tenant5",
+    "C32_WB06_Left_Front_Primary_L11_Tenant7",
+    "C32_WB06_Left_Front_Primary_L11_Tenant8",
+    "C32_WB06_Left_Front_Primary_L11_Tenant9",
+    "C32_WB06_Left_Front_Primary_L12_Tenant1",
+    "C32_WB06_Left_Front_Primary_L12_Tenant2",
+    "C32_WB06_Left_Front_Primary_L12_Tenant3",
+    "C32_WB06_Left_Front_Primary_L12_Tenant4",
+    "C32_WB06_Left_Front_Primary_L12_Tenant6",
+    "C32_WB06_Left_Front_Primary_L12_Tenant7",
+    "C32_WB06_Left_Front_Primary_L12_Tenant8",
+    "C32_WB06_Left_Front_Primary_L12_Tenant9",
+    "C32_WB06_Left_Front_Primary_L13_Tenant0",
+    "C32_WB06_Left_Front_Primary_L13_Tenant1",
+    "C32_WB06_Left_Front_Primary_L13_Tenant2",
+    "C32_WB06_Left_Front_Primary_L13_Tenant3",
+    "C32_WB06_Left_Front_Primary_L13_Tenant5",
+    "C32_WB06_Left_Front_Primary_L13_Tenant6",
+    "C32_WB06_Left_Front_Primary_L13_Tenant7",
+    "C32_WB06_Left_Front_Primary_L14_Tenant1",
+    "C32_WB06_Left_Front_Primary_L14_Tenant2",
+    "C32_WB06_Left_Front_Primary_L14_Tenant3",
+    "C32_WB06_Left_Front_Primary_L14_Tenant4",
+    "C32_WB06_Left_Front_Primary_L14_Tenant6",
+    "C32_WB06_Left_Front_Primary_L14_Tenant7",
+    "C32_WB06_Left_Front_Primary_L14_Tenant8",
+    "C32_WB06_Left_Front_Primary_L14_Tenant9",
+    "C32_WB06_Left_Front_Primary_L15_Tenant0",
+    "C32_WB06_Left_Front_Primary_L15_Tenant1",
+    "C32_WB06_Left_Front_Primary_L15_Tenant10",
+    "C32_WB06_Left_Front_Primary_L15_Tenant11",
+    "C32_WB06_Left_Front_Primary_L15_Tenant13",
+    "C32_WB06_Left_Front_Primary_L15_Tenant14",
+    "C32_WB06_Left_Front_Primary_L15_Tenant3",
+    "C32_WB06_Left_Front_Primary_L15_Tenant4",
+    "C32_WB06_Left_Front_Primary_L15_Tenant5",
+    "C32_WB06_Left_Front_Primary_L15_Tenant6",
+    "C32_WB06_Left_Front_Primary_L15_Tenant8",
+    "C32_WB06_Left_Front_Primary_L15_Tenant9",
+    "C32_WB06_Left_Front_Primary_L1_Tenant0",
+    "C32_WB06_Left_Front_Primary_L1_Tenant1",
+    "C32_WB06_Left_Front_Primary_L1_Tenant2",
+    "C32_WB06_Left_Front_Primary_L1_Tenant4",
+    "C32_WB06_Left_Front_Primary_L1_Tenant5",
+    "C32_WB06_Left_Front_Primary_L1_Tenant6",
+    "C32_WB06_Left_Front_Primary_L1_Tenant7",
+    "C32_WB06_Left_Front_Primary_L2_Tenant0",
+    "C32_WB06_Left_Front_Primary_L2_Tenant1",
+    "C32_WB06_Left_Front_Primary_L2_Tenant3",
+    "C32_WB06_Left_Front_Primary_L2_Tenant4",
+    "C32_WB06_Left_Front_Primary_L2_Tenant5",
+    "C32_WB06_Left_Front_Primary_L2_Tenant6",
+    "C32_WB06_Left_Front_Primary_L3_Tenant0",
+    "C32_WB06_Left_Front_Primary_L3_Tenant1",
+    "C32_WB06_Left_Front_Primary_L3_Tenant10",
+    "C32_WB06_Left_Front_Primary_L3_Tenant11",
+    "C32_WB06_Left_Front_Primary_L3_Tenant13",
+    "C32_WB06_Left_Front_Primary_L3_Tenant3",
+    "C32_WB06_Left_Front_Primary_L3_Tenant4",
+    "C32_WB06_Left_Front_Primary_L3_Tenant5",
+    "C32_WB06_Left_Front_Primary_L3_Tenant6",
+    "C32_WB06_Left_Front_Primary_L3_Tenant8",
+    "C32_WB06_Left_Front_Primary_L3_Tenant9",
+    "C32_WB06_Left_Front_Primary_L4_Tenant0",
+    "C32_WB06_Left_Front_Primary_L4_Tenant1",
+    "C32_WB06_Left_Front_Primary_L4_Tenant2",
+    "C32_WB06_Left_Front_Primary_L4_Tenant3",
+    "C32_WB06_Left_Front_Primary_L4_Tenant5",
+    "C32_WB06_Left_Front_Primary_L4_Tenant6",
+    "C32_WB06_Left_Front_Primary_L4_Tenant7",
+    "C32_WB06_Left_Front_Primary_L5_Tenant0",
+    "C32_WB06_Left_Front_Primary_L5_Tenant1",
+    "C32_WB06_Left_Front_Primary_L5_Tenant3",
+    "C32_WB06_Left_Front_Primary_L5_Tenant4",
+    "C32_WB06_Left_Front_Primary_L5_Tenant5",
+    "C32_WB06_Left_Front_Primary_L5_Tenant6",
+    "C32_WB06_Left_Front_Primary_L5_Tenant8",
+    "C32_WB06_Left_Front_Primary_L5_Tenant9",
+    "C32_WB06_Left_Front_Primary_L6_Tenant0",
+    "C32_WB06_Left_Front_Primary_L6_Tenant10",
+    "C32_WB06_Left_Front_Primary_L6_Tenant12",
+    "C32_WB06_Left_Front_Primary_L6_Tenant13",
+    "C32_WB06_Left_Front_Primary_L6_Tenant2",
+    "C32_WB06_Left_Front_Primary_L6_Tenant3",
+    "C32_WB06_Left_Front_Primary_L6_Tenant4",
+    "C32_WB06_Left_Front_Primary_L6_Tenant5",
+    "C32_WB06_Left_Front_Primary_L6_Tenant7",
+    "C32_WB06_Left_Front_Primary_L6_Tenant8",
+    "C32_WB06_Left_Front_Primary_L6_Tenant9",
+    "C32_WB06_Left_Front_Primary_L7_Tenant1",
+    "C32_WB06_Left_Front_Primary_L7_Tenant2",
+    "C32_WB06_Left_Front_Primary_L7_Tenant3",
+    "C32_WB06_Left_Front_Primary_L7_Tenant4",
+    "C32_WB06_Left_Front_Primary_L7_Tenant6",
+    "C32_WB06_Left_Front_Primary_L7_Tenant7",
+    "C32_WB06_Left_Front_Primary_L8_Tenant0",
+    "C32_WB06_Left_Front_Primary_L8_Tenant1",
+    "C32_WB06_Left_Front_Primary_L8_Tenant2",
+    "C32_WB06_Left_Front_Primary_L8_Tenant4",
+    "C32_WB06_Left_Front_Primary_L8_Tenant5",
+    "C32_WB06_Left_Front_Primary_L8_Tenant6",
+    "C32_WB06_Left_Front_Primary_L8_Tenant7",
+    "C32_WB06_Left_Front_Primary_L8_Tenant9",
+    "C32_WB06_Left_Front_Primary_L9_Tenant1",
+    "C32_WB06_Left_Front_Primary_L9_Tenant11",
+    "C32_WB06_Left_Front_Primary_L9_Tenant12",
+    "C32_WB06_Left_Front_Primary_L9_Tenant13",
+    "C32_WB06_Left_Front_Primary_L9_Tenant2",
+    "C32_WB06_Left_Front_Primary_L9_Tenant3",
+    "C32_WB06_Left_Front_Primary_L9_Tenant4",
+    "C32_WB06_Left_Front_Primary_L9_Tenant6",
+    "C32_WB06_Left_Front_Primary_L9_Tenant7",
+    "C32_WB06_Left_Front_Primary_L9_Tenant8",
+    "C32_WB06_Left_Front_Primary_L9_Tenant9"
+  ],
+  "allOtherSourceObjectsExact": true,
+  "facadeUnchangedExceptCoveredLowerBridgePortal": true,
+  "LondonExact": true,
+  "galleryPlans": [
+    {
+      "level": 1,
+      "z": [
+        7.2,
+        13.06
+      ],
+      "sections": [
+        {
+          "sector": 40,
+          "zone": "left",
+          "publicDepthM": 3.1,
+          "ceilingZ": 12.700000000000001
+        },
+        {
+          "sector": 41,
+          "zone": "left",
+          "publicDepthM": 3.1,
+          "ceilingZ": 12.700000000000001
+        },
+        {
+          "sector": 42,
+          "zone": "left",
+          "publicDepthM": 3.1,
+          "ceilingZ": 12.700000000000001
+        },
+        {
+          "sector": 43,
+          "zone": "left",
+          "publicDepthM": 3.1,
+          "ceilingZ": 12.700000000000001
+        },
+        {
+          "sector": 44,
+          "zone": "left",
+          "publicDepthM": 3.1,
+          "ceilingZ": 12.700000000000001
+        },
+        {
+          "sector": 53,
+          "zone": "right",
+          "publicDepthM": 4.7,
+          "ceilingZ": 12.700000000000001
+        },
+        {
+          "sector": 54,
+          "zone": "right",
+          "publicDepthM": 4.7,
+          "ceilingZ": 12.700000000000001
+        },
+        {
+          "sector": 55,
+          "zone": "right",
+          "publicDepthM": 4.7,
+          "ceilingZ": 12.700000000000001
+        },
+        {
+          "sector": 56,
+          "zone": "right",
+          "publicDepthM": 4.7,
+          "ceilingZ": 12.700000000000001
+        },
+        {
+          "sector": 57,
+          "zone": "right",
+          "publicDepthM": 4.7,
+          "ceilingZ": 12.700000000000001
+        },
+        {
+          "sector": 58,
+          "zone": "right",
+          "publicDepthM": 4.7,
+          "ceilingZ": 12.700000000000001
+        },
+        {
+          "sector": 59,
+          "zone": "right",
+          "publicDepthM": 4.7,
+          "ceilingZ": 12.700000000000001
+        },
+        {
+          "sector": 60,
+          "zone": "right",
+          "publicDepthM": 4.7,
+          "ceilingZ": 12.700000000000001
+        },
+        {
+          "sector": 61,
+          "zone": "right",
+          "publicDepthM": 4.7,
+          "ceilingZ": 12.700000000000001
+        },
+        {
+          "sector": 62,
+          "zone": "right",
+          "publicDepthM": 4.7,
+          "ceilingZ": 12.700000000000001
+        },
+        {
+          "sector": 63,
+          "zone": "right",
+          "publicDepthM": 4.7,
+          "ceilingZ": 12.700000000000001
+        }
+      ]
+    },
+    {
+      "level": 2,
+      "z": [
+        13.5,
+        16.660002288818358
+      ],
+      "sections": [
+        {
+          "sector": 41,
+          "zone": "left",
+          "publicDepthM": 3.1,
+          "ceilingZ": 16.30000228881836
+        },
+        {
+          "sector": 42,
+          "zone": "left",
+          "publicDepthM": 3.1,
+          "ceilingZ": 16.30000228881836
+        },
+        {
+          "sector": 43,
+          "zone": "left",
+          "publicDepthM": 3.1,
+          "ceilingZ": 16.30000228881836
+        },
+        {
+          "sector": 44,
+          "zone": "left",
+          "publicDepthM": 3.1,
+          "ceilingZ": 16.30000228881836
+        },
+        {
+          "sector": 45,
+          "zone": "left",
+          "publicDepthM": 3.1,
+          "ceilingZ": 16.30000228881836
+        },
+        {
+          "sector": 53,
+          "zone": "right",
+          "publicDepthM": 4.7,
+          "ceilingZ": 16.30000228881836
+        },
+        {
+          "sector": 54,
+          "zone": "right",
+          "publicDepthM": 4.7,
+          "ceilingZ": 16.30000228881836
+        },
+        {
+          "sector": 55,
+          "zone": "right",
+          "publicDepthM": 4.7,
+          "ceilingZ": 16.30000228881836
+        },
+        {
+          "sector": 56,
+          "zone": "right",
+          "publicDepthM": 4.7,
+          "ceilingZ": 16.30000228881836
+        },
+        {
+          "sector": 57,
+          "zone": "right",
+          "publicDepthM": 4.7,
+          "ceilingZ": 16.30000228881836
+        },
+        {
+          "sector": 58,
+          "zone": "right",
+          "publicDepthM": 4.7,
+          "ceilingZ": 16.30000228881836
+        },
+        {
+          "sector": 59,
+          "zone": "right",
+          "publicDepthM": 4.7,
+          "ceilingZ": 16.30000228881836
+        },
+        {
+          "sector": 60,
+          "zone": "right",
+          "publicDepthM": 4.7,
+          "ceilingZ": 16.30000228881836
+        },
+        {
+          "sector": 61,
+          "zone": "right",
+          "publicDepthM": 4.7,
+          "ceilingZ": 16.30000228881836
+        },
+        {
+          "sector": 62,
+          "zone": "right",
+          "publicDepthM": 4.7,
+          "ceilingZ": 16.30000228881836
+        },
+        {
+          "sector": 63,
+          "zone": "right",
+          "publicDepthM": 4.7,
+          "ceilingZ": 16.30000228881836
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "z": [
+        17.10000228881836,
+        20.260000762939452
+      ],
+      "sections": [
+        {
+          "sector": 41,
+          "zone": "left",
+          "publicDepthM": 3.1,
+          "ceilingZ": 19.900000762939452
+        },
+        {
+          "sector": 42,
+          "zone": "left",
+          "publicDepthM": 3.1,
+          "ceilingZ": 19.900000762939452
+        },
+        {
+          "sector": 43,
+          "zone": "left",
+          "publicDepthM": 3.1,
+          "ceilingZ": 19.900000762939452
+        },
+        {
+          "sector": 44,
+          "zone": "left",
+          "publicDepthM": 3.1,
+          "ceilingZ": 19.900000762939452
+        },
+        {
+          "sector": 45,
+          "zone": "left",
+          "publicDepthM": 3.1,
+          "ceilingZ": 19.900000762939452
+        },
+        {
+          "sector": 53,
+          "zone": "right",
+          "publicDepthM": 4.7,
+          "ceilingZ": 19.900000762939452
+        },
+        {
+          "sector": 54,
+          "zone": "right",
+          "publicDepthM": 4.7,
+          "ceilingZ": 19.900000762939452
+        },
+        {
+          "sector": 55,
+          "zone": "right",
+          "publicDepthM": 4.7,
+          "ceilingZ": 19.900000762939452
+        },
+        {
+          "sector": 56,
+          "zone": "right",
+          "publicDepthM": 4.7,
+          "ceilingZ": 19.900000762939452
+        },
+        {
+          "sector": 57,
+          "zone": "right",
+          "publicDepthM": 4.7,
+          "ceilingZ": 19.900000762939452
+        },
+        {
+          "sector": 58,
+          "zone": "right",
+          "publicDepthM": 4.7,
+          "ceilingZ": 19.900000762939452
+        },
+        {
+          "sector": 59,
+          "zone": "right",
+          "publicDepthM": 4.7,
+          "ceilingZ": 19.900000762939452
+        },
+        {
+          "sector": 60,
+          "zone": "right",
+          "publicDepthM": 4.7,
+          "ceilingZ": 19.900000762939452
+        },
+        {
+          "sector": 61,
+          "zone": "right",
+          "publicDepthM": 4.7,
+          "ceilingZ": 19.900000762939452
+        },
+        {
+          "sector": 62,
+          "zone": "right",
+          "publicDepthM": 4.7,
+          "ceilingZ": 19.900000762939452
+        },
+        {
+          "sector": 63,
+          "zone": "right",
+          "publicDepthM": 4.7,
+          "ceilingZ": 19.900000762939452
+        }
+      ]
+    },
+    {
+      "level": 4,
+      "z": [
+        20.700000762939453,
+        23.859999237060546
+      ],
+      "sections": [
+        {
+          "sector": 41,
+          "zone": "left",
+          "publicDepthM": 3.1,
+          "ceilingZ": 23.499999237060546
+        },
+        {
+          "sector": 42,
+          "zone": "left",
+          "publicDepthM": 3.1,
+          "ceilingZ": 23.499999237060546
+        },
+        {
+          "sector": 43,
+          "zone": "left",
+          "publicDepthM": 3.1,
+          "ceilingZ": 23.499999237060546
+        },
+        {
+          "sector": 44,
+          "zone": "left",
+          "publicDepthM": 3.1,
+          "ceilingZ": 23.499999237060546
+        },
+        {
+          "sector": 45,
+          "zone": "left",
+          "publicDepthM": 3.1,
+          "ceilingZ": 23.499999237060546
+        },
+        {
+          "sector": 53,
+          "zone": "right",
+          "publicDepthM": 4.7,
+          "ceilingZ": 23.499999237060546
+        },
+        {
+          "sector": 54,
+          "zone": "right",
+          "publicDepthM": 4.7,
+          "ceilingZ": 23.499999237060546
+        },
+        {
+          "sector": 55,
+          "zone": "right",
+          "publicDepthM": 4.7,
+          "ceilingZ": 23.499999237060546
+        },
+        {
+          "sector": 56,
+          "zone": "right",
+          "publicDepthM": 4.7,
+          "ceilingZ": 23.499999237060546
+        },
+        {
+          "sector": 57,
+          "zone": "right",
+          "publicDepthM": 4.7,
+          "ceilingZ": 23.499999237060546
+        },
+        {
+          "sector": 58,
+          "zone": "right",
+          "publicDepthM": 4.7,
+          "ceilingZ": 23.499999237060546
+        },
+        {
+          "sector": 59,
+          "zone": "right",
+          "publicDepthM": 4.7,
+          "ceilingZ": 23.499999237060546
+        },
+        {
+          "sector": 60,
+          "zone": "right",
+          "publicDepthM": 4.7,
+          "ceilingZ": 23.499999237060546
+        },
+        {
+          "sector": 61,
+          "zone": "right",
+          "publicDepthM": 4.7,
+          "ceilingZ": 23.499999237060546
+        },
+        {
+          "sector": 62,
+          "zone": "right",
+          "publicDepthM": 4.7,
+          "ceilingZ": 23.499999237060546
+        },
+        {
+          "sector": 63,
+          "zone": "right",
+          "publicDepthM": 4.7,
+          "ceilingZ": 23.499999237060546
+        }
+      ]
+    },
+    {
+      "level": 5,
+      "z": [
+        24.299999237060547,
+        27.459999618530272
+      ],
+      "sections": [
+        {
+          "sector": 41,
+          "zone": "left",
+          "publicDepthM": 3.4,
+          "ceilingZ": 26.799999618530272
+        },
+        {
+          "sector": 42,
+          "zone": "left",
+          "publicDepthM": 3.4,
+          "ceilingZ": 26.799999618530272
+        },
+        {
+          "sector": 43,
+          "zone": "left",
+          "publicDepthM": 3.4,
+          "ceilingZ": 26.799999618530272
+        },
+        {
+          "sector": 44,
+          "zone": "left",
+          "publicDepthM": 3.4,
+          "ceilingZ": 26.799999618530272
+        },
+        {
+          "sector": 45,
+          "zone": "left",
+          "publicDepthM": 3.4,
+          "ceilingZ": 26.799999618530272
+        },
+        {
+          "sector": 46,
+          "zone": "middle",
+          "publicDepthM": 4.0,
+          "ceilingZ": 26.799999618530272
+        },
+        {
+          "sector": 47,
+          "zone": "middle",
+          "publicDepthM": 4.0,
+          "ceilingZ": 26.799999618530272
+        },
+        {
+          "sector": 48,
+          "zone": "middle",
+          "publicDepthM": 4.0,
+          "ceilingZ": 26.799999618530272
+        },
+        {
+          "sector": 49,
+          "zone": "middle",
+          "publicDepthM": 4.0,
+          "ceilingZ": 26.799999618530272
+        },
+        {
+          "sector": 50,
+          "zone": "middle",
+          "publicDepthM": 4.0,
+          "ceilingZ": 26.799999618530272
+        },
+        {
+          "sector": 51,
+          "zone": "middle",
+          "publicDepthM": 4.0,
+          "ceilingZ": 26.799999618530272
+        },
+        {
+          "sector": 52,
+          "zone": "middle",
+          "publicDepthM": 4.0,
+          "ceilingZ": 26.799999618530272
+        },
+        {
+          "sector": 53,
+          "zone": "right",
+          "publicDepthM": 6.6,
+          "ceilingZ": 26.799999618530272
+        },
+        {
+          "sector": 54,
+          "zone": "right",
+          "publicDepthM": 6.6,
+          "ceilingZ": 26.799999618530272
+        },
+        {
+          "sector": 55,
+          "zone": "right",
+          "publicDepthM": 6.6,
+          "ceilingZ": 26.799999618530272
+        },
+        {
+          "sector": 56,
+          "zone": "right",
+          "publicDepthM": 6.6,
+          "ceilingZ": 26.799999618530272
+        },
+        {
+          "sector": 57,
+          "zone": "right",
+          "publicDepthM": 6.6,
+          "ceilingZ": 26.799999618530272
+        },
+        {
+          "sector": 58,
+          "zone": "right",
+          "publicDepthM": 6.6,
+          "ceilingZ": 26.799999618530272
+        },
+        {
+          "sector": 59,
+          "zone": "right",
+          "publicDepthM": 6.6,
+          "ceilingZ": 26.799999618530272
+        },
+        {
+          "sector": 60,
+          "zone": "right",
+          "publicDepthM": 6.6,
+          "ceilingZ": 26.799999618530272
+        },
+        {
+          "sector": 61,
+          "zone": "right",
+          "publicDepthM": 6.6,
+          "ceilingZ": 26.799999618530272
+        },
+        {
+          "sector": 62,
+          "zone": "right",
+          "publicDepthM": 6.6,
+          "ceilingZ": 26.799999618530272
+        },
+        {
+          "sector": 63,
+          "zone": "right",
+          "publicDepthM": 6.6,
+          "ceilingZ": 26.799999618530272
+        }
+      ]
+    },
+    {
+      "level": 6,
+      "z": [
+        27.899999618530273,
+        31.06
+      ],
+      "sections": [
+        {
+          "sector": 40,
+          "zone": "left",
+          "publicDepthM": 3.4,
+          "ceilingZ": 30.4
+        },
+        {
+          "sector": 41,
+          "zone": "left",
+          "publicDepthM": 3.4,
+          "ceilingZ": 30.4
+        },
+        {
+          "sector": 42,
+          "zone": "left",
+          "publicDepthM": 3.4,
+          "ceilingZ": 30.4
+        },
+        {
+          "sector": 43,
+          "zone": "left",
+          "publicDepthM": 3.4,
+          "ceilingZ": 30.4
+        },
+        {
+          "sector": 44,
+          "zone": "left",
+          "publicDepthM": 3.4,
+          "ceilingZ": 30.4
+        },
+        {
+          "sector": 45,
+          "zone": "left",
+          "publicDepthM": 3.4,
+          "ceilingZ": 30.4
+        },
+        {
+          "sector": 46,
+          "zone": "middle",
+          "publicDepthM": 4.0,
+          "ceilingZ": 30.4
+        },
+        {
+          "sector": 47,
+          "zone": "middle",
+          "publicDepthM": 4.0,
+          "ceilingZ": 30.4
+        },
+        {
+          "sector": 48,
+          "zone": "middle",
+          "publicDepthM": 4.0,
+          "ceilingZ": 30.4
+        },
+        {
+          "sector": 49,
+          "zone": "middle",
+          "publicDepthM": 4.0,
+          "ceilingZ": 30.4
+        },
+        {
+          "sector": 50,
+          "zone": "middle",
+          "publicDepthM": 4.0,
+          "ceilingZ": 30.4
+        },
+        {
+          "sector": 51,
+          "zone": "middle",
+          "publicDepthM": 4.0,
+          "ceilingZ": 30.4
+        },
+        {
+          "sector": 52,
+          "zone": "middle",
+          "publicDepthM": 4.0,
+          "ceilingZ": 30.4
+        },
+        {
+          "sector": 53,
+          "zone": "right",
+          "publicDepthM": 4.7,
+          "ceilingZ": 30.4
+        },
+        {
+          "sector": 54,
+          "zone": "right",
+          "publicDepthM": 4.7,
+          "ceilingZ": 30.4
+        },
+        {
+          "sector": 55,
+          "zone": "right",
+          "publicDepthM": 4.7,
+          "ceilingZ": 30.4
+        },
+        {
+          "sector": 56,
+          "zone": "right",
+          "publicDepthM": 4.7,
+          "ceilingZ": 30.4
+        },
+        {
+          "sector": 57,
+          "zone": "right",
+          "publicDepthM": 4.7,
+          "ceilingZ": 30.4
+        },
+        {
+          "sector": 58,
+          "zone": "right",
+          "publicDepthM": 4.7,
+          "ceilingZ": 30.4
+        },
+        {
+          "sector": 59,
+          "zone": "right",
+          "publicDepthM": 4.7,
+          "ceilingZ": 30.4
+        },
+        {
+          "sector": 60,
+          "zone": "right",
+          "publicDepthM": 4.7,
+          "ceilingZ": 30.4
+        },
+        {
+          "sector": 61,
+          "zone": "right",
+          "publicDepthM": 4.7,
+          "ceilingZ": 30.4
+        },
+        {
+          "sector": 62,
+          "zone": "right",
+          "publicDepthM": 4.7,
+          "ceilingZ": 30.4
+        },
+        {
+          "sector": 63,
+          "zone": "right",
+          "publicDepthM": 4.7,
+          "ceilingZ": 30.4
+        }
+      ]
+    },
+    {
+      "level": 7,
+      "z": [
+        31.5,
+        34.659998474121096
+      ],
+      "sections": [
+        {
+          "sector": 40,
+          "zone": "left",
+          "publicDepthM": 3.4,
+          "ceilingZ": 33.9999984741211
+        },
+        {
+          "sector": 41,
+          "zone": "left",
+          "publicDepthM": 3.4,
+          "ceilingZ": 33.9999984741211
+        },
+        {
+          "sector": 42,
+          "zone": "left",
+          "publicDepthM": 3.4,
+          "ceilingZ": 33.9999984741211
+        },
+        {
+          "sector": 43,
+          "zone": "left",
+          "publicDepthM": 3.4,
+          "ceilingZ": 33.9999984741211
+        },
+        {
+          "sector": 44,
+          "zone": "left",
+          "publicDepthM": 3.4,
+          "ceilingZ": 33.9999984741211
+        },
+        {
+          "sector": 45,
+          "zone": "left",
+          "publicDepthM": 3.4,
+          "ceilingZ": 33.9999984741211
+        },
+        {
+          "sector": 46,
+          "zone": "middle",
+          "publicDepthM": 4.0,
+          "ceilingZ": 33.9999984741211
+        },
+        {
+          "sector": 47,
+          "zone": "middle",
+          "publicDepthM": 4.0,
+          "ceilingZ": 33.9999984741211
+        },
+        {
+          "sector": 48,
+          "zone": "middle",
+          "publicDepthM": 4.0,
+          "ceilingZ": 33.9999984741211
+        },
+        {
+          "sector": 49,
+          "zone": "middle",
+          "publicDepthM": 4.0,
+          "ceilingZ": 33.9999984741211
+        },
+        {
+          "sector": 50,
+          "zone": "middle",
+          "publicDepthM": 4.0,
+          "ceilingZ": 33.9999984741211
+        },
+        {
+          "sector": 51,
+          "zone": "middle",
+          "publicDepthM": 4.0,
+          "ceilingZ": 33.9999984741211
+        },
+        {
+          "sector": 52,
+          "zone": "middle",
+          "publicDepthM": 4.0,
+          "ceilingZ": 33.9999984741211
+        },
+        {
+          "sector": 53,
+          "zone": "right",
+          "publicDepthM": 4.7,
+          "ceilingZ": 33.9999984741211
+        },
+        {
+          "sector": 54,
+          "zone": "right",
+          "publicDepthM": 4.7,
+          "ceilingZ": 33.9999984741211
+        },
+        {
+          "sector": 55,
+          "zone": "right",
+          "publicDepthM": 4.7,
+          "ceilingZ": 33.9999984741211
+        },
+        {
+          "sector": 56,
+          "zone": "right",
+          "publicDepthM": 4.7,
+          "ceilingZ": 33.9999984741211
+        },
+        {
+          "sector": 57,
+          "zone": "right",
+          "publicDepthM": 4.7,
+          "ceilingZ": 33.9999984741211
+        },
+        {
+          "sector": 58,
+          "zone": "right",
+          "publicDepthM": 4.7,
+          "ceilingZ": 33.9999984741211
+        },
+        {
+          "sector": 59,
+          "zone": "right",
+          "publicDepthM": 4.7,
+          "ceilingZ": 33.9999984741211
+        },
+        {
+          "sector": 60,
+          "zone": "right",
+          "publicDepthM": 4.7,
+          "ceilingZ": 33.9999984741211
+        },
+        {
+          "sector": 61,
+          "zone": "right",
+          "publicDepthM": 4.7,
+          "ceilingZ": 33.9999984741211
+        },
+        {
+          "sector": 62,
+          "zone": "right",
+          "publicDepthM": 4.7,
+          "ceilingZ": 33.9999984741211
+        },
+        {
+          "sector": 63,
+          "zone": "right",
+          "publicDepthM": 4.7,
+          "ceilingZ": 33.9999984741211
+        }
+      ]
+    },
+    {
+      "level": 8,
+      "z": [
+        35.099998474121094,
+        38.260000762939455
+      ],
+      "sections": [
+        {
+          "sector": 40,
+          "zone": "left",
+          "publicDepthM": 3.4,
+          "ceilingZ": 37.60000076293946
+        },
+        {
+          "sector": 41,
+          "zone": "left",
+          "publicDepthM": 3.4,
+          "ceilingZ": 37.60000076293946
+        },
+        {
+          "sector": 42,
+          "zone": "left",
+          "publicDepthM": 3.4,
+          "ceilingZ": 37.60000076293946
+        },
+        {
+          "sector": 43,
+          "zone": "left",
+          "publicDepthM": 3.4,
+          "ceilingZ": 37.60000076293946
+        },
+        {
+          "sector": 44,
+          "zone": "left",
+          "publicDepthM": 3.4,
+          "ceilingZ": 37.60000076293946
+        },
+        {
+          "sector": 45,
+          "zone": "left",
+          "publicDepthM": 3.4,
+          "ceilingZ": 37.60000076293946
+        },
+        {
+          "sector": 46,
+          "zone": "middle",
+          "publicDepthM": 4.0,
+          "ceilingZ": 37.60000076293946
+        },
+        {
+          "sector": 47,
+          "zone": "middle",
+          "publicDepthM": 4.0,
+          "ceilingZ": 37.60000076293946
+        },
+        {
+          "sector": 48,
+          "zone": "middle",
+          "publicDepthM": 4.0,
+          "ceilingZ": 37.60000076293946
+        },
+        {
+          "sector": 49,
+          "zone": "middle",
+          "publicDepthM": 4.0,
+          "ceilingZ": 37.60000076293946
+        },
+        {
+          "sector": 50,
+          "zone": "middle",
+          "publicDepthM": 4.0,
+          "ceilingZ": 37.60000076293946
+        },
+        {
+          "sector": 51,
+          "zone": "middle",
+          "publicDepthM": 4.0,
+          "ceilingZ": 37.60000076293946
+        },
+        {
+          "sector": 52,
+          "zone": "middle",
+          "publicDepthM": 4.0,
+          "ceilingZ": 37.60000076293946
+        },
+        {
+          "sector": 53,
+          "zone": "right",
+          "publicDepthM": 3.8,
+          "ceilingZ": 37.60000076293946
+        },
+        {
+          "sector": 54,
+          "zone": "right",
+          "publicDepthM": 3.8,
+          "ceilingZ": 37.60000076293946
+        },
+        {
+          "sector": 55,
+          "zone": "right",
+          "publicDepthM": 3.8,
+          "ceilingZ": 37.60000076293946
+        },
+        {
+          "sector": 56,
+          "zone": "right",
+          "publicDepthM": 3.8,
+          "ceilingZ": 37.60000076293946
+        },
+        {
+          "sector": 57,
+          "zone": "right",
+          "publicDepthM": 3.8,
+          "ceilingZ": 37.60000076293946
+        },
+        {
+          "sector": 58,
+          "zone": "right",
+          "publicDepthM": 3.8,
+          "ceilingZ": 37.60000076293946
+        },
+        {
+          "sector": 59,
+          "zone": "right",
+          "publicDepthM": 3.8,
+          "ceilingZ": 37.60000076293946
+        },
+        {
+          "sector": 60,
+          "zone": "right",
+          "publicDepthM": 3.8,
+          "ceilingZ": 37.60000076293946
+        },
+        {
+          "sector": 61,
+          "zone": "right",
+          "publicDepthM": 3.8,
+          "ceilingZ": 37.60000076293946
+        },
+        {
+          "sector": 62,
+          "zone": "right",
+          "publicDepthM": 3.8,
+          "ceilingZ": 37.60000076293946
+        },
+        {
+          "sector": 63,
+          "zone": "right",
+          "publicDepthM": 3.8,
+          "ceilingZ": 37.60000076293946
+        }
+      ]
+    },
+    {
+      "level": 9,
+      "z": [
+        38.70000076293945,
+        41.85999923706055
+      ],
+      "sections": [
+        {
+          "sector": 40,
+          "zone": "left",
+          "publicDepthM": 3.4,
+          "ceilingZ": 41.19999923706055
+        },
+        {
+          "sector": 41,
+          "zone": "left",
+          "publicDepthM": 3.4,
+          "ceilingZ": 41.19999923706055
+        },
+        {
+          "sector": 42,
+          "zone": "left",
+          "publicDepthM": 3.4,
+          "ceilingZ": 41.19999923706055
+        },
+        {
+          "sector": 43,
+          "zone": "left",
+          "publicDepthM": 3.4,
+          "ceilingZ": 41.19999923706055
+        },
+        {
+          "sector": 44,
+          "zone": "left",
+          "publicDepthM": 3.4,
+          "ceilingZ": 41.19999923706055
+        },
+        {
+          "sector": 45,
+          "zone": "left",
+          "publicDepthM": 3.4,
+          "ceilingZ": 41.19999923706055
+        },
+        {
+          "sector": 46,
+          "zone": "middle",
+          "publicDepthM": 4.0,
+          "ceilingZ": 41.19999923706055
+        },
+        {
+          "sector": 47,
+          "zone": "middle",
+          "publicDepthM": 4.0,
+          "ceilingZ": 41.19999923706055
+        },
+        {
+          "sector": 48,
+          "zone": "middle",
+          "publicDepthM": 4.0,
+          "ceilingZ": 41.19999923706055
+        },
+        {
+          "sector": 49,
+          "zone": "middle",
+          "publicDepthM": 4.0,
+          "ceilingZ": 41.19999923706055
+        },
+        {
+          "sector": 50,
+          "zone": "middle",
+          "publicDepthM": 4.0,
+          "ceilingZ": 41.19999923706055
+        },
+        {
+          "sector": 51,
+          "zone": "middle",
+          "publicDepthM": 4.0,
+          "ceilingZ": 41.19999923706055
+        },
+        {
+          "sector": 52,
+          "zone": "middle",
+          "publicDepthM": 4.0,
+          "ceilingZ": 41.19999923706055
+        },
+        {
+          "sector": 53,
+          "zone": "right",
+          "publicDepthM": 3.8,
+          "ceilingZ": 41.19999923706055
+        },
+        {
+          "sector": 54,
+          "zone": "right",
+          "publicDepthM": 3.8,
+          "ceilingZ": 41.19999923706055
+        },
+        {
+          "sector": 55,
+          "zone": "right",
+          "publicDepthM": 3.8,
+          "ceilingZ": 41.19999923706055
+        },
+        {
+          "sector": 56,
+          "zone": "right",
+          "publicDepthM": 3.8,
+          "ceilingZ": 41.19999923706055
+        },
+        {
+          "sector": 57,
+          "zone": "right",
+          "publicDepthM": 3.8,
+          "ceilingZ": 41.19999923706055
+        },
+        {
+          "sector": 58,
+          "zone": "right",
+          "publicDepthM": 3.8,
+          "ceilingZ": 41.19999923706055
+        },
+        {
+          "sector": 59,
+          "zone": "right",
+          "publicDepthM": 3.8,
+          "ceilingZ": 41.19999923706055
+        },
+        {
+          "sector": 60,
+          "zone": "right",
+          "publicDepthM": 3.8,
+          "ceilingZ": 41.19999923706055
+        },
+        {
+          "sector": 61,
+          "zone": "right",
+          "publicDepthM": 3.8,
+          "ceilingZ": 41.19999923706055
+        },
+        {
+          "sector": 62,
+          "zone": "right",
+          "publicDepthM": 3.8,
+          "ceilingZ": 41.19999923706055
+        },
+        {
+          "sector": 63,
+          "zone": "right",
+          "publicDepthM": 3.8,
+          "ceilingZ": 41.19999923706055
+        }
+      ]
+    },
+    {
+      "level": 10,
+      "z": [
+        42.29999923706055,
+        45.46000152587891
+      ],
+      "sections": [
+        {
+          "sector": 40,
+          "zone": "left",
+          "publicDepthM": 2.9,
+          "ceilingZ": 44.620001525878905
+        },
+        {
+          "sector": 41,
+          "zone": "left",
+          "publicDepthM": 2.9,
+          "ceilingZ": 44.620001525878905
+        },
+        {
+          "sector": 42,
+          "zone": "left",
+          "publicDepthM": 2.9,
+          "ceilingZ": 44.620001525878905
+        },
+        {
+          "sector": 43,
+          "zone": "left",
+          "publicDepthM": 2.9,
+          "ceilingZ": 44.620001525878905
+        },
+        {
+          "sector": 44,
+          "zone": "left",
+          "publicDepthM": 2.9,
+          "ceilingZ": 44.620001525878905
+        },
+        {
+          "sector": 45,
+          "zone": "middle",
+          "publicDepthM": 3.4,
+          "ceilingZ": 44.620001525878905
+        },
+        {
+          "sector": 46,
+          "zone": "middle",
+          "publicDepthM": 3.4,
+          "ceilingZ": 44.620001525878905
+        },
+        {
+          "sector": 47,
+          "zone": "middle",
+          "publicDepthM": 3.4,
+          "ceilingZ": 44.620001525878905
+        },
+        {
+          "sector": 48,
+          "zone": "middle",
+          "publicDepthM": 3.4,
+          "ceilingZ": 44.620001525878905
+        },
+        {
+          "sector": 49,
+          "zone": "middle",
+          "publicDepthM": 3.4,
+          "ceilingZ": 44.620001525878905
+        },
+        {
+          "sector": 50,
+          "zone": "middle",
+          "publicDepthM": 3.4,
+          "ceilingZ": 44.620001525878905
+        },
+        {
+          "sector": 51,
+          "zone": "middle",
+          "publicDepthM": 3.4,
+          "ceilingZ": 44.620001525878905
+        },
+        {
+          "sector": 52,
+          "zone": "middle",
+          "publicDepthM": 3.4,
+          "ceilingZ": 44.620001525878905
+        },
+        {
+          "sector": 53,
+          "zone": "right",
+          "publicDepthM": 3.8,
+          "ceilingZ": 44.620001525878905
+        },
+        {
+          "sector": 54,
+          "zone": "right",
+          "publicDepthM": 3.8,
+          "ceilingZ": 44.620001525878905
+        },
+        {
+          "sector": 55,
+          "zone": "right",
+          "publicDepthM": 3.8,
+          "ceilingZ": 44.620001525878905
+        },
+        {
+          "sector": 56,
+          "zone": "right",
+          "publicDepthM": 3.8,
+          "ceilingZ": 44.620001525878905
+        },
+        {
+          "sector": 57,
+          "zone": "right",
+          "publicDepthM": 3.8,
+          "ceilingZ": 44.620001525878905
+        },
+        {
+          "sector": 58,
+          "zone": "right",
+          "publicDepthM": 3.8,
+          "ceilingZ": 44.620001525878905
+        },
+        {
+          "sector": 59,
+          "zone": "right",
+          "publicDepthM": 3.8,
+          "ceilingZ": 44.620001525878905
+        },
+        {
+          "sector": 60,
+          "zone": "right",
+          "publicDepthM": 3.8,
+          "ceilingZ": 44.620001525878905
+        },
+        {
+          "sector": 61,
+          "zone": "right",
+          "publicDepthM": 3.8,
+          "ceilingZ": 44.620001525878905
+        },
+        {
+          "sector": 62,
+          "zone": "right",
+          "publicDepthM": 3.8,
+          "ceilingZ": 44.620001525878905
+        },
+        {
+          "sector": 63,
+          "zone": "right",
+          "publicDepthM": 3.8,
+          "ceilingZ": 44.620001525878905
+        }
+      ]
+    },
+    {
+      "level": 11,
+      "z": [
+        45.900001525878906,
+        49.06
+      ],
+      "sections": [
+        {
+          "sector": 40,
+          "zone": "left",
+          "publicDepthM": 2.9,
+          "ceilingZ": 48.22
+        },
+        {
+          "sector": 41,
+          "zone": "left",
+          "publicDepthM": 2.9,
+          "ceilingZ": 48.22
+        },
+        {
+          "sector": 42,
+          "zone": "left",
+          "publicDepthM": 2.9,
+          "ceilingZ": 48.22
+        },
+        {
+          "sector": 43,
+          "zone": "left",
+          "publicDepthM": 2.9,
+          "ceilingZ": 48.22
+        },
+        {
+          "sector": 44,
+          "zone": "left",
+          "publicDepthM": 2.9,
+          "ceilingZ": 48.22
+        },
+        {
+          "sector": 45,
+          "zone": "middle",
+          "publicDepthM": 3.4,
+          "ceilingZ": 48.22
+        },
+        {
+          "sector": 46,
+          "zone": "middle",
+          "publicDepthM": 3.4,
+          "ceilingZ": 48.22
+        },
+        {
+          "sector": 47,
+          "zone": "middle",
+          "publicDepthM": 3.4,
+          "ceilingZ": 48.22
+        },
+        {
+          "sector": 48,
+          "zone": "middle",
+          "publicDepthM": 3.4,
+          "ceilingZ": 48.22
+        },
+        {
+          "sector": 49,
+          "zone": "middle",
+          "publicDepthM": 3.4,
+          "ceilingZ": 48.22
+        },
+        {
+          "sector": 50,
+          "zone": "middle",
+          "publicDepthM": 3.4,
+          "ceilingZ": 48.22
+        },
+        {
+          "sector": 51,
+          "zone": "middle",
+          "publicDepthM": 3.4,
+          "ceilingZ": 48.22
+        },
+        {
+          "sector": 52,
+          "zone": "middle",
+          "publicDepthM": 3.4,
+          "ceilingZ": 48.22
+        },
+        {
+          "sector": 53,
+          "zone": "right",
+          "publicDepthM": 3.8,
+          "ceilingZ": 48.22
+        },
+        {
+          "sector": 54,
+          "zone": "right",
+          "publicDepthM": 3.8,
+          "ceilingZ": 48.22
+        },
+        {
+          "sector": 55,
+          "zone": "right",
+          "publicDepthM": 3.8,
+          "ceilingZ": 48.22
+        },
+        {
+          "sector": 56,
+          "zone": "right",
+          "publicDepthM": 3.8,
+          "ceilingZ": 48.22
+        },
+        {
+          "sector": 57,
+          "zone": "right",
+          "publicDepthM": 3.8,
+          "ceilingZ": 48.22
+        },
+        {
+          "sector": 58,
+          "zone": "right",
+          "publicDepthM": 3.8,
+          "ceilingZ": 48.22
+        },
+        {
+          "sector": 59,
+          "zone": "right",
+          "publicDepthM": 3.8,
+          "ceilingZ": 48.22
+        },
+        {
+          "sector": 60,
+          "zone": "right",
+          "publicDepthM": 3.8,
+          "ceilingZ": 48.22
+        },
+        {
+          "sector": 61,
+          "zone": "right",
+          "publicDepthM": 3.8,
+          "ceilingZ": 48.22
+        },
+        {
+          "sector": 62,
+          "zone": "right",
+          "publicDepthM": 3.8,
+          "ceilingZ": 48.22
+        },
+        {
+          "sector": 63,
+          "zone": "right",
+          "publicDepthM": 3.8,
+          "ceilingZ": 48.22
+        }
+      ]
+    },
+    {
+      "level": 12,
+      "z": [
+        49.5,
+        52.659998474121096
+      ],
+      "sections": [
+        {
+          "sector": 40,
+          "zone": "left",
+          "publicDepthM": 2.9,
+          "ceilingZ": 51.81999847412109
+        },
+        {
+          "sector": 41,
+          "zone": "left",
+          "publicDepthM": 2.9,
+          "ceilingZ": 51.81999847412109
+        },
+        {
+          "sector": 42,
+          "zone": "left",
+          "publicDepthM": 2.9,
+          "ceilingZ": 51.81999847412109
+        },
+        {
+          "sector": 43,
+          "zone": "left",
+          "publicDepthM": 2.9,
+          "ceilingZ": 51.81999847412109
+        },
+        {
+          "sector": 44,
+          "zone": "left",
+          "publicDepthM": 2.9,
+          "ceilingZ": 51.81999847412109
+        },
+        {
+          "sector": 45,
+          "zone": "middle",
+          "publicDepthM": 3.4,
+          "ceilingZ": 51.81999847412109
+        },
+        {
+          "sector": 46,
+          "zone": "middle",
+          "publicDepthM": 3.4,
+          "ceilingZ": 51.81999847412109
+        },
+        {
+          "sector": 47,
+          "zone": "middle",
+          "publicDepthM": 3.4,
+          "ceilingZ": 51.81999847412109
+        },
+        {
+          "sector": 48,
+          "zone": "middle",
+          "publicDepthM": 3.4,
+          "ceilingZ": 51.81999847412109
+        },
+        {
+          "sector": 49,
+          "zone": "middle",
+          "publicDepthM": 3.4,
+          "ceilingZ": 51.81999847412109
+        },
+        {
+          "sector": 50,
+          "zone": "middle",
+          "publicDepthM": 3.4,
+          "ceilingZ": 51.81999847412109
+        },
+        {
+          "sector": 51,
+          "zone": "middle",
+          "publicDepthM": 3.4,
+          "ceilingZ": 51.81999847412109
+        },
+        {
+          "sector": 52,
+          "zone": "middle",
+          "publicDepthM": 3.4,
+          "ceilingZ": 51.81999847412109
+        },
+        {
+          "sector": 53,
+          "zone": "right",
+          "publicDepthM": 3.8,
+          "ceilingZ": 51.81999847412109
+        },
+        {
+          "sector": 54,
+          "zone": "right",
+          "publicDepthM": 3.8,
+          "ceilingZ": 51.81999847412109
+        },
+        {
+          "sector": 55,
+          "zone": "right",
+          "publicDepthM": 3.8,
+          "ceilingZ": 51.81999847412109
+        },
+        {
+          "sector": 56,
+          "zone": "right",
+          "publicDepthM": 3.8,
+          "ceilingZ": 51.81999847412109
+        },
+        {
+          "sector": 57,
+          "zone": "right",
+          "publicDepthM": 3.8,
+          "ceilingZ": 51.81999847412109
+        },
+        {
+          "sector": 58,
+          "zone": "right",
+          "publicDepthM": 3.8,
+          "ceilingZ": 51.81999847412109
+        },
+        {
+          "sector": 59,
+          "zone": "right",
+          "publicDepthM": 3.8,
+          "ceilingZ": 51.81999847412109
+        },
+        {
+          "sector": 60,
+          "zone": "right",
+          "publicDepthM": 3.8,
+          "ceilingZ": 51.81999847412109
+        },
+        {
+          "sector": 61,
+          "zone": "right",
+          "publicDepthM": 3.8,
+          "ceilingZ": 51.81999847412109
+        },
+        {
+          "sector": 62,
+          "zone": "right",
+          "publicDepthM": 3.8,
+          "ceilingZ": 51.81999847412109
+        },
+        {
+          "sector": 63,
+          "zone": "right",
+          "publicDepthM": 3.8,
+          "ceilingZ": 51.81999847412109
+        }
+      ]
+    },
+    {
+      "level": 13,
+      "z": [
+        53.099998474121094,
+        56.260000762939455
+      ],
+      "sections": [
+        {
+          "sector": 40,
+          "zone": "left",
+          "publicDepthM": 2.9,
+          "ceilingZ": 55.42000076293945
+        },
+        {
+          "sector": 41,
+          "zone": "left",
+          "publicDepthM": 2.9,
+          "ceilingZ": 55.42000076293945
+        },
+        {
+          "sector": 42,
+          "zone": "left",
+          "publicDepthM": 2.9,
+          "ceilingZ": 55.42000076293945
+        },
+        {
+          "sector": 43,
+          "zone": "left",
+          "publicDepthM": 2.9,
+          "ceilingZ": 55.42000076293945
+        },
+        {
+          "sector": 44,
+          "zone": "left",
+          "publicDepthM": 2.9,
+          "ceilingZ": 55.42000076293945
+        },
+        {
+          "sector": 45,
+          "zone": "middle",
+          "publicDepthM": 3.4,
+          "ceilingZ": 55.42000076293945
+        },
+        {
+          "sector": 46,
+          "zone": "middle",
+          "publicDepthM": 3.4,
+          "ceilingZ": 55.42000076293945
+        },
+        {
+          "sector": 47,
+          "zone": "middle",
+          "publicDepthM": 3.4,
+          "ceilingZ": 55.42000076293945
+        },
+        {
+          "sector": 48,
+          "zone": "middle",
+          "publicDepthM": 3.4,
+          "ceilingZ": 55.42000076293945
+        },
+        {
+          "sector": 49,
+          "zone": "middle",
+          "publicDepthM": 3.4,
+          "ceilingZ": 55.42000076293945
+        },
+        {
+          "sector": 50,
+          "zone": "middle",
+          "publicDepthM": 3.4,
+          "ceilingZ": 55.42000076293945
+        },
+        {
+          "sector": 51,
+          "zone": "middle",
+          "publicDepthM": 3.4,
+          "ceilingZ": 55.42000076293945
+        },
+        {
+          "sector": 52,
+          "zone": "middle",
+          "publicDepthM": 3.4,
+          "ceilingZ": 55.42000076293945
+        },
+        {
+          "sector": 53,
+          "zone": "right",
+          "publicDepthM": 3.8,
+          "ceilingZ": 55.42000076293945
+        },
+        {
+          "sector": 54,
+          "zone": "right",
+          "publicDepthM": 3.8,
+          "ceilingZ": 55.42000076293945
+        },
+        {
+          "sector": 55,
+          "zone": "right",
+          "publicDepthM": 3.8,
+          "ceilingZ": 55.42000076293945
+        },
+        {
+          "sector": 56,
+          "zone": "right",
+          "publicDepthM": 3.8,
+          "ceilingZ": 55.42000076293945
+        },
+        {
+          "sector": 57,
+          "zone": "right",
+          "publicDepthM": 3.8,
+          "ceilingZ": 55.42000076293945
+        },
+        {
+          "sector": 58,
+          "zone": "right",
+          "publicDepthM": 3.8,
+          "ceilingZ": 55.42000076293945
+        },
+        {
+          "sector": 59,
+          "zone": "right",
+          "publicDepthM": 3.8,
+          "ceilingZ": 55.42000076293945
+        },
+        {
+          "sector": 60,
+          "zone": "right",
+          "publicDepthM": 3.8,
+          "ceilingZ": 55.42000076293945
+        },
+        {
+          "sector": 61,
+          "zone": "right",
+          "publicDepthM": 3.8,
+          "ceilingZ": 55.42000076293945
+        },
+        {
+          "sector": 62,
+          "zone": "right",
+          "publicDepthM": 3.8,
+          "ceilingZ": 55.42000076293945
+        },
+        {
+          "sector": 63,
+          "zone": "right",
+          "publicDepthM": 3.8,
+          "ceilingZ": 55.42000076293945
+        }
+      ]
+    },
+    {
+      "level": 14,
+      "z": [
+        56.70000076293945,
+        59.85999923706055
+      ],
+      "sections": [
+        {
+          "sector": 39,
+          "zone": "left",
+          "publicDepthM": 2.9,
+          "ceilingZ": 59.019999237060546
+        },
+        {
+          "sector": 40,
+          "zone": "left",
+          "publicDepthM": 2.9,
+          "ceilingZ": 59.019999237060546
+        },
+        {
+          "sector": 41,
+          "zone": "left",
+          "publicDepthM": 2.9,
+          "ceilingZ": 59.019999237060546
+        },
+        {
+          "sector": 42,
+          "zone": "left",
+          "publicDepthM": 2.9,
+          "ceilingZ": 59.019999237060546
+        },
+        {
+          "sector": 43,
+          "zone": "left",
+          "publicDepthM": 2.9,
+          "ceilingZ": 59.019999237060546
+        },
+        {
+          "sector": 44,
+          "zone": "middle",
+          "publicDepthM": 3.4,
+          "ceilingZ": 59.019999237060546
+        },
+        {
+          "sector": 45,
+          "zone": "middle",
+          "publicDepthM": 3.4,
+          "ceilingZ": 59.019999237060546
+        },
+        {
+          "sector": 46,
+          "zone": "middle",
+          "publicDepthM": 3.4,
+          "ceilingZ": 59.019999237060546
+        },
+        {
+          "sector": 47,
+          "zone": "middle",
+          "publicDepthM": 3.4,
+          "ceilingZ": 59.019999237060546
+        },
+        {
+          "sector": 48,
+          "zone": "middle",
+          "publicDepthM": 3.4,
+          "ceilingZ": 59.019999237060546
+        },
+        {
+          "sector": 49,
+          "zone": "middle",
+          "publicDepthM": 3.4,
+          "ceilingZ": 59.019999237060546
+        },
+        {
+          "sector": 50,
+          "zone": "middle",
+          "publicDepthM": 3.4,
+          "ceilingZ": 59.019999237060546
+        },
+        {
+          "sector": 51,
+          "zone": "middle",
+          "publicDepthM": 3.4,
+          "ceilingZ": 59.019999237060546
+        },
+        {
+          "sector": 52,
+          "zone": "middle",
+          "publicDepthM": 3.4,
+          "ceilingZ": 59.019999237060546
+        },
+        {
+          "sector": 53,
+          "zone": "middle",
+          "publicDepthM": 3.4,
+          "ceilingZ": 59.019999237060546
+        },
+        {
+          "sector": 54,
+          "zone": "right",
+          "publicDepthM": 3.8,
+          "ceilingZ": 59.019999237060546
+        },
+        {
+          "sector": 55,
+          "zone": "right",
+          "publicDepthM": 3.8,
+          "ceilingZ": 59.019999237060546
+        },
+        {
+          "sector": 56,
+          "zone": "right",
+          "publicDepthM": 3.8,
+          "ceilingZ": 59.019999237060546
+        },
+        {
+          "sector": 57,
+          "zone": "right",
+          "publicDepthM": 3.8,
+          "ceilingZ": 59.019999237060546
+        },
+        {
+          "sector": 58,
+          "zone": "right",
+          "publicDepthM": 3.8,
+          "ceilingZ": 59.019999237060546
+        },
+        {
+          "sector": 59,
+          "zone": "right",
+          "publicDepthM": 3.8,
+          "ceilingZ": 59.019999237060546
+        },
+        {
+          "sector": 60,
+          "zone": "right",
+          "publicDepthM": 3.8,
+          "ceilingZ": 59.019999237060546
+        },
+        {
+          "sector": 61,
+          "zone": "right",
+          "publicDepthM": 3.8,
+          "ceilingZ": 59.019999237060546
+        },
+        {
+          "sector": 62,
+          "zone": "right",
+          "publicDepthM": 3.8,
+          "ceilingZ": 59.019999237060546
+        },
+        {
+          "sector": 63,
+          "zone": "right",
+          "publicDepthM": 3.8,
+          "ceilingZ": 59.019999237060546
+        }
+      ]
+    },
+    {
+      "level": 15,
+      "z": [
+        60.29999923706055,
+        63.46000152587891
+      ],
+      "sections": [
+        {
+          "sector": 39,
+          "zone": "left",
+          "publicDepthM": 2.9,
+          "ceilingZ": 62.620001525878905
+        },
+        {
+          "sector": 40,
+          "zone": "left",
+          "publicDepthM": 2.9,
+          "ceilingZ": 62.620001525878905
+        },
+        {
+          "sector": 41,
+          "zone": "left",
+          "publicDepthM": 2.9,
+          "ceilingZ": 62.620001525878905
+        },
+        {
+          "sector": 42,
+          "zone": "left",
+          "publicDepthM": 2.9,
+          "ceilingZ": 62.620001525878905
+        },
+        {
+          "sector": 43,
+          "zone": "left",
+          "publicDepthM": 2.9,
+          "ceilingZ": 62.620001525878905
+        },
+        {
+          "sector": 44,
+          "zone": "middle",
+          "publicDepthM": 3.4,
+          "ceilingZ": 62.620001525878905
+        },
+        {
+          "sector": 45,
+          "zone": "middle",
+          "publicDepthM": 3.4,
+          "ceilingZ": 62.620001525878905
+        },
+        {
+          "sector": 46,
+          "zone": "middle",
+          "publicDepthM": 3.4,
+          "ceilingZ": 62.620001525878905
+        },
+        {
+          "sector": 47,
+          "zone": "middle",
+          "publicDepthM": 3.4,
+          "ceilingZ": 62.620001525878905
+        },
+        {
+          "sector": 48,
+          "zone": "middle",
+          "publicDepthM": 3.4,
+          "ceilingZ": 62.620001525878905
+        },
+        {
+          "sector": 49,
+          "zone": "middle",
+          "publicDepthM": 3.4,
+          "ceilingZ": 62.620001525878905
+        },
+        {
+          "sector": 50,
+          "zone": "middle",
+          "publicDepthM": 3.4,
+          "ceilingZ": 62.620001525878905
+        },
+        {
+          "sector": 51,
+          "zone": "middle",
+          "publicDepthM": 3.4,
+          "ceilingZ": 62.620001525878905
+        },
+        {
+          "sector": 52,
+          "zone": "middle",
+          "publicDepthM": 3.4,
+          "ceilingZ": 62.620001525878905
+        },
+        {
+          "sector": 53,
+          "zone": "middle",
+          "publicDepthM": 3.4,
+          "ceilingZ": 62.620001525878905
+        },
+        {
+          "sector": 54,
+          "zone": "right",
+          "publicDepthM": 3.8,
+          "ceilingZ": 62.620001525878905
+        },
+        {
+          "sector": 55,
+          "zone": "right",
+          "publicDepthM": 3.8,
+          "ceilingZ": 62.620001525878905
+        },
+        {
+          "sector": 56,
+          "zone": "right",
+          "publicDepthM": 3.8,
+          "ceilingZ": 62.620001525878905
+        },
+        {
+          "sector": 57,
+          "zone": "right",
+          "publicDepthM": 3.8,
+          "ceilingZ": 62.620001525878905
+        },
+        {
+          "sector": 58,
+          "zone": "right",
+          "publicDepthM": 3.8,
+          "ceilingZ": 62.620001525878905
+        },
+        {
+          "sector": 59,
+          "zone": "right",
+          "publicDepthM": 3.8,
+          "ceilingZ": 62.620001525878905
+        },
+        {
+          "sector": 60,
+          "zone": "right",
+          "publicDepthM": 3.8,
+          "ceilingZ": 62.620001525878905
+        },
+        {
+          "sector": 61,
+          "zone": "right",
+          "publicDepthM": 3.8,
+          "ceilingZ": 62.620001525878905
+        },
+        {
+          "sector": 62,
+          "zone": "right",
+          "publicDepthM": 3.8,
+          "ceilingZ": 62.620001525878905
+        },
+        {
+          "sector": 63,
+          "zone": "right",
+          "publicDepthM": 3.8,
+          "ceilingZ": 62.620001525878905
+        }
+      ]
+    },
+    {
+      "level": 16,
+      "z": [
+        63.900001525878906,
+        66.6599984741211
+      ],
+      "sections": [
+        {
+          "sector": 0,
+          "zone": "right",
+          "publicDepthM": 3.8,
+          "ceilingZ": 65.81999847412109
+        },
+        {
+          "sector": 39,
+          "zone": "left",
+          "publicDepthM": 2.9,
+          "ceilingZ": 65.81999847412109
+        },
+        {
+          "sector": 40,
+          "zone": "left",
+          "publicDepthM": 2.9,
+          "ceilingZ": 65.81999847412109
+        },
+        {
+          "sector": 41,
+          "zone": "left",
+          "publicDepthM": 2.9,
+          "ceilingZ": 65.81999847412109
+        },
+        {
+          "sector": 42,
+          "zone": "left",
+          "publicDepthM": 2.9,
+          "ceilingZ": 65.81999847412109
+        },
+        {
+          "sector": 43,
+          "zone": "middle",
+          "publicDepthM": 3.4,
+          "ceilingZ": 65.81999847412109
+        },
+        {
+          "sector": 44,
+          "zone": "middle",
+          "publicDepthM": 3.4,
+          "ceilingZ": 65.81999847412109
+        },
+        {
+          "sector": 45,
+          "zone": "middle",
+          "publicDepthM": 3.4,
+          "ceilingZ": 65.81999847412109
+        },
+        {
+          "sector": 46,
+          "zone": "middle",
+          "publicDepthM": 3.4,
+          "ceilingZ": 65.81999847412109
+        },
+        {
+          "sector": 47,
+          "zone": "middle",
+          "publicDepthM": 3.4,
+          "ceilingZ": 65.81999847412109
+        },
+        {
+          "sector": 48,
+          "zone": "middle",
+          "publicDepthM": 3.4,
+          "ceilingZ": 65.81999847412109
+        },
+        {
+          "sector": 49,
+          "zone": "middle",
+          "publicDepthM": 3.4,
+          "ceilingZ": 65.81999847412109
+        },
+        {
+          "sector": 50,
+          "zone": "middle",
+          "publicDepthM": 3.4,
+          "ceilingZ": 65.81999847412109
+        },
+        {
+          "sector": 51,
+          "zone": "middle",
+          "publicDepthM": 3.4,
+          "ceilingZ": 65.81999847412109
+        },
+        {
+          "sector": 52,
+          "zone": "middle",
+          "publicDepthM": 3.4,
+          "ceilingZ": 65.81999847412109
+        },
+        {
+          "sector": 53,
+          "zone": "middle",
+          "publicDepthM": 3.4,
+          "ceilingZ": 65.81999847412109
+        },
+        {
+          "sector": 54,
+          "zone": "middle",
+          "publicDepthM": 3.4,
+          "ceilingZ": 65.81999847412109
+        },
+        {
+          "sector": 55,
+          "zone": "right",
+          "publicDepthM": 3.8,
+          "ceilingZ": 65.81999847412109
+        },
+        {
+          "sector": 56,
+          "zone": "right",
+          "publicDepthM": 3.8,
+          "ceilingZ": 65.81999847412109
+        },
+        {
+          "sector": 57,
+          "zone": "right",
+          "publicDepthM": 3.8,
+          "ceilingZ": 65.81999847412109
+        },
+        {
+          "sector": 58,
+          "zone": "right",
+          "publicDepthM": 3.8,
+          "ceilingZ": 65.81999847412109
+        },
+        {
+          "sector": 59,
+          "zone": "right",
+          "publicDepthM": 3.8,
+          "ceilingZ": 65.81999847412109
+        },
+        {
+          "sector": 60,
+          "zone": "right",
+          "publicDepthM": 3.8,
+          "ceilingZ": 65.81999847412109
+        },
+        {
+          "sector": 61,
+          "zone": "right",
+          "publicDepthM": 3.8,
+          "ceilingZ": 65.81999847412109
+        },
+        {
+          "sector": 62,
+          "zone": "right",
+          "publicDepthM": 3.8,
+          "ceilingZ": 65.81999847412109
+        },
+        {
+          "sector": 63,
+          "zone": "right",
+          "publicDepthM": 3.8,
+          "ceilingZ": 65.81999847412109
+        }
+      ]
+    }
+  ],
+  "bridgeConnection": {
+    "bridgeFloorM": 24.0,
+    "galleryFloorM": 24.3,
+    "riseM": 0.3,
+    "runM": 6.0,
+    "slope": 0.05,
+    "widthM": 2.8,
+    "start": [
+      -2.950699806213379,
+      -10.137136459350586,
+      24.0
+    ],
+    "end": [
+      -4.942954063415527,
+      -15.796724319458008,
+      24.299999237060547
+    ],
+    "originalBridgeVolumeRetained": true,
+    "coveredPortalOnly": true,
+    "remoteTowerInteriorUnchanged": true
+  },
+  "slabs": [
+    {
+      "name": "WB06_Left_Front_Primary_FloorBand_00",
+      "z": [
+        13.0600004196167,
+        13.5
+      ],
+      "hole": [
+        -24,
+        -29.513422393798827,
+        11.0,
+        13.513422393798827
+      ]
+    },
+    {
+      "name": "WB06_Left_Front_Primary_FloorBand_01",
+      "z": [
+        16.65999984741211,
+        17.100000381469727
+      ],
+      "hole": [
+        -24,
+        -29.703161936832423,
+        10.762979658857336,
+        13.83860213177109
+      ]
+    },
+    {
+      "name": "WB06_Left_Front_Primary_FloorBand_02",
+      "z": [
+        20.260000228881836,
+        20.700000762939453
+      ],
+      "hole": [
+        -24,
+        -29.812922536994925,
+        10.52595931771467,
+        14.083802926872258
+      ]
+    }
+  ],
+  "floors": [
+    7.2,
+    13.5,
+    17.100000381469727,
+    20.700000762939453
+  ],
+  "escalators": [
+    {
+      "fromFloor": 1,
+      "toFloor": 2,
+      "lane": "up",
+      "riseM": 6.3,
+      "inclinationDeg": 30,
+      "inclinedHorizontalRunM": 10.911920087683928,
+      "horizontalEndRunM": 1.5,
+      "totalPlanLengthM": 13.911920087683928,
+      "widthM": 1.36,
+      "clearStepWidthM": 1.0,
+      "stepCount": 35,
+      "riserM": 0.18,
+      "ends": [
+        {
+          "floor": 1,
+          "xyz": [
+            -32.95595932006836,
+            -32.86342239379883,
+            7.199999809265137
+          ],
+          "ringEdgeX": -34.65663718578283,
+          "overlapM": 0.25,
+          "bridgeLengthM": 2.050677865714468
+        },
+        {
+          "floor": 2,
+          "xyz": [
+            -19.04404067993164,
+            -32.86342239379883,
+            13.5
+          ],
+          "ringEdgeX": -13.34336281421717,
+          "overlapM": 0.25,
+          "bridgeLengthM": 6.050677865714471
+        }
+      ]
+    },
+    {
+      "fromFloor": 1,
+      "toFloor": 2,
+      "lane": "down",
+      "riseM": 6.3,
+      "inclinationDeg": 30,
+      "inclinedHorizontalRunM": 10.911920087683928,
+      "horizontalEndRunM": 1.5,
+      "totalPlanLengthM": 13.911920087683928,
+      "widthM": 1.36,
+      "clearStepWidthM": 1.0,
+      "stepCount": 35,
+      "riserM": 0.18,
+      "ends": [
+        {
+          "floor": 1,
+          "xyz": [
+            -32.95595932006836,
+            -30.963422775268555,
+            7.199999809265137
+          ],
+          "ringEdgeX": -34.93649272494375,
+          "overlapM": 0.25,
+          "bridgeLengthM": 2.330533404875388
+        },
+        {
+          "floor": 2,
+          "xyz": [
+            -19.04404067993164,
+            -30.963422775268555,
+            13.5
+          ],
+          "ringEdgeX": -13.063507275056256,
+          "overlapM": 0.25,
+          "bridgeLengthM": 6.330533404875384
+        }
+      ]
+    },
+    {
+      "fromFloor": 2,
+      "toFloor": 3,
+      "lane": "up",
+      "riseM": 3.6000003814697266,
+      "inclinationDeg": 30,
+      "inclinedHorizontalRunM": 6.235383567972907,
+      "horizontalEndRunM": 1.5,
+      "totalPlanLengthM": 9.235383567972907,
+      "widthM": 1.36,
+      "clearStepWidthM": 1.0,
+      "stepCount": 21,
+      "riserM": 0.1714285895937965,
+      "ends": [
+        {
+          "floor": 2,
+          "xyz": [
+            -15.382308006286621,
+            -28.158292770385742,
+            13.5
+          ],
+          "ringEdgeX": -13.055448528343124,
+          "overlapM": 0.25,
+          "bridgeLengthM": 2.676859477943497
+        },
+        {
+          "floor": 3,
+          "xyz": [
+            -24.617691040039062,
+            -28.158292770385742,
+            17.100000381469727
+          ],
+          "ringEdgeX": -34.69570348624741,
+          "overlapM": 0.25,
+          "bridgeLengthM": 10.428012446208347
+        }
+      ]
+    },
+    {
+      "fromFloor": 2,
+      "toFloor": 3,
+      "lane": "down",
+      "riseM": 3.6000003814697266,
+      "inclinationDeg": 30,
+      "inclinedHorizontalRunM": 6.235383567972907,
+      "horizontalEndRunM": 1.5,
+      "totalPlanLengthM": 9.235383567972907,
+      "widthM": 1.36,
+      "clearStepWidthM": 1.0,
+      "stepCount": 21,
+      "riserM": 0.1714285895937965,
+      "ends": [
+        {
+          "floor": 2,
+          "xyz": [
+            -15.382308006286621,
+            -26.258291244506836,
+            13.5
+          ],
+          "ringEdgeX": -13.32389947677286,
+          "overlapM": 0.25,
+          "bridgeLengthM": 2.408408529513761
+        },
+        {
+          "floor": 3,
+          "xyz": [
+            -24.617691040039062,
+            -26.258291244506836,
+            17.100000381469727
+          ],
+          "ringEdgeX": -34.424171670735774,
+          "overlapM": 0.25,
+          "bridgeLengthM": 10.156480630696711
+        }
+      ]
+    },
+    {
+      "fromFloor": 3,
+      "toFloor": 4,
+      "lane": "up",
+      "riseM": 3.6000003814697266,
+      "inclinationDeg": 30,
+      "inclinedHorizontalRunM": 6.235383567972907,
+      "horizontalEndRunM": 1.5,
+      "totalPlanLengthM": 9.235383567972907,
+      "widthM": 1.36,
+      "clearStepWidthM": 1.0,
+      "stepCount": 21,
+      "riserM": 0.1714285895937965,
+      "ends": [
+        {
+          "floor": 3,
+          "xyz": [
+            -31.617691040039062,
+            -33.1080436706543,
+            17.100000381469727
+          ],
+          "ringEdgeX": -34.43211612320177,
+          "overlapM": 0.25,
+          "bridgeLengthM": 3.1644250831627105
+        },
+        {
+          "floor": 4,
+          "xyz": [
+            -22.382308959960938,
+            -33.1080436706543,
+            20.700000762939453
+          ],
+          "ringEdgeX": -13.766188967645403,
+          "overlapM": 0.25,
+          "bridgeLengthM": 8.966119992315534
+        }
+      ]
+    },
+    {
+      "fromFloor": 3,
+      "toFloor": 4,
+      "lane": "down",
+      "riseM": 3.6000003814697266,
+      "inclinationDeg": 30,
+      "inclinedHorizontalRunM": 6.235383567972907,
+      "horizontalEndRunM": 1.5,
+      "totalPlanLengthM": 9.235383567972907,
+      "widthM": 1.36,
+      "clearStepWidthM": 1.0,
+      "stepCount": 21,
+      "riserM": 0.1714285895937965,
+      "ends": [
+        {
+          "floor": 3,
+          "xyz": [
+            -31.617691040039062,
+            -31.20804214477539,
+            17.100000381469727
+          ],
+          "ringEdgeX": -34.699151596606825,
+          "overlapM": 0.25,
+          "bridgeLengthM": 3.4314605565677625
+        },
+        {
+          "floor": 4,
+          "xyz": [
+            -22.382308959960938,
+            -31.20804214477539,
+            20.700000762939453
+          ],
+          "ringEdgeX": -13.52581138786586,
+          "overlapM": 0.25,
+          "bridgeLengthM": 9.206497572095078
+        }
+      ]
+    }
+  ],
+  "shopPlans": [
+    {
+      "floor": 1,
+      "z": 7.2,
+      "shops": [
+        {
+          "x": -31,
+          "frontY": -10.8,
+          "depthM": 3.45,
+          "type": "retail"
+        },
+        {
+          "x": -24,
+          "frontY": -10.8,
+          "depthM": 3.45,
+          "type": "retail"
+        },
+        {
+          "x": -17,
+          "frontY": -10.8,
+          "depthM": 3.45,
+          "type": "retail"
+        }
+      ],
+      "atrium": [
+        -24,
+        -29.513422393798827,
+        11.0,
+        13.513422393798827
+      ],
+      "publicSpace": "continuous side and rear public galleries, facade-adjacent multi-storey void, shops recessed behind rear promenade"
+    },
+    {
+      "floor": 2,
+      "z": 13.5,
+      "shops": [
+        {
+          "x": -31,
+          "frontY": -10.8,
+          "depthM": 3.45,
+          "type": "cafe"
+        },
+        {
+          "x": -24,
+          "frontY": -10.8,
+          "depthM": 3.45,
+          "type": "cafe"
+        },
+        {
+          "x": -17,
+          "frontY": -10.8,
+          "depthM": 3.45,
+          "type": "cafe"
+        }
+      ],
+      "atrium": [
+        -24,
+        -29.513422393798827,
+        11.0,
+        13.513422393798827
+      ],
+      "publicSpace": "continuous side and rear public galleries, facade-adjacent multi-storey void, shops recessed behind rear promenade"
+    },
+    {
+      "floor": 3,
+      "z": 17.100000381469727,
+      "shops": [
+        {
+          "x": -31,
+          "frontY": -10.8,
+          "depthM": 3.45,
+          "type": "books"
+        },
+        {
+          "x": -24,
+          "frontY": -10.8,
+          "depthM": 3.45,
+          "type": "books"
+        },
+        {
+          "x": -17,
+          "frontY": -10.8,
+          "depthM": 3.45,
+          "type": "books"
+        }
+      ],
+      "atrium": [
+        -24,
+        -29.703161936832423,
+        10.762979658857336,
+        13.83860213177109
+      ],
+      "publicSpace": "continuous side and rear public galleries, facade-adjacent multi-storey void, shops recessed behind rear promenade"
+    },
+    {
+      "floor": 4,
+      "z": 20.700000762939453,
+      "shops": [
+        {
+          "x": -31,
+          "frontY": -10.8,
+          "depthM": 3.45,
+          "type": "retail"
+        },
+        {
+          "x": -24,
+          "frontY": -10.8,
+          "depthM": 3.45,
+          "type": "retail"
+        },
+        {
+          "x": -17,
+          "frontY": -10.8,
+          "depthM": 3.45,
+          "type": "retail"
+        }
+      ],
+      "atrium": [
+        -24,
+        -29.812922536994925,
+        10.52595931771467,
+        14.083802926872258
+      ],
+      "publicSpace": "continuous side and rear public galleries, facade-adjacent multi-storey void, shops recessed behind rear promenade"
+    }
+  ],
+  "newMeshTriangles": 26426,
+  "meshStats": [
+    {
+      "object": "C33_Atrium_Slab_Reveals",
+      "triangles": 288
+    },
+    {
+      "object": "C33_Ground_Lobby",
+      "triangles": 62
+    },
+    {
+      "object": "C33_Escalator_Assemblies",
+      "triangles": 6624
+    },
+    {
+      "object": "C33_Escalator_Glass",
+      "triangles": 72
+    },
+    {
+      "object": "C33_Gallery_Landing_Decks",
+      "triangles": 144
+    },
+    {
+      "object": "C33_Atrium_Guards",
+      "triangles": 3972
+    },
+    {
+      "object": "C33_Atrium_Guard_Glass",
+      "triangles": 1584
+    },
+    {
+      "object": "C33_Recessed_Shops",
+      "triangles": 1008
+    },
+    {
+      "object": "C33_Recessed_Shopfronts",
+      "triangles": 24
+    },
+    {
+      "object": "C33_Shop_Fittings",
+      "triangles": 360
+    },
+    {
+      "object": "C34_Gallery_Soffits",
+      "triangles": 710
+    },
+    {
+      "object": "C34_Inner_Ceiling_Fascias",
+      "triangles": 710
+    },
+    {
+      "object": "C34_Setback_Shopfronts",
+      "triangles": 688
+    },
+    {
+      "object": "C34_Setback_Frames",
+      "triangles": 5556
+    },
+    {
+      "object": "C34_Rear_Retail_Layers",
+      "triangles": 1824
+    },
+    {
+      "object": "C34_Public_Columns",
+      "triangles": 1476
+    },
+    {
+      "object": "C34_Bridge_OpaqueSills",
+      "triangles": 20
+    },
+    {
+      "object": "C34_Bridge_CeilingEdges",
+      "triangles": 20
+    },
+    {
+      "object": "C34_Bridge_Glass",
+      "triangles": 168
+    },
+    {
+      "object": "C34_Bridge_Frames",
+      "triangles": 1008
+    },
+    {
+      "object": "C34_Arrival_Ramp",
+      "triangles": 12
+    },
+    {
+      "object": "C34_Arrival_Guards",
+      "triangles": 72
+    },
+    {
+      "object": "C34_Arrival_Columns",
+      "triangles": 24
+    }
+  ],
+  "referenceSources": [
+    "https://www.benoy.com/projects/iconsiam",
+    "https://www.zha.com/projects/architecture/galaxy-soho?disclaimer=true",
+    "https://www.otis.com/en/us/products-services/products/escalators-and-moving-walks"
+  ],
+  "notes": [
+    "Single primary tower only; other three towers remain City32 and are not approved mall prototypes",
+    "Real through-floor atrium openings and connected escalator landing decks, not display ramps",
+    "Original roof and upper slabs retained; only lower three floor bands have local atrium holes",
+    "Escalator visual construction uses source-checked 30 degree inclination; not a manufacturing/compliance drawing",
+    "No reference photo used as texture; custom geometry with inherited permitted materials",
+    "Fixed view actual render required before acceptance"
+  ],
+  "priorCandidateSHA256": "923d8b310a032104f126e59a3591a288fe59b16398d2031fdc0cefc38a738b85",
+  "portalRefinement": {
+    "reason": "Torso-height route hit original main shell before first attempted portal",
+    "coveredBridgeSections": [
+      0,
+      1
+    ],
+    "objectsCarved": [
+      "WB06_Left_Front_Primary_MainVolume",
+      "C32_WB06_Left_Front_Primary_Glazing",
+      "C32_WB06_Left_Front_Primary_Metal",
+      "C32_WB06_Left_Front_Primary_Seals",
+      "C34_Public_Columns"
+    ],
+    "otherGeometryUnchanged": true
+  },
+  "rampSurfaceChecks": [
+    {
+      "t": 0.1,
+      "firstSurface": "C34_Arrival_Ramp",
+      "expectedZ": 24.029998779296875,
+      "actualZ": 24.030000686645508,
+      "errorM": 1.9073486328125e-06
+    },
+    {
+      "t": 0.35,
+      "firstSurface": "C34_Arrival_Ramp",
+      "expectedZ": 24.104999542236328,
+      "actualZ": 24.104999542236328,
+      "errorM": 0.0
+    },
+    {
+      "t": 0.65,
+      "firstSurface": "C34_Arrival_Ramp",
+      "expectedZ": 24.19499969482422,
+      "actualZ": 24.19499969482422,
+      "errorM": 0.0
+    },
+    {
+      "t": 0.9,
+      "firstSurface": "C34_Arrival_Ramp",
+      "expectedZ": 24.270000457763672,
+      "actualZ": 24.26999855041504,
+      "errorM": 1.9073486328125e-06
+    }
+  ],
+  "primaryToBridgeRouteChecks": [
+    {
+      "start": [
+        -4.942954063415527,
+        -15.796724319458008,
+        25.399999618530273
+      ],
+      "end": [
+        -2.950699806213379,
+        -10.137136459350586,
+        25.399999618530273
+      ],
+      "blockingObject": null
+    },
+    {
+      "start": [
+        -2.950699806213379,
+        -10.137136459350586,
+        25.399999618530273
+      ],
+      "end": [
+        -0.2561817169189453,
+        -2.4825611114501953,
+        25.399999618530273
+      ],
+      "blockingObject": null
+    },
+    {
+      "start": [
+        -0.2561817169189453,
+        -2.4825611114501953,
+        25.399999618530273
+      ],
+      "end": [
+        3.0,
+        6.0,
+        25.399999618530273
+      ],
+      "blockingObject": null
+    }
+  ],
+  "lowAtriumOpeningChecks": [
+    {
+      "name": "WB06_Left_Front_Primary_FloorBand_00",
+      "clear": true
+    },
+    {
+      "name": "WB06_Left_Front_Primary_FloorBand_01",
+      "clear": true
+    },
+    {
+      "name": "WB06_Left_Front_Primary_FloorBand_02",
+      "clear": true
+    }
+  ],
+  "sceneVisibleBaseTriangles": 1264641,
+  "sceneVisibleEvaluatedTriangles": 1314609,
+  "newLocalLightCount": 113,
+  "newLocalLightWatts": 12900.0,
+  "visualReview": "Native 960x540 viewed. Left columns/soffits and setback storefronts, limited lower centre atrium, deeper right bridge arrival distribute readable depth. No full-height escalator column. Exact ramp not resolvable at this image size; validated geometrically. Building grid repetition remains and is not art acceptance.",
+  "onlyPrimaryTowerNewProgram": true,
+  "otherTowersRemainCity32": true,
+  "sourceReferences": "ZHA official 79504/79505, actually viewed during photo audit; no photos used as textures"
+}

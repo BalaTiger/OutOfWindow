@@ -1,0 +1,164 @@
+{
+  "sourceSHA256": "db34f3c79b9ee5f33c67d0a546778289e3e7c8b412e5c4d923538a3e182f9f5a",
+  "assetSHA256": "2160f2179f4e9a1e913f93b2d5a7c7fefc636c0cae260f1169c1c4d90dd449e6",
+  "candidateSHA256": "22b47bb682ea55732d2dc97b91509baf413dc9bf4504dc4f544a5e6ea3fd1749",
+  "changedOriginals": [
+    "WB06_Context_Left_Solid_Civic",
+    "WB06_Context_Left_Solid_Civic_Central_Recess"
+  ],
+  "uniformScale": 0.9655061287790286,
+  "sourceStoreyClip": [
+    8.67,
+    12.5
+  ],
+  "sourceStoreyPitch": 3.83,
+  "resultStoreyPitch": 3.6978884732236796,
+  "additionalStoreys": 12,
+  "blockCount": 6,
+  "blockSize": [
+    20.68422780129698,
+    13.027020031582438,
+    68.1
+  ],
+  "combinedBounds": [
+    [
+      -122.68422780129698,
+      31,
+      6.9
+    ],
+    [
+      -81.31577219870302,
+      76,
+      75
+    ]
+  ],
+  "courtyardGapM": 2.9594699526263426,
+  "uniqueModuleBaseTriangles": 40250,
+  "instancedBaseTriangles": 241500,
+  "records": [
+    {
+      "source": "Object_18",
+      "triangles": 2092,
+      "materials": [
+        "building_brick_left"
+      ]
+    },
+    {
+      "source": "Object_20",
+      "triangles": 426,
+      "materials": [
+        "building_brick_mid"
+      ]
+    },
+    {
+      "source": "Object_22",
+      "triangles": 1004,
+      "materials": [
+        "building_brick_right"
+      ]
+    },
+    {
+      "source": "Object_24",
+      "triangles": 990,
+      "materials": [
+        "building_lower"
+      ]
+    },
+    {
+      "source": "Object_26",
+      "triangles": 1536,
+      "materials": [
+        "building_upper"
+      ]
+    },
+    {
+      "source": "Object_28",
+      "triangles": 1594,
+      "materials": [
+        "building_upper_left"
+      ]
+    },
+    {
+      "source": "Object_30",
+      "triangles": 3334,
+      "materials": [
+        "building_upper_mid"
+      ]
+    },
+    {
+      "source": "Object_32",
+      "triangles": 1880,
+      "materials": [
+        "building_upper_right"
+      ]
+    },
+    {
+      "source": "Object_56",
+      "triangles": 21532,
+      "materials": [
+        "lower_detail"
+      ]
+    },
+    {
+      "source": "Object_74",
+      "triangles": 1566,
+      "materials": [
+        "upper_grills"
+      ]
+    },
+    {
+      "source": "Object_78",
+      "triangles": 84,
+      "materials": [
+        "building_lower_glass"
+      ]
+    },
+    {
+      "source": "Object_80",
+      "triangles": 120,
+      "materials": [
+        "building_upper_left_glass"
+      ]
+    },
+    {
+      "source": "Object_82",
+      "triangles": 288,
+      "materials": [
+        "building_upper_mid_glass"
+      ]
+    },
+    {
+      "source": "Object_84",
+      "triangles": 108,
+      "materials": [
+        "building_upper_right_glass"
+      ]
+    },
+    {
+      "source": "Object_88",
+      "triangles": 3666,
+      "materials": [
+        "lower_detail_door"
+      ]
+    },
+    {
+      "source": "Object_90",
+      "triangles": 30,
+      "materials": [
+        "room"
+      ]
+    }
+  ],
+  "license": {
+    "title": "London Office Building",
+    "author": "Pukka Films",
+    "license": "CC BY 4.0",
+    "url": "https://sketchfab.com/3d-models/8d3ea98595b4403cbf21065e8f9b7bb7",
+    "modifications": "Cropped and repeated source storeys; uniformly scaled; arranged as six linked modules; source UV and materials retained"
+  },
+  "notes": [
+    "Separate City27-based alternative, not combined with City29",
+    "Vertical cut joints and six-module visual repetition require pixel review",
+    "No original site fences, stairs or surroundings imported"
+  ]
+}

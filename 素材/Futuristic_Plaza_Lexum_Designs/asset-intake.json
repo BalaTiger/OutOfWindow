@@ -1,0 +1,41 @@
+{
+  "hostname": "DESKTOP-9RQJ5OB",
+  "utc": "2026-10-14T08:42:36.6070349Z",
+  "sourceFiles": [
+    {
+      "source": "C:\\Users\\zhuzi\\Documents\\OutOfWindow\\futuristic_plaza.glb",
+      "copy": "C:\\Users\\zhuzi\\Documents\\OutOfWindow\\素材\\Futuristic_Plaza_Lexum_Designs\\futuristic_plaza.glb",
+      "bytes": 5853068,
+      "sha256": "F0BAB7BEC93F037D5ED3D85C1BEDD8BC113984130A0E8E7416822810B9E6F642",
+      "copyExact": true
+    },
+    {
+      "source": "C:\\Users\\zhuzi\\Documents\\OutOfWindow\\futuristic-plaza.zip",
+      "copy": "C:\\Users\\zhuzi\\Documents\\OutOfWindow\\素材\\Futuristic_Plaza_Lexum_Designs\\futuristic-plaza.zip",
+      "bytes": 3001842,
+      "sha256": "1612B637B5A288F73E8F50C7539546EBBB2A264F06C81724D7BF7D8B12E36787",
+      "copyExact": true
+    }
+  ],
+  "zipEntries": [
+    {
+      "entry": "source/FuturisticPlaza.fbx",
+      "bytes": 3001692
+    }
+  ],
+  "glbVersion": 2,
+  "glbDeclaredSize": 5853068,
+  "meshCount": 8,
+  "nodeCount": 12,
+  "images": null,
+  "buffers": [
+    {
+      "byteLength": 5843472
+    }
+  ],
+  "externalImageURIs": [],
+  "originalDownloadsPreserved": true,
+  "license": "CC BY 4.0",
+  "author": "Lexum Designs",
+  "source": "https://sketchfab.com/3d-models/futuristic-plaza-233df8946dea492390598be9884b61cb"
+}

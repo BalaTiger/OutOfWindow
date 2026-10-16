@@ -1,0 +1,1260 @@
+{
+  "originalNetClearArcM": {
+    "min": 0.6111923761858926,
+    "median": 1.069763512213603,
+    "max": 1.2748648218772125
+  },
+  "mode": "strong",
+  "sourceSHA256": "a916bbb8667c1a306de45ddae200fd2d894b274f5c620b1e912a89b1a6246809",
+  "candidateSHA256": "583e28a01e2563d841eaf914d701a9ba69d803328e29acd67236941a90b1ac1a",
+  "changedOriginalObjects": [
+    "C32_WB06_Left_Front_Primary_Glazing",
+    "C32_WB06_Left_Front_Primary_Metal"
+  ],
+  "allOtherObjectsExact": true,
+  "glazingMaterialUnchanged": true,
+  "lowerFloorsExact": true,
+  "floors": [
+    {
+      "floor": 5,
+      "z": [
+        24.32499885559082,
+        27.434999465942383
+      ],
+      "originalVerticalComponents": 52,
+      "retainedVerticalComponents": 14,
+      "originalFrameAxes": 52,
+      "retainedFrameAxes": 14,
+      "netClearArcM": {
+        "min": 2.3899891548815844,
+        "median": 5.064316638571768,
+        "max": 5.206594910355392
+      },
+      "glassSpans": [
+        {
+          "start": 0,
+          "end": 2,
+          "netArcWidthM": 2.3899891548815844,
+          "chordWidthM": 2.3899882036193945
+        },
+        {
+          "start": 78,
+          "end": 80,
+          "netArcWidthM": 2.47534126267687,
+          "chordWidthM": 2.4753405713521293
+        },
+        {
+          "start": 80,
+          "end": 84,
+          "netArcWidthM": 5.064798868953675,
+          "chordWidthM": 5.058816180610645
+        },
+        {
+          "start": 84,
+          "end": 88,
+          "netArcWidthM": 5.130442590708614,
+          "chordWidthM": 5.124674148252672
+        },
+        {
+          "start": 88,
+          "end": 92,
+          "netArcWidthM": 5.1800439295684955,
+          "chordWidthM": 5.174431434440995
+        },
+        {
+          "start": 92,
+          "end": 96,
+          "netArcWidthM": 5.206594910355392,
+          "chordWidthM": 5.201064303223589
+        },
+        {
+          "start": 96,
+          "end": 100,
+          "netArcWidthM": 5.206423479160324,
+          "chordWidthM": 5.200893947698907
+        },
+        {
+          "start": 100,
+          "end": 104,
+          "netArcWidthM": 5.179542174200625,
+          "chordWidthM": 5.173932419470719
+        },
+        {
+          "start": 104,
+          "end": 108,
+          "netArcWidthM": 5.129664490180662,
+          "chordWidthM": 5.123900756483487
+        },
+        {
+          "start": 108,
+          "end": 112,
+          "netArcWidthM": 5.06383440818986,
+          "chordWidthM": 5.057857910968494
+        },
+        {
+          "start": 112,
+          "end": 116,
+          "netArcWidthM": 4.991674208450905,
+          "chordWidthM": 4.985452283504145
+        },
+        {
+          "start": 116,
+          "end": 120,
+          "netArcWidthM": 4.924130542284893,
+          "chordWidthM": 4.917665226568385
+        },
+        {
+          "start": 120,
+          "end": 124,
+          "netArcWidthM": 4.871890073299393,
+          "chordWidthM": 4.8652271590152685
+        },
+        {
+          "start": 124,
+          "end": 128,
+          "netArcWidthM": 4.843503332583955,
+          "chordWidthM": 4.836728144368614
+        }
+      ]
+    },
+    {
+      "floor": 6,
+      "z": [
+        27.924999237060547,
+        31.03499984741211
+      ],
+      "originalVerticalComponents": 78,
+      "retainedVerticalComponents": 28,
+      "originalFrameAxes": 53,
+      "retainedFrameAxes": 15,
+      "netClearArcM": {
+        "min": 2.379442494542847,
+        "median": 5.0511464245927975,
+        "max": 5.198245796754663
+      },
+      "glassSpans": [
+        {
+          "start": 0,
+          "end": 2,
+          "netArcWidthM": 2.379442494542847,
+          "chordWidthM": 2.3794415560402977
+        },
+        {
+          "start": 78,
+          "end": 80,
+          "netArcWidthM": 2.4678286960410594,
+          "chordWidthM": 2.4678280227567453
+        },
+        {
+          "start": 80,
+          "end": 84,
+          "netArcWidthM": 5.051646904544725,
+          "chordWidthM": 5.045688135618528
+        },
+        {
+          "start": 84,
+          "end": 88,
+          "netArcWidthM": 5.119527172012303,
+          "chordWidthM": 5.113788863278268
+        },
+        {
+          "start": 88,
+          "end": 92,
+          "netArcWidthM": 5.1708011155674205,
+          "chordWidthM": 5.165223478073736
+        },
+        {
+          "start": 92,
+          "end": 96,
+          "netArcWidthM": 5.198245796754663,
+          "chordWidthM": 5.1927525702262285
+        },
+        {
+          "start": 96,
+          "end": 100,
+          "netArcWidthM": 5.198066976778034,
+          "chordWidthM": 5.192574884205074
+        },
+        {
+          "start": 100,
+          "end": 104,
+          "netArcWidthM": 5.1702822712451,
+          "chordWidthM": 5.164707874546085
+        },
+        {
+          "start": 104,
+          "end": 108,
+          "netArcWidthM": 5.118723769122049,
+          "chordWidthM": 5.112990638284934
+        },
+        {
+          "start": 108,
+          "end": 112,
+          "netArcWidthM": 5.050645944640871,
+          "chordWidthM": 5.044693586697904
+        },
+        {
+          "start": 112,
+          "end": 116,
+          "netArcWidthM": 4.975975472172596,
+          "chordWidthM": 4.9697684472483
+        },
+        {
+          "start": 116,
+          "end": 120,
+          "netArcWidthM": 4.9060471777470225,
+          "chordWidthM": 4.899588487689692
+        },
+        {
+          "start": 120,
+          "end": 124,
+          "netArcWidthM": 4.85194135092506,
+          "chordWidthM": 4.845277082839453
+        },
+        {
+          "start": 124,
+          "end": 128,
+          "netArcWidthM": 4.822526909145712,
+          "chordWidthM": 4.815745838527511
+        }
+      ]
+    },
+    {
+      "floor": 7,
+      "z": [
+        31.524999618530273,
+        34.6349983215332
+      ],
+      "originalVerticalComponents": 78,
+      "retainedVerticalComponents": 28,
+      "originalFrameAxes": 53,
+      "retainedFrameAxes": 15,
+      "netClearArcM": {
+        "min": 2.3499970813908884,
+        "median": 5.0004469480821445,
+        "max": 5.1524747647654054
+      },
+      "glassSpans": [
+        {
+          "start": 0,
+          "end": 2,
+          "netArcWidthM": 2.3499970813908884,
+          "chordWidthM": 2.3499960853554263
+        },
+        {
+          "start": 78,
+          "end": 80,
+          "netArcWidthM": 2.441526889737692,
+          "chordWidthM": 2.4415261760030647
+        },
+        {
+          "start": 80,
+          "end": 84,
+          "netArcWidthM": 5.000966677356428,
+          "chordWidthM": 4.995076147877483
+        },
+        {
+          "start": 84,
+          "end": 88,
+          "netArcWidthM": 5.071146861534888,
+          "chordWidthM": 5.065484862303268
+        },
+        {
+          "start": 88,
+          "end": 92,
+          "netArcWidthM": 5.12413023888844,
+          "chordWidthM": 5.118633040263662
+        },
+        {
+          "start": 92,
+          "end": 96,
+          "netArcWidthM": 5.1524747647654054,
+          "chordWidthM": 5.147064194228058
+        },
+        {
+          "start": 96,
+          "end": 100,
+          "netArcWidthM": 5.152288011534951,
+          "chordWidthM": 5.14687845650533
+        },
+        {
+          "start": 100,
+          "end": 104,
+          "netArcWidthM": 5.123590867457442,
+          "chordWidthM": 5.118097160002068
+        },
+        {
+          "start": 104,
+          "end": 108,
+          "netArcWidthM": 5.070307232905116,
+          "chordWidthM": 5.064650478074619
+        },
+        {
+          "start": 108,
+          "end": 112,
+          "netArcWidthM": 4.999927218807862,
+          "chordWidthM": 4.994043901319984
+        },
+        {
+          "start": 112,
+          "end": 116,
+          "netArcWidthM": 4.922681241268061,
+          "chordWidthM": 4.91653509638501
+        },
+        {
+          "start": 116,
+          "end": 120,
+          "netArcWidthM": 4.850285327907706,
+          "chordWidthM": 4.8438781914448406
+        },
+        {
+          "start": 120,
+          "end": 124,
+          "netArcWidthM": 4.7942444272294,
+          "chordWidthM": 4.787623887979962
+        },
+        {
+          "start": 124,
+          "end": 128,
+          "netArcWidthM": 4.763764579822819,
+          "chordWidthM": 4.757022329066852
+        }
+      ]
+    },
+    {
+      "floor": 8,
+      "z": [
+        35.125,
+        38.2349967956543
+      ],
+      "originalVerticalComponents": 78,
+      "retainedVerticalComponents": 28,
+      "originalFrameAxes": 53,
+      "retainedFrameAxes": 15,
+      "netClearArcM": {
+        "min": 2.3012658264983883,
+        "median": 4.911702966172124,
+        "max": 5.068895768495058
+      },
+      "glassSpans": [
+        {
+          "start": 0,
+          "end": 2,
+          "netArcWidthM": 2.3012658264983883,
+          "chordWidthM": 2.301264848768438
+        },
+        {
+          "start": 78,
+          "end": 80,
+          "netArcWidthM": 2.396155474123604,
+          "chordWidthM": 2.3961547685560918
+        },
+        {
+          "start": 80,
+          "end": 84,
+          "netArcWidthM": 4.912252120648427,
+          "chordWidthM": 4.906477840256247
+        },
+        {
+          "start": 84,
+          "end": 88,
+          "netArcWidthM": 4.984844996117359,
+          "chordWidthM": 4.9793052626691505
+        },
+        {
+          "start": 88,
+          "end": 92,
+          "netArcWidthM": 5.039612388484225,
+          "chordWidthM": 5.03424176796913
+        },
+        {
+          "start": 92,
+          "end": 96,
+          "netArcWidthM": 5.068895768495058,
+          "chordWidthM": 5.06361433323727
+        },
+        {
+          "start": 96,
+          "end": 100,
+          "netArcWidthM": 5.068701332808771,
+          "chordWidthM": 5.063420431571676
+        },
+        {
+          "start": 100,
+          "end": 104,
+          "netArcWidthM": 5.039046015194633,
+          "chordWidthM": 5.033678895184899
+        },
+        {
+          "start": 104,
+          "end": 108,
+          "netArcWidthM": 4.983965659252355,
+          "chordWidthM": 4.978431243391008
+        },
+        {
+          "start": 108,
+          "end": 112,
+          "netArcWidthM": 4.9111538116958195,
+          "chordWidthM": 4.905386505833482
+        },
+        {
+          "start": 112,
+          "end": 116,
+          "netArcWidthM": 4.83118052999981,
+          "chordWidthM": 4.825142120043185
+        },
+        {
+          "start": 116,
+          "end": 120,
+          "netArcWidthM": 4.756177205328366,
+          "chordWidthM": 4.7498675352323305
+        },
+        {
+          "start": 120,
+          "end": 124,
+          "netArcWidthM": 4.698058442236904,
+          "chordWidthM": 4.6915264869135545
+        },
+        {
+          "start": 124,
+          "end": 128,
+          "netArcWidthM": 4.666447040274588,
+          "chordWidthM": 4.659787950864379
+        }
+      ]
+    },
+    {
+      "floor": 9,
+      "z": [
+        38.72500228881836,
+        41.834999084472656
+      ],
+      "originalVerticalComponents": 78,
+      "retainedVerticalComponents": 28,
+      "originalFrameAxes": 53,
+      "retainedFrameAxes": 15,
+      "netClearArcM": {
+        "min": 2.233573424966963,
+        "median": 4.78581897973089,
+        "max": 4.948568088014702
+      },
+      "glassSpans": [
+        {
+          "start": 0,
+          "end": 2,
+          "netArcWidthM": 2.233573424966963,
+          "chordWidthM": 2.233572410960709
+        },
+        {
+          "start": 78,
+          "end": 80,
+          "netArcWidthM": 2.332131783651268,
+          "chordWidthM": 2.3321310567644105
+        },
+        {
+          "start": 80,
+          "end": 84,
+          "netArcWidthM": 4.786399264788043,
+          "chordWidthM": 4.780786033202717
+        },
+        {
+          "start": 84,
+          "end": 88,
+          "netArcWidthM": 4.8615945679289805,
+          "chordWidthM": 4.856223241993636
+        },
+        {
+          "start": 88,
+          "end": 92,
+          "netArcWidthM": 4.918268925164902,
+          "chordWidthM": 4.913071708014924
+        },
+        {
+          "start": 92,
+          "end": 96,
+          "netArcWidthM": 4.948568088014702,
+          "chordWidthM": 4.943461771870358
+        },
+        {
+          "start": 96,
+          "end": 100,
+          "netArcWidthM": 4.9483607923772865,
+          "chordWidthM": 4.943255683826101
+        },
+        {
+          "start": 100,
+          "end": 104,
+          "netArcWidthM": 4.917678810349185,
+          "chordWidthM": 4.912485199988249
+        },
+        {
+          "start": 104,
+          "end": 108,
+          "netArcWidthM": 4.86066051126893,
+          "chordWidthM": 4.85529508091039
+        },
+        {
+          "start": 108,
+          "end": 112,
+          "netArcWidthM": 4.785238694673737,
+          "chordWidthM": 4.779633447543905
+        },
+        {
+          "start": 112,
+          "end": 116,
+          "netArcWidthM": 4.7023120624273,
+          "chordWidthM": 4.696426128479874
+        },
+        {
+          "start": 116,
+          "end": 120,
+          "netArcWidthM": 4.624451714514335,
+          "chordWidthM": 4.61828378656341
+        },
+        {
+          "start": 120,
+          "end": 124,
+          "netArcWidthM": 4.564068289262376,
+          "chordWidthM": 4.557668372091114
+        },
+        {
+          "start": 124,
+          "end": 128,
+          "netArcWidthM": 4.531209382246719,
+          "chordWidthM": 4.524676435944891
+        }
+      ]
+    },
+    {
+      "floor": 10,
+      "z": [
+        42.32500076293945,
+        45.43499755859375
+      ],
+      "originalVerticalComponents": 78,
+      "retainedVerticalComponents": 28,
+      "originalFrameAxes": 53,
+      "retainedFrameAxes": 15,
+      "netClearArcM": {
+        "min": 2.1477093282436797,
+        "median": 4.624637715798777,
+        "max": 4.793437017027177
+      },
+      "glassSpans": [
+        {
+          "start": 0,
+          "end": 2,
+          "netArcWidthM": 2.1477093282436797,
+          "chordWidthM": 2.1477081633877746
+        },
+        {
+          "start": 78,
+          "end": 80,
+          "netArcWidthM": 2.250350299824935,
+          "chordWidthM": 2.250349572884108
+        },
+        {
+          "start": 80,
+          "end": 84,
+          "netArcWidthM": 4.625261817156252,
+          "chordWidthM": 4.61985378982513
+        },
+        {
+          "start": 84,
+          "end": 88,
+          "netArcWidthM": 4.7032906033381465,
+          "chordWidthM": 4.698131595929193
+        },
+        {
+          "start": 88,
+          "end": 92,
+          "netArcWidthM": 4.7620536582120865,
+          "chordWidthM": 4.757073457143151
+        },
+        {
+          "start": 92,
+          "end": 96,
+          "netArcWidthM": 4.793437017027177,
+          "chordWidthM": 4.788550067053417
+        },
+        {
+          "start": 96,
+          "end": 100,
+          "netArcWidthM": 4.793221438011272,
+          "chordWidthM": 4.788335433706854
+        },
+        {
+          "start": 100,
+          "end": 104,
+          "netArcWidthM": 4.7614189597116745,
+          "chordWidthM": 4.75644257147367
+        },
+        {
+          "start": 104,
+          "end": 108,
+          "netArcWidthM": 4.702298296366716,
+          "chordWidthM": 4.697146102764245
+        },
+        {
+          "start": 108,
+          "end": 112,
+          "netArcWidthM": 4.6240136144413,
+          "chordWidthM": 4.618614523636118
+        },
+        {
+          "start": 112,
+          "end": 116,
+          "netArcWidthM": 4.537833561540074,
+          "chordWidthM": 4.532143290314371
+        },
+        {
+          "start": 116,
+          "end": 120,
+          "netArcWidthM": 4.456811655576684,
+          "chordWidthM": 4.450827707263298
+        },
+        {
+          "start": 120,
+          "end": 124,
+          "netArcWidthM": 4.393906856237089,
+          "chordWidthM": 4.387679797736222
+        },
+        {
+          "start": 124,
+          "end": 128,
+          "netArcWidthM": 4.3596499353720795,
+          "chordWidthM": 4.35328276102233
+        }
+      ]
+    },
+    {
+      "floor": 11,
+      "z": [
+        45.92500305175781,
+        49.03499984741211
+      ],
+      "originalVerticalComponents": 81,
+      "retainedVerticalComponents": 28,
+      "originalFrameAxes": 55,
+      "retainedFrameAxes": 15,
+      "netClearArcM": {
+        "min": 2.0440825701210783,
+        "median": 4.429218022290822,
+        "max": 4.604693065717829
+      },
+      "glassSpans": [
+        {
+          "start": 0,
+          "end": 2,
+          "netArcWidthM": 2.0440825701210783,
+          "chordWidthM": 2.044081330608878
+        },
+        {
+          "start": 76,
+          "end": 80,
+          "netArcWidthM": 4.340194840287742,
+          "chordWidthM": 4.334732146015658
+        },
+        {
+          "start": 80,
+          "end": 84,
+          "netArcWidthM": 4.429890661396539,
+          "chordWidthM": 4.424731201486324
+        },
+        {
+          "start": 84,
+          "end": 88,
+          "netArcWidthM": 4.511073292639538,
+          "chordWidthM": 4.506170300472941
+        },
+        {
+          "start": 88,
+          "end": 92,
+          "netArcWidthM": 4.5721140255862975,
+          "chordWidthM": 4.567394262679292
+        },
+        {
+          "start": 92,
+          "end": 96,
+          "netArcWidthM": 4.604693065717829,
+          "chordWidthM": 4.600068437591518
+        },
+        {
+          "start": 96,
+          "end": 100,
+          "netArcWidthM": 4.604456525735122,
+          "chordWidthM": 4.59983315984192
+        },
+        {
+          "start": 100,
+          "end": 104,
+          "netArcWidthM": 4.571433251636937,
+          "chordWidthM": 4.566717850905746
+        },
+        {
+          "start": 104,
+          "end": 108,
+          "netArcWidthM": 4.510005112065943,
+          "chordWidthM": 4.505109421211464
+        },
+        {
+          "start": 108,
+          "end": 112,
+          "netArcWidthM": 4.428545383185106,
+          "chordWidthM": 4.423395034100756
+        },
+        {
+          "start": 112,
+          "end": 116,
+          "netArcWidthM": 4.338742579548178,
+          "chordWidthM": 4.333290514951987
+        },
+        {
+          "start": 116,
+          "end": 120,
+          "netArcWidthM": 4.2541703216251605,
+          "chordWidthM": 4.2484112493576225
+        },
+        {
+          "start": 120,
+          "end": 124,
+          "netArcWidthM": 4.18841629795071,
+          "chordWidthM": 4.182401033370001
+        },
+        {
+          "start": 124,
+          "end": 128,
+          "netArcWidthM": 4.152578775368307,
+          "chordWidthM": 4.146415264119556
+        }
+      ]
+    },
+    {
+      "floor": 12,
+      "z": [
+        49.525001525878906,
+        52.6349983215332
+      ],
+      "originalVerticalComponents": 81,
+      "retainedVerticalComponents": 28,
+      "originalFrameAxes": 55,
+      "retainedFrameAxes": 15,
+      "netClearArcM": {
+        "min": 1.9243934195151975,
+        "median": 4.203127982021234,
+        "max": 4.385903182598459
+      },
+      "glassSpans": [
+        {
+          "start": 0,
+          "end": 2,
+          "netArcWidthM": 1.9243934195151975,
+          "chordWidthM": 1.9243920937875723
+        },
+        {
+          "start": 76,
+          "end": 80,
+          "netArcWidthM": 4.110160449516311,
+          "chordWidthM": 4.10497271754384
+        },
+        {
+          "start": 80,
+          "end": 84,
+          "netArcWidthM": 4.203865067555217,
+          "chordWidthM": 4.198992834711687
+        },
+        {
+          "start": 84,
+          "end": 88,
+          "netArcWidthM": 4.28849395873997,
+          "chordWidthM": 4.283886229210736
+        },
+        {
+          "start": 88,
+          "end": 92,
+          "netArcWidthM": 4.352034550502412,
+          "chordWidthM": 4.347614557526869
+        },
+        {
+          "start": 92,
+          "end": 96,
+          "netArcWidthM": 4.385903182598459,
+          "chordWidthM": 4.381579682814728
+        },
+        {
+          "start": 96,
+          "end": 100,
+          "netArcWidthM": 4.385651465850196,
+          "chordWidthM": 4.3813297557702
+        },
+        {
+          "start": 100,
+          "end": 104,
+          "netArcWidthM": 4.351301556204655,
+          "chordWidthM": 4.346885780972668
+        },
+        {
+          "start": 104,
+          "end": 108,
+          "netArcWidthM": 4.287330127637498,
+          "chordWidthM": 4.282729942699291
+        },
+        {
+          "start": 108,
+          "end": 112,
+          "netArcWidthM": 4.202390896487253,
+          "chordWidthM": 4.197528705063359
+        },
+        {
+          "start": 112,
+          "end": 116,
+          "netArcWidthM": 4.108561924537376,
+          "chordWidthM": 4.103386363375635
+        },
+        {
+          "start": 116,
+          "end": 120,
+          "netArcWidthM": 4.020018199173158,
+          "chordWidthM": 4.014520579026884
+        },
+        {
+          "start": 120,
+          "end": 124,
+          "netArcWidthM": 3.951043940230487,
+          "chordWidthM": 3.9452752578098003
+        },
+        {
+          "start": 124,
+          "end": 128,
+          "netArcWidthM": 3.913413478222128,
+          "chordWidthM": 3.907486984048897
+        }
+      ]
+    },
+    {
+      "floor": 13,
+      "z": [
+        53.125,
+        56.2349967956543
+      ],
+      "originalVerticalComponents": 84,
+      "retainedVerticalComponents": 28,
+      "originalFrameAxes": 57,
+      "retainedFrameAxes": 15,
+      "netClearArcM": {
+        "min": 3.644623147204053,
+        "median": 3.9489447398972573,
+        "max": 4.139633208966189
+      },
+      "glassSpans": [
+        {
+          "start": 0,
+          "end": 4,
+          "netArcWidthM": 3.645057994272692,
+          "chordWidthM": 3.6393942657169798
+        },
+        {
+          "start": 76,
+          "end": 80,
+          "netArcWidthM": 3.8516430297621356,
+          "chordWidthM": 3.8467658350816385
+        },
+        {
+          "start": 80,
+          "end": 84,
+          "netArcWidthM": 3.9497580328416695,
+          "chordWidthM": 3.9452090344306456
+        },
+        {
+          "start": 84,
+          "end": 88,
+          "netArcWidthM": 4.0381430520695565,
+          "chordWidthM": 4.033866594124768
+        },
+        {
+          "start": 88,
+          "end": 92,
+          "netArcWidthM": 4.104376306176792,
+          "chordWidthM": 4.100291069604234
+        },
+        {
+          "start": 92,
+          "end": 96,
+          "netArcWidthM": 4.139633208966189,
+          "chordWidthM": 4.135646872950001
+        },
+        {
+          "start": 96,
+          "end": 100,
+          "netArcWidthM": 4.13936345487353,
+          "chordWidthM": 4.135378882399754
+        },
+        {
+          "start": 100,
+          "end": 104,
+          "netArcWidthM": 4.103573450941343,
+          "chordWidthM": 4.099493120380614
+        },
+        {
+          "start": 104,
+          "end": 108,
+          "netArcWidthM": 4.036870391044357,
+          "chordWidthM": 4.0326021539176224
+        },
+        {
+          "start": 108,
+          "end": 112,
+          "netArcWidthM": 3.948131446952845,
+          "chordWidthM": 3.9435937080283554
+        },
+        {
+          "start": 112,
+          "end": 116,
+          "netArcWidthM": 3.8498545351895292,
+          "chordWidthM": 3.8449906417207034
+        },
+        {
+          "start": 116,
+          "end": 120,
+          "netArcWidthM": 3.7568792423400827,
+          "chordWidthM": 3.7516769371233507
+        },
+        {
+          "start": 120,
+          "end": 124,
+          "netArcWidthM": 3.6842809614426515,
+          "chordWidthM": 3.6787904793943476
+        },
+        {
+          "start": 124,
+          "end": 128,
+          "netArcWidthM": 3.644623147204053,
+          "chordWidthM": 3.6389633296774178
+        }
+      ]
+    },
+    {
+      "floor": 14,
+      "z": [
+        56.72500228881836,
+        59.834999084472656
+      ],
+      "originalVerticalComponents": 84,
+      "retainedVerticalComponents": 28,
+      "originalFrameAxes": 57,
+      "retainedFrameAxes": 15,
+      "netClearArcM": {
+        "min": 3.3499804286206034,
+        "median": 3.6704209638351735,
+        "max": 3.8695075746161423
+      },
+      "glassSpans": [
+        {
+          "start": 0,
+          "end": 4,
+          "netArcWidthM": 3.350477621505035,
+          "chordWidthM": 3.345105264457242
+        },
+        {
+          "start": 76,
+          "end": 80,
+          "netArcWidthM": 3.5684347207706604,
+          "chordWidthM": 3.563900148005577
+        },
+        {
+          "start": 80,
+          "end": 84,
+          "netArcWidthM": 3.6713312902615267,
+          "chordWidthM": 3.667137875073463
+        },
+        {
+          "start": 84,
+          "end": 88,
+          "netArcWidthM": 3.763723983554414,
+          "chordWidthM": 3.7598104559723464
+        },
+        {
+          "start": 88,
+          "end": 92,
+          "netArcWidthM": 3.8328056223363585,
+          "chordWidthM": 3.829086867394439
+        },
+        {
+          "start": 92,
+          "end": 96,
+          "netArcWidthM": 3.8695075746161423,
+          "chordWidthM": 3.8658880904353516
+        },
+        {
+          "start": 96,
+          "end": 100,
+          "netArcWidthM": 3.8692097187591554,
+          "chordWidthM": 3.8655917752503086
+        },
+        {
+          "start": 100,
+          "end": 104,
+          "netArcWidthM": 3.831923069754074,
+          "chordWidthM": 3.8282091405925813
+        },
+        {
+          "start": 104,
+          "end": 108,
+          "netArcWidthM": 3.762324631479246,
+          "chordWidthM": 3.7584194730824376
+        },
+        {
+          "start": 108,
+          "end": 112,
+          "netArcWidthM": 3.66951063740882,
+          "chordWidthM": 3.6653296930226604
+        },
+        {
+          "start": 112,
+          "end": 116,
+          "netArcWidthM": 3.5664155538589104,
+          "chordWidthM": 3.5618956776408033
+        },
+        {
+          "start": 116,
+          "end": 120,
+          "netArcWidthM": 3.468554919062124,
+          "chordWidthM": 3.463678181414696
+        },
+        {
+          "start": 120,
+          "end": 124,
+          "netArcWidthM": 3.391918081390836,
+          "chordWidthM": 3.3867338000485643
+        },
+        {
+          "start": 124,
+          "end": 128,
+          "netArcWidthM": 3.3499804286206034,
+          "chordWidthM": 3.3446128214488646
+        }
+      ]
+    },
+    {
+      "floor": 15,
+      "z": [
+        60.32500076293945,
+        63.43499755859375
+      ],
+      "originalVerticalComponents": 84,
+      "retainedVerticalComponents": 28,
+      "originalFrameAxes": 57,
+      "retainedFrameAxes": 15,
+      "netClearArcM": {
+        "min": 3.033943689777938,
+        "median": 3.3718936704557425,
+        "max": 3.5796156939823924
+      },
+      "glassSpans": [
+        {
+          "start": 0,
+          "end": 4,
+          "netArcWidthM": 3.0345392177626915,
+          "chordWidthM": 3.0294787817987223
+        },
+        {
+          "start": 76,
+          "end": 80,
+          "netArcWidthM": 3.2649612553431964,
+          "chordWidthM": 3.260795827356252
+        },
+        {
+          "start": 80,
+          "end": 84,
+          "netArcWidthM": 3.3729184390493048,
+          "chordWidthM": 3.369107338881512
+        },
+        {
+          "start": 84,
+          "end": 88,
+          "netArcWidthM": 3.469477210090394,
+          "chordWidthM": 3.4659522727704846
+        },
+        {
+          "start": 88,
+          "end": 92,
+          "netArcWidthM": 3.5414438517659477,
+          "chordWidthM": 3.5381152766634556
+        },
+        {
+          "start": 92,
+          "end": 96,
+          "netArcWidthM": 3.5796156939823924,
+          "chordWidthM": 3.5763866963793265
+        },
+        {
+          "start": 96,
+          "end": 100,
+          "netArcWidthM": 3.5792872784623513,
+          "chordWidthM": 3.5760599907634067
+        },
+        {
+          "start": 100,
+          "end": 104,
+          "netArcWidthM": 3.5404744806717665,
+          "chordWidthM": 3.5371513097674274
+        },
+        {
+          "start": 104,
+          "end": 108,
+          "netArcWidthM": 3.4679108198960775,
+          "chordWidthM": 3.464395137999249
+        },
+        {
+          "start": 108,
+          "end": 112,
+          "netArcWidthM": 3.37086890186218,
+          "chordWidthM": 3.36707151432183
+        },
+        {
+          "start": 112,
+          "end": 116,
+          "netArcWidthM": 3.262660261524649,
+          "chordWidthM": 3.2585120491888486
+        },
+        {
+          "start": 116,
+          "end": 120,
+          "netArcWidthM": 3.1595074277747677,
+          "chordWidthM": 3.1549826520389463
+        },
+        {
+          "start": 120,
+          "end": 124,
+          "netArcWidthM": 3.0784162714637326,
+          "chordWidthM": 3.0735608903621414
+        },
+        {
+          "start": 124,
+          "end": 128,
+          "netArcWidthM": 3.033943689777938,
+          "chordWidthM": 3.028889118011803
+        }
+      ]
+    },
+    {
+      "floor": 16,
+      "z": [
+        63.92500305175781,
+        66.63500213623047
+      ],
+      "originalVerticalComponents": 87,
+      "retainedVerticalComponents": 30,
+      "originalFrameAxes": 59,
+      "retainedFrameAxes": 16,
+      "netClearArcM": {
+        "min": 1.4101087286553418,
+        "median": 3.0741017503400347,
+        "max": 3.2910139700680374
+      },
+      "glassSpans": [
+        {
+          "start": 0,
+          "end": 4,
+          "netArcWidthM": 2.720446338289389,
+          "chordWidthM": 2.7156955718937423
+        },
+        {
+          "start": 74,
+          "end": 76,
+          "netArcWidthM": 1.4101087286553418,
+          "chordWidthM": 1.4101072225262088
+        },
+        {
+          "start": 76,
+          "end": 80,
+          "netArcWidthM": 2.963563199790021,
+          "chordWidthM": 2.959767840790268
+        },
+        {
+          "start": 80,
+          "end": 84,
+          "netArcWidthM": 3.076411305033882,
+          "chordWidthM": 3.0729819022251643
+        },
+        {
+          "start": 84,
+          "end": 88,
+          "netArcWidthM": 3.176894509313519,
+          "chordWidthM": 3.1737547481518225
+        },
+        {
+          "start": 88,
+          "end": 92,
+          "netArcWidthM": 3.2515260692903483,
+          "chordWidthM": 3.2485821482557435
+        },
+        {
+          "start": 92,
+          "end": 96,
+          "netArcWidthM": 3.2910139700680374,
+          "chordWidthM": 3.288168715575596
+        },
+        {
+          "start": 96,
+          "end": 100,
+          "netArcWidthM": 3.290659258904894,
+          "chordWidthM": 3.2878161349112593
+        },
+        {
+          "start": 100,
+          "end": 104,
+          "netArcWidthM": 3.2504555613539465,
+          "chordWidthM": 3.2475174069397075
+        },
+        {
+          "start": 104,
+          "end": 108,
+          "netArcWidthM": 3.1751524671007565,
+          "chordWidthM": 3.172022429618575
+        },
+        {
+          "start": 108,
+          "end": 112,
+          "netArcWidthM": 3.0741017503400347,
+          "chordWidthM": 3.0706873447990635
+        },
+        {
+          "start": 112,
+          "end": 116,
+          "netArcWidthM": 2.9609202941118906,
+          "chordWidthM": 2.95714492206766
+        },
+        {
+          "start": 116,
+          "end": 120,
+          "netArcWidthM": 2.8524806406242704,
+          "chordWidthM": 2.8483096988741465
+        },
+        {
+          "start": 120,
+          "end": 124,
+          "netArcWidthM": 2.7668321638604882,
+          "chordWidthM": 2.7623062584931737
+        },
+        {
+          "start": 124,
+          "end": 128,
+          "netArcWidthM": 2.7197336476578498,
+          "chordWidthM": 2.7149901092627964
+        }
+      ]
+    }
+  ],
+  "originalUpperVerticalComponents": 943,
+  "retainedUpperVerticalComponents": 324,
+  "originalUpperFrameAxes": 657,
+  "retainedUpperFrameAxes": 180,
+  "netClearArcM": {
+    "min": 1.4101087286553418,
+    "median": 4.340194840287742,
+    "max": 5.206594910355392
+  },
+  "glassDesign": "Bent glass panel spans between retained frames; intermediate mesh edges are shared tessellation, not unframed open gaps. Thickness, supports and manufacturer limits not engineered.",
+  "originalInteriorErrorsUnrepaired": true
+}

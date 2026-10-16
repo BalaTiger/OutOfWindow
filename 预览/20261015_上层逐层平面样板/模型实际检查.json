@@ -1,0 +1,1490 @@
+{
+  "sourceSHA256": "52efaaba7ebb6639a751eaecbc5c2300a5226f3c28261eb19292461cdfca174e",
+  "candidateSHA256": "a916bbb8667c1a306de45ddae200fd2d894b274f5c620b1e912a89b1a6246809",
+  "planSHA256": "70b1212e727b47848d552737e8f22b6d920fdcd2c1ee78a5eadf231f253e5918",
+  "changedOriginals": [
+    "C34_Gallery_10_41",
+    "C34_Gallery_10_45",
+    "C34_Gallery_10_49",
+    "C34_Gallery_10_53",
+    "C34_Gallery_10_57",
+    "C34_Gallery_10_61",
+    "C34_Gallery_11_41",
+    "C34_Gallery_11_45",
+    "C34_Gallery_11_49",
+    "C34_Gallery_11_53",
+    "C34_Gallery_11_57",
+    "C34_Gallery_11_61",
+    "C34_Gallery_12_41",
+    "C34_Gallery_12_45",
+    "C34_Gallery_12_49",
+    "C34_Gallery_12_53",
+    "C34_Gallery_12_57",
+    "C34_Gallery_12_61",
+    "C34_Gallery_13_41",
+    "C34_Gallery_13_45",
+    "C34_Gallery_13_49",
+    "C34_Gallery_13_53",
+    "C34_Gallery_13_57",
+    "C34_Gallery_13_61",
+    "C34_Gallery_14_41",
+    "C34_Gallery_14_45",
+    "C34_Gallery_14_49",
+    "C34_Gallery_14_53",
+    "C34_Gallery_14_57",
+    "C34_Gallery_14_61",
+    "C34_Gallery_15_41",
+    "C34_Gallery_15_45",
+    "C34_Gallery_15_49",
+    "C34_Gallery_15_53",
+    "C34_Gallery_15_57",
+    "C34_Gallery_15_61",
+    "C34_Gallery_4_41",
+    "C34_Gallery_4_45",
+    "C34_Gallery_4_49",
+    "C34_Gallery_4_53",
+    "C34_Gallery_4_57",
+    "C34_Gallery_4_61",
+    "C34_Gallery_5_41",
+    "C34_Gallery_5_45",
+    "C34_Gallery_5_49",
+    "C34_Gallery_5_53",
+    "C34_Gallery_5_57",
+    "C34_Gallery_5_61",
+    "C34_Gallery_6_41",
+    "C34_Gallery_6_45",
+    "C34_Gallery_6_49",
+    "C34_Gallery_6_53",
+    "C34_Gallery_6_57",
+    "C34_Gallery_6_61",
+    "C34_Gallery_7_41",
+    "C34_Gallery_7_45",
+    "C34_Gallery_7_49",
+    "C34_Gallery_7_53",
+    "C34_Gallery_7_57",
+    "C34_Gallery_7_61",
+    "C34_Gallery_8_41",
+    "C34_Gallery_8_45",
+    "C34_Gallery_8_49",
+    "C34_Gallery_8_53",
+    "C34_Gallery_8_57",
+    "C34_Gallery_8_61",
+    "C34_Gallery_9_41",
+    "C34_Gallery_9_45",
+    "C34_Gallery_9_49",
+    "C34_Gallery_9_53",
+    "C34_Gallery_9_57",
+    "C34_Gallery_9_61",
+    "C34_Gallery_Soffits",
+    "C34_Inner_Ceiling_Fascias",
+    "C34_Public_Columns",
+    "C34_Rear_Retail_Layers",
+    "C34_Setback_Frames",
+    "C34_Setback_Shopfronts",
+    "WB06_Court_Upper_Bridge",
+    "WB06_Left_Front_Primary_FloorBand_03",
+    "WB06_Left_Front_Primary_FloorBand_04",
+    "WB06_Left_Front_Primary_FloorBand_05",
+    "WB06_Left_Front_Primary_FloorBand_06",
+    "WB06_Left_Front_Primary_FloorBand_07",
+    "WB06_Left_Front_Primary_FloorBand_08",
+    "WB06_Left_Front_Primary_FloorBand_09",
+    "WB06_Left_Front_Primary_FloorBand_10",
+    "WB06_Left_Front_Primary_FloorBand_11",
+    "WB06_Left_Front_Primary_FloorBand_12",
+    "WB06_Left_Front_Primary_FloorBand_13",
+    "WB06_Left_Front_Primary_FloorBand_14",
+    "WB06_Left_Front_Primary_MainVolume"
+  ],
+  "allOtherObjectsExact": true,
+  "acceptedLowerMixedPolygonsExact": true,
+  "lowerBridgeExact": true,
+  "cameraLondonPlazaExact": true,
+  "floors": [
+    {
+      "floor": 5,
+      "tenants": 8,
+      "floorZ": 24.299999237060547,
+      "holes": 2,
+      "actualPlanUsed": true
+    },
+    {
+      "floor": 6,
+      "tenants": 6,
+      "floorZ": 27.899999618530273,
+      "holes": 6,
+      "actualPlanUsed": true
+    },
+    {
+      "floor": 7,
+      "tenants": 6,
+      "floorZ": 31.5,
+      "holes": 6,
+      "actualPlanUsed": true
+    },
+    {
+      "floor": 8,
+      "tenants": 6,
+      "floorZ": 35.099998474121094,
+      "holes": 6,
+      "actualPlanUsed": true
+    },
+    {
+      "floor": 9,
+      "tenants": 5,
+      "floorZ": 38.70000076293945,
+      "holes": 7,
+      "actualPlanUsed": true
+    },
+    {
+      "floor": 10,
+      "tenants": 4,
+      "floorZ": 42.29999923706055,
+      "holes": 6,
+      "actualPlanUsed": true
+    },
+    {
+      "floor": 11,
+      "tenants": 5,
+      "floorZ": 45.900001525878906,
+      "holes": 5,
+      "actualPlanUsed": true
+    },
+    {
+      "floor": 12,
+      "tenants": 4,
+      "floorZ": 49.5,
+      "holes": 6,
+      "actualPlanUsed": true
+    },
+    {
+      "floor": 13,
+      "tenants": 4,
+      "floorZ": 53.099998474121094,
+      "holes": 5,
+      "actualPlanUsed": true
+    },
+    {
+      "floor": 14,
+      "tenants": 3,
+      "floorZ": 56.70000076293945,
+      "holes": 5,
+      "actualPlanUsed": true
+    },
+    {
+      "floor": 15,
+      "tenants": 3,
+      "floorZ": 60.29999923706055,
+      "holes": 5,
+      "actualPlanUsed": true
+    },
+    {
+      "floor": 16,
+      "tenants": 3,
+      "floorZ": 63.900001525878906,
+      "holes": 4,
+      "actualPlanUsed": true
+    }
+  ],
+  "signs": [
+    {
+      "id": "F05-T01",
+      "brand": "AERONEST",
+      "entry": [
+        -0.7398892536136543,
+        -18.0
+      ],
+      "facing": [
+        -0.0,
+        1.0
+      ]
+    },
+    {
+      "id": "F05-T02",
+      "brand": "FORMHAVEN",
+      "entry": [
+        -8.730194347655264,
+        -5.0
+      ],
+      "facing": [
+        -0.0,
+        -1.0
+      ]
+    },
+    {
+      "id": "F05-T04",
+      "brand": "AERONEST",
+      "entry": [
+        -33.9799958257586,
+        -12.35
+      ],
+      "facing": [
+        -0.0,
+        -1.0
+      ]
+    },
+    {
+      "id": "F05-T05",
+      "brand": "FORMHAVEN",
+      "entry": [
+        -37.990543471633494,
+        -18.691512968965647
+      ],
+      "facing": [
+        0.8320502943378436,
+        -0.5547001962252291
+      ]
+    },
+    {
+      "id": "F05-T06",
+      "brand": "FOLDROOM",
+      "entry": [
+        -36.96205842035382,
+        -26.64220305446694
+      ],
+      "facing": [
+        0.9958932064677039,
+        0.0905357460425196
+      ]
+    },
+    {
+      "id": "F05-T07",
+      "brand": "AERONEST",
+      "entry": [
+        -30.854206809402342,
+        -34.53687935261021
+      ],
+      "facing": [
+        0.5299989400031747,
+        0.8479983040050914
+      ]
+    },
+    {
+      "id": "F05-T08",
+      "brand": "HEYU TEA",
+      "entry": [
+        -20.28951236407533,
+        -35.340578912300685
+      ],
+      "facing": [
+        -0.19611613513819087,
+        0.9805806756909188
+      ]
+    },
+    {
+      "id": "F05-T09",
+      "brand": "FORMHAVEN",
+      "entry": [
+        -12.621553798088,
+        -29.107699850519477
+      ],
+      "facing": [
+        -0.8479983040050879,
+        0.5299989400031799
+      ]
+    },
+    {
+      "id": "F06-T01",
+      "brand": "THREADBAY",
+      "entry": [
+        -13.129056472862082,
+        -15.27897632064347
+      ],
+      "facing": [
+        -0.3713906763541037,
+        -0.9284766908852593
+      ]
+    },
+    {
+      "id": "F06-T04",
+      "brand": "DAYFORM",
+      "entry": [
+        -36.29563771252144,
+        -16.149154330297574
+      ],
+      "facing": [
+        0.8191963753641989,
+        -0.5735131198064771
+      ]
+    },
+    {
+      "id": "F06-T05",
+      "brand": "NORTHPACE",
+      "entry": [
+        -37.65,
+        -25.858297187051292
+      ],
+      "facing": [
+        1.0,
+        0.0
+      ]
+    },
+    {
+      "id": "F06-T06",
+      "brand": "THREADBAY",
+      "entry": [
+        -30.476828991322154,
+        -35.7282370366713
+      ],
+      "facing": [
+        0.12403473458919825,
+        0.992277876713669
+      ]
+    },
+    {
+      "id": "F06-T07",
+      "brand": "HEYU TEA",
+      "entry": [
+        -18.929250346265903,
+        -34.62600460710645
+      ],
+      "facing": [
+        -0.4856429311786321,
+        0.8741572761215377
+      ]
+    },
+    {
+      "id": "F06-T08",
+      "brand": "DAYFORM",
+      "entry": [
+        -11.200303365195193,
+        -26.207152436839603
+      ],
+      "facing": [
+        -0.9615239476408232,
+        0.274721127897378
+      ]
+    },
+    {
+      "id": "F07-T01",
+      "brand": "ZHEWAN BOOKS",
+      "entry": [
+        -12.370649102525286,
+        -15.582339268778188
+      ],
+      "facing": [
+        -0.3713906763541037,
+        -0.9284766908852593
+      ]
+    },
+    {
+      "id": "F07-T03",
+      "brand": "ZHEWAN BOOKS",
+      "entry": [
+        -32.333502532021605,
+        -13.475887393914013
+      ],
+      "facing": [
+        0.5144957554275239,
+        -0.8574929257125458
+      ]
+    },
+    {
+      "id": "F07-T04",
+      "brand": "ARC GALLERY",
+      "entry": [
+        -39.55678068071577,
+        -21.040868782589065
+      ],
+      "facing": [
+        0.8320502943378436,
+        -0.5547001962252291
+      ]
+    },
+    {
+      "id": "F07-T05",
+      "brand": "FOLDROOM",
+      "entry": [
+        -33.98965664288678,
+        -32.84378219612129
+      ],
+      "facing": [
+        0.8682431421244563,
+        0.4961389383568389
+      ]
+    },
+    {
+      "id": "F07-T06",
+      "brand": "HEYU TEA",
+      "entry": [
+        -22.02997437641159,
+        -35.3486290682985
+      ],
+      "facing": [
+        -0.4856429311786321,
+        0.8741572761215377
+      ]
+    },
+    {
+      "id": "F07-T07",
+      "brand": "ZHEWAN BOOKS",
+      "entry": [
+        -12.064804389120082,
+        -26.82116039765326
+      ],
+      "facing": [
+        -0.9922778767136676,
+        0.12403473458920845
+      ]
+    },
+    {
+      "id": "F08-T01",
+      "brand": "ARC GALLERY",
+      "entry": [
+        -7.124670240781338,
+        -9.249340481562676
+      ],
+      "facing": [
+        -0.894427190999916,
+        0.447213595499958
+      ]
+    },
+    {
+      "id": "F08-T01B",
+      "brand": "ARC GALLERY",
+      "entry": [
+        -12.901409648009087,
+        -6.605638592036348
+      ],
+      "facing": [
+        0.9701425001453318,
+        -0.24253562503633366
+      ]
+    },
+    {
+      "id": "F08-T03",
+      "brand": "AERONEST",
+      "entry": [
+        -35.253012803140166,
+        -15.227593556585148
+      ],
+      "facing": [
+        0.5144957554275343,
+        -0.8574929257125394
+      ]
+    },
+    {
+      "id": "F08-T04",
+      "brand": "ARC GALLERY",
+      "entry": [
+        -36.65,
+        -26.359335895971803
+      ],
+      "facing": [
+        1.0,
+        0.0
+      ]
+    },
+    {
+      "id": "F08-T05",
+      "brand": "HEYU TEA",
+      "entry": [
+        -22.016740969242452,
+        -34.91493328174188
+      ],
+      "facing": [
+        -0.12403473458922158,
+        0.9922778767136661
+      ]
+    },
+    {
+      "id": "F08-T06",
+      "brand": "COMMON STAGE",
+      "entry": [
+        -10.994539479130621,
+        -23.892240790102335
+      ],
+      "facing": [
+        -0.9938837346736187,
+        0.11043152607484784
+      ]
+    },
+    {
+      "id": "F09-T01",
+      "brand": "SMALL WORLD",
+      "entry": [
+        -13.074515266661104,
+        -15.30079280312386
+      ],
+      "facing": [
+        -0.3713906763540986,
+        -0.9284766908852614
+      ]
+    },
+    {
+      "id": "F09-T03",
+      "brand": "DAYFORM",
+      "entry": [
+        -35.254877063409644,
+        -15.472763717744526
+      ],
+      "facing": [
+        0.16484716915265477,
+        -0.9863191222025233
+      ]
+    },
+    {
+      "id": "F09-T04",
+      "brand": "SMALL WORLD",
+      "entry": [
+        -36.55504851463912,
+        -25.05405115382533
+      ],
+      "facing": [
+        0.9938837346736189,
+        -0.11043152607484655
+      ]
+    },
+    {
+      "id": "F09-T05",
+      "brand": "HEYU TEA",
+      "entry": [
+        -24.95906544387509,
+        -34.29295748010219
+      ],
+      "facing": [
+        0.1240347345891968,
+        0.9922778767136691
+      ]
+    },
+    {
+      "id": "F09-T06",
+      "brand": "AERONEST",
+      "entry": [
+        -12.244057361085273,
+        -27.255184173374793
+      ],
+      "facing": [
+        -0.9922778767136676,
+        0.12403473458920845
+      ]
+    },
+    {
+      "id": "F10-T01",
+      "brand": "ARCQUAY TABLE",
+      "entry": [
+        -13.074515266661104,
+        -15.30079280312386
+      ],
+      "facing": [
+        -0.3713906763540986,
+        -0.9284766908852614
+      ]
+    },
+    {
+      "id": "F10-T03",
+      "brand": "ARCQUAY TABLE",
+      "entry": [
+        -35.254877063409644,
+        -15.472763717744526
+      ],
+      "facing": [
+        0.16484716915265477,
+        -0.9863191222025233
+      ]
+    },
+    {
+      "id": "F10-T04",
+      "brand": "WINDOW CAFE",
+      "entry": [
+        -33.93306952963932,
+        -28.074975507798808
+      ],
+      "facing": [
+        0.8320502943378436,
+        0.5547001962252291
+      ]
+    },
+    {
+      "id": "F10-T05",
+      "brand": "HEYU TEA",
+      "entry": [
+        -14.026270993505017,
+        -29.34397275124467
+      ],
+      "facing": [
+        -0.4961389383568338,
+        0.8682431421244592
+      ]
+    },
+    {
+      "id": "F11-T01",
+      "brand": "ARCQUAY TABLE",
+      "entry": [
+        -13.074515266661104,
+        -15.30079280312386
+      ],
+      "facing": [
+        -0.3713906763540986,
+        -0.9284766908852614
+      ]
+    },
+    {
+      "id": "F11-T02",
+      "brand": "ARCQUAY TABLE",
+      "entry": [
+        -30.55,
+        -13.478354778607338
+      ],
+      "facing": [
+        1.0,
+        0.0
+      ]
+    },
+    {
+      "id": "F11-T03",
+      "brand": "ARCQUAY TABLE",
+      "entry": [
+        -38.5072155139132,
+        -19.466521032385213
+      ],
+      "facing": [
+        0.8320502943378436,
+        -0.5547001962252291
+      ]
+    },
+    {
+      "id": "F11-T04",
+      "brand": "WINDOW CAFE",
+      "entry": [
+        -28.996145071634157,
+        -30.887587333207076
+      ],
+      "facing": [
+        0.5812381937190975,
+        0.8137334712067341
+      ]
+    },
+    {
+      "id": "F11-T05",
+      "brand": "HEYU TEA",
+      "entry": [
+        -14.52026583432176,
+        -26.754978553740433
+      ],
+      "facing": [
+        -0.8320502943378436,
+        0.5547001962252291
+      ]
+    },
+    {
+      "id": "F12-T01",
+      "brand": "ARC GALLERY",
+      "entry": [
+        -13.074515266661104,
+        -15.30079280312386
+      ],
+      "facing": [
+        -0.3713906763540986,
+        -0.9284766908852614
+      ]
+    },
+    {
+      "id": "F12-T02",
+      "brand": "FOLDROOM",
+      "entry": [
+        -33.636927016839934,
+        -15.790957673632692
+      ],
+      "facing": [
+        0.9938837346736187,
+        -0.11043152607484784
+      ]
+    },
+    {
+      "id": "F12-T03",
+      "brand": "ARC GALLERY",
+      "entry": [
+        -34.658067628615846,
+        -24.981223179615892
+      ],
+      "facing": [
+        0.9938837346736187,
+        -0.11043152607484784
+      ]
+    },
+    {
+      "id": "F12-T04",
+      "brand": "AERONEST",
+      "entry": [
+        -16.268382907491677,
+        -27.87715416349531
+      ],
+      "facing": [
+        -0.8320502943378436,
+        0.5547001962252291
+      ]
+    },
+    {
+      "id": "F13-T01",
+      "brand": "ARCQUAY TABLE",
+      "entry": [
+        -17.45,
+        -16.565569888759264
+      ],
+      "facing": [
+        -1.0,
+        0.0
+      ]
+    },
+    {
+      "id": "F13-T02",
+      "brand": "ARCQUAY TABLE",
+      "entry": [
+        -33.65,
+        -15.44765595613086
+      ],
+      "facing": [
+        1.0,
+        0.0
+      ]
+    },
+    {
+      "id": "F13-T03",
+      "brand": "ZHEWAN BOOKS",
+      "entry": [
+        -31.087447099993046,
+        -27.908279410880127
+      ],
+      "facing": [
+        0.6401843996644799,
+        0.7682212795973759
+      ]
+    },
+    {
+      "id": "F13-T04",
+      "brand": "WINDOW CAFE",
+      "entry": [
+        -16.8959828743401,
+        -27.481477911554855
+      ],
+      "facing": [
+        -0.894427190999916,
+        0.447213595499958
+      ]
+    },
+    {
+      "id": "F14-T01",
+      "brand": "ARC GALLERY",
+      "entry": [
+        -17.45,
+        -16.756330823331865
+      ],
+      "facing": [
+        -1.0,
+        0.0
+      ]
+    },
+    {
+      "id": "F14-T02",
+      "brand": "HEYU TEA",
+      "entry": [
+        -33.199515314115864,
+        -20.14574765088391
+      ],
+      "facing": [
+        0.9938837346736187,
+        0.11043152607484784
+      ]
+    },
+    {
+      "id": "F14-T03",
+      "brand": "ARC GALLERY",
+      "entry": [
+        -19.980857644252808,
+        -28.3036249643404
+      ],
+      "facing": [
+        -0.5547001962252291,
+        0.8320502943378436
+      ]
+    },
+    {
+      "id": "F15-T01",
+      "brand": "ARCQUAY TABLE",
+      "entry": [
+        -17.45,
+        -16.78363375465074
+      ],
+      "facing": [
+        -1.0,
+        0.0
+      ]
+    },
+    {
+      "id": "F15-T02",
+      "brand": "ARCQUAY TABLE",
+      "entry": [
+        -33.10335582731554,
+        -20.475878666168303
+      ],
+      "facing": [
+        0.9922778767136661,
+        0.12403473458922011
+      ]
+    },
+    {
+      "id": "F15-T03",
+      "brand": "WINDOW CAFE",
+      "entry": [
+        -19.53138845547068,
+        -28.110450309172666
+      ],
+      "facing": [
+        -0.447213595499958,
+        0.894427190999916
+      ]
+    },
+    {
+      "id": "F16-T01",
+      "brand": "HEYU TEA",
+      "entry": [
+        -17.45,
+        -15.800849568815782
+      ],
+      "facing": [
+        -1.0,
+        0.0
+      ]
+    },
+    {
+      "id": "F16-T01B",
+      "brand": "HEYU TEA",
+      "entry": [
+        -33.91853857148046,
+        -14.972700605604587
+      ],
+      "facing": [
+        0.9761870601839514,
+        0.21693045781866246
+      ]
+    },
+    {
+      "id": "F16-T02",
+      "brand": "SKY COMMON",
+      "entry": [
+        -22.014594379440293,
+        -28.524706501905072
+      ],
+      "facing": [
+        -0.6246950475544272,
+        0.7808688094430281
+      ]
+    }
+  ],
+  "fixtures": [
+    {
+      "id": "F05-T01",
+      "category": "design",
+      "groups": 0
+    },
+    {
+      "id": "F05-T02",
+      "category": "home",
+      "groups": 2
+    },
+    {
+      "id": "F05-T04",
+      "category": "design",
+      "groups": 7
+    },
+    {
+      "id": "F05-T05",
+      "category": "home",
+      "groups": 8
+    },
+    {
+      "id": "F05-T06",
+      "category": "craft",
+      "groups": 4
+    },
+    {
+      "id": "F05-T07",
+      "category": "design",
+      "groups": 2
+    },
+    {
+      "id": "F05-T08",
+      "category": "tea",
+      "groups": 4
+    },
+    {
+      "id": "F05-T09",
+      "category": "home",
+      "groups": 10
+    },
+    {
+      "id": "F06-T01",
+      "category": "fashion",
+      "groups": 11
+    },
+    {
+      "id": "F06-T04",
+      "category": "lifestyle",
+      "groups": 10
+    },
+    {
+      "id": "F06-T05",
+      "category": "sport",
+      "groups": 6
+    },
+    {
+      "id": "F06-T06",
+      "category": "fashion",
+      "groups": 4
+    },
+    {
+      "id": "F06-T07",
+      "category": "tea",
+      "groups": 3
+    },
+    {
+      "id": "F06-T08",
+      "category": "lifestyle",
+      "groups": 7
+    },
+    {
+      "id": "F07-T01",
+      "category": "books",
+      "groups": 7
+    },
+    {
+      "id": "F07-T03",
+      "category": "books",
+      "groups": 8
+    },
+    {
+      "id": "F07-T04",
+      "category": "gallery",
+      "groups": 10
+    },
+    {
+      "id": "F07-T05",
+      "category": "craft",
+      "groups": 3
+    },
+    {
+      "id": "F07-T06",
+      "category": "tea",
+      "groups": 5
+    },
+    {
+      "id": "F07-T07",
+      "category": "books",
+      "groups": 9
+    },
+    {
+      "id": "F08-T01",
+      "category": "gallery",
+      "groups": 4
+    },
+    {
+      "id": "F08-T01B",
+      "category": "gallery",
+      "groups": 0
+    },
+    {
+      "id": "F08-T03",
+      "category": "design",
+      "groups": 9
+    },
+    {
+      "id": "F08-T04",
+      "category": "gallery",
+      "groups": 8
+    },
+    {
+      "id": "F08-T05",
+      "category": "tea",
+      "groups": 8
+    },
+    {
+      "id": "F08-T06",
+      "category": "culture",
+      "groups": 9
+    },
+    {
+      "id": "F09-T01",
+      "category": "family",
+      "groups": 5
+    },
+    {
+      "id": "F09-T03",
+      "category": "lifestyle",
+      "groups": 12
+    },
+    {
+      "id": "F09-T04",
+      "category": "family",
+      "groups": 6
+    },
+    {
+      "id": "F09-T05",
+      "category": "tea",
+      "groups": 7
+    },
+    {
+      "id": "F09-T06",
+      "category": "design",
+      "groups": 9
+    },
+    {
+      "id": "F10-T01",
+      "category": "dining",
+      "groups": 10
+    },
+    {
+      "id": "F10-T03",
+      "category": "dining",
+      "groups": 8
+    },
+    {
+      "id": "F10-T04",
+      "category": "cafe",
+      "groups": 10
+    },
+    {
+      "id": "F10-T05",
+      "category": "tea",
+      "groups": 12
+    },
+    {
+      "id": "F11-T01",
+      "category": "dining",
+      "groups": 10
+    },
+    {
+      "id": "F11-T02",
+      "category": "dining",
+      "groups": 5
+    },
+    {
+      "id": "F11-T03",
+      "category": "dining",
+      "groups": 10
+    },
+    {
+      "id": "F11-T04",
+      "category": "cafe",
+      "groups": 8
+    },
+    {
+      "id": "F11-T05",
+      "category": "tea",
+      "groups": 10
+    },
+    {
+      "id": "F12-T01",
+      "category": "gallery",
+      "groups": 8
+    },
+    {
+      "id": "F12-T02",
+      "category": "craft",
+      "groups": 7
+    },
+    {
+      "id": "F12-T03",
+      "category": "gallery",
+      "groups": 10
+    },
+    {
+      "id": "F12-T04",
+      "category": "design",
+      "groups": 12
+    },
+    {
+      "id": "F13-T01",
+      "category": "dining",
+      "groups": 11
+    },
+    {
+      "id": "F13-T02",
+      "category": "dining",
+      "groups": 9
+    },
+    {
+      "id": "F13-T03",
+      "category": "books",
+      "groups": 7
+    },
+    {
+      "id": "F13-T04",
+      "category": "cafe",
+      "groups": 8
+    },
+    {
+      "id": "F14-T01",
+      "category": "gallery",
+      "groups": 9
+    },
+    {
+      "id": "F14-T02",
+      "category": "tea",
+      "groups": 12
+    },
+    {
+      "id": "F14-T03",
+      "category": "gallery",
+      "groups": 10
+    },
+    {
+      "id": "F15-T01",
+      "category": "dining",
+      "groups": 5
+    },
+    {
+      "id": "F15-T02",
+      "category": "dining",
+      "groups": 8
+    },
+    {
+      "id": "F15-T03",
+      "category": "cafe",
+      "groups": 8
+    },
+    {
+      "id": "F16-T01",
+      "category": "tea",
+      "groups": 2
+    },
+    {
+      "id": "F16-T01B",
+      "category": "tea",
+      "groups": 3
+    },
+    {
+      "id": "F16-T02",
+      "category": "lounge",
+      "groups": 7
+    }
+  ],
+  "escalatorPairs": 8,
+  "newTriangles": 71546,
+  "meshStats": [
+    {
+      "name": "C35_Atrium_Guards",
+      "triangles": 5904
+    },
+    {
+      "name": "C35_Public_Floor",
+      "triangles": 1556
+    },
+    {
+      "name": "C35_Tenant_Partitions",
+      "triangles": 2208
+    },
+    {
+      "name": "C35_Interior_Shopfront_Glass",
+      "triangles": 8064
+    },
+    {
+      "name": "C35_Interior_Shopfront_Frames",
+      "triangles": 7920
+    },
+    {
+      "name": "C35_Tenant_Floors",
+      "triangles": 1375
+    },
+    {
+      "name": "C35_Tenant_Ceilings",
+      "triangles": 1375
+    },
+    {
+      "name": "C35_Door_Reveals",
+      "triangles": 1368
+    },
+    {
+      "name": "C35_Shop_Sign_Boards",
+      "triangles": 684
+    },
+    {
+      "name": "C35_Retail_Fixtures",
+      "triangles": 1980
+    },
+    {
+      "name": "C35_Retail_Display_Shelves",
+      "triangles": 5940
+    },
+    {
+      "name": "C35_Dining_Tables",
+      "triangles": 4392
+    },
+    {
+      "name": "C35_Dining_Seats",
+      "triangles": 8784
+    },
+    {
+      "name": "C35_Core_Enclosures",
+      "triangles": 1440
+    },
+    {
+      "name": "C35_Core_Stair_Treads",
+      "triangles": 5280
+    },
+    {
+      "name": "C35_Core_Stair_Landings",
+      "triangles": 264
+    },
+    {
+      "name": "C35_Core_Stair_Rails",
+      "triangles": 1584
+    },
+    {
+      "name": "C35_Lift_Shaft",
+      "triangles": 1440
+    },
+    {
+      "name": "C35_Lift_Doors",
+      "triangles": 576
+    },
+    {
+      "name": "C35_Public_Seating",
+      "triangles": 192
+    },
+    {
+      "name": "C35_Book_Spines",
+      "triangles": 2604
+    },
+    {
+      "name": "C35_Exhibition_Plinths",
+      "triangles": 816
+    },
+    {
+      "name": "C35_Exhibition_Objects",
+      "triangles": 816
+    },
+    {
+      "name": "C35_Escalator_End_Decks",
+      "triangles": 384
+    },
+    {
+      "name": "C35_Escalator_Steps",
+      "triangles": 3840
+    },
+    {
+      "name": "C35_Escalator_Trusses",
+      "triangles": 192
+    },
+    {
+      "name": "C35_Escalator_Glass",
+      "triangles": 64
+    },
+    {
+      "name": "C35_Escalator_Handrails",
+      "triangles": 384
+    },
+    {
+      "name": "C35_Upper_Bridge_Stairs",
+      "triangles": 72
+    },
+    {
+      "name": "C35_Upper_Bridge_Landings",
+      "triangles": 24
+    },
+    {
+      "name": "C35_Upper_Bridge_Rails",
+      "triangles": 24
+    }
+  ],
+  "upperBridge": {
+    "rise": 0.9,
+    "risers": 6,
+    "low": [
+      -9.8831787109375,
+      -6.0887770652771,
+      35.099998474121094
+    ],
+    "high": [
+      -7.878809928894043,
+      -1.7272968292236328,
+      36.0
+    ]
+  },
+  "status": "AUDIT_PASS",
+  "floorChecks": [
+    {
+      "floor": 5,
+      "openingClear": [
+        true,
+        true
+      ],
+      "coreOutsideAreaM2": 0.0,
+      "tenantCount": 8
+    },
+    {
+      "floor": 6,
+      "openingClear": [
+        true,
+        true
+      ],
+      "coreOutsideAreaM2": 0.0,
+      "tenantCount": 6
+    },
+    {
+      "floor": 7,
+      "openingClear": [
+        true,
+        true
+      ],
+      "coreOutsideAreaM2": 0.0,
+      "tenantCount": 6
+    },
+    {
+      "floor": 8,
+      "openingClear": [
+        true,
+        true
+      ],
+      "coreOutsideAreaM2": 0.0,
+      "tenantCount": 6
+    },
+    {
+      "floor": 9,
+      "openingClear": [
+        true,
+        true,
+        true
+      ],
+      "coreOutsideAreaM2": 0.0,
+      "tenantCount": 5
+    },
+    {
+      "floor": 10,
+      "openingClear": [
+        true,
+        true
+      ],
+      "coreOutsideAreaM2": 0.0,
+      "tenantCount": 4
+    },
+    {
+      "floor": 11,
+      "openingClear": [
+        true
+      ],
+      "coreOutsideAreaM2": 0.0,
+      "tenantCount": 5
+    },
+    {
+      "floor": 12,
+      "openingClear": [
+        true,
+        true
+      ],
+      "coreOutsideAreaM2": 0.0,
+      "tenantCount": 4
+    },
+    {
+      "floor": 13,
+      "openingClear": [
+        true
+      ],
+      "coreOutsideAreaM2": 0.0,
+      "tenantCount": 4
+    },
+    {
+      "floor": 14,
+      "openingClear": [
+        true
+      ],
+      "coreOutsideAreaM2": 0.0,
+      "tenantCount": 3
+    },
+    {
+      "floor": 15,
+      "openingClear": [
+        true
+      ],
+      "coreOutsideAreaM2": 0.0,
+      "tenantCount": 3
+    },
+    {
+      "floor": 16,
+      "openingClear": [],
+      "coreOutsideAreaM2": 0.0,
+      "tenantCount": 3
+    }
+  ],
+  "upperBridgeWalkingChecks": [
+    {
+      "t": 0.083,
+      "firstSurface": "C35_Public_Floor",
+      "z": 35.11199951171875,
+      "expectedZ": 35.1,
+      "method": "individual world mesh BVH"
+    },
+    {
+      "t": 0.293,
+      "firstSurface": "C35_Public_Floor",
+      "z": 35.11199951171875,
+      "expectedZ": 35.1,
+      "method": "individual world mesh BVH"
+    },
+    {
+      "t": 0.513,
+      "firstSurface": "C35_Upper_Bridge_Stairs",
+      "z": 35.70000076293945,
+      "expectedZ": 35.7,
+      "method": "individual world mesh BVH"
+    },
+    {
+      "t": 0.713,
+      "firstSurface": "C35_Upper_Bridge_Landings",
+      "z": 36.0,
+      "expectedZ": 36,
+      "method": "individual world mesh BVH"
+    },
+    {
+      "t": 0.923,
+      "firstSurface": "C35_Upper_Bridge_Landings",
+      "z": 36.0,
+      "expectedZ": 36,
+      "method": "individual world mesh BVH"
+    }
+  ],
+  "upperBridgeTorsoChecks": [
+    {
+      "start": [
+        -9.8831787109375,
+        -6.0887770652771,
+        36.5
+      ],
+      "end": [
+        -7.878809928894043,
+        -1.7272968292236328,
+        37.400001525878906
+      ],
+      "blockingObject": null
+    },
+    {
+      "start": [
+        -7.878809928894043,
+        -1.7272968292236328,
+        37.400001525878906
+      ],
+      "end": [
+        -4.492736339569092,
+        5.640754699707031,
+        37.400001525878906
+      ],
+      "blockingObject": null
+    },
+    {
+      "start": [
+        -4.492736339569092,
+        5.640754699707031,
+        37.400001525878906
+      ],
+      "end": [
+        1.0,
+        16.0,
+        37.400001525878906
+      ],
+      "blockingObject": null
+    }
+  ],
+  "sceneBaseTriangles": 1330801,
+  "sceneEvaluatedTriangles": 1412497,
+  "issues": []
+}

@@ -1,0 +1,179 @@
+{
+  "sourceSHA256": "5dc1524912cfd2d29d269e7953d4abfd2e54e51405536f55392ba486aa072a83",
+  "candidateSHA256": "3ebfceab2a0edbbabc21800c2b8b055de63dd2f47a0e77bb93c5fe43c28672fd",
+  "changedOriginalObjectsAfterReload": [
+    "WB06_Left_Front_Primary_FloorBand_03",
+    "WB06_Left_Front_Primary_FloorBand_04",
+    "WB06_Left_Front_Primary_FloorBand_05",
+    "WB06_Left_Front_Primary_FloorBand_06",
+    "WB06_Left_Front_Primary_FloorBand_07",
+    "WB06_Left_Front_Primary_FloorBand_08",
+    "WB06_Left_Front_Primary_FloorBand_09",
+    "WB06_Left_Front_Primary_FloorBand_10",
+    "WB06_Left_Front_Primary_FloorBand_11",
+    "WB06_Left_Front_Primary_FloorBand_12",
+    "WB06_Left_Front_Primary_FloorBand_13",
+    "WB06_Left_Front_Primary_FloorBand_14",
+    "C35_F05-T05_Sign",
+    "C35_F05-T06_Sign",
+    "C35_F05-T08_Sign",
+    "C35_F05-T09_Sign",
+    "C35_F06-T01_Sign",
+    "C35_F06-T04_Sign",
+    "C35_F06-T05_Sign",
+    "C35_F06-T07_Sign",
+    "C35_F06-T08_Sign",
+    "C35_F07-T04_Sign",
+    "C35_F07-T05_Sign",
+    "C35_F07-T07_Sign",
+    "C35_F08-T01_Sign",
+    "C35_F08-T01B_Sign",
+    "C35_F08-T04_Sign",
+    "C35_F08-T05_Sign",
+    "C35_F08-T06_Sign",
+    "C35_F09-T03_Sign",
+    "C35_F09-T04_Sign",
+    "C35_F10-T03_Sign",
+    "C35_F10-T04_Sign",
+    "C35_F10-T05_Sign",
+    "C35_F11-T02_Sign",
+    "C35_F11-T03_Sign",
+    "C35_F11-T04_Sign",
+    "C35_F11-T05_Sign",
+    "C35_F12-T03_Sign",
+    "C35_F12-T04_Sign",
+    "C35_F13-T01_Sign",
+    "C35_F13-T02_Sign",
+    "C35_F13-T03_Sign",
+    "C35_F13-T04_Sign",
+    "C35_F14-T01_Sign",
+    "C35_F15-T01_Sign",
+    "C35_F15-T02_Sign",
+    "C35_F15-T03_Sign",
+    "C35_F16-T01_Sign",
+    "C35_F16-T01_Light",
+    "C35_F16-T01B_Sign",
+    "C35_F16-T01B_Light",
+    "C35_F16-T02_Sign",
+    "C35_F16-T02_Light",
+    "C35_Public_Floor",
+    "C35_Tenant_Partitions",
+    "C35_Interior_Shopfront_Glass",
+    "C35_Interior_Shopfront_Frames",
+    "C35_Tenant_Floors",
+    "C35_Tenant_Ceilings",
+    "C35_Door_Reveals",
+    "C35_Shop_Sign_Boards",
+    "C35_Retail_Fixtures",
+    "C35_Retail_Display_Shelves",
+    "C35_Dining_Tables",
+    "C35_Dining_Seats",
+    "C35_Core_Enclosures",
+    "C35_Core_Stair_Treads",
+    "C35_Core_Stair_Landings",
+    "C35_Core_Stair_Rails",
+    "C35_Lift_Shaft",
+    "C35_Lift_Doors",
+    "C35_Book_Spines",
+    "C35_Exhibition_Plinths",
+    "C35_Exhibition_Objects"
+  ],
+  "unexpectedChanges": [],
+  "reseatedLights": [
+    {
+      "name": "C35_F16-T01_Light",
+      "before": {
+        "digest": "0db90e1687ce1a24a52b74e9978573170d457b11b3511cf8d4d508828463d8b2",
+        "location": [
+          -12.7232027053833,
+          -12.924036979675293,
+          66.5
+        ],
+        "energy": 65.0,
+        "color": [
+          1.0,
+          0.9100000262260437,
+          0.7799999713897705
+        ]
+      },
+      "after": {
+        "digest": "2215427745f844535c0056b305d210db206bd11f3509d0165678a89c1bd4f4a7",
+        "location": [
+          -12.7232027053833,
+          -12.924036979675293,
+          66.44000244140625
+        ],
+        "energy": 65.0,
+        "color": [
+          1.0,
+          0.9100000262260437,
+          0.7799999713897705
+        ]
+      }
+    },
+    {
+      "name": "C35_F16-T01B_Light",
+      "before": {
+        "digest": "44175bfcf6c88f5a667c37ef9f43f20bf9d631cee201cd1f5a49dd2721a0222e",
+        "location": [
+          -35.49517822265625,
+          -12.646832466125488,
+          66.5
+        ],
+        "energy": 65.0,
+        "color": [
+          1.0,
+          0.9100000262260437,
+          0.7799999713897705
+        ]
+      },
+      "after": {
+        "digest": "d800ddd30599ebd8c05e0bc1891dae0c3d1ba913fca74e75699774bcee4479cc",
+        "location": [
+          -35.49517822265625,
+          -12.646832466125488,
+          66.44000244140625
+        ],
+        "energy": 65.0,
+        "color": [
+          1.0,
+          0.9100000262260437,
+          0.7799999713897705
+        ]
+      }
+    },
+    {
+      "name": "C35_F16-T02_Light",
+      "before": {
+        "digest": "fedbde0bacff91c42612485aea471d73f38b6d11bc4154362292af0b743c407a",
+        "location": [
+          -14.659070014953613,
+          -27.357885360717773,
+          66.72000122070312
+        ],
+        "energy": 65.0,
+        "color": [
+          1.0,
+          0.9100000262260437,
+          0.7799999713897705
+        ]
+      },
+      "after": {
+        "digest": "c23d2b95726692a174d7643e9e24bc0e5a31d732593191fa84f0daafcc912423",
+        "location": [
+          -14.659070014953613,
+          -27.357885360717773,
+          66.44000244140625
+        ],
+        "energy": 65.0,
+        "color": [
+          1.0,
+          0.9100000262260437,
+          0.7799999713897705
+        ]
+      }
+    }
+  ],
+  "approvedExteriorMullionsGlazingCameraGroundExact": true,
+  "allLightPowersColorsExact": true
+}

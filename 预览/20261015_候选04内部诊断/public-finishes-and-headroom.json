@@ -1,0 +1,61 @@
+{
+  "public": [
+    {
+      "floor": 5,
+      "missingFinishAreaM2": 126.12878345789191
+    },
+    {
+      "floor": 6,
+      "missingFinishAreaM2": 144.53671814416208
+    },
+    {
+      "floor": 7,
+      "missingFinishAreaM2": 220.96666410506862
+    },
+    {
+      "floor": 8,
+      "missingFinishAreaM2": 19.212489345380426
+    },
+    {
+      "floor": 9,
+      "missingFinishAreaM2": 76.69856341812346
+    },
+    {
+      "floor": 10,
+      "missingFinishAreaM2": 70.95507089786412
+    },
+    {
+      "floor": 11,
+      "missingFinishAreaM2": 0.8539530682601831
+    },
+    {
+      "floor": 12,
+      "missingFinishAreaM2": 4.3502575585261845
+    },
+    {
+      "floor": 13,
+      "missingFinishAreaM2": 30.526765252664546
+    },
+    {
+      "floor": 14,
+      "missingFinishAreaM2": 0.0
+    },
+    {
+      "floor": 15,
+      "missingFinishAreaM2": 0.47196537944029426
+    },
+    {
+      "floor": 16,
+      "missingFinishAreaM2": 0.0
+    }
+  ],
+  "ceilingSlabOverlap": [
+    {
+      "floor": 16,
+      "id": "F16-T02",
+      "ceilingZ": 66.8400015258789,
+      "actualNextSlabBottomZ": 66.66000366210938,
+      "overlapM": 0.17999786376952898
+    }
+  ]
+}

@@ -1,0 +1,1223 @@
+{
+  "source": "C:\\Users\\zhuzi\\Documents\\OutOfWindow\\.runtime\\resume-20261014\\city-candidate\\city37-programmed-atrium06\\City37_ProgrammedAtrium06d.blend",
+  "candidateSHA256": "912fff76dfdccee307a5bd685bcdafae24b2b92f20823646cca54438d77110ca",
+  "floors": [
+    {
+      "floor": 5,
+      "missingPublicM2": 0.0,
+      "publicConnected": true,
+      "tenants": [
+        {
+          "id": "F05-T01",
+          "missingFloorM2": 0.0,
+          "missingCeilingM2": 0.0,
+          "doorBlockers": [
+            [],
+            [],
+            []
+          ],
+          "ceilingZ": 27.019999237060546
+        },
+        {
+          "id": "F05-T02",
+          "missingFloorM2": 0.0,
+          "missingCeilingM2": 0.0,
+          "doorBlockers": [
+            [],
+            [],
+            []
+          ],
+          "ceilingZ": 27.019999237060546
+        },
+        {
+          "id": "F05-T04",
+          "missingFloorM2": 0.0,
+          "missingCeilingM2": 0.0,
+          "doorBlockers": [
+            [],
+            [],
+            []
+          ],
+          "ceilingZ": 27.019999237060546
+        },
+        {
+          "id": "F05-T05",
+          "missingFloorM2": 0.0,
+          "missingCeilingM2": 0.0,
+          "doorBlockers": [
+            [],
+            [],
+            []
+          ],
+          "ceilingZ": 27.019999237060546
+        },
+        {
+          "id": "F05-T06",
+          "missingFloorM2": 0.0,
+          "missingCeilingM2": 0.0,
+          "doorBlockers": [
+            [],
+            [],
+            []
+          ],
+          "ceilingZ": 27.019999237060546
+        },
+        {
+          "id": "F05-T07",
+          "missingFloorM2": 0.0,
+          "missingCeilingM2": 0.0,
+          "doorBlockers": [
+            [],
+            [],
+            []
+          ],
+          "ceilingZ": 27.019999237060546
+        },
+        {
+          "id": "F05-T08",
+          "missingFloorM2": 0.0,
+          "missingCeilingM2": 0.0,
+          "doorBlockers": [
+            [],
+            [],
+            []
+          ],
+          "ceilingZ": 27.019999237060546
+        },
+        {
+          "id": "F05-T09",
+          "missingFloorM2": 0.0,
+          "missingCeilingM2": 0.0,
+          "doorBlockers": [
+            [],
+            [],
+            []
+          ],
+          "ceilingZ": 27.019999237060546
+        }
+      ]
+    },
+    {
+      "floor": 6,
+      "missingPublicM2": 0.0,
+      "publicConnected": true,
+      "tenants": [
+        {
+          "id": "F06-T01",
+          "missingFloorM2": 0.0,
+          "missingCeilingM2": 0.0,
+          "doorBlockers": [
+            [],
+            [],
+            []
+          ],
+          "ceilingZ": 30.619999618530272
+        },
+        {
+          "id": "F06-T04",
+          "missingFloorM2": 0.0,
+          "missingCeilingM2": 0.0,
+          "doorBlockers": [
+            [],
+            [],
+            []
+          ],
+          "ceilingZ": 30.619999618530272
+        },
+        {
+          "id": "F06-T05",
+          "missingFloorM2": 0.0,
+          "missingCeilingM2": 0.0,
+          "doorBlockers": [
+            [],
+            [],
+            []
+          ],
+          "ceilingZ": 30.619999618530272
+        },
+        {
+          "id": "F06-T06",
+          "missingFloorM2": 0.0,
+          "missingCeilingM2": 0.0,
+          "doorBlockers": [
+            [],
+            [],
+            []
+          ],
+          "ceilingZ": 30.619999618530272
+        },
+        {
+          "id": "F06-T07",
+          "missingFloorM2": 0.0,
+          "missingCeilingM2": 0.0,
+          "doorBlockers": [
+            [],
+            [],
+            []
+          ],
+          "ceilingZ": 30.619999618530272
+        },
+        {
+          "id": "F06-T08",
+          "missingFloorM2": 0.0,
+          "missingCeilingM2": 0.0,
+          "doorBlockers": [
+            [],
+            [],
+            []
+          ],
+          "ceilingZ": 30.619999618530272
+        }
+      ]
+    },
+    {
+      "floor": 7,
+      "missingPublicM2": 0.0,
+      "publicConnected": true,
+      "tenants": [
+        {
+          "id": "F07-T01",
+          "missingFloorM2": 0.0,
+          "missingCeilingM2": 0.0,
+          "doorBlockers": [
+            [],
+            [],
+            []
+          ],
+          "ceilingZ": 34.22
+        },
+        {
+          "id": "F07-T03",
+          "missingFloorM2": 0.0,
+          "missingCeilingM2": 0.0,
+          "doorBlockers": [
+            [],
+            [],
+            []
+          ],
+          "ceilingZ": 34.22
+        },
+        {
+          "id": "F07-T04",
+          "missingFloorM2": 0.0,
+          "missingCeilingM2": 0.0,
+          "doorBlockers": [
+            [],
+            [],
+            []
+          ],
+          "ceilingZ": 34.44
+        },
+        {
+          "id": "F07-T05",
+          "missingFloorM2": 0.0,
+          "missingCeilingM2": 0.0,
+          "doorBlockers": [
+            [],
+            [],
+            []
+          ],
+          "ceilingZ": 34.22
+        },
+        {
+          "id": "F07-T06",
+          "missingFloorM2": 0.0,
+          "missingCeilingM2": 0.0,
+          "doorBlockers": [
+            [],
+            [],
+            []
+          ],
+          "ceilingZ": 34.22
+        },
+        {
+          "id": "F07-T07",
+          "missingFloorM2": 0.0,
+          "missingCeilingM2": 0.0,
+          "doorBlockers": [
+            [],
+            [],
+            []
+          ],
+          "ceilingZ": 34.22
+        }
+      ]
+    },
+    {
+      "floor": 8,
+      "missingPublicM2": 0.0,
+      "publicConnected": true,
+      "tenants": [
+        {
+          "id": "F08-T01",
+          "missingFloorM2": 0.0,
+          "missingCeilingM2": 0.0,
+          "doorBlockers": [
+            [],
+            [],
+            []
+          ],
+          "ceilingZ": 38.03999847412109
+        },
+        {
+          "id": "F08-T01B",
+          "missingFloorM2": 0.0,
+          "missingCeilingM2": 0.0,
+          "doorBlockers": [
+            [],
+            [],
+            []
+          ],
+          "ceilingZ": 38.03999847412109
+        },
+        {
+          "id": "F08-T03",
+          "missingFloorM2": 0.0,
+          "missingCeilingM2": 0.0,
+          "doorBlockers": [
+            [],
+            [],
+            []
+          ],
+          "ceilingZ": 37.81999847412109
+        },
+        {
+          "id": "F08-T04",
+          "missingFloorM2": 0.0,
+          "missingCeilingM2": 0.0,
+          "doorBlockers": [
+            [],
+            [],
+            []
+          ],
+          "ceilingZ": 38.03999847412109
+        },
+        {
+          "id": "F08-T05",
+          "missingFloorM2": 0.0,
+          "missingCeilingM2": 0.0,
+          "doorBlockers": [
+            [],
+            [],
+            []
+          ],
+          "ceilingZ": 37.81999847412109
+        },
+        {
+          "id": "F08-T06",
+          "missingFloorM2": 0.0,
+          "missingCeilingM2": 0.0,
+          "doorBlockers": [
+            [],
+            [],
+            []
+          ],
+          "ceilingZ": 38.03999847412109
+        }
+      ]
+    },
+    {
+      "floor": 9,
+      "missingPublicM2": 0.0,
+      "publicConnected": true,
+      "tenants": [
+        {
+          "id": "F09-T01",
+          "missingFloorM2": 0.0,
+          "missingCeilingM2": 0.0,
+          "doorBlockers": [
+            [],
+            [],
+            []
+          ],
+          "ceilingZ": 41.42000076293945
+        },
+        {
+          "id": "F09-T03",
+          "missingFloorM2": 0.0,
+          "missingCeilingM2": 0.0,
+          "doorBlockers": [
+            [],
+            [],
+            []
+          ],
+          "ceilingZ": 41.42000076293945
+        },
+        {
+          "id": "F09-T04",
+          "missingFloorM2": 0.0,
+          "missingCeilingM2": 0.0,
+          "doorBlockers": [
+            [],
+            [],
+            []
+          ],
+          "ceilingZ": 41.42000076293945
+        },
+        {
+          "id": "F09-T05",
+          "missingFloorM2": 0.0,
+          "missingCeilingM2": 0.0,
+          "doorBlockers": [
+            [],
+            [],
+            []
+          ],
+          "ceilingZ": 41.42000076293945
+        },
+        {
+          "id": "F09-T06",
+          "missingFloorM2": 0.0,
+          "missingCeilingM2": 0.0,
+          "doorBlockers": [
+            [],
+            [],
+            []
+          ],
+          "ceilingZ": 41.42000076293945
+        }
+      ]
+    },
+    {
+      "floor": 10,
+      "missingPublicM2": 0.0,
+      "publicConnected": true,
+      "tenants": [
+        {
+          "id": "F10-T01",
+          "missingFloorM2": 0.0,
+          "missingCeilingM2": 0.0,
+          "doorBlockers": [
+            [],
+            [],
+            []
+          ],
+          "ceilingZ": 45.019999237060546
+        },
+        {
+          "id": "F10-T03",
+          "missingFloorM2": 0.0,
+          "missingCeilingM2": 0.0,
+          "doorBlockers": [
+            [],
+            [],
+            []
+          ],
+          "ceilingZ": 45.019999237060546
+        },
+        {
+          "id": "F10-T04",
+          "missingFloorM2": 0.0,
+          "missingCeilingM2": 0.0,
+          "doorBlockers": [
+            [],
+            [],
+            []
+          ],
+          "ceilingZ": 45.019999237060546
+        },
+        {
+          "id": "F10-T05",
+          "missingFloorM2": 0.0,
+          "missingCeilingM2": 0.0,
+          "doorBlockers": [
+            [],
+            [],
+            []
+          ],
+          "ceilingZ": 45.019999237060546
+        }
+      ]
+    },
+    {
+      "floor": 11,
+      "missingPublicM2": 0.0,
+      "publicConnected": true,
+      "tenants": [
+        {
+          "id": "F11-T01",
+          "missingFloorM2": 0.0,
+          "missingCeilingM2": 0.0,
+          "doorBlockers": [
+            [],
+            [],
+            []
+          ],
+          "ceilingZ": 48.620001525878905
+        },
+        {
+          "id": "F11-T02",
+          "missingFloorM2": 0.0,
+          "missingCeilingM2": 0.0,
+          "doorBlockers": [
+            [],
+            [],
+            []
+          ],
+          "ceilingZ": 48.620001525878905
+        },
+        {
+          "id": "F11-T03",
+          "missingFloorM2": 0.0,
+          "missingCeilingM2": 0.0,
+          "doorBlockers": [
+            [],
+            [],
+            []
+          ],
+          "ceilingZ": 48.620001525878905
+        },
+        {
+          "id": "F11-T04",
+          "missingFloorM2": 0.0,
+          "missingCeilingM2": 0.0,
+          "doorBlockers": [
+            [],
+            [],
+            []
+          ],
+          "ceilingZ": 48.620001525878905
+        },
+        {
+          "id": "F11-T05",
+          "missingFloorM2": 0.0,
+          "missingCeilingM2": 0.0,
+          "doorBlockers": [
+            [],
+            [],
+            []
+          ],
+          "ceilingZ": 48.620001525878905
+        }
+      ]
+    },
+    {
+      "floor": 12,
+      "missingPublicM2": 0.0,
+      "publicConnected": true,
+      "tenants": [
+        {
+          "id": "F12-T01",
+          "missingFloorM2": 0.0,
+          "missingCeilingM2": 0.0,
+          "doorBlockers": [
+            [],
+            [],
+            []
+          ],
+          "ceilingZ": 52.44
+        },
+        {
+          "id": "F12-T02",
+          "missingFloorM2": 0.0,
+          "missingCeilingM2": 0.0,
+          "doorBlockers": [
+            [],
+            [],
+            []
+          ],
+          "ceilingZ": 52.22
+        },
+        {
+          "id": "F12-T03",
+          "missingFloorM2": 0.0,
+          "missingCeilingM2": 0.0,
+          "doorBlockers": [
+            [],
+            [],
+            []
+          ],
+          "ceilingZ": 52.44
+        },
+        {
+          "id": "F12-T04",
+          "missingFloorM2": 0.0,
+          "missingCeilingM2": 0.0,
+          "doorBlockers": [
+            [],
+            [],
+            []
+          ],
+          "ceilingZ": 52.22
+        }
+      ]
+    },
+    {
+      "floor": 13,
+      "missingPublicM2": 0.0,
+      "publicConnected": true,
+      "tenants": [
+        {
+          "id": "F13-T01",
+          "missingFloorM2": 0.0,
+          "missingCeilingM2": 0.0,
+          "doorBlockers": [
+            [],
+            [],
+            []
+          ],
+          "ceilingZ": 55.81999847412109
+        },
+        {
+          "id": "F13-T02",
+          "missingFloorM2": 0.0,
+          "missingCeilingM2": 0.0,
+          "doorBlockers": [
+            [],
+            [],
+            []
+          ],
+          "ceilingZ": 55.81999847412109
+        },
+        {
+          "id": "F13-T03",
+          "missingFloorM2": 0.0,
+          "missingCeilingM2": 0.0,
+          "doorBlockers": [
+            [],
+            [],
+            []
+          ],
+          "ceilingZ": 55.81999847412109
+        },
+        {
+          "id": "F13-T04",
+          "missingFloorM2": 0.0,
+          "missingCeilingM2": 0.0,
+          "doorBlockers": [
+            [],
+            [],
+            []
+          ],
+          "ceilingZ": 55.81999847412109
+        }
+      ]
+    },
+    {
+      "floor": 14,
+      "missingPublicM2": 0.0,
+      "publicConnected": true,
+      "tenants": [
+        {
+          "id": "F14-T01",
+          "missingFloorM2": 0.0,
+          "missingCeilingM2": 0.0,
+          "doorBlockers": [
+            [],
+            [],
+            []
+          ],
+          "ceilingZ": 59.64000076293945
+        },
+        {
+          "id": "F14-T02",
+          "missingFloorM2": 0.0,
+          "missingCeilingM2": 0.0,
+          "doorBlockers": [
+            [],
+            [],
+            []
+          ],
+          "ceilingZ": 59.42000076293945
+        },
+        {
+          "id": "F14-T03",
+          "missingFloorM2": 0.0,
+          "missingCeilingM2": 0.0,
+          "doorBlockers": [
+            [],
+            [],
+            []
+          ],
+          "ceilingZ": 59.64000076293945
+        }
+      ]
+    },
+    {
+      "floor": 15,
+      "missingPublicM2": 0.0,
+      "publicConnected": true,
+      "tenants": [
+        {
+          "id": "F15-T01",
+          "missingFloorM2": 0.0,
+          "missingCeilingM2": 0.0,
+          "doorBlockers": [
+            [],
+            [],
+            []
+          ],
+          "ceilingZ": 63.019999237060546
+        },
+        {
+          "id": "F15-T02",
+          "missingFloorM2": 0.0,
+          "missingCeilingM2": 0.0,
+          "doorBlockers": [
+            [],
+            [],
+            []
+          ],
+          "ceilingZ": 63.019999237060546
+        },
+        {
+          "id": "F15-T03",
+          "missingFloorM2": 0.0,
+          "missingCeilingM2": 0.0,
+          "doorBlockers": [
+            [],
+            [],
+            []
+          ],
+          "ceilingZ": 63.019999237060546
+        }
+      ]
+    },
+    {
+      "floor": 16,
+      "missingPublicM2": 0.0,
+      "publicConnected": true,
+      "tenants": [
+        {
+          "id": "F16-T01",
+          "missingFloorM2": 0.0,
+          "missingCeilingM2": 0.0,
+          "doorBlockers": [
+            [],
+            [],
+            []
+          ],
+          "ceilingZ": 66.56000366210938
+        },
+        {
+          "id": "F16-T01B",
+          "missingFloorM2": 0.0,
+          "missingCeilingM2": 0.0,
+          "doorBlockers": [
+            [],
+            [],
+            []
+          ],
+          "ceilingZ": 66.56000366210938
+        },
+        {
+          "id": "F16-T02",
+          "missingFloorM2": 0.0,
+          "missingCeilingM2": 0.0,
+          "doorBlockers": [
+            [],
+            [],
+            []
+          ],
+          "ceilingZ": 66.56000366210938
+        }
+      ]
+    }
+  ],
+  "cores": [
+    {
+      "floor": 5,
+      "core": "A",
+      "blockers": []
+    },
+    {
+      "floor": 5,
+      "core": "B",
+      "blockers": []
+    },
+    {
+      "floor": 6,
+      "core": "A",
+      "blockers": []
+    },
+    {
+      "floor": 6,
+      "core": "B",
+      "blockers": []
+    },
+    {
+      "floor": 7,
+      "core": "A",
+      "blockers": []
+    },
+    {
+      "floor": 7,
+      "core": "B",
+      "blockers": []
+    },
+    {
+      "floor": 8,
+      "core": "A",
+      "blockers": []
+    },
+    {
+      "floor": 8,
+      "core": "B",
+      "blockers": []
+    },
+    {
+      "floor": 9,
+      "core": "A",
+      "blockers": []
+    },
+    {
+      "floor": 9,
+      "core": "B",
+      "blockers": []
+    },
+    {
+      "floor": 10,
+      "core": "A",
+      "blockers": []
+    },
+    {
+      "floor": 10,
+      "core": "B",
+      "blockers": []
+    },
+    {
+      "floor": 11,
+      "core": "A",
+      "blockers": []
+    },
+    {
+      "floor": 11,
+      "core": "B",
+      "blockers": []
+    },
+    {
+      "floor": 12,
+      "core": "A",
+      "blockers": []
+    },
+    {
+      "floor": 12,
+      "core": "B",
+      "blockers": []
+    },
+    {
+      "floor": 13,
+      "core": "A",
+      "blockers": []
+    },
+    {
+      "floor": 13,
+      "core": "B",
+      "blockers": []
+    },
+    {
+      "floor": 14,
+      "core": "A",
+      "blockers": []
+    },
+    {
+      "floor": 14,
+      "core": "B",
+      "blockers": []
+    },
+    {
+      "floor": 15,
+      "core": "A",
+      "blockers": []
+    },
+    {
+      "floor": 15,
+      "core": "B",
+      "blockers": []
+    },
+    {
+      "floor": 16,
+      "core": "A",
+      "blockers": []
+    },
+    {
+      "floor": 16,
+      "core": "B",
+      "blockers": []
+    }
+  ],
+  "coreOpenings": [
+    {
+      "floor": 6,
+      "point": [
+        -31.0,
+        -9.5
+      ],
+      "clear": true
+    },
+    {
+      "floor": 6,
+      "point": [
+        -27.5,
+        -7.8
+      ],
+      "clear": true
+    },
+    {
+      "floor": 6,
+      "point": [
+        -21.0,
+        -9.5
+      ],
+      "clear": true
+    },
+    {
+      "floor": 6,
+      "point": [
+        -17.5,
+        -7.8
+      ],
+      "clear": true
+    },
+    {
+      "floor": 7,
+      "point": [
+        -31.0,
+        -9.5
+      ],
+      "clear": true
+    },
+    {
+      "floor": 7,
+      "point": [
+        -27.5,
+        -7.8
+      ],
+      "clear": true
+    },
+    {
+      "floor": 7,
+      "point": [
+        -21.0,
+        -9.5
+      ],
+      "clear": true
+    },
+    {
+      "floor": 7,
+      "point": [
+        -17.5,
+        -7.8
+      ],
+      "clear": true
+    },
+    {
+      "floor": 8,
+      "point": [
+        -31.0,
+        -9.5
+      ],
+      "clear": true
+    },
+    {
+      "floor": 8,
+      "point": [
+        -27.5,
+        -7.8
+      ],
+      "clear": true
+    },
+    {
+      "floor": 8,
+      "point": [
+        -21.0,
+        -9.5
+      ],
+      "clear": true
+    },
+    {
+      "floor": 8,
+      "point": [
+        -17.5,
+        -7.8
+      ],
+      "clear": true
+    },
+    {
+      "floor": 9,
+      "point": [
+        -31.0,
+        -9.5
+      ],
+      "clear": true
+    },
+    {
+      "floor": 9,
+      "point": [
+        -27.5,
+        -7.8
+      ],
+      "clear": true
+    },
+    {
+      "floor": 9,
+      "point": [
+        -21.0,
+        -9.5
+      ],
+      "clear": true
+    },
+    {
+      "floor": 9,
+      "point": [
+        -17.5,
+        -7.8
+      ],
+      "clear": true
+    },
+    {
+      "floor": 10,
+      "point": [
+        -31.0,
+        -9.5
+      ],
+      "clear": true
+    },
+    {
+      "floor": 10,
+      "point": [
+        -27.5,
+        -7.8
+      ],
+      "clear": true
+    },
+    {
+      "floor": 10,
+      "point": [
+        -21.0,
+        -9.5
+      ],
+      "clear": true
+    },
+    {
+      "floor": 10,
+      "point": [
+        -17.5,
+        -7.8
+      ],
+      "clear": true
+    },
+    {
+      "floor": 11,
+      "point": [
+        -31.0,
+        -9.5
+      ],
+      "clear": true
+    },
+    {
+      "floor": 11,
+      "point": [
+        -27.5,
+        -7.8
+      ],
+      "clear": true
+    },
+    {
+      "floor": 11,
+      "point": [
+        -21.0,
+        -9.5
+      ],
+      "clear": true
+    },
+    {
+      "floor": 11,
+      "point": [
+        -17.5,
+        -7.8
+      ],
+      "clear": true
+    },
+    {
+      "floor": 12,
+      "point": [
+        -31.0,
+        -9.5
+      ],
+      "clear": true
+    },
+    {
+      "floor": 12,
+      "point": [
+        -27.5,
+        -7.8
+      ],
+      "clear": true
+    },
+    {
+      "floor": 12,
+      "point": [
+        -21.0,
+        -9.5
+      ],
+      "clear": true
+    },
+    {
+      "floor": 12,
+      "point": [
+        -17.5,
+        -7.8
+      ],
+      "clear": true
+    },
+    {
+      "floor": 13,
+      "point": [
+        -31.0,
+        -9.5
+      ],
+      "clear": true
+    },
+    {
+      "floor": 13,
+      "point": [
+        -27.5,
+        -7.8
+      ],
+      "clear": true
+    },
+    {
+      "floor": 13,
+      "point": [
+        -21.0,
+        -9.5
+      ],
+      "clear": true
+    },
+    {
+      "floor": 13,
+      "point": [
+        -17.5,
+        -7.8
+      ],
+      "clear": true
+    },
+    {
+      "floor": 14,
+      "point": [
+        -31.0,
+        -9.5
+      ],
+      "clear": true
+    },
+    {
+      "floor": 14,
+      "point": [
+        -27.5,
+        -7.8
+      ],
+      "clear": true
+    },
+    {
+      "floor": 14,
+      "point": [
+        -21.0,
+        -9.5
+      ],
+      "clear": true
+    },
+    {
+      "floor": 14,
+      "point": [
+        -17.5,
+        -7.8
+      ],
+      "clear": true
+    },
+    {
+      "floor": 15,
+      "point": [
+        -31.0,
+        -9.5
+      ],
+      "clear": true
+    },
+    {
+      "floor": 15,
+      "point": [
+        -27.5,
+        -7.8
+      ],
+      "clear": true
+    },
+    {
+      "floor": 15,
+      "point": [
+        -21.0,
+        -9.5
+      ],
+      "clear": true
+    },
+    {
+      "floor": 15,
+      "point": [
+        -17.5,
+        -7.8
+      ],
+      "clear": true
+    },
+    {
+      "floor": 16,
+      "point": [
+        -31.0,
+        -9.5
+      ],
+      "clear": true
+    },
+    {
+      "floor": 16,
+      "point": [
+        -27.5,
+        -7.8
+      ],
+      "clear": true
+    },
+    {
+      "floor": 16,
+      "point": [
+        -21.0,
+        -9.5
+      ],
+      "clear": true
+    },
+    {
+      "floor": 16,
+      "point": [
+        -17.5,
+        -7.8
+      ],
+      "clear": true
+    }
+  ],
+  "taper": [
+    {
+      "object": "C35_Tenant_Partitions",
+      "outsideVertices": 0,
+      "maxOutsideM": 0
+    },
+    {
+      "object": "C35_Tenant_Ceilings",
+      "outsideVertices": 0,
+      "maxOutsideM": 0
+    },
+    {
+      "object": "C35_Core_Enclosures",
+      "outsideVertices": 0,
+      "maxOutsideM": 0
+    },
+    {
+      "object": "C35_Lift_Shaft",
+      "outsideVertices": 0,
+      "maxOutsideM": 0
+    },
+    {
+      "object": "C35_Shop_Sign_Boards",
+      "outsideVertices": 0,
+      "maxOutsideM": 0
+    }
+  ],
+  "upwardCeilingArea": 5.0369009159112466e-06,
+  "issues": [],
+  "status": "PASS"
+}

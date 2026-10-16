@@ -1,0 +1,365 @@
+{
+  "structuralSlabs": [
+    {
+      "floor": 5,
+      "missingStructuralAreaM2": 0.0,
+      "unintendedCoverAreaM2": 0.0
+    },
+    {
+      "floor": 6,
+      "missingStructuralAreaM2": 0.0,
+      "unintendedCoverAreaM2": 0.0
+    },
+    {
+      "floor": 7,
+      "missingStructuralAreaM2": 0.0,
+      "unintendedCoverAreaM2": 0.0
+    },
+    {
+      "floor": 8,
+      "missingStructuralAreaM2": 0.0,
+      "unintendedCoverAreaM2": 0.0
+    },
+    {
+      "floor": 9,
+      "missingStructuralAreaM2": 0.0,
+      "unintendedCoverAreaM2": 0.0
+    },
+    {
+      "floor": 10,
+      "missingStructuralAreaM2": 0.0,
+      "unintendedCoverAreaM2": 0.0
+    },
+    {
+      "floor": 11,
+      "missingStructuralAreaM2": 0.0,
+      "unintendedCoverAreaM2": 0.0
+    },
+    {
+      "floor": 12,
+      "missingStructuralAreaM2": 0.0,
+      "unintendedCoverAreaM2": 0.0
+    },
+    {
+      "floor": 13,
+      "missingStructuralAreaM2": 0.0,
+      "unintendedCoverAreaM2": 0.0
+    },
+    {
+      "floor": 14,
+      "missingStructuralAreaM2": 0.0,
+      "unintendedCoverAreaM2": 0.0
+    },
+    {
+      "floor": 15,
+      "missingStructuralAreaM2": 0.0,
+      "unintendedCoverAreaM2": 0.0
+    },
+    {
+      "floor": 16,
+      "missingStructuralAreaM2": 0.0,
+      "unintendedCoverAreaM2": 0.0
+    }
+  ],
+  "escalatorEndDecks": [
+    {
+      "id": "ESC-04-05",
+      "x": -33.25,
+      "lane": -0.85,
+      "expectedZ": 20.7,
+      "firstSurface": "WB06_Left_Front_Primary_FloorBand_02",
+      "errorM": 7.629394538355427e-07
+    },
+    {
+      "id": "ESC-04-05",
+      "x": -25.514618414201937,
+      "lane": -0.85,
+      "expectedZ": 24.3,
+      "firstSurface": "C35_Public_Floor",
+      "errorM": 0.011998367309569602
+    },
+    {
+      "id": "ESC-04-05",
+      "x": -33.25,
+      "lane": 0.85,
+      "expectedZ": 20.7,
+      "firstSurface": "WB06_Left_Front_Primary_FloorBand_02",
+      "errorM": 7.629394538355427e-07
+    },
+    {
+      "id": "ESC-04-05",
+      "x": -25.514618414201937,
+      "lane": 0.85,
+      "expectedZ": 24.3,
+      "firstSurface": "C35_Public_Floor",
+      "errorM": 0.011998367309569602
+    },
+    {
+      "id": "ESC-05-06",
+      "x": -33.25,
+      "lane": -0.85,
+      "expectedZ": 24.299999237060547,
+      "firstSurface": "C35_Public_Floor",
+      "errorM": 0.011999130249023438
+    },
+    {
+      "id": "ESC-05-06",
+      "x": -25.514616432027093,
+      "lane": -0.85,
+      "expectedZ": 27.89999923706055,
+      "firstSurface": "C35_Public_Floor",
+      "errorM": 0.011999511718748579
+    },
+    {
+      "id": "ESC-05-06",
+      "x": -33.25,
+      "lane": 0.85,
+      "expectedZ": 24.299999237060547,
+      "firstSurface": "C35_Public_Floor",
+      "errorM": 0.011999130249023438
+    },
+    {
+      "id": "ESC-05-06",
+      "x": -25.514616432027093,
+      "lane": 0.85,
+      "expectedZ": 27.89999923706055,
+      "firstSurface": "C35_Public_Floor",
+      "errorM": 0.011999511718748579
+    },
+    {
+      "id": "ESC-06-07",
+      "x": -33.25,
+      "lane": -0.85,
+      "expectedZ": 27.899999618530273,
+      "firstSurface": "C35_Public_Floor",
+      "errorM": 0.011999130249023438
+    },
+    {
+      "id": "ESC-06-07",
+      "x": -25.514616432027093,
+      "lane": -0.85,
+      "expectedZ": 31.499999618530275,
+      "firstSurface": "C35_Public_Floor",
+      "errorM": 0.011999511718748579
+    },
+    {
+      "id": "ESC-06-07",
+      "x": -33.25,
+      "lane": 0.85,
+      "expectedZ": 27.899999618530273,
+      "firstSurface": "C35_Public_Floor",
+      "errorM": 0.011999130249023438
+    },
+    {
+      "id": "ESC-06-07",
+      "x": -25.514616432027093,
+      "lane": 0.85,
+      "expectedZ": 31.499999618530275,
+      "firstSurface": "C35_Public_Floor",
+      "errorM": 0.011999511718748579
+    },
+    {
+      "id": "ESC-07-08",
+      "x": -21.25,
+      "lane": -0.85,
+      "expectedZ": 31.5,
+      "firstSurface": "C35_Public_Floor",
+      "errorM": 0.011999130249023438
+    },
+    {
+      "id": "ESC-07-08",
+      "x": -13.514619735651834,
+      "lane": -0.85,
+      "expectedZ": 35.1,
+      "firstSurface": "C35_Public_Floor",
+      "errorM": 0.011999511718748579
+    },
+    {
+      "id": "ESC-07-08",
+      "x": -21.25,
+      "lane": 0.85,
+      "expectedZ": 31.5,
+      "firstSurface": "C35_Public_Floor",
+      "errorM": 0.011999130249023438
+    },
+    {
+      "id": "ESC-07-08",
+      "x": -13.514619735651834,
+      "lane": 0.85,
+      "expectedZ": 35.1,
+      "firstSurface": "C35_Public_Floor",
+      "errorM": 0.011999511718748579
+    },
+    {
+      "id": "ESC-08-09",
+      "x": -21.25,
+      "lane": -0.85,
+      "expectedZ": 35.099998474121094,
+      "firstSurface": "C35_Public_Floor",
+      "errorM": 0.01200103759765625
+    },
+    {
+      "id": "ESC-08-09",
+      "x": -13.514613128402353,
+      "lane": -0.85,
+      "expectedZ": 38.699998474121095,
+      "firstSurface": "C35_Public_Floor",
+      "errorM": 0.012003326416014204
+    },
+    {
+      "id": "ESC-08-09",
+      "x": -21.25,
+      "lane": 0.85,
+      "expectedZ": 35.099998474121094,
+      "firstSurface": "C35_Public_Floor",
+      "errorM": 0.01200103759765625
+    },
+    {
+      "id": "ESC-08-09",
+      "x": -13.514613128402353,
+      "lane": 0.85,
+      "expectedZ": 38.699998474121095,
+      "firstSurface": "C35_Public_Floor",
+      "errorM": 0.012003326416014204
+    },
+    {
+      "id": "ESC-09-10",
+      "x": -33.25,
+      "lane": -0.85,
+      "expectedZ": 38.70000076293945,
+      "firstSurface": "C35_Public_Floor",
+      "errorM": 0.01200103759765625
+    },
+    {
+      "id": "ESC-09-10",
+      "x": -25.514619735651834,
+      "lane": -0.85,
+      "expectedZ": 42.300000762939455,
+      "firstSurface": "C35_Public_Floor",
+      "errorM": 0.011999511718748579
+    },
+    {
+      "id": "ESC-09-10",
+      "x": -33.25,
+      "lane": 0.85,
+      "expectedZ": 38.70000076293945,
+      "firstSurface": "C35_Public_Floor",
+      "errorM": 0.01200103759765625
+    },
+    {
+      "id": "ESC-09-10",
+      "x": -25.514619735651834,
+      "lane": 0.85,
+      "expectedZ": 42.300000762939455,
+      "firstSurface": "C35_Public_Floor",
+      "errorM": 0.011999511718748579
+    },
+    {
+      "id": "ESC-10-11",
+      "x": -33.25,
+      "lane": -0.85,
+      "expectedZ": 42.29999923706055,
+      "firstSurface": "C35_Public_Floor",
+      "errorM": 0.01200103759765625
+    },
+    {
+      "id": "ESC-10-11",
+      "x": -25.514613128402353,
+      "lane": -0.85,
+      "expectedZ": 45.89999923706055,
+      "firstSurface": "C35_Public_Floor",
+      "errorM": 0.012003326416014204
+    },
+    {
+      "id": "ESC-10-11",
+      "x": -33.25,
+      "lane": 0.85,
+      "expectedZ": 42.29999923706055,
+      "firstSurface": "C35_Public_Floor",
+      "errorM": 0.01200103759765625
+    },
+    {
+      "id": "ESC-10-11",
+      "x": -25.514613128402353,
+      "lane": 0.85,
+      "expectedZ": 45.89999923706055,
+      "firstSurface": "C35_Public_Floor",
+      "errorM": 0.012003326416014204
+    },
+    {
+      "id": "ESC-11-12",
+      "x": -21.25,
+      "lane": -0.85,
+      "expectedZ": 45.900001525878906,
+      "firstSurface": "C35_Public_Floor",
+      "errorM": 0.01200103759765625
+    },
+    {
+      "id": "ESC-11-12",
+      "x": -13.514619735651834,
+      "lane": -0.85,
+      "expectedZ": 49.50000152587891,
+      "firstSurface": "C35_Public_Floor",
+      "errorM": 0.011999511718748579
+    },
+    {
+      "id": "ESC-11-12",
+      "x": -21.25,
+      "lane": 0.85,
+      "expectedZ": 45.900001525878906,
+      "firstSurface": "C35_Public_Floor",
+      "errorM": 0.01200103759765625
+    },
+    {
+      "id": "ESC-11-12",
+      "x": -13.514619735651834,
+      "lane": 0.85,
+      "expectedZ": 49.50000152587891,
+      "firstSurface": "C35_Public_Floor",
+      "errorM": 0.011999511718748579
+    }
+  ],
+  "upperBridgeTorso": [
+    {
+      "start": [
+        -9.8831787109375,
+        -6.0887770652771,
+        36.5
+      ],
+      "end": [
+        -7.878809928894043,
+        -1.7272968292236328,
+        37.400001525878906
+      ],
+      "blocker": null
+    },
+    {
+      "start": [
+        -7.878809928894043,
+        -1.7272968292236328,
+        37.400001525878906
+      ],
+      "end": [
+        -4.492736339569092,
+        5.640754699707031,
+        37.400001525878906
+      ],
+      "blocker": null
+    },
+    {
+      "start": [
+        -4.492736339569092,
+        5.640754699707031,
+        37.400001525878906
+      ],
+      "end": [
+        1.0,
+        16.0,
+        37.400001525878906
+      ],
+      "blocker": null
+    }
+  ],
+  "issues": [],
+  "status": "PASS"
+}

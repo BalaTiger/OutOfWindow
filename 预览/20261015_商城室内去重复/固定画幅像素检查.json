@@ -1,0 +1,40 @@
+{
+  "resolution": [
+    960,
+    540
+  ],
+  "scope": "Projected glass bounds include frames and surrounding anti-alias pixels; not pure interior segmentation",
+  "stats": [
+    {
+      "level": 2,
+      "screenTopLeftBBox": [
+        270,
+        438,
+        376,
+        461
+      ],
+      "pixels": 2438,
+      "pixelsChangedAbove3of255": 1981,
+      "meanAbsMaxChannelDelta": 0.0804548901035905,
+      "newMeanLuminance": 0.5405928141253061,
+      "leftMeanLuminance": 0.584025222196337,
+      "rightMeanLuminance": 0.4971604060542791
+    },
+    {
+      "level": 3,
+      "screenTopLeftBBox": [
+        267,
+        421,
+        374,
+        444
+      ],
+      "pixels": 2461,
+      "pixelsChangedAbove3of255": 1492,
+      "meanAbsMaxChannelDelta": 0.08091243068554788,
+      "newMeanLuminance": 0.5262686258189455,
+      "leftMeanLuminance": 0.5471476575107583,
+      "rightMeanLuminance": 0.5049956501329309
+    }
+  ],
+  "visualReview": "Full 960x540 images viewed at native resolution. L2 low seating and blocked service side differ from L3 tall dark fixtures and deeper open island side. Exact merchandise and small chair parts cannot be identified at this scale. No expansion yet."
+}

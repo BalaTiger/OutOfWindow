@@ -1,0 +1,13 @@
+{
+  "utc": "2026-10-15T08:03:40.4529715Z",
+  "exitCode": 0,
+  "seconds": 17.4559704,
+  "peakPrivateBytes": 1633738752,
+  "CPU": 2,
+  "affinity": 3,
+  "renderStarted": true,
+  "GPUStarted": false,
+  "UEStarted": false,
+  "ownChildExited": true,
+  "failure": null
+}

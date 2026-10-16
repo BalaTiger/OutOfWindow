@@ -1,0 +1,15 @@
+{
+  "sourceSHA256": "a916bbb8667c1a306de45ddae200fd2d894b274f5c620b1e912a89b1a6246809",
+  "mode": "color",
+  "image": "C:\\Users\\zhuzi\\Documents\\OutOfWindow\\.runtime\\resume-20261014\\city-candidate\\city35-diagnosis\\diagnostic-color.png",
+  "hiddenShell": [
+    "WB06_Left_Front_Primary_MainVolume",
+    "WB06_Left_Front_Primary_DistinctRoofCrown",
+    "C32_WB06_Left_Front_Primary_Glazing",
+    "C32_WB06_Left_Front_Primary_Metal",
+    "C32_WB06_Left_Front_Primary_Seals"
+  ],
+  "sourceNotSaved": true,
+  "lightingUnchanged": true,
+  "cameraUnchanged": true
+}

@@ -1,0 +1,20 @@
+{
+  "sourceSHA256": "c4535d4a71dd6a55d340f43bbaeec8c1c2de5ca44f505dc69c08ba53ea40df01",
+  "candidateSHA256": "0fe3ce359a9a6dfe6d39247de951d8052f326c4fc8c56a97f553f3469eb27753",
+  "sampleCollectionBaseTriangles": 32046,
+  "sampleCollectionEvaluatedTriangles": 50958,
+  "uniqueBaseTriangles": 12558,
+  "benchInstances": 3,
+  "benchPartsPerInstance": 9,
+  "localAreaLights": 6,
+  "globalLightingUnchanged": true,
+  "sourceLicense": "Poly Haven modular_street_seating CC0 https://polyhaven.com/a/modular_street_seating",
+  "notes": [
+    "Same glass and opaque-shell removal as first sample; no whole mall change",
+    "Added local interior light is an intentional scene change; camera/world/sun/exposure unchanged",
+    "Glass panes rebuilt planar with <=25mm horizontal top correction behind 60mm mullion seals; original layer heights unchanged"
+  ],
+  "planarPaneCount": 39,
+  "maxHorizontalPaneCorrectionM": 0.017206666362868512,
+  "glassPlanarityToleranceM": 1e-05
+}

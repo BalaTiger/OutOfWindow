@@ -1,0 +1,4929 @@
+{
+  "sourceSHA256": "5a45921315cbcd43a59407d3ea2c3827673330bcfe5208afd509d7e246cb035b",
+  "candidateSHA256": "d648d10d075bddc1a390e79ebcc396bf0ea07c33820bfa5689e116c71c25e1d7",
+  "LondonSourceSHA256": "22b47bb682ea55732d2dc97b91509baf413dc9bf4504dc4f544a5e6ea3fd1749",
+  "changedOriginals": [
+    "WB06_Context_Left_Solid_Civic",
+    "WB06_Context_Left_Solid_Civic_Central_Recess",
+    "WB06_Left_Front_Primary_MainVolume",
+    "WB06_Middle_Rear_Left_MainVolume",
+    "WB06_Middle_Rear_Right_MainVolume",
+    "WB06_Right_Back_Secondary_MainVolume"
+  ],
+  "allOtherOriginalObjectsExact": true,
+  "panelsAdded": 2266,
+  "maxHorizontalPanePlanarityCorrectionM": 0.003780973137249445,
+  "newBatchTriangles": 335816,
+  "sceneVisibleBaseTriangles": 1285625,
+  "meshBatches": [
+    {
+      "object": "C32_WB06_Left_Front_Primary_Interior",
+      "triangles": 5964,
+      "vertices": 11928
+    },
+    {
+      "object": "C32_WB06_Left_Front_Primary_Furniture",
+      "triangles": 10020,
+      "vertices": 20040
+    },
+    {
+      "object": "C32_WB06_Left_Front_Primary_Fixtures",
+      "triangles": 516,
+      "vertices": 1032
+    },
+    {
+      "object": "C32_WB06_Left_Front_Primary_Glazing",
+      "triangles": 1620,
+      "vertices": 3240
+    },
+    {
+      "object": "C32_WB06_Left_Front_Primary_Metal",
+      "triangles": 81000,
+      "vertices": 139320
+    },
+    {
+      "object": "C32_WB06_Left_Front_Primary_Seals",
+      "triangles": 22680,
+      "vertices": 38880
+    },
+    {
+      "object": "C32_WB06_Right_Back_Secondary_Interior",
+      "triangles": 6172,
+      "vertices": 12344
+    },
+    {
+      "object": "C32_WB06_Right_Back_Secondary_Furniture",
+      "triangles": 8100,
+      "vertices": 16200
+    },
+    {
+      "object": "C32_WB06_Right_Back_Secondary_Fixtures",
+      "triangles": 480,
+      "vertices": 960
+    },
+    {
+      "object": "C32_WB06_Right_Back_Secondary_Glazing",
+      "triangles": 1700,
+      "vertices": 3400
+    },
+    {
+      "object": "C32_WB06_Right_Back_Secondary_Metal",
+      "triangles": 85000,
+      "vertices": 146200
+    },
+    {
+      "object": "C32_WB06_Right_Back_Secondary_Seals",
+      "triangles": 23800,
+      "vertices": 40800
+    },
+    {
+      "object": "C32_WB06_Middle_Rear_Left_Interior",
+      "triangles": 3472,
+      "vertices": 6944
+    },
+    {
+      "object": "C32_WB06_Middle_Rear_Left_Furniture",
+      "triangles": 4020,
+      "vertices": 8040
+    },
+    {
+      "object": "C32_WB06_Middle_Rear_Left_Fixtures",
+      "triangles": 288,
+      "vertices": 576
+    },
+    {
+      "object": "C32_WB06_Middle_Rear_Left_Glazing",
+      "triangles": 944,
+      "vertices": 1888
+    },
+    {
+      "object": "C32_WB06_Middle_Rear_Left_Metal",
+      "triangles": 47200,
+      "vertices": 81184
+    },
+    {
+      "object": "C32_WB06_Middle_Rear_Left_Seals",
+      "triangles": 13216,
+      "vertices": 22656
+    },
+    {
+      "object": "C32_WB06_Middle_Rear_Right_Interior",
+      "triangles": 920,
+      "vertices": 1840
+    },
+    {
+      "object": "C32_WB06_Middle_Rear_Right_Furniture",
+      "triangles": 1188,
+      "vertices": 2376
+    },
+    {
+      "object": "C32_WB06_Middle_Rear_Right_Fixtures",
+      "triangles": 96,
+      "vertices": 192
+    },
+    {
+      "object": "C32_WB06_Middle_Rear_Right_Glazing",
+      "triangles": 268,
+      "vertices": 536
+    },
+    {
+      "object": "C32_WB06_Middle_Rear_Right_Metal",
+      "triangles": 13400,
+      "vertices": 23048
+    },
+    {
+      "object": "C32_WB06_Middle_Rear_Right_Seals",
+      "triangles": 3752,
+      "vertices": 6432
+    }
+  ],
+  "buildingPlans": [
+    {
+      "building": "WB06_Left_Front_Primary",
+      "floorPlans": [
+        {
+          "level": 1,
+          "z": [
+            7.2,
+            13.0600004196167
+          ],
+          "purpose": "entry",
+          "visibleSourceSectors": 18,
+          "tenantZones": [
+            {
+              "sectors": [
+                0
+              ],
+              "type": "shop",
+              "depthM": 4.8
+            },
+            {
+              "sectors": [
+                39,
+                40,
+                41
+              ],
+              "type": "closed",
+              "depthM": 2.0
+            },
+            {
+              "sectors": [
+                42,
+                43,
+                44
+              ],
+              "type": "gallery",
+              "depthM": 5.6
+            },
+            {
+              "sectors": [
+                53,
+                54,
+                55
+              ],
+              "type": "service",
+              "depthM": 3.4
+            },
+            {
+              "sectors": [
+                56,
+                57,
+                58
+              ],
+              "type": "shop",
+              "depthM": 4.8
+            },
+            {
+              "sectors": [
+                59,
+                60,
+                61
+              ],
+              "type": "shop",
+              "depthM": 4.8
+            },
+            {
+              "sectors": [
+                62,
+                63
+              ],
+              "type": "closed",
+              "depthM": 2.0
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "z": [
+            13.5,
+            16.65999984741211
+          ],
+          "purpose": "cafe",
+          "visibleSourceSectors": 19,
+          "tenantZones": [
+            {
+              "sectors": [
+                0
+              ],
+              "type": "dining",
+              "depthM": 4.1
+            },
+            {
+              "sectors": [
+                39,
+                40,
+                41
+              ],
+              "type": "dining",
+              "depthM": 4.1
+            },
+            {
+              "sectors": [
+                42,
+                43,
+                44
+              ],
+              "type": "service",
+              "depthM": 3.4
+            },
+            {
+              "sectors": [
+                45
+              ],
+              "type": "closed",
+              "depthM": 2.0
+            },
+            {
+              "sectors": [
+                53,
+                54,
+                55
+              ],
+              "type": "lounge",
+              "depthM": 4.2
+            },
+            {
+              "sectors": [
+                56,
+                57,
+                58
+              ],
+              "type": "dining",
+              "depthM": 4.1
+            },
+            {
+              "sectors": [
+                59,
+                60,
+                61
+              ],
+              "type": "dining",
+              "depthM": 4.1
+            },
+            {
+              "sectors": [
+                62,
+                63
+              ],
+              "type": "service",
+              "depthM": 3.4
+            }
+          ]
+        },
+        {
+          "level": 3,
+          "z": [
+            17.100000381469727,
+            20.260000228881836
+          ],
+          "purpose": "retail",
+          "visibleSourceSectors": 19,
+          "tenantZones": [
+            {
+              "sectors": [
+                0
+              ],
+              "type": "shop",
+              "depthM": 4.8
+            },
+            {
+              "sectors": [
+                39,
+                40,
+                41
+              ],
+              "type": "display",
+              "depthM": 3.7
+            },
+            {
+              "sectors": [
+                42,
+                43,
+                44
+              ],
+              "type": "closed",
+              "depthM": 2.0
+            },
+            {
+              "sectors": [
+                45
+              ],
+              "type": "shop",
+              "depthM": 4.8
+            },
+            {
+              "sectors": [
+                53,
+                54,
+                55
+              ],
+              "type": "lounge",
+              "depthM": 4.2
+            },
+            {
+              "sectors": [
+                56,
+                57,
+                58
+              ],
+              "type": "shop",
+              "depthM": 4.8
+            },
+            {
+              "sectors": [
+                59,
+                60,
+                61
+              ],
+              "type": "display",
+              "depthM": 3.7
+            },
+            {
+              "sectors": [
+                62,
+                63
+              ],
+              "type": "closed",
+              "depthM": 2.0
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "z": [
+            20.700000762939453,
+            23.860000610351562
+          ],
+          "purpose": "books",
+          "visibleSourceSectors": 26,
+          "tenantZones": [
+            {
+              "sectors": [
+                0
+              ],
+              "type": "lounge",
+              "depthM": 4.2
+            },
+            {
+              "sectors": [
+                39,
+                40
+              ],
+              "type": "books",
+              "depthM": 5.4
+            },
+            {
+              "sectors": [
+                41,
+                42
+              ],
+              "type": "closed",
+              "depthM": 2.0
+            },
+            {
+              "sectors": [
+                43,
+                44
+              ],
+              "type": "shop",
+              "depthM": 4.8
+            },
+            {
+              "sectors": [
+                45,
+                46
+              ],
+              "type": "books",
+              "depthM": 5.4
+            },
+            {
+              "sectors": [
+                47,
+                48
+              ],
+              "type": "lounge",
+              "depthM": 4.2
+            },
+            {
+              "sectors": [
+                49,
+                50
+              ],
+              "type": "books",
+              "depthM": 5.4
+            },
+            {
+              "sectors": [
+                51,
+                52
+              ],
+              "type": "closed",
+              "depthM": 2.0
+            },
+            {
+              "sectors": [
+                53,
+                54
+              ],
+              "type": "shop",
+              "depthM": 4.8
+            },
+            {
+              "sectors": [
+                55,
+                56
+              ],
+              "type": "books",
+              "depthM": 5.4
+            },
+            {
+              "sectors": [
+                57,
+                58
+              ],
+              "type": "lounge",
+              "depthM": 4.2
+            },
+            {
+              "sectors": [
+                59,
+                60
+              ],
+              "type": "books",
+              "depthM": 5.4
+            },
+            {
+              "sectors": [
+                61,
+                62
+              ],
+              "type": "closed",
+              "depthM": 2.0
+            },
+            {
+              "sectors": [
+                63
+              ],
+              "type": "shop",
+              "depthM": 4.8
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "z": [
+            24.299999237060547,
+            27.459999084472656
+          ],
+          "purpose": "gallery",
+          "visibleSourceSectors": 26,
+          "tenantZones": [
+            {
+              "sectors": [
+                0
+              ],
+              "type": "gallery",
+              "depthM": 5.6
+            },
+            {
+              "sectors": [
+                39,
+                40,
+                41,
+                42
+              ],
+              "type": "shop",
+              "depthM": 4.8
+            },
+            {
+              "sectors": [
+                43,
+                44,
+                45,
+                46
+              ],
+              "type": "gallery",
+              "depthM": 5.6
+            },
+            {
+              "sectors": [
+                47,
+                48,
+                49,
+                50
+              ],
+              "type": "gallery",
+              "depthM": 5.6
+            },
+            {
+              "sectors": [
+                51,
+                52,
+                53,
+                54
+              ],
+              "type": "closed",
+              "depthM": 2.0
+            },
+            {
+              "sectors": [
+                55,
+                56,
+                57,
+                58
+              ],
+              "type": "gallery",
+              "depthM": 5.6
+            },
+            {
+              "sectors": [
+                59,
+                60,
+                61,
+                62
+              ],
+              "type": "shop",
+              "depthM": 4.8
+            },
+            {
+              "sectors": [
+                63
+              ],
+              "type": "gallery",
+              "depthM": 5.6
+            }
+          ]
+        },
+        {
+          "level": 6,
+          "z": [
+            27.899999618530273,
+            31.059999465942383
+          ],
+          "purpose": "retail",
+          "visibleSourceSectors": 26,
+          "tenantZones": [
+            {
+              "sectors": [
+                0
+              ],
+              "type": "shop",
+              "depthM": 4.8
+            },
+            {
+              "sectors": [
+                39,
+                40,
+                41
+              ],
+              "type": "display",
+              "depthM": 3.7
+            },
+            {
+              "sectors": [
+                42,
+                43,
+                44
+              ],
+              "type": "closed",
+              "depthM": 2.0
+            },
+            {
+              "sectors": [
+                45,
+                46,
+                47
+              ],
+              "type": "shop",
+              "depthM": 4.8
+            },
+            {
+              "sectors": [
+                48,
+                49,
+                50
+              ],
+              "type": "lounge",
+              "depthM": 4.2
+            },
+            {
+              "sectors": [
+                51,
+                52,
+                53
+              ],
+              "type": "shop",
+              "depthM": 4.8
+            },
+            {
+              "sectors": [
+                54,
+                55,
+                56
+              ],
+              "type": "display",
+              "depthM": 3.7
+            },
+            {
+              "sectors": [
+                57,
+                58,
+                59
+              ],
+              "type": "closed",
+              "depthM": 2.0
+            },
+            {
+              "sectors": [
+                60,
+                61,
+                62
+              ],
+              "type": "shop",
+              "depthM": 4.8
+            },
+            {
+              "sectors": [
+                63
+              ],
+              "type": "lounge",
+              "depthM": 4.2
+            }
+          ]
+        },
+        {
+          "level": 7,
+          "z": [
+            31.5,
+            34.65999984741211
+          ],
+          "purpose": "dining",
+          "visibleSourceSectors": 26,
+          "tenantZones": [
+            {
+              "sectors": [
+                0
+              ],
+              "type": "dining",
+              "depthM": 4.1
+            },
+            {
+              "sectors": [
+                39,
+                40
+              ],
+              "type": "closed",
+              "depthM": 2.0
+            },
+            {
+              "sectors": [
+                41,
+                42
+              ],
+              "type": "service",
+              "depthM": 3.4
+            },
+            {
+              "sectors": [
+                43,
+                44
+              ],
+              "type": "dining",
+              "depthM": 4.1
+            },
+            {
+              "sectors": [
+                45,
+                46
+              ],
+              "type": "lounge",
+              "depthM": 4.2
+            },
+            {
+              "sectors": [
+                47,
+                48
+              ],
+              "type": "dining",
+              "depthM": 4.1
+            },
+            {
+              "sectors": [
+                49,
+                50
+              ],
+              "type": "closed",
+              "depthM": 2.0
+            },
+            {
+              "sectors": [
+                51,
+                52
+              ],
+              "type": "service",
+              "depthM": 3.4
+            },
+            {
+              "sectors": [
+                53,
+                54
+              ],
+              "type": "dining",
+              "depthM": 4.1
+            },
+            {
+              "sectors": [
+                55,
+                56
+              ],
+              "type": "lounge",
+              "depthM": 4.2
+            },
+            {
+              "sectors": [
+                57,
+                58
+              ],
+              "type": "dining",
+              "depthM": 4.1
+            },
+            {
+              "sectors": [
+                59,
+                60
+              ],
+              "type": "closed",
+              "depthM": 2.0
+            },
+            {
+              "sectors": [
+                61,
+                62
+              ],
+              "type": "service",
+              "depthM": 3.4
+            },
+            {
+              "sectors": [
+                63
+              ],
+              "type": "dining",
+              "depthM": 4.1
+            }
+          ]
+        },
+        {
+          "level": 8,
+          "z": [
+            35.099998474121094,
+            38.2599983215332
+          ],
+          "purpose": "studio",
+          "visibleSourceSectors": 26,
+          "tenantZones": [
+            {
+              "sectors": [
+                0
+              ],
+              "type": "closed",
+              "depthM": 2.0
+            },
+            {
+              "sectors": [
+                39,
+                40,
+                41,
+                42
+              ],
+              "type": "desk",
+              "depthM": 5.0
+            },
+            {
+              "sectors": [
+                43,
+                44,
+                45,
+                46
+              ],
+              "type": "gallery",
+              "depthM": 5.6
+            },
+            {
+              "sectors": [
+                47,
+                48,
+                49,
+                50
+              ],
+              "type": "studio",
+              "depthM": 5.7
+            },
+            {
+              "sectors": [
+                51,
+                52,
+                53,
+                54
+              ],
+              "type": "studio",
+              "depthM": 5.7
+            },
+            {
+              "sectors": [
+                55,
+                56,
+                57,
+                58
+              ],
+              "type": "closed",
+              "depthM": 2.0
+            },
+            {
+              "sectors": [
+                59,
+                60,
+                61,
+                62
+              ],
+              "type": "desk",
+              "depthM": 5.0
+            },
+            {
+              "sectors": [
+                63
+              ],
+              "type": "gallery",
+              "depthM": 5.6
+            }
+          ]
+        },
+        {
+          "level": 9,
+          "z": [
+            38.70000076293945,
+            41.86000061035156
+          ],
+          "purpose": "work",
+          "visibleSourceSectors": 26,
+          "tenantZones": [
+            {
+              "sectors": [
+                0
+              ],
+              "type": "desk",
+              "depthM": 5.0
+            },
+            {
+              "sectors": [
+                39,
+                40,
+                41
+              ],
+              "type": "meeting",
+              "depthM": 4.6
+            },
+            {
+              "sectors": [
+                42,
+                43,
+                44
+              ],
+              "type": "desk",
+              "depthM": 5.0
+            },
+            {
+              "sectors": [
+                45,
+                46,
+                47
+              ],
+              "type": "closed",
+              "depthM": 2.0
+            },
+            {
+              "sectors": [
+                48,
+                49,
+                50
+              ],
+              "type": "lounge",
+              "depthM": 4.2
+            },
+            {
+              "sectors": [
+                51,
+                52,
+                53
+              ],
+              "type": "desk",
+              "depthM": 5.0
+            },
+            {
+              "sectors": [
+                54,
+                55,
+                56
+              ],
+              "type": "meeting",
+              "depthM": 4.6
+            },
+            {
+              "sectors": [
+                57,
+                58,
+                59
+              ],
+              "type": "desk",
+              "depthM": 5.0
+            },
+            {
+              "sectors": [
+                60,
+                61,
+                62
+              ],
+              "type": "closed",
+              "depthM": 2.0
+            },
+            {
+              "sectors": [
+                63
+              ],
+              "type": "lounge",
+              "depthM": 4.2
+            }
+          ]
+        },
+        {
+          "level": 10,
+          "z": [
+            42.29999923706055,
+            45.459999084472656
+          ],
+          "purpose": "lounge",
+          "visibleSourceSectors": 26,
+          "tenantZones": [
+            {
+              "sectors": [
+                0
+              ],
+              "type": "closed",
+              "depthM": 2.0
+            },
+            {
+              "sectors": [
+                39,
+                40
+              ],
+              "type": "lounge",
+              "depthM": 4.2
+            },
+            {
+              "sectors": [
+                41,
+                42
+              ],
+              "type": "gallery",
+              "depthM": 5.6
+            },
+            {
+              "sectors": [
+                43,
+                44
+              ],
+              "type": "lounge",
+              "depthM": 4.2
+            },
+            {
+              "sectors": [
+                45,
+                46
+              ],
+              "type": "service",
+              "depthM": 3.4
+            },
+            {
+              "sectors": [
+                47,
+                48
+              ],
+              "type": "closed",
+              "depthM": 2.0
+            },
+            {
+              "sectors": [
+                49,
+                50
+              ],
+              "type": "lounge",
+              "depthM": 4.2
+            },
+            {
+              "sectors": [
+                51,
+                52
+              ],
+              "type": "gallery",
+              "depthM": 5.6
+            },
+            {
+              "sectors": [
+                53,
+                54
+              ],
+              "type": "lounge",
+              "depthM": 4.2
+            },
+            {
+              "sectors": [
+                55,
+                56
+              ],
+              "type": "service",
+              "depthM": 3.4
+            },
+            {
+              "sectors": [
+                57,
+                58
+              ],
+              "type": "closed",
+              "depthM": 2.0
+            },
+            {
+              "sectors": [
+                59,
+                60
+              ],
+              "type": "lounge",
+              "depthM": 4.2
+            },
+            {
+              "sectors": [
+                61,
+                62
+              ],
+              "type": "gallery",
+              "depthM": 5.6
+            },
+            {
+              "sectors": [
+                63
+              ],
+              "type": "lounge",
+              "depthM": 4.2
+            }
+          ]
+        },
+        {
+          "level": 11,
+          "z": [
+            45.900001525878906,
+            49.060001373291016
+          ],
+          "purpose": "work",
+          "visibleSourceSectors": 27,
+          "tenantZones": [
+            {
+              "sectors": [
+                0
+              ],
+              "type": "closed",
+              "depthM": 2.0
+            },
+            {
+              "sectors": [
+                38,
+                39,
+                40,
+                41
+              ],
+              "type": "lounge",
+              "depthM": 4.2
+            },
+            {
+              "sectors": [
+                42,
+                43,
+                44,
+                45
+              ],
+              "type": "desk",
+              "depthM": 5.0
+            },
+            {
+              "sectors": [
+                46,
+                47,
+                48,
+                49
+              ],
+              "type": "meeting",
+              "depthM": 4.6
+            },
+            {
+              "sectors": [
+                50,
+                51,
+                52,
+                53
+              ],
+              "type": "desk",
+              "depthM": 5.0
+            },
+            {
+              "sectors": [
+                54,
+                55,
+                56,
+                57
+              ],
+              "type": "closed",
+              "depthM": 2.0
+            },
+            {
+              "sectors": [
+                58,
+                59,
+                60,
+                61
+              ],
+              "type": "lounge",
+              "depthM": 4.2
+            },
+            {
+              "sectors": [
+                62,
+                63
+              ],
+              "type": "desk",
+              "depthM": 5.0
+            }
+          ]
+        },
+        {
+          "level": 12,
+          "z": [
+            49.5,
+            52.65999984741211
+          ],
+          "purpose": "studio",
+          "visibleSourceSectors": 27,
+          "tenantZones": [
+            {
+              "sectors": [
+                0
+              ],
+              "type": "studio",
+              "depthM": 5.7
+            },
+            {
+              "sectors": [
+                38,
+                39
+              ],
+              "type": "closed",
+              "depthM": 2.0
+            },
+            {
+              "sectors": [
+                40,
+                41
+              ],
+              "type": "desk",
+              "depthM": 5.0
+            },
+            {
+              "sectors": [
+                42,
+                43
+              ],
+              "type": "gallery",
+              "depthM": 5.6
+            },
+            {
+              "sectors": [
+                44,
+                45
+              ],
+              "type": "studio",
+              "depthM": 5.7
+            },
+            {
+              "sectors": [
+                46,
+                47
+              ],
+              "type": "studio",
+              "depthM": 5.7
+            },
+            {
+              "sectors": [
+                48,
+                49
+              ],
+              "type": "closed",
+              "depthM": 2.0
+            },
+            {
+              "sectors": [
+                50,
+                51
+              ],
+              "type": "desk",
+              "depthM": 5.0
+            },
+            {
+              "sectors": [
+                52,
+                53
+              ],
+              "type": "gallery",
+              "depthM": 5.6
+            },
+            {
+              "sectors": [
+                54,
+                55
+              ],
+              "type": "studio",
+              "depthM": 5.7
+            },
+            {
+              "sectors": [
+                56,
+                57
+              ],
+              "type": "studio",
+              "depthM": 5.7
+            },
+            {
+              "sectors": [
+                58,
+                59
+              ],
+              "type": "closed",
+              "depthM": 2.0
+            },
+            {
+              "sectors": [
+                60,
+                61
+              ],
+              "type": "desk",
+              "depthM": 5.0
+            },
+            {
+              "sectors": [
+                62,
+                63
+              ],
+              "type": "gallery",
+              "depthM": 5.6
+            }
+          ]
+        },
+        {
+          "level": 13,
+          "z": [
+            53.099998474121094,
+            56.2599983215332
+          ],
+          "purpose": "gallery",
+          "visibleSourceSectors": 28,
+          "tenantZones": [
+            {
+              "sectors": [
+                0,
+                1
+              ],
+              "type": "closed",
+              "depthM": 2.0
+            },
+            {
+              "sectors": [
+                38,
+                39,
+                40
+              ],
+              "type": "gallery",
+              "depthM": 5.6
+            },
+            {
+              "sectors": [
+                41,
+                42,
+                43
+              ],
+              "type": "shop",
+              "depthM": 4.8
+            },
+            {
+              "sectors": [
+                44,
+                45,
+                46
+              ],
+              "type": "gallery",
+              "depthM": 5.6
+            },
+            {
+              "sectors": [
+                47,
+                48,
+                49
+              ],
+              "type": "gallery",
+              "depthM": 5.6
+            },
+            {
+              "sectors": [
+                50,
+                51,
+                52
+              ],
+              "type": "closed",
+              "depthM": 2.0
+            },
+            {
+              "sectors": [
+                53,
+                54,
+                55
+              ],
+              "type": "gallery",
+              "depthM": 5.6
+            },
+            {
+              "sectors": [
+                56,
+                57,
+                58
+              ],
+              "type": "shop",
+              "depthM": 4.8
+            },
+            {
+              "sectors": [
+                59,
+                60,
+                61
+              ],
+              "type": "gallery",
+              "depthM": 5.6
+            },
+            {
+              "sectors": [
+                62,
+                63
+              ],
+              "type": "gallery",
+              "depthM": 5.6
+            }
+          ]
+        },
+        {
+          "level": 14,
+          "z": [
+            56.70000076293945,
+            59.86000061035156
+          ],
+          "purpose": "work",
+          "visibleSourceSectors": 28,
+          "tenantZones": [
+            {
+              "sectors": [
+                0,
+                1
+              ],
+              "type": "lounge",
+              "depthM": 4.2
+            },
+            {
+              "sectors": [
+                38,
+                39,
+                40,
+                41
+              ],
+              "type": "desk",
+              "depthM": 5.0
+            },
+            {
+              "sectors": [
+                42,
+                43,
+                44,
+                45
+              ],
+              "type": "meeting",
+              "depthM": 4.6
+            },
+            {
+              "sectors": [
+                46,
+                47,
+                48,
+                49
+              ],
+              "type": "desk",
+              "depthM": 5.0
+            },
+            {
+              "sectors": [
+                50,
+                51,
+                52,
+                53
+              ],
+              "type": "closed",
+              "depthM": 2.0
+            },
+            {
+              "sectors": [
+                54,
+                55,
+                56,
+                57
+              ],
+              "type": "lounge",
+              "depthM": 4.2
+            },
+            {
+              "sectors": [
+                58,
+                59,
+                60,
+                61
+              ],
+              "type": "desk",
+              "depthM": 5.0
+            },
+            {
+              "sectors": [
+                62,
+                63
+              ],
+              "type": "meeting",
+              "depthM": 4.6
+            }
+          ]
+        },
+        {
+          "level": 15,
+          "z": [
+            60.29999923706055,
+            63.459999084472656
+          ],
+          "purpose": "meeting",
+          "visibleSourceSectors": 28,
+          "tenantZones": [
+            {
+              "sectors": [
+                0,
+                1
+              ],
+              "type": "closed",
+              "depthM": 2.0
+            },
+            {
+              "sectors": [
+                38,
+                39,
+                40
+              ],
+              "type": "meeting",
+              "depthM": 4.6
+            },
+            {
+              "sectors": [
+                41,
+                42,
+                43
+              ],
+              "type": "desk",
+              "depthM": 5.0
+            },
+            {
+              "sectors": [
+                44,
+                45,
+                46
+              ],
+              "type": "meeting",
+              "depthM": 4.6
+            },
+            {
+              "sectors": [
+                47,
+                48,
+                49
+              ],
+              "type": "lounge",
+              "depthM": 4.2
+            },
+            {
+              "sectors": [
+                50,
+                51,
+                52
+              ],
+              "type": "closed",
+              "depthM": 2.0
+            },
+            {
+              "sectors": [
+                53,
+                54,
+                55
+              ],
+              "type": "meeting",
+              "depthM": 4.6
+            },
+            {
+              "sectors": [
+                56,
+                57,
+                58
+              ],
+              "type": "desk",
+              "depthM": 5.0
+            },
+            {
+              "sectors": [
+                59,
+                60,
+                61
+              ],
+              "type": "meeting",
+              "depthM": 4.6
+            },
+            {
+              "sectors": [
+                62,
+                63
+              ],
+              "type": "lounge",
+              "depthM": 4.2
+            }
+          ]
+        },
+        {
+          "level": 16,
+          "z": [
+            63.900001525878906,
+            66.66000366210938
+          ],
+          "purpose": "lounge",
+          "visibleSourceSectors": 29,
+          "tenantZones": [
+            {
+              "sectors": [
+                0,
+                1
+              ],
+              "type": "lounge",
+              "depthM": 4.2
+            },
+            {
+              "sectors": [
+                37,
+                38
+              ],
+              "type": "service",
+              "depthM": 3.4
+            },
+            {
+              "sectors": [
+                39,
+                40
+              ],
+              "type": "closed",
+              "depthM": 2.0
+            },
+            {
+              "sectors": [
+                41,
+                42
+              ],
+              "type": "lounge",
+              "depthM": 4.2
+            },
+            {
+              "sectors": [
+                43,
+                44
+              ],
+              "type": "gallery",
+              "depthM": 5.6
+            },
+            {
+              "sectors": [
+                45,
+                46
+              ],
+              "type": "lounge",
+              "depthM": 4.2
+            },
+            {
+              "sectors": [
+                47,
+                48
+              ],
+              "type": "service",
+              "depthM": 3.4
+            },
+            {
+              "sectors": [
+                49,
+                50
+              ],
+              "type": "closed",
+              "depthM": 2.0
+            },
+            {
+              "sectors": [
+                51,
+                52
+              ],
+              "type": "lounge",
+              "depthM": 4.2
+            },
+            {
+              "sectors": [
+                53,
+                54
+              ],
+              "type": "gallery",
+              "depthM": 5.6
+            },
+            {
+              "sectors": [
+                55,
+                56
+              ],
+              "type": "lounge",
+              "depthM": 4.2
+            },
+            {
+              "sectors": [
+                57,
+                58
+              ],
+              "type": "service",
+              "depthM": 3.4
+            },
+            {
+              "sectors": [
+                59,
+                60
+              ],
+              "type": "closed",
+              "depthM": 2.0
+            },
+            {
+              "sectors": [
+                61,
+                62
+              ],
+              "type": "lounge",
+              "depthM": 4.2
+            },
+            {
+              "sectors": [
+                63
+              ],
+              "type": "gallery",
+              "depthM": 5.6
+            }
+          ]
+        }
+      ],
+      "removedOpaquePolygonPieces": 2505
+    },
+    {
+      "building": "WB06_Right_Back_Secondary",
+      "floorPlans": [
+        {
+          "level": 1,
+          "z": [
+            7.2,
+            13.0600004196167
+          ],
+          "purpose": "retail",
+          "visibleSourceSectors": 27,
+          "tenantZones": [
+            {
+              "sectors": [
+                32,
+                33,
+                34
+              ],
+              "type": "display",
+              "depthM": 3.7
+            },
+            {
+              "sectors": [
+                35,
+                36,
+                37
+              ],
+              "type": "closed",
+              "depthM": 2.0
+            },
+            {
+              "sectors": [
+                38,
+                39,
+                40
+              ],
+              "type": "shop",
+              "depthM": 4.8
+            },
+            {
+              "sectors": [
+                41,
+                42,
+                43
+              ],
+              "type": "lounge",
+              "depthM": 4.2
+            },
+            {
+              "sectors": [
+                44,
+                45,
+                46
+              ],
+              "type": "shop",
+              "depthM": 4.8
+            },
+            {
+              "sectors": [
+                47,
+                48,
+                49
+              ],
+              "type": "display",
+              "depthM": 3.7
+            },
+            {
+              "sectors": [
+                50,
+                51,
+                52
+              ],
+              "type": "closed",
+              "depthM": 2.0
+            },
+            {
+              "sectors": [
+                53,
+                54,
+                55
+              ],
+              "type": "shop",
+              "depthM": 4.8
+            },
+            {
+              "sectors": [
+                56,
+                57,
+                58
+              ],
+              "type": "lounge",
+              "depthM": 4.2
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "z": [
+            13.5,
+            16.65999984741211
+          ],
+          "purpose": "gallery",
+          "visibleSourceSectors": 23,
+          "tenantZones": [
+            {
+              "sectors": [
+                36,
+                37,
+                38
+              ],
+              "type": "closed",
+              "depthM": 2.0
+            },
+            {
+              "sectors": [
+                39,
+                40,
+                41
+              ],
+              "type": "gallery",
+              "depthM": 5.6
+            },
+            {
+              "sectors": [
+                42,
+                43,
+                44
+              ],
+              "type": "shop",
+              "depthM": 4.8
+            },
+            {
+              "sectors": [
+                45,
+                46,
+                47
+              ],
+              "type": "gallery",
+              "depthM": 5.6
+            },
+            {
+              "sectors": [
+                48,
+                49,
+                50
+              ],
+              "type": "gallery",
+              "depthM": 5.6
+            },
+            {
+              "sectors": [
+                51,
+                52,
+                53
+              ],
+              "type": "closed",
+              "depthM": 2.0
+            },
+            {
+              "sectors": [
+                54,
+                55,
+                56
+              ],
+              "type": "gallery",
+              "depthM": 5.6
+            },
+            {
+              "sectors": [
+                57,
+                58
+              ],
+              "type": "shop",
+              "depthM": 4.8
+            }
+          ]
+        },
+        {
+          "level": 3,
+          "z": [
+            17.100000381469727,
+            20.260000228881836
+          ],
+          "purpose": "dining",
+          "visibleSourceSectors": 21,
+          "tenantZones": [
+            {
+              "sectors": [
+                38,
+                39,
+                40
+              ],
+              "type": "dining",
+              "depthM": 4.1
+            },
+            {
+              "sectors": [
+                41,
+                42,
+                43
+              ],
+              "type": "lounge",
+              "depthM": 4.2
+            },
+            {
+              "sectors": [
+                44,
+                45,
+                46
+              ],
+              "type": "dining",
+              "depthM": 4.1
+            },
+            {
+              "sectors": [
+                47,
+                48,
+                49
+              ],
+              "type": "closed",
+              "depthM": 2.0
+            },
+            {
+              "sectors": [
+                50,
+                51,
+                52
+              ],
+              "type": "service",
+              "depthM": 3.4
+            },
+            {
+              "sectors": [
+                53,
+                54,
+                55
+              ],
+              "type": "dining",
+              "depthM": 4.1
+            },
+            {
+              "sectors": [
+                56,
+                57,
+                58
+              ],
+              "type": "lounge",
+              "depthM": 4.2
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "z": [
+            20.700000762939453,
+            23.860000610351562
+          ],
+          "purpose": "cafe",
+          "visibleSourceSectors": 24,
+          "tenantZones": [
+            {
+              "sectors": [
+                31,
+                32
+              ],
+              "type": "service",
+              "depthM": 3.4
+            },
+            {
+              "sectors": [
+                33,
+                34
+              ],
+              "type": "closed",
+              "depthM": 2.0
+            },
+            {
+              "sectors": [
+                39,
+                40
+              ],
+              "type": "lounge",
+              "depthM": 4.2
+            },
+            {
+              "sectors": [
+                41,
+                42
+              ],
+              "type": "dining",
+              "depthM": 4.1
+            },
+            {
+              "sectors": [
+                43,
+                44
+              ],
+              "type": "dining",
+              "depthM": 4.1
+            },
+            {
+              "sectors": [
+                45,
+                46
+              ],
+              "type": "service",
+              "depthM": 3.4
+            },
+            {
+              "sectors": [
+                47,
+                48
+              ],
+              "type": "closed",
+              "depthM": 2.0
+            },
+            {
+              "sectors": [
+                49,
+                50
+              ],
+              "type": "lounge",
+              "depthM": 4.2
+            },
+            {
+              "sectors": [
+                51,
+                52
+              ],
+              "type": "dining",
+              "depthM": 4.1
+            },
+            {
+              "sectors": [
+                53,
+                54
+              ],
+              "type": "dining",
+              "depthM": 4.1
+            },
+            {
+              "sectors": [
+                55,
+                56
+              ],
+              "type": "service",
+              "depthM": 3.4
+            },
+            {
+              "sectors": [
+                57,
+                58
+              ],
+              "type": "closed",
+              "depthM": 2.0
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "z": [
+            24.299999237060547,
+            27.459999084472656
+          ],
+          "purpose": "lounge",
+          "visibleSourceSectors": 26,
+          "tenantZones": [
+            {
+              "sectors": [
+                31,
+                32,
+                33,
+                34
+              ],
+              "type": "lounge",
+              "depthM": 4.2
+            },
+            {
+              "sectors": [
+                35,
+                36,
+                37
+              ],
+              "type": "gallery",
+              "depthM": 5.6
+            },
+            {
+              "sectors": [
+                40,
+                41,
+                42,
+                43
+              ],
+              "type": "lounge",
+              "depthM": 4.2
+            },
+            {
+              "sectors": [
+                44,
+                45,
+                46,
+                47
+              ],
+              "type": "service",
+              "depthM": 3.4
+            },
+            {
+              "sectors": [
+                48,
+                49,
+                50,
+                51
+              ],
+              "type": "closed",
+              "depthM": 2.0
+            },
+            {
+              "sectors": [
+                52,
+                53,
+                54,
+                55
+              ],
+              "type": "lounge",
+              "depthM": 4.2
+            },
+            {
+              "sectors": [
+                56,
+                57,
+                58
+              ],
+              "type": "gallery",
+              "depthM": 5.6
+            }
+          ]
+        },
+        {
+          "level": 6,
+          "z": [
+            27.899999618530273,
+            31.059999465942383
+          ],
+          "purpose": "studio",
+          "visibleSourceSectors": 26,
+          "tenantZones": [
+            {
+              "sectors": [
+                33,
+                34,
+                35
+              ],
+              "type": "closed",
+              "depthM": 2.0
+            },
+            {
+              "sectors": [
+                36,
+                37,
+                38
+              ],
+              "type": "desk",
+              "depthM": 5.0
+            },
+            {
+              "sectors": [
+                39,
+                40,
+                41
+              ],
+              "type": "gallery",
+              "depthM": 5.6
+            },
+            {
+              "sectors": [
+                42,
+                43,
+                44
+              ],
+              "type": "studio",
+              "depthM": 5.7
+            },
+            {
+              "sectors": [
+                45,
+                46,
+                47
+              ],
+              "type": "studio",
+              "depthM": 5.7
+            },
+            {
+              "sectors": [
+                48,
+                49,
+                50
+              ],
+              "type": "closed",
+              "depthM": 2.0
+            },
+            {
+              "sectors": [
+                51,
+                52,
+                53
+              ],
+              "type": "desk",
+              "depthM": 5.0
+            },
+            {
+              "sectors": [
+                54,
+                55,
+                56
+              ],
+              "type": "gallery",
+              "depthM": 5.6
+            },
+            {
+              "sectors": [
+                57,
+                58
+              ],
+              "type": "studio",
+              "depthM": 5.7
+            }
+          ]
+        },
+        {
+          "level": 7,
+          "z": [
+            31.5,
+            34.65999984741211
+          ],
+          "purpose": "work",
+          "visibleSourceSectors": 23,
+          "tenantZones": [
+            {
+              "sectors": [
+                36,
+                37
+              ],
+              "type": "lounge",
+              "depthM": 4.2
+            },
+            {
+              "sectors": [
+                38,
+                39
+              ],
+              "type": "desk",
+              "depthM": 5.0
+            },
+            {
+              "sectors": [
+                40,
+                41
+              ],
+              "type": "meeting",
+              "depthM": 4.6
+            },
+            {
+              "sectors": [
+                42,
+                43
+              ],
+              "type": "desk",
+              "depthM": 5.0
+            },
+            {
+              "sectors": [
+                44,
+                45
+              ],
+              "type": "closed",
+              "depthM": 2.0
+            },
+            {
+              "sectors": [
+                46,
+                47
+              ],
+              "type": "lounge",
+              "depthM": 4.2
+            },
+            {
+              "sectors": [
+                48,
+                49
+              ],
+              "type": "desk",
+              "depthM": 5.0
+            },
+            {
+              "sectors": [
+                50,
+                51
+              ],
+              "type": "meeting",
+              "depthM": 4.6
+            },
+            {
+              "sectors": [
+                52,
+                53
+              ],
+              "type": "desk",
+              "depthM": 5.0
+            },
+            {
+              "sectors": [
+                54,
+                55
+              ],
+              "type": "closed",
+              "depthM": 2.0
+            },
+            {
+              "sectors": [
+                56,
+                57
+              ],
+              "type": "lounge",
+              "depthM": 4.2
+            },
+            {
+              "sectors": [
+                58
+              ],
+              "type": "desk",
+              "depthM": 5.0
+            }
+          ]
+        },
+        {
+          "level": 8,
+          "z": [
+            35.099998474121094,
+            38.2599983215332
+          ],
+          "purpose": "meeting",
+          "visibleSourceSectors": 22,
+          "tenantZones": [
+            {
+              "sectors": [
+                37,
+                38,
+                39,
+                40
+              ],
+              "type": "closed",
+              "depthM": 2.0
+            },
+            {
+              "sectors": [
+                41,
+                42,
+                43,
+                44
+              ],
+              "type": "meeting",
+              "depthM": 4.6
+            },
+            {
+              "sectors": [
+                45,
+                46,
+                47,
+                48
+              ],
+              "type": "desk",
+              "depthM": 5.0
+            },
+            {
+              "sectors": [
+                49,
+                50,
+                51,
+                52
+              ],
+              "type": "meeting",
+              "depthM": 4.6
+            },
+            {
+              "sectors": [
+                53,
+                54,
+                55,
+                56
+              ],
+              "type": "lounge",
+              "depthM": 4.2
+            },
+            {
+              "sectors": [
+                57,
+                58
+              ],
+              "type": "closed",
+              "depthM": 2.0
+            }
+          ]
+        },
+        {
+          "level": 9,
+          "z": [
+            38.70000076293945,
+            41.86000061035156
+          ],
+          "purpose": "work",
+          "visibleSourceSectors": 28,
+          "tenantZones": [
+            {
+              "sectors": [
+                31,
+                32,
+                33
+              ],
+              "type": "meeting",
+              "depthM": 4.6
+            },
+            {
+              "sectors": [
+                34,
+                35,
+                36
+              ],
+              "type": "desk",
+              "depthM": 5.0
+            },
+            {
+              "sectors": [
+                37,
+                38,
+                39
+              ],
+              "type": "closed",
+              "depthM": 2.0
+            },
+            {
+              "sectors": [
+                40,
+                41,
+                42
+              ],
+              "type": "lounge",
+              "depthM": 4.2
+            },
+            {
+              "sectors": [
+                43,
+                44,
+                45
+              ],
+              "type": "desk",
+              "depthM": 5.0
+            },
+            {
+              "sectors": [
+                46,
+                47,
+                48
+              ],
+              "type": "meeting",
+              "depthM": 4.6
+            },
+            {
+              "sectors": [
+                49,
+                50,
+                51
+              ],
+              "type": "desk",
+              "depthM": 5.0
+            },
+            {
+              "sectors": [
+                52,
+                53,
+                54
+              ],
+              "type": "closed",
+              "depthM": 2.0
+            },
+            {
+              "sectors": [
+                55,
+                56,
+                57
+              ],
+              "type": "lounge",
+              "depthM": 4.2
+            },
+            {
+              "sectors": [
+                58
+              ],
+              "type": "desk",
+              "depthM": 5.0
+            }
+          ]
+        },
+        {
+          "level": 10,
+          "z": [
+            42.29999923706055,
+            45.459999084472656
+          ],
+          "purpose": "studio",
+          "visibleSourceSectors": 29,
+          "tenantZones": [
+            {
+              "sectors": [
+                30,
+                31
+              ],
+              "type": "gallery",
+              "depthM": 5.6
+            },
+            {
+              "sectors": [
+                32,
+                33
+              ],
+              "type": "studio",
+              "depthM": 5.7
+            },
+            {
+              "sectors": [
+                34,
+                35
+              ],
+              "type": "studio",
+              "depthM": 5.7
+            },
+            {
+              "sectors": [
+                36,
+                37
+              ],
+              "type": "closed",
+              "depthM": 2.0
+            },
+            {
+              "sectors": [
+                38,
+                39
+              ],
+              "type": "desk",
+              "depthM": 5.0
+            },
+            {
+              "sectors": [
+                40,
+                41
+              ],
+              "type": "gallery",
+              "depthM": 5.6
+            },
+            {
+              "sectors": [
+                42,
+                43
+              ],
+              "type": "studio",
+              "depthM": 5.7
+            },
+            {
+              "sectors": [
+                44,
+                45
+              ],
+              "type": "studio",
+              "depthM": 5.7
+            },
+            {
+              "sectors": [
+                46,
+                47
+              ],
+              "type": "closed",
+              "depthM": 2.0
+            },
+            {
+              "sectors": [
+                48,
+                49
+              ],
+              "type": "desk",
+              "depthM": 5.0
+            },
+            {
+              "sectors": [
+                50,
+                51
+              ],
+              "type": "gallery",
+              "depthM": 5.6
+            },
+            {
+              "sectors": [
+                52,
+                53
+              ],
+              "type": "studio",
+              "depthM": 5.7
+            },
+            {
+              "sectors": [
+                54,
+                55
+              ],
+              "type": "studio",
+              "depthM": 5.7
+            },
+            {
+              "sectors": [
+                56,
+                57
+              ],
+              "type": "closed",
+              "depthM": 2.0
+            },
+            {
+              "sectors": [
+                58
+              ],
+              "type": "desk",
+              "depthM": 5.0
+            }
+          ]
+        },
+        {
+          "level": 11,
+          "z": [
+            45.900001525878906,
+            49.060001373291016
+          ],
+          "purpose": "lounge",
+          "visibleSourceSectors": 29,
+          "tenantZones": [
+            {
+              "sectors": [
+                30,
+                31,
+                32,
+                33
+              ],
+              "type": "gallery",
+              "depthM": 5.6
+            },
+            {
+              "sectors": [
+                34,
+                35,
+                36,
+                37
+              ],
+              "type": "lounge",
+              "depthM": 4.2
+            },
+            {
+              "sectors": [
+                38,
+                39,
+                40,
+                41
+              ],
+              "type": "service",
+              "depthM": 3.4
+            },
+            {
+              "sectors": [
+                42,
+                43,
+                44,
+                45
+              ],
+              "type": "closed",
+              "depthM": 2.0
+            },
+            {
+              "sectors": [
+                46,
+                47,
+                48,
+                49
+              ],
+              "type": "lounge",
+              "depthM": 4.2
+            },
+            {
+              "sectors": [
+                50,
+                51,
+                52,
+                53
+              ],
+              "type": "gallery",
+              "depthM": 5.6
+            },
+            {
+              "sectors": [
+                54,
+                55,
+                56,
+                57
+              ],
+              "type": "lounge",
+              "depthM": 4.2
+            },
+            {
+              "sectors": [
+                58
+              ],
+              "type": "service",
+              "depthM": 3.4
+            }
+          ]
+        },
+        {
+          "level": 12,
+          "z": [
+            49.5,
+            52.65999984741211
+          ],
+          "purpose": "work",
+          "visibleSourceSectors": 29,
+          "tenantZones": [
+            {
+              "sectors": [
+                30,
+                31
+              ],
+              "type": "meeting",
+              "depthM": 4.6
+            },
+            {
+              "sectors": [
+                32,
+                33
+              ],
+              "type": "desk",
+              "depthM": 5.0
+            },
+            {
+              "sectors": [
+                34,
+                35
+              ],
+              "type": "closed",
+              "depthM": 2.0
+            },
+            {
+              "sectors": [
+                36,
+                37
+              ],
+              "type": "lounge",
+              "depthM": 4.2
+            },
+            {
+              "sectors": [
+                38,
+                39
+              ],
+              "type": "desk",
+              "depthM": 5.0
+            },
+            {
+              "sectors": [
+                40,
+                41
+              ],
+              "type": "meeting",
+              "depthM": 4.6
+            },
+            {
+              "sectors": [
+                42,
+                43
+              ],
+              "type": "desk",
+              "depthM": 5.0
+            },
+            {
+              "sectors": [
+                44,
+                45
+              ],
+              "type": "closed",
+              "depthM": 2.0
+            },
+            {
+              "sectors": [
+                46,
+                47
+              ],
+              "type": "lounge",
+              "depthM": 4.2
+            },
+            {
+              "sectors": [
+                48,
+                49
+              ],
+              "type": "desk",
+              "depthM": 5.0
+            },
+            {
+              "sectors": [
+                50,
+                51
+              ],
+              "type": "meeting",
+              "depthM": 4.6
+            },
+            {
+              "sectors": [
+                52,
+                53
+              ],
+              "type": "desk",
+              "depthM": 5.0
+            },
+            {
+              "sectors": [
+                54,
+                55
+              ],
+              "type": "closed",
+              "depthM": 2.0
+            },
+            {
+              "sectors": [
+                56,
+                57
+              ],
+              "type": "lounge",
+              "depthM": 4.2
+            },
+            {
+              "sectors": [
+                58
+              ],
+              "type": "desk",
+              "depthM": 5.0
+            }
+          ]
+        },
+        {
+          "level": 13,
+          "z": [
+            53.099998474121094,
+            56.2599983215332
+          ],
+          "purpose": "meeting",
+          "visibleSourceSectors": 29,
+          "tenantZones": [
+            {
+              "sectors": [
+                30,
+                31,
+                32
+              ],
+              "type": "closed",
+              "depthM": 2.0
+            },
+            {
+              "sectors": [
+                33,
+                34,
+                35
+              ],
+              "type": "meeting",
+              "depthM": 4.6
+            },
+            {
+              "sectors": [
+                36,
+                37,
+                38
+              ],
+              "type": "desk",
+              "depthM": 5.0
+            },
+            {
+              "sectors": [
+                39,
+                40,
+                41
+              ],
+              "type": "meeting",
+              "depthM": 4.6
+            },
+            {
+              "sectors": [
+                42,
+                43,
+                44
+              ],
+              "type": "lounge",
+              "depthM": 4.2
+            },
+            {
+              "sectors": [
+                45,
+                46,
+                47
+              ],
+              "type": "closed",
+              "depthM": 2.0
+            },
+            {
+              "sectors": [
+                48,
+                49,
+                50
+              ],
+              "type": "meeting",
+              "depthM": 4.6
+            },
+            {
+              "sectors": [
+                51,
+                52,
+                53
+              ],
+              "type": "desk",
+              "depthM": 5.0
+            },
+            {
+              "sectors": [
+                54,
+                55,
+                56
+              ],
+              "type": "meeting",
+              "depthM": 4.6
+            },
+            {
+              "sectors": [
+                57,
+                58
+              ],
+              "type": "lounge",
+              "depthM": 4.2
+            }
+          ]
+        },
+        {
+          "level": 14,
+          "z": [
+            56.70000076293945,
+            59.86000061035156
+          ],
+          "purpose": "studio",
+          "visibleSourceSectors": 29,
+          "tenantZones": [
+            {
+              "sectors": [
+                30,
+                31,
+                32,
+                33
+              ],
+              "type": "studio",
+              "depthM": 5.7
+            },
+            {
+              "sectors": [
+                34,
+                35,
+                36,
+                37
+              ],
+              "type": "closed",
+              "depthM": 2.0
+            },
+            {
+              "sectors": [
+                38,
+                39,
+                40,
+                41
+              ],
+              "type": "desk",
+              "depthM": 5.0
+            },
+            {
+              "sectors": [
+                42,
+                43,
+                44,
+                45
+              ],
+              "type": "gallery",
+              "depthM": 5.6
+            },
+            {
+              "sectors": [
+                46,
+                47,
+                48,
+                49
+              ],
+              "type": "studio",
+              "depthM": 5.7
+            },
+            {
+              "sectors": [
+                50,
+                51,
+                52,
+                53
+              ],
+              "type": "studio",
+              "depthM": 5.7
+            },
+            {
+              "sectors": [
+                54,
+                55,
+                56,
+                57
+              ],
+              "type": "closed",
+              "depthM": 2.0
+            },
+            {
+              "sectors": [
+                58
+              ],
+              "type": "desk",
+              "depthM": 5.0
+            }
+          ]
+        },
+        {
+          "level": 15,
+          "z": [
+            60.29999923706055,
+            63.459999084472656
+          ],
+          "purpose": "lounge",
+          "visibleSourceSectors": 30,
+          "tenantZones": [
+            {
+              "sectors": [
+                30,
+                31,
+                32
+              ],
+              "type": "lounge",
+              "depthM": 4.2
+            },
+            {
+              "sectors": [
+                33,
+                34,
+                35
+              ],
+              "type": "gallery",
+              "depthM": 5.6
+            },
+            {
+              "sectors": [
+                36,
+                37,
+                38
+              ],
+              "type": "lounge",
+              "depthM": 4.2
+            },
+            {
+              "sectors": [
+                39,
+                40,
+                41
+              ],
+              "type": "service",
+              "depthM": 3.4
+            },
+            {
+              "sectors": [
+                42,
+                43,
+                44
+              ],
+              "type": "closed",
+              "depthM": 2.0
+            },
+            {
+              "sectors": [
+                45,
+                46,
+                47
+              ],
+              "type": "lounge",
+              "depthM": 4.2
+            },
+            {
+              "sectors": [
+                48,
+                49,
+                50
+              ],
+              "type": "gallery",
+              "depthM": 5.6
+            },
+            {
+              "sectors": [
+                51,
+                52,
+                53
+              ],
+              "type": "lounge",
+              "depthM": 4.2
+            },
+            {
+              "sectors": [
+                54,
+                55,
+                56
+              ],
+              "type": "service",
+              "depthM": 3.4
+            },
+            {
+              "sectors": [
+                57,
+                58,
+                59
+              ],
+              "type": "closed",
+              "depthM": 2.0
+            }
+          ]
+        },
+        {
+          "level": 16,
+          "z": [
+            63.900001525878906,
+            64.66000366210938
+          ],
+          "purpose": "lounge",
+          "visibleSourceSectors": 30,
+          "tenantZones": [
+            {
+              "sectors": [
+                30,
+                31
+              ],
+              "type": "service",
+              "depthM": 3.4
+            },
+            {
+              "sectors": [
+                32,
+                33
+              ],
+              "type": "closed",
+              "depthM": 2.0
+            },
+            {
+              "sectors": [
+                34,
+                35
+              ],
+              "type": "lounge",
+              "depthM": 4.2
+            },
+            {
+              "sectors": [
+                36,
+                37
+              ],
+              "type": "gallery",
+              "depthM": 5.6
+            },
+            {
+              "sectors": [
+                38,
+                39
+              ],
+              "type": "lounge",
+              "depthM": 4.2
+            },
+            {
+              "sectors": [
+                40,
+                41
+              ],
+              "type": "service",
+              "depthM": 3.4
+            },
+            {
+              "sectors": [
+                42,
+                43
+              ],
+              "type": "closed",
+              "depthM": 2.0
+            },
+            {
+              "sectors": [
+                44,
+                45
+              ],
+              "type": "lounge",
+              "depthM": 4.2
+            },
+            {
+              "sectors": [
+                46,
+                47
+              ],
+              "type": "gallery",
+              "depthM": 5.6
+            },
+            {
+              "sectors": [
+                48,
+                49
+              ],
+              "type": "lounge",
+              "depthM": 4.2
+            },
+            {
+              "sectors": [
+                50,
+                51
+              ],
+              "type": "service",
+              "depthM": 3.4
+            },
+            {
+              "sectors": [
+                52,
+                53
+              ],
+              "type": "closed",
+              "depthM": 2.0
+            },
+            {
+              "sectors": [
+                54,
+                55
+              ],
+              "type": "lounge",
+              "depthM": 4.2
+            },
+            {
+              "sectors": [
+                56,
+                57
+              ],
+              "type": "gallery",
+              "depthM": 5.6
+            },
+            {
+              "sectors": [
+                58,
+                59
+              ],
+              "type": "lounge",
+              "depthM": 4.2
+            }
+          ]
+        }
+      ],
+      "removedOpaquePolygonPieces": 2562
+    },
+    {
+      "building": "WB06_Middle_Rear_Left",
+      "floorPlans": [
+        {
+          "level": 1,
+          "z": [
+            7.2,
+            13.0600004196167
+          ],
+          "purpose": "books",
+          "visibleSourceSectors": 6,
+          "tenantZones": [
+            {
+              "sectors": [
+                50,
+                51,
+                52
+              ],
+              "type": "books",
+              "depthM": 5.4
+            },
+            {
+              "sectors": [
+                53,
+                54,
+                55
+              ],
+              "type": "closed",
+              "depthM": 2.0
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "z": [
+            13.5,
+            16.65999984741211
+          ],
+          "purpose": "retail",
+          "visibleSourceSectors": 9,
+          "tenantZones": [
+            {
+              "sectors": [
+                50,
+                51,
+                52
+              ],
+              "type": "closed",
+              "depthM": 2.0
+            },
+            {
+              "sectors": [
+                53,
+                54,
+                55
+              ],
+              "type": "shop",
+              "depthM": 4.8
+            },
+            {
+              "sectors": [
+                56,
+                57,
+                58
+              ],
+              "type": "lounge",
+              "depthM": 4.2
+            }
+          ]
+        },
+        {
+          "level": 3,
+          "z": [
+            17.100000381469727,
+            20.260000228881836
+          ],
+          "purpose": "cafe",
+          "visibleSourceSectors": 7,
+          "tenantZones": [
+            {
+              "sectors": [
+                52,
+                53,
+                54
+              ],
+              "type": "service",
+              "depthM": 3.4
+            },
+            {
+              "sectors": [
+                55,
+                56,
+                57
+              ],
+              "type": "closed",
+              "depthM": 2.0
+            },
+            {
+              "sectors": [
+                58
+              ],
+              "type": "lounge",
+              "depthM": 4.2
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "z": [
+            20.700000762939453,
+            23.860000610351562
+          ],
+          "purpose": "gallery",
+          "visibleSourceSectors": 0,
+          "tenantZones": []
+        },
+        {
+          "level": 5,
+          "z": [
+            24.299999237060547,
+            27.459999084472656
+          ],
+          "purpose": "studio",
+          "visibleSourceSectors": 0,
+          "tenantZones": []
+        },
+        {
+          "level": 6,
+          "z": [
+            27.899999618530273,
+            31.059999465942383
+          ],
+          "purpose": "work",
+          "visibleSourceSectors": 5,
+          "tenantZones": [
+            {
+              "sectors": [
+                50,
+                51,
+                52
+              ],
+              "type": "desk",
+              "depthM": 5.0
+            },
+            {
+              "sectors": [
+                53,
+                54
+              ],
+              "type": "closed",
+              "depthM": 2.0
+            }
+          ]
+        },
+        {
+          "level": 7,
+          "z": [
+            31.5,
+            34.65999984741211
+          ],
+          "purpose": "meeting",
+          "visibleSourceSectors": 11,
+          "tenantZones": [
+            {
+              "sectors": [
+                50,
+                51
+              ],
+              "type": "meeting",
+              "depthM": 4.6
+            },
+            {
+              "sectors": [
+                52,
+                53
+              ],
+              "type": "lounge",
+              "depthM": 4.2
+            },
+            {
+              "sectors": [
+                54,
+                55
+              ],
+              "type": "closed",
+              "depthM": 2.0
+            },
+            {
+              "sectors": [
+                56,
+                57
+              ],
+              "type": "meeting",
+              "depthM": 4.6
+            },
+            {
+              "sectors": [
+                58,
+                59
+              ],
+              "type": "desk",
+              "depthM": 5.0
+            },
+            {
+              "sectors": [
+                60
+              ],
+              "type": "meeting",
+              "depthM": 4.6
+            }
+          ]
+        },
+        {
+          "level": 8,
+          "z": [
+            35.099998474121094,
+            38.2599983215332
+          ],
+          "purpose": "studio",
+          "visibleSourceSectors": 16,
+          "tenantZones": [
+            {
+              "sectors": [
+                46,
+                47,
+                48,
+                49
+              ],
+              "type": "gallery",
+              "depthM": 5.6
+            },
+            {
+              "sectors": [
+                50,
+                51,
+                52,
+                53
+              ],
+              "type": "studio",
+              "depthM": 5.7
+            },
+            {
+              "sectors": [
+                54,
+                55,
+                56,
+                57
+              ],
+              "type": "studio",
+              "depthM": 5.7
+            },
+            {
+              "sectors": [
+                58,
+                59,
+                60,
+                61
+              ],
+              "type": "closed",
+              "depthM": 2.0
+            }
+          ]
+        },
+        {
+          "level": 9,
+          "z": [
+            38.70000076293945,
+            41.86000061035156
+          ],
+          "purpose": "work",
+          "visibleSourceSectors": 20,
+          "tenantZones": [
+            {
+              "sectors": [
+                0
+              ],
+              "type": "desk",
+              "depthM": 5.0
+            },
+            {
+              "sectors": [
+                45,
+                46,
+                47
+              ],
+              "type": "closed",
+              "depthM": 2.0
+            },
+            {
+              "sectors": [
+                48,
+                49,
+                50
+              ],
+              "type": "lounge",
+              "depthM": 4.2
+            },
+            {
+              "sectors": [
+                51,
+                52,
+                53
+              ],
+              "type": "desk",
+              "depthM": 5.0
+            },
+            {
+              "sectors": [
+                54,
+                55,
+                56
+              ],
+              "type": "meeting",
+              "depthM": 4.6
+            },
+            {
+              "sectors": [
+                57,
+                58,
+                59
+              ],
+              "type": "desk",
+              "depthM": 5.0
+            },
+            {
+              "sectors": [
+                60,
+                61,
+                62
+              ],
+              "type": "closed",
+              "depthM": 2.0
+            },
+            {
+              "sectors": [
+                63
+              ],
+              "type": "lounge",
+              "depthM": 4.2
+            }
+          ]
+        },
+        {
+          "level": 10,
+          "z": [
+            42.29999923706055,
+            45.459999084472656
+          ],
+          "purpose": "lounge",
+          "visibleSourceSectors": 21,
+          "tenantZones": [
+            {
+              "sectors": [
+                0
+              ],
+              "type": "gallery",
+              "depthM": 5.6
+            },
+            {
+              "sectors": [
+                44,
+                45
+              ],
+              "type": "lounge",
+              "depthM": 4.2
+            },
+            {
+              "sectors": [
+                46,
+                47
+              ],
+              "type": "service",
+              "depthM": 3.4
+            },
+            {
+              "sectors": [
+                48,
+                49
+              ],
+              "type": "closed",
+              "depthM": 2.0
+            },
+            {
+              "sectors": [
+                50,
+                51
+              ],
+              "type": "lounge",
+              "depthM": 4.2
+            },
+            {
+              "sectors": [
+                52,
+                53
+              ],
+              "type": "gallery",
+              "depthM": 5.6
+            },
+            {
+              "sectors": [
+                54,
+                55
+              ],
+              "type": "lounge",
+              "depthM": 4.2
+            },
+            {
+              "sectors": [
+                56,
+                57
+              ],
+              "type": "service",
+              "depthM": 3.4
+            },
+            {
+              "sectors": [
+                58,
+                59
+              ],
+              "type": "closed",
+              "depthM": 2.0
+            },
+            {
+              "sectors": [
+                60,
+                61
+              ],
+              "type": "lounge",
+              "depthM": 4.2
+            },
+            {
+              "sectors": [
+                62,
+                63
+              ],
+              "type": "gallery",
+              "depthM": 5.6
+            }
+          ]
+        },
+        {
+          "level": 11,
+          "z": [
+            45.900001525878906,
+            49.060001373291016
+          ],
+          "purpose": "meeting",
+          "visibleSourceSectors": 24,
+          "tenantZones": [
+            {
+              "sectors": [
+                0
+              ],
+              "type": "meeting",
+              "depthM": 4.6
+            },
+            {
+              "sectors": [
+                41,
+                42,
+                43,
+                44
+              ],
+              "type": "lounge",
+              "depthM": 4.2
+            },
+            {
+              "sectors": [
+                45,
+                46,
+                47,
+                48
+              ],
+              "type": "closed",
+              "depthM": 2.0
+            },
+            {
+              "sectors": [
+                49,
+                50,
+                51,
+                52
+              ],
+              "type": "meeting",
+              "depthM": 4.6
+            },
+            {
+              "sectors": [
+                53,
+                54,
+                55,
+                56
+              ],
+              "type": "desk",
+              "depthM": 5.0
+            },
+            {
+              "sectors": [
+                57,
+                58,
+                59,
+                60
+              ],
+              "type": "meeting",
+              "depthM": 4.6
+            },
+            {
+              "sectors": [
+                61,
+                62,
+                63
+              ],
+              "type": "lounge",
+              "depthM": 4.2
+            }
+          ]
+        },
+        {
+          "level": 12,
+          "z": [
+            49.5,
+            52.65999984741211
+          ],
+          "purpose": "work",
+          "visibleSourceSectors": 27,
+          "tenantZones": [
+            {
+              "sectors": [
+                0
+              ],
+              "type": "desk",
+              "depthM": 5.0
+            },
+            {
+              "sectors": [
+                38,
+                39
+              ],
+              "type": "closed",
+              "depthM": 2.0
+            },
+            {
+              "sectors": [
+                40,
+                41
+              ],
+              "type": "lounge",
+              "depthM": 4.2
+            },
+            {
+              "sectors": [
+                42,
+                43
+              ],
+              "type": "desk",
+              "depthM": 5.0
+            },
+            {
+              "sectors": [
+                44,
+                45
+              ],
+              "type": "meeting",
+              "depthM": 4.6
+            },
+            {
+              "sectors": [
+                46,
+                47
+              ],
+              "type": "desk",
+              "depthM": 5.0
+            },
+            {
+              "sectors": [
+                48,
+                49
+              ],
+              "type": "closed",
+              "depthM": 2.0
+            },
+            {
+              "sectors": [
+                50,
+                51
+              ],
+              "type": "lounge",
+              "depthM": 4.2
+            },
+            {
+              "sectors": [
+                52,
+                53
+              ],
+              "type": "desk",
+              "depthM": 5.0
+            },
+            {
+              "sectors": [
+                54,
+                55
+              ],
+              "type": "meeting",
+              "depthM": 4.6
+            },
+            {
+              "sectors": [
+                56,
+                57
+              ],
+              "type": "desk",
+              "depthM": 5.0
+            },
+            {
+              "sectors": [
+                58,
+                59
+              ],
+              "type": "closed",
+              "depthM": 2.0
+            },
+            {
+              "sectors": [
+                60,
+                61
+              ],
+              "type": "lounge",
+              "depthM": 4.2
+            },
+            {
+              "sectors": [
+                62,
+                63
+              ],
+              "type": "desk",
+              "depthM": 5.0
+            }
+          ]
+        },
+        {
+          "level": 13,
+          "z": [
+            53.099998474121094,
+            56.2599983215332
+          ],
+          "purpose": "studio",
+          "visibleSourceSectors": 30,
+          "tenantZones": [
+            {
+              "sectors": [
+                0,
+                1
+              ],
+              "type": "gallery",
+              "depthM": 5.6
+            },
+            {
+              "sectors": [
+                36,
+                37,
+                38
+              ],
+              "type": "studio",
+              "depthM": 5.7
+            },
+            {
+              "sectors": [
+                39,
+                40,
+                41
+              ],
+              "type": "studio",
+              "depthM": 5.7
+            },
+            {
+              "sectors": [
+                42,
+                43,
+                44
+              ],
+              "type": "closed",
+              "depthM": 2.0
+            },
+            {
+              "sectors": [
+                45,
+                46,
+                47
+              ],
+              "type": "desk",
+              "depthM": 5.0
+            },
+            {
+              "sectors": [
+                48,
+                49,
+                50
+              ],
+              "type": "gallery",
+              "depthM": 5.6
+            },
+            {
+              "sectors": [
+                51,
+                52,
+                53
+              ],
+              "type": "studio",
+              "depthM": 5.7
+            },
+            {
+              "sectors": [
+                54,
+                55,
+                56
+              ],
+              "type": "studio",
+              "depthM": 5.7
+            },
+            {
+              "sectors": [
+                57,
+                58,
+                59
+              ],
+              "type": "closed",
+              "depthM": 2.0
+            },
+            {
+              "sectors": [
+                60,
+                61,
+                62
+              ],
+              "type": "desk",
+              "depthM": 5.0
+            },
+            {
+              "sectors": [
+                63
+              ],
+              "type": "gallery",
+              "depthM": 5.6
+            }
+          ]
+        },
+        {
+          "level": 14,
+          "z": [
+            56.70000076293945,
+            59.86000061035156
+          ],
+          "purpose": "lounge",
+          "visibleSourceSectors": 30,
+          "tenantZones": [
+            {
+              "sectors": [
+                0,
+                1
+              ],
+              "type": "service",
+              "depthM": 3.4
+            },
+            {
+              "sectors": [
+                36,
+                37,
+                38,
+                39
+              ],
+              "type": "closed",
+              "depthM": 2.0
+            },
+            {
+              "sectors": [
+                40,
+                41,
+                42,
+                43
+              ],
+              "type": "lounge",
+              "depthM": 4.2
+            },
+            {
+              "sectors": [
+                44,
+                45,
+                46,
+                47
+              ],
+              "type": "gallery",
+              "depthM": 5.6
+            },
+            {
+              "sectors": [
+                48,
+                49,
+                50,
+                51
+              ],
+              "type": "lounge",
+              "depthM": 4.2
+            },
+            {
+              "sectors": [
+                52,
+                53,
+                54,
+                55
+              ],
+              "type": "service",
+              "depthM": 3.4
+            },
+            {
+              "sectors": [
+                56,
+                57,
+                58,
+                59
+              ],
+              "type": "closed",
+              "depthM": 2.0
+            },
+            {
+              "sectors": [
+                60,
+                61,
+                62,
+                63
+              ],
+              "type": "lounge",
+              "depthM": 4.2
+            }
+          ]
+        },
+        {
+          "level": 15,
+          "z": [
+            60.29999923706055,
+            60.65999984741211
+          ],
+          "purpose": "lounge",
+          "visibleSourceSectors": 30,
+          "tenantZones": [
+            {
+              "sectors": [
+                0,
+                1
+              ],
+              "type": "gallery",
+              "depthM": 5.6
+            },
+            {
+              "sectors": [
+                36,
+                37,
+                38
+              ],
+              "type": "lounge",
+              "depthM": 4.2
+            },
+            {
+              "sectors": [
+                39,
+                40,
+                41
+              ],
+              "type": "service",
+              "depthM": 3.4
+            },
+            {
+              "sectors": [
+                42,
+                43,
+                44
+              ],
+              "type": "closed",
+              "depthM": 2.0
+            },
+            {
+              "sectors": [
+                45,
+                46,
+                47
+              ],
+              "type": "lounge",
+              "depthM": 4.2
+            },
+            {
+              "sectors": [
+                48,
+                49,
+                50
+              ],
+              "type": "gallery",
+              "depthM": 5.6
+            },
+            {
+              "sectors": [
+                51,
+                52,
+                53
+              ],
+              "type": "lounge",
+              "depthM": 4.2
+            },
+            {
+              "sectors": [
+                54,
+                55,
+                56
+              ],
+              "type": "service",
+              "depthM": 3.4
+            },
+            {
+              "sectors": [
+                57,
+                58,
+                59
+              ],
+              "type": "closed",
+              "depthM": 2.0
+            },
+            {
+              "sectors": [
+                60,
+                61,
+                62
+              ],
+              "type": "lounge",
+              "depthM": 4.2
+            },
+            {
+              "sectors": [
+                63
+              ],
+              "type": "gallery",
+              "depthM": 5.6
+            }
+          ]
+        }
+      ],
+      "removedOpaquePolygonPieces": 1238
+    },
+    {
+      "building": "WB06_Middle_Rear_Right",
+      "floorPlans": [
+        {
+          "level": 1,
+          "z": [
+            7.2,
+            13.0600004196167
+          ],
+          "purpose": "retail",
+          "visibleSourceSectors": 0,
+          "tenantZones": []
+        },
+        {
+          "level": 2,
+          "z": [
+            13.5,
+            16.65999984741211
+          ],
+          "purpose": "cafe",
+          "visibleSourceSectors": 0,
+          "tenantZones": []
+        },
+        {
+          "level": 3,
+          "z": [
+            17.100000381469727,
+            20.260000228881836
+          ],
+          "purpose": "gallery",
+          "visibleSourceSectors": 0,
+          "tenantZones": []
+        },
+        {
+          "level": 4,
+          "z": [
+            20.700000762939453,
+            23.860000610351562
+          ],
+          "purpose": "studio",
+          "visibleSourceSectors": 0,
+          "tenantZones": []
+        },
+        {
+          "level": 5,
+          "z": [
+            24.299999237060547,
+            27.459999084472656
+          ],
+          "purpose": "meeting",
+          "visibleSourceSectors": 0,
+          "tenantZones": []
+        },
+        {
+          "level": 6,
+          "z": [
+            27.899999618530273,
+            31.059999465942383
+          ],
+          "purpose": "work",
+          "visibleSourceSectors": 0,
+          "tenantZones": []
+        },
+        {
+          "level": 7,
+          "z": [
+            31.5,
+            34.65999984741211
+          ],
+          "purpose": "studio",
+          "visibleSourceSectors": 0,
+          "tenantZones": []
+        },
+        {
+          "level": 8,
+          "z": [
+            35.099998474121094,
+            38.2599983215332
+          ],
+          "purpose": "lounge",
+          "visibleSourceSectors": 0,
+          "tenantZones": []
+        },
+        {
+          "level": 9,
+          "z": [
+            38.70000076293945,
+            41.86000061035156
+          ],
+          "purpose": "work",
+          "visibleSourceSectors": 0,
+          "tenantZones": []
+        },
+        {
+          "level": 10,
+          "z": [
+            42.29999923706055,
+            45.459999084472656
+          ],
+          "purpose": "meeting",
+          "visibleSourceSectors": 4,
+          "tenantZones": [
+            {
+              "sectors": [
+                38,
+                39
+              ],
+              "type": "meeting",
+              "depthM": 4.6
+            },
+            {
+              "sectors": [
+                40,
+                41
+              ],
+              "type": "lounge",
+              "depthM": 4.2
+            }
+          ]
+        },
+        {
+          "level": 11,
+          "z": [
+            45.900001525878906,
+            49.060001373291016
+          ],
+          "purpose": "studio",
+          "visibleSourceSectors": 6,
+          "tenantZones": [
+            {
+              "sectors": [
+                37,
+                38,
+                39,
+                40
+              ],
+              "type": "closed",
+              "depthM": 2.0
+            },
+            {
+              "sectors": [
+                41,
+                42
+              ],
+              "type": "desk",
+              "depthM": 5.0
+            }
+          ]
+        },
+        {
+          "level": 12,
+          "z": [
+            49.5,
+            52.65999984741211
+          ],
+          "purpose": "work",
+          "visibleSourceSectors": 9,
+          "tenantZones": [
+            {
+              "sectors": [
+                35,
+                36
+              ],
+              "type": "closed",
+              "depthM": 2.0
+            },
+            {
+              "sectors": [
+                37,
+                38
+              ],
+              "type": "lounge",
+              "depthM": 4.2
+            },
+            {
+              "sectors": [
+                39,
+                40
+              ],
+              "type": "desk",
+              "depthM": 5.0
+            },
+            {
+              "sectors": [
+                41,
+                42
+              ],
+              "type": "meeting",
+              "depthM": 4.6
+            },
+            {
+              "sectors": [
+                43
+              ],
+              "type": "desk",
+              "depthM": 5.0
+            }
+          ]
+        },
+        {
+          "level": 13,
+          "z": [
+            53.099998474121094,
+            56.2599983215332
+          ],
+          "purpose": "gallery",
+          "visibleSourceSectors": 14,
+          "tenantZones": [
+            {
+              "sectors": [
+                31,
+                32,
+                33
+              ],
+              "type": "gallery",
+              "depthM": 5.6
+            },
+            {
+              "sectors": [
+                34,
+                35,
+                36
+              ],
+              "type": "gallery",
+              "depthM": 5.6
+            },
+            {
+              "sectors": [
+                37,
+                38,
+                39
+              ],
+              "type": "closed",
+              "depthM": 2.0
+            },
+            {
+              "sectors": [
+                40,
+                41,
+                42
+              ],
+              "type": "gallery",
+              "depthM": 5.6
+            },
+            {
+              "sectors": [
+                43,
+                44
+              ],
+              "type": "shop",
+              "depthM": 4.8
+            }
+          ]
+        },
+        {
+          "level": 14,
+          "z": [
+            56.70000076293945,
+            59.86000061035156
+          ],
+          "purpose": "lounge",
+          "visibleSourceSectors": 16,
+          "tenantZones": [
+            {
+              "sectors": [
+                30,
+                31,
+                32,
+                33
+              ],
+              "type": "closed",
+              "depthM": 2.0
+            },
+            {
+              "sectors": [
+                34,
+                35,
+                36,
+                37
+              ],
+              "type": "lounge",
+              "depthM": 4.2
+            },
+            {
+              "sectors": [
+                38,
+                39,
+                40,
+                41
+              ],
+              "type": "gallery",
+              "depthM": 5.6
+            },
+            {
+              "sectors": [
+                42,
+                43,
+                44,
+                45
+              ],
+              "type": "lounge",
+              "depthM": 4.2
+            }
+          ]
+        },
+        {
+          "level": 15,
+          "z": [
+            60.29999923706055,
+            61.65999984741211
+          ],
+          "purpose": "lounge",
+          "visibleSourceSectors": 18,
+          "tenantZones": [
+            {
+              "sectors": [
+                30,
+                31,
+                32
+              ],
+              "type": "lounge",
+              "depthM": 4.2
+            },
+            {
+              "sectors": [
+                33,
+                34,
+                35
+              ],
+              "type": "service",
+              "depthM": 3.4
+            },
+            {
+              "sectors": [
+                36,
+                37,
+                38
+              ],
+              "type": "closed",
+              "depthM": 2.0
+            },
+            {
+              "sectors": [
+                39,
+                40,
+                41
+              ],
+              "type": "lounge",
+              "depthM": 4.2
+            },
+            {
+              "sectors": [
+                42,
+                43,
+                44
+              ],
+              "type": "gallery",
+              "depthM": 5.6
+            },
+            {
+              "sectors": [
+                45,
+                46,
+                47
+              ],
+              "type": "lounge",
+              "depthM": 4.2
+            }
+          ]
+        }
+      ],
+      "removedOpaquePolygonPieces": 317
+    }
+  ],
+  "imageRGBA8EstimateBytes": 381681664,
+  "images": [
+    {
+      "name": "Foliage_Linde_Tree_Large_Green_Leaves_BaseColor",
+      "size": [
+        1024,
+        1024
+      ],
+      "RGBA8bytes": 4194304
+    },
+    {
+      "name": "Foliage_Linde_Tree_Large_Trunk_BaseColor",
+      "size": [
+        1024,
+        1024
+      ],
+      "RGBA8bytes": 4194304
+    },
+    {
+      "name": "Foliage_Linde_Tree_Large_Trunk_Normal",
+      "size": [
+        1024,
+        1024
+      ],
+      "RGBA8bytes": 4194304
+    },
+    {
+      "name": "grass_bermuda_01_diff",
+      "size": [
+        1024,
+        1024
+      ],
+      "RGBA8bytes": 4194304
+    },
+    {
+      "name": "grass_bermuda_01_nor_gl",
+      "size": [
+        1024,
+        1024
+      ],
+      "RGBA8bytes": 4194304
+    },
+    {
+      "name": "grass_bermuda_01_rough",
+      "size": [
+        1024,
+        1024
+      ],
+      "RGBA8bytes": 4194304
+    },
+    {
+      "name": "Image_10",
+      "size": [
+        2048,
+        2048
+      ],
+      "RGBA8bytes": 16777216
+    },
+    {
+      "name": "Image_11",
+      "size": [
+        2048,
+        2048
+      ],
+      "RGBA8bytes": 16777216
+    },
+    {
+      "name": "Image_12",
+      "size": [
+        2048,
+        2048
+      ],
+      "RGBA8bytes": 16777216
+    },
+    {
+      "name": "Image_13",
+      "size": [
+        2048,
+        2048
+      ],
+      "RGBA8bytes": 16777216
+    },
+    {
+      "name": "Image_14",
+      "size": [
+        2048,
+        2048
+      ],
+      "RGBA8bytes": 16777216
+    },
+    {
+      "name": "Image_15",
+      "size": [
+        2048,
+        2048
+      ],
+      "RGBA8bytes": 16777216
+    },
+    {
+      "name": "Image_16",
+      "size": [
+        2048,
+        2048
+      ],
+      "RGBA8bytes": 16777216
+    },
+    {
+      "name": "Image_17",
+      "size": [
+        2048,
+        2048
+      ],
+      "RGBA8bytes": 16777216
+    },
+    {
+      "name": "Image_30",
+      "size": [
+        2048,
+        2048
+      ],
+      "RGBA8bytes": 16777216
+    },
+    {
+      "name": "Image_40",
+      "size": [
+        2048,
+        2048
+      ],
+      "RGBA8bytes": 16777216
+    },
+    {
+      "name": "Image_42",
+      "size": [
+        2048,
+        2048
+      ],
+      "RGBA8bytes": 16777216
+    },
+    {
+      "name": "Image_43",
+      "size": [
+        2048,
+        2048
+      ],
+      "RGBA8bytes": 16777216
+    },
+    {
+      "name": "Image_44",
+      "size": [
+        2048,
+        2048
+      ],
+      "RGBA8bytes": 16777216
+    },
+    {
+      "name": "Image_45",
+      "size": [
+        4096,
+        4096
+      ],
+      "RGBA8bytes": 67108864
+    },
+    {
+      "name": "Image_8",
+      "size": [
+        2048,
+        2048
+      ],
+      "RGBA8bytes": 16777216
+    },
+    {
+      "name": "Image_9",
+      "size": [
+        2048,
+        2048
+      ],
+      "RGBA8bytes": 16777216
+    },
+    {
+      "name": "modular_street_seating_armrests_diff",
+      "size": [
+        1024,
+        1024
+      ],
+      "RGBA8bytes": 4194304
+    },
+    {
+      "name": "modular_street_seating_armrests_metal-modular_street_seating_armrests_rough",
+      "size": [
+        1024,
+        1024
+      ],
+      "RGBA8bytes": 4194304
+    },
+    {
+      "name": "modular_street_seating_armrests_nor_gl",
+      "size": [
+        1024,
+        1024
+      ],
+      "RGBA8bytes": 4194304
+    },
+    {
+      "name": "modular_street_seating_supports_diff",
+      "size": [
+        1024,
+        1024
+      ],
+      "RGBA8bytes": 4194304
+    },
+    {
+      "name": "modular_street_seating_supports_metal-modular_street_seating_supports_rough",
+      "size": [
+        1024,
+        1024
+      ],
+      "RGBA8bytes": 4194304
+    },
+    {
+      "name": "modular_street_seating_supports_nor_gl",
+      "size": [
+        1024,
+        1024
+      ],
+      "RGBA8bytes": 4194304
+    },
+    {
+      "name": "modular_street_seating_timber_diff",
+      "size": [
+        1024,
+        1024
+      ],
+      "RGBA8bytes": 4194304
+    },
+    {
+      "name": "modular_street_seating_timber_nor_gl",
+      "size": [
+        1024,
+        1024
+      ],
+      "RGBA8bytes": 4194304
+    },
+    {
+      "name": "modular_street_seating_timber_rough",
+      "size": [
+        1024,
+        1024
+      ],
+      "RGBA8bytes": 4194304
+    }
+  ],
+  "notes": [
+    "Only ray-visible camera-facing sectors expanded; hidden rear facades retain opaque baseline",
+    "City31 approved local sample and all its glass/interiors remain intact",
+    "New furniture is purpose-authored low-cost layered geometry; no claim of full commercial tenant fit-out",
+    "Existing layer bands/crowns/bridges/plaza/camera/environment unchanged",
+    "London collection appended exactly from accepted source; independent comprehensive candidate",
+    "Actual CPU preview required before quality acceptance"
+  ],
+  "sceneVisibleEvaluatedTriangles": 1342697,
+  "sceneVisibleUniqueBaseTriangles": 716572,
+  "actualNewLocalLightCount": 349,
+  "newLocalLightWatts": 45590.0,
+  "paneCenterOcclusionCheck": [
+    {
+      "object": "C32_WB06_Left_Front_Primary_Glazing",
+      "testedPaneCenters": 116,
+      "firstHitCounts": {
+        "WB06_Left_Front_Primary_FloorBand_00": 2,
+        "C32_WB06_Left_Front_Primary_Glazing": 104,
+        "WB06_Commercial_Entry_Canopy": 1,
+        "WB06_Left_Front_Primary_FloorBand_01": 1,
+        "WB06_Left_Front_Primary_FloorBand_02": 1,
+        "WB06_Left_Front_Primary_FloorBand_03": 1,
+        "WB06_Left_Front_Primary_FloorBand_05": 1,
+        "C32_WB06_Left_Front_Primary_Metal": 5
+      }
+    },
+    {
+      "object": "C32_WB06_Right_Back_Secondary_Glazing",
+      "testedPaneCenters": 122,
+      "firstHitCounts": {
+        "WB06_Court_Lower_Bridge": 1,
+        "C32_WB06_Right_Back_Secondary_Glazing": 111,
+        "WB06_Right_Back_Secondary_FloorBand_01": 1,
+        "C32_WB06_Right_Back_Secondary_Metal": 7,
+        "WB06_Court_Lower_Bridge_TopEdge": 1,
+        "WB06_Court_Upper_Bridge_WalkingDeck": 1
+      }
+    },
+    {
+      "object": "C32_WB06_Middle_Rear_Left_Glazing",
+      "testedPaneCenters": 68,
+      "firstHitCounts": {
+        "C32_WB06_Left_Front_Primary_Glazing": 1,
+        "C32_WB06_Middle_Rear_Left_Glazing": 62,
+        "WB06_Left_Front_Primary_FloorBand_11": 1,
+        "C32_WB06_Middle_Rear_Left_Metal": 4
+      }
+    },
+    {
+      "object": "C32_WB06_Middle_Rear_Right_Glazing",
+      "testedPaneCenters": 20,
+      "firstHitCounts": {
+        "WB06_Middle_Rear_Left_FloorBand_09": 1,
+        "C32_WB06_Right_Back_Secondary_Glazing": 1,
+        "C32_WB06_Middle_Rear_Right_Glazing": 16,
+        "C32_WB06_Middle_Rear_Right_Metal": 1,
+        "C32_WB06_Right_Back_Secondary_Metal": 1
+      }
+    }
+  ],
+  "textureAccounting": "Image dimensions \u00d74 bytes is decoded RGBA8 estimate only; not measured GPU allocation. No GPU started."
+}

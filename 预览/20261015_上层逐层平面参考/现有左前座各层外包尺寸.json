@@ -1,0 +1,98 @@
+[
+  {
+    "band": "WB06_Left_Front_Primary_FloorBand_00",
+    "zTop": 13.5,
+    "spanX": 52.58977150917053,
+    "spanY": 49.45368766784668
+  },
+  {
+    "band": "WB06_Left_Front_Primary_FloorBand_01",
+    "zTop": 17.100000381469727,
+    "spanX": 53.748963356018066,
+    "spanY": 50.4835262298584
+  },
+  {
+    "band": "WB06_Left_Front_Primary_FloorBand_02",
+    "zTop": 20.700000762939453,
+    "spanX": 54.59975624084473,
+    "spanY": 51.19345664978027
+  },
+  {
+    "band": "WB06_Left_Front_Primary_FloorBand_03",
+    "zTop": 24.299999237060547,
+    "spanX": 55.061767578125,
+    "spanY": 51.52998161315918
+  },
+  {
+    "band": "WB06_Left_Front_Primary_FloorBand_04",
+    "zTop": 27.899999618530273,
+    "spanX": 55.1466498374939,
+    "spanY": 51.490478515625
+  },
+  {
+    "band": "WB06_Left_Front_Primary_FloorBand_05",
+    "zTop": 31.5,
+    "spanX": 54.86545944213867,
+    "spanY": 51.079233169555664
+  },
+  {
+    "band": "WB06_Left_Front_Primary_FloorBand_06",
+    "zTop": 35.099998474121094,
+    "spanX": 54.17952013015747,
+    "spanY": 50.27122497558594
+  },
+  {
+    "band": "WB06_Left_Front_Primary_FloorBand_07",
+    "zTop": 38.70000076293945,
+    "spanX": 53.159493923187256,
+    "spanY": 49.113243103027344
+  },
+  {
+    "band": "WB06_Left_Front_Primary_FloorBand_08",
+    "zTop": 42.29999923706055,
+    "spanX": 51.74118137359619,
+    "spanY": 47.54465103149414
+  },
+  {
+    "band": "WB06_Left_Front_Primary_FloorBand_09",
+    "zTop": 45.900001525878906,
+    "spanX": 50.00204908847809,
+    "spanY": 45.64047050476074
+  },
+  {
+    "band": "WB06_Left_Front_Primary_FloorBand_10",
+    "zTop": 49.5,
+    "spanX": 47.93604992330074,
+    "spanY": 43.39189147949219
+  },
+  {
+    "band": "WB06_Left_Front_Primary_FloorBand_11",
+    "zTop": 53.099998474121094,
+    "spanX": 45.55017530918121,
+    "spanY": 40.80384826660156
+  },
+  {
+    "band": "WB06_Left_Front_Primary_FloorBand_12",
+    "zTop": 56.70000076293945,
+    "spanX": 42.9207444190979,
+    "spanY": 37.95599555969238
+  },
+  {
+    "band": "WB06_Left_Front_Primary_FloorBand_13",
+    "zTop": 60.29999923706055,
+    "spanX": 39.99848556518555,
+    "spanY": 34.807132720947266
+  },
+  {
+    "band": "WB06_Left_Front_Primary_FloorBand_14",
+    "zTop": 63.900001525878906,
+    "spanX": 36.95810794830322,
+    "spanY": 31.526491165161133
+  },
+  {
+    "band": "WB06_Left_Front_Primary_FloorBand_15",
+    "zTop": 67.0999984741211,
+    "spanX": 34.128830432891846,
+    "spanY": 28.48470687866211
+  }
+]

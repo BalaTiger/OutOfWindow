@@ -1,0 +1,591 @@
+{
+  "tenants": [
+    {
+      "floor": 5,
+      "id": "F05-T01",
+      "plannedAreaM2": 37.95318917532236,
+      "missingAreaM2": {
+        "C35_Tenant_Floors": 3.5908185037474922,
+        "C35_Tenant_Ceilings": 3.5908185037474922
+      }
+    },
+    {
+      "floor": 5,
+      "id": "F05-T02",
+      "plannedAreaM2": 129.01996397936628,
+      "missingAreaM2": {
+        "C35_Tenant_Floors": 0.0,
+        "C35_Tenant_Ceilings": 0.0
+      }
+    },
+    {
+      "floor": 5,
+      "id": "F05-T04",
+      "plannedAreaM2": 202.108961652938,
+      "missingAreaM2": {
+        "C35_Tenant_Floors": 0.0,
+        "C35_Tenant_Ceilings": 0.0
+      }
+    },
+    {
+      "floor": 5,
+      "id": "F05-T05",
+      "plannedAreaM2": 193.12555836249751,
+      "missingAreaM2": {
+        "C35_Tenant_Floors": 0.0,
+        "C35_Tenant_Ceilings": 0.0
+      }
+    },
+    {
+      "floor": 5,
+      "id": "F05-T06",
+      "plannedAreaM2": 150.87603602865482,
+      "missingAreaM2": {
+        "C35_Tenant_Floors": 0.0,
+        "C35_Tenant_Ceilings": 0.0
+      }
+    },
+    {
+      "floor": 5,
+      "id": "F05-T07",
+      "plannedAreaM2": 108.17663614585548,
+      "missingAreaM2": {
+        "C35_Tenant_Floors": 0.0,
+        "C35_Tenant_Ceilings": 0.0
+      }
+    },
+    {
+      "floor": 5,
+      "id": "F05-T08",
+      "plannedAreaM2": 110.75930619022746,
+      "missingAreaM2": {
+        "C35_Tenant_Floors": 0.0,
+        "C35_Tenant_Ceilings": 0.0
+      }
+    },
+    {
+      "floor": 5,
+      "id": "F05-T09",
+      "plannedAreaM2": 228.30195143909063,
+      "missingAreaM2": {
+        "C35_Tenant_Floors": 0.0,
+        "C35_Tenant_Ceilings": 0.0
+      }
+    },
+    {
+      "floor": 6,
+      "id": "F06-T01",
+      "plannedAreaM2": 252.84295654169503,
+      "missingAreaM2": {
+        "C35_Tenant_Floors": 0.0,
+        "C35_Tenant_Ceilings": 0.0
+      }
+    },
+    {
+      "floor": 6,
+      "id": "F06-T04",
+      "plannedAreaM2": 232.75862313285162,
+      "missingAreaM2": {
+        "C35_Tenant_Floors": 0.0,
+        "C35_Tenant_Ceilings": 0.0
+      }
+    },
+    {
+      "floor": 6,
+      "id": "F06-T05",
+      "plannedAreaM2": 164.4283313909186,
+      "missingAreaM2": {
+        "C35_Tenant_Floors": 0.0,
+        "C35_Tenant_Ceilings": 0.0
+      }
+    },
+    {
+      "floor": 6,
+      "id": "F06-T06",
+      "plannedAreaM2": 120.74696699701195,
+      "missingAreaM2": {
+        "C35_Tenant_Floors": 0.0,
+        "C35_Tenant_Ceilings": 0.0
+      }
+    },
+    {
+      "floor": 6,
+      "id": "F06-T07",
+      "plannedAreaM2": 124.19807258100552,
+      "missingAreaM2": {
+        "C35_Tenant_Floors": 0.0,
+        "C35_Tenant_Ceilings": 0.0
+      }
+    },
+    {
+      "floor": 6,
+      "id": "F06-T08",
+      "plannedAreaM2": 209.3337382644243,
+      "missingAreaM2": {
+        "C35_Tenant_Floors": 0.0,
+        "C35_Tenant_Ceilings": 0.0
+      }
+    },
+    {
+      "floor": 7,
+      "id": "F07-T01",
+      "plannedAreaM2": 209.64241883503132,
+      "missingAreaM2": {
+        "C35_Tenant_Floors": 0.0,
+        "C35_Tenant_Ceilings": 0.0
+      }
+    },
+    {
+      "floor": 7,
+      "id": "F07-T03",
+      "plannedAreaM2": 229.6251516399293,
+      "missingAreaM2": {
+        "C35_Tenant_Floors": 0.0,
+        "C35_Tenant_Ceilings": 0.0
+      }
+    },
+    {
+      "floor": 7,
+      "id": "F07-T04",
+      "plannedAreaM2": 265.7568476994914,
+      "missingAreaM2": {
+        "C35_Tenant_Floors": 0.0,
+        "C35_Tenant_Ceilings": 0.0
+      }
+    },
+    {
+      "floor": 7,
+      "id": "F07-T05",
+      "plannedAreaM2": 129.53964165804013,
+      "missingAreaM2": {
+        "C35_Tenant_Floors": 0.0,
+        "C35_Tenant_Ceilings": 0.0
+      }
+    },
+    {
+      "floor": 7,
+      "id": "F07-T06",
+      "plannedAreaM2": 161.1294628898382,
+      "missingAreaM2": {
+        "C35_Tenant_Floors": 0.0,
+        "C35_Tenant_Ceilings": 0.0
+      }
+    },
+    {
+      "floor": 7,
+      "id": "F07-T07",
+      "plannedAreaM2": 235.82247225084333,
+      "missingAreaM2": {
+        "C35_Tenant_Floors": 0.0,
+        "C35_Tenant_Ceilings": 0.0
+      }
+    },
+    {
+      "floor": 8,
+      "id": "F08-T01",
+      "plannedAreaM2": 144.099047914873,
+      "missingAreaM2": {
+        "C35_Tenant_Floors": 0.0,
+        "C35_Tenant_Ceilings": 0.0
+      }
+    },
+    {
+      "floor": 8,
+      "id": "F08-T01B",
+      "plannedAreaM2": 46.86462155760783,
+      "missingAreaM2": {
+        "C35_Tenant_Floors": 0.0,
+        "C35_Tenant_Ceilings": 0.0
+      }
+    },
+    {
+      "floor": 8,
+      "id": "F08-T03",
+      "plannedAreaM2": 252.64583884225402,
+      "missingAreaM2": {
+        "C35_Tenant_Floors": 2.304654241142335,
+        "C35_Tenant_Ceilings": 2.304654241142335
+      }
+    },
+    {
+      "floor": 8,
+      "id": "F08-T04",
+      "plannedAreaM2": 219.8977833226514,
+      "missingAreaM2": {
+        "C35_Tenant_Floors": 0.0,
+        "C35_Tenant_Ceilings": 0.0
+      }
+    },
+    {
+      "floor": 8,
+      "id": "F08-T05",
+      "plannedAreaM2": 193.25228104747254,
+      "missingAreaM2": {
+        "C35_Tenant_Floors": 0.0,
+        "C35_Tenant_Ceilings": 0.0
+      }
+    },
+    {
+      "floor": 8,
+      "id": "F08-T06",
+      "plannedAreaM2": 231.64134517053543,
+      "missingAreaM2": {
+        "C35_Tenant_Floors": 0.0,
+        "C35_Tenant_Ceilings": 0.0
+      }
+    },
+    {
+      "floor": 9,
+      "id": "F09-T01",
+      "plannedAreaM2": 196.58825330696303,
+      "missingAreaM2": {
+        "C35_Tenant_Floors": 0.0,
+        "C35_Tenant_Ceilings": 0.0
+      }
+    },
+    {
+      "floor": 9,
+      "id": "F09-T03",
+      "plannedAreaM2": 279.97567837638417,
+      "missingAreaM2": {
+        "C35_Tenant_Floors": 0.0,
+        "C35_Tenant_Ceilings": 0.0
+      }
+    },
+    {
+      "floor": 9,
+      "id": "F09-T04",
+      "plannedAreaM2": 200.71431724448314,
+      "missingAreaM2": {
+        "C35_Tenant_Floors": 0.0,
+        "C35_Tenant_Ceilings": 0.0
+      }
+    },
+    {
+      "floor": 9,
+      "id": "F09-T05",
+      "plannedAreaM2": 178.4365793355677,
+      "missingAreaM2": {
+        "C35_Tenant_Floors": 0.0,
+        "C35_Tenant_Ceilings": 0.0
+      }
+    },
+    {
+      "floor": 9,
+      "id": "F09-T06",
+      "plannedAreaM2": 237.0823571167029,
+      "missingAreaM2": {
+        "C35_Tenant_Floors": 0.0,
+        "C35_Tenant_Ceilings": 0.0
+      }
+    },
+    {
+      "floor": 10,
+      "id": "F10-T01",
+      "plannedAreaM2": 260.9319421637884,
+      "missingAreaM2": {
+        "C35_Tenant_Floors": 0.0,
+        "C35_Tenant_Ceilings": 0.0
+      }
+    },
+    {
+      "floor": 10,
+      "id": "F10-T03",
+      "plannedAreaM2": 225.47935606906768,
+      "missingAreaM2": {
+        "C35_Tenant_Floors": 0.0,
+        "C35_Tenant_Ceilings": 0.0
+      }
+    },
+    {
+      "floor": 10,
+      "id": "F10-T04",
+      "plannedAreaM2": 289.01232399244986,
+      "missingAreaM2": {
+        "C35_Tenant_Floors": 0.0,
+        "C35_Tenant_Ceilings": 0.0
+      }
+    },
+    {
+      "floor": 10,
+      "id": "F10-T05",
+      "plannedAreaM2": 306.70385157999755,
+      "missingAreaM2": {
+        "C35_Tenant_Floors": 0.0,
+        "C35_Tenant_Ceilings": 0.0
+      }
+    },
+    {
+      "floor": 11,
+      "id": "F11-T01",
+      "plannedAreaM2": 252.07139075321675,
+      "missingAreaM2": {
+        "C35_Tenant_Floors": 0.0,
+        "C35_Tenant_Ceilings": 0.0
+      }
+    },
+    {
+      "floor": 11,
+      "id": "F11-T02",
+      "plannedAreaM2": 199.5736206806116,
+      "missingAreaM2": {
+        "C35_Tenant_Floors": 0.0,
+        "C35_Tenant_Ceilings": 0.0
+      }
+    },
+    {
+      "floor": 11,
+      "id": "F11-T03",
+      "plannedAreaM2": 245.39324292414847,
+      "missingAreaM2": {
+        "C35_Tenant_Floors": 0.0,
+        "C35_Tenant_Ceilings": 0.0
+      }
+    },
+    {
+      "floor": 11,
+      "id": "F11-T04",
+      "plannedAreaM2": 226.1095444218264,
+      "missingAreaM2": {
+        "C35_Tenant_Floors": 0.0,
+        "C35_Tenant_Ceilings": 0.0
+      }
+    },
+    {
+      "floor": 11,
+      "id": "F11-T05",
+      "plannedAreaM2": 250.11295489914437,
+      "missingAreaM2": {
+        "C35_Tenant_Floors": 0.0,
+        "C35_Tenant_Ceilings": 0.0
+      }
+    },
+    {
+      "floor": 12,
+      "id": "F12-T01",
+      "plannedAreaM2": 241.12949792487018,
+      "missingAreaM2": {
+        "C35_Tenant_Floors": 0.0,
+        "C35_Tenant_Ceilings": 0.0
+      }
+    },
+    {
+      "floor": 12,
+      "id": "F12-T02",
+      "plannedAreaM2": 257.5602576786429,
+      "missingAreaM2": {
+        "C35_Tenant_Floors": 0.0,
+        "C35_Tenant_Ceilings": 0.0
+      }
+    },
+    {
+      "floor": 12,
+      "id": "F12-T03",
+      "plannedAreaM2": 253.55633785798284,
+      "missingAreaM2": {
+        "C35_Tenant_Floors": 0.0,
+        "C35_Tenant_Ceilings": 0.0
+      }
+    },
+    {
+      "floor": 12,
+      "id": "F12-T04",
+      "plannedAreaM2": 277.2851118568589,
+      "missingAreaM2": {
+        "C35_Tenant_Floors": 0.0,
+        "C35_Tenant_Ceilings": 0.0
+      }
+    },
+    {
+      "floor": 13,
+      "id": "F13-T01",
+      "plannedAreaM2": 245.2168655644731,
+      "missingAreaM2": {
+        "C35_Tenant_Floors": 0.0,
+        "C35_Tenant_Ceilings": 0.0
+      }
+    },
+    {
+      "floor": 13,
+      "id": "F13-T02",
+      "plannedAreaM2": 253.23981542695617,
+      "missingAreaM2": {
+        "C35_Tenant_Floors": 0.0,
+        "C35_Tenant_Ceilings": 0.0
+      }
+    },
+    {
+      "floor": 13,
+      "id": "F13-T03",
+      "plannedAreaM2": 212.72999290543925,
+      "missingAreaM2": {
+        "C35_Tenant_Floors": 0.0,
+        "C35_Tenant_Ceilings": 0.0
+      }
+    },
+    {
+      "floor": 13,
+      "id": "F13-T04",
+      "plannedAreaM2": 243.44322181822278,
+      "missingAreaM2": {
+        "C35_Tenant_Floors": 0.0,
+        "C35_Tenant_Ceilings": 0.0
+      }
+    },
+    {
+      "floor": 14,
+      "id": "F14-T01",
+      "plannedAreaM2": 229.46185778318704,
+      "missingAreaM2": {
+        "C35_Tenant_Floors": 38.34892063972709,
+        "C35_Tenant_Ceilings": 38.34892063972709
+      }
+    },
+    {
+      "floor": 14,
+      "id": "F14-T02",
+      "plannedAreaM2": 312.5885924820015,
+      "missingAreaM2": {
+        "C35_Tenant_Floors": 0.0,
+        "C35_Tenant_Ceilings": 0.0
+      }
+    },
+    {
+      "floor": 14,
+      "id": "F14-T03",
+      "plannedAreaM2": 269.8102719455401,
+      "missingAreaM2": {
+        "C35_Tenant_Floors": 0.0,
+        "C35_Tenant_Ceilings": 0.0
+      }
+    },
+    {
+      "floor": 15,
+      "id": "F15-T01",
+      "plannedAreaM2": 184.40466777022462,
+      "missingAreaM2": {
+        "C35_Tenant_Floors": 31.818553189899742,
+        "C35_Tenant_Ceilings": 31.818553189899742
+      }
+    },
+    {
+      "floor": 15,
+      "id": "F15-T02",
+      "plannedAreaM2": 252.15101460761355,
+      "missingAreaM2": {
+        "C35_Tenant_Floors": 0.0,
+        "C35_Tenant_Ceilings": 0.0
+      }
+    },
+    {
+      "floor": 15,
+      "id": "F15-T03",
+      "plannedAreaM2": 205.5921044314828,
+      "missingAreaM2": {
+        "C35_Tenant_Floors": 0.0,
+        "C35_Tenant_Ceilings": 0.0
+      }
+    },
+    {
+      "floor": 16,
+      "id": "F16-T01",
+      "plannedAreaM2": 108.61754573140682,
+      "missingAreaM2": {
+        "C35_Tenant_Floors": 0.0,
+        "C35_Tenant_Ceilings": 0.0
+      }
+    },
+    {
+      "floor": 16,
+      "id": "F16-T01B",
+      "plannedAreaM2": 103.70301188781778,
+      "missingAreaM2": {
+        "C35_Tenant_Floors": 0.0,
+        "C35_Tenant_Ceilings": 0.0
+      }
+    },
+    {
+      "floor": 16,
+      "id": "F16-T02",
+      "plannedAreaM2": 272.4289881292683,
+      "missingAreaM2": {
+        "C35_Tenant_Floors": 0.0,
+        "C35_Tenant_Ceilings": 0.0
+      }
+    }
+  ],
+  "escalators": [
+    {
+      "id": "ESC-04-05",
+      "fourEndDecksPresent": [
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "id": "ESC-05-06",
+      "fourEndDecksPresent": [
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "id": "ESC-06-07",
+      "fourEndDecksPresent": [
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "id": "ESC-07-08",
+      "fourEndDecksPresent": [
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "id": "ESC-08-09",
+      "fourEndDecksPresent": [
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "id": "ESC-09-10",
+      "fourEndDecksPresent": [
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "id": "ESC-10-11",
+      "fourEndDecksPresent": [
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "id": "ESC-11-12",
+      "fourEndDecksPresent": [
+        true,
+        true,
+        true,
+        true
+      ]
+    }
+  ]
+}
