@@ -2,6 +2,8 @@
 
 工程入口：[OutOfWindow/OutOfWindow.uproject](OutOfWindow/OutOfWindow.uproject)。当前使用本机 **Unreal Engine 5.7.4**，都市、后巷、村庄、山林、海滨分别导入五张关卡。原 Electron/Three.js 工程保留，作为资产来源与行为对照。
 
+日常启动使用仓库根目录的 `打开UE窗景.cmd` 或 `Run-Unreal.ps1 -Mode Game`，通过独立启动器运行清单指定的工程快照。加载体验的实现、构建记录与实际 GUI 验证边界见 [加载体验说明](LoadingExperience.md)。下方既有独立包的验收记录不代表新加载流程已经完成视觉验收。
+
 本次选择 UE5，是为了直接采用成熟的 **Lumen 动态 GI/反射、Nanite、Virtual Shadow Maps、TSR、DX12/SM6**；硬件支持时使用 Lumen 硬件光追。固定机位的缓存优化建立在这些公共系统上。Lumen 本身支持光照缓存及更新速度控制，Nanite 管理已有几何的细节与流送。[Lumen 官方说明](https://dev.epicgames.com/documentation/en-us/unreal-engine/lumen-global-illumination-and-reflections-in-unreal-engine)、[Nanite 官方说明](https://dev.epicgames.com/documentation/en-us/unreal-engine/nanite-virtualized-geometry-in-unreal-engine)
 
 **Windows Development 成品已成功打包，首轮 15 个独立程序用例全部通过自动检查。** 入口为 `D:\OutOfWindowBuild\Windows\OutOfWindow.exe`。完整矩阵在 Cook 完成后串行运行，每例 30 秒，覆盖五景、天气、三档画质与桌面接口。岸线和单实例启动逻辑修正后的最终包也通过海滨、桌面、正常联网与第二实例补测。精细档后巷平均约 24.5 FPS，尚不适合作为本机 60 FPS 档位；山林地形素材与完整人工交互仍有待完善。证据和边界见 [迁移验收清单](Migration/acceptance.md)。
@@ -17,6 +19,10 @@ Editor 构建、晴天原生对照、夜间、小雨／中雨／大雨、四帧�
 **同日后续，当前云内层次为 v3（Editor 预览）：** v2 云内核的密度夹紧使两个噪声层均失效，只留下边缘和大范围云底渐变。v3 保留云色、AO、相函数、宏观云团包络及两次体积纹理读取，在内部增加真实密度起伏和低密度孔隙；选用 0.35 km 细节尺度，运行时密度倍率 1.35，以保留较厚的雨云观感。固定 EV8、实际眼适应曝光完全一致且关闭雨玻璃的 [前后对照](Art/Lookdev/alley-storm-details-ab.png)确认云内团块来自材质；正常自适应曝光下天空会因云更透光而比 v2 明亮，不能把这组亮度变化归因于曝光补偿。晴天原生对照、夜间、午后、中雨、八帧移动和海滨检查通过。v2→v3 的单轮 2560×1440 GPU 中位耗时为 20.20 → 20.89 ms（约 +0.69 ms）；仍未重新打包，原有 123/126 风动断言保留。新资产生成入口 `Scripts/build_storm_details.py` 已加入 Import，v2 作为诊断基线保留；复测可加 `-NoRainGlass -FixedExposureEV 8`，`Scripts/cloud-detail-report.py` 提供统一天空区域的去线性渐变指标，但该指标不代替画面评估。[本轮验证记录](Migration/alley-storm-details-verification.json)保存候选取舍、GPU CSV 来源和限制。
 
 ## 启动与构建
+
+双击仓库根目录的 `打开UE窗景.cmd` 会打开独立启动器。启动器按本次 UE 进程的信号显示「启动渲染器、加载场景、连接桌面、就绪」，不显示估算百分比。窗口保护在场景初始化、场景帧完成及桌面挂接后解除；挂接失败会保留明确错误，并尝试恢复可操作的普通窗口。真实首帧与 Windows 桌面行为的验证状态以 [加载体验说明](LoadingExperience.md) 为准。
+
+等待超过 30 秒时仍显示「仍在加载」和已等待时间，不把耗时较长当作崩溃。「取消启动」只停止本次启动器创建的进程及其子进程，不关闭已有窗景实例。UE 提前退出后，启动器继续保留错误、退出码、日志入口和「重试」；若尚未确认实际 UE 进程，会明确将退出码标为入口进程退出码。每次重试使用独立的会话和日志目录。就绪后关闭启动器会保留窗景运行；错误态仍有本次进程时，可点击「取消本次进程」。
 
 应用默认嵌入 Windows 桌面图标后方，作为动态桌面启动。右上角此时显示「还原」按钮；点击后恢复普通窗口和原来的位置、尺寸，按钮变为「最大化」，再次点击回到动态桌面。动态桌面按显示器完整尺寸铺满，不使用扣除任务栏后的工作区。托盘的显示／隐藏保持当前模式；退出后重新启动仍默认进入动态桌面。
 
@@ -39,14 +45,17 @@ Editor 构建、晴天原生对照、夜间、小雨／中雨／大雨、四帧�
 在仓库根目录的 PowerShell 中执行：
 
 ```powershell
-# 编译 Editor 和独立 Game 的 Development 目标
-.\unreal\Run-Unreal.ps1 -Mode Build
+# 首次准备，或启动器提示源码/配置变化、运行文件缺失时重建
+.\unreal\Build-LoadingExperience.ps1
 
 # 运行后巷，也可选择 City、Village、Forest、Coast
 .\unreal\Run-Unreal.ps1 -Mode Game -Scene Alley
 
 # 打开编辑器
 .\unreal\Run-Unreal.ps1 -Mode Editor -Scene Alley
+
+# 开发用途：编译工作工程的 Editor 和独立 Game 目标，不更新启动器运行清单
+.\unreal\Run-Unreal.ps1 -Mode Build
 
 # Cook、打包并归档 Windows Development 程序
 .\unreal\Run-Unreal.ps1 -Mode Package
@@ -55,13 +64,19 @@ Editor 构建、晴天原生对照、夜间、小雨／中雨／大雨、四帧�
 .\unreal\Run-Unreal.ps1 -Mode Validate
 ```
 
-脚本先读取 `UE_ROOT`，否则从 Epic Launcher 安装记录查找 `UE_5.7`。本机引擎为 `D:\Epic\Epic Games\UE_5.7`，也可明确传入：
+构建脚本先读取 `UE_ROOT`，否则从 Epic Launcher 安装记录查找 `UE_5.7`。本机引擎为 `D:\Epic\Epic Games\UE_5.7`，也可明确传入：
 
 ```powershell
-.\unreal\Run-Unreal.ps1 -Mode Build -EngineRoot 'D:\Epic\Epic Games\UE_5.7'
+.\unreal\Build-LoadingExperience.ps1 -EngineRoot 'D:\Epic\Epic Games\UE_5.7'
 ```
 
-`Game` 优先运行已经打包的程序；没有打包产物时使用 `UnrealEditor.exe -game`。磁盘上若有旧包，修改源码后须重新 `Package`，或用 `Editor` 打开最新工程。当前独立程序已成功运行，不依赖 Node、Vite、Electron；请保留整个 `Windows` 目录，不能只拷贝顶层启动 exe。
+`Game` 通过 `Launch-Unreal.ps1` 启动轻量界面，再按 `.runtime/launcher/target.json` 运行本机 `UnrealEditor.exe -game` 和对应的工程快照，因此需要已安装的 UE 5.7。它校验模块和源码记录；缺文件或版本不一致会显示错误，不会自动改用 `D:\OutOfWindowBuild` 中的旧包。日常命令不附带 Houdini 测试开关，沿用当前默认云配置。已有独立包及其历史验收记录继续保留；单独使用旧包时仍须保留整个 `Windows` 目录，不能只拷贝顶层启动 exe。
+
+`Build-LoadingExperience.ps1` 每次从当前 `Source`、`Config`、`.uproject` 和 `Content` 创建新的 `.runtime/loading-builds/<时间-ID>/OutOfWindow` 快照，串行编译所需的 Editor 模块；成功后才更新运行清单。它不替换工作工程 DLL、不 Cook，也不修改工作工程的美术资产。清单同时记录候选和工作工程源码的哈希；源码或配置发生变化后，应运行该命令，成功后在启动器点击「重试」。`Run-Unreal.ps1 -Mode Build`、`Package` 保留为开发和旧包构建工具，不负责更新这份清单。
+
+**不要将正在使用的运行快照当作临时目录删除。** 以 `.runtime/launcher/target.json` 中的 `project` 和 `module` 路径为准，保留它们所在的整个工程目录，包括 `Content` 与运行生成的 `Saved`。完成验证并确认与最终源码一致后，本轮可复用 `.runtime/loading-work/project/OutOfWindow` 中的工程；它被清单引用后同样是运行依赖。后续新建快照不会自动清理旧目录。迁移仓库或清单路径失效时重新运行 `Build-LoadingExperience.ps1`；只有确认清单已切换且相关进程已退出，才清理旧快照。
+
+默认会话目录位于 `.runtime/launcher/sessions/<时间-会话ID>/`，用于保存 `ue.log`、`launcher.log` 和本次状态文件；尚未创建会话时，准备错误保存在 `.runtime/launcher/launcher-errors.log`。可直接使用启动器的「打开日志」按钮。测试用 `-OutputDirectory` 会通过 `--state-dir` 将清单、会话和错误日志一起放到指定的仓库内目录，与默认运行记录分开。
 
 打包只包含 DX12/SM6 目标，使用完整关卡路径 `/Game/Maps/Alley` 等，避免与 Engine 中同名 Reverb 资产混淆；`-skipeditorcontent` 排除编辑器专用资源。加入夜窗素材后的归档约 1.44 GB（1.34 GiB），包含 `THIRD_PARTY_ASSETS.md` 和 `ASSET_INVENTORY.md`；两份文件已与仓库原件核对哈希。首轮 `.runtime/ue-package.log`、岸线/单实例修正后的 `.runtime/ue-package-revalidation.log` 与本轮 `.runtime/ue-night-window/package.log` 均记录 `BUILD SUCCESSFUL` / AutomationTool ExitCode 0。
 
@@ -69,7 +84,7 @@ Editor 构建、晴天原生对照、夜间、小雨／中雨／大雨、四帧�
 
 ## 磁盘与首次准备
 
-缓存/归档目录跟随引擎所在盘；本机为：
+下表记录既有 `Run-Unreal.ps1` 开发构建、导入和打包流程的缓存/归档目录。加载启动器的运行快照和日志位置见上文；本机既有目录为：
 
 | 内容 | 路径 |
 | --- | --- |

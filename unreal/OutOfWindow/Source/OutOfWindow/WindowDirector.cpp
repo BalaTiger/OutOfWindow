@@ -454,6 +454,7 @@ void AWindowDirector::BeginPlay()
         });
     }
     UpdateAudio();
+    bStartupSceneInitialized = true;
 }
 
 void AWindowDirector::FindSceneActors()

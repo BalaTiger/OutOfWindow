@@ -1,5 +1,6 @@
 #include "WindowDesktop.h"
 #include "WindowDirector.h"
+#include "WindowStartup.h"
 #include "Engine/GameViewportClient.h"
 #include "Engine/World.h"
 #include "Framework/Application/SlateApplication.h"
@@ -22,6 +23,7 @@
 #include "Windows/WindowsHWrapper.h"
 #include "Windows/AllowWindowsPlatformTypes.h"
 #include <commctrl.h>
+#include <dwmapi.h>
 #include <shellapi.h>
 #include "Windows/HideWindowsPlatformTypes.h"
 #endif
@@ -65,6 +67,7 @@ struct FWindowDesktop::FImpl
 	UINT TaskbarCreatedMessage = 0;
 	bool bTrayReady = false;
 	bool bDesktopMode = false;
+	bool bStartupRecoveryAttempted = false;
 	bool bSubclassAttached = false;
 	bool bOriginalTopmost = false;
 	const uint64 AttachAfterFrame = GFrameCounter + 2;
@@ -196,17 +199,40 @@ struct FWindowDesktop::FImpl
 	{
 		StopInput();
 		if (!IsWindow(Window)) return;
-		if (bDesktopMode)
+		const bool bRestoreState = bDesktopMode || (GetWindowLongPtrW(Window, GWL_STYLE) & WS_CHILD)
+			|| (DesktopHost && GetParent(Window) == DesktopHost);
+		const LONG_PTR RestoredExStyle = (OriginalExStyle | WS_EX_APPWINDOW) & ~(WS_EX_TOPMOST | WS_EX_TOOLWINDOW);
+		if (bRestoreState)
 		{
 			SetParent(Window, nullptr);
 			SetWindowLongPtrW(Window, GWL_STYLE, OriginalStyle);
-			SetWindowLongPtrW(Window, GWL_EXSTYLE, (OriginalExStyle | WS_EX_APPWINDOW) & ~(WS_EX_TOPMOST | WS_EX_TOOLWINDOW));
+			SetWindowLongPtrW(Window, GWL_EXSTYLE, RestoredExStyle);
 			SetWindowPos(Window, HWND_NOTOPMOST, WindowedBounds.left, WindowedBounds.top,
 				WindowedBounds.right - WindowedBounds.left, WindowedBounds.bottom - WindowedBounds.top, SWP_FRAMECHANGED | SWP_NOACTIVATE);
-			bDesktopMode = false;
 		}
-		DesktopHost = IconView = nullptr;
+		if (FWindowStartup::HasFailed())
+		{
+			const BOOL Cloak = 0;
+			DwmSetWindowAttribute(Window, DWMWA_CLOAK, &Cloak, sizeof(Cloak));
+		}
 		if (bActivate) { ShowWindow(Window, SW_RESTORE); SetForegroundWindow(Window); }
+		const HWND Parent = GetParent(Window);
+		const LONG_PTR Style = GetWindowLongPtrW(Window, GWL_STYLE);
+		const LONG_PTR ExStyle = GetWindowLongPtrW(Window, GWL_EXSTYLE);
+		const LONG_PTR StyleMask = WS_CHILD | WS_POPUP | WS_CAPTION | WS_THICKFRAME;
+		const LONG_PTR ExStyleMask = WS_EX_APPWINDOW | WS_EX_TOOLWINDOW | WS_EX_TOPMOST | WS_EX_LAYERED;
+		const bool bStylesRestored = !bRestoreState || ((Style & StyleMask) == (OriginalStyle & StyleMask)
+			&& (ExStyle & ExStyleMask) == (RestoredExStyle & ExStyleMask));
+		const bool bVisible = IsWindowVisible(Window) != 0;
+		DWORD Cloaked = 0;
+		const HRESULT CloakResult = DwmGetWindowAttribute(Window, DWMWA_CLOAKED, &Cloaked, sizeof(Cloaked));
+		bDesktopMode = (Style & WS_CHILD) != 0 || (DesktopHost && Parent == DesktopHost);
+		if (!Parent && !(Style & WS_CHILD)) DesktopHost = IconView = nullptr;
+		UE_LOG(LogWindowDesktop, Display, TEXT("OOW_DESKTOP_RESTORE parent=%p child=%d stylesRestored=%d visible=%d activated=%d cloaked=%u cloakRead=0x%08x"),
+			Parent, (Style & WS_CHILD) != 0, bStylesRestored, bVisible, bActivate, static_cast<uint32>(Cloaked), static_cast<uint32>(CloakResult));
+		if (Parent || (Style & WS_CHILD) || !bStylesRestored
+			|| (bActivate && !FWindowStartup::IsPending() && (!bVisible || FAILED(CloakResult) || Cloaked)))
+			UE_LOG(LogWindowDesktop, Error, TEXT("Ordinary window recovery could not be confirmed; check the log and cancel or retry in the launcher."));
 	}
 
 	bool EnterDesktop()
@@ -236,6 +262,8 @@ struct FWindowDesktop::FImpl
 		if (!DesktopHost || !IconView) { DesktopHost = IconView = nullptr; return false; }
 		MONITORINFO Monitor = {}; Monitor.cbSize = sizeof(Monitor);
 		if (!GetMonitorInfoW(MonitorFromWindow(Window, MONITOR_DEFAULTTONEAREST), &Monitor)) return false;
+		// Keep attachment invisible even if reparenting changes the DWM cloak state.
+		if (FWindowStartup::IsPending()) ShowWindow(Window, SW_HIDE);
 		if (IsZoomed(Window) || IsIconic(Window)) ShowWindow(Window, SW_RESTORE);
 		GetWindowRect(Window, &WindowedBounds);
 		if (const auto Slate = SlateWindow()) Slate->ReshapeWindow(FVector2D(Monitor.rcMonitor.left, Monitor.rcMonitor.top), FVector2D(Monitor.rcMonitor.right - Monitor.rcMonitor.left, Monitor.rcMonitor.bottom - Monitor.rcMonitor.top));
@@ -254,7 +282,8 @@ struct FWindowDesktop::FImpl
 		}
 		POINT Origin = { Monitor.rcMonitor.left, Monitor.rcMonitor.top }; ScreenToClient(DesktopHost, &Origin);
 		SetWindowPos(Window, bRaisedDesktop ? IconView : HWND_BOTTOM, Origin.x, Origin.y,
-			Monitor.rcMonitor.right - Monitor.rcMonitor.left, Monitor.rcMonitor.bottom - Monitor.rcMonitor.top, SWP_FRAMECHANGED | SWP_NOACTIVATE | SWP_SHOWWINDOW);
+			Monitor.rcMonitor.right - Monitor.rcMonitor.left, Monitor.rcMonitor.bottom - Monitor.rcMonitor.top,
+			SWP_FRAMECHANGED | SWP_NOACTIVATE | (FWindowStartup::IsPending() ? 0 : SWP_SHOWWINDOW));
 		bOriginalBackgroundInput = FSlateApplication::Get().GetHandleDeviceInputWhenApplicationNotActive();
 		InputOwner = this;
 		MouseHook = SetWindowsHookExW(WH_MOUSE_LL, MouseInput, GetModuleHandleW(nullptr), 0);
@@ -267,6 +296,7 @@ struct FWindowDesktop::FImpl
 
 	void RestoreInteractive()
 	{
+		if (FWindowStartup::IsPending()) return;
 		if (bDesktopMode) { ShowWindow(Window, SW_SHOWNA); UpdateInput(); return; }
 		ShowWindow(Window, IsIconic(Window) ? SW_RESTORE : SW_SHOW);
 		SetForegroundWindow(Window);
@@ -274,6 +304,7 @@ struct FWindowDesktop::FImpl
 
 	void HideSafely()
 	{
+		if (FWindowStartup::IsPending()) return;
 		if (bTrayReady) ShowWindow(Window, SW_HIDE);
 		else
 		{
@@ -286,6 +317,7 @@ struct FWindowDesktop::FImpl
 	void Action(FName Name)
 	{
 		if (!IsWindow(Window)) return;
+		if (FWindowStartup::IsPending()) return;
 		if (Name == TEXT("Close")) HideSafely();
 		else if (Name == TEXT("Minimize")) { if (bDesktopMode) HideSafely(); else ShowWindow(Window, SW_MINIMIZE); }
 		else if (Name == TEXT("Maximize") || Name == TEXT("DesktopMode"))
@@ -527,14 +559,27 @@ struct FWindowDesktop::FImpl
 
 	void TryAttach()
 	{
+		if (FWindowStartup::HasFailed() && IsWindow(Window) && !bStartupRecoveryAttempted)
+		{
+			bStartupRecoveryAttempted = true;
+			RestoreWindow(true);
+		}
 		// Capture-mode input regression owns no tray, desktop attachment, or global hooks.
 		if (FParse::Param(FCommandLine::Get(), TEXT("OOWTestDesktopInput"))) return;
-		if (bDisabled || Window || !Director.IsValid()) return;
+		if (bDisabled || !Director.IsValid()) return;
+		if (Window)
+		{
+			if (FWindowStartup::IsPending() && !bDesktopMode)
+				FWindowStartup::Fail(TEXT("启动期间桌面连接已失效；正在尝试恢复普通窗口。请查看日志，可在启动器中取消或重试。"));
+			if (FWindowStartup::IsPending() && FWindowStartup::WaitForSceneFrame(Director.Get())) FWindowStartup::Finish();
+			return;
+		}
 		// Startup applies the viewport's initial placement after BeginPlay.
 		if (GFrameCounter < AttachAfterFrame) return;
 		UWorld* World = Director->GetWorld();
 		// In particular, never resolve the editor's top-level HWND through PIE.
 		if (!World || World->WorldType != EWorldType::Game) { bDisabled = true; return; }
+		if (FWindowStartup::IsPending() && !FWindowStartup::WaitForSceneFrame(Director.Get())) return;
 		if (!FSlateApplication::IsInitialized()) return;
 		UGameViewportClient* Viewport = World->GetGameViewport();
 		const TSharedPtr<SWindow> SlateWindow = Viewport ? Viewport->GetWindow() : nullptr;
@@ -553,12 +598,28 @@ struct FWindowDesktop::FImpl
 		if (!bSubclassAttached)
 		{
 			UE_LOG(LogWindowDesktop, Error, TEXT("Cannot attach to the standalone viewport window; desktop controls disabled."));
+			FWindowStartup::Fail(TEXT("无法安装桌面窗口控件；正在尝试显示游戏窗口。请查看日志，可在启动器中取消或重试。"));
 			Window = nullptr;
 			bDisabled = true;
 			return;
 		}
 		AddTray();
-		if (DesktopSession.bDesktopMode && !EnterDesktop()) UE_LOG(LogWindowDesktop, Warning, TEXT("Desktop unavailable at startup; using a window."));
+		if (FWindowStartup::IsPending() && !DesktopSession.bDesktopMode)
+			FWindowStartup::Fail(TEXT("当前窗口模式未连接桌面，无法确认启动就绪；正在尝试恢复普通窗口。请查看日志，可在启动器中取消或重试。"));
+		else if (!FWindowStartup::HasFailed() && DesktopSession.bDesktopMode)
+		{
+			FWindowStartup::Report(TEXT("desktop"), TEXT("正在将已初始化的场景连接到桌面。"));
+			if (EnterDesktop())
+			{
+				if (!FWindowStartup::DesktopAttached()) RestoreWindow(true);
+			}
+			else
+			{
+				RestoreWindow(true);
+				FWindowStartup::Fail(TEXT("桌面连接失败；正在尝试恢复普通窗口。请查看日志，可在启动器中取消或重试。"));
+				UE_LOG(LogWindowDesktop, Warning, TEXT("Desktop unavailable at startup; attempted ordinary window recovery."));
+			}
+		}
 		TestReadyAt = FPlatformTime::Seconds() + 2;
 	}
 
@@ -589,8 +650,9 @@ struct FWindowDesktop::FImpl
 
 void FWindowDesktop::InitializeProcess()
 {
+	FWindowStartup::Initialize();
 #if PLATFORM_WINDOWS
-	if (GIsEditor || IsRunningCommandlet() || IsRunningDedicatedServer()) return;
+	if ((GIsEditor && !FParse::Param(FCommandLine::Get(), TEXT("game"))) || IsRunningCommandlet() || IsRunningDedicatedServer()) return;
 	FString Capture;
 	const bool bDesktopTest = FParse::Param(FCommandLine::Get(), TEXT("OOWTestDesktop"));
 	if (!bDesktopTest && FParse::Value(FCommandLine::Get(), TEXT("OOWCapture="), Capture)) return;
@@ -601,6 +663,7 @@ void FWindowDesktop::InitializeProcess()
 	{
 		const bool bNotified = !bDesktopTest && RestoreEvent && SetEvent(RestoreEvent);
 		UE_LOG(LogWindowDesktop, Display, TEXT("OOW_DUPLICATE_INSTANCE early exit; restoreSignaled=%d"), bNotified);
+		FWindowStartup::Report(TEXT("duplicate"), bNotified ? TEXT("应用已在运行，已请求显示已有窗口。") : TEXT("应用已在运行，已有实例保持运行。"));
 		if (bDesktopTest) { UE_LOG(LogWindowDesktop, Error, TEXT("OOW_DESKTOP_TEST_FAIL another app instance is running")); }
 		ShutdownProcess();
 		// This duplicate has no world or user state; bypass expensive engine teardown.
@@ -615,6 +678,7 @@ void FWindowDesktop::InitializeProcess()
 
 void FWindowDesktop::ShutdownProcess()
 {
+	FWindowStartup::Shutdown();
 #if PLATFORM_WINDOWS
 	if (ProcessMutex) CloseHandle(ProcessMutex);
 	if (RestoreEvent) CloseHandle(RestoreEvent);

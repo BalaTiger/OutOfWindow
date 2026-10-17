@@ -1,9 +1,13 @@
 **2026-09-23：新增 UE5.7 原生工程。** 新版采用 Lumen 动态 GI/反射、Nanite、VSM 和 TSR，五个场景已导入独立关卡。启动、构建、D 盘缓存、可复用架构及当前限制见 [UE5 工程说明](unreal/README.md)，验证状态见 [迁移验收清单](unreal/Migration/acceptance.md)。原 Electron/Three.js 内容继续保留在下方，作为旧版运行说明与迁移对照。
 
+UE 窗景的日常入口是仓库根目录的 `打开UE窗景.cmd`，也可使用下方的 `Game` 命令。首次准备、源码或配置变化导致启动器提示需要重建时，先生成支持加载反馈的运行快照：
+
 ```powershell
-.\unreal\Run-Unreal.ps1 -Mode Build
+.\unreal\Build-LoadingExperience.ps1
 .\unreal\Run-Unreal.ps1 -Mode Game -Scene Alley
 ```
+
+独立启动器显示「启动渲染器、加载场景、连接桌面、就绪」和实际等待时间；错误、日志入口及重试按钮会保留在启动器中。正式入口使用 `.runtime/launcher/target.json` 指定的工程快照，请保留该清单引用的整个目录。加载实现与实际验证边界见 [加载体验说明](unreal/LoadingExperience.md)；下方 `打开Demo.cmd` 属于保留的 Electron 旧版入口。
 
 # Out of Window — 虚拟窗景 Demo
 

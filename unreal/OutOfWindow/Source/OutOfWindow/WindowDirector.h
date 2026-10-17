@@ -50,6 +50,8 @@ public:
     UFUNCTION(Exec) void OOWAudit();
 
     void RefreshWeather();
+    bool IsStartupSceneReady() const { return bStartupSceneInitialized && bCameraBound; }
+    FString GetStartupSceneError() const { return bStartupSceneInitialized ? FString::Join(MissingTags, TEXT(", ")) : FString(); }
     TFunction<void(FName)> DesktopAction;
     TFunction<void()> RestoreInterface;
 
@@ -157,6 +159,7 @@ private:
     bool bSunSweep = false;
     bool bCaptureRequested = false;
     bool bCameraBound = false;
+    bool bStartupSceneInitialized = false;
     bool bFetching = false;
     bool bChangingLevel = false;
     bool bCollapsed = false;

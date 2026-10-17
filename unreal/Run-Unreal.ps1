@@ -1,9 +1,14 @@
-param(
+﻿param(
     [ValidateSet('Editor','Game','Build','Package','Import','Validate')][string]$Mode = 'Game',
     [string]$EngineRoot = $env:UE_ROOT,
     [ValidateSet('Alley','City','Village','Forest','Coast')][string]$Scene = 'Alley'
 )
 $ErrorActionPreference = 'Stop'
+# Game always uses the versioned launcher; never silently prefer the old packaged build.
+if ($Mode -eq 'Game') {
+    & (Join-Path $PSScriptRoot 'Launch-Unreal.ps1') -Scene $Scene
+    return
+}
 $projectRoot = Join-Path $PSScriptRoot 'OutOfWindow'
 $projectFile = Join-Path $projectRoot 'OutOfWindow.uproject'
 if (-not $EngineRoot) {
@@ -29,12 +34,7 @@ switch ($Mode) {
         exit $LASTEXITCODE
     }
     'Editor' { & $editor $projectFile "/Game/Maps/$Scene" -NoSplash; exit $LASTEXITCODE }
-    'Game' {
-        $packaged = Join-Path $buildRoot 'Windows\OutOfWindow.exe'
-        if (Test-Path -LiteralPath $packaged) { & $packaged "/Game/Maps/$Scene" -windowed -ResX=1280 -ResY=820 }
-        else { & $editor $projectFile "/Game/Maps/$Scene" -game -windowed -ResX=1280 -ResY=820 -NoSplash }
-        exit $LASTEXITCODE
-    }
+
     'Import' {
         foreach ($script in @('import_scenes.py','repair_roof_geometry.py','build_masonry_relief.py','build_window_interiors.py','clear_hero_backings.py','build_room_boxes.py','build_interior_atlas.py','build_surface_materials.py','build_alley_weathering.py','build_alley_weathering_decals.py','build_city_lookdev.py','build_desktop_frame.py','build_storm_clouds.py','build_storm_details.py','build_storm_cirrus.py','build_storm_layers.py','build_window_clouds.py','build_precipitation.py','build_foam.py','build_coast_shoreline.py')) {
             $renderFlags = if ($script -eq 'build_interior_atlas.py') { @('-AllowCommandletRendering','-RenderOffscreen') } else { @('-NullRHI') }
