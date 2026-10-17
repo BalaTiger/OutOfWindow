@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "candidateSHA256": "6fc073ab868698aa43cbf116fbfcb421193a813fc722901fdcce4a234584527b",
+  "baselineSHA256": "ce70f42033e43bae2ce78fdb4bbe3c6846058cf047621b2728df7785812dad78",
+  "baselineBackupUnchanged": true,
+  "allExistingMeshGeometryExact": true,
+  "allExistingLightPowersAndPositionsExact": true,
+  "cameraExact": true,
+  "newFeatureVerticalClearanceChecks": 6369,
+  "automaticallyOmittedNewMeshes": [],
+  "omissionReasons": [],
+  "existingMeshCount": 3577,
+  "newMeshCount": 761
+}
