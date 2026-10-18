@@ -62,6 +62,7 @@ private:
     void MakeInterface();
     void ApplyLighting(float DeltaSeconds);
     void UpdateCloudSampling(float DeltaSeconds);
+    void UpdateApprovedClouds(float DeltaSeconds, const FString& DisplayedWeather);
     void UpdateMaterials(float DeltaSeconds);
     void UpdateFrameShadowLighting();
     void UpdateAudio();
@@ -134,6 +135,12 @@ private:
     float VerticalFov = 0;
     float BaseFogDensity = .008f;
     float BaseRayleighScattering = 0, BaseMieScattering = 0, BaseMieAbsorption = 0;
+    bool bApprovedCloudRoute = false, bApprovedMixInitialized = false;
+    float ApprovedLowWeight = 0, ApprovedCiWeight = 0, ApprovedRainWeight = 0;
+    float ApprovedBoundsBottom = 1.2f, ApprovedBoundsTop = 8.38f;
+    int32 ApprovedOriginalMinSamples = 2;
+    float ApprovedOriginalSampleDistance = 5.f;
+    FLinearColor ApprovedOriginKm = FLinearColor(0, 0, 1, 0);
     float Cloudiness = .25f;
     float Storminess = 0;
     float VisibleSkyFraction = -1, VisibleSkyPixels = -1;

@@ -7,6 +7,7 @@
 #include "WindowFrame.h"
 #include "WindowFrameLighting.h"
 #include "WindowWeather.h"
+#include "WindowApprovedClouds.h"
 #include "WindowAstronomy.h"
 #include "WindowSkySampling.h"
 #include "Camera/CameraActor.h"
@@ -159,6 +160,9 @@ bool ReadJson(const FHttpResponsePtr& Response, bool bSuccess, TSharedPtr<FJsonO
 
 FDateTime LocalNow() { return Session.bTest ? Session.TestDate + FTimespan::FromHours(Session.Hour) : FDateTime::UtcNow() + FTimespan::FromSeconds(Session.OffsetSeconds); }
 float Smooth(float A, float B, float Value) { const float T = FMath::Clamp((Value - A) / (B - A), 0.f, 1.f); return T * T * (3.f - 2.f * T); }
+
+static TAutoConsoleVariable<int32> ApprovedCloudsEnabled(TEXT("oow.ApprovedClouds"), 1, TEXT("Accepted Ci/Naturalness route; 0 restores the original cloud path."));
+static TAutoConsoleVariable<float> ApprovedMixedViewSamples(TEXT("oow.ApprovedCiMixedSamples"), 512.f, TEXT("Primary sample floor when a thin accepted Ci band coexists with low clouds; profile before changing."));
 
 int32 ActiveWeatherCode() { return Session.Weather == TEXT("real") ? Session.WeatherCode : WindowWeather::CodeForPreview(Session.Weather); }
 double RequestedCloudCover() { return Session.Weather == TEXT("real") ? Session.CloudCover : WindowWeather::PresetCloudCover(Session.Weather); }
@@ -587,8 +591,26 @@ void AWindowDirector::FindSceneActors()
                 Source = StormSource;
             else UE_LOG(LogTemp, Warning, TEXT("OOW storm cloud material missing; using native clouds"));
         }
+        bApprovedCloudRoute = false;
+        if (!bUseNativeClouds && !bCleanNativeClouds && !bLegacyClouds && ApprovedCloudsEnabled.GetValueOnGameThread() != 0)
+        {
+            if (UMaterialInterface* Approved = LoadObject<UMaterialInterface>(nullptr, TEXT("/Game/Weather/OOW_ApprovedClouds/MI_RuntimeMix.MI_RuntimeMix")))
+            {
+                Source = Approved;
+                bApprovedCloudRoute = true;
+            }
+            else UE_LOG(LogTemp, Error, TEXT("OOW accepted cloud assets missing; original source retained"));
+        }
         CloudMaterial = UMaterialInstanceDynamic::Create(Source, this);
         Cloud->SetMaterial(CloudMaterial);
+        if (bApprovedCloudRoute && Camera)
+        {
+            const FVector Location = Camera->GetActorLocation();
+            FVector Forward = Camera->GetActorForwardVector(); Forward.Z = 0; Forward.Normalize();
+            ApprovedOriginKm = FLinearColor(Location.X * .00001, Location.Y * .00001, Forward.X, Forward.Y);
+            CloudMaterial->SetVectorParameterValue(TEXT("OOW_ApprovedOriginKm"), ApprovedOriginKm);
+            UE_LOG(LogTemp, Display, TEXT("OOW_ACCEPTED_CLOUD_ROUTE material=%s selectedCi=Blue/group2 only"), *Source->GetPathName());
+        }
         float DiagnosticMsFactor=0;
         if(bCleanNativeClouds && FParse::Param(FCommandLine::Get(),TEXT("OOWDiagHDR"))
            && FParse::Value(FCommandLine::Get(),TEXT("OOWDiagMsContribution="),DiagnosticMsFactor))
@@ -1349,6 +1371,12 @@ void AWindowDirector::UpdateCloudSampling(float DeltaSeconds)
         return;
     }
     CloudTargetSampleScale = WindowCloudSampleScale(VisibleSkyPixels, Session.Quality, CloudSampleBudget.GetValueOnGameThread());
+    if (bApprovedCloudRoute && ApprovedCloudsEnabled.GetValueOnGameThread() != 0 && ApprovedCiWeight > .001f)
+    {
+        const bool bMixed = ApprovedBoundsTop - ApprovedBoundsBottom > 1.f;
+        const float Samples = bMixed ? FMath::Clamp(ApprovedMixedViewSamples.GetValueOnGameThread(), 192.f, 768.f) : 192.f;
+        CloudTargetSampleScale = FMath::Max(CloudTargetSampleScale, Samples / UVolumetricCloudComponent::BaseViewRaySampleCount);
+    }
     CloudSampleScale = DeltaSeconds > 0 ? FMath::FInterpTo(CloudSampleScale, CloudTargetSampleScale, DeltaSeconds, .6f) : CloudTargetSampleScale;
     if (FMath::Abs(Cloud->ViewSampleCountScale - CloudSampleScale) > .02f)
         Cloud->SetViewSampleCountScale(CloudSampleScale);
@@ -1614,6 +1642,7 @@ void AWindowDirector::ApplyLighting(float DeltaSeconds)
         if (bFreezeClouds) if (!bCleanNativeClouds) CloudMaterial->SetVectorParameterValue(TEXT("Layout_WindControls"), FLinearColor(0, 0, 0, .18f));
         if (!bCleanNativeClouds) CloudMaterial->SetVectorParameterValue(TEXT("Layout_GlobalTexturePlacement"), FLinearColor(CloudDriftUV.X, CloudDriftUV.Y, 0, 0));
     }
+    UpdateApprovedClouds(DeltaSeconds, Weather);
     if (PostProcess)
     {
         const float Speed = Elapsed < FastLightingUntil ? 4.f : .5f;
@@ -1768,6 +1797,23 @@ void AWindowDirector::OOWAudit()
     Json->SetNumberField(TEXT("supplierWeatherCode"), Session.WeatherCode);
     Json->SetStringField(TEXT("supplierWeatherLabel"), WindowWeather::LabelForCode(Session.WeatherCode));
     Json->SetNumberField(TEXT("requestedCloudCover"), RequestedCloudCover());
+    {
+        TSharedRef<FJsonObject> Accepted = MakeShared<FJsonObject>();
+        const auto Target = WindowApprovedClouds::Targets(ActualWeather());
+        Accepted->SetBoolField(TEXT("routeLoaded"), bApprovedCloudRoute);
+        Accepted->SetBoolField(TEXT("enabled"), bApprovedCloudRoute && ApprovedCloudsEnabled.GetValueOnGameThread() != 0);
+        Accepted->SetStringField(TEXT("displayWeatherSource"), ActualWeather());
+        Accepted->SetNumberField(TEXT("targetLightweight"), Target.Lightweight);
+        Accepted->SetNumberField(TEXT("targetCi"), Target.Cirrus);
+        Accepted->SetNumberField(TEXT("lightweight"), ApprovedLowWeight);
+        Accepted->SetNumberField(TEXT("legacyLow"), 1.f - ApprovedLowWeight);
+        Accepted->SetNumberField(TEXT("ci"), ApprovedCiWeight);
+        Accepted->SetNumberField(TEXT("rainProfile"), ApprovedRainWeight);
+        Accepted->SetNumberField(TEXT("layerBottomKm"), ApprovedBoundsBottom);
+        Accepted->SetNumberField(TEXT("layerTopKm"), ApprovedBoundsTop);
+        Accepted->SetStringField(TEXT("acceptedCiChannel"), TEXT("Blue/group2; other two groups excluded"));
+        Json->SetObjectField(TEXT("approvedClouds"), Accepted);
+    }
     Json->SetNumberField(TEXT("cloudAmountTenths"), WindowWeather::CloudAmountTenths(RequestedCloudCover()));
     Json->SetStringField(TEXT("cloudClassificationRule"), TEXT("GB/T35663-2017; nearest tenth, ties upward; continuous boundaries 25/55/85 percent"));
     Json->SetNumberField(TEXT("reportedCloudCover"), Session.CloudCover);
@@ -2343,3 +2389,56 @@ bool FWindowLocationTest::RunTest(const FString& Parameters)
     return true;
 }
 #endif
+
+
+void AWindowDirector::UpdateApprovedClouds(float DeltaSeconds, const FString& DisplayedWeather)
+{
+    if (!bApprovedCloudRoute || !CloudMaterial || !Cloud) return;
+    static IConsoleVariable* Min = IConsoleManager::Get().FindConsoleVariable(TEXT("r.VolumetricCloud.SampleMinCount"));
+    static IConsoleVariable* Dist = IConsoleManager::Get().FindConsoleVariable(TEXT("r.VolumetricCloud.DistanceToSampleMaxCount"));
+    const bool Enabled = ApprovedCloudsEnabled.GetValueOnGameThread() != 0;
+    const auto Target = WindowApprovedClouds::Targets(DisplayedWeather);
+    if (!bApprovedMixInitialized)
+    {
+        ApprovedLowWeight = Target.Lightweight; ApprovedCiWeight = Target.Cirrus; ApprovedRainWeight = Target.RainProfile;
+        ApprovedBoundsBottom = Cloud->LayerBottomAltitude; ApprovedBoundsTop = ApprovedBoundsBottom + Cloud->LayerHeight;
+        ApprovedOriginalMinSamples = Min ? Min->GetInt() : 2;
+        ApprovedOriginalSampleDistance = Dist ? Dist->GetFloat() : 5.f;
+        bApprovedMixInitialized = true;
+    }
+    ApprovedLowWeight = FMath::FInterpTo(ApprovedLowWeight, Target.Lightweight, DeltaSeconds, .8f);
+    ApprovedCiWeight = FMath::FInterpTo(ApprovedCiWeight, Target.Cirrus, DeltaSeconds, .8f);
+    ApprovedRainWeight = FMath::FInterpTo(ApprovedRainWeight, Target.RainProfile, DeltaSeconds, .8f);
+    CloudMaterial->SetVectorParameterValue(TEXT("OOW_ApprovedMix"), FLinearColor(ApprovedLowWeight, 1.f - ApprovedLowWeight, ApprovedCiWeight, Enabled ? 1.f : 0.f));
+    if (!Enabled)
+    {
+        if (Min && Min->GetInt() != ApprovedOriginalMinSamples) Min->Set(ApprovedOriginalMinSamples, ECVF_SetByCode);
+        if (Dist && !FMath::IsNearlyEqual(Dist->GetFloat(), ApprovedOriginalSampleDistance)) Dist->Set(ApprovedOriginalSampleDistance, ECVF_SetByCode);
+        return;
+    }
+    const float Bottom = FMath::Lerp(1.6f, 1.3f, ApprovedRainWeight);
+    const float Height = FMath::Lerp(.9f, 1.1f, ApprovedRainWeight);
+    CloudMaterial->SetScalarParameterValue(TEXT("OOW_ApprovedBottomKm"), Bottom);
+    CloudMaterial->SetScalarParameterValue(TEXT("OOW_ApprovedHeightKm"), Height);
+    CloudMaterial->SetScalarParameterValue(TEXT("OOW_ApprovedCoverage"), FMath::Lerp(.48f, .69f, ApprovedRainWeight));
+    CloudMaterial->SetScalarParameterValue(TEXT("OOW_ApprovedErosion"), FMath::Lerp(.25f, .32f, ApprovedRainWeight));
+    CloudMaterial->SetScalarParameterValue(TEXT("OOW_ApprovedDensity"), .0045f);
+    float LegacyBottom = 1.2f, LegacyHeight = 3.5f;
+    CloudMaterial->GetScalarParameterValue(FMaterialParameterInfo(TEXT("OOW_LowBottomKm")), LegacyBottom);
+    CloudMaterial->GetScalarParameterValue(FMaterialParameterInfo(TEXT("OOW_LowHeightKm")), LegacyHeight);
+    const bool LegacyPresent = ApprovedLowWeight < .999f && (Cloudiness > .151f || Storminess > .001f || DisplayedWeather == TEXT("fog") || DisplayedWeather == TEXT("snow"));
+    const bool LightPresent = ApprovedLowWeight > .001f;
+    const bool CiPresent = ApprovedCiWeight > .001f;
+    float TargetBottom = LegacyPresent ? LegacyBottom : LightPresent ? Bottom : 8.2f;
+    float TargetTop = LegacyPresent ? LegacyBottom + LegacyHeight : LightPresent ? Bottom + Height : 8.38f;
+    if (LightPresent) { TargetBottom = FMath::Min(TargetBottom, Bottom); TargetTop = FMath::Max(TargetTop, Bottom + Height); }
+    if (CiPresent) { TargetBottom = FMath::Min(TargetBottom, 8.2f); TargetTop = FMath::Max(TargetTop, 8.38f); }
+    // Expand into newly fading-in matter immediately; contract only after its contribution is negligible.
+    ApprovedBoundsBottom = TargetBottom < ApprovedBoundsBottom ? TargetBottom : FMath::FInterpTo(ApprovedBoundsBottom, TargetBottom, DeltaSeconds, .8f);
+    ApprovedBoundsTop = TargetTop > ApprovedBoundsTop ? TargetTop : FMath::FInterpTo(ApprovedBoundsTop, TargetTop, DeltaSeconds, .8f);
+    Cloud->SetLayerBottomAltitude(ApprovedBoundsBottom); Cloud->SetLayerHeight(FMath::Max(.18f, ApprovedBoundsTop - ApprovedBoundsBottom));
+    if (Min && Min->GetInt() != 16) Min->Set(16, ECVF_SetByCode);
+    if (Dist && !FMath::IsNearlyEqual(Dist->GetFloat(), 1.f)) Dist->Set(1.f, ECVF_SetByCode);
+}
+
+
