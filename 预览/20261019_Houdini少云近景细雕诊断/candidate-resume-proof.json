@@ -1,0 +1,32 @@
+{
+  "status": "CANDIDATE_ONLY_RESUME_PREPARED",
+  "reason": {
+    "status": "STOPPED",
+    "exitCode": 124,
+    "reason": "180 second deadline",
+    "seconds": 180.34299999999348,
+    "peakJobBytes": 814874624,
+    "resourcesEnd": {
+      "availableGiB": 9.757293701171875,
+      "commitHeadroomGiB": 24.501941680908203
+    },
+    "CPUslotReleased": true,
+    "nativeChildCreated": true
+  },
+  "preservedCompletedFrames": [
+    {
+      "name": "original",
+      "seconds": 31.5,
+      "bytes": 31929,
+      "sha256": "93a838c0dc452db7465090cc7370f308107c4e7f24639ead05e5f042fc845fd5"
+    },
+    {
+      "name": "control",
+      "seconds": 76.625,
+      "bytes": 32471,
+      "sha256": "b2cdcfd17db5ab2a9275eac746000ba18e0028ab487af7ba4daa9fa3ccda7e65"
+    }
+  ],
+  "hipSHA256": "34e3054d5457582909a16690e005b9d76ee9d0889ceb870f252e7d626ce0d071",
+  "sameSettings": true
+}

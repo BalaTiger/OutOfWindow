@@ -1,0 +1,17 @@
+{
+  "status": "REJECTED_CANDIDATE_RESUME_RENDER_COMPLETED",
+  "actualRenders": [
+    {
+      "name": "candidate",
+      "seconds": 73.89100000000326,
+      "bytes": 32329,
+      "sha256": "97505bef95545f2631f32720c5da96991a33d7c2ad08e2ccb308f45720fb44ed"
+    }
+  ],
+  "sameParameterValues": true,
+  "fairComparison": "control vs candidate share the identical grid and sampling; original vs control additionally includes the grid-dependent sampling change",
+  "gridIsNotNewGeometry": true,
+  "lightingAndMaterialChanged": false,
+  "displayGain": 1,
+  "sourceFilesUnchanged": true
+}

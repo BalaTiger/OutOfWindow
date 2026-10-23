@@ -1,0 +1,68 @@
+// V3 UNEXECUTED: continuously suppress warp in the original thin tail.
+// Input 0: tight-grid control; input 1: unchanged original density volume.
+vector P = @P;
+float u = P.x*.82428549 + P.y*.56617439;
+float d = P.x*.56617439 - P.y*.82428549;
+float h = P.z+500;
+float protected_b=(1-smooth(330,390,abs(u))) *
+    smooth(150,200,h)*(1-smooth(680,740,h))*(1-smooth(65,120,d));
+float edit = 1-protected_b;
+float control = @density;
+if (edit < 1e-6) {
+    @density=control;
+} else {
+    // Small boundary relief only. Spatially unique phases, no tiled puff asset.
+    vector q=P+16*(2*vector(noise(P/143+set(7,19,31)))-1);
+    vector shift=edit*(18*(2*vector(noise(q/93+set(13,59,3)))-1)
+        +9*(2*vector(noise(q/47+set(73,17,41)))-1));
+    shift*=min(1,28/max(length(shift),1e-6));
+    // Prevent the outer thin tail from folding into isolated threshold cells.
+    // This modifies the coordinate field BEFORE sampling; no islands are
+    // deleted and no threshold connectivity rule is relaxed afterwards.
+    float thin_support=smooth(.04,.22,control);
+    shift*=thin_support;
+    float rho=thin_support<1e-6 ? control : volumesample(1,"density",P+shift);
+
+
+    // One local, monotone front recession. Cross-section depends only on U/H.
+    // The rear surface is fixed. This changes no global scale or cloud copies.
+    if (u > -540 && u < -255 && h > 550 && h < 815) {
+        vector section=set(u,h,0);
+        float t=clamp((h-550)/265,0,1);
+        float centre=-462+151*t-46*t*t;
+        float width=19+31*pow(sin(3.14159265359*t),2);
+        centre+=12*(2*noise(section/81+set(27,41,9))-1);
+        width*=.82+.36*noise(section/67+set(91,7,23));
+        float fork=clamp((h-646)/145,0,1);
+        float centre2=-419+126*fork-16*fork*fork;
+        float width2=13+13*pow(sin(3.14159265359*fork),2);
+        float cross1=(1-smooth(.30,1,abs(u-centre)/max(width,1)))
+            *smooth(550,590,h)*(1-smooth(782,815,h));
+        float cross2=(1-smooth(.25,1,abs(u-centre2)/max(width2,1)))
+            *smooth(646,675,h)*(1-smooth(763,791,h));
+        float across=max(cross1,cross2);
+        if (across>1e-5) {
+            float front=1000;
+            float back=-1000;
+            for (float probe=-430;probe<=430;probe+=5) {
+                vector Q=set(.82428549*u+.56617439*probe,
+                             .56617439*u-.82428549*probe,h-500);
+                if (volumesample(1,"density",Q)>.005) {
+                    front=min(front,probe);
+                    back=max(back,probe);
+                }
+            }
+            if (back>front+10) {
+                float thickness=back-front;
+                float irregular=noise(section/69+set(37,83,11));
+                float authored=(65+25*irregular)*cross1+(39+16*irregular)*cross2;
+                float depth=min(min(authored,90),.35*thickness)*edit;
+                // d' has derivative >= 1 for the 1-D map, preventing folds.
+                float recession=depth*(1-smooth(front,back,d));
+                vector Q=P+shift-set(.56617439,-.82428549,0)*recession;
+                rho=volumesample(1,"density",Q);
+            }
+        }
+    }
+    @density=clamp(rho,0,1);
+}

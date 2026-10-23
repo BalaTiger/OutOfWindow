@@ -1,0 +1,9 @@
+{
+  "status": "FROZEN_ARRAYS_UNCHANGED",
+  "originalScriptSHA256": "c7ab990d864e424f6055233d03313da3ac5f961f0371a78c33395e2573e88aaa",
+  "frozenSHA256": {
+    "density-comparison.npz": "8079b551142dba0f7e55fdd338423a805e9dbdcc8750c27bdcef4de89c255fb2",
+    "opacity-preflight.npz": "c4c11dac5891f09ea5773332d6e073d867baa1aa3fff5988a441266b854eeabd"
+  },
+  "gateExitCode": 0
+}

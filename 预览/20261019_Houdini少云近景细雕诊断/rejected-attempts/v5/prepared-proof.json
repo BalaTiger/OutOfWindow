@@ -1,0 +1,11 @@
+{
+  "status": "ISOLATED_V5_PREPARED",
+  "cause": "Boolean cutters fragment thin portions; local monotone ray mapping replaces subtraction.",
+  "files": {
+    "build_native.py": "44dc4608deaab02de73040ea0e5a4a3635f2cb1ab9ba406fdffe59478fcbc023",
+    "detail.vfl": "804934ec2a37de740714f8ab0918b9730d35a1e76d9b9bc68f0b1659adcbef9f",
+    "present.py": "9b48289b50fd279f710caa2491dd7a9b4e1dc8b9a3662c8380ee1862ca0e7964",
+    "render_triple.py": "bd57b294734ad00639299fd4b64e40842b02910724bc046b50b517dc4f2bdd02",
+    "run_bounded.py": "fdba0ca15798ce4e7acd5c5d7e21b58c4a921ac8a606646c31995266d075a3fb"
+  }
+}

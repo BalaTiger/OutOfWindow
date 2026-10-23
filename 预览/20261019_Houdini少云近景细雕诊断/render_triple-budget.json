@@ -1,0 +1,13 @@
+{
+  "status": "STOPPED",
+  "exitCode": 124,
+  "reason": "180 second deadline",
+  "seconds": 180.34299999999348,
+  "peakJobBytes": 814874624,
+  "resourcesEnd": {
+    "availableGiB": 9.757293701171875,
+    "commitHeadroomGiB": 24.501941680908203
+  },
+  "CPUslotReleased": true,
+  "nativeChildCreated": true
+}

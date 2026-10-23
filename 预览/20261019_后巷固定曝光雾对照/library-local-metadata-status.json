@@ -1,0 +1,8 @@
+{
+  "libraryUploadSucceeded": true,
+  "library_file_id": "libfile_38c966ce3cc0819191a247e42a90e818",
+  "localIdentityRetainedIn": "library-delivery.json",
+  "posixXattrsApplied": false,
+  "reason": "Windows Python os.setxattr unavailable; official metadata helper exited 1.",
+  "helperExitCode": 1
+}

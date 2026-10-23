@@ -1,0 +1,1 @@
+{"pid": 43100, "initial": {"availableGiB": 9.544708251953125, "commitHeadroomGiB": 22.745895385742188}, "deadlineSeconds": 180, "jobMemoryCapGiB": 2, "CPU": 2, "systemReserveGiB": 4, "createdSuspended": true, "assignedToJobBeforeResume": true}

@@ -1,0 +1,24 @@
+{
+  "operation": "create_library_file",
+  "status": "succeeded",
+  "path": "/alley-sky-diagnostic.png",
+  "file_id": "file_0000000042d082308c203eaab711a2dd",
+  "library_file_id": "libfile_32921581e0288191bd4bc4fdb97151ec",
+  "file_name": "alley-sky-diagnostic.png",
+  "current_version_number": 0,
+  "restored_from_version_number": null,
+  "xattrs": [
+    {
+      "name": "user.library-file-version",
+      "value": "0"
+    }
+  ],
+  "directory_id": "libdir_1f47132a31748191b598ba67c67a58f5",
+  "mime_type": "image/png",
+  "library_artifact_type": "image",
+  "file_size_bytes": 3028039,
+  "external_connectors_accessed": false,
+  "local_path": "C:\\Users\\zhuzi\\Documents\\OutOfWindow\\预览\\20261019_后巷天区诊断\\alley-sky-diagnostic.png",
+  "local_sha256": "afa146ea35c56985b3e35e8ffcd7e7863a542380f05e1b8128476a3f18ede6b9",
+  "metadata_note": "Windows Python has no os.setxattr. Library upload succeeded; returned identity and requested xattrs are preserved in this sidecar; POSIX xattrs not applied."
+}

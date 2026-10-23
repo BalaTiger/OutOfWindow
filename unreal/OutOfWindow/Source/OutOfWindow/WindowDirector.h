@@ -135,8 +135,8 @@ private:
     float VerticalFov = 0;
     float BaseFogDensity = .008f;
     float BaseRayleighScattering = 0, BaseMieScattering = 0, BaseMieAbsorption = 0;
-    bool bApprovedCloudRoute = false, bApprovedMixInitialized = false;
-    float ApprovedLowWeight = 0, ApprovedCiWeight = 0, ApprovedRainWeight = 0;
+    bool bApprovedCloudRoute = false, bApprovedCloudV2 = false, bApprovedMixInitialized = false;
+    float ApprovedLowWeight = 0, ApprovedCiWeight = 0, ApprovedRainWeight = 0, ApprovedFewFarWeight = 0;
     float ApprovedBoundsBottom = 1.2f, ApprovedBoundsTop = 8.38f;
     int32 ApprovedOriginalMinSamples = 2;
     float ApprovedOriginalSampleDistance = 5.f;

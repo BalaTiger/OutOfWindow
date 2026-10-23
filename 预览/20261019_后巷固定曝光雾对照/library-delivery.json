@@ -1,0 +1,23 @@
+{
+  "operation": "create_library_file",
+  "status": "succeeded",
+  "path": "/clear-fixed-exposure-fog-comparison.png",
+  "file_id": "file_00000000a83881f5ab48742049909d39",
+  "library_file_id": "libfile_38c966ce3cc0819191a247e42a90e818",
+  "file_name": "clear-fixed-exposure-fog-comparison.png",
+  "current_version_number": 0,
+  "restored_from_version_number": null,
+  "xattrs": [
+    {
+      "name": "user.library-file-version",
+      "value": "0"
+    }
+  ],
+  "directory_id": "libdir_1f47132a31748191b598ba67c67a58f5",
+  "mime_type": "image/png",
+  "library_artifact_type": "image",
+  "file_size_bytes": 3011037,
+  "external_connectors_accessed": false,
+  "local_path": "C:\\Users\\zhuzi\\Documents\\OutOfWindow\\预览\\20261019_后巷固定曝光雾对照\\clear-fixed-exposure-fog-comparison.png",
+  "local_sha256": "3ccb2db7d06d20a520d6cda413844bf060bc729d3b5657fb895aa1bdfb3cf6d2"
+}

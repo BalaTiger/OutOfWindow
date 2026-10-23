@@ -1,0 +1,14 @@
+{
+  "status": "STATIC_ENTRY_CHAIN_VERIFIED",
+  "defaultEntry": "打开UE窗景.cmd",
+  "defaultEntrySHA256": "E19920D2F421C0A0705F636EFA15544BD09BFA7F91F36CCF62F7FB4050E6FF54",
+  "bootstrap": "unreal/Launch-Unreal.ps1",
+  "bootstrapSHA256": "C645227732CBCD45BF69CE84A375E049ACE3FB5E772A546B4C835B6E798E9173",
+  "defaultStateDirectory": ".runtime/launcher",
+  "rollbackEntry": "打开云同步前旧版.cmd",
+  "rollbackEntrySHA256": "DB21701E3C8DDEEB95814527C750B15A11DA51F8FD06B3DF1D2FECCA05CCD24F",
+  "rollbackStateDirectory": ".runtime/launcher-versions/rollback-before-cloud-20261019",
+  "actualCMDClicked": false,
+  "productionLoaderAndSessionProbed": true,
+  "boundary": "Static CMD -> PowerShell -> launcher state mapping plus separate production loader/session startup probe; not a full user click-path acceptance."
+}

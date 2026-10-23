@@ -1,0 +1,169 @@
+{
+  "branches": [
+    {
+      "name": "left_asymmetric_buttress",
+      "seed": 117,
+      "nodes": [
+        [
+          -420,
+          -10,
+          465,
+          44,
+          62,
+          43
+        ],
+        [
+          -474,
+          -80,
+          496,
+          50,
+          60,
+          52
+        ],
+        [
+          -510,
+          -105,
+          548,
+          43,
+          56,
+          62
+        ],
+        [
+          -478,
+          -127,
+          590,
+          46,
+          63,
+          47
+        ],
+        [
+          -430,
+          -80,
+          631,
+          39,
+          57,
+          44
+        ]
+      ]
+    },
+    {
+      "name": "left_short_oblique_return",
+      "seed": 331,
+      "nodes": [
+        [
+          -478,
+          -127,
+          590,
+          29,
+          35,
+          32
+        ],
+        [
+          -492,
+          -182,
+          622,
+          26,
+          30,
+          30
+        ],
+        [
+          -460,
+          -173,
+          642,
+          23,
+          28,
+          27
+        ]
+      ]
+    },
+    {
+      "name": "middle_unequal_crest",
+      "seed": 593,
+      "nodes": [
+        [
+          -40,
+          120,
+          635,
+          42,
+          58,
+          47
+        ],
+        [
+          -68,
+          105,
+          674,
+          39,
+          52,
+          42
+        ],
+        [
+          -85,
+          70,
+          706,
+          44,
+          47,
+          38
+        ],
+        [
+          -58,
+          -5,
+          732,
+          34,
+          39,
+          29
+        ]
+      ]
+    },
+    {
+      "name": "right_low_forward_ridge",
+      "seed": 907,
+      "nodes": [
+        [
+          370,
+          35,
+          435,
+          32,
+          48,
+          35
+        ],
+        [
+          391,
+          -35,
+          452,
+          36,
+          44,
+          37
+        ],
+        [
+          412,
+          -115,
+          475,
+          30,
+          39,
+          31
+        ],
+        [
+          385,
+          -176,
+          456,
+          42,
+          35,
+          28
+        ]
+      ]
+    }
+  ],
+  "noiseScales": [
+    97,
+    43,
+    23
+  ],
+  "noiseAmplitudes": [
+    0.1,
+    0.055,
+    0.025
+  ],
+  "unchangedTrunk": true,
+  "construction": "max(control,rooted positive sweep union)",
+  "limitation": "Additions cannot remove the old straight boundary; B foreground remains exact."
+}

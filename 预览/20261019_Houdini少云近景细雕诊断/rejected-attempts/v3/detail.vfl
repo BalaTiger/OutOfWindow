@@ -1,0 +1,83 @@
+// V3 UNEXECUTED: continuously suppress warp in the original thin tail.
+// Input 0: tight-grid control; input 1: unchanged original density volume.
+vector P = @P;
+float u = P.x*.82428549 + P.y*.56617439;
+float d = P.x*.56617439 - P.y*.82428549;
+float h = P.z+500;
+float protected_b=(1-smooth(330,390,abs(u))) *
+    smooth(150,200,h)*(1-smooth(680,740,h))*(1-smooth(65,120,d));
+float edit = 1-protected_b;
+float control = @density;
+if (edit < 1e-6) {
+    @density=control;
+} else {
+    // Small boundary relief only. Spatially unique phases, no tiled puff asset.
+    vector q=P+16*(2*vector(noise(P/143+set(7,19,31)))-1);
+    vector shift=edit*(18*(2*vector(noise(q/93+set(13,59,3)))-1)
+        +9*(2*vector(noise(q/47+set(73,17,41)))-1));
+    shift*=min(1,28/max(length(shift),1e-6));
+    // Prevent the outer thin tail from folding into isolated threshold cells.
+    // This modifies the coordinate field BEFORE sampling; no islands are
+    // deleted and no threshold connectivity rule is relaxed afterwards.
+    float thin_support=smooth(.04,.22,control);
+    shift*=thin_support;
+    float rho=thin_support<1e-6 ? control : volumesample(1,"density",P+shift);
+
+    // ONE authored forked cavity in the upper/left crown, outside repaired B.
+    // Its branches are deliberately unequal and change width, depth and bend.
+    // Unlike the previous 42% attenuation, its centre removes actual volume,
+    // producing a recessed front surface and a surviving nonuniform ridge.
+    float carving=0;
+    if (u > -540 && u < -255 && h > 550 && h < 815 && d < 140) {
+        float t=clamp((h-550)/265,0,1);
+        float centre=-462+151*t-46*t*t;
+        float width=19+31*pow(sin(3.14159265359*t),2);
+        centre+=12*(2*noise(set(u,h,d)/81+set(27,41,9))-1);
+        width*=.82+.36*noise(set(u,h,d)/67+set(91,7,23));
+        float fork=clamp((h-646)/145,0,1);
+        float centre2=-419+126*fork-16*fork*fork;
+        float width2=13+13*pow(sin(3.14159265359*fork),2);
+        float envelope=smooth(550,590,h)*(1-smooth(782,815,h));
+        float envelope2=smooth(646,675,h)*(1-smooth(763,791,h));
+        float cross1=(1-smooth(.30,1,abs(u-centre)/max(width,1)))*envelope;
+        float cross2=(1-smooth(.25,1,abs(u-centre2)/max(width2,1)))*envelope2;
+        float across=max(cross1,cross2);
+        if (across>1e-5) {
+            // Find the unchanged body's actual front at this U/H. Bisection
+            // avoids tying cavity depth to an invented ellipsoid or plane.
+            float front=-1000;
+            float previous=-430;
+            for (float probe=-422; probe<=210; probe+=8) {
+                vector Q=set(.82428549*u+.56617439*probe,
+                             .56617439*u-.82428549*probe,h-500);
+                if (volumesample(1,"density",Q)>.005) {
+                    float low=previous;
+                    float high=probe;
+                    for (int refine=0; refine<4; refine++) {
+                        float middle=.5*(low+high);
+                        vector M=set(.82428549*u+.56617439*middle,
+                                     .56617439*u-.82428549*middle,h-500);
+                        if (volumesample(1,"density",M)>.005) high=middle;
+                        else low=middle;
+                    }
+                    front=.5*(low+high);
+                    break;
+                }
+                previous=probe;
+            }
+            if (front>-999) {
+                // Depth/width vary in all three dimensions. The fork is
+                // shorter and shallower; no constant-width scored grooves.
+                float irregular=noise(q/69+set(37,83,11));
+                float depth=(65+25*irregular)*cross1+(39+16*irregular)*cross2;
+                depth=min(depth,90);
+                float reach=front+depth;
+                float backGate=1-smooth(reach-16,reach+20,d);
+                // Open all the way to exterior; do not leave a detached thin
+                // front skin over the recessed channel.
+                carving=across*backGate*edit;
+            }
+        }
+    }
+    @density=clamp(min(rho,1-carving),0,1);
+}

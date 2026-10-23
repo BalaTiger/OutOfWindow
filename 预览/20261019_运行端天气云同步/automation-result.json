@@ -1,0 +1,11 @@
+{
+  "exitCode": 0,
+  "stopReason": null,
+  "seconds": 44.07799999997951,
+  "peakJobGiB": 3.751422882080078,
+  "resourcesEnd": {
+    "physicalAvailableGiB": 9.70333480834961,
+    "commitHeadroomGiB": 26.73031234741211
+  },
+  "ownedTreeReleased": true
+}

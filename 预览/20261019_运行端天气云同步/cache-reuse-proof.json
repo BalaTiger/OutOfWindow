@@ -1,0 +1,65 @@
+{
+  "recordedUtc": "2026-10-19T02:36:05.7779253Z",
+  "decision": "Keep engine-default Zen; withdrawn repository-local cache override. No cache copy/move performed.",
+  "initialCacheObservation": {
+    "phase": "Before root agent engine-default runtime verification",
+    "path": "C:/Users/zhuzi/AppData/Local/UnrealEngine/Common/Zen/Data",
+    "attributes": "Directory",
+    "fileCount": 428,
+    "totalBytes": 1080426465,
+    "totalGiB": 1.006,
+    "latestWriteLocal": "2026-10-17T10:32:07.2497008+08:00",
+    "zenLog": "C:/Users/zhuzi/AppData/Local/UnrealEngine/Common/Zen/Data/logs/zenserver.log",
+    "indexEntries": {
+      "globalshadermap": 1383,
+      "fshaderjobcacheshaders": 8311,
+      "staticmesh": 5993,
+      "legacytexture": 610
+    }
+  },
+  "historicLaunch": {
+    "ueLog": ".runtime/loading-work/launcher/sessions/20261017-103113-23170f8ea0d34ccbaf54a37a47722fd6/ue.log",
+    "ueLogSha256": "B65F8DD3511ACDBE94873BD6F8615CEE1A33512AE3D7D0439BD4E69B8FDF33C5",
+    "launcherLog": ".runtime/loading-work/launcher/sessions/20261017-103113-23170f8ea0d34ccbaf54a37a47722fd6/launcher.log",
+    "launcherLogSha256": "93D3C111195B5B15C169F6DF029E19835C99D889AC6137BBDAB3733B9807D313",
+    "launchUtc": "2026-10-17T02:31:13.4919029+00:00",
+    "readyUtc": "2026-10-17T02:31:22.6815297+00:00",
+    "launchToReadySeconds": 9.189627,
+    "ueEvidence": [
+      {
+        "line": 927,
+        "text": "[2026.10.17-02.31.15:237][  0]LogZenServiceInstance: Found Zen config default=C:/Users/zhuzi/AppData/Local/UnrealEngine/Common/Zen/Data"
+      },
+      {
+        "line": 939,
+        "text": "[2026.10.17-02.31.15:958][  0]LogDerivedDataCache: Display: ZenLocal: Using ZenServer HTTP service at [::1] with namespace ue.ddc status: OK!."
+      },
+      {
+        "line": 2840,
+        "text": "[2026.10.17-02.31.20:521][  0]LogLoad: Took 1.396258 seconds to LoadMap(/Game/Maps/Alley)"
+      }
+    ]
+  },
+  "launcherRestoration": {
+    "path": "unreal/Launch-Unreal.ps1",
+    "sha256": "C645227732CBCD45BF69CE84A375E049ACE3FB5E772A546B4C835B6E798E9173",
+    "headSha256": "C645227732CBCD45BF69CE84A375E049ACE3FB5E772A546B4C835B6E798E9173",
+    "rawBytesEqualHead": true,
+    "gitBlob": "42a402493241747454c924a64a811206721326e5",
+    "method": "Removed only added DDC hunk; no git reset/checkout used"
+  },
+  "buildOnly": {
+    "passed": true,
+    "output": "C:\\Users\\zhuzi\\Documents\\OutOfWindow\\.runtime\\launcher-ddc-buildonly-aa0565b8b6f84d57a0cca7f1ff5522e2\\OutOfWindow.Launcher.exe",
+    "launcherStartForbiddenByTest": true,
+    "environmentUnchanged": true,
+    "priorProcessOverride": null,
+    "priorUserOverride": null,
+    "priorMachineOverride": null,
+    "defaultTargetUnchanged": true,
+    "defaultTargetSha256": "46C6087E26B0168F6C90E01C81F92C1BD18759CBBC0D6C43067590EA2727F005",
+    "repositoryCacheExists": false,
+    "powershellVersion": "7.6.5"
+  },
+  "limits": "Historical cache and successful old startup establish reuse candidate, not proof all new cloud shaders are warm. Root agent owns fresh engine-default runtime validation."
+}

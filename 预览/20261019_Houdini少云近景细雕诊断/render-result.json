@@ -1,0 +1,44 @@
+{
+  "status": "REJECTED_THREE_ROUTE_RENDER_COMPLETED",
+  "actualRenders": [
+    {
+      "name": "original",
+      "seconds": 31.5,
+      "bytes": 31929,
+      "sha256": "93a838c0dc452db7465090cc7370f308107c4e7f24639ead05e5f042fc845fd5"
+    },
+    {
+      "name": "control",
+      "seconds": 76.625,
+      "bytes": 32471,
+      "sha256": "b2cdcfd17db5ab2a9275eac746000ba18e0028ab487af7ba4daa9fa3ccda7e65"
+    },
+    {
+      "name": "candidate",
+      "seconds": 73.89100000000326,
+      "bytes": 32329,
+      "sha256": "97505bef95545f2631f32720c5da96991a33d7c2ad08e2ccb308f45720fb44ed"
+    }
+  ],
+  "sameParameterValues": true,
+  "fairComparison": "control vs candidate share the identical grid and sampling; original vs control additionally includes the grid-dependent sampling change",
+  "gridIsNotNewGeometry": true,
+  "lightingAndMaterialChanged": false,
+  "displayGain": 1,
+  "sourceFilesUnchanged": true,
+  "completion": "First bounded stage timed out after original/control. Only candidate resumed in a second bounded stage with identical saved HIP and settings.",
+  "candidateResumeBudget": {
+    "status": "COMPLETED",
+    "exitCode": 0,
+    "reason": null,
+    "seconds": 75.54700000002049,
+    "peakJobBytes": 791392256,
+    "resourcesEnd": {
+      "availableGiB": 9.682853698730469,
+      "commitHeadroomGiB": 24.43848419189453
+    },
+    "CPUslotReleased": true,
+    "nativeChildCreated": true
+  },
+  "accepted": false
+}

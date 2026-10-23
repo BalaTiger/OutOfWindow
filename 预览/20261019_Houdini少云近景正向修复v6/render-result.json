@@ -1,0 +1,35 @@
+{
+  "status": "SINGLE_CANDIDATE_RENDER_COMPLETED",
+  "actualRenders": [
+    {
+      "name": "original",
+      "seconds": 31.5,
+      "bytes": 31929,
+      "sha256": "93a838c0dc452db7465090cc7370f308107c4e7f24639ead05e5f042fc845fd5",
+      "reused": true,
+      "source": "C:\\Users\\zhuzi\\Documents\\OutOfWindow\\.runtime\\houdini-few-near-20261019-diagnostic-v5\\original.exr"
+    },
+    {
+      "name": "control",
+      "seconds": 76.625,
+      "bytes": 32471,
+      "sha256": "b2cdcfd17db5ab2a9275eac746000ba18e0028ab487af7ba4daa9fa3ccda7e65",
+      "reused": true,
+      "source": "C:\\Users\\zhuzi\\Documents\\OutOfWindow\\.runtime\\houdini-few-near-20261019-diagnostic-v5\\control.exr"
+    },
+    {
+      "name": "candidate",
+      "seconds": 79.75,
+      "bytes": 33123,
+      "sha256": "fc9574ab4b5a6b3c290eec4cd59b9c3e43a42a4852d074d74c63ccb52f0b5f64",
+      "reused": false
+    }
+  ],
+  "newRenderCount": 1,
+  "sameParameterValues": true,
+  "lightingAndMaterialChanged": false,
+  "displayGain": 1,
+  "accepted": false,
+  "fairComparison": "Exact control grid, camera, material and lighting retained. Original/control raw EXRs reused from prior verified native render.",
+  "sourceFilesUnchanged": true
+}

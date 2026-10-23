@@ -1,0 +1,11 @@
+{
+  "exitCode": 124,
+  "stopReason": "system reserve",
+  "seconds": 38.57900000002701,
+  "peakJobGiB": 6.834632873535156,
+  "resourcesEnd": {
+    "physicalAvailableGiB": 3.977203369140625,
+    "commitHeadroomGiB": 15.381824493408203
+  },
+  "ownedTreeReleased": true
+}

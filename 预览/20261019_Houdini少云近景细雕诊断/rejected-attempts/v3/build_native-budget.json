@@ -1,0 +1,13 @@
+{
+  "status": "STOPPED",
+  "exitCode": 1,
+  "reason": null,
+  "seconds": 5.670999999972992,
+  "peakJobBytes": 587120640,
+  "resourcesEnd": {
+    "availableGiB": 9.698028564453125,
+    "commitHeadroomGiB": 24.051239013671875
+  },
+  "CPUslotReleased": true,
+  "nativeChildCreated": true
+}

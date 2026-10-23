@@ -1,0 +1,278 @@
+{
+  "status": "SINGLE_ADDITIVE_EXPERIMENT_COMPLETED_VISUALLY_REJECTED",
+  "accepted": false,
+  "topologyPassed": true,
+  "originalDensityReducedVoxelCount": 0,
+  "protectedBMaxDelta": 0.0,
+  "densityIntegralIncreasePercent": 1.8689176525421125,
+  "components": {
+    "original": {
+      "0.0001": [
+        67796
+      ],
+      "0.02": [
+        66862
+      ]
+    },
+    "control": {
+      "0.0001": [
+        308618
+      ],
+      "0.02": [
+        284125
+      ]
+    },
+    "candidate": {
+      "0.0001": [
+        315127
+      ],
+      "0.02": [
+        290480
+      ]
+    }
+  },
+  "preRenderProjection": {
+    "kind": "UNSHADED_OPACITY_PREFLIGHT_NOT_RENDER",
+    "nativeCrop": [
+      100,
+      190,
+      450,
+      315
+    ],
+    "cameraSHA256": "2136d188d6e63493bed4a95ff391e9d5a73e0e46cee07d996501575f05f7a1d5",
+    "fixedWorldZReflection": true,
+    "physicalIntegrationStepMaximum": 4,
+    "originalVsControl": {
+      "alpha02IoU": 0.9933351106371634,
+      "boundsBefore": [
+        198,
+        214,
+        355,
+        284
+      ],
+      "boundsAfter": [
+        197,
+        214,
+        355,
+        284
+      ],
+      "newSupportPixels": 50,
+      "maximumOpacityLoss": 0.010667860507965088,
+      "meanOpacityGain": 9.215469617629424e-05
+    },
+    "controlVsCandidate": {
+      "alpha02IoU": 0.9801411026914032,
+      "boundsBefore": [
+        197,
+        214,
+        355,
+        284
+      ],
+      "boundsAfter": [
+        196,
+        214,
+        355,
+        284
+      ],
+      "newSupportPixels": 152,
+      "maximumOpacityLoss": 0.0,
+      "meanOpacityGain": 0.00215916964225471
+    }
+  },
+  "actualRenderComparison": {
+    "alphaSilhouetteIoU": 0.9803972817564035,
+    "boundsBefore": [
+      198,
+      214,
+      355,
+      284
+    ],
+    "boundsAfter": [
+      196,
+      214,
+      355,
+      284
+    ],
+    "meanAbsLinearRGBDelta": 0.0010829329257830977,
+    "opaquePixelsBefore": 2669,
+    "opaquePixelsAfter": 2687
+  },
+  "newCandidateCount": 1,
+  "newNativeRenderCount": 1,
+  "originalControlRendersReused": true,
+  "buildBudget": {
+    "status": "COMPLETED",
+    "exitCode": 0,
+    "reason": null,
+    "seconds": 2.10999999998603,
+    "peakJobBytes": 417021952,
+    "resourcesEnd": {
+      "availableGiB": 9.610702514648438,
+      "commitHeadroomGiB": 22.87814712524414
+    },
+    "CPUslotReleased": true,
+    "nativeChildCreated": true
+  },
+  "renderBudget": {
+    "status": "COMPLETED",
+    "exitCode": 0,
+    "reason": null,
+    "seconds": 81.46899999998277,
+    "peakJobBytes": 780050432,
+    "resourcesEnd": {
+      "availableGiB": 9.416248321533203,
+      "commitHeadroomGiB": 22.654544830322266
+    },
+    "CPUslotReleased": true,
+    "nativeChildCreated": true
+  },
+  "sourceFilesUnchanged": true,
+  "cityModified": false,
+  "UEStarted": false,
+  "defaultRuntimeModified": false,
+  "launcherSHA256": "5b9b0bf218d8c55c31f209de27900ce4e0ed6bf3343a477f1cfe33cbb8a4b6a5",
+  "candidateSHA256": "b934a2d42ef3f3c2f77377faeda1b5c6b85ead1753669d12d61c3a60cd294635",
+  "hipSHA256": "cd8c8c9f5236709852e89caeb0689127e1ea98a8bcf0f6f3fcc1da1e748b192d",
+  "nativeCameraLightMaterialUnchanged": true,
+  "baselineDensityResampledToTight128BeforeThisExperiment": true,
+  "knownLimitation": "No density subtraction means existing straight edges and smooth crowns remain; additions produced hooks rather than natural multiscale cloud form.",
+  "receiptRecovery": "Initial JSON serialization failed after arrays saved; recovered checks matched every frozen voxel and projection value, no array rewritten.",
+  "artifactFiles": {
+    "authored-branches.json": {
+      "bytes": 2593,
+      "sha256": "18f004ae51b7bf4ef983e6f7888ac56e20c11c2ec3bca629d9afe533d3e28ff9"
+    },
+    "build-result.json": {
+      "bytes": 8266,
+      "sha256": "4ec71a492709239c012760276bac06e4bff2f7dacd9973cbdf2a5ac5f440f398"
+    },
+    "build_native-budget.json": {
+      "bytes": 298,
+      "sha256": "e49b5e4491c81765bc5080cb487f8c7b4f2e613e94e31d60fc236e7218bc9d85"
+    },
+    "build_native-start.json": {
+      "bytes": 243,
+      "sha256": "5c7a6b59d4ded4b2934375dc8e45eb0c3590d487c1ec084ae0f710eabd8fc94d"
+    },
+    "build_native.py": {
+      "bytes": 5620,
+      "sha256": "cfdb867992b662412dec74a11598132285d2d2db268cf9afd2788d692f48766e"
+    },
+    "candidate.bgeo.sc": {
+      "bytes": 1018258,
+      "sha256": "42eb210a2ff9ca787eaa48e63fb868e5e7a602511ab53afab1d7b094daa68824"
+    },
+    "candidate.exr": {
+      "bytes": 33123,
+      "sha256": "fc9574ab4b5a6b3c290eec4cd59b9c3e43a42a4852d074d74c63ccb52f0b5f64"
+    },
+    "candidate.png": {
+      "bytes": 16331,
+      "sha256": "3ca5a5d83d75717be2e0326625ae7aec6d81a9c5960a77afbdd7f3c3a0928cf2"
+    },
+    "control.bgeo.sc": {
+      "bytes": 986906,
+      "sha256": "cf798ef7130cbffc4b744385beb36bd6d76927276f9aac7b22874c6d00ad7ea0"
+    },
+    "control.exr": {
+      "bytes": 32471,
+      "sha256": "b2cdcfd17db5ab2a9275eac746000ba18e0028ab487af7ba4daa9fa3ccda7e65"
+    },
+    "density-comparison.npz": {
+      "bytes": 1851098,
+      "sha256": "8079b551142dba0f7e55fdd338423a805e9dbdcc8750c27bdcef4de89c255fb2"
+    },
+    "EXPERIMENT-few-near-positive-v6.hip": {
+      "bytes": 293105,
+      "sha256": "cd8c8c9f5236709852e89caeb0689127e1ea98a8bcf0f6f3fcc1da1e748b192d"
+    },
+    "houdini-positive-v6-reference-original-control-candidate.png": {
+      "bytes": 152132,
+      "sha256": "fb72a5316890d7ea6d7cf217822eb2e4b9752eca742235698b056c815785e7b0"
+    },
+    "image-audit.json": {
+      "bytes": 1302,
+      "sha256": "82b50da9f81c43cc751631187d1a450e68f2905617781559fdf8fa9d952d0878"
+    },
+    "offline-result.json": {
+      "bytes": 5939,
+      "sha256": "84781f619e66174b364e9959e589b8b23b71eee14503fa48a87062c8dad47a58"
+    },
+    "offline-start.json": {
+      "bytes": 89,
+      "sha256": "e17a09b627114540f0719d2eb6c9564fa2a33780fe55917d04c5711d64081913"
+    },
+    "offline_density.py": {
+      "bytes": 14024,
+      "sha256": "c7ab990d864e424f6055233d03313da3ac5f961f0371a78c33395e2573e88aaa"
+    },
+    "offline_density_reproducible.py": {
+      "bytes": 14031,
+      "sha256": "43b5327d9ba2daa64b2c9395b8ef1ec8c4713fa4414f68ed087ed40c85f9f3dd"
+    },
+    "opacity-preflight.npz": {
+      "bytes": 92388,
+      "sha256": "c4c11dac5891f09ea5773332d6e073d867baa1aa3fff5988a441266b854eeabd"
+    },
+    "opacity-preflight.png": {
+      "bytes": 63265,
+      "sha256": "16efbcdd4768e7c74951240f06e4095556ee882feb365aff3a7911883987c8ff"
+    },
+    "original.exr": {
+      "bytes": 31929,
+      "sha256": "93a838c0dc452db7465090cc7370f308107c4e7f24639ead05e5f042fc845fd5"
+    },
+    "present.py": {
+      "bytes": 4928,
+      "sha256": "282495bfb1ce74d5c7c33ce5c570b019e601c3ec3c88e98ff1c7a9c993b4927a"
+    },
+    "present_preflight.py": {
+      "bytes": 1398,
+      "sha256": "83b859455269400385593c791055a63045d0e2af523fc7e3666674759b4e3835"
+    },
+    "recover_report.py": {
+      "bytes": 2834,
+      "sha256": "7222eb75a947b9038a7624a55de69d4c81ff798105e1c1721d40470e970e5f4b"
+    },
+    "reference-original-control-candidate.png": {
+      "bytes": 152132,
+      "sha256": "fb72a5316890d7ea6d7cf217822eb2e4b9752eca742235698b056c815785e7b0"
+    },
+    "render-result.json": {
+      "bytes": 1247,
+      "sha256": "ff2415839daac57107154a14c0bda94a7d54d4847194eb8a471d9e51918013ee"
+    },
+    "render_triple-budget.json": {
+      "bytes": 300,
+      "sha256": "563317b6bfd9fd32dc08762cf6bc8d7c56c1f0a2cff9adbbf48a7f28780bacd2"
+    },
+    "render_triple-start.json": {
+      "bytes": 243,
+      "sha256": "47dbdb3c3b60d7f9ed8f1226d5dcf3c6efafe4cb0e5fdcfdbeb904d6afb9137d"
+    },
+    "render_triple.py": {
+      "bytes": 3347,
+      "sha256": "189512c7ecabe52b863ec46c04b49da2816565152129385a53a23f1bc356b5ac"
+    },
+    "report-recovery.json": {
+      "bytes": 383,
+      "sha256": "58741326a0010949a59f2767abcade6dfe14132cfc0e13e7477c360fa5137347"
+    },
+    "run_bounded.py": {
+      "bytes": 9915,
+      "sha256": "fdba0ca15798ce4e7acd5c5d7e21b58c4a921ac8a606646c31995266d075a3fb"
+    },
+    "sample06-control.bgeo.sc": {
+      "bytes": 460247,
+      "sha256": "2a3d929a6c9ae9638a0372dc4d832dcd4bae350966f5b8301147d9cdf55d5d90"
+    },
+    "sample06-density.bgeo.sc": {
+      "bytes": 229843,
+      "sha256": "5ea64e9d5e666885c46e0a2f2941a9ca61abac8eb2e25e19091958260e0d0b4d"
+    },
+    "visual-review.txt": {
+      "bytes": 336,
+      "sha256": "5c86818839fac0f918ad90230a9c53102f66ffd66d894a4fe7e1d74401520a5f"
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "status": "COMPLETED",
+  "exitCode": 0,
+  "reason": null,
+  "seconds": 2.125,
+  "peakJobBytes": 415232000,
+  "resourcesEnd": {
+    "availableGiB": 8.193183898925781,
+    "commitHeadroomGiB": 22.93138885498047
+  },
+  "CPUslotReleased": true,
+  "nativeChildCreated": true
+}

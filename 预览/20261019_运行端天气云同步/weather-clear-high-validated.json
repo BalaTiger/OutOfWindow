@@ -1,0 +1,65 @@
+{
+  "status": "GPU_CAPTURE_AND_ROUTE_VALIDATED",
+  "stage": "weather-clear-high",
+  "actualWeather": "clear",
+  "dimensions": [
+    960,
+    540
+  ],
+  "sha256": "713a4b8134dcaeb36b99dad6e3272d1d969ca983e46f022870bebeba696caa4e",
+  "route": {
+    "routeLoaded": true,
+    "enabled": true,
+    "routeVersion": 2,
+    "fewFarSupported": true,
+    "displayWeatherSource": "clear",
+    "targetLightweight": 0,
+    "targetCi": 1,
+    "targetFewFarLightweight": 0,
+    "effectiveFewFarTarget": 0,
+    "lightweight": 0,
+    "legacyLow": 1,
+    "fewFarLightweight": 0,
+    "nearDistanceKm": 4,
+    "farDistanceKm": 8,
+    "distanceOrigin": "fixed scene camera; horizontal km",
+    "originXKm": -0.019999999552965164,
+    "originYKm": -0.20800000429153442,
+    "coverage": 0.47999998927116394,
+    "distanceWeights": [
+      {
+        "distanceKm": 4,
+        "lightweight": 0,
+        "legacy": 1
+      },
+      {
+        "distanceKm": 6,
+        "lightweight": 0,
+        "legacy": 1
+      },
+      {
+        "distanceKm": 8,
+        "lightweight": 0,
+        "legacy": 1
+      }
+    ],
+    "ci": 1,
+    "rainProfile": 0,
+    "layerBottomKm": 8.199999809265137,
+    "layerTopKm": 8.380000114440918,
+    "acceptedCiChannel": "Blue/group2; other two groups excluded"
+  },
+  "cloudMaterial": "/Game/Weather/OOW_RuntimeClouds_20261019/MI_RuntimeMix_v2.MI_RuntimeMix_v2",
+  "job": {
+    "exitCode": 0,
+    "stopReason": null,
+    "seconds": 343.0779999999795,
+    "peakJobGiB": 8.66357421875,
+    "resourcesEnd": {
+      "physicalAvailableGiB": 9.552013397216797,
+      "commitHeadroomGiB": 23.770954132080078
+    },
+    "ownedTreeReleased": true
+  },
+  "distanceWeightEvidence": "CPU mirror plus separately exported actual material graph; not a GPU pixel classification"
+}

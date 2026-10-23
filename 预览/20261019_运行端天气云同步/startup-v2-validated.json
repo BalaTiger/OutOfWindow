@@ -1,0 +1,85 @@
+{
+  "status": "FORMAL_TARGET_LOAD_UE_STARTUP_DESKTOP_ATTACHMENT_VALIDATED",
+  "stage": "startup-v2",
+  "job": {
+    "exitCode": 0,
+    "stopReason": null,
+    "seconds": 47.17200000002049,
+    "peakJobGiB": 9.2989501953125,
+    "resourcesEnd": {
+      "physicalAvailableGiB": 4.7859649658203125,
+      "commitHeadroomGiB": 14.379432678222656
+    },
+    "ownedTreeReleased": true
+  },
+  "target": "C:\\Users\\zhuzi\\Documents\\OutOfWindow\\.runtime\\loading-builds\\20261019-020955-3169f205\\OutOfWindow\\OutOfWindow.uproject",
+  "moduleSHA256": "4486CC7F12ACA42A149B5E7EA0D20B723DF0883FA3B7F8221209AB493CDB2D72",
+  "capture": "C:\\Users\\zhuzi\\Documents\\OutOfWindow\\.runtime\\loading-work\\tests\\runtime-observation\\cloud-sync-20261019-startup-v2\\attempt-1-bc72a257412a457dabbbb332c0c0d27a-ready.png",
+  "captureSHA256": "1f4abd58cf893aed0c3a205b1b3d1bd1819762965c00bd2c7b66dfba9325dd31",
+  "summary": "C:\\Users\\zhuzi\\Documents\\OutOfWindow\\.runtime\\loading-work\\tests\\runtime-observation\\cloud-sync-20261019-startup-v2\\summary.json",
+  "attempt": {
+    "attempt": 1,
+    "mode": "startup",
+    "outcome": "ready-held",
+    "exit": 0,
+    "session": "b09356a1e3b14a718c4c3d2bfdc5a798",
+    "actualPid": 45308,
+    "stateBeforeCancel": "Ready",
+    "rendererExitCode": null,
+    "finalDetail": "已取消本次启动。已有窗景实例不受影响。",
+    "ownJobCancelled": true,
+    "ownJobEmpty": true,
+    "readySeen": true,
+    "readyAttachedVisible": true,
+    "sawAppCloaked": true,
+    "startupCapture": "C:\\Users\\zhuzi\\Documents\\OutOfWindow\\.runtime\\loading-work\\tests\\runtime-observation\\cloud-sync-20261019-startup-v2\\attempt-1-bc72a257412a457dabbbb332c0c0d27a-ready.png",
+    "startupCaptureWritten": true,
+    "shaderWorkersDisabled": true,
+    "visibleUncloakedBeforeDesktopSamples": 0,
+    "visibleUncloakedDuringDesktopSamples": 1,
+    "sampleCount": 1376,
+    "maximumSampleGapMs": 875.6720000000023,
+    "samples": "C:\\Users\\zhuzi\\Documents\\OutOfWindow\\.runtime\\loading-work\\tests\\runtime-observation\\cloud-sync-20261019-startup-v2\\attempt-1-samples.jsonl",
+    "status": "C:\\Users\\zhuzi\\Documents\\OutOfWindow\\.runtime\\loading-work\\tests\\runtime-observation\\cloud-sync-20261019-startup-v2\\sessions\\20261019-105458-b09356a1e3b14a718c4c3d2bfdc5a798\\status.json",
+    "ueLog": "C:\\Users\\zhuzi\\Documents\\OutOfWindow\\.runtime\\loading-work\\tests\\runtime-observation\\cloud-sync-20261019-startup-v2\\sessions\\20261019-105458-b09356a1e3b14a718c4c3d2bfdc5a798\\ue.log",
+    "launcherLog": "C:\\Users\\zhuzi\\Documents\\OutOfWindow\\.runtime\\loading-work\\tests\\runtime-observation\\cloud-sync-20261019-startup-v2\\sessions\\20261019-105458-b09356a1e3b14a718c4c3d2bfdc5a798\\launcher.log",
+    "timeline": [
+      {
+        "elapsedMs": 129.005,
+        "utc": "2026-10-19T02:54:58.7562760Z",
+        "stage": "renderer",
+        "state": "Starting",
+        "detail": "正在启动渲染器"
+      },
+      {
+        "elapsedMs": 12135.9516,
+        "utc": "2026-10-19T02:55:10.7602802Z",
+        "stage": "renderer",
+        "state": "Loading",
+        "detail": "渲染器进程已启动，正在初始化。"
+      },
+      {
+        "elapsedMs": 17906.8514,
+        "utc": "2026-10-19T02:55:16.5304359Z",
+        "stage": "scene",
+        "state": "Loading",
+        "detail": "正在加载场景：/Game/Maps/Alley"
+      },
+      {
+        "elapsedMs": 43982.6765,
+        "utc": "2026-10-19T02:55:42.6107635Z",
+        "stage": "desktop",
+        "state": "Loading",
+        "detail": "正在将已初始化的场景连接到桌面。"
+      },
+      {
+        "elapsedMs": 44360.916600000004,
+        "utc": "2026-10-19T02:55:42.9845250Z",
+        "stage": "ready",
+        "state": "Ready",
+        "detail": "场景已初始化并完成绘制，桌面连接成功。"
+      }
+    ]
+  },
+  "limits": "Probe uses actual LauncherForm.LoadTarget and LaunchSession. It does not double-click CMD or show launcher UI. API window sampling plus UE frame is not complete Windows compositor visual acceptance; resource caps and noshaderworker change loading performance."
+}

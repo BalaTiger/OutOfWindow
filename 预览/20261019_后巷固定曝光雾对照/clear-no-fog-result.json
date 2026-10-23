@@ -1,0 +1,19 @@
+{
+  "exitCode": 0,
+  "stopReason": null,
+  "seconds": 15.09299999999348,
+  "peakJobGiB": 8.547721862792969,
+  "resourcesEnd": {
+    "physicalAvailableGiB": 8.465801239013672,
+    "commitHeadroomGiB": 17.27657699584961
+  },
+  "ownedTreeReleased": true,
+  "minimumObservedResources": {
+    "physicalAvailableGiB": 4.1285400390625,
+    "commitHeadroomGiB": 9.230049133300781
+  },
+  "stopSample": null,
+  "peakSingleProcessCommitGiB": 8.088184356689453,
+  "mainProcessPeakWorkingSetGiB": 4.0612640380859375,
+  "resourceSamples": 30
+}

@@ -1,0 +1,112 @@
+{
+  "status": "NATIVE_BUILD_GATES_PENDING",
+  "sources": {
+    "cloud01-sample06-review.hip": "73eab5984901b3b7d249159ab484a30d8abaf8a4330d7ca711f218fc792b3b73",
+    "sample06-density.bgeo.sc": "5ea64e9d5e666885c46e0a2f2941a9ca61abac8eb2e25e19091958260e0d0b4d",
+    "sample06-control.bgeo.sc": "2a3d929a6c9ae9638a0372dc4d832dcd4bae350966f5b8301147d9cdf55d5d90"
+  },
+  "camera": [
+    0.8242854853214415,
+    0.5661743889371856,
+    0.0,
+    0.0,
+    0.06170557828652623,
+    -0.08983630050880399,
+    -0.9940431885583328,
+    0.0,
+    -0.5628017948591857,
+    0.8193753721112786,
+    -0.10898687664477202,
+    0.0,
+    0.0004827859866054496,
+    14171.962245293365,
+    2512.999952316285,
+    1.0
+  ],
+  "sunlight": [
+    -0.3622952659920753,
+    -0.9320633778020309,
+    0.0,
+    0.0,
+    -0.6365210526500651,
+    0.24741725677842485,
+    0.7304968518628209,
+    0.0,
+    -0.6808693632210105,
+    0.2646555512520143,
+    -0.6829160632306931,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+  ],
+  "grid": [
+    128,
+    128,
+    128
+  ],
+  "localLower": [
+    -626.875,
+    -505.0,
+    -337.8125
+  ],
+  "localUpper": [
+    564.375,
+    442.5,
+    369.0625
+  ],
+  "localVoxel": [
+    9.306640625,
+    7.40234375,
+    5.5224609375
+  ],
+  "originalVoxel": [
+    15.625,
+    12.5,
+    7.8125
+  ],
+  "volumeCountPerRoute": 1,
+  "sourceMeshChanged": false,
+  "replicatedCloudCount": 0,
+  "globalStretch": false,
+  "protectedRegion": "abs(U)<=330,H=200..680,D<=65",
+  "protectedVoxelCount": 496074,
+  "protectedMaxDelta": 0.0,
+  "densityIntegralChangeVsLocalControlPercent": 0.2368336563542739,
+  "controlIntegralChangeVsOriginalPercent": -0.010000518727348862,
+  "boundaryThreeLayersMax": {
+    "control": 0.0,
+    "candidate": 0.0
+  },
+  "originalSHA256": "af34f135390ae9ad54b1bed3fc04c6093460e8c3d60e0fc8b1bbba1c41a9e3a1",
+  "controlSHA256": "0457acc2253a9dddc31f286734d906683e4c9ea9163bc5b88e2daf088e5fdec9",
+  "candidateSHA256": "b3f289b8a52a0db73509251d7e5e0e6a7dd7de91c068d05bbb4ee3b4409ccc52",
+  "buildSeconds": 2.235000000044238,
+  "rendered": false,
+  "detailVexSHA256": "3cb6fbdb174ec97c4ffd3ed438eb40a5f9642e79e5249d72357e74a0a5617ca3",
+  "components": {
+    "control": {
+      "0.0001": [
+        308618
+      ],
+      "0.02": [
+        284125
+      ]
+    },
+    "candidate": {
+      "0.0001": [
+        308007
+      ],
+      "0.02": [
+        283686,
+        4,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    }
+  }
+}

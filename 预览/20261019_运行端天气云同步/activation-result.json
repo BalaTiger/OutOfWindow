@@ -1,0 +1,13 @@
+{
+  "status": "ACTIVATED",
+  "version": "cloud-runtime-20261019-v2",
+  "manifest": "C:\\Users\\zhuzi\\Documents\\OutOfWindow\\.runtime\\launcher-versions\\cloud-runtime-20261019-v2\\target.json",
+  "project": "C:\\Users\\zhuzi\\Documents\\OutOfWindow\\.runtime\\loading-builds\\20261019-020955-3169f205\\OutOfWindow\\OutOfWindow.uproject",
+  "module": "C:\\Users\\zhuzi\\Documents\\OutOfWindow\\.runtime\\loading-builds\\20261019-020955-3169f205\\OutOfWindow\\Binaries\\Win64\\UnrealEditor-OutOfWindow.dll",
+  "sourceRecords": 92,
+  "contentRecords": 6516,
+  "targetSha256": "5B9B0BF218D8C55C31F209DE27900CE4E0ED6BF3343A477F1CFE33CBB8A4B6A5",
+  "activeManifest": "C:\\Users\\zhuzi\\Documents\\OutOfWindow\\.runtime\\launcher\\target.json",
+  "activeChanged": true,
+  "backup": "C:\\Users\\zhuzi\\Documents\\OutOfWindow\\.runtime\\launcher\\backups\\target-20261019-030401-716-af71b5f889334630a74fe52b641b1ca6.json"
+}

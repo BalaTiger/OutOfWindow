@@ -1,0 +1,817 @@
+{
+  "status": "DEFAULT_RUNTIME_ACTIVATED_AND_VERIFIED",
+  "recordedUTC": "2026-10-19T03:05:14.028908+00:00",
+  "baseCommit": "80793d16b5aba6d33bd486ed9d4bcd08388b50e6",
+  "changesCommitted": false,
+  "build": {
+    "status": "ENTIRE_CONTENT_SNAPSHOT_MATCHES_WORKING_SOURCE",
+    "contentFiles": 6516,
+    "approvedAssetsUnchanged": true,
+    "snapshot": "C:\\Users\\zhuzi\\Documents\\OutOfWindow\\.runtime\\loading-builds\\20261019-020955-3169f205\\OutOfWindow",
+    "moduleSHA256": "4486cc7f12aca42a149b5e7ea0d20b723df0883fa3b7f8221209ab493cdb2d72",
+    "sourceRecords": 92,
+    "builtUtc": "2026-10-19T02:14:02.5378791Z"
+  },
+  "activation": {
+    "status": "ACTIVATED",
+    "version": "cloud-runtime-20261019-v2",
+    "manifest": "C:\\Users\\zhuzi\\Documents\\OutOfWindow\\.runtime\\launcher-versions\\cloud-runtime-20261019-v2\\target.json",
+    "project": "C:\\Users\\zhuzi\\Documents\\OutOfWindow\\.runtime\\loading-builds\\20261019-020955-3169f205\\OutOfWindow\\OutOfWindow.uproject",
+    "module": "C:\\Users\\zhuzi\\Documents\\OutOfWindow\\.runtime\\loading-builds\\20261019-020955-3169f205\\OutOfWindow\\Binaries\\Win64\\UnrealEditor-OutOfWindow.dll",
+    "sourceRecords": 92,
+    "contentRecords": 6516,
+    "targetSha256": "5B9B0BF218D8C55C31F209DE27900CE4E0ED6BF3343A477F1CFE33CBB8A4B6A5",
+    "activeManifest": "C:\\Users\\zhuzi\\Documents\\OutOfWindow\\.runtime\\launcher\\target.json",
+    "activeChanged": true,
+    "backup": "C:\\Users\\zhuzi\\Documents\\OutOfWindow\\.runtime\\launcher\\backups\\target-20261019-030401-716-af71b5f889334630a74fe52b641b1ca6.json"
+  },
+  "defaultTargetSHA256": "5b9b0bf218d8c55c31f209de27900ce4e0ed6bf3343a477f1cfe33cbb8a4b6a5",
+  "defaultEntry": "打开UE窗景.cmd",
+  "rollbackEntry": "打开云同步前旧版.cmd",
+  "acceptedAssets": {
+    "MI_RuntimeMix.uasset": "ae2e41391ae8e095892454d960f0cee22b6a33da82def36bee813062a0a2ddbf",
+    "M_RuntimeMix.uasset": "585992bdd43e95429dea01cc6485c339b19c808098fa6c5811ad2ce3240aef6d",
+    "T_Ci_LowerAccepted.uasset": "063fe904e34e0bda42784c52d7dbef59f206aeba3d00831132b7ae58045da099"
+  },
+  "newMaterialAssets": {
+    "MI_RuntimeMix_v2.uasset": {
+      "bytes": 8272,
+      "sha256": "e0ee84049a8dd07f781a4c95c26ffafa7578d9e85abd923b656683656ef821a9"
+    },
+    "M_RuntimeMix_v2.uasset": {
+      "bytes": 285262,
+      "sha256": "3c684c916356843d97072bf574820c310fdacbb745985428c845f813f5ff6184"
+    }
+  },
+  "bootstrapSHA256": "c645227732cbcd45bf69ce84a375e049ace3fb5e772a546b4c835b6e798e9173",
+  "captures": [
+    {
+      "weather": "clear",
+      "view": "weather",
+      "file": "01-clear-weather.png",
+      "sha256": "713a4b8134dcaeb36b99dad6e3272d1d969ca983e46f022870bebeba696caa4e",
+      "route": {
+        "routeLoaded": true,
+        "enabled": true,
+        "routeVersion": 2,
+        "fewFarSupported": true,
+        "displayWeatherSource": "clear",
+        "targetLightweight": 0,
+        "targetCi": 1,
+        "targetFewFarLightweight": 0,
+        "effectiveFewFarTarget": 0,
+        "lightweight": 0,
+        "legacyLow": 1,
+        "fewFarLightweight": 0,
+        "nearDistanceKm": 4,
+        "farDistanceKm": 8,
+        "distanceOrigin": "fixed scene camera; horizontal km",
+        "originXKm": -0.019999999552965164,
+        "originYKm": -0.20800000429153442,
+        "coverage": 0.47999998927116394,
+        "distanceWeights": [
+          {
+            "distanceKm": 4,
+            "lightweight": 0,
+            "legacy": 1
+          },
+          {
+            "distanceKm": 6,
+            "lightweight": 0,
+            "legacy": 1
+          },
+          {
+            "distanceKm": 8,
+            "lightweight": 0,
+            "legacy": 1
+          }
+        ],
+        "ci": 1,
+        "rainProfile": 0,
+        "layerBottomKm": 8.199999809265137,
+        "layerTopKm": 8.380000114440918,
+        "acceptedCiChannel": "Blue/group2; other two groups excluded"
+      }
+    },
+    {
+      "weather": "clear",
+      "view": "sky",
+      "file": "01-clear-sky.png",
+      "sha256": "41763eba05cc816db539a0dcef1a33cebad969cc469df097e1952a60ac60d8a8",
+      "route": {
+        "routeLoaded": true,
+        "enabled": true,
+        "routeVersion": 2,
+        "fewFarSupported": true,
+        "displayWeatherSource": "clear",
+        "targetLightweight": 0,
+        "targetCi": 1,
+        "targetFewFarLightweight": 0,
+        "effectiveFewFarTarget": 0,
+        "lightweight": 0,
+        "legacyLow": 1,
+        "fewFarLightweight": 0,
+        "nearDistanceKm": 4,
+        "farDistanceKm": 8,
+        "distanceOrigin": "fixed scene camera; horizontal km",
+        "originXKm": -0.019999999552965164,
+        "originYKm": -0.20800000429153442,
+        "coverage": 0.47999998927116394,
+        "distanceWeights": [
+          {
+            "distanceKm": 4,
+            "lightweight": 0,
+            "legacy": 1
+          },
+          {
+            "distanceKm": 6,
+            "lightweight": 0,
+            "legacy": 1
+          },
+          {
+            "distanceKm": 8,
+            "lightweight": 0,
+            "legacy": 1
+          }
+        ],
+        "ci": 1,
+        "rainProfile": 0,
+        "layerBottomKm": 8.199999809265137,
+        "layerTopKm": 8.380000114440918,
+        "acceptedCiChannel": "Blue/group2; other two groups excluded"
+      }
+    },
+    {
+      "weather": "few",
+      "view": "weather",
+      "file": "02-few-weather.png",
+      "sha256": "56d678493af0bd80f5c14a6fafc28760620fc3f9eacb43d3ba78d68d51376c8a",
+      "route": {
+        "routeLoaded": true,
+        "enabled": true,
+        "routeVersion": 2,
+        "fewFarSupported": true,
+        "displayWeatherSource": "few",
+        "targetLightweight": 0,
+        "targetCi": 0.550000011920929,
+        "targetFewFarLightweight": 1,
+        "effectiveFewFarTarget": 1,
+        "lightweight": 0,
+        "legacyLow": 1,
+        "fewFarLightweight": 1,
+        "nearDistanceKm": 4,
+        "farDistanceKm": 8,
+        "distanceOrigin": "fixed scene camera; horizontal km",
+        "originXKm": -0.019999999552965164,
+        "originYKm": -0.20800000429153442,
+        "coverage": 0.25999999046325684,
+        "distanceWeights": [
+          {
+            "distanceKm": 4,
+            "lightweight": 0,
+            "legacy": 1
+          },
+          {
+            "distanceKm": 6,
+            "lightweight": 0.5,
+            "legacy": 0.5
+          },
+          {
+            "distanceKm": 8,
+            "lightweight": 1,
+            "legacy": 0
+          }
+        ],
+        "ci": 0.550000011920929,
+        "rainProfile": 0,
+        "layerBottomKm": 1.600000023841858,
+        "layerTopKm": 8.380000114440918,
+        "acceptedCiChannel": "Blue/group2; other two groups excluded"
+      }
+    },
+    {
+      "weather": "few",
+      "view": "sky",
+      "file": "02-few-sky.png",
+      "sha256": "9f528899221d9081126563cff8fc5dc7f92d4abad31aef6ae774a997e9437b4e",
+      "route": {
+        "routeLoaded": true,
+        "enabled": true,
+        "routeVersion": 2,
+        "fewFarSupported": true,
+        "displayWeatherSource": "few",
+        "targetLightweight": 0,
+        "targetCi": 0.550000011920929,
+        "targetFewFarLightweight": 1,
+        "effectiveFewFarTarget": 1,
+        "lightweight": 0,
+        "legacyLow": 1,
+        "fewFarLightweight": 1,
+        "nearDistanceKm": 4,
+        "farDistanceKm": 8,
+        "distanceOrigin": "fixed scene camera; horizontal km",
+        "originXKm": -0.019999999552965164,
+        "originYKm": -0.20800000429153442,
+        "coverage": 0.25999999046325684,
+        "distanceWeights": [
+          {
+            "distanceKm": 4,
+            "lightweight": 0,
+            "legacy": 1
+          },
+          {
+            "distanceKm": 6,
+            "lightweight": 0.5,
+            "legacy": 0.5
+          },
+          {
+            "distanceKm": 8,
+            "lightweight": 1,
+            "legacy": 0
+          }
+        ],
+        "ci": 0.550000011920929,
+        "rainProfile": 0,
+        "layerBottomKm": 1.600000023841858,
+        "layerTopKm": 8.380000114440918,
+        "acceptedCiChannel": "Blue/group2; other two groups excluded"
+      }
+    },
+    {
+      "weather": "cloudy",
+      "view": "weather",
+      "file": "03-cloudy-weather.png",
+      "sha256": "1d90767d55fee17e1594751b0aa0564667ef3ec1dfed9ec5d6f3d5d638681557",
+      "route": {
+        "routeLoaded": true,
+        "enabled": true,
+        "routeVersion": 2,
+        "fewFarSupported": true,
+        "displayWeatherSource": "cloudy",
+        "targetLightweight": 1,
+        "targetCi": 0.15000000596046448,
+        "targetFewFarLightweight": 0,
+        "effectiveFewFarTarget": 0,
+        "lightweight": 1,
+        "legacyLow": 0,
+        "fewFarLightweight": 0,
+        "nearDistanceKm": 4,
+        "farDistanceKm": 8,
+        "distanceOrigin": "fixed scene camera; horizontal km",
+        "originXKm": -0.019999999552965164,
+        "originYKm": -0.20800000429153442,
+        "coverage": 0.47999998927116394,
+        "distanceWeights": [
+          {
+            "distanceKm": 4,
+            "lightweight": 1,
+            "legacy": 0
+          },
+          {
+            "distanceKm": 6,
+            "lightweight": 1,
+            "legacy": 0
+          },
+          {
+            "distanceKm": 8,
+            "lightweight": 1,
+            "legacy": 0
+          }
+        ],
+        "ci": 0.15000000596046448,
+        "rainProfile": 0,
+        "layerBottomKm": 1.600000023841858,
+        "layerTopKm": 8.380000114440918,
+        "acceptedCiChannel": "Blue/group2; other two groups excluded"
+      }
+    },
+    {
+      "weather": "cloudy",
+      "view": "sky",
+      "file": "03-cloudy-sky.png",
+      "sha256": "c0a2bc6425646be1ffb0ac6f1ece3a66d6b4fd5dff4830bb5cd812153a832145",
+      "route": {
+        "routeLoaded": true,
+        "enabled": true,
+        "routeVersion": 2,
+        "fewFarSupported": true,
+        "displayWeatherSource": "cloudy",
+        "targetLightweight": 1,
+        "targetCi": 0.15000000596046448,
+        "targetFewFarLightweight": 0,
+        "effectiveFewFarTarget": 0,
+        "lightweight": 1,
+        "legacyLow": 0,
+        "fewFarLightweight": 0,
+        "nearDistanceKm": 4,
+        "farDistanceKm": 8,
+        "distanceOrigin": "fixed scene camera; horizontal km",
+        "originXKm": -0.019999999552965164,
+        "originYKm": -0.20800000429153442,
+        "coverage": 0.47999998927116394,
+        "distanceWeights": [
+          {
+            "distanceKm": 4,
+            "lightweight": 1,
+            "legacy": 0
+          },
+          {
+            "distanceKm": 6,
+            "lightweight": 1,
+            "legacy": 0
+          },
+          {
+            "distanceKm": 8,
+            "lightweight": 1,
+            "legacy": 0
+          }
+        ],
+        "ci": 0.15000000596046448,
+        "rainProfile": 0,
+        "layerBottomKm": 1.600000023841858,
+        "layerTopKm": 8.380000114440918,
+        "acceptedCiChannel": "Blue/group2; other two groups excluded"
+      }
+    },
+    {
+      "weather": "overcast",
+      "view": "weather",
+      "file": "04-overcast-weather.png",
+      "sha256": "29cf16000adf8997e31b551d6807463054503d66b72568ff6c850bba8de0f0d7",
+      "route": {
+        "routeLoaded": true,
+        "enabled": true,
+        "routeVersion": 2,
+        "fewFarSupported": true,
+        "displayWeatherSource": "overcast",
+        "targetLightweight": 1,
+        "targetCi": 0,
+        "targetFewFarLightweight": 0,
+        "effectiveFewFarTarget": 0,
+        "lightweight": 1,
+        "legacyLow": 0,
+        "fewFarLightweight": 0,
+        "nearDistanceKm": 4,
+        "farDistanceKm": 8,
+        "distanceOrigin": "fixed scene camera; horizontal km",
+        "originXKm": -0.019999999552965164,
+        "originYKm": -0.20800000429153442,
+        "coverage": 0.6899999976158142,
+        "distanceWeights": [
+          {
+            "distanceKm": 4,
+            "lightweight": 1,
+            "legacy": 0
+          },
+          {
+            "distanceKm": 6,
+            "lightweight": 1,
+            "legacy": 0
+          },
+          {
+            "distanceKm": 8,
+            "lightweight": 1,
+            "legacy": 0
+          }
+        ],
+        "ci": 0,
+        "rainProfile": 1,
+        "layerBottomKm": 1.2999999523162842,
+        "layerTopKm": 2.4000000953674316,
+        "acceptedCiChannel": "Blue/group2; other two groups excluded"
+      }
+    },
+    {
+      "weather": "overcast",
+      "view": "sky",
+      "file": "04-overcast-sky.png",
+      "sha256": "6704a2639a0c285bcbdba666fd08c057b52c4b06d62b5f6902aabf16e506af4b",
+      "route": {
+        "routeLoaded": true,
+        "enabled": true,
+        "routeVersion": 2,
+        "fewFarSupported": true,
+        "displayWeatherSource": "overcast",
+        "targetLightweight": 1,
+        "targetCi": 0,
+        "targetFewFarLightweight": 0,
+        "effectiveFewFarTarget": 0,
+        "lightweight": 1,
+        "legacyLow": 0,
+        "fewFarLightweight": 0,
+        "nearDistanceKm": 4,
+        "farDistanceKm": 8,
+        "distanceOrigin": "fixed scene camera; horizontal km",
+        "originXKm": -0.019999999552965164,
+        "originYKm": -0.20800000429153442,
+        "coverage": 0.6899999976158142,
+        "distanceWeights": [
+          {
+            "distanceKm": 4,
+            "lightweight": 1,
+            "legacy": 0
+          },
+          {
+            "distanceKm": 6,
+            "lightweight": 1,
+            "legacy": 0
+          },
+          {
+            "distanceKm": 8,
+            "lightweight": 1,
+            "legacy": 0
+          }
+        ],
+        "ci": 0,
+        "rainProfile": 1,
+        "layerBottomKm": 1.2999999523162842,
+        "layerTopKm": 2.4000000953674316,
+        "acceptedCiChannel": "Blue/group2; other two groups excluded"
+      }
+    },
+    {
+      "weather": "rain",
+      "view": "weather",
+      "file": "05-rain-weather.png",
+      "sha256": "5d31b5aeefb90438df10899c414c24146ef7998e96d4b96f43e1ddc26bb5fd55",
+      "route": {
+        "routeLoaded": true,
+        "enabled": true,
+        "routeVersion": 2,
+        "fewFarSupported": true,
+        "displayWeatherSource": "rain",
+        "targetLightweight": 1,
+        "targetCi": 0,
+        "targetFewFarLightweight": 0,
+        "effectiveFewFarTarget": 0,
+        "lightweight": 1,
+        "legacyLow": 0,
+        "fewFarLightweight": 0,
+        "nearDistanceKm": 4,
+        "farDistanceKm": 8,
+        "distanceOrigin": "fixed scene camera; horizontal km",
+        "originXKm": -0.019999999552965164,
+        "originYKm": -0.20800000429153442,
+        "coverage": 0.6899999976158142,
+        "distanceWeights": [
+          {
+            "distanceKm": 4,
+            "lightweight": 1,
+            "legacy": 0
+          },
+          {
+            "distanceKm": 6,
+            "lightweight": 1,
+            "legacy": 0
+          },
+          {
+            "distanceKm": 8,
+            "lightweight": 1,
+            "legacy": 0
+          }
+        ],
+        "ci": 0,
+        "rainProfile": 1,
+        "layerBottomKm": 1.2999999523162842,
+        "layerTopKm": 2.4000000953674316,
+        "acceptedCiChannel": "Blue/group2; other two groups excluded"
+      }
+    },
+    {
+      "weather": "rain",
+      "view": "sky",
+      "file": "05-rain-sky.png",
+      "sha256": "e812290d78d22ddf72ab7ec85dc695d67a45da4448ac4cc3aff3a496110e5e85",
+      "route": {
+        "routeLoaded": true,
+        "enabled": true,
+        "routeVersion": 2,
+        "fewFarSupported": true,
+        "displayWeatherSource": "rain",
+        "targetLightweight": 1,
+        "targetCi": 0,
+        "targetFewFarLightweight": 0,
+        "effectiveFewFarTarget": 0,
+        "lightweight": 1,
+        "legacyLow": 0,
+        "fewFarLightweight": 0,
+        "nearDistanceKm": 4,
+        "farDistanceKm": 8,
+        "distanceOrigin": "fixed scene camera; horizontal km",
+        "originXKm": -0.019999999552965164,
+        "originYKm": -0.20800000429153442,
+        "coverage": 0.6899999976158142,
+        "distanceWeights": [
+          {
+            "distanceKm": 4,
+            "lightweight": 1,
+            "legacy": 0
+          },
+          {
+            "distanceKm": 6,
+            "lightweight": 1,
+            "legacy": 0
+          },
+          {
+            "distanceKm": 8,
+            "lightweight": 1,
+            "legacy": 0
+          }
+        ],
+        "ci": 0,
+        "rainProfile": 1,
+        "layerBottomKm": 1.2999999523162842,
+        "layerTopKm": 2.4000000953674316,
+        "acceptedCiChannel": "Blue/group2; other two groups excluded"
+      }
+    }
+  ],
+  "startups": [
+    {
+      "status": "FORMAL_TARGET_LOAD_UE_STARTUP_DESKTOP_ATTACHMENT_VALIDATED",
+      "stage": "startup-v2",
+      "job": {
+        "exitCode": 0,
+        "stopReason": null,
+        "seconds": 47.17200000002049,
+        "peakJobGiB": 9.2989501953125,
+        "resourcesEnd": {
+          "physicalAvailableGiB": 4.7859649658203125,
+          "commitHeadroomGiB": 14.379432678222656
+        },
+        "ownedTreeReleased": true
+      },
+      "target": "C:\\Users\\zhuzi\\Documents\\OutOfWindow\\.runtime\\loading-builds\\20261019-020955-3169f205\\OutOfWindow\\OutOfWindow.uproject",
+      "moduleSHA256": "4486CC7F12ACA42A149B5E7EA0D20B723DF0883FA3B7F8221209AB493CDB2D72",
+      "capture": "C:\\Users\\zhuzi\\Documents\\OutOfWindow\\.runtime\\loading-work\\tests\\runtime-observation\\cloud-sync-20261019-startup-v2\\attempt-1-bc72a257412a457dabbbb332c0c0d27a-ready.png",
+      "captureSHA256": "1f4abd58cf893aed0c3a205b1b3d1bd1819762965c00bd2c7b66dfba9325dd31",
+      "summary": "C:\\Users\\zhuzi\\Documents\\OutOfWindow\\.runtime\\loading-work\\tests\\runtime-observation\\cloud-sync-20261019-startup-v2\\summary.json",
+      "attempt": {
+        "attempt": 1,
+        "mode": "startup",
+        "outcome": "ready-held",
+        "exit": 0,
+        "session": "b09356a1e3b14a718c4c3d2bfdc5a798",
+        "actualPid": 45308,
+        "stateBeforeCancel": "Ready",
+        "rendererExitCode": null,
+        "finalDetail": "已取消本次启动。已有窗景实例不受影响。",
+        "ownJobCancelled": true,
+        "ownJobEmpty": true,
+        "readySeen": true,
+        "readyAttachedVisible": true,
+        "sawAppCloaked": true,
+        "startupCapture": "C:\\Users\\zhuzi\\Documents\\OutOfWindow\\.runtime\\loading-work\\tests\\runtime-observation\\cloud-sync-20261019-startup-v2\\attempt-1-bc72a257412a457dabbbb332c0c0d27a-ready.png",
+        "startupCaptureWritten": true,
+        "shaderWorkersDisabled": true,
+        "visibleUncloakedBeforeDesktopSamples": 0,
+        "visibleUncloakedDuringDesktopSamples": 1,
+        "sampleCount": 1376,
+        "maximumSampleGapMs": 875.6720000000023,
+        "samples": "C:\\Users\\zhuzi\\Documents\\OutOfWindow\\.runtime\\loading-work\\tests\\runtime-observation\\cloud-sync-20261019-startup-v2\\attempt-1-samples.jsonl",
+        "status": "C:\\Users\\zhuzi\\Documents\\OutOfWindow\\.runtime\\loading-work\\tests\\runtime-observation\\cloud-sync-20261019-startup-v2\\sessions\\20261019-105458-b09356a1e3b14a718c4c3d2bfdc5a798\\status.json",
+        "ueLog": "C:\\Users\\zhuzi\\Documents\\OutOfWindow\\.runtime\\loading-work\\tests\\runtime-observation\\cloud-sync-20261019-startup-v2\\sessions\\20261019-105458-b09356a1e3b14a718c4c3d2bfdc5a798\\ue.log",
+        "launcherLog": "C:\\Users\\zhuzi\\Documents\\OutOfWindow\\.runtime\\loading-work\\tests\\runtime-observation\\cloud-sync-20261019-startup-v2\\sessions\\20261019-105458-b09356a1e3b14a718c4c3d2bfdc5a798\\launcher.log",
+        "timeline": [
+          {
+            "elapsedMs": 129.005,
+            "utc": "2026-10-19T02:54:58.7562760Z",
+            "stage": "renderer",
+            "state": "Starting",
+            "detail": "正在启动渲染器"
+          },
+          {
+            "elapsedMs": 12135.9516,
+            "utc": "2026-10-19T02:55:10.7602802Z",
+            "stage": "renderer",
+            "state": "Loading",
+            "detail": "渲染器进程已启动，正在初始化。"
+          },
+          {
+            "elapsedMs": 17906.8514,
+            "utc": "2026-10-19T02:55:16.5304359Z",
+            "stage": "scene",
+            "state": "Loading",
+            "detail": "正在加载场景：/Game/Maps/Alley"
+          },
+          {
+            "elapsedMs": 43982.6765,
+            "utc": "2026-10-19T02:55:42.6107635Z",
+            "stage": "desktop",
+            "state": "Loading",
+            "detail": "正在将已初始化的场景连接到桌面。"
+          },
+          {
+            "elapsedMs": 44360.916600000004,
+            "utc": "2026-10-19T02:55:42.9845250Z",
+            "stage": "ready",
+            "state": "Ready",
+            "detail": "场景已初始化并完成绘制，桌面连接成功。"
+          }
+        ]
+      },
+      "limits": "Probe uses actual LauncherForm.LoadTarget and LaunchSession. It does not double-click CMD or show launcher UI. API window sampling plus UE frame is not complete Windows compositor visual acceptance; resource caps and noshaderworker change loading performance."
+    },
+    {
+      "status": "FORMAL_TARGET_LOAD_UE_STARTUP_DESKTOP_ATTACHMENT_VALIDATED",
+      "stage": "startup-rollback-lowload",
+      "job": {
+        "exitCode": 0,
+        "stopReason": null,
+        "seconds": 47.06199999997625,
+        "peakJobGiB": 8.821334838867188,
+        "resourcesEnd": {
+          "physicalAvailableGiB": 7.086231231689453,
+          "commitHeadroomGiB": 21.321548461914062
+        },
+        "ownedTreeReleased": true
+      },
+      "target": "C:\\Users\\zhuzi\\Documents\\OutOfWindow\\.runtime\\loading-work\\project\\OutOfWindow\\OutOfWindow.uproject",
+      "moduleSHA256": "36B9BA9C80C96D32DFD075705C5205543BE5093A1A33E5B4F8A30D55AFDC5B2C",
+      "capture": "C:\\Users\\zhuzi\\Documents\\OutOfWindow\\.runtime\\loading-work\\tests\\runtime-observation\\cloud-sync-20261019-startup-rollback-lowload\\attempt-1-ceb28346535547abb258f1ca879d8796-ready.png",
+      "captureSHA256": "cfc0ea77d4ef3bfc2a7093f0928066f8aa6bd6701cdb1dd468e3e0b2291ca62a",
+      "summary": "C:\\Users\\zhuzi\\Documents\\OutOfWindow\\.runtime\\loading-work\\tests\\runtime-observation\\cloud-sync-20261019-startup-rollback-lowload\\summary.json",
+      "attempt": {
+        "attempt": 1,
+        "mode": "startup",
+        "outcome": "ready-held",
+        "exit": 0,
+        "session": "f0f6e7aece924782b94be01707ead8f0",
+        "actualPid": 50004,
+        "stateBeforeCancel": "Ready",
+        "rendererExitCode": null,
+        "finalDetail": "已取消本次启动。已有窗景实例不受影响。",
+        "ownJobCancelled": true,
+        "ownJobEmpty": true,
+        "readySeen": true,
+        "readyAttachedVisible": true,
+        "sawAppCloaked": true,
+        "startupCapture": "C:\\Users\\zhuzi\\Documents\\OutOfWindow\\.runtime\\loading-work\\tests\\runtime-observation\\cloud-sync-20261019-startup-rollback-lowload\\attempt-1-ceb28346535547abb258f1ca879d8796-ready.png",
+        "startupCaptureWritten": true,
+        "shaderWorkersDisabled": true,
+        "visibleUncloakedBeforeDesktopSamples": 0,
+        "visibleUncloakedDuringDesktopSamples": 0,
+        "sampleCount": 1379,
+        "maximumSampleGapMs": 514.7409000000007,
+        "samples": "C:\\Users\\zhuzi\\Documents\\OutOfWindow\\.runtime\\loading-work\\tests\\runtime-observation\\cloud-sync-20261019-startup-rollback-lowload\\attempt-1-samples.jsonl",
+        "status": "C:\\Users\\zhuzi\\Documents\\OutOfWindow\\.runtime\\loading-work\\tests\\runtime-observation\\cloud-sync-20261019-startup-rollback-lowload\\sessions\\20261019-105957-f0f6e7aece924782b94be01707ead8f0\\status.json",
+        "ueLog": "C:\\Users\\zhuzi\\Documents\\OutOfWindow\\.runtime\\loading-work\\tests\\runtime-observation\\cloud-sync-20261019-startup-rollback-lowload\\sessions\\20261019-105957-f0f6e7aece924782b94be01707ead8f0\\ue.log",
+        "launcherLog": "C:\\Users\\zhuzi\\Documents\\OutOfWindow\\.runtime\\loading-work\\tests\\runtime-observation\\cloud-sync-20261019-startup-rollback-lowload\\sessions\\20261019-105957-f0f6e7aece924782b94be01707ead8f0\\launcher.log",
+        "timeline": [
+          {
+            "elapsedMs": 15.575700000000001,
+            "utc": "2026-10-19T02:59:57.4563850Z",
+            "stage": "renderer",
+            "state": "Starting",
+            "detail": "正在启动渲染器"
+          },
+          {
+            "elapsedMs": 11888.8176,
+            "utc": "2026-10-19T03:00:09.3285474Z",
+            "stage": "renderer",
+            "state": "Loading",
+            "detail": "渲染器进程已启动，正在初始化。"
+          },
+          {
+            "elapsedMs": 17912.579400000002,
+            "utc": "2026-10-19T03:00:15.3508606Z",
+            "stage": "scene",
+            "state": "Loading",
+            "detail": "正在加载场景：/Game/Maps/Alley"
+          },
+          {
+            "elapsedMs": 44253.7511,
+            "utc": "2026-10-19T03:00:41.6928063Z",
+            "stage": "desktop",
+            "state": "Loading",
+            "detail": "正在将已初始化的场景连接到桌面。"
+          },
+          {
+            "elapsedMs": 44664.692200000005,
+            "utc": "2026-10-19T03:00:42.1031382Z",
+            "stage": "ready",
+            "state": "Ready",
+            "detail": "场景已初始化并完成绘制，桌面连接成功。"
+          }
+        ]
+      },
+      "limits": "Probe uses actual LauncherForm.LoadTarget and LaunchSession. It does not double-click CMD or show launcher UI. API window sampling plus UE frame is not complete Windows compositor visual acceptance; resource caps and noshaderworker change loading performance."
+    },
+    {
+      "status": "FORMAL_TARGET_LOAD_UE_STARTUP_DESKTOP_ATTACHMENT_VALIDATED",
+      "stage": "startup-default",
+      "job": {
+        "exitCode": 0,
+        "stopReason": null,
+        "seconds": 49.67200000002049,
+        "peakJobGiB": 8.863441467285156,
+        "resourcesEnd": {
+          "physicalAvailableGiB": 7.509120941162109,
+          "commitHeadroomGiB": 22.366191864013672
+        },
+        "ownedTreeReleased": true
+      },
+      "target": "C:\\Users\\zhuzi\\Documents\\OutOfWindow\\.runtime\\loading-builds\\20261019-020955-3169f205\\OutOfWindow\\OutOfWindow.uproject",
+      "moduleSHA256": "4486CC7F12ACA42A149B5E7EA0D20B723DF0883FA3B7F8221209AB493CDB2D72",
+      "capture": "C:\\Users\\zhuzi\\Documents\\OutOfWindow\\.runtime\\loading-work\\tests\\runtime-observation\\cloud-sync-20261019-startup-default\\attempt-1-553c0656446b4046b5358887a880bceb-ready.png",
+      "captureSHA256": "7406f09f7a6114fc8e274a04ed7f8283d92931b35efbd522283f01bd593f3e18",
+      "summary": "C:\\Users\\zhuzi\\Documents\\OutOfWindow\\.runtime\\loading-work\\tests\\runtime-observation\\cloud-sync-20261019-startup-default\\summary.json",
+      "attempt": {
+        "attempt": 1,
+        "mode": "startup",
+        "outcome": "ready-held",
+        "exit": 0,
+        "session": "0c8965b20b134a13a6142a410107cc1a",
+        "actualPid": 9544,
+        "stateBeforeCancel": "Ready",
+        "rendererExitCode": null,
+        "finalDetail": "已取消本次启动。已有窗景实例不受影响。",
+        "ownJobCancelled": true,
+        "ownJobEmpty": true,
+        "readySeen": true,
+        "readyAttachedVisible": true,
+        "sawAppCloaked": true,
+        "startupCapture": "C:\\Users\\zhuzi\\Documents\\OutOfWindow\\.runtime\\loading-work\\tests\\runtime-observation\\cloud-sync-20261019-startup-default\\attempt-1-553c0656446b4046b5358887a880bceb-ready.png",
+        "startupCaptureWritten": true,
+        "shaderWorkersDisabled": true,
+        "visibleUncloakedBeforeDesktopSamples": 0,
+        "visibleUncloakedDuringDesktopSamples": 0,
+        "sampleCount": 1302,
+        "maximumSampleGapMs": 2297.1643,
+        "samples": "C:\\Users\\zhuzi\\Documents\\OutOfWindow\\.runtime\\loading-work\\tests\\runtime-observation\\cloud-sync-20261019-startup-default\\attempt-1-samples.jsonl",
+        "status": "C:\\Users\\zhuzi\\Documents\\OutOfWindow\\.runtime\\loading-work\\tests\\runtime-observation\\cloud-sync-20261019-startup-default\\sessions\\20261019-110416-0c8965b20b134a13a6142a410107cc1a\\status.json",
+        "ueLog": "C:\\Users\\zhuzi\\Documents\\OutOfWindow\\.runtime\\loading-work\\tests\\runtime-observation\\cloud-sync-20261019-startup-default\\sessions\\20261019-110416-0c8965b20b134a13a6142a410107cc1a\\ue.log",
+        "launcherLog": "C:\\Users\\zhuzi\\Documents\\OutOfWindow\\.runtime\\loading-work\\tests\\runtime-observation\\cloud-sync-20261019-startup-default\\sessions\\20261019-110416-0c8965b20b134a13a6142a410107cc1a\\launcher.log",
+        "timeline": [
+          {
+            "elapsedMs": 2297.1643,
+            "utc": "2026-10-19T03:04:18.1562768Z",
+            "stage": "renderer",
+            "state": "Starting",
+            "detail": "正在启动渲染器"
+          },
+          {
+            "elapsedMs": 15666.358900000001,
+            "utc": "2026-10-19T03:04:31.4336066Z",
+            "stage": "renderer",
+            "state": "Loading",
+            "detail": "渲染器进程已启动，正在初始化。"
+          },
+          {
+            "elapsedMs": 20268.2807,
+            "utc": "2026-10-19T03:04:36.0354837Z",
+            "stage": "scene",
+            "state": "Loading",
+            "detail": "正在加载场景：/Game/Maps/Alley"
+          },
+          {
+            "elapsedMs": 45673.291000000005,
+            "utc": "2026-10-19T03:05:01.4393840Z",
+            "stage": "desktop",
+            "state": "Loading",
+            "detail": "正在将已初始化的场景连接到桌面。"
+          },
+          {
+            "elapsedMs": 46064.0656,
+            "utc": "2026-10-19T03:05:01.8434898Z",
+            "stage": "ready",
+            "state": "Ready",
+            "detail": "场景已初始化并完成绘制，桌面连接成功。"
+          }
+        ]
+      },
+      "limits": "Probe uses actual LauncherForm.LoadTarget and LaunchSession. It does not double-click CMD or show launcher UI. API window sampling plus UE frame is not complete Windows compositor visual acceptance; resource caps and noshaderworker change loading performance."
+    }
+  ],
+  "cityAssetsOrLogicChanged": false,
+  "pausedCirrocumulusResumed": false,
+  "HoudiniExperimentIntegrated": false,
+  "rollbackFirstAttempt": {
+    "exitCode": 124,
+    "stopReason": "system reserve",
+    "seconds": 38.57900000002701,
+    "peakJobGiB": 6.834632873535156,
+    "resourcesEnd": {
+      "physicalAvailableGiB": 3.977203369140625,
+      "commitHeadroomGiB": 15.381824493408203
+    },
+    "ownedTreeReleased": true
+  },
+  "lowLoadProbe": {
+    "Compiler": "C:\\Windows\\Microsoft.NET\\Framework64\\v4.0.30319\\csc.exe",
+    "CompileExitCode": 0,
+    "SelfCheckExitCode": 0,
+    "Binary": "C:\\Users\\zhuzi\\Documents\\OutOfWindow\\.runtime\\cloud-runtime-sync-20261019\\startup-lowload-probe\\RuntimeWindowProbe.exe",
+    "BinarySHA256": "D9F3E609CD0F42B0894E14C5442F9BC3CC048275373AA6761A56F7EE4971E530",
+    "ProgramSHA256": "FF6CDE9409299BBB3A799E28C1C801ABF2099EE40D480A2CA1B3F1B01A0EFC37",
+    "LaunchSessionSHA256": "ED94C14C1447D6897EEC87274918214D4A8396681420793EE7A7D2D0643D450A",
+    "CompiledUTC": "2026-10-19T02:59:28.4202399Z",
+    "UEStarted": false
+  },
+  "limits": [
+    "Distance samples are a CPU mirror plus exported actual shader graph, not per-pixel GPU attribution.",
+    "Startup probes use production loader/session and API window observation; they do not exercise the entire CMD/UI click path or capture Windows compositor.",
+    "Resource-limited capture and startup durations are validation results, not performance benchmarks.",
+    "Sky face hides meshes only for this test process. Normal city assets and code remain unchanged."
+  ]
+}

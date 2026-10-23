@@ -1,0 +1,278 @@
+{
+  "status": "PARTIAL_3_OF_8_VALIDATED",
+  "completedStages": [
+    "clear-fixed-r2",
+    "clear-no-volfog",
+    "clear-no-fog"
+  ],
+  "notCompleted": [
+    "clear-no-cloud",
+    "few-fixed",
+    "few-no-volfog",
+    "few-no-fog",
+    "few-no-cloud"
+  ],
+  "matchedActualExposure": 0.000455582543509081,
+  "maskMethod": "Fixed prior few-weather opaque-depth mask; 1 coarse-cell 3x3 erosion (~7.5 output pixels), nearest upsample. Upper>=18deg; lower<=12deg; middle excluded from subregion comparison.",
+  "maskSource": "C:\\Users\\zhuzi\\Documents\\OutOfWindow\\.runtime\\cloud-runtime-sync-20261019\\weather-few.json",
+  "maskSourceSHA256": "20f5dc595074b438258a280ff58e3c4b2eded485df9d79ab2ae7058652e6e4c4",
+  "erodedCoarseCells": 94,
+  "shadowWallBoxHalfOpen": [
+    245,
+    350,
+    275,
+    410
+  ],
+  "stats": {
+    "clear-fixed-r2": {
+      "skyAll": {
+        "pixels": 5228,
+        "displayLinearLuminanceMedian": 0.753686323908587,
+        "luminanceP90MinusP10": 0.11590259322532692,
+        "blueDifferenceMedian": 0.05200594353638443,
+        "nearWhiteFraction": 0.03270849273144606,
+        "medianSRGB": [
+          0.803921568627451,
+          0.8980392156862745,
+          0.9450980392156862
+        ]
+      },
+      "skyUpper": {
+        "pixels": 3176,
+        "displayLinearLuminanceMedian": 0.7378599720970211,
+        "luminanceP90MinusP10": 0.03430358183108717,
+        "blueDifferenceMedian": 0.056801195814627094,
+        "nearWhiteFraction": 0.0,
+        "medianSRGB": [
+          0.792156862745098,
+          0.8901960784313725,
+          0.9411764705882353
+        ]
+      },
+      "skyLower": {
+        "pixels": 983,
+        "displayLinearLuminanceMedian": 0.8449432714158259,
+        "luminanceP90MinusP10": 0.03599406552014106,
+        "blueDifferenceMedian": 0.026760563380272103,
+        "nearWhiteFraction": 0.17293997965412003,
+        "medianSRGB": [
+          0.8862745098039215,
+          0.9372549019607843,
+          0.9607843137254902
+        ]
+      },
+      "shadowWall": {
+        "pixels": 1800,
+        "displayLinearLuminanceMedian": 0.06782590898226495,
+        "luminanceP90MinusP10": 0.05683817320177948,
+        "blueDifferenceMedian": 0.01612903225803135,
+        "nearWhiteFraction": 0.0,
+        "medianSRGB": [
+          0.2784313725490196,
+          0.2901960784313726,
+          0.29411764705882354
+        ]
+      }
+    },
+    "clear-no-volfog": {
+      "skyAll": {
+        "pixels": 5228,
+        "displayLinearLuminanceMedian": 0.7620990032513199,
+        "luminanceP90MinusP10": 0.10929747872442452,
+        "blueDifferenceMedian": 0.05014749262534985,
+        "nearWhiteFraction": 0.03557765876052028,
+        "medianSRGB": [
+          0.8117647058823529,
+          0.9019607843137255,
+          0.9450980392156862
+        ]
+      },
+      "skyUpper": {
+        "pixels": 3176,
+        "displayLinearLuminanceMedian": 0.7461544487874192,
+        "luminanceP90MinusP10": 0.033128399830582134,
+        "blueDifferenceMedian": 0.05357142857140821,
+        "nearWhiteFraction": 0.0,
+        "medianSRGB": [
+          0.8,
+          0.8941176470588236,
+          0.9411764705882353
+        ]
+      },
+      "skyLower": {
+        "pixels": 983,
+        "displayLinearLuminanceMedian": 0.8455557587795618,
+        "luminanceP90MinusP10": 0.031237201484241806,
+        "blueDifferenceMedian": 0.028089887640439397,
+        "nearWhiteFraction": 0.1861648016276704,
+        "medianSRGB": [
+          0.8862745098039215,
+          0.9372549019607843,
+          0.9647058823529412
+        ]
+      },
+      "shadowWall": {
+        "pixels": 1800,
+        "displayLinearLuminanceMedian": 0.049013303314839954,
+        "luminanceP90MinusP10": 0.0419751751359236,
+        "blueDifferenceMedian": 0.08767408211239108,
+        "nearWhiteFraction": 0.0,
+        "medianSRGB": [
+          0.2196078431372549,
+          0.24705882352941178,
+          0.2823529411764706
+        ]
+      }
+    },
+    "clear-no-fog": {
+      "skyAll": {
+        "pixels": 5228,
+        "displayLinearLuminanceMedian": 0.7612624512073929,
+        "luminanceP90MinusP10": 0.12448086798078895,
+        "blueDifferenceMedian": 0.053097345132723364,
+        "nearWhiteFraction": 0.06943381790359603,
+        "medianSRGB": [
+          0.807843137254902,
+          0.9019607843137255,
+          0.9490196078431372
+        ]
+      },
+      "skyUpper": {
+        "pixels": 3176,
+        "displayLinearLuminanceMedian": 0.7439423531753738,
+        "luminanceP90MinusP10": 0.04001933611495012,
+        "blueDifferenceMedian": 0.058122205663167184,
+        "nearWhiteFraction": 0.0,
+        "medianSRGB": [
+          0.792156862745098,
+          0.8941176470588236,
+          0.9450980392156862
+        ]
+      },
+      "skyLower": {
+        "pixels": 983,
+        "displayLinearLuminanceMedian": 0.861199745843167,
+        "luminanceP90MinusP10": 0.03968014834719691,
+        "blueDifferenceMedian": 0.026536312849152543,
+        "nearWhiteFraction": 0.35910478128179046,
+        "medianSRGB": [
+          0.8941176470588236,
+          0.9450980392156862,
+          0.9686274509803922
+        ]
+      },
+      "shadowWall": {
+        "pixels": 1800,
+        "displayLinearLuminanceMedian": 0.06041489082622569,
+        "luminanceP90MinusP10": 0.05689411977297033,
+        "blueDifferenceMedian": 0.02569604930117142,
+        "nearWhiteFraction": 0.0,
+        "medianSRGB": [
+          0.2627450980392157,
+          0.27450980392156865,
+          0.2823529411764706
+        ]
+      }
+    }
+  },
+  "differencesFromBaseline": {
+    "clear-no-volfog": {
+      "skyAll": {
+        "meanAbsoluteSRGBDifference": 0.003506258407469084,
+        "maxAbsoluteChannelDifference8bit": 4.000000000000014,
+        "medianLuminanceChangePercent": 1.1162043247786357
+      },
+      "skyUpper": {
+        "meanAbsoluteSRGBDifference": 0.0044611547389736775,
+        "maxAbsoluteChannelDifference8bit": 4.000000000000014,
+        "medianLuminanceChangePercent": 1.1241261220370724
+      },
+      "skyLower": {
+        "meanAbsoluteSRGBDifference": 0.0015518720204256635,
+        "maxAbsoluteChannelDifference8bit": 1.999999999999993,
+        "medianLuminanceChangePercent": 0.07248857816331
+      },
+      "shadowWall": {
+        "meanAbsoluteSRGBDifference": 0.03634495279593319,
+        "maxAbsoluteChannelDifference8bit": 29.999999999999993,
+        "medianLuminanceChangePercent": -27.736606777130113
+      }
+    },
+    "clear-no-fog": {
+      "skyAll": {
+        "meanAbsoluteSRGBDifference": 0.003828055067984855,
+        "maxAbsoluteChannelDifference8bit": 3.0000000000000178,
+        "medianLuminanceChangePercent": 1.005209602254209
+      },
+      "skyUpper": {
+        "meanAbsoluteSRGBDifference": 0.0029477618083337443,
+        "maxAbsoluteChannelDifference8bit": 2.0000000000000213,
+        "medianLuminanceChangePercent": 0.8243272854423056
+      },
+      "skyLower": {
+        "meanAbsoluteSRGBDifference": 0.00639631912446225,
+        "maxAbsoluteChannelDifference8bit": 3.0000000000000178,
+        "medianLuminanceChangePercent": 1.9239722922582692
+      },
+      "shadowWall": {
+        "meanAbsoluteSRGBDifference": 0.015304284676833698,
+        "maxAbsoluteChannelDifference8bit": 14.000000000000007,
+        "medianLuminanceChangePercent": -10.926529798483188
+      }
+    }
+  },
+  "metricLimit": "Inverse-sRGB of tone-mapped PNG; display-linear values, not scene radiance or physical scatter contribution.",
+  "sourceImageSHA256": {
+    "clear-fixed-r2": "8d322de1262f84b67b6dc5be61bc1aef72b9660ca29f5a0616a3927dd59347a9",
+    "clear-no-volfog": "32b553e3607448170e7bad2f1a988922039ccc0c43b427f471b03eda27584a9b",
+    "clear-no-fog": "9dce5da3573a2432e5361d10f35091c0b40258ec0a8ae59dfd96e55a6fa9843d"
+  },
+  "graphic": {
+    "file": "clear-fixed-exposure-fog-comparison.png",
+    "sha256": "3ccb2db7d06d20a520d6cda413844bf060bc729d3b5657fb895aa1bdfb3cf6d2",
+    "originalPanelsPixelExact": true,
+    "cropHalfOpen": [
+      210,
+      28,
+      440,
+      240
+    ],
+    "cropZoom": 2
+  },
+  "guardFailure": {
+    "exitCode": 124,
+    "stopReason": "system reserve",
+    "seconds": 10.405999999959022,
+    "peakJobGiB": 7.449535369873047,
+    "resourcesEnd": {
+      "physicalAvailableGiB": 8.064338684082031,
+      "commitHeadroomGiB": 17.134071350097656
+    },
+    "ownedTreeReleased": true,
+    "minimumObservedResources": {
+      "physicalAvailableGiB": 3.9863929748535156,
+      "commitHeadroomGiB": 9.757942199707031
+    },
+    "stopSample": {
+      "seconds": 10.046999999962281,
+      "resources": {
+        "physicalAvailableGiB": 3.9863929748535156,
+        "commitHeadroomGiB": 9.757942199707031
+      },
+      "mainProcess": {
+        "workingSetGiB": 3.961883544921875,
+        "peakWorkingSetGiB": 3.961883544921875,
+        "privateCommitGiB": 7.01971435546875
+      },
+      "peakJobCommitGiB": 7.4495086669921875
+    },
+    "peakSingleProcessCommitGiB": 7.01971435546875,
+    "mainProcessPeakWorkingSetGiB": 3.961883544921875,
+    "resourceSamples": 21
+  },
+  "defaultTargetSHA256": "5b9b0bf218d8c55c31f209de27900ce4e0ed6bf3343a477f1cfe33cbb8a4b6a5",
+  "citySHA256": "833c119edac7ef8c9e08e923025eaeab13753e1788338b3d66fd5c9d7697f20e",
+  "acceptedAssetsUnchanged": true,
+  "defaultBuildChanged": false,
+  "interpretation": "At this fixed exposure and clear weather, disabling all height fog does not substantially remove the bright sky. This is not a test of all atmospherics, cloud extinction, or exposure fixes."
+}

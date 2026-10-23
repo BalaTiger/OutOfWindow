@@ -1,0 +1,85 @@
+{
+  "status": "FORMAL_TARGET_LOAD_UE_STARTUP_DESKTOP_ATTACHMENT_VALIDATED",
+  "stage": "startup-default",
+  "job": {
+    "exitCode": 0,
+    "stopReason": null,
+    "seconds": 49.67200000002049,
+    "peakJobGiB": 8.863441467285156,
+    "resourcesEnd": {
+      "physicalAvailableGiB": 7.509120941162109,
+      "commitHeadroomGiB": 22.366191864013672
+    },
+    "ownedTreeReleased": true
+  },
+  "target": "C:\\Users\\zhuzi\\Documents\\OutOfWindow\\.runtime\\loading-builds\\20261019-020955-3169f205\\OutOfWindow\\OutOfWindow.uproject",
+  "moduleSHA256": "4486CC7F12ACA42A149B5E7EA0D20B723DF0883FA3B7F8221209AB493CDB2D72",
+  "capture": "C:\\Users\\zhuzi\\Documents\\OutOfWindow\\.runtime\\loading-work\\tests\\runtime-observation\\cloud-sync-20261019-startup-default\\attempt-1-553c0656446b4046b5358887a880bceb-ready.png",
+  "captureSHA256": "7406f09f7a6114fc8e274a04ed7f8283d92931b35efbd522283f01bd593f3e18",
+  "summary": "C:\\Users\\zhuzi\\Documents\\OutOfWindow\\.runtime\\loading-work\\tests\\runtime-observation\\cloud-sync-20261019-startup-default\\summary.json",
+  "attempt": {
+    "attempt": 1,
+    "mode": "startup",
+    "outcome": "ready-held",
+    "exit": 0,
+    "session": "0c8965b20b134a13a6142a410107cc1a",
+    "actualPid": 9544,
+    "stateBeforeCancel": "Ready",
+    "rendererExitCode": null,
+    "finalDetail": "已取消本次启动。已有窗景实例不受影响。",
+    "ownJobCancelled": true,
+    "ownJobEmpty": true,
+    "readySeen": true,
+    "readyAttachedVisible": true,
+    "sawAppCloaked": true,
+    "startupCapture": "C:\\Users\\zhuzi\\Documents\\OutOfWindow\\.runtime\\loading-work\\tests\\runtime-observation\\cloud-sync-20261019-startup-default\\attempt-1-553c0656446b4046b5358887a880bceb-ready.png",
+    "startupCaptureWritten": true,
+    "shaderWorkersDisabled": true,
+    "visibleUncloakedBeforeDesktopSamples": 0,
+    "visibleUncloakedDuringDesktopSamples": 0,
+    "sampleCount": 1302,
+    "maximumSampleGapMs": 2297.1643,
+    "samples": "C:\\Users\\zhuzi\\Documents\\OutOfWindow\\.runtime\\loading-work\\tests\\runtime-observation\\cloud-sync-20261019-startup-default\\attempt-1-samples.jsonl",
+    "status": "C:\\Users\\zhuzi\\Documents\\OutOfWindow\\.runtime\\loading-work\\tests\\runtime-observation\\cloud-sync-20261019-startup-default\\sessions\\20261019-110416-0c8965b20b134a13a6142a410107cc1a\\status.json",
+    "ueLog": "C:\\Users\\zhuzi\\Documents\\OutOfWindow\\.runtime\\loading-work\\tests\\runtime-observation\\cloud-sync-20261019-startup-default\\sessions\\20261019-110416-0c8965b20b134a13a6142a410107cc1a\\ue.log",
+    "launcherLog": "C:\\Users\\zhuzi\\Documents\\OutOfWindow\\.runtime\\loading-work\\tests\\runtime-observation\\cloud-sync-20261019-startup-default\\sessions\\20261019-110416-0c8965b20b134a13a6142a410107cc1a\\launcher.log",
+    "timeline": [
+      {
+        "elapsedMs": 2297.1643,
+        "utc": "2026-10-19T03:04:18.1562768Z",
+        "stage": "renderer",
+        "state": "Starting",
+        "detail": "正在启动渲染器"
+      },
+      {
+        "elapsedMs": 15666.358900000001,
+        "utc": "2026-10-19T03:04:31.4336066Z",
+        "stage": "renderer",
+        "state": "Loading",
+        "detail": "渲染器进程已启动，正在初始化。"
+      },
+      {
+        "elapsedMs": 20268.2807,
+        "utc": "2026-10-19T03:04:36.0354837Z",
+        "stage": "scene",
+        "state": "Loading",
+        "detail": "正在加载场景：/Game/Maps/Alley"
+      },
+      {
+        "elapsedMs": 45673.291000000005,
+        "utc": "2026-10-19T03:05:01.4393840Z",
+        "stage": "desktop",
+        "state": "Loading",
+        "detail": "正在将已初始化的场景连接到桌面。"
+      },
+      {
+        "elapsedMs": 46064.0656,
+        "utc": "2026-10-19T03:05:01.8434898Z",
+        "stage": "ready",
+        "state": "Ready",
+        "detail": "场景已初始化并完成绘制，桌面连接成功。"
+      }
+    ]
+  },
+  "limits": "Probe uses actual LauncherForm.LoadTarget and LaunchSession. It does not double-click CMD or show launcher UI. API window sampling plus UE frame is not complete Windows compositor visual acceptance; resource caps and noshaderworker change loading performance."
+}

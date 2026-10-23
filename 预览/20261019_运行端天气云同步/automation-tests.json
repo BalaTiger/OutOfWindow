@@ -1,0 +1,59 @@
+﻿{
+	"devices": [
+		{
+			"deviceName": "DESKTOP-9RQJ5OB",
+			"instance": "C08AB7FD47261BCB5E05498986505FB2",
+			"instanceName": "DESKTOP-9RQJ5OB-44012",
+			"platform": "WindowsEditor",
+			"oSVersion": "Windows 11 (25H2) [10.0.26200.9711] ",
+			"model": "Default",
+			"gPU": "NVIDIA GeForce RTX 5060",
+			"cPUModel": "Intel(R) Core(TM) i5-14600K",
+			"rAMInGB": 32,
+			"renderMode": "SM6",
+			"rHI": "",
+			"appInstanceLog": ""
+		}
+	],
+	"reportCreatedOn": "2026.10.19-02.15.19",
+	"succeeded": 2,
+	"succeededWithWarnings": 0,
+	"failed": 0,
+	"notRun": 0,
+	"inProcess": 0,
+	"totalDuration": 0.036132998764514923,
+	"comparisonExported": false,
+	"comparisonExportDirectory": "",
+	"tests": [
+		{
+			"testDisplayName": "ApprovedCloudDistanceBlend",
+			"fullTestPath": "OutOfWindow.Weather.ApprovedCloudDistanceBlend",
+			"tags": [],
+			"state": "Success",
+			"deviceInstance": [
+				"C08AB7FD47261BCB5E05498986505FB2"
+			],
+			"duration": 0.016385499387979507,
+			"dateTime": "2026.10.19-02.15.19",
+			"entries": [],
+			"warnings": 0,
+			"errors": 0,
+			"artifacts": []
+		},
+		{
+			"testDisplayName": "ApprovedCloudRouting",
+			"fullTestPath": "OutOfWindow.Weather.ApprovedCloudRouting",
+			"tags": [],
+			"state": "Success",
+			"deviceInstance": [
+				"C08AB7FD47261BCB5E05498986505FB2"
+			],
+			"duration": 0.019747499376535416,
+			"dateTime": "2026.10.19-02.15.19",
+			"entries": [],
+			"warnings": 0,
+			"errors": 0,
+			"artifacts": []
+		}
+	]
+}

@@ -1,0 +1,45 @@
+{
+  "pid": 49632,
+  "initial": {
+    "physicalAvailableGiB": 8.603446960449219,
+    "commitHeadroomGiB": 17.579803466796875
+  },
+  "command": {
+    "argv": [
+      "D:\\Epic\\Epic Games\\UE_5.7\\Engine\\Binaries\\Win64\\UnrealEditor-Cmd.exe",
+      "C:\\Users\\zhuzi\\Documents\\OutOfWindow\\.runtime\\loading-builds\\20261019-020955-3169f205\\OutOfWindow\\OutOfWindow.uproject",
+      "/Game/Maps/Alley",
+      "-game",
+      "-RenderOffscreen",
+      "-windowed",
+      "-ForceRes",
+      "-ResX=960",
+      "-ResY=540",
+      "-NoSplash",
+      "-nosound",
+      "-unattended",
+      "-noshaderworker",
+      "-OOWTestScene=alley",
+      "-OOWTestHour=12",
+      "-OOWTestWeather=clear",
+      "-OOWTestQuality=1",
+      "-OOWTestSettleWeather",
+      "-OOWTestFreezeClouds",
+      "-OOWTestSeconds=6",
+      "-UseFixedTimeStep",
+      "-FPS=10",
+      "-OOWTestScreenPercentage=70",
+      "-OOWTestFixedExposureEV=10",
+      "-OOWCapture=C:\\Users\\zhuzi\\Documents\\OutOfWindow\\.runtime\\alley-sky-ab-20261019\\clear-no-fog.png",
+      "-AbsLog=C:\\Users\\zhuzi\\Documents\\OutOfWindow\\.runtime\\alley-sky-ab-20261019\\clear-no-fog.log",
+      "-ExecCmds=t.MaxFPS 10,r.Test.OverrideTimeMaterialExpressions 0,r.VolumetricFog 1,r.Fog 1,r.VolumetricCloud 1,r.Fog 0,r.Fog,r.Test.OverrideTimeMaterialExpressions,r.VolumetricFog,r.Fog,r.VolumetricCloud"
+    ],
+    "memoryGiB": 12,
+    "timeoutSeconds": 180,
+    "reserveGiB": 4,
+    "cpuMask": 15,
+    "cacheMode": "engine-default"
+  },
+  "CPU": 4,
+  "startedUnix": 1792388061.4545233
+}

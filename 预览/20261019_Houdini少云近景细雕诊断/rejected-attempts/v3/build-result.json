@@ -1,0 +1,377 @@
+{
+  "status": "NATIVE_BUILD_GATES_PENDING",
+  "sources": {
+    "cloud01-sample06-review.hip": "73eab5984901b3b7d249159ab484a30d8abaf8a4330d7ca711f218fc792b3b73",
+    "sample06-density.bgeo.sc": "5ea64e9d5e666885c46e0a2f2941a9ca61abac8eb2e25e19091958260e0d0b4d",
+    "sample06-control.bgeo.sc": "2a3d929a6c9ae9638a0372dc4d832dcd4bae350966f5b8301147d9cdf55d5d90"
+  },
+  "camera": [
+    0.8242854853214415,
+    0.5661743889371856,
+    0.0,
+    0.0,
+    0.06170557828652623,
+    -0.08983630050880399,
+    -0.9940431885583328,
+    0.0,
+    -0.5628017948591857,
+    0.8193753721112786,
+    -0.10898687664477202,
+    0.0,
+    0.0004827859866054496,
+    14171.962245293365,
+    2512.999952316285,
+    1.0
+  ],
+  "sunlight": [
+    -0.3622952659920753,
+    -0.9320633778020309,
+    0.0,
+    0.0,
+    -0.6365210526500651,
+    0.24741725677842485,
+    0.7304968518628209,
+    0.0,
+    -0.6808693632210105,
+    0.2646555512520143,
+    -0.6829160632306931,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+  ],
+  "grid": [
+    128,
+    128,
+    128
+  ],
+  "localLower": [
+    -626.875,
+    -505.0,
+    -337.8125
+  ],
+  "localUpper": [
+    564.375,
+    442.5,
+    369.0625
+  ],
+  "localVoxel": [
+    9.306640625,
+    7.40234375,
+    5.5224609375
+  ],
+  "originalVoxel": [
+    15.625,
+    12.5,
+    7.8125
+  ],
+  "volumeCountPerRoute": 1,
+  "sourceMeshChanged": false,
+  "replicatedCloudCount": 0,
+  "globalStretch": false,
+  "protectedRegion": "abs(U)<=330,H=200..680,D<=65",
+  "protectedVoxelCount": 496074,
+  "protectedMaxDelta": 0.0,
+  "densityIntegralChangeVsLocalControlPercent": 0.0019977604124088444,
+  "controlIntegralChangeVsOriginalPercent": -0.010000518727348862,
+  "boundaryThreeLayersMax": {
+    "control": 0.0,
+    "candidate": 0.0
+  },
+  "originalSHA256": "af34f135390ae9ad54b1bed3fc04c6093460e8c3d60e0fc8b1bbba1c41a9e3a1",
+  "controlSHA256": "0457acc2253a9dddc31f286734d906683e4c9ea9163bc5b88e2daf088e5fdec9",
+  "candidateSHA256": "3f3a42d7af0427e3c150f55862cb07550f556295b9cd3559952ba0a50d40009e",
+  "buildSeconds": 1.4380000000237487,
+  "rendered": false,
+  "detailVexSHA256": "16abcf0efce5aa9e0d28bef171ba8a6949bf05271f761b8375242e610bc80050",
+  "components": {
+    "control": {
+      "0.0001": [
+        308618
+      ],
+      "0.02": [
+        284125
+      ]
+    },
+    "candidate": {
+      "0.0001": [
+        307888,
+        1
+      ],
+      "0.02": [
+        283234,
+        1
+      ]
+    }
+  },
+  "diagnostics": {
+    "failedV2CandidateSHAReproduced": "b3f289b8a52a0db73509251d7e5e0e6a7dd7de91c068d05bbb4ee3b4409ccc52",
+    "v2": {
+      "warpOnlyIntegralChangePercent": 0.5896863408378472,
+      "carvingRemovedIntegralPercent": 0.3528526844835399,
+      "carvingChangedVoxels": 2053,
+      "maxCarvingRemoval": 0.9780239462852478,
+      "maxCarvingAddedDensity": 0.0,
+      "warpOnlyComponents": {
+        "0.0001": [
+          308737
+        ],
+        "0.02": [
+          284609
+        ]
+      }
+    },
+    "v3": {
+      "warpOnlyIntegralChangePercent": 0.34409345111927614,
+      "carvingRemovedIntegralPercent": 0.3420956907068669,
+      "carvingChangedVoxels": 1987,
+      "maxCarvingRemoval": 0.9780239462852478,
+      "maxCarvingAddedDensity": 0.0,
+      "warpOnlyComponents": {
+        "0.0001": [
+          308612
+        ],
+        "0.02": [
+          284084
+        ]
+      }
+    },
+    "v2Threshold02Components": [
+      283686,
+      4,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "v2SmallThreshold02Components": [
+      {
+        "count": 1,
+        "zyx": [
+          [
+            86,
+            59,
+            15
+          ]
+        ],
+        "worldXYZ": [
+          [
+            -482.6220703125,
+            -64.560546875,
+            139.88037109375
+          ]
+        ],
+        "density": [
+          0.021871890872716904
+        ],
+        "controlDensity": [
+          0.014190890826284885
+        ],
+        "protectedB": [
+          false
+        ]
+      },
+      {
+        "count": 1,
+        "zyx": [
+          [
+            91,
+            58,
+            17
+          ]
+        ],
+        "worldXYZ": [
+          [
+            -464.0087890625,
+            -71.962890625,
+            167.49267578125
+          ]
+        ],
+        "density": [
+          0.022609710693359375
+        ],
+        "controlDensity": [
+          0.002854160964488983
+        ],
+        "protectedB": [
+          false
+        ]
+      },
+      {
+        "count": 1,
+        "zyx": [
+          [
+            92,
+            53,
+            20
+          ]
+        ],
+        "worldXYZ": [
+          [
+            -436.0888671875,
+            -108.974609375,
+            173.01513671875
+          ]
+        ],
+        "density": [
+          0.05035426467657089
+        ],
+        "controlDensity": [
+          0.0992291271686554
+        ],
+        "protectedB": [
+          false
+        ]
+      },
+      {
+        "count": 1,
+        "zyx": [
+          [
+            111,
+            34,
+            36
+          ]
+        ],
+        "worldXYZ": [
+          [
+            -287.1826171875,
+            -249.619140625,
+            277.94189453125
+          ]
+        ],
+        "density": [
+          0.021999172866344452
+        ],
+        "controlDensity": [
+          0.01780429482460022
+        ],
+        "protectedB": [
+          false
+        ]
+      },
+      {
+        "count": 1,
+        "zyx": [
+          [
+            112,
+            35,
+            36
+          ]
+        ],
+        "worldXYZ": [
+          [
+            -287.1826171875,
+            -242.216796875,
+            283.46435546875
+          ]
+        ],
+        "density": [
+          0.02692229673266411
+        ],
+        "controlDensity": [
+          0.009202763438224792
+        ],
+        "protectedB": [
+          false
+        ]
+      },
+      {
+        "count": 4,
+        "zyx": [
+          [
+            113,
+            40,
+            34
+          ],
+          [
+            113,
+            41,
+            34
+          ],
+          [
+            113,
+            41,
+            35
+          ],
+          [
+            113,
+            40,
+            35
+          ]
+        ],
+        "worldXYZ": [
+          [
+            -305.7958984375,
+            -205.205078125,
+            288.98681640625
+          ],
+          [
+            -305.7958984375,
+            -197.802734375,
+            288.98681640625
+          ],
+          [
+            -296.4892578125,
+            -197.802734375,
+            288.98681640625
+          ],
+          [
+            -296.4892578125,
+            -205.205078125,
+            288.98681640625
+          ]
+        ],
+        "density": [
+          0.022975411266088486,
+          0.023986155167222023,
+          0.021657221019268036,
+          0.020407572388648987
+        ],
+        "controlDensity": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "protectedB": [
+          false,
+          false,
+          false,
+          false
+        ]
+      }
+    ],
+    "v3SmallThreshold02Components": [
+      {
+        "count": 1,
+        "zyx": [
+          [
+            99,
+            40,
+            29
+          ]
+        ],
+        "worldXYZ": [
+          [
+            -352.3291015625,
+            -205.205078125,
+            211.67236328125
+          ]
+        ],
+        "density": [
+          0.025920070707798004
+        ],
+        "controlDensity": [
+          0.025920070707798004
+        ],
+        "protectedB": [
+          false
+        ]
+      }
+    ],
+    "repair": "coordinate shift multiplied by smooth(.04,.22,original control); no post-hoc cleanup"
+  },
+  "diagnosticArraysSHA256": "251c8990457efa4377c9369cabf229f150564f4baf868a411f667646d9059b3f"
+}

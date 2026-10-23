@@ -1,0 +1,286 @@
+{
+  "created_utc": "2026-10-19T03:31:04.815753+00:00",
+  "purpose": "Reference comparison only; montage of existing GPU runtime captures, no new acceptance claim.",
+  "source_evidence": "预览/20261019_运行端天气云同步/runtime-evidence.json",
+  "source_evidence_sha256": "379c2b5c2fa595f4e5ce406123d4d61a20e71425ff83ac39278dbc1a5dce9dd5",
+  "source_evidence_status": "DEFAULT_RUNTIME_ACTIVATED_AND_VERIFIED",
+  "output": {
+    "path": "预览/20261019_云对照交付/weather-five-condition-comparison.png",
+    "dimensions": [
+      2164,
+      3140
+    ],
+    "bytes": 6668310,
+    "sha256": "82cc397afd344ea1e8cca5aa3b4f22d8cbea5af649f11ceb3f3106f6dad3dd77",
+    "mode": "RGB",
+    "format": "PNG",
+    "rows": 5,
+    "columns": 2
+  },
+  "composition": {
+    "source_images_only": true,
+    "native_pixels": true,
+    "labels_outside_panels": true,
+    "resampling": false,
+    "retouching": false,
+    "source_files_unchanged": true,
+    "ue_or_houdini_launched": false,
+    "required_labels": [
+      "actual GPU runtime captures",
+      "current weather routing",
+      "reference comparison only"
+    ]
+  },
+  "sources": [
+    {
+      "row": 1,
+      "column": 1,
+      "weather": "clear",
+      "view": "weather",
+      "source": "预览/20261019_运行端天气云同步/01-clear-weather.png",
+      "source_size": [
+        960,
+        540
+      ],
+      "source_mode": "RGBA",
+      "expected_sha256": "713a4b8134dcaeb36b99dad6e3272d1d969ca983e46f022870bebeba696caa4e",
+      "actual_sha256": "713a4b8134dcaeb36b99dad6e3272d1d969ca983e46f022870bebeba696caa4e",
+      "hash_matches_evidence": true,
+      "scale": 1.0,
+      "resampled": false,
+      "cropped": false,
+      "output_box_xyxy": [
+        192,
+        244,
+        1152,
+        784
+      ],
+      "output_panel_rgb_pixels_equal_source": true
+    },
+    {
+      "row": 1,
+      "column": 2,
+      "weather": "clear",
+      "view": "sky",
+      "source": "预览/20261019_运行端天气云同步/01-clear-sky.png",
+      "source_size": [
+        960,
+        540
+      ],
+      "source_mode": "RGBA",
+      "expected_sha256": "41763eba05cc816db539a0dcef1a33cebad969cc469df097e1952a60ac60d8a8",
+      "actual_sha256": "41763eba05cc816db539a0dcef1a33cebad969cc469df097e1952a60ac60d8a8",
+      "hash_matches_evidence": true,
+      "scale": 1.0,
+      "resampled": false,
+      "cropped": false,
+      "output_box_xyxy": [
+        1172,
+        244,
+        2132,
+        784
+      ],
+      "output_panel_rgb_pixels_equal_source": true
+    },
+    {
+      "row": 2,
+      "column": 1,
+      "weather": "few",
+      "view": "weather",
+      "source": "预览/20261019_运行端天气云同步/02-few-weather.png",
+      "source_size": [
+        960,
+        540
+      ],
+      "source_mode": "RGBA",
+      "expected_sha256": "56d678493af0bd80f5c14a6fafc28760620fc3f9eacb43d3ba78d68d51376c8a",
+      "actual_sha256": "56d678493af0bd80f5c14a6fafc28760620fc3f9eacb43d3ba78d68d51376c8a",
+      "hash_matches_evidence": true,
+      "scale": 1.0,
+      "resampled": false,
+      "cropped": false,
+      "output_box_xyxy": [
+        192,
+        806,
+        1152,
+        1346
+      ],
+      "output_panel_rgb_pixels_equal_source": true
+    },
+    {
+      "row": 2,
+      "column": 2,
+      "weather": "few",
+      "view": "sky",
+      "source": "预览/20261019_运行端天气云同步/02-few-sky.png",
+      "source_size": [
+        960,
+        540
+      ],
+      "source_mode": "RGBA",
+      "expected_sha256": "9f528899221d9081126563cff8fc5dc7f92d4abad31aef6ae774a997e9437b4e",
+      "actual_sha256": "9f528899221d9081126563cff8fc5dc7f92d4abad31aef6ae774a997e9437b4e",
+      "hash_matches_evidence": true,
+      "scale": 1.0,
+      "resampled": false,
+      "cropped": false,
+      "output_box_xyxy": [
+        1172,
+        806,
+        2132,
+        1346
+      ],
+      "output_panel_rgb_pixels_equal_source": true
+    },
+    {
+      "row": 3,
+      "column": 1,
+      "weather": "cloudy",
+      "view": "weather",
+      "source": "预览/20261019_运行端天气云同步/03-cloudy-weather.png",
+      "source_size": [
+        960,
+        540
+      ],
+      "source_mode": "RGBA",
+      "expected_sha256": "1d90767d55fee17e1594751b0aa0564667ef3ec1dfed9ec5d6f3d5d638681557",
+      "actual_sha256": "1d90767d55fee17e1594751b0aa0564667ef3ec1dfed9ec5d6f3d5d638681557",
+      "hash_matches_evidence": true,
+      "scale": 1.0,
+      "resampled": false,
+      "cropped": false,
+      "output_box_xyxy": [
+        192,
+        1368,
+        1152,
+        1908
+      ],
+      "output_panel_rgb_pixels_equal_source": true
+    },
+    {
+      "row": 3,
+      "column": 2,
+      "weather": "cloudy",
+      "view": "sky",
+      "source": "预览/20261019_运行端天气云同步/03-cloudy-sky.png",
+      "source_size": [
+        960,
+        540
+      ],
+      "source_mode": "RGBA",
+      "expected_sha256": "c0a2bc6425646be1ffb0ac6f1ece3a66d6b4fd5dff4830bb5cd812153a832145",
+      "actual_sha256": "c0a2bc6425646be1ffb0ac6f1ece3a66d6b4fd5dff4830bb5cd812153a832145",
+      "hash_matches_evidence": true,
+      "scale": 1.0,
+      "resampled": false,
+      "cropped": false,
+      "output_box_xyxy": [
+        1172,
+        1368,
+        2132,
+        1908
+      ],
+      "output_panel_rgb_pixels_equal_source": true
+    },
+    {
+      "row": 4,
+      "column": 1,
+      "weather": "overcast",
+      "view": "weather",
+      "source": "预览/20261019_运行端天气云同步/04-overcast-weather.png",
+      "source_size": [
+        960,
+        540
+      ],
+      "source_mode": "RGBA",
+      "expected_sha256": "29cf16000adf8997e31b551d6807463054503d66b72568ff6c850bba8de0f0d7",
+      "actual_sha256": "29cf16000adf8997e31b551d6807463054503d66b72568ff6c850bba8de0f0d7",
+      "hash_matches_evidence": true,
+      "scale": 1.0,
+      "resampled": false,
+      "cropped": false,
+      "output_box_xyxy": [
+        192,
+        1930,
+        1152,
+        2470
+      ],
+      "output_panel_rgb_pixels_equal_source": true
+    },
+    {
+      "row": 4,
+      "column": 2,
+      "weather": "overcast",
+      "view": "sky",
+      "source": "预览/20261019_运行端天气云同步/04-overcast-sky.png",
+      "source_size": [
+        960,
+        540
+      ],
+      "source_mode": "RGBA",
+      "expected_sha256": "6704a2639a0c285bcbdba666fd08c057b52c4b06d62b5f6902aabf16e506af4b",
+      "actual_sha256": "6704a2639a0c285bcbdba666fd08c057b52c4b06d62b5f6902aabf16e506af4b",
+      "hash_matches_evidence": true,
+      "scale": 1.0,
+      "resampled": false,
+      "cropped": false,
+      "output_box_xyxy": [
+        1172,
+        1930,
+        2132,
+        2470
+      ],
+      "output_panel_rgb_pixels_equal_source": true
+    },
+    {
+      "row": 5,
+      "column": 1,
+      "weather": "rain",
+      "view": "weather",
+      "source": "预览/20261019_运行端天气云同步/05-rain-weather.png",
+      "source_size": [
+        960,
+        540
+      ],
+      "source_mode": "RGBA",
+      "expected_sha256": "5d31b5aeefb90438df10899c414c24146ef7998e96d4b96f43e1ddc26bb5fd55",
+      "actual_sha256": "5d31b5aeefb90438df10899c414c24146ef7998e96d4b96f43e1ddc26bb5fd55",
+      "hash_matches_evidence": true,
+      "scale": 1.0,
+      "resampled": false,
+      "cropped": false,
+      "output_box_xyxy": [
+        192,
+        2492,
+        1152,
+        3032
+      ],
+      "output_panel_rgb_pixels_equal_source": true
+    },
+    {
+      "row": 5,
+      "column": 2,
+      "weather": "rain",
+      "view": "sky",
+      "source": "预览/20261019_运行端天气云同步/05-rain-sky.png",
+      "source_size": [
+        960,
+        540
+      ],
+      "source_mode": "RGBA",
+      "expected_sha256": "e812290d78d22ddf72ab7ec85dc695d67a45da4448ac4cc3aff3a496110e5e85",
+      "actual_sha256": "e812290d78d22ddf72ab7ec85dc695d67a45da4448ac4cc3aff3a496110e5e85",
+      "hash_matches_evidence": true,
+      "scale": 1.0,
+      "resampled": false,
+      "cropped": false,
+      "output_box_xyxy": [
+        1172,
+        2492,
+        2132,
+        3032
+      ],
+      "output_panel_rgb_pixels_equal_source": true
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "status": "PREPARED_FROZEN_NOT_EXECUTED",
+  "independentStaticReview": "No remaining must-fix issues; runtime and VEX not verified",
+  "pythonSyntaxChecked": [
+    "build_native.py",
+    "present.py",
+    "render_triple.py",
+    "run_bounded.py"
+  ],
+  "vexCompiled": false,
+  "nativeExecuted": false,
+  "sourceFilesUnchanged": {
+    "cloud01-sample06-review.hip": true,
+    "sample06-density.bgeo.sc": true,
+    "sample06-control.bgeo.sc": true
+  },
+  "unexpectedNativeResults": [],
+  "files": {
+    "build_native.py": "eee2c3e12ba2cbc689a3e319277cf30270db276f2717c6b214527ccb55abdd27",
+    "detail.vfl": "3cb6fbdb174ec97c4ffd3ed438eb40a5f9642e79e5249d72357e74a0a5617ca3",
+    "present.py": "1e80944e05f105a0e6b9c678f7c5705c9c27b75e67bcdfed778f56cd511ff209",
+    "README.md": "6334c0623fede5a01d045887622e6ecbeed5612c9c7e5094279e1d3a8f23efe8",
+    "render_triple.py": "4ca54e0f038ff0d3b01b998e073873a486abe7dab6912526b89716a0ce6f10b0",
+    "run_bounded.py": "fdba0ca15798ce4e7acd5c5d7e21b58c4a921ac8a606646c31995266d075a3fb",
+    "STATIC-REVIEW.md": "00fb76017a2a077798f7bde6ddfc3b4dd792ae87a845dee19f615b9d8e372ab5",
+    "wrapper-readonly-proof.json": "7c8c5fc95ab6b20f95846965cb1e85bd64daaf87cdd08251b2e2acce8e022bca"
+  }
+}

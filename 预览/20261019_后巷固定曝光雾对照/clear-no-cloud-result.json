@@ -1,0 +1,31 @@
+{
+  "exitCode": 124,
+  "stopReason": "system reserve",
+  "seconds": 10.405999999959022,
+  "peakJobGiB": 7.449535369873047,
+  "resourcesEnd": {
+    "physicalAvailableGiB": 8.064338684082031,
+    "commitHeadroomGiB": 17.134071350097656
+  },
+  "ownedTreeReleased": true,
+  "minimumObservedResources": {
+    "physicalAvailableGiB": 3.9863929748535156,
+    "commitHeadroomGiB": 9.757942199707031
+  },
+  "stopSample": {
+    "seconds": 10.046999999962281,
+    "resources": {
+      "physicalAvailableGiB": 3.9863929748535156,
+      "commitHeadroomGiB": 9.757942199707031
+    },
+    "mainProcess": {
+      "workingSetGiB": 3.961883544921875,
+      "peakWorkingSetGiB": 3.961883544921875,
+      "privateCommitGiB": 7.01971435546875
+    },
+    "peakJobCommitGiB": 7.4495086669921875
+  },
+  "peakSingleProcessCommitGiB": 7.01971435546875,
+  "mainProcessPeakWorkingSetGiB": 3.961883544921875,
+  "resourceSamples": 21
+}

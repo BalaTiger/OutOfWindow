@@ -1,0 +1,432 @@
+{
+  "status": "READ_ONLY_DIAGNOSIS_NO_RENDER_OR_WEATHER_CHANGE",
+  "baseCommit": "80793d16b5aba6d33bd486ed9d4bcd08388b50e6",
+  "activeVersion": "cloud-runtime-20261019-v2",
+  "activeTargetSHA256": "5b9b0bf218d8c55c31f209de27900ce4e0ed6bf3343a477f1cfe33cbb8a4b6a5",
+  "activeModuleSHA256": "4486cc7f12aca42a149b5e7ea0d20b723df0883fa3b7f8221209ab493cdb2d72",
+  "protectedHashes": {
+    "unreal\\OutOfWindow\\Content\\Weather\\OOW_ApprovedClouds\\MI_RuntimeMix.uasset": "ae2e41391ae8e095892454d960f0cee22b6a33da82def36bee813062a0a2ddbf",
+    "unreal\\OutOfWindow\\Content\\Weather\\OOW_ApprovedClouds\\M_RuntimeMix.uasset": "585992bdd43e95429dea01cc6485c339b19c808098fa6c5811ad2ce3240aef6d",
+    "unreal\\OutOfWindow\\Content\\Weather\\OOW_ApprovedClouds\\T_Ci_LowerAccepted.uasset": "063fe904e34e0bda42784c52d7dbef59f206aeba3d00831132b7ae58045da099",
+    "unreal\\OutOfWindow\\Source\\OutOfWindow\\WindowDirector.cpp": "e015cbf46619cb7fa761287b03be012e1c64428d2bece0d64bbff3b8581a5c20",
+    "unreal\\OutOfWindow\\Source\\OutOfWindow\\WindowSkySampling.cpp": "c998b6faa45f2b54ac0667c035dc6cb4387634135e8959994a2b5acb0fceffc3",
+    "unreal\\OutOfWindow\\Content\\Maps\\Alley.umap": "833c119edac7ef8c9e08e923025eaeab13753e1788338b3d66fd5c9d7697f20e"
+  },
+  "sourceHashes": {
+    ".runtime\\cloud-runtime-sync-20261019\\weather-clear-high.json": "e2ea95f377783a75eef3958e9330216a899e7d23994880191814f6349f0de5a0",
+    "预览\\20261019_运行端天气云同步\\01-clear-weather.png": "713a4b8134dcaeb36b99dad6e3272d1d969ca983e46f022870bebeba696caa4e",
+    ".runtime\\cloud-runtime-sync-20261019\\sky-clear.json": "967ed5df6de12b9ecdaf453868e5b971be6e8721b55389c4cf4ef57becf73f33",
+    "预览\\20261019_运行端天气云同步\\01-clear-sky.png": "41763eba05cc816db539a0dcef1a33cebad969cc469df097e1952a60ac60d8a8",
+    ".runtime\\cloud-runtime-sync-20261019\\weather-few.json": "20f5dc595074b438258a280ff58e3c4b2eded485df9d79ab2ae7058652e6e4c4",
+    "预览\\20261019_运行端天气云同步\\02-few-weather.png": "56d678493af0bd80f5c14a6fafc28760620fc3f9eacb43d3ba78d68d51376c8a",
+    ".runtime\\cloud-runtime-sync-20261019\\sky-few.json": "b7a75d2c6953c7dac2693009105a56759625da4d81f583ad6e19fbe6b1a34da3",
+    "预览\\20261019_运行端天气云同步\\02-few-sky.png": "9f528899221d9081126563cff8fc5dc7f92d4abad31aef6ae774a997e9437b4e"
+  },
+  "weatherPairs": {
+    "clear": {
+      "alley": {
+        "cameraPositionCm": [
+          -2000,
+          -20800,
+          2300
+        ],
+        "cameraRotationDegrees": [
+          0,
+          -124.38034472384484,
+          0
+        ],
+        "cameraHorizontalFov": 85.56558990478516,
+        "finalViewPostProcess": {
+          "bloomIntensity": 0.675000011920929,
+          "bloomSizeScale": 4,
+          "bloomThreshold": 1.2000000476837158,
+          "exposureBias": -1.0999999046325684,
+          "minBrightness": -4,
+          "maxBrightness": 16,
+          "lastEyeAdaptationExposure": 0.00036357378121465445,
+          "lastAverageSceneLuminance": 230.79470825195312
+        },
+        "visibleSkyFraction": 0.02083333395421505,
+        "solarElevation": 58.85356521606445,
+        "sceneNorthYawDegrees": -214.38034472384484,
+        "fogDensity": 0.00800000037997961,
+        "atmosphereMieScale": 0.003996000159531832,
+        "cloudAnimationSeconds": 3692.4000550210476,
+        "cloudDriftUV": [
+          0,
+          0
+        ],
+        "approvedClouds": {
+          "routeLoaded": true,
+          "enabled": true,
+          "routeVersion": 2,
+          "fewFarSupported": true,
+          "displayWeatherSource": "clear",
+          "targetLightweight": 0,
+          "targetCi": 1,
+          "targetFewFarLightweight": 0,
+          "effectiveFewFarTarget": 0,
+          "lightweight": 0,
+          "legacyLow": 1,
+          "fewFarLightweight": 0,
+          "nearDistanceKm": 4,
+          "farDistanceKm": 8,
+          "distanceOrigin": "fixed scene camera; horizontal km",
+          "originXKm": -0.019999999552965164,
+          "originYKm": -0.20800000429153442,
+          "coverage": 0.47999998927116394,
+          "distanceWeights": [
+            {
+              "distanceKm": 4,
+              "lightweight": 0,
+              "legacy": 1
+            },
+            {
+              "distanceKm": 6,
+              "lightweight": 0,
+              "legacy": 1
+            },
+            {
+              "distanceKm": 8,
+              "lightweight": 0,
+              "legacy": 1
+            }
+          ],
+          "ci": 1,
+          "rainProfile": 0,
+          "layerBottomKm": 8.199999809265137,
+          "layerTopKm": 8.380000114440918,
+          "acceptedCiChannel": "Blue/group2; other two groups excluded"
+        }
+      },
+      "sky": {
+        "cameraPositionCm": [
+          -2000,
+          -20800,
+          50000
+        ],
+        "cameraRotationDegrees": [
+          0,
+          -90.00000000000001,
+          0
+        ],
+        "cameraHorizontalFov": 121.28449249267578,
+        "finalViewPostProcess": {
+          "bloomIntensity": 0.675000011920929,
+          "bloomSizeScale": 4,
+          "bloomThreshold": 1.2000000476837158,
+          "exposureBias": -1.0999999046325684,
+          "minBrightness": -4,
+          "maxBrightness": 16,
+          "lastEyeAdaptationExposure": 3.6831868783337995e-05,
+          "lastAverageSceneLuminance": 2266.888671875
+        },
+        "visibleSkyFraction": 1,
+        "solarElevation": 58.85356521606445,
+        "sceneNorthYawDegrees": -214.38034472384484,
+        "fogDensity": 0.00800000037997961,
+        "atmosphereMieScale": 0.003996000159531832,
+        "cloudAnimationSeconds": 6.01754966378212,
+        "cloudDriftUV": [
+          0,
+          0
+        ],
+        "approvedClouds": {
+          "routeLoaded": true,
+          "enabled": true,
+          "routeVersion": 2,
+          "fewFarSupported": true,
+          "displayWeatherSource": "clear",
+          "targetLightweight": 0,
+          "targetCi": 1,
+          "targetFewFarLightweight": 0,
+          "effectiveFewFarTarget": 0,
+          "lightweight": 0,
+          "legacyLow": 1,
+          "fewFarLightweight": 0,
+          "nearDistanceKm": 4,
+          "farDistanceKm": 8,
+          "distanceOrigin": "fixed scene camera; horizontal km",
+          "originXKm": -0.019999999552965164,
+          "originYKm": -0.20800000429153442,
+          "coverage": 0.47999998927116394,
+          "distanceWeights": [
+            {
+              "distanceKm": 4,
+              "lightweight": 0,
+              "legacy": 1
+            },
+            {
+              "distanceKm": 6,
+              "lightweight": 0,
+              "legacy": 1
+            },
+            {
+              "distanceKm": 8,
+              "lightweight": 0,
+              "legacy": 1
+            }
+          ],
+          "ci": 1,
+          "rainProfile": 0,
+          "layerBottomKm": 8.199999809265137,
+          "layerTopKm": 8.380000114440918,
+          "acceptedCiChannel": "Blue/group2; other two groups excluded"
+        }
+      },
+      "exposureRatioAlleyToSky": 9.871173883501887,
+      "exposureDifferenceEV": 3.303221660690146,
+      "sameCloudOriginAndForward": [
+        -0.019999999552965164,
+        -0.20800000429153442,
+        -0.5646839141845703,
+        -0.8253072500228882
+      ]
+    },
+    "few": {
+      "alley": {
+        "cameraPositionCm": [
+          -2000,
+          -20800,
+          2300
+        ],
+        "cameraRotationDegrees": [
+          0,
+          -124.38034472384484,
+          0
+        ],
+        "cameraHorizontalFov": 85.56558990478516,
+        "finalViewPostProcess": {
+          "bloomIntensity": 0.675000011920929,
+          "bloomSizeScale": 4,
+          "bloomThreshold": 1.2000000476837158,
+          "exposureBias": -1.0999999046325684,
+          "minBrightness": -4,
+          "maxBrightness": 16,
+          "lastEyeAdaptationExposure": 0.0005678065354004502,
+          "lastAverageSceneLuminance": 148.2676544189453
+        },
+        "visibleSkyFraction": 0.02115885354578495,
+        "solarElevation": 58.85356521606445,
+        "sceneNorthYawDegrees": -214.38034472384484,
+        "fogDensity": 0.00800000037997961,
+        "atmosphereMieScale": 0.004152094013988972,
+        "cloudAnimationSeconds": 32.40000048279762,
+        "cloudDriftUV": [
+          0,
+          0
+        ],
+        "approvedClouds": {
+          "routeLoaded": true,
+          "enabled": true,
+          "routeVersion": 2,
+          "fewFarSupported": true,
+          "displayWeatherSource": "few",
+          "targetLightweight": 0,
+          "targetCi": 0.550000011920929,
+          "targetFewFarLightweight": 1,
+          "effectiveFewFarTarget": 1,
+          "lightweight": 0,
+          "legacyLow": 1,
+          "fewFarLightweight": 1,
+          "nearDistanceKm": 4,
+          "farDistanceKm": 8,
+          "distanceOrigin": "fixed scene camera; horizontal km",
+          "originXKm": -0.019999999552965164,
+          "originYKm": -0.20800000429153442,
+          "coverage": 0.25999999046325684,
+          "distanceWeights": [
+            {
+              "distanceKm": 4,
+              "lightweight": 0,
+              "legacy": 1
+            },
+            {
+              "distanceKm": 6,
+              "lightweight": 0.5,
+              "legacy": 0.5
+            },
+            {
+              "distanceKm": 8,
+              "lightweight": 1,
+              "legacy": 0
+            }
+          ],
+          "ci": 0.550000011920929,
+          "rainProfile": 0,
+          "layerBottomKm": 1.600000023841858,
+          "layerTopKm": 8.380000114440918,
+          "acceptedCiChannel": "Blue/group2; other two groups excluded"
+        }
+      },
+      "sky": {
+        "cameraPositionCm": [
+          -2000,
+          -20800,
+          50000
+        ],
+        "cameraRotationDegrees": [
+          0,
+          -90.00000000000001,
+          0
+        ],
+        "cameraHorizontalFov": 121.28449249267578,
+        "finalViewPostProcess": {
+          "bloomIntensity": 0.675000011920929,
+          "bloomSizeScale": 4,
+          "bloomThreshold": 1.2000000476837158,
+          "exposureBias": -1.0999999046325684,
+          "minBrightness": -4,
+          "maxBrightness": 16,
+          "lastEyeAdaptationExposure": 4.236128370393999e-05,
+          "lastAverageSceneLuminance": 1974.343017578125
+        },
+        "visibleSkyFraction": 1,
+        "solarElevation": 58.85356521606445,
+        "sceneNorthYawDegrees": -214.38034472384484,
+        "fogDensity": 0.00800000037997961,
+        "atmosphereMieScale": 0.004152094013988972,
+        "cloudAnimationSeconds": 6.118035059422255,
+        "cloudDriftUV": [
+          0,
+          0
+        ],
+        "approvedClouds": {
+          "routeLoaded": true,
+          "enabled": true,
+          "routeVersion": 2,
+          "fewFarSupported": true,
+          "displayWeatherSource": "few",
+          "targetLightweight": 0,
+          "targetCi": 0.550000011920929,
+          "targetFewFarLightweight": 1,
+          "effectiveFewFarTarget": 1,
+          "lightweight": 0,
+          "legacyLow": 1,
+          "fewFarLightweight": 1,
+          "nearDistanceKm": 4,
+          "farDistanceKm": 8,
+          "distanceOrigin": "fixed scene camera; horizontal km",
+          "originXKm": -0.019999999552965164,
+          "originYKm": -0.20800000429153442,
+          "coverage": 0.25999999046325684,
+          "distanceWeights": [
+            {
+              "distanceKm": 4,
+              "lightweight": 0,
+              "legacy": 1
+            },
+            {
+              "distanceKm": 6,
+              "lightweight": 0.5,
+              "legacy": 0.5
+            },
+            {
+              "distanceKm": 8,
+              "lightweight": 1,
+              "legacy": 0
+            }
+          ],
+          "ci": 0.550000011920929,
+          "rainProfile": 0,
+          "layerBottomKm": 1.600000023841858,
+          "layerTopKm": 8.380000114440918,
+          "acceptedCiChannel": "Blue/group2; other two groups excluded"
+        }
+      },
+      "exposureRatioAlleyToSky": 13.403902945170639,
+      "exposureDifferenceEV": 3.744581240330213,
+      "sameCloudOriginAndForward": [
+        -0.019999999552965164,
+        -0.20800000429153442,
+        -0.5646839141845703,
+        -0.8253072500228882
+      ]
+    }
+  },
+  "portal": {
+    "samples": 195,
+    "maskSize": [
+      128,
+      72
+    ],
+    "fraction": 0.021158854166666668,
+    "pixelBoundsHalfOpen": [
+      29,
+      5,
+      58,
+      31
+    ],
+    "percentiles": [
+      0,
+      10,
+      50,
+      90,
+      100
+    ],
+    "yawDegrees": [
+      -150.89388701210325,
+      -144.6210402693536,
+      -134.62607202995514,
+      -132.20221546350726,
+      -129.7498729245443
+    ],
+    "elevationDegrees": [
+      4.463324877922381,
+      9.279176150210857,
+      20.10165911221832,
+      22.801286195245815,
+      23.675766980687506
+    ],
+    "method": "Pixel-centre pinhole rays; primary game-view opaque-depth mask, asynchronous. Bounds do not describe a fully open rectangle."
+  },
+  "brightFilamentEstimate": {
+    "method": "Hand-selected bright-filament ROI in tone-mapped existing sky-clear image; red-channel vertical contrast, not texture density or full-cloud centroid.",
+    "roiInclusive": [
+      130,
+      170,
+      470,
+      215
+    ],
+    "weightFormula": "max(0, R(x,y) - 0.5*(R(x,y-10)+R(x,y+10)) - 4)",
+    "pixelWeightedCentre": [
+      333.28838742210854,
+      195.5422504772539
+    ],
+    "weightedYawDegrees": -117.29452149035629,
+    "weightedElevationDegrees": 13.313497411793287,
+    "cameraHeightM": 500,
+    "layoutProposalNotRendered": {
+      "ciOnlyYawDegrees": -22,
+      "ciOnlyForwardTranslationKm": -9,
+      "preserve": [
+        "one accepted group",
+        "scale",
+        "density",
+        "8.2–8.38 km altitude"
+      ],
+      "caveat": "Approximate starting point only. Use actual portal rays to select one candidate. Rotation and translation are coupled."
+    }
+  },
+  "graphic": {
+    "path": "C:\\Users\\zhuzi\\Documents\\OutOfWindow\\预览\\20261019_后巷天区诊断\\alley-sky-diagnostic.png",
+    "sha256": "afa146ea35c56985b3e35e8ffcd7e7863a542380f05e1b8128476a3f18ede6b9",
+    "size": [
+      2056,
+      2180
+    ],
+    "allFourOriginalImagePanelsPixelExact": true
+  },
+  "confirmed": [
+    "Active v2 runtime and original accepted cloud hashes match prior run evidence.",
+    "Main alley and sky-face captures differ in yaw, FOV, altitude and actual exposure.",
+    "Small visible sky aperture has a constrained, irregular angular footprint."
+  ],
+  "notYetIsolated": [
+    "Relative contribution of ExponentialHeightFog, volumetric fog, SkyAtmosphere and cloud extinction to whitening.",
+    "Actual rendered effect of a Ci-only rotation/translation.",
+    "Same-camera, same-final-exposure A/B still required."
+  ],
+  "nativeProcessesStartedThisDiagnosis": false,
+  "houdiniV7": "PREPARED_NOT_EXECUTED_PAUSED_FOR_ALLEY_SKY_DIAGNOSTIC"
+}

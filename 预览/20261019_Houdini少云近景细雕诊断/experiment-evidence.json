@@ -1,0 +1,309 @@
+{
+  "status": "REJECTED_EXPERIMENT_DOCUMENTED_WITH_MATCHED_RENDERS",
+  "accepted": false,
+  "integrated": false,
+  "recordedUTC": "2026-10-19T03:24:29.764132+00:00",
+  "attempts": [
+    {
+      "version": "v2",
+      "components": {
+        "control": {
+          "0.0001": [
+            308618
+          ],
+          "0.02": [
+            284125
+          ]
+        },
+        "candidate": {
+          "0.0001": [
+            308007
+          ],
+          "0.02": [
+            283686,
+            4,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        }
+      },
+      "protectedMaxDelta": 0.0,
+      "boundary": {
+        "control": 0.0,
+        "candidate": 0.0
+      },
+      "massChangePercent": 0.2368336563542739,
+      "budget": {
+        "status": "STOPPED",
+        "exitCode": 1,
+        "reason": null,
+        "seconds": 22.70300000003772,
+        "peakJobBytes": 521363456,
+        "resourcesEnd": {
+          "availableGiB": 7.938812255859375,
+          "commitHeadroomGiB": 22.975505828857422
+        },
+        "CPUslotReleased": true,
+        "nativeChildCreated": true
+      }
+    },
+    {
+      "version": "v3",
+      "components": {
+        "control": {
+          "0.0001": [
+            308618
+          ],
+          "0.02": [
+            284125
+          ]
+        },
+        "candidate": {
+          "0.0001": [
+            307888,
+            1
+          ],
+          "0.02": [
+            283234,
+            1
+          ]
+        }
+      },
+      "protectedMaxDelta": 0.0,
+      "boundary": {
+        "control": 0.0,
+        "candidate": 0.0
+      },
+      "massChangePercent": 0.0019977604124088444,
+      "budget": {
+        "status": "STOPPED",
+        "exitCode": 1,
+        "reason": null,
+        "seconds": 5.670999999972992,
+        "peakJobBytes": 587120640,
+        "resourcesEnd": {
+          "availableGiB": 9.698028564453125,
+          "commitHeadroomGiB": 24.051239013671875
+        },
+        "CPUslotReleased": true,
+        "nativeChildCreated": true
+      }
+    },
+    {
+      "version": "v4",
+      "components": {
+        "control": {
+          "0.0001": [
+            308618
+          ],
+          "0.02": [
+            284125
+          ]
+        },
+        "candidate": {
+          "0.0001": [
+            305974,
+            4,
+            3,
+            2,
+            1,
+            1,
+            1,
+            1
+          ],
+          "0.02": [
+            282034,
+            1,
+            1
+          ]
+        }
+      },
+      "protectedMaxDelta": 0.0,
+      "boundary": {
+        "control": 0.0,
+        "candidate": 0.0
+      },
+      "massChangePercent": -0.114593029663701,
+      "budget": {
+        "status": "STOPPED",
+        "exitCode": 1,
+        "reason": null,
+        "seconds": 5.702999999979511,
+        "peakJobBytes": 587120640,
+        "resourcesEnd": {
+          "availableGiB": 9.756336212158203,
+          "commitHeadroomGiB": 24.261127471923828
+        },
+        "CPUslotReleased": true,
+        "nativeChildCreated": true
+      }
+    },
+    {
+      "version": "v5",
+      "components": {
+        "control": {
+          "0.0001": [
+            308618
+          ],
+          "0.02": [
+            284125
+          ]
+        },
+        "candidate": {
+          "0.0001": [
+            306793,
+            2,
+            2,
+            1,
+            1,
+            1,
+            1
+          ],
+          "0.02": [
+            282454,
+            2
+          ]
+        }
+      },
+      "protectedMaxDelta": 0.0,
+      "boundary": {
+        "control": 0.0,
+        "candidate": 0.0
+      },
+      "massChangePercent": -0.1285594557262293,
+      "budget": {
+        "status": "STOPPED",
+        "exitCode": 1,
+        "reason": null,
+        "seconds": 3.139999999955762,
+        "peakJobBytes": 543645696,
+        "resourcesEnd": {
+          "availableGiB": 9.514827728271484,
+          "commitHeadroomGiB": 23.997909545898438
+        },
+        "CPUslotReleased": true,
+        "nativeChildCreated": true
+      }
+    }
+  ],
+  "imageAudit": {
+    "status": "REJECTED_DIAGNOSTIC_IMAGES_SAVED",
+    "topologyAccepted": false,
+    "originalVsControl": {
+      "alphaSilhouetteIoU": 0.994534790722474,
+      "boundsBefore": [
+        198,
+        214,
+        355,
+        284
+      ],
+      "boundsAfter": [
+        198,
+        214,
+        355,
+        284
+      ],
+      "meanAbsLinearRGBDelta": 9.257147030439228e-05,
+      "opaquePixelsBefore": 2668,
+      "opaquePixelsAfter": 2669
+    },
+    "controlVsCandidate": {
+      "alphaSilhouetteIoU": 0.9889465974164336,
+      "boundsBefore": [
+        198,
+        214,
+        355,
+        284
+      ],
+      "boundsAfter": [
+        197,
+        214,
+        355,
+        284
+      ],
+      "meanAbsLinearRGBDelta": 0.0008952236967161298,
+      "opaquePixelsBefore": 2669,
+      "opaquePixelsAfter": 2687
+    },
+    "displayExposure": 1,
+    "encoding": "standard sRGB",
+    "nativeCrop": [
+      100,
+      190,
+      350,
+      125
+    ],
+    "referenceSHA256": "03f5c26f5ea37eac1e6855ca95dc4404d020ba23ae3cbc9644f13e99d17942d7",
+    "photographicNaturalnessAccepted": false,
+    "files": {
+      "reference-original-control-candidate.png": "39b85f3b82315de375b8af8374bb93329e8340ad07d4090170fd7cc920e02859",
+      "candidate.png": "5f1bb17acf75cdd119214d71e3292d1f8effde37117886f976d5ff7cb538f29a"
+    },
+    "broadSilhouetteGatePassed": true
+  },
+  "sourceFilesUnchanged": true,
+  "sources": {
+    "cloud01-sample06-review.hip": "73eab5984901b3b7d249159ab484a30d8abaf8a4330d7ca711f218fc792b3b73",
+    "sample06-density.bgeo.sc": "5ea64e9d5e666885c46e0a2f2941a9ca61abac8eb2e25e19091958260e0d0b4d",
+    "sample06-control.bgeo.sc": "2a3d929a6c9ae9638a0372dc4d832dcd4bae350966f5b8301147d9cdf55d5d90"
+  },
+  "hipSHA256": "34e3054d5457582909a16690e005b9d76ee9d0889ceb870f252e7d626ce0d071",
+  "files": {
+    "build-result.json": "3efb41810290c11835c3d0533281a79f098e4ee7ea6f7b86e8ec875d2b310a54",
+    "build_native-budget.json": "b709dbbf49ceee812ead0869037372fbdd867a112f1d6a943013ef18b589793b",
+    "build_native.py": "b8ff0d2b9218c312c5c4a38b5037a8e9d5b5c336588e9925cbb0e0d52a7eca30",
+    "candidate-resume-budget.json": "4b2458e7362192b3b0df150760aed974c921f3936789f40dcd8f80679a806d7c",
+    "candidate-resume-proof.json": "b0b4d3bf68d7850bd7feb42917025f685efc27fd4f053d766a4ff781619e115b",
+    "candidate-resume-result.json": "68a5461b713d729d7405bb951557af500bb9c07d34a5a4761ba100dbd5af134b",
+    "candidate.bgeo.sc": "a2afc45d6ab8bb9853a18ea2ca2a5351ca2442f2fb4a5d638817831cba9dc0d2",
+    "candidate.exr": "97505bef95545f2631f32720c5da96991a33d7c2ad08e2ccb308f45720fb44ed",
+    "candidate.png": "5f1bb17acf75cdd119214d71e3292d1f8effde37117886f976d5ff7cb538f29a",
+    "control.bgeo.sc": "6c81f98bc643302cce75697d6ff69d0ecc8a9810f446f97dc837beceb573cf9d",
+    "control.exr": "b2cdcfd17db5ab2a9275eac746000ba18e0028ab487af7ba4daa9fa3ccda7e65",
+    "image-audit.json": "dc6284541ee9145579f9c88eb7556c78126187445ca471c3c02a31836e0fc320",
+    "original.exr": "93a838c0dc452db7465090cc7370f308107c4e7f24639ead05e5f042fc845fd5",
+    "prepared-proof.json": "916d6883a5d8630e6eef2eb788dce133872db2d082ad2509511bd5730dca0cfe",
+    "present.py": "fea6fe987f943e098e2397e9db21e8e5407a1e5942ba0b8f688036ce93722955",
+    "README.md": "ed8ff289e780286a25d9887ff2175ce383f1525714f5ec7a9f005282e05f014d",
+    "reference-original-control-candidate.png": "39b85f3b82315de375b8af8374bb93329e8340ad07d4090170fd7cc920e02859",
+    "REJECTED-few-near-local128-v5.hip": "34e3054d5457582909a16690e005b9d76ee9d0889ceb870f252e7d626ce0d071",
+    "render-result-interrupted.json": "4ca4099943239d63e57ff6d16876a143d062b8d168e5c2223ed1efd9ab657302",
+    "render-result.json": "c4deeaf8ca17d516a1bcf7c82665fc743e24a34a6ba717435601106cc1f24d1c",
+    "render_triple-budget.json": "38ab5f3bd8ab7f431d781d9080fa7dd306fcb5e8bde38c5750890880b96b366c",
+    "render_triple.py": "47140d77e953887e0bab7fdd1ca5af25d15abac9b6f5d316e5b30e0365af6eb7",
+    "run_bounded.py": "fdba0ca15798ce4e7acd5c5d7e21b58c4a921ac8a606646c31995266d075a3fb",
+    "sample06-control.bgeo.sc": "2a3d929a6c9ae9638a0372dc4d832dcd4bae350966f5b8301147d9cdf55d5d90",
+    "sample06-density.bgeo.sc": "5ea64e9d5e666885c46e0a2f2941a9ca61abac8eb2e25e19091958260e0d0b4d",
+    "visual-review.txt": "dcac9fee43f79a269d1f224c646ab13007f2c2af044e6afa863b076dfe54a2d3",
+    "rejected-attempts/v2/build-result.json": "3a2ff3ed9a61e90c7acef0f9022c03919f409b7ec98fb086c6382d24bad2040d",
+    "rejected-attempts/v2/build_native-budget.json": "5a5b44eb6ca5e8209364b8f6affccae25f578592eb0c62bbaa35a949a2b1d671",
+    "rejected-attempts/v2/build_native-stderr.log": "b3cf05526a27d8c239e5d30b6b71a8118d20fbd492bc8a2fa8a2c9cd94558b1e",
+    "rejected-attempts/v2/build_native.py": "eee2c3e12ba2cbc689a3e319277cf30270db276f2717c6b214527ccb55abdd27",
+    "rejected-attempts/v2/detail.vfl": "3cb6fbdb174ec97c4ffd3ed438eb40a5f9642e79e5249d72357e74a0a5617ca3",
+    "rejected-attempts/v2/prepared-proof.json": "e582c20e9cc3a32bdf69f31a33595f463ebbc387de72ea888cac5770163eb709",
+    "rejected-attempts/v3/build-result.json": "7c1691a472212303447c2ac4716a548c8771de35921fcf89936a197565cf47f5",
+    "rejected-attempts/v3/build_native-budget.json": "9e96251face5f4764b697896f64fada39dcc6cbb17afa5603c4e9c4c2f847dfd",
+    "rejected-attempts/v3/build_native-stderr.log": "63813e4e0c11b7de77072b93eeaed09c0c44822eee687ed0f7d45b89327bcec8",
+    "rejected-attempts/v3/build_native.py": "b37c1230eacacced20b711988444eec74e740bda5a81acc07c45f83ae436adc7",
+    "rejected-attempts/v3/detail.vfl": "16abcf0efce5aa9e0d28bef171ba8a6949bf05271f761b8375242e610bc80050",
+    "rejected-attempts/v3/diagnostic-volume-comparison.npz": "251c8990457efa4377c9369cabf229f150564f4baf868a411f667646d9059b3f",
+    "rejected-attempts/v3/prepared-proof.json": "5335b87064f27f478fd52598b2a8bb193671e513b7fcfbef6691599bf3f4742e",
+    "rejected-attempts/v4/build-result.json": "fa4da3d10690a39ccc572b13e7844dc094847cd370451e4d7ff68b47f9c61a83",
+    "rejected-attempts/v4/build_native-budget.json": "2fe33f47b6c86e923bbc6f67735ba749e2628ea972e430345e493febfb57b011",
+    "rejected-attempts/v4/build_native-stderr.log": "e9e6fed65536235385bf15e0718d6c891520f6e77d20899002b49297904aa700",
+    "rejected-attempts/v4/build_native.py": "09d54f6442a325b5607d55eb91059a79277099eaa7f2e92c7e84e7469e33ee88",
+    "rejected-attempts/v4/detail.vfl": "d14f93685e1661fdcd63c1fb2eba44778a25d0ba2bff24fc79a55ff73fb64e7a",
+    "rejected-attempts/v4/prepared-proof.json": "b527a22db2b4b07ab8b1aedddd2c69995841d80410f0c801728c2e5003d3011d",
+    "rejected-attempts/v5/build-result.json": "4471973f9170536d8468ce5a54c55ec3b2d1aa5d17597c212f22a608cc021b4e",
+    "rejected-attempts/v5/build_native-budget.json": "2a511ea5b650d6b53355ff2e84296420259ac06c655d40fc4f0c67f0dee930fb",
+    "rejected-attempts/v5/build_native-stderr.log": "dbaf4a56c06c4af39a5f7ade90e6db49bcda807ab15bf5ca18a4c099a2b7d26d",
+    "rejected-attempts/v5/build_native.py": "44dc4608deaab02de73040ea0e5a4a3635f2cb1ab9ba406fdffe59478fcbc023",
+    "rejected-attempts/v5/detail.vfl": "804934ec2a37de740714f8ab0918b9730d35a1e76d9b9bc68f0b1659adcbef9f",
+    "rejected-attempts/v5/diagnostic-volume-comparison.npz": "12c549dacd6a30484316027df195df9a861a7f69e0510d314fcda48827e13366",
+    "rejected-attempts/v5/prepared-proof.json": "75c8ef05ccb9e45ddca9f66a825d63a0c08ded9c822bde75e7a658a6a2f6a004"
+  },
+  "visualReview": "Rejected independently by two reviewers: smooth repeated crowns remain; left vertical wall/flat base still reads boxy; reference edge and internal shape complexity not achieved."
+}

@@ -1,0 +1,223 @@
+{
+  "status": "OFFLINE_GATES_PASSED_NATIVE_PENDING",
+  "nativeExecuted": false,
+  "rendered": false,
+  "candidateCount": 1,
+  "grid": [
+    128,
+    128,
+    128
+  ],
+  "sourceSHA256": {
+    "cloud01-sample06-review.hip": "73eab5984901b3b7d249159ab484a30d8abaf8a4330d7ca711f218fc792b3b73",
+    "sample06-density.bgeo.sc": "5ea64e9d5e666885c46e0a2f2941a9ca61abac8eb2e25e19091958260e0d0b4d",
+    "sample06-control.bgeo.sc": "2a3d929a6c9ae9638a0372dc4d832dcd4bae350966f5b8301147d9cdf55d5d90"
+  },
+  "inputNPZSHA256": "12c549dacd6a30484316027df195df9a861a7f69e0510d314fcda48827e13366",
+  "originalSHA256": "af34f135390ae9ad54b1bed3fc04c6093460e8c3d60e0fc8b1bbba1c41a9e3a1",
+  "controlSHA256": "0457acc2253a9dddc31f286734d906683e4c9ea9163bc5b88e2daf088e5fdec9",
+  "candidateSHA256": "b934a2d42ef3f3c2f77377faeda1b5c6b85ead1753669d12d61c3a60cd294635",
+  "lower": [
+    -626.875,
+    -505.0,
+    -337.8125
+  ],
+  "upper": [
+    564.375,
+    442.5,
+    369.0625
+  ],
+  "voxel": [
+    9.306640625,
+    7.40234375,
+    5.5224609375
+  ],
+  "branches": [
+    {
+      "name": "left_asymmetric_buttress",
+      "rootDensityBeforeAddition": 0.9925317764282227,
+      "denseOverlapVoxels": 683,
+      "threshold02Components": [
+        6405
+      ],
+      "changedVoxels": 4968,
+      "fieldSHA256": "aa87672a3975f4fa775f4f2e1e74205fc92479bc53cf04c712817d5dab3bebc6"
+    },
+    {
+      "name": "left_short_oblique_return",
+      "rootDensityBeforeAddition": 0.9856005311012268,
+      "denseOverlapVoxels": 186,
+      "threshold02Components": [
+        877
+      ],
+      "changedVoxels": 534,
+      "fieldSHA256": "124f5996fed3598e502600079c4f78787a1857da6cf7e34eab7ba65cdc43ed94"
+    },
+    {
+      "name": "middle_unequal_crest",
+      "rootDensityBeforeAddition": 0.5889687538146973,
+      "denseOverlapVoxels": 230,
+      "threshold02Components": [
+        2880
+      ],
+      "changedVoxels": 2642,
+      "fieldSHA256": "fbf16bb83b22933d273a6687094b0ece068bb36db6a80547697113d84872e612"
+    },
+    {
+      "name": "right_low_forward_ridge",
+      "rootDensityBeforeAddition": 0.9985955357551575,
+      "denseOverlapVoxels": 565,
+      "threshold02Components": [
+        2396
+      ],
+      "changedVoxels": 1439,
+      "fieldSHA256": "bdb1d9a6fae9d23ff8cef76d491723cb439c7ec3f510ebe7b28771e110fe0e90"
+    }
+  ],
+  "components": {
+    "original": {
+      "0.0001": [
+        67796
+      ],
+      "0.02": [
+        66862
+      ]
+    },
+    "control": {
+      "0.0001": [
+        308618
+      ],
+      "0.02": [
+        284125
+      ]
+    },
+    "candidate": {
+      "0.0001": [
+        315127
+      ],
+      "0.02": [
+        290480
+      ]
+    }
+  },
+  "minimumCandidateMinusControl": 0.0,
+  "protectedBMaxDelta": 0.0,
+  "boundaryThreeLayersMax": 0.0,
+  "densityIntegralIncreasePercent": 1.8689176525421125,
+  "changedVoxelCount": 9486,
+  "projection": {
+    "kind": "UNSHADED_OPACITY_PREFLIGHT_NOT_RENDER",
+    "nativeCrop": [
+      100,
+      190,
+      450,
+      315
+    ],
+    "cameraSHA256": "2136d188d6e63493bed4a95ff391e9d5a73e0e46cee07d996501575f05f7a1d5",
+    "fixedWorldZReflection": true,
+    "physicalIntegrationStepMaximum": 4,
+    "originalVsControl": {
+      "alpha02IoU": 0.9933351106371634,
+      "boundsBefore": [
+        198,
+        214,
+        355,
+        284
+      ],
+      "boundsAfter": [
+        197,
+        214,
+        355,
+        284
+      ],
+      "newSupportPixels": 50,
+      "maximumOpacityLoss": 0.010667860507965088,
+      "meanOpacityGain": 9.215469617629424e-05
+    },
+    "controlVsCandidate": {
+      "alpha02IoU": 0.9801411026914032,
+      "boundsBefore": [
+        197,
+        214,
+        355,
+        284
+      ],
+      "boundsAfter": [
+        196,
+        214,
+        355,
+        284
+      ],
+      "newSupportPixels": 152,
+      "maximumOpacityLoss": 0.0,
+      "meanOpacityGain": 0.00215916964225471
+    }
+  },
+  "sourceFilesUnchanged": {
+    "cloud01-sample06-review.hip": true,
+    "sample06-density.bgeo.sc": true,
+    "sample06-control.bgeo.sc": true
+  },
+  "camera": [
+    0.8242854853214415,
+    0.5661743889371856,
+    0.0,
+    0.0,
+    0.06170557828652623,
+    -0.08983630050880399,
+    -0.9940431885583328,
+    0.0,
+    -0.5628017948591857,
+    0.8193753721112786,
+    -0.10898687664477202,
+    0.0,
+    0.0004827859866054496,
+    14171.962245293365,
+    2512.999952316285,
+    1.0
+  ],
+  "sunlight": [
+    -0.3622952659920753,
+    -0.9320633778020309,
+    0.0,
+    0.0,
+    -0.6365210526500651,
+    0.24741725677842485,
+    0.7304968518628209,
+    0.0,
+    -0.6808693632210105,
+    0.2646555512520143,
+    -0.6829160632306931,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+  ],
+  "cameraLightMaterialPolicy": "Native stage must inherit original HIP unchanged; this stage has no shading/material",
+  "topologyCleanup": false,
+  "globalStretch": false,
+  "replicatedCloudAsset": false,
+  "gates": {
+    "finiteRange": true,
+    "candidateNeverBelowControl": true,
+    "BExact": true,
+    "zeroThreeLayerBoundary": true,
+    "allOriginalControlCandidateConnected": true,
+    "everyBranchRooted": true,
+    "everyBranchSingleConnectedAt02": true,
+    "densityIncreaseLimited": true,
+    "actualAddition": true,
+    "projectionShapePreserved": true,
+    "projectionNoOpacityLoss": true,
+    "sourcesUnchanged": true
+  },
+  "gatesPassed": true,
+  "densityNPZSHA256": "8079b551142dba0f7e55fdd338423a805e9dbdcc8750c27bdcef4de89c255fb2",
+  "recovery": {
+    "reason": "NumPy bool serialization failure",
+    "originalScriptSHA256": "c7ab990d864e424f6055233d03313da3ac5f961f0371a78c33395e2573e88aaa",
+    "method": "Recompute identical deterministic checks and require every frozen density/projection value to match; do not rewrite arrays"
+  },
+  "seconds": 23.60899999999674
+}

@@ -1,0 +1,70 @@
+{
+  "status": "NEW_DERIVED_RUNTIME_V2_SAVED",
+  "master": "/Game/Weather/OOW_RuntimeClouds_20261019/M_RuntimeMix_v2.M_RuntimeMix_v2",
+  "instance": "/Game/Weather/OOW_RuntimeClouds_20261019/MI_RuntimeMix_v2.MI_RuntimeMix_v2",
+  "protectedAssets": {
+    "MI_RuntimeMix.uasset": "ae2e41391ae8e095892454d960f0cee22b6a33da82def36bee813062a0a2ddbf",
+    "M_RuntimeMix.uasset": "585992bdd43e95429dea01cc6485c339b19c808098fa6c5811ad2ce3240aef6d",
+    "T_Ci_LowerAccepted.uasset": "063fe904e34e0bda42784c52d7dbef59f206aeba3d00831132b7ae58045da099"
+  },
+  "acceptedCustomCodeUnchanged": true,
+  "cirrusBundleDirectionUnchanged": true,
+  "newParameters": [
+    "OOW_ApprovedFewFar",
+    "OOW_ApprovedDistanceKm"
+  ],
+  "nearKm": 4,
+  "farKm": 8,
+  "rewired": [
+    {
+      "node": "MaterialExpressionCustom_6",
+      "pin": "ApprovedMix"
+    },
+    {
+      "node": "MaterialExpressionCustom_13",
+      "pin": "ApprovedMix"
+    },
+    {
+      "node": "MaterialExpressionCustom_19",
+      "pin": "ApprovedMix"
+    },
+    {
+      "node": "MaterialExpressionCustom_20",
+      "pin": "ApprovedMix"
+    }
+  ],
+  "code": "\n// Runtime-only routing. Accepted density and high cirrus remain unchanged.\nfloat distanceKm=length(Position.xy*.00001-Origin.xy);\nfloat t=saturate((distanceKm-DistanceKm.x)/max(DistanceKm.y-DistanceKm.x,.001));\nt=t*t*(3.0-2.0*t);\nfloat full=saturate(OriginalMix.r);\nfloat light=full+(1.0-full)*saturate(FewFar)*t;\nreturn float4(light,1.0-light,OriginalMix.b,OriginalMix.a);\n",
+  "originalCustomCodeSHA256": {
+    "MaterialExpressionCustom_7": "addb0d14e425b619fba4cbcbb9cc665c335dacd0e08eb67acb4dd3016a038d92",
+    "MaterialExpressionCustom_0": "c8337834a2347470c506fcbaa89e57c423035e9a9b8d7f9eb616fbb0b45fd5ce",
+    "MaterialExpressionCustom_1": "6edbf66dd4baa073e321956470c1fb84ea0873341c9910b24f8aa401cc83cfc5",
+    "MaterialExpressionCustom_2": "3262ce9503ef765359ce72179a93790918beeb04fa0aeabc1971531ddb509288",
+    "MaterialExpressionCustom_3": "97a5926167784a0913e548d7a94acff309acc430674396ab485d47a1b797f014",
+    "MaterialExpressionCustom_4": "9c8f63dc354f1f22e7d62431f73e0e8594ff51f5430c6c17cd3ebc6af2a11a1d",
+    "MaterialExpressionCustom_5": "343f1e1228f68096c74bd3bfb23f7b0ab806e0539241907abc0a8c99cee709d8",
+    "MaterialExpressionCustom_6": "ffbba8a2b777be29e7dbaaffb58c3a1825791b35757ad1952b0eb3b3bbd12379",
+    "MaterialExpressionCustom_8": "59f4d268d5f17b89dfbb05e54761aba96b855d21c8ee9d48fb868e593b7c572d",
+    "MaterialExpressionCustom_9": "2bac15ce3ecfdfc3fe43af695712018a8f776f93e05ec6fbf9a981eb9f515e12",
+    "MaterialExpressionCustom_10": "4da993ca291630211c2838996a62ec5eb30be45831d1dd5879188ada0a710590",
+    "MaterialExpressionCustom_11": "4da993ca291630211c2838996a62ec5eb30be45831d1dd5879188ada0a710590",
+    "MaterialExpressionCustom_12": "4ee809478ad5eb9c90ec2b936f3ee89e8fb73d2e3c735447c629bd029bc2598e",
+    "MaterialExpressionCustom_13": "eb7f8af099fc811d3fc1bfcca7ad714979a971c695051a5927ffd5fe781112e8",
+    "MaterialExpressionCustom_14": "2bf447fc865fd00d1f26a36a8d21ea8b8a3a5b3001d1c736e5840dd43b8c8af3",
+    "MaterialExpressionCustom_15": "5d02783d9df91e339b870f1b2dd741aa81cea8ab2bac78f810f38e21378e82b1",
+    "MaterialExpressionCustom_16": "1906372c233d01f60b23463afc9cb94fc0effa7cacb784442ee3c266fd163308",
+    "MaterialExpressionCustom_17": "132523df96ca64d4c469d7004afb5b135923f19b5170254da50332adea1ee07a",
+    "MaterialExpressionCustom_18": "45c85ab4c6b398dc0d7eec69c344c0871952d0950a00898775888343b67d4cc7",
+    "MaterialExpressionCustom_19": "2653096d0c3b847bda81d70db705ece3d4fbbed553ce25a35565c3104c645653",
+    "MaterialExpressionCustom_20": "fa72ab2a5b8bf73cb77b93357265c218eba715f4a543ea2b6b6275a2c19060c9"
+  },
+  "assets": {
+    "MI_RuntimeMix_v2.uasset": {
+      "bytes": 8272,
+      "sha256": "e0ee84049a8dd07f781a4c95c26ffafa7578d9e85abd923b656683656ef821a9"
+    },
+    "M_RuntimeMix_v2.uasset": {
+      "bytes": 285262,
+      "sha256": "3c684c916356843d97072bf574820c310fdacbb745985428c845f813f5ff6184"
+    }
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "status": "FORMAL_TARGET_LOAD_UE_STARTUP_DESKTOP_ATTACHMENT_VALIDATED",
+  "stage": "startup-rollback-lowload",
+  "job": {
+    "exitCode": 0,
+    "stopReason": null,
+    "seconds": 47.06199999997625,
+    "peakJobGiB": 8.821334838867188,
+    "resourcesEnd": {
+      "physicalAvailableGiB": 7.086231231689453,
+      "commitHeadroomGiB": 21.321548461914062
+    },
+    "ownedTreeReleased": true
+  },
+  "target": "C:\\Users\\zhuzi\\Documents\\OutOfWindow\\.runtime\\loading-work\\project\\OutOfWindow\\OutOfWindow.uproject",
+  "moduleSHA256": "36B9BA9C80C96D32DFD075705C5205543BE5093A1A33E5B4F8A30D55AFDC5B2C",
+  "capture": "C:\\Users\\zhuzi\\Documents\\OutOfWindow\\.runtime\\loading-work\\tests\\runtime-observation\\cloud-sync-20261019-startup-rollback-lowload\\attempt-1-ceb28346535547abb258f1ca879d8796-ready.png",
+  "captureSHA256": "cfc0ea77d4ef3bfc2a7093f0928066f8aa6bd6701cdb1dd468e3e0b2291ca62a",
+  "summary": "C:\\Users\\zhuzi\\Documents\\OutOfWindow\\.runtime\\loading-work\\tests\\runtime-observation\\cloud-sync-20261019-startup-rollback-lowload\\summary.json",
+  "attempt": {
+    "attempt": 1,
+    "mode": "startup",
+    "outcome": "ready-held",
+    "exit": 0,
+    "session": "f0f6e7aece924782b94be01707ead8f0",
+    "actualPid": 50004,
+    "stateBeforeCancel": "Ready",
+    "rendererExitCode": null,
+    "finalDetail": "已取消本次启动。已有窗景实例不受影响。",
+    "ownJobCancelled": true,
+    "ownJobEmpty": true,
+    "readySeen": true,
+    "readyAttachedVisible": true,
+    "sawAppCloaked": true,
+    "startupCapture": "C:\\Users\\zhuzi\\Documents\\OutOfWindow\\.runtime\\loading-work\\tests\\runtime-observation\\cloud-sync-20261019-startup-rollback-lowload\\attempt-1-ceb28346535547abb258f1ca879d8796-ready.png",
+    "startupCaptureWritten": true,
+    "shaderWorkersDisabled": true,
+    "visibleUncloakedBeforeDesktopSamples": 0,
+    "visibleUncloakedDuringDesktopSamples": 0,
+    "sampleCount": 1379,
+    "maximumSampleGapMs": 514.7409000000007,
+    "samples": "C:\\Users\\zhuzi\\Documents\\OutOfWindow\\.runtime\\loading-work\\tests\\runtime-observation\\cloud-sync-20261019-startup-rollback-lowload\\attempt-1-samples.jsonl",
+    "status": "C:\\Users\\zhuzi\\Documents\\OutOfWindow\\.runtime\\loading-work\\tests\\runtime-observation\\cloud-sync-20261019-startup-rollback-lowload\\sessions\\20261019-105957-f0f6e7aece924782b94be01707ead8f0\\status.json",
+    "ueLog": "C:\\Users\\zhuzi\\Documents\\OutOfWindow\\.runtime\\loading-work\\tests\\runtime-observation\\cloud-sync-20261019-startup-rollback-lowload\\sessions\\20261019-105957-f0f6e7aece924782b94be01707ead8f0\\ue.log",
+    "launcherLog": "C:\\Users\\zhuzi\\Documents\\OutOfWindow\\.runtime\\loading-work\\tests\\runtime-observation\\cloud-sync-20261019-startup-rollback-lowload\\sessions\\20261019-105957-f0f6e7aece924782b94be01707ead8f0\\launcher.log",
+    "timeline": [
+      {
+        "elapsedMs": 15.575700000000001,
+        "utc": "2026-10-19T02:59:57.4563850Z",
+        "stage": "renderer",
+        "state": "Starting",
+        "detail": "正在启动渲染器"
+      },
+      {
+        "elapsedMs": 11888.8176,
+        "utc": "2026-10-19T03:00:09.3285474Z",
+        "stage": "renderer",
+        "state": "Loading",
+        "detail": "渲染器进程已启动，正在初始化。"
+      },
+      {
+        "elapsedMs": 17912.579400000002,
+        "utc": "2026-10-19T03:00:15.3508606Z",
+        "stage": "scene",
+        "state": "Loading",
+        "detail": "正在加载场景：/Game/Maps/Alley"
+      },
+      {
+        "elapsedMs": 44253.7511,
+        "utc": "2026-10-19T03:00:41.6928063Z",
+        "stage": "desktop",
+        "state": "Loading",
+        "detail": "正在将已初始化的场景连接到桌面。"
+      },
+      {
+        "elapsedMs": 44664.692200000005,
+        "utc": "2026-10-19T03:00:42.1031382Z",
+        "stage": "ready",
+        "state": "Ready",
+        "detail": "场景已初始化并完成绘制，桌面连接成功。"
+      }
+    ]
+  },
+  "limits": "Probe uses actual LauncherForm.LoadTarget and LaunchSession. It does not double-click CMD or show launcher UI. API window sampling plus UE frame is not complete Windows compositor visual acceptance; resource caps and noshaderworker change loading performance."
+}

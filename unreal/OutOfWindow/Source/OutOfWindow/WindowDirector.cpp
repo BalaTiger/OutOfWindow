@@ -592,14 +592,22 @@ void AWindowDirector::FindSceneActors()
             else UE_LOG(LogTemp, Warning, TEXT("OOW storm cloud material missing; using native clouds"));
         }
         bApprovedCloudRoute = false;
+        bApprovedCloudV2 = false;
         if (!bUseNativeClouds && !bCleanNativeClouds && !bLegacyClouds && ApprovedCloudsEnabled.GetValueOnGameThread() != 0)
         {
-            if (UMaterialInterface* Approved = LoadObject<UMaterialInterface>(nullptr, TEXT("/Game/Weather/OOW_ApprovedClouds/MI_RuntimeMix.MI_RuntimeMix")))
+            UMaterialInterface* Approved = LoadObject<UMaterialInterface>(nullptr, TEXT("/Game/Weather/OOW_RuntimeClouds_20261019/MI_RuntimeMix_v2.MI_RuntimeMix_v2"));
+            bApprovedCloudV2 = Approved != nullptr;
+            if (!Approved)
+            {
+                UE_LOG(LogTemp, Warning, TEXT("OOW_APPROVED_CLOUD_V2_MISSING attempting=v1 fewFarDisabled=1"));
+                Approved = LoadObject<UMaterialInterface>(nullptr, TEXT("/Game/Weather/OOW_ApprovedClouds/MI_RuntimeMix.MI_RuntimeMix"));
+            }
+            if (Approved)
             {
                 Source = Approved;
                 bApprovedCloudRoute = true;
             }
-            else UE_LOG(LogTemp, Error, TEXT("OOW accepted cloud assets missing; original source retained"));
+            else UE_LOG(LogTemp, Error, TEXT("OOW_APPROVED_CLOUD_FALLBACK originalSource=%s; v2 and v1 missing"), *Source->GetPathName());
         }
         CloudMaterial = UMaterialInstanceDynamic::Create(Source, this);
         Cloud->SetMaterial(CloudMaterial);
@@ -609,7 +617,7 @@ void AWindowDirector::FindSceneActors()
             FVector Forward = Camera->GetActorForwardVector(); Forward.Z = 0; Forward.Normalize();
             ApprovedOriginKm = FLinearColor(Location.X * .00001, Location.Y * .00001, Forward.X, Forward.Y);
             CloudMaterial->SetVectorParameterValue(TEXT("OOW_ApprovedOriginKm"), ApprovedOriginKm);
-            UE_LOG(LogTemp, Display, TEXT("OOW_ACCEPTED_CLOUD_ROUTE material=%s selectedCi=Blue/group2 only"), *Source->GetPathName());
+            UE_LOG(LogTemp, Display, TEXT("OOW_ACCEPTED_CLOUD_ROUTE version=%d material=%s selectedCi=Blue/group2 only fewFarSupported=%d"), bApprovedCloudV2 ? 2 : 1, *Source->GetPathName(), bApprovedCloudV2 ? 1 : 0);
         }
         float DiagnosticMsFactor=0;
         if(bCleanNativeClouds && FParse::Param(FCommandLine::Get(),TEXT("OOWDiagHDR"))
@@ -1800,13 +1808,38 @@ void AWindowDirector::OOWAudit()
     {
         TSharedRef<FJsonObject> Accepted = MakeShared<FJsonObject>();
         const auto Target = WindowApprovedClouds::Targets(ActualWeather());
+        const bool ApprovedEnabled = bApprovedCloudRoute && ApprovedCloudsEnabled.GetValueOnGameThread() != 0;
         Accepted->SetBoolField(TEXT("routeLoaded"), bApprovedCloudRoute);
-        Accepted->SetBoolField(TEXT("enabled"), bApprovedCloudRoute && ApprovedCloudsEnabled.GetValueOnGameThread() != 0);
+        Accepted->SetBoolField(TEXT("enabled"), ApprovedEnabled);
+        Accepted->SetNumberField(TEXT("routeVersion"), bApprovedCloudRoute ? (bApprovedCloudV2 ? 2 : 1) : 0);
+        Accepted->SetBoolField(TEXT("fewFarSupported"), bApprovedCloudV2 && Camera != nullptr);
         Accepted->SetStringField(TEXT("displayWeatherSource"), ActualWeather());
         Accepted->SetNumberField(TEXT("targetLightweight"), Target.Lightweight);
         Accepted->SetNumberField(TEXT("targetCi"), Target.Cirrus);
+        Accepted->SetNumberField(TEXT("targetFewFarLightweight"), Target.FewFarLightweight);
+        Accepted->SetNumberField(TEXT("effectiveFewFarTarget"), ApprovedEnabled && bApprovedCloudV2 && Camera ? Target.FewFarLightweight : 0.f);
         Accepted->SetNumberField(TEXT("lightweight"), ApprovedLowWeight);
         Accepted->SetNumberField(TEXT("legacyLow"), 1.f - ApprovedLowWeight);
+        Accepted->SetNumberField(TEXT("fewFarLightweight"), ApprovedFewFarWeight);
+        Accepted->SetNumberField(TEXT("nearDistanceKm"), WindowApprovedClouds::FewNearKm);
+        Accepted->SetNumberField(TEXT("farDistanceKm"), WindowApprovedClouds::FewFarKm);
+        Accepted->SetStringField(TEXT("distanceOrigin"), TEXT("fixed scene camera; horizontal km"));
+        Accepted->SetNumberField(TEXT("originXKm"), ApprovedOriginKm.R);
+        Accepted->SetNumberField(TEXT("originYKm"), ApprovedOriginKm.G);
+        float Coverage = 0;
+        if (CloudMaterial && CloudMaterial->GetScalarParameterValue(FMaterialParameterInfo(TEXT("OOW_ApprovedCoverage")), Coverage))
+            Accepted->SetNumberField(TEXT("coverage"), Coverage);
+        TArray<TSharedPtr<FJsonValue>> DistanceWeights;
+        for (float Distance : {WindowApprovedClouds::FewNearKm, (WindowApprovedClouds::FewNearKm + WindowApprovedClouds::FewFarKm) * .5f, WindowApprovedClouds::FewFarKm})
+        {
+            const auto Weights = WindowApprovedClouds::LowWeights(ApprovedEnabled ? ApprovedLowWeight : 0.f, ApprovedEnabled ? ApprovedFewFarWeight : 0.f, Distance);
+            TSharedRef<FJsonObject> Sample = MakeShared<FJsonObject>();
+            Sample->SetNumberField(TEXT("distanceKm"), Distance);
+            Sample->SetNumberField(TEXT("lightweight"), Weights.Lightweight);
+            Sample->SetNumberField(TEXT("legacy"), Weights.Legacy);
+            DistanceWeights.Add(MakeShared<FJsonValueObject>(Sample));
+        }
+        Accepted->SetArrayField(TEXT("distanceWeights"), DistanceWeights);
         Accepted->SetNumberField(TEXT("ci"), ApprovedCiWeight);
         Accepted->SetNumberField(TEXT("rainProfile"), ApprovedRainWeight);
         Accepted->SetNumberField(TEXT("layerBottomKm"), ApprovedBoundsBottom);
@@ -2398,9 +2431,11 @@ void AWindowDirector::UpdateApprovedClouds(float DeltaSeconds, const FString& Di
     static IConsoleVariable* Dist = IConsoleManager::Get().FindConsoleVariable(TEXT("r.VolumetricCloud.DistanceToSampleMaxCount"));
     const bool Enabled = ApprovedCloudsEnabled.GetValueOnGameThread() != 0;
     const auto Target = WindowApprovedClouds::Targets(DisplayedWeather);
+    const float FewFarTarget = bApprovedCloudV2 && Camera ? Target.FewFarLightweight : 0.f;
     if (!bApprovedMixInitialized)
     {
         ApprovedLowWeight = Target.Lightweight; ApprovedCiWeight = Target.Cirrus; ApprovedRainWeight = Target.RainProfile;
+        ApprovedFewFarWeight = FewFarTarget;
         ApprovedBoundsBottom = Cloud->LayerBottomAltitude; ApprovedBoundsTop = ApprovedBoundsBottom + Cloud->LayerHeight;
         ApprovedOriginalMinSamples = Min ? Min->GetInt() : 2;
         ApprovedOriginalSampleDistance = Dist ? Dist->GetFloat() : 5.f;
@@ -2409,7 +2444,10 @@ void AWindowDirector::UpdateApprovedClouds(float DeltaSeconds, const FString& Di
     ApprovedLowWeight = FMath::FInterpTo(ApprovedLowWeight, Target.Lightweight, DeltaSeconds, .8f);
     ApprovedCiWeight = FMath::FInterpTo(ApprovedCiWeight, Target.Cirrus, DeltaSeconds, .8f);
     ApprovedRainWeight = FMath::FInterpTo(ApprovedRainWeight, Target.RainProfile, DeltaSeconds, .8f);
+    ApprovedFewFarWeight = FMath::FInterpTo(ApprovedFewFarWeight, FewFarTarget, DeltaSeconds, .8f);
     CloudMaterial->SetVectorParameterValue(TEXT("OOW_ApprovedMix"), FLinearColor(ApprovedLowWeight, 1.f - ApprovedLowWeight, ApprovedCiWeight, Enabled ? 1.f : 0.f));
+    CloudMaterial->SetScalarParameterValue(TEXT("OOW_ApprovedFewFar"), ApprovedFewFarWeight);
+    CloudMaterial->SetVectorParameterValue(TEXT("OOW_ApprovedDistanceKm"), FLinearColor(WindowApprovedClouds::FewNearKm, WindowApprovedClouds::FewFarKm, 0, 0));
     if (!Enabled)
     {
         if (Min && Min->GetInt() != ApprovedOriginalMinSamples) Min->Set(ApprovedOriginalMinSamples, ECVF_SetByCode);
@@ -2420,14 +2458,14 @@ void AWindowDirector::UpdateApprovedClouds(float DeltaSeconds, const FString& Di
     const float Height = FMath::Lerp(.9f, 1.1f, ApprovedRainWeight);
     CloudMaterial->SetScalarParameterValue(TEXT("OOW_ApprovedBottomKm"), Bottom);
     CloudMaterial->SetScalarParameterValue(TEXT("OOW_ApprovedHeightKm"), Height);
-    CloudMaterial->SetScalarParameterValue(TEXT("OOW_ApprovedCoverage"), FMath::Lerp(.48f, .69f, ApprovedRainWeight));
+    CloudMaterial->SetScalarParameterValue(TEXT("OOW_ApprovedCoverage"), WindowApprovedClouds::Coverage(ApprovedRainWeight, ApprovedFewFarWeight));
     CloudMaterial->SetScalarParameterValue(TEXT("OOW_ApprovedErosion"), FMath::Lerp(.25f, .32f, ApprovedRainWeight));
     CloudMaterial->SetScalarParameterValue(TEXT("OOW_ApprovedDensity"), .0045f);
     float LegacyBottom = 1.2f, LegacyHeight = 3.5f;
     CloudMaterial->GetScalarParameterValue(FMaterialParameterInfo(TEXT("OOW_LowBottomKm")), LegacyBottom);
     CloudMaterial->GetScalarParameterValue(FMaterialParameterInfo(TEXT("OOW_LowHeightKm")), LegacyHeight);
-    const bool LegacyPresent = ApprovedLowWeight < .999f && (Cloudiness > .151f || Storminess > .001f || DisplayedWeather == TEXT("fog") || DisplayedWeather == TEXT("snow"));
-    const bool LightPresent = ApprovedLowWeight > .001f;
+    const bool LegacyPresent = ApprovedLowWeight < .999f && (ApprovedFewFarWeight > .001f || Cloudiness > .151f || Storminess > .001f || DisplayedWeather == TEXT("fog") || DisplayedWeather == TEXT("snow"));
+    const bool LightPresent = ApprovedLowWeight > .001f || ApprovedFewFarWeight > .001f;
     const bool CiPresent = ApprovedCiWeight > .001f;
     float TargetBottom = LegacyPresent ? LegacyBottom : LightPresent ? Bottom : 8.2f;
     float TargetTop = LegacyPresent ? LegacyBottom + LegacyHeight : LightPresent ? Bottom + Height : 8.38f;

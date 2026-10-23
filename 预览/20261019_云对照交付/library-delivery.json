@@ -1,0 +1,23 @@
+{
+  "status": "TWO_IMAGES_UPLOADED_SUCCESSFULLY",
+  "files": [
+    {
+      "file_name": "weather-five-condition-comparison.png",
+      "library_file_id": "libfile_e067d61d75608191a662e0d3287bb5df",
+      "file_id": "file_00000000ab24820cabacb13a2d2d93ee",
+      "current_version_number": 0,
+      "bytes": 6668310,
+      "status": "succeeded"
+    },
+    {
+      "file_name": "reference-original-control-candidate.png",
+      "library_file_id": "libfile_8c3e16bbb2508191a84b4433117f452c",
+      "file_id": "file_00000000098c81fb9f0dbb1fba69ee2f",
+      "current_version_number": 0,
+      "bytes": 151788,
+      "status": "succeeded"
+    }
+  ],
+  "localPosixMetadataApplied": false,
+  "localIdentityReceipt": "This JSON retains the Library identity because Windows Python does not expose POSIX xattrs."
+}

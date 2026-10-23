@@ -1,0 +1,12 @@
+{
+  "status": "REJECTED_VISUAL_DIAGNOSTIC_PREPARED",
+  "changesGeometry": false,
+  "changesAcceptanceGates": false,
+  "accepted": false,
+  "files": {
+    "build_native.py": "b8ff0d2b9218c312c5c4a38b5037a8e9d5b5c336588e9925cbb0e0d52a7eca30",
+    "present.py": "fea6fe987f943e098e2397e9db21e8e5407a1e5942ba0b8f688036ce93722955",
+    "render_triple.py": "47140d77e953887e0bab7fdd1ca5af25d15abac9b6f5d316e5b30e0365af6eb7",
+    "run_bounded.py": "fdba0ca15798ce4e7acd5c5d7e21b58c4a921ac8a606646c31995266d075a3fb"
+  }
+}

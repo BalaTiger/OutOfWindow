@@ -1,0 +1,27 @@
+{
+  "status": "PREPARED_FROZEN_NOT_NATIVE_EXECUTED",
+  "pythonSyntaxChecked": [
+    "build_native.py",
+    "present.py",
+    "render_triple.py",
+    "run_bounded.py"
+  ],
+  "hipFilename": "few-near-local128-v3.hip",
+  "diagnosticArraysBeforeGates": true,
+  "postHocDensityCleanup": false,
+  "independentStaticReview": "No blocking bug found",
+  "failedV2CandidateSHA256": "b3f289b8a52a0db73509251d7e5e0e6a7dd7de91c068d05bbb4ee3b4409ccc52",
+  "failedV2FilesCurrentSHA256": {
+    "build-result.json": "3a2ff3ed9a61e90c7acef0f9022c03919f409b7ec98fb086c6382d24bad2040d",
+    "build_native-budget.json": "5a5b44eb6ca5e8209364b8f6affccae25f578592eb0c62bbaa35a949a2b1d671",
+    "detail.vfl": "3cb6fbdb174ec97c4ffd3ed438eb40a5f9642e79e5249d72357e74a0a5617ca3"
+  },
+  "files": {
+    "build_native.py": "b37c1230eacacced20b711988444eec74e740bda5a81acc07c45f83ae436adc7",
+    "detail.vfl": "16abcf0efce5aa9e0d28bef171ba8a6949bf05271f761b8375242e610bc80050",
+    "present.py": "9b48289b50fd279f710caa2491dd7a9b4e1dc8b9a3662c8380ee1862ca0e7964",
+    "README.md": "db5f2f1e6e398eecf253e5714d28e9f302f58f573084ddace39f869e781f550c",
+    "render_triple.py": "5b07369c8ee56eb049e3ef5b25cfc9213d45b017d022bbb3f949a19d8a2283cc",
+    "run_bounded.py": "fdba0ca15798ce4e7acd5c5d7e21b58c4a921ac8a606646c31995266d075a3fb"
+  }
+}

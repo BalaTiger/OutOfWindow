@@ -1,0 +1,55 @@
+{
+  "status": "VISUAL_REJECTED_TOPOLOGY_PASSED",
+  "topologyAccepted": true,
+  "originalVsControl": {
+    "alphaSilhouetteIoU": 0.994534790722474,
+    "boundsBefore": [
+      198,
+      214,
+      355,
+      284
+    ],
+    "boundsAfter": [
+      198,
+      214,
+      355,
+      284
+    ],
+    "meanAbsLinearRGBDelta": 9.257147030439228e-05,
+    "opaquePixelsBefore": 2668,
+    "opaquePixelsAfter": 2669
+  },
+  "controlVsCandidate": {
+    "alphaSilhouetteIoU": 0.9803972817564035,
+    "boundsBefore": [
+      198,
+      214,
+      355,
+      284
+    ],
+    "boundsAfter": [
+      196,
+      214,
+      355,
+      284
+    ],
+    "meanAbsLinearRGBDelta": 0.0010829329257830977,
+    "opaquePixelsBefore": 2669,
+    "opaquePixelsAfter": 2687
+  },
+  "displayExposure": 1,
+  "encoding": "standard sRGB",
+  "nativeCrop": [
+    100,
+    190,
+    350,
+    125
+  ],
+  "referenceSHA256": "03f5c26f5ea37eac1e6855ca95dc4404d020ba23ae3cbc9644f13e99d17942d7",
+  "photographicNaturalnessAccepted": false,
+  "files": {
+    "reference-original-control-candidate.png": "fb72a5316890d7ea6d7cf217822eb2e4b9752eca742235698b056c815785e7b0",
+    "candidate.png": "3ca5a5d83d75717be2e0326625ae7aec6d81a9c5960a77afbdd7f3c3a0928cf2"
+  },
+  "broadSilhouetteGatePassed": true
+}

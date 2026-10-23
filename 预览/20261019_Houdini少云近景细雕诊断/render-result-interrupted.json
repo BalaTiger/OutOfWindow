@@ -1,0 +1,22 @@
+{
+  "status": "TRIPLE_RENDER_STARTED",
+  "actualRenders": [
+    {
+      "name": "original",
+      "seconds": 31.5,
+      "bytes": 31929,
+      "sha256": "93a838c0dc452db7465090cc7370f308107c4e7f24639ead05e5f042fc845fd5"
+    },
+    {
+      "name": "control",
+      "seconds": 76.625,
+      "bytes": 32471,
+      "sha256": "b2cdcfd17db5ab2a9275eac746000ba18e0028ab487af7ba4daa9fa3ccda7e65"
+    }
+  ],
+  "sameParameterValues": true,
+  "fairComparison": "control vs candidate share the identical grid and sampling; original vs control additionally includes the grid-dependent sampling change",
+  "gridIsNotNewGeometry": true,
+  "lightingAndMaterialChanged": false,
+  "displayGain": 1
+}
